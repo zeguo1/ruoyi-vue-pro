@@ -1,0 +1,138 @@
+name: mgs199
+
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: 10m
+    max-file: '3'
+
+services:
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    command: [--character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci, --innodb-buffer-pool-size=192M, --innodb-redo-log-capacity=64M, --skip-log-bin]
+    environment:
+      MYSQL_DATABASE: ruoyi-vue-pro
+      MYSQL_USER: mgs
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?}
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ../../sql:/schema:ro
+      - ./init-mysql.sh:/docker-entrypoint-initdb.d/00-mgs.sh:ro
+      - ./deployment-data.sql:/bootstrap/deployment-data.sql:ro
+    healthcheck:
+      test: [CMD-SHELL, 'MYSQL_PWD=$$MYSQL_PASSWORD mysql --protocol=TCP -h127.0.0.1 -umgs ruoyi-vue-pro -e "SELECT 1 FROM system_users LIMIT 1" >/dev/null 2>&1']
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 60s
+    logging: *logging
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD:?}
+    command: [sh, -c, 'exec redis-server --requirepass "$$REDIS_PASSWORD" --appendonly yes --maxmemory 256mb --maxmemory-policy noeviction']
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: [CMD-SHELL, 'REDISCLI_AUTH=$$REDIS_PASSWORD redis-cli ping | grep -q PONG']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    logging: *logging
+
+  tdengine:
+    image: tdengine/tdengine:3.3.6.13
+    hostname: tdengine
+    entrypoint: [bash, /bootstrap/tdengine-entrypoint.sh]
+    restart: unless-stopped
+    environment:
+      TAOS_FQDN: tdengine
+      TAOS_ROOT_PASSWORD: ${TDENGINE_PASSWORD:?}
+      TAOS_DISABLE_KEEPER: '1'
+      TAOS_DISABLE_EXPLORER: '1'
+    volumes:
+      - tdengine_data:/var/lib/taos
+      - ../../sql/tdengine/iot.sql:/docker-entrypoint-initdb.d/01-iot.sql:ro
+      - ./tdengine-entrypoint.sh:/bootstrap/tdengine-entrypoint.sh:ro
+      - ./taos.cfg:/etc/taos/taos.cfg:ro
+    healthcheck:
+      test: [CMD-SHELL, 'curl -sf http://localhost:6041/-/ping >/dev/null']
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+    logging: *logging
+
+  server:
+    image: eclipse-temurin:17-jre
+    restart: unless-stopped
+    working_dir: /app
+    command: [java, -Xms256m, -Xmx1536m, '-XX:ActiveProcessorCount=4', -jar, /app/server.jar]
+    environment:
+      SPRING_PROFILES_ACTIVE: local,deploy
+      SPRING_CONFIG_ADDITIONAL_LOCATION: file:/config/
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?}
+      REDIS_PASSWORD: ${REDIS_PASSWORD:?}
+      TDENGINE_PASSWORD: ${TDENGINE_PASSWORD:?}
+      TZ: Asia/Shanghai
+    ports:
+      - 127.0.0.1:48088:48080
+    volumes:
+      - ../../yudao-server/target/yudao-server.jar:/app/server.jar:ro
+      - ./application-deploy.yaml:/config/application-deploy.yaml:ro
+      - server_data:/data
+    depends_on:
+      mysql: {condition: service_healthy}
+      redis: {condition: service_healthy}
+      tdengine: {condition: service_healthy}
+    healthcheck:
+      test: [CMD-SHELL, 'curl -sf http://localhost:48080/actuator/health >/dev/null']
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 120s
+    logging: *logging
+
+  gateway:
+    image: eclipse-temurin:17-jre
+    restart: unless-stopped
+    working_dir: /app
+    command: [java, -Xms64m, -Xmx256m, '-XX:ActiveProcessorCount=2', -jar, /app/gateway.jar]
+    environment:
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PASSWORD: ${REDIS_PASSWORD:?}
+      YUDAO_IOT_GATEWAY_RPC_URL: http://server:48080
+      YUDAO_IOT_GATEWAY_TOKEN_SECRET: ${IOT_TOKEN_SECRET:?}
+      TZ: Asia/Shanghai
+    volumes:
+      - ../../yudao-module-iot/yudao-module-iot-gateway/target/yudao-module-iot-gateway.jar:/app/gateway.jar:ro
+    depends_on:
+      server: {condition: service_healthy}
+    logging: *logging
+
+  admin:
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - 192.168.1.199:8088:80
+    volumes:
+      - ../../../yudao-ui-admin-vben/apps/web-antd/dist:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      server: {condition: service_healthy}
+    healthcheck:
+      test: [CMD-SHELL, 'wget -q -O /dev/null http://127.0.0.1/']
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    logging: *logging
+
+volumes:
+  mysql_data:
+  redis_data:
+  tdengine_data:
+  server_data:

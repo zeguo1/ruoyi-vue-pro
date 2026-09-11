@@ -1,0 +1,85 @@
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.ai.vectorstore.qdrant.autoconfigure.QdrantVectorStoreAutoConfiguration
+      - org.springframework.ai.vectorstore.milvus.autoconfigure.MilvusVectorStoreAutoConfiguration
+      - org.springframework.ai.vectorstore.redis.autoconfigure.RedisVectorStoreAutoConfiguration
+  datasource:
+    druid:
+      stat-view-servlet:
+        enabled: false
+    dynamic:
+      strict: true
+      datasource:
+        master:
+          url: jdbc:mysql://mysql:3306/ruoyi-vue-pro?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true
+          username: mgs
+          password: ${MYSQL_PASSWORD}
+        slave:
+          url: jdbc:mysql://mysql:3306/ruoyi-vue-pro?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true
+          username: mgs
+          password: ${MYSQL_PASSWORD}
+        tdengine:
+          url: jdbc:TAOS-WS://tdengine:6041/ruoyi_vue_pro?varcharAsString=true&enableAutoReconnect=true
+          username: root
+          password: ${TDENGINE_PASSWORD}
+  data:
+    redis:
+      host: redis
+      port: 6379
+      password: ${REDIS_PASSWORD}
+      database: 0
+  boot:
+    admin:
+      client:
+        enabled: false
+  ai:
+    model:
+      # JimuReport requires a ChatModel bean; its API is usable after configuring a real key.
+      chat: openai
+      embedding: none
+      image: none
+      audio:
+        transcription: none
+        speech: none
+  quartz:
+    auto-startup: true
+    properties:
+      org.quartz.threadPool.threadCount: 3
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  health:
+    mail:
+      enabled: false
+    rabbit:
+      enabled: false
+logging:
+  file:
+    name: /data/logs/server.log
+  level:
+    cn.iocoder.yudao: INFO
+    cn.iocoder.yudao.module.iot.dal.tdengine: INFO
+yudao:
+  web:
+    admin-ui:
+      url: http://192.168.1.199:8088
+  security:
+    mock-enable: false
+  demo: false
+  pay:
+    order-notify-url: http://192.168.1.199:8088/admin-api/pay/notify/order
+    refund-notify-url: http://192.168.1.199:8088/admin-api/pay/notify/refund
+    transfer-notify-url: http://192.168.1.199:8088/admin-api/pay/notify/transfer
+  ai:
+    gemini: {enable: false}
+    doubao: {enable: false}
+    hunyuan: {enable: false}
+    siliconflow: {enable: false}
+    xinghuo: {enable: false}
+    baichuan: {enable: false}
+    midjourney: {enable: false}
+    suno: {enable: false}
+    web-search: {enable: false}
