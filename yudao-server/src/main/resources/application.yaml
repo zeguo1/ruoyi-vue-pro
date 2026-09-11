@@ -367,3 +367,20 @@ yudao:
       type: redis # 消息总线的类型
 
 debug: false
+
+--- #################### IoT 时序数据库配置 ####################
+
+# IoT 模块已启用；设备消息使用 TDengine，业务配置表仍使用 MySQL。
+# 先执行 sql/tdengine/iot.sql 创建数据库，不能让 @TDengineDS 回退到主数据源。
+spring:
+  datasource:
+    dynamic:
+      datasource:
+        tdengine:
+          lazy: true
+          url: ${TDENGINE_URL:jdbc:TAOS-WS://127.0.0.1:6041/ruoyi_vue_pro?varcharAsString=true&enableAutoReconnect=true}
+          driver-class-name: com.taosdata.jdbc.ws.WebSocketDriver
+          username: ${TDENGINE_USERNAME:root}
+          password: ${TDENGINE_PASSWORD:taosdata}
+          druid:
+            validation-query: SELECT SERVER_STATUS()

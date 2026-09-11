@@ -1,0 +1,36 @@
+{
+  "repository": "https://github.com/jeecgboot/jimureport",
+  "commit": "16a1af0902662836e3e6bea313e0cbe1fdc02978",
+  "source_path": "db/jimureport.mysql5.7.create.sql",
+  "source_sha256": "c47e948204b7570353565331025b3f020ede526142675f0be257300b3bdd7ff9",
+  "application_versions": {
+    "jimureport": "2.5.1",
+    "jimubi": "2.5.0"
+  },
+  "tables": [
+    "jimu_dict",
+    "jimu_dict_item",
+    "jimu_report",
+    "jimu_report_category",
+    "jimu_report_data_source",
+    "jimu_report_db",
+    "jimu_report_db_field",
+    "jimu_report_db_param",
+    "jimu_report_export_job",
+    "jimu_report_export_log",
+    "jimu_report_ext_data",
+    "jimu_report_icon_lib",
+    "jimu_report_link",
+    "jimu_report_map",
+    "jimu_report_share",
+    "jimu_report_sheet",
+    "onl_drag_comp",
+    "onl_drag_dataset_head",
+    "onl_drag_dataset_item",
+    "onl_drag_dataset_param",
+    "onl_drag_page",
+    "onl_drag_page_comp",
+    "onl_drag_share",
+    "onl_drag_table_relation"
+  ]
+}
