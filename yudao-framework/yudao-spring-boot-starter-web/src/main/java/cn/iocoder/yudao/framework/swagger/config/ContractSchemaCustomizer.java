@@ -34,7 +34,7 @@ public class ContractSchemaCustomizer implements PropertyCustomizer, GlobalOpenA
     public Schema customize(Schema schema, AnnotatedType type) {
         if (schema == null) return null;
         Annotation[] annotations = type.getCtxAnnotations();
-        if (annotations == null) return schema;
+        if (annotations == null) return WireContractSupport.property(schema, type);
         for (Annotation annotation : annotations) {
             if (annotation instanceof io.swagger.v3.oas.annotations.media.Schema doc) {
                 // An unspecified annotation default is not a real business default.
@@ -65,7 +65,7 @@ public class ContractSchemaCustomizer implements PropertyCustomizer, GlobalOpenA
                 }
             }
         }
-        return schema;
+        return WireContractSupport.property(schema, type);
     }
 
     @Override
@@ -76,9 +76,17 @@ public class ContractSchemaCustomizer implements PropertyCustomizer, GlobalOpenA
                 && operation.getResponses() != null) {
             operation.getResponses().values().forEach(response -> {
                 var content = response.getContent();
-                if (content != null && content.containsKey("*/*") && content.size() == 1) {
-                    var media = content.remove("*/*");
-                    content.addMediaType("application/json", media);
+                if (content != null && content.containsKey("*/*")) {
+                    var inferred = content.get("*/*");
+                    String ref = inferred.getSchema() == null ? null : inferred.getSchema().get$ref();
+                    if (content.size() == 1 || ref != null && ref.startsWith("#/components/schemas/cn.iocoder.yudao.framework.common.pojo.CommonResult")) {
+                        content.remove("*/*");
+                        // springdoc emits a placeholder string schema for examples-only @Content.
+                        // Retain the examples and use the actual generic method return schema.
+                        var json = content.get("application/json");
+                        if (json == null) content.addMediaType("application/json", inferred);
+                        else json.setSchema(inferred.getSchema());
+                    }
                 }
             });
         }
@@ -111,11 +119,13 @@ public class ContractSchemaCustomizer implements PropertyCustomizer, GlobalOpenA
                 });
             }
         }
+        WireContractSupport.operation(operation, handler);
         return operation;
     }
 
     @Override
     public void customise(OpenAPI api) {
+        WireContractSupport.document(api);
         Set<Schema<?>> seen = Collections.newSetFromMap(new IdentityHashMap<>());
         if (api.getComponents() != null && api.getComponents().getSchemas() != null) {
             api.getComponents().getSchemas().forEach((name, schema) -> {
@@ -138,7 +148,10 @@ public class ContractSchemaCustomizer implements PropertyCustomizer, GlobalOpenA
             });
         }
         if (api.getPaths() != null) api.getPaths().values().forEach(path -> path.readOperations().forEach(operation -> {
-            if (operation.getParameters() != null) operation.getParameters().forEach(p -> normalize(p.getSchema(), seen));
+            if (operation.getParameters() != null) operation.getParameters().forEach(p -> {
+                normalize(p.getSchema(), seen);
+                if (p.getSchema() != null && p.getExample() != null && !validExample(p.getSchema(), p.getExample())) p.setExample(null);
+            });
             if (operation.getRequestBody() != null && operation.getRequestBody().getContent() != null)
                 operation.getRequestBody().getContent().values().forEach(m -> normalize(m.getSchema(), seen));
             if (operation.getResponses() != null) operation.getResponses().values().forEach(response -> {

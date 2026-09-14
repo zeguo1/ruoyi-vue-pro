@@ -60,6 +60,9 @@ public class HrmPortalAttendanceStatisticsController {
             @Parameter(name = "month", description = "月份", required = true, example = "8")
     })
     @PreAuthorize("@ss.hasPermission('hrm:portal:query')")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportAttendanceMonthDetail(
             @RequestParam("year") Integer year, @RequestParam("month") Integer month,
             HttpServletResponse response) throws Exception {

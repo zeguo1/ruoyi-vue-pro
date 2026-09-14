@@ -134,6 +134,9 @@ public class FmsSubjectController {
     @Operation(summary = "导出科目")
     @PreAuthorize("@ss.hasPermission('fms:config:subject:export')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportSubject(@Valid FmsSubjectListReqVO listReqVO,
             HttpServletResponse response) throws IOException {
         List<FmsSubjectDO> subjects = subjectService.getSubjectList(listReqVO, getLoginUserId());
@@ -145,6 +148,9 @@ public class FmsSubjectController {
     @Operation(summary = "获得科目导入模板")
     @PreAuthorize("@ss.hasPermission('fms:config:subject:import')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void getSubjectImportTemplate(HttpServletResponse response) throws IOException {
         List<FmsSubjectImportExcelVO> list = Arrays.asList(
                 FmsSubjectImportExcelVO.builder().code("1001").name("库存现金")
@@ -155,7 +161,7 @@ public class FmsSubjectController {
         ExcelUtils.write(response, "科目导入模板.xlsx", "科目列表", FmsSubjectImportExcelVO.class, list);
     }
 
-    @PostMapping("/import")
+    @PostMapping(value = "/import", consumes = "multipart/form-data")
     @Operation(summary = "导入科目")
     @Parameters({
             @Parameter(name = "accountSetId", description = "账套编号", required = true, example = "1024"),

@@ -60,8 +60,8 @@ public class PayChannelController {
     @Parameter(name = "id", description = "编号", required = true, example = "1024")
     @PreAuthorize("@ss.hasPermission('pay:channel:query')")
     public CommonResult<PayChannelRespVO> getChannel(@RequestParam(value = "id", required = false) Long id,
-                                                     @RequestParam(value = "appId", required = false) Long appId,
-                                                     @RequestParam(value = "code", required = false) String code) {
+                                                     @io.swagger.v3.oas.annotations.Parameter(description = "支付应用编号；未传 id 时须与 code 同时提供") @RequestParam(value = "appId", required = false) Long appId,
+                                                     @io.swagger.v3.oas.annotations.Parameter(description = "支付渠道编码；未传 id 时须与 appId 同时提供，来自已有渠道配置") @RequestParam(value = "code", required = false) String code) {
         PayChannelDO channel = null;
         if (id != null) {
             channel = channelService.getChannel(id);

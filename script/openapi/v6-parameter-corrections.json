@@ -1,0 +1,800 @@
+[
+  {
+    "operation": "DELETE /admin-api/ai/knowledge/document/delete",
+    "handler": "cn.iocoder.yudao.module.ai.controller.admin.knowledge.AiKnowledgeDocumentController#deleteKnowledgeDocument",
+    "parameter": "id",
+    "description": "已有知识库文档编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/knowledge/AiKnowledgeDocumentController.java"
+  },
+  {
+    "operation": "GET /admin-api/ai/knowledge/document/get",
+    "handler": "cn.iocoder.yudao.module.ai.controller.admin.knowledge.AiKnowledgeDocumentController#getKnowledgeDocument",
+    "parameter": "id",
+    "description": "已有知识库文档编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/knowledge/AiKnowledgeDocumentController.java"
+  },
+  {
+    "operation": "GET /admin-api/bpm/model/simple/get",
+    "handler": "cn.iocoder.yudao.module.bpm.controller.admin.definition.BpmModelController#getSimpleModel",
+    "parameter": "id",
+    "description": "已有流程模型编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/BpmModelController.java"
+  },
+  {
+    "operation": "GET /admin-api/bpm/process-instance/get-print-data",
+    "handler": "cn.iocoder.yudao.module.bpm.controller.admin.task.BpmProcessInstanceController#getProcessInstancePrintData",
+    "parameter": "processInstanceId",
+    "description": "已有流程实例编号",
+    "source": "yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/task/BpmProcessInstanceController.java"
+  },
+  {
+    "operation": "GET /admin-api/bpm/task/list-by-return",
+    "handler": "cn.iocoder.yudao.module.bpm.controller.admin.task.BpmTaskController#getTaskListByReturn",
+    "parameter": "id",
+    "description": "已有工作流任务编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/task/BpmTaskController.java"
+  },
+  {
+    "operation": "PUT /admin-api/bpm/task/withdraw",
+    "handler": "cn.iocoder.yudao.module.bpm.controller.admin.task.BpmTaskController#withdrawTask",
+    "parameter": "taskId",
+    "description": "已有工作流任务编号",
+    "source": "yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/task/BpmTaskController.java"
+  },
+  {
+    "operation": "PUT /admin-api/crm/contract/submit",
+    "handler": "cn.iocoder.yudao.module.crm.controller.admin.contract.CrmContractController#submitContract",
+    "parameter": "id",
+    "description": "已有CRM 合同编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/contract/CrmContractController.java"
+  },
+  {
+    "operation": "PUT /admin-api/crm/receivable/submit",
+    "handler": "cn.iocoder.yudao.module.crm.controller.admin.receivable.CrmReceivableController#submitContract",
+    "parameter": "id",
+    "description": "已有CRM 回款编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/receivable/CrmReceivableController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/account/update-default-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.finance.ErpAccountController#updateAccountDefaultStatus",
+    "parameter": "defaultStatus",
+    "description": "是否设为默认，true 为默认，false 为非默认",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/finance/ErpAccountController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/finance-payment/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.finance.ErpFinancePaymentController#updateFinancePaymentStatus",
+    "parameter": "id",
+    "description": "已有付款单编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/finance/ErpFinancePaymentController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/finance-payment/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.finance.ErpFinancePaymentController#updateFinancePaymentStatus",
+    "parameter": "status",
+    "description": "目标审核状态：10 未审核（反审核），20 已审核；具体操作仍受单据业务状态限制",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/finance/ErpFinancePaymentController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/finance-receipt/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.finance.ErpFinanceReceiptController#updateFinanceReceiptStatus",
+    "parameter": "id",
+    "description": "已有收款单编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/finance/ErpFinanceReceiptController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/finance-receipt/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.finance.ErpFinanceReceiptController#updateFinanceReceiptStatus",
+    "parameter": "status",
+    "description": "目标审核状态：10 未审核（反审核），20 已审核；具体操作仍受单据业务状态限制",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/finance/ErpFinanceReceiptController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/purchase-in/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.purchase.ErpPurchaseInController#updatePurchaseInStatus",
+    "parameter": "id",
+    "description": "已有采购入库单编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/purchase/ErpPurchaseInController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/purchase-in/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.purchase.ErpPurchaseInController#updatePurchaseInStatus",
+    "parameter": "status",
+    "description": "目标审核状态：10 未审核（反审核），20 已审核；具体操作仍受单据业务状态限制",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/purchase/ErpPurchaseInController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/purchase-order/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.purchase.ErpPurchaseOrderController#updatePurchaseOrderStatus",
+    "parameter": "id",
+    "description": "已有采购订单编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/purchase/ErpPurchaseOrderController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/purchase-order/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.purchase.ErpPurchaseOrderController#updatePurchaseOrderStatus",
+    "parameter": "status",
+    "description": "目标审核状态：10 未审核（反审核），20 已审核；具体操作仍受单据业务状态限制",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/purchase/ErpPurchaseOrderController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/purchase-return/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.purchase.ErpPurchaseReturnController#updatePurchaseReturnStatus",
+    "parameter": "id",
+    "description": "已有采购退货单编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/purchase/ErpPurchaseReturnController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/purchase-return/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.purchase.ErpPurchaseReturnController#updatePurchaseReturnStatus",
+    "parameter": "status",
+    "description": "目标审核状态：10 未审核（反审核），20 已审核；具体操作仍受单据业务状态限制",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/purchase/ErpPurchaseReturnController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/sale-order/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.sale.ErpSaleOrderController#updateSaleOrderStatus",
+    "parameter": "id",
+    "description": "已有销售订单编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/sale/ErpSaleOrderController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/sale-order/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.sale.ErpSaleOrderController#updateSaleOrderStatus",
+    "parameter": "status",
+    "description": "目标审核状态：10 未审核（反审核），20 已审核；具体操作仍受单据业务状态限制",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/sale/ErpSaleOrderController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/sale-out/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.sale.ErpSaleOutController#updateSaleOutStatus",
+    "parameter": "id",
+    "description": "已有销售出库单编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/sale/ErpSaleOutController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/sale-out/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.sale.ErpSaleOutController#updateSaleOutStatus",
+    "parameter": "status",
+    "description": "目标审核状态：10 未审核（反审核），20 已审核；具体操作仍受单据业务状态限制",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/sale/ErpSaleOutController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/sale-return/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.sale.ErpSaleReturnController#updateSaleReturnStatus",
+    "parameter": "id",
+    "description": "已有销售退货单编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/sale/ErpSaleReturnController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/sale-return/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.sale.ErpSaleReturnController#updateSaleReturnStatus",
+    "parameter": "status",
+    "description": "目标审核状态：10 未审核（反审核），20 已审核；具体操作仍受单据业务状态限制",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/sale/ErpSaleReturnController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/stock-check/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpStockCheckController#updateStockCheckStatus",
+    "parameter": "id",
+    "description": "已有库存盘点单编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpStockCheckController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/stock-check/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpStockCheckController#updateStockCheckStatus",
+    "parameter": "status",
+    "description": "目标审核状态：10 未审核（反审核），20 已审核；具体操作仍受单据业务状态限制",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpStockCheckController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/stock-in/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpStockInController#updateStockInStatus",
+    "parameter": "id",
+    "description": "已有其它入库单编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpStockInController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/stock-in/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpStockInController#updateStockInStatus",
+    "parameter": "status",
+    "description": "目标审核状态：10 未审核（反审核），20 已审核；具体操作仍受单据业务状态限制",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpStockInController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/stock-move/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpStockMoveController#updateStockMoveStatus",
+    "parameter": "id",
+    "description": "已有库存调拨单编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpStockMoveController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/stock-move/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpStockMoveController#updateStockMoveStatus",
+    "parameter": "status",
+    "description": "目标审核状态：10 未审核（反审核），20 已审核；具体操作仍受单据业务状态限制",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpStockMoveController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/stock-out/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpStockOutController#updateStockOutStatus",
+    "parameter": "id",
+    "description": "已有其它出库单编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpStockOutController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/stock-out/update-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpStockOutController#updateStockOutStatus",
+    "parameter": "status",
+    "description": "目标审核状态：10 未审核（反审核），20 已审核；具体操作仍受单据业务状态限制",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpStockOutController.java"
+  },
+  {
+    "operation": "PUT /admin-api/erp/warehouse/update-default-status",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpWarehouseController#updateWarehouseDefaultStatus",
+    "parameter": "defaultStatus",
+    "description": "是否设为默认，true 为默认，false 为非默认",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpWarehouseController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/closing/period/current-month",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.closing.FmsClosingPeriodController#getCurrentMonth",
+    "parameter": "accountSetId",
+    "description": "账套编号；使用当前用户有权访问的已有账套",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/closing/FmsClosingPeriodController.java"
+  },
+  {
+    "operation": "DELETE /admin-api/fms/closing/scheme/delete",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.closing.FmsClosingSchemeController#deleteClosingScheme",
+    "parameter": "accountSetId",
+    "description": "账套编号；使用当前用户有权访问的已有账套",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/closing/FmsClosingSchemeController.java"
+  },
+  {
+    "operation": "DELETE /admin-api/fms/closing/scheme/delete",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.closing.FmsClosingSchemeController#deleteClosingScheme",
+    "parameter": "id",
+    "description": "已有结账方案编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/closing/FmsClosingSchemeController.java"
+  },
+  {
+    "operation": "PUT /admin-api/fms/config/account-user/update-default-status",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsAccountUserController#updateAccountSetDefaultStatus",
+    "parameter": "accountSetId",
+    "description": "账套编号；使用当前用户有权访问的已有账套",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/FmsAccountUserController.java"
+  },
+  {
+    "operation": "DELETE /admin-api/fms/config/digest/delete",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsDigestController#deleteDigest",
+    "parameter": "accountSetId",
+    "description": "账套编号；使用当前用户有权访问的已有账套",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/FmsDigestController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/config/finance-indicator/list",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsFinanceIndicatorController#getList",
+    "parameter": "accountSetId",
+    "description": "账套编号；使用当前用户有权访问的已有账套",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/FmsFinanceIndicatorController.java"
+  },
+  {
+    "operation": "DELETE /admin-api/fms/config/voucher-template-category/delete",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsVoucherTemplateCategoryController#deleteTemplateCategory",
+    "parameter": "accountSetId",
+    "description": "账套编号；使用当前用户有权访问的已有账套",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/FmsVoucherTemplateCategoryController.java"
+  },
+  {
+    "operation": "DELETE /admin-api/fms/config/voucher-template-category/delete",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsVoucherTemplateCategoryController#deleteTemplateCategory",
+    "parameter": "id",
+    "description": "已有凭证模板分类编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/FmsVoucherTemplateCategoryController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/config/voucher-template-category/list",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsVoucherTemplateCategoryController#getTemplateCategoryList",
+    "parameter": "accountSetId",
+    "description": "账套编号；使用当前用户有权访问的已有账套",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/FmsVoucherTemplateCategoryController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/config/voucher-template-category/simple-list",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsVoucherTemplateCategoryController#getTemplateCategorySimpleList",
+    "parameter": "accountSetId",
+    "description": "账套编号；使用当前用户有权访问的已有账套",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/FmsVoucherTemplateCategoryController.java"
+  },
+  {
+    "operation": "DELETE /admin-api/fms/config/voucher-template/delete",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsVoucherTemplateController#deleteVoucherTemplate",
+    "parameter": "accountSetId",
+    "description": "账套编号；使用当前用户有权访问的已有账套",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/FmsVoucherTemplateController.java"
+  },
+  {
+    "operation": "DELETE /admin-api/fms/config/voucher-template/delete",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsVoucherTemplateController#deleteVoucherTemplate",
+    "parameter": "id",
+    "description": "已有凭证模板编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/FmsVoucherTemplateController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/config/voucher-template/list",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsVoucherTemplateController#getVoucherTemplateList",
+    "parameter": "accountSetId",
+    "description": "账套编号；使用当前用户有权访问的已有账套",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/FmsVoucherTemplateController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/config/voucher-template/simple-list",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsVoucherTemplateController#getVoucherTemplateSimpleList",
+    "parameter": "accountSetId",
+    "description": "账套编号；使用当前用户有权访问的已有账套",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/FmsVoucherTemplateController.java"
+  },
+  {
+    "operation": "DELETE /admin-api/fms/config/voucher-word/delete",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsVoucherWordController#deleteVoucherWord",
+    "parameter": "accountSetId",
+    "description": "账套编号；使用当前用户有权访问的已有账套",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/FmsVoucherWordController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/voucher/auxiliary-balance",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.voucher.FmsVoucherController#getVoucherAuxiliaryBalance",
+    "parameter": "accountSetId",
+    "description": "账套编号；使用当前用户有权访问的已有账套",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/voucher/FmsVoucherController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/voucher/auxiliary-balance",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.voucher.FmsVoucherController#getVoucherAuxiliaryBalance",
+    "parameter": "auxiliaryItemIds",
+    "description": "辅助核算项目编号列表，至少一项，来自当前账套配置",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/voucher/FmsVoucherController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/voucher/auxiliary-balance",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.voucher.FmsVoucherController#getVoucherAuxiliaryBalance",
+    "parameter": "month",
+    "description": "会计期间，格式 yyyy-MM",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/voucher/FmsVoucherController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/voucher/auxiliary-balance",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.voucher.FmsVoucherController#getVoucherAuxiliaryBalance",
+    "parameter": "subjectId",
+    "description": "已有会计科目编号",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/voucher/FmsVoucherController.java"
+  },
+  {
+    "operation": "DELETE /admin-api/fms/voucher/delete-list",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.voucher.FmsVoucherController#deleteVoucherList",
+    "parameter": "accountSetId",
+    "description": "账套编号；使用当前用户有权访问的已有账套",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/voucher/FmsVoucherController.java"
+  },
+  {
+    "operation": "DELETE /admin-api/fms/voucher/delete-list",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.voucher.FmsVoucherController#deleteVoucherList",
+    "parameter": "ids",
+    "description": "已有凭证编号列表；从对应查询接口获取，不要编造",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/voucher/FmsVoucherController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/voucher/get",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.voucher.FmsVoucherController#getVoucher",
+    "parameter": "accountSetId",
+    "description": "账套编号；使用当前用户有权访问的已有账套",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/voucher/FmsVoucherController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/voucher/get",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.voucher.FmsVoucherController#getVoucher",
+    "parameter": "id",
+    "description": "已有凭证编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/voucher/FmsVoucherController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/voucher/get-import-template",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.voucher.FmsVoucherController#getVoucherImportTemplate",
+    "parameter": "accountSetId",
+    "description": "账套编号；使用当前用户有权访问的已有账套",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/voucher/FmsVoucherController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/voucher/subject-balance-list",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.voucher.FmsVoucherController#getVoucherSubjectBalanceList",
+    "parameter": "accountSetId",
+    "description": "账套编号；使用当前用户有权访问的已有账套",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/voucher/FmsVoucherController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/voucher/subject-balance-list",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.voucher.FmsVoucherController#getVoucherSubjectBalanceList",
+    "parameter": "month",
+    "description": "会计期间，格式 yyyy-MM",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/voucher/FmsVoucherController.java"
+  },
+  {
+    "operation": "GET /admin-api/hrm/portal/performance/assessment/get",
+    "handler": "cn.iocoder.yudao.module.hrm.controller.admin.portal.performance.HrmPortalPerformanceAssessmentController#getPerformanceAssessment",
+    "parameter": "stageId",
+    "description": "绩效考核阶段编号；省略时使用考核流程视图",
+    "source": "yudao-module-hrm/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/performance/HrmPortalPerformanceAssessmentController.java"
+  },
+  {
+    "operation": "GET /admin-api/hrm/portal/performance/assessment/process-record-list",
+    "handler": "cn.iocoder.yudao.module.hrm.controller.admin.portal.performance.HrmPortalPerformanceAssessmentController#getPerformanceAssessmentProcessRecordList",
+    "parameter": "stageId",
+    "description": "绩效考核阶段编号；省略时使用考核流程视图",
+    "source": "yudao-module-hrm/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/performance/HrmPortalPerformanceAssessmentController.java"
+  },
+  {
+    "operation": "GET /admin-api/im/channel/message/pull",
+    "handler": "cn.iocoder.yudao.module.im.controller.admin.message.ImChannelMessageController#pullChannelMessageList",
+    "parameter": "minId",
+    "description": "消息增量游标，仅拉取编号大于该值的消息；初次可传 0",
+    "source": "yudao-module-im/src/main/java/cn/iocoder/yudao/module/im/controller/admin/message/ImChannelMessageController.java"
+  },
+  {
+    "operation": "GET /admin-api/im/channel/message/pull",
+    "handler": "cn.iocoder.yudao.module.im.controller.admin.message.ImChannelMessageController#pullChannelMessageList",
+    "parameter": "size",
+    "description": "本次最多拉取条数，默认 100，范围 1 到 200",
+    "source": "yudao-module-im/src/main/java/cn/iocoder/yudao/module/im/controller/admin/message/ImChannelMessageController.java"
+  },
+  {
+    "operation": "PUT /admin-api/im/friend-request/refuse",
+    "handler": "cn.iocoder.yudao.module.im.controller.admin.friend.ImFriendRequestController#refuseFriendRequest",
+    "parameter": "handleContent",
+    "description": "拒绝申请的处理理由，可省略，最多 255 个字符",
+    "source": "yudao-module-im/src/main/java/cn/iocoder/yudao/module/im/controller/admin/friend/ImFriendRequestController.java"
+  },
+  {
+    "operation": "PUT /admin-api/im/friend-request/refuse",
+    "handler": "cn.iocoder.yudao.module.im.controller.admin.friend.ImFriendRequestController#refuseFriendRequest",
+    "parameter": "id",
+    "description": "已有好友申请编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-im/src/main/java/cn/iocoder/yudao/module/im/controller/admin/friend/ImFriendRequestController.java"
+  },
+  {
+    "operation": "PUT /admin-api/im/group-request/refuse",
+    "handler": "cn.iocoder.yudao.module.im.controller.admin.group.ImGroupRequestController#refuseGroupRequest",
+    "parameter": "handleContent",
+    "description": "拒绝申请的处理理由，可省略，最多 255 个字符",
+    "source": "yudao-module-im/src/main/java/cn/iocoder/yudao/module/im/controller/admin/group/ImGroupRequestController.java"
+  },
+  {
+    "operation": "PUT /admin-api/im/group-request/refuse",
+    "handler": "cn.iocoder.yudao.module.im.controller.admin.group.ImGroupRequestController#refuseGroupRequest",
+    "parameter": "id",
+    "description": "已有加群申请编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-im/src/main/java/cn/iocoder/yudao/module/im/controller/admin/group/ImGroupRequestController.java"
+  },
+  {
+    "operation": "GET /admin-api/infra/file-config/test",
+    "handler": "cn.iocoder.yudao.module.infra.controller.admin.file.FileConfigController#testFileConfig",
+    "parameter": "id",
+    "description": "已有文件存储配置编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/file/FileConfigController.java"
+  },
+  {
+    "operation": "PUT /admin-api/infra/file-config/update-master",
+    "handler": "cn.iocoder.yudao.module.infra.controller.admin.file.FileConfigController#updateFileConfigMaster",
+    "parameter": "id",
+    "description": "已有文件存储配置编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/file/FileConfigController.java"
+  },
+  {
+    "operation": "GET /admin-api/iot/device/get-auth-info",
+    "handler": "cn.iocoder.yudao.module.iot.controller.admin.device.IotDeviceController#getDeviceAuthInfo",
+    "parameter": "id",
+    "description": "已有设备编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-iot/yudao-module-iot-biz/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/device/IotDeviceController.java"
+  },
+  {
+    "operation": "POST /admin-api/iot/device/import",
+    "handler": "cn.iocoder.yudao.module.iot.controller.admin.device.IotDeviceController#importDevice",
+    "parameter": "updateSupport",
+    "description": "是否更新已存在的数据，默认 false",
+    "source": "yudao-module-iot/yudao-module-iot-biz/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/device/IotDeviceController.java"
+  },
+  {
+    "operation": "GET /admin-api/iot/ota/firmware/get",
+    "handler": "cn.iocoder.yudao.module.iot.controller.admin.ota.IotOtaFirmwareController#getOtaFirmware",
+    "parameter": "id",
+    "description": "已有OTA 固件编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-iot/yudao-module-iot-biz/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/ota/IotOtaFirmwareController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/cal/holiday/list",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.cal.holiday.MesCalHolidayController#getHolidayList",
+    "parameter": "endDay",
+    "description": "假期查询结束时间，格式 yyyy-MM-dd HH:mm:ss，可省略",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/cal/holiday/MesCalHolidayController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/cal/holiday/list",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.cal.holiday.MesCalHolidayController#getHolidayList",
+    "parameter": "startDay",
+    "description": "假期查询起始时间，格式 yyyy-MM-dd HH:mm:ss，可省略",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/cal/holiday/MesCalHolidayController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/cal/team-member/list-by-team",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.cal.team.MesCalTeamMemberController#getTeamMemberListByTeam",
+    "parameter": "teamId",
+    "description": "班组编号；未传 teamIds 时使用",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/cal/team/MesCalTeamMemberController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/cal/team-member/list-by-team",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.cal.team.MesCalTeamMemberController#getTeamMemberListByTeam",
+    "parameter": "teamIds",
+    "description": "班组编号列表；非空时优先于 teamId，两个参数都省略返回空列表",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/cal/team/MesCalTeamMemberController.java"
+  },
+  {
+    "operation": "PUT /admin-api/mes/wm/package/add-child-package",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.packages.MesWmPackageController#addChildPackage",
+    "parameter": "childId",
+    "description": "要添加的子包装箱编号，来自已有包装箱",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/packages/MesWmPackageController.java"
+  },
+  {
+    "operation": "PUT /admin-api/mes/wm/package/add-child-package",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.packages.MesWmPackageController#addChildPackage",
+    "parameter": "parentId",
+    "description": "父包装箱编号，来自已有包装箱",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/packages/MesWmPackageController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/stocktaking-task-line/simple-list",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.stocktaking.task.MesWmStockTakingTaskLineController#getStockTakingTaskLineSimpleList",
+    "parameter": "taskId",
+    "description": "已有盘点任务编号",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/MesWmStockTakingTaskLineController.java"
+  },
+  {
+    "operation": "PUT /admin-api/mes/wm/warehouse-location/update-by-location-id",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.warehouse.MesWmWarehouseLocationController#updateAreaByLocationId",
+    "parameter": "allowBatchMixing",
+    "description": "是否允许混放不同批次；省略时不修改此项",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/warehouse/MesWmWarehouseLocationController.java"
+  },
+  {
+    "operation": "PUT /admin-api/mes/wm/warehouse-location/update-by-location-id",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.warehouse.MesWmWarehouseLocationController#updateAreaByLocationId",
+    "parameter": "allowItemMixing",
+    "description": "是否允许混放不同物料；省略时不修改此项",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/warehouse/MesWmWarehouseLocationController.java"
+  },
+  {
+    "operation": "PUT /admin-api/mes/wm/warehouse-location/update-by-location-id",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.warehouse.MesWmWarehouseLocationController#updateAreaByLocationId",
+    "parameter": "locationId",
+    "description": "库区编号，将更新该库区下的库位",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/warehouse/MesWmWarehouseLocationController.java"
+  },
+  {
+    "operation": "GET /admin-api/mp/open/{appId}",
+    "handler": "cn.iocoder.yudao.module.mp.controller.admin.open.MpOpenController#checkSignature",
+    "parameter": "appId",
+    "description": "微信公众号 AppID",
+    "source": "yudao-module-mp/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/open/MpOpenController.java"
+  },
+  {
+    "operation": "POST /admin-api/mp/open/{appId}",
+    "handler": "cn.iocoder.yudao.module.mp.controller.admin.open.MpOpenController#handleMessage",
+    "parameter": "appId",
+    "description": "微信公众号 AppID",
+    "source": "yudao-module-mp/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/open/MpOpenController.java"
+  },
+  {
+    "operation": "GET /admin-api/mp/tag/get",
+    "handler": "cn.iocoder.yudao.module.mp.controller.admin.tag.MpTagController#get",
+    "parameter": "id",
+    "description": "已有公众号标签编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-mp/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/tag/MpTagController.java"
+  },
+  {
+    "operation": "GET /admin-api/pay/channel/get",
+    "handler": "cn.iocoder.yudao.module.pay.controller.admin.channel.PayChannelController#getChannel",
+    "parameter": "appId",
+    "description": "支付应用编号；未传 id 时须与 code 同时提供",
+    "source": "yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/channel/PayChannelController.java"
+  },
+  {
+    "operation": "GET /admin-api/pay/channel/get",
+    "handler": "cn.iocoder.yudao.module.pay.controller.admin.channel.PayChannelController#getChannel",
+    "parameter": "code",
+    "description": "支付渠道编码；未传 id 时须与 appId 同时提供，来自已有渠道配置",
+    "source": "yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/channel/PayChannelController.java"
+  },
+  {
+    "operation": "POST /admin-api/pay/notify/order/{channelId}",
+    "handler": "cn.iocoder.yudao.module.pay.controller.admin.notify.PayNotifyController#notifyOrder",
+    "parameter": "channelId",
+    "description": "已配置的支付渠道编号；回调格式由该渠道决定",
+    "source": "yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/notify/PayNotifyController.java"
+  },
+  {
+    "operation": "POST /admin-api/pay/notify/refund/{channelId}",
+    "handler": "cn.iocoder.yudao.module.pay.controller.admin.notify.PayNotifyController#notifyRefund",
+    "parameter": "channelId",
+    "description": "已配置的支付渠道编号；回调格式由该渠道决定",
+    "source": "yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/notify/PayNotifyController.java"
+  },
+  {
+    "operation": "POST /admin-api/pay/notify/transfer/{channelId}",
+    "handler": "cn.iocoder.yudao.module.pay.controller.admin.notify.PayNotifyController#notifyTransfer",
+    "parameter": "channelId",
+    "description": "已配置的支付渠道编号；回调格式由该渠道决定",
+    "source": "yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/notify/PayNotifyController.java"
+  },
+  {
+    "operation": "GET /admin-api/pay/transfer/get",
+    "handler": "cn.iocoder.yudao.module.pay.controller.admin.transfer.PayTransferController#getTransfer",
+    "parameter": "id",
+    "description": "已有转账订单编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/transfer/PayTransferController.java"
+  },
+  {
+    "operation": "GET /admin-api/pms/kb/recycle/content-preview",
+    "handler": "cn.iocoder.yudao.module.pms.controller.admin.kb.recycle.PmsKnowledgeRecycleController#getContentRecyclePreview",
+    "parameter": "entityId",
+    "description": "预览的级联内容编号，可省略",
+    "source": "yudao-module-pms/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/recycle/PmsKnowledgeRecycleController.java"
+  },
+  {
+    "operation": "GET /admin-api/pms/pm/work-item-comment/list",
+    "handler": "cn.iocoder.yudao.module.pms.controller.admin.pm.workitem.PmsWorkItemCommentController#getWorkItemCommentList",
+    "parameter": "workItemId",
+    "description": "已有工作项编号",
+    "source": "yudao-module-pms/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/pm/workitem/PmsWorkItemCommentController.java"
+  },
+  {
+    "operation": "GET /admin-api/pms/pm/work-item-label/list",
+    "handler": "cn.iocoder.yudao.module.pms.controller.admin.pm.workitem.PmsWorkItemLabelController#getWorkItemLabelList",
+    "parameter": "name",
+    "description": "工作项标签名称筛选，可省略",
+    "source": "yudao-module-pms/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/pm/workitem/PmsWorkItemLabelController.java"
+  },
+  {
+    "operation": "GET /admin-api/pms/pm/work-item-status/get-board-config",
+    "handler": "cn.iocoder.yudao.module.pms.controller.admin.pm.workitem.PmsWorkItemStatusController#getWorkItemBoardConfig",
+    "parameter": "projectId",
+    "description": "已有项目编号，需有项目读取权限",
+    "source": "yudao-module-pms/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/pm/workitem/PmsWorkItemStatusController.java"
+  },
+  {
+    "operation": "GET /admin-api/pms/pm/work-item-status/get-board-config",
+    "handler": "cn.iocoder.yudao.module.pms.controller.admin.pm.workitem.PmsWorkItemStatusController#getWorkItemBoardConfig",
+    "parameter": "type",
+    "description": "工作项类型，来自项目配置，与看板/状态配置中的类型一致",
+    "source": "yudao-module-pms/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/pm/workitem/PmsWorkItemStatusController.java"
+  },
+  {
+    "operation": "GET /admin-api/pms/pm/work-item-status/list",
+    "handler": "cn.iocoder.yudao.module.pms.controller.admin.pm.workitem.PmsWorkItemStatusController#getWorkItemStatusList",
+    "parameter": "projectId",
+    "description": "已有项目编号，需有项目读取权限",
+    "source": "yudao-module-pms/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/pm/workitem/PmsWorkItemStatusController.java"
+  },
+  {
+    "operation": "GET /admin-api/pms/pm/work-item-status/list",
+    "handler": "cn.iocoder.yudao.module.pms.controller.admin.pm.workitem.PmsWorkItemStatusController#getWorkItemStatusList",
+    "parameter": "type",
+    "description": "工作项类型，来自项目配置，与看板/状态配置中的类型一致",
+    "source": "yudao-module-pms/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/pm/workitem/PmsWorkItemStatusController.java"
+  },
+  {
+    "operation": "PUT /admin-api/promotion/diy-template/use",
+    "handler": "cn.iocoder.yudao.module.promotion.controller.admin.diy.DiyTemplateController#useDiyTemplate",
+    "parameter": "id",
+    "description": "已有装修模板编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/diy/DiyTemplateController.java"
+  },
+  {
+    "operation": "GET /admin-api/system/login-log/get",
+    "handler": "cn.iocoder.yudao.module.system.controller.admin.logger.LoginLogController#getLoginLog",
+    "parameter": "id",
+    "description": "已有登录日志编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/logger/LoginLogController.java"
+  },
+  {
+    "operation": "GET /admin-api/system/menu/get",
+    "handler": "cn.iocoder.yudao.module.system.controller.admin.permission.MenuController#getMenu",
+    "parameter": "id",
+    "description": "已有菜单编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/permission/MenuController.java"
+  },
+  {
+    "operation": "POST /admin-api/system/oauth2/authorize",
+    "handler": "cn.iocoder.yudao.module.system.controller.admin.oauth2.OAuth2OpenController#approveOrDeny",
+    "parameter": "state",
+    "description": "调用方生成的 OAuth 状态值，授权跳转时原样回传，用于校验请求关联",
+    "source": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/oauth2/OAuth2OpenController.java"
+  },
+  {
+    "operation": "DELETE /admin-api/system/post/delete",
+    "handler": "cn.iocoder.yudao.module.system.controller.admin.dept.PostController#deletePost",
+    "parameter": "id",
+    "description": "已有岗位编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dept/PostController.java"
+  },
+  {
+    "operation": "DELETE /admin-api/system/post/delete-list",
+    "handler": "cn.iocoder.yudao.module.system.controller.admin.dept.PostController#deletePostList",
+    "parameter": "ids",
+    "description": "已有岗位编号列表；从对应查询接口获取，不要编造",
+    "source": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dept/PostController.java"
+  },
+  {
+    "operation": "GET /admin-api/system/role/get",
+    "handler": "cn.iocoder.yudao.module.system.controller.admin.permission.RoleController#getRole",
+    "parameter": "id",
+    "description": "已有角色编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/permission/RoleController.java"
+  },
+  {
+    "operation": "GET /admin-api/system/user/list-all-simple",
+    "handler": "cn.iocoder.yudao.module.system.controller.admin.user.UserController#getSimpleUserList",
+    "parameter": "deptId",
+    "description": "按部门编号筛选；省略时查询所有启用用户",
+    "source": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/user/UserController.java"
+  },
+  {
+    "operation": "PUT /admin-api/trade/brokerage-withdraw/approve",
+    "handler": "cn.iocoder.yudao.module.trade.controller.admin.brokerage.BrokerageWithdrawController#approveBrokerageWithdraw",
+    "parameter": "id",
+    "description": "已有分销提现申请编号；从对应查询接口获取，不要编造",
+    "source": "yudao-module-mall/yudao-module-trade/src/main/java/cn/iocoder/yudao/module/trade/controller/admin/brokerage/BrokerageWithdrawController.java"
+  },
+  {
+    "operation": "GET /admin-api/wms/home-statistics/inventory-summary",
+    "handler": "cn.iocoder.yudao.module.wms.controller.admin.home.WmsHomeStatisticsController#getInventorySummary",
+    "parameter": "goodsLimit",
+    "description": "库存商品汇总展示条数，默认 5，范围 1 到 20",
+    "source": "yudao-module-wms/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/home/WmsHomeStatisticsController.java"
+  },
+  {
+    "operation": "GET /admin-api/wms/home-statistics/inventory-summary",
+    "handler": "cn.iocoder.yudao.module.wms.controller.admin.home.WmsHomeStatisticsController#getInventorySummary",
+    "parameter": "warehouseLimit",
+    "description": "仓库汇总展示条数，默认 8，范围 1 到 20",
+    "source": "yudao-module-wms/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/home/WmsHomeStatisticsController.java"
+  },
+  {
+    "operation": "GET /admin-api/wms/home-statistics/order-trend",
+    "handler": "cn.iocoder.yudao.module.wms.controller.admin.home.WmsHomeStatisticsController#getOrderTrend",
+    "parameter": "warehouseId",
+    "description": "仓库编号筛选，可省略",
+    "source": "yudao-module-wms/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/home/WmsHomeStatisticsController.java"
+  },
+  {
+    "operation": "POST /app-api/member/auth/create-weixin-jsapi-signature",
+    "handler": "cn.iocoder.yudao.module.member.controller.app.auth.AppAuthController#createWeixinMpJsapiSignature",
+    "parameter": "url",
+    "description": "需要使用微信 JS SDK 的网页完整 URL，用于生成签名",
+    "source": "yudao-module-member/src/main/java/cn/iocoder/yudao/module/member/controller/app/auth/AppAuthController.java"
+  },
+  {
+    "operation": "GET /app-api/pay/wallet-transaction/get-summary",
+    "handler": "cn.iocoder.yudao.module.pay.controller.app.wallet.AppPayWalletTransactionController#getWalletTransactionSummary",
+    "parameter": "createTime",
+    "description": "流水统计的起止时间，两个值，格式 yyyy-MM-dd HH:mm:ss",
+    "source": "yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/controller/app/wallet/AppPayWalletTransactionController.java"
+  },
+  {
+    "operation": "GET /app-api/trade/brokerage-record/get-product-brokerage-price",
+    "handler": "cn.iocoder.yudao.module.trade.controller.app.brokerage.AppBrokerageRecordController#getProductBrokeragePrice",
+    "parameter": "spuId",
+    "description": "已有商品 SPU 编号",
+    "source": "yudao-module-mall/yudao-module-trade/src/main/java/cn/iocoder/yudao/module/trade/controller/app/brokerage/AppBrokerageRecordController.java"
+  }
+]

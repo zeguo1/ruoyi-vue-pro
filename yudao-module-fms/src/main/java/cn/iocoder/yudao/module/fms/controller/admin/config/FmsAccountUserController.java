@@ -69,7 +69,7 @@ public class FmsAccountUserController {
     @PutMapping("/update-default-status")
     @Operation(summary = "更新默认账套状态")
     @PreAuthorize("@ss.hasPermission('fms:config:account-set:query')")
-    public CommonResult<Boolean> updateAccountSetDefaultStatus(@RequestParam("accountSetId") Long accountSetId) {
+    public CommonResult<Boolean> updateAccountSetDefaultStatus(@io.swagger.v3.oas.annotations.Parameter(description = "账套编号；使用当前用户有权访问的已有账套") @RequestParam("accountSetId") Long accountSetId) {
         accountUserService.updateAccountSetDefaultStatus(accountSetId, getLoginUserId());
         return success(true);
     }

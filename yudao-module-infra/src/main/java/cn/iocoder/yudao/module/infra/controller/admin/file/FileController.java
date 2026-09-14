@@ -43,11 +43,11 @@ public class FileController {
     @Resource
     private FileService fileService;
 
-    @PostMapping("/upload")
+    @PostMapping(value = "/upload", consumes = "multipart/form-data")
     @Operation(summary = "上传文件", description = "模式一：后端上传文件")
-    @Parameter(name = "file", description = "文件附件", required = true,
-            schema = @Schema(type = "string", format = "binary"))
-    public CommonResult<String> uploadFile(@Valid FileUploadReqVO uploadReqVO) throws Exception {
+    @io.swagger.v3.oas.annotations.parameters.RequestBody(required = true, content = @io.swagger.v3.oas.annotations.media.Content(
+            mediaType = "multipart/form-data", schema = @io.swagger.v3.oas.annotations.media.Schema(implementation = FileUploadReqVO.class)))
+    public CommonResult<String> uploadFile(@io.swagger.v3.oas.annotations.Parameter(hidden = true) @Valid @org.springframework.web.bind.annotation.ModelAttribute FileUploadReqVO uploadReqVO) throws Exception {
         MultipartFile file = uploadReqVO.getFile();
         byte[] content = IoUtil.readBytes(file.getInputStream());
         return success(fileService.createFile(content, file.getOriginalFilename(),
@@ -103,6 +103,9 @@ public class FileController {
     @TenantIgnore
     @Operation(summary = "下载文件")
     @Parameter(name = "configId", description = "配置编号", required = true)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/octet-stream",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void getFileContent(HttpServletRequest request,
                                HttpServletResponse response,
                                @PathVariable("configId") Long configId) throws Exception {

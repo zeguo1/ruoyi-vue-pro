@@ -126,6 +126,9 @@ public class PayOrderController {
     @Operation(summary = "导出支付订单 Excel")
     @PreAuthorize("@ss.hasPermission('pay:order:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportOrderExcel(@Valid PayOrderExportReqVO exportReqVO,
             HttpServletResponse response) throws IOException {
         List<PayOrderDO> list = orderService.getOrderList(exportReqVO);

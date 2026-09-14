@@ -77,7 +77,7 @@ public class FmsFinanceIndicatorController {
     @GetMapping("/list")
     @Operation(summary = "获得首页财务指标列表")
     @PreAuthorize("@ss.hasPermission('fms:config:finance-indicator:query')")
-    public CommonResult<List<FmsFinanceIndicatorRespVO>> getList(@RequestParam("accountSetId") @NotNull Long accountSetId) {
+    public CommonResult<List<FmsFinanceIndicatorRespVO>> getList(@io.swagger.v3.oas.annotations.Parameter(description = "账套编号；使用当前用户有权访问的已有账套") @RequestParam("accountSetId") @NotNull Long accountSetId) {
         List<FmsFinanceIndicatorDO> list = financeIndicatorService.getFinanceIndicatorList(accountSetId,
                 getLoginUserId());
         return success(BeanUtils.toBean(list, FmsFinanceIndicatorRespVO.class));

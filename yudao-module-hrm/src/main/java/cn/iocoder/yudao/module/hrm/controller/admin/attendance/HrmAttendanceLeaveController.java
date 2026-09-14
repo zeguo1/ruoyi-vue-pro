@@ -74,6 +74,9 @@ public class HrmAttendanceLeaveController {
     @Operation(summary = "导出请假")
     @PreAuthorize("@ss.hasPermission('hrm:attendance:leave:export')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportAttendanceLeave(@Validated HrmAttendanceLeavePageReqVO exportReqVO,
                                       HttpServletResponse response) throws IOException {
         exportReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);

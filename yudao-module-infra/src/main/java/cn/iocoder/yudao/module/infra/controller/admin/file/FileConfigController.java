@@ -48,7 +48,7 @@ public class FileConfigController {
     @PutMapping("/update-master")
     @Operation(summary = "更新文件配置为 Master")
     @PreAuthorize("@ss.hasPermission('infra:file-config:update')")
-    public CommonResult<Boolean> updateFileConfigMaster(@RequestParam("id") Long id) {
+    public CommonResult<Boolean> updateFileConfigMaster(@io.swagger.v3.oas.annotations.Parameter(description = "已有文件存储配置编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id) {
         fileConfigService.updateFileConfigMaster(id);
         return success(true);
     }
@@ -91,7 +91,7 @@ public class FileConfigController {
     @GetMapping("/test")
     @Operation(summary = "测试文件配置是否正确")
     @PreAuthorize("@ss.hasPermission('infra:file-config:query')")
-    public CommonResult<String> testFileConfig(@RequestParam("id") Long id) throws Exception {
+    public CommonResult<String> testFileConfig(@io.swagger.v3.oas.annotations.Parameter(description = "已有文件存储配置编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id) throws Exception {
         String url = fileConfigService.testFileConfig(id);
         return success(url);
     }

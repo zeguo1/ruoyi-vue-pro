@@ -235,6 +235,9 @@ public class CrmCustomerController {
     @Operation(summary = "导出客户 Excel")
     @PreAuthorize("@ss.hasPermission('crm:customer:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportCustomerExcel(@Valid CrmCustomerPageReqVO pageVO,
                                     HttpServletResponse response) throws IOException {
         pageVO.setPageSize(PAGE_SIZE_NONE); // 不分页
@@ -246,6 +249,9 @@ public class CrmCustomerController {
 
     @GetMapping("/get-import-template")
     @Operation(summary = "获得导入客户模板")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void importTemplate(HttpServletResponse response) throws IOException {
         // 手动创建导出 demo
         List<CrmCustomerImportExcelVO> list = Arrays.asList(

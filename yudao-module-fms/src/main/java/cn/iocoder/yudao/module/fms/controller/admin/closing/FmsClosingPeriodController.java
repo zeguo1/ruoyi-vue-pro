@@ -33,7 +33,7 @@ public class FmsClosingPeriodController {
 
     @GetMapping("/current-month")
     @Operation(summary = "获得当前会计期间")
-    public CommonResult<String> getCurrentMonth(@RequestParam("accountSetId") @NotNull Long accountSetId) {
+    public CommonResult<String> getCurrentMonth(@io.swagger.v3.oas.annotations.Parameter(description = "账套编号；使用当前用户有权访问的已有账套") @RequestParam("accountSetId") @NotNull Long accountSetId) {
         return success(closingPeriodService.getCurrentMonth(accountSetId, getLoginUserId()));
     }
 

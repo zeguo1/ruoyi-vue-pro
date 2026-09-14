@@ -83,16 +83,16 @@ public class OAuth2OpenController {
      */
     @PostMapping("/token")
     @PermitAll
-    @Operation(summary = "获得访问令牌", description = "适合 code 授权码模式，或者 implicit 简化模式；在 sso.vue 单点登录界面被【获取】调用")
+    @Operation(summary = "获得访问令牌", description = "支持 authorization_code、password、refresh_token、client_credentials；不支持 implicit。推荐 application/x-www-form-urlencoded 表单；客户端凭据通过 HTTP Basic 或 client_id/client_secret 参数传递。响应为本项目 CommonResult 包装，令牌位于 data，不是顶层 access_token。")
     @Parameters({
-            @Parameter(name = "grant_type", required = true, description = "授权类型", example = "code"),
-            @Parameter(name = "code", description = "授权范围", example = "userinfo.read"),
+            @Parameter(name = "grant_type", required = true, description = "授权类型", schema = @io.swagger.v3.oas.annotations.media.Schema(allowableValues = {"authorization_code", "password", "refresh_token", "client_credentials"})),
+            @Parameter(name = "code", description = "authorization_code 模式必填：从授权跳转获取的一次性授权码，不是 scope"),
             @Parameter(name = "redirect_uri", description = "重定向 URI", example = "https://www.iocoder.cn"),
             @Parameter(name = "state", description = "状态", example = "1"),
-            @Parameter(name = "username", example = "tudou"),
-            @Parameter(name = "password", example = "cai"), // 多个使用空格分隔
-            @Parameter(name = "scope", example = "user_info"),
-            @Parameter(name = "refresh_token", example = "123424233"),
+            @Parameter(name = "username", description = "password 模式必填：业务账号用户名"),
+            @Parameter(name = "password", description = "password 模式必填：业务账号密码，不记录到接入示例"), // 多个使用空格分隔
+            @Parameter(name = "scope", description = "授权范围，多个范围以空格分隔，必须来自客户端配置"),
+            @Parameter(name = "refresh_token", description = "refresh_token 模式必填：先前返回的刷新令牌"),
     })
     @SuppressWarnings("EnhancedSwitchMigration")
     public CommonResult<OAuth2OpenAccessTokenRespVO> postAccessToken(HttpServletRequest request,
@@ -180,7 +180,7 @@ public class OAuth2OpenController {
      * 对应 Spring Security OAuth 的 AuthorizationEndpoint 类的 authorize 方法
      */
     @GetMapping("/authorize")
-    @Operation(summary = "获得授权信息", description = "适合 code 授权码模式，或者 implicit 简化模式；在 sso.vue 单点登录界面被【获取】调用")
+    @Operation(summary = "获得授权信息", description = "查询客户端名称、图标、授权范围及已有授权；clientId 为 query 参数，不发放访问令牌")
     @Parameter(name = "clientId", required = true, description = "客户端编号", example = "tudou")
     public CommonResult<OAuth2OpenAuthorizeInfoRespVO> authorize(@RequestParam("clientId") String clientId) {
         // 0. 校验用户已经登录。通过 Spring Security 实现
@@ -204,7 +204,7 @@ public class OAuth2OpenController {
      * 因为前后端分离，Axios 无法很好的处理 302 重定向，所以和 Spring Security OAuth 略有不同，返回结果是重定向的 URL，剩余交给前端处理
      */
     @PostMapping("/authorize")
-    @Operation(summary = "申请授权", description = "适合 code 授权码模式，或者 implicit 简化模式；在 sso.vue 单点登录界面被【提交】调用")
+    @Operation(summary = "申请授权", description = "处理 code 或 token 授权申请。code=0 仅表示请求处理完成；data 可能为空或包含 access_denied 的跳转 URL，不能据此认定已获得用户授权。")
     @Parameters({
             @Parameter(name = "response_type", required = true, description = "响应类型", example = "code"),
             @Parameter(name = "client_id", required = true, description = "客户端编号", example = "tudou"),
@@ -218,7 +218,7 @@ public class OAuth2OpenController {
                                               @RequestParam(value = "scope", required = false) String scope,
                                               @RequestParam("redirect_uri") String redirectUri,
                                               @RequestParam(value = "auto_approve") Boolean autoApprove,
-                                              @RequestParam(value = "state", required = false) String state) {
+                                              @io.swagger.v3.oas.annotations.Parameter(description = "调用方生成的 OAuth 状态值，授权跳转时原样回传，用于校验请求关联") @RequestParam(value = "state", required = false) String state) {
         @SuppressWarnings("unchecked")
         Map<String, Boolean> scopes = JsonUtils.parseObject(scope, Map.class);
         scopes = ObjectUtil.defaultIfNull(scopes, Collections.emptyMap());

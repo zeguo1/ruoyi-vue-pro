@@ -55,7 +55,7 @@ public class MpTagController {
     @GetMapping("/get")
     @Operation(summary = "获取公众号标签详情")
     @PreAuthorize("@ss.hasPermission('mp:tag:query')")
-    public CommonResult<MpTagRespVO> get(@RequestParam("id") Long id) {
+    public CommonResult<MpTagRespVO> get(@io.swagger.v3.oas.annotations.Parameter(description = "已有公众号标签编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id) {
         MpTagDO mpTagDO = mpTagService.get(id);
         return success(MpTagConvert.INSTANCE.convert(mpTagDO));
     }

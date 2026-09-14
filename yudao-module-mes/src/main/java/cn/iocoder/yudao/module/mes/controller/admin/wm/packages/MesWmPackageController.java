@@ -105,8 +105,8 @@ public class MesWmPackageController {
     @PutMapping("/add-child-package")
     @Operation(summary = "添加子箱")
     @PreAuthorize("@ss.hasPermission('mes:wm-package:update')")
-    public CommonResult<Boolean> addChildPackage(@RequestParam("parentId") Long parentId,
-            @RequestParam("childId") Long childId) {
+    public CommonResult<Boolean> addChildPackage(@io.swagger.v3.oas.annotations.Parameter(description = "父包装箱编号，来自已有包装箱") @RequestParam("parentId") Long parentId,
+            @io.swagger.v3.oas.annotations.Parameter(description = "要添加的子包装箱编号，来自已有包装箱") @RequestParam("childId") Long childId) {
         packageService.addChildPackage(parentId, childId);
         return success(true);
     }

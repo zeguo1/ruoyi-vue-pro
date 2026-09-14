@@ -23,8 +23,11 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 class FullOpenApiExportTest {
     @Configuration(proxyBeanMethods = false)
     @EnableAutoConfiguration
+    @Import(cn.iocoder.yudao.framework.jackson.config.YudaoJacksonAutoConfiguration.class)
     static class Documentation implements WebMvcConfigurer {
         @Bean org.springdoc.core.providers.JavadocProvider javadocProvider() { return new cn.iocoder.yudao.framework.swagger.config.ContractJavadocProvider(); }
+        @Bean io.swagger.v3.oas.models.OpenAPI apiInfo() { return new io.swagger.v3.oas.models.OpenAPI().info(new io.swagger.v3.oas.models.info.Info().title("MGS integration candidate (not deployed)").version("1.0.0-full-contract-v6")); }
+        @Bean org.springdoc.core.models.GroupedOpenApi all() { return cn.iocoder.yudao.framework.swagger.config.YudaoSwaggerAutoConfiguration.buildGroupedOpenApi("all", ""); }
         @Bean ContractSchemaCustomizer contractSchemaCustomizer() { return new ContractSchemaCustomizer(); }
         @Override public void configurePathMatch(PathMatchConfigurer configurer) {
             configurer.addPathPrefix("/admin-api", c -> c.getPackageName().contains(".controller.admin."));
@@ -45,7 +48,7 @@ class FullOpenApiExportTest {
             context.setServletContext(new MockServletContext());
             TestPropertySourceUtils.addInlinedPropertiesToEnvironment(context,
                     "spring.autoconfigure.exclude=" + String.join(",", excluded),
-                    "springdoc.api-docs.version=OPENAPI_3_1", "springdoc.use-fqn=true", "springdoc.api-docs.enabled=true");
+                    "spring.jackson.serialization.write-dates-as-timestamps=true", "spring.jackson.serialization.write-date-timestamps-as-nanoseconds=false", "springdoc.api-docs.version=OPENAPI_3_1", "springdoc.use-fqn=true", "springdoc.api-docs.enabled=true", "springdoc.default-flat-param-object=true");
             context.register(Documentation.class);
             // Register instances directly to bypass dependency injection and all business initialization.
             var scanner = new ClassPathScanningCandidateComponentProvider(false);
@@ -62,6 +65,9 @@ class FullOpenApiExportTest {
             context.refresh();
             String json = MockMvcBuilders.webAppContextSetup(context).build().perform(get("/v3/api-docs"))
                     .andReturn().getResponse().getContentAsString(java.nio.charset.StandardCharsets.UTF_8);
+            var mvc = MockMvcBuilders.webAppContextSetup(context).build();
+            String allJson = mvc.perform(get("/v3/api-docs/all")).andReturn().getResponse().getContentAsString(java.nio.charset.StandardCharsets.UTF_8);
+            Files.writeString(Path.of("target/openapi-integration-all.json"), allJson);
             var tree = io.swagger.v3.core.util.Json.mapper().readTree(json);
             assertTrue(tree.path("paths").size() > 2000, "All controller paths must be exported: " + tree.path("paths").size());
             Files.writeString(Path.of("target/full-openapi-isolated.json"), json);
@@ -88,6 +94,27 @@ class FullOpenApiExportTest {
                 assertFalse(schema.isMissingNode(), schemaName);
                 schema.path("required").forEach(required -> assertNotEquals("id", required.asText(), schemaName));
             }
+            var handlerInventory = new TreeMap<String, Object>();
+            for (var controller : controllers.values()) {
+                for (var method : controller.getClass().getDeclaredMethods()) {
+                    var arguments = new ArrayList<Map<String, Object>>();
+                    for (var argument : method.getParameters()) {
+                        var requestParam = argument.getAnnotation(org.springframework.web.bind.annotation.RequestParam.class);
+                        var pathVariable = argument.getAnnotation(org.springframework.web.bind.annotation.PathVariable.class);
+                        var requestBody = argument.getAnnotation(org.springframework.web.bind.annotation.RequestBody.class);
+                        if (requestParam == null && pathVariable == null && requestBody == null) continue;
+                        String name = argument.getName();
+                        if (requestParam != null) name = !requestParam.name().isBlank() ? requestParam.name() : !requestParam.value().isBlank() ? requestParam.value() : name;
+                        if (pathVariable != null) name = !pathVariable.name().isBlank() ? pathVariable.name() : !pathVariable.value().isBlank() ? pathVariable.value() : name;
+                        String in = requestBody != null ? "requestBody" : pathVariable != null ? "path" : "query";
+                        boolean required = requestBody != null ? requestBody.required() : pathVariable != null || requestParam.required()
+                                && org.springframework.web.bind.annotation.ValueConstants.DEFAULT_NONE.equals(requestParam.defaultValue());
+                        arguments.add(Map.of("name", name, "in", in, "javaType", argument.getParameterizedType().getTypeName(), "required", required));
+                    }
+                    handlerInventory.put(method.toGenericString(), arguments);
+                }
+            }
+            Files.writeString(Path.of("target/openapi-handler-inventory.json"), io.swagger.v3.core.util.Json.mapper().writeValueAsString(handlerInventory));
             System.out.println("Isolated OpenAPI: " + controllers.size() + " controllers; " + tree.path("paths").size() + " paths");
         }
     }

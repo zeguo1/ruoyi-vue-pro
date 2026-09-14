@@ -103,6 +103,9 @@ public class MesDvRepairLineController {
     @Operation(summary = "导出维修工单行 Excel")
     @PreAuthorize("@ss.hasPermission('mes:dv-repair:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportRepairLineExcel(@Valid MesDvRepairLinePageReqVO pageReqVO,
                                        HttpServletResponse response) throws IOException {
         pageReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);

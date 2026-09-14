@@ -131,6 +131,9 @@ public class HrmSalaryMonthRecordController {
     @Parameter(name = "monthRecordId", description = "月度工资表编号", example = "1024")
     @PreAuthorize("@ss.hasPermission('hrm:salary:month-record:compute')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void getAttendanceImportTemplate(
             @RequestParam(value = "monthRecordId", required = false) Long monthRecordId,
             HttpServletResponse response) throws IOException {
@@ -173,6 +176,9 @@ public class HrmSalaryMonthRecordController {
     @Parameter(name = "monthRecordId", description = "月度工资表编号", example = "1024")
     @PreAuthorize("@ss.hasPermission('hrm:salary:month-record:compute')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void getCumulativeTaxImportTemplate(
             @RequestParam(value = "monthRecordId", required = false) Long monthRecordId,
             HttpServletResponse response) throws IOException {
@@ -189,6 +195,9 @@ public class HrmSalaryMonthRecordController {
     @Parameter(name = "monthRecordId", description = "月度工资表编号", example = "1024")
     @PreAuthorize("@ss.hasPermission('hrm:salary:month-record:compute')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void getAdditionalDeductionImportTemplate(
             @RequestParam(value = "monthRecordId", required = false) Long monthRecordId,
             HttpServletResponse response) throws IOException {

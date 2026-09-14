@@ -171,7 +171,7 @@ public class HrmPortalPerformanceAssessmentController {
     @PreAuthorize("@ss.hasPermission('hrm:portal:query')")
     public CommonResult<HrmPerformanceAssessmentRespVO> getPerformanceAssessment(
             @RequestParam("id") Long id,
-            @RequestParam(value = "stageId", required = false) Long stageId) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "绩效考核阶段编号；省略时使用考核流程视图") @RequestParam(value = "stageId", required = false) Long stageId) {
         Long loginUserId = getLoginUserId();
         HrmPerformanceAssessmentDO assessment = validateReadablePerformanceAssessment(loginUserId, id, stageId);
         // 拼接 VO
@@ -189,7 +189,7 @@ public class HrmPortalPerformanceAssessmentController {
     @PreAuthorize("@ss.hasPermission('hrm:portal:query')")
     public CommonResult<List<HrmPerformanceProcessRecordRespVO>> getPerformanceAssessmentProcessRecordList(
             @RequestParam("id") Long id,
-            @RequestParam(value = "stageId", required = false) Long stageId) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "绩效考核阶段编号；省略时使用考核流程视图") @RequestParam(value = "stageId", required = false) Long stageId) {
         Long loginUserId = getLoginUserId();
         HrmPerformanceAssessmentDO assessment = validateReadablePerformanceAssessment(loginUserId, id, stageId);
         return success(performanceAssessmentQueryService.getPerformanceAssessmentProcessRecordList(assessment, loginUserId));

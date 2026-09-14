@@ -78,8 +78,8 @@ public class MesCalTeamMemberController {
     @Operation(summary = "获得班组成员列表", description = "支持单个 teamId 或多个 teamIds")
     @PreAuthorize("@ss.hasPermission('mes:cal-team:query')")
     public CommonResult<List<MesCalTeamMemberRespVO>> getTeamMemberListByTeam(
-            @RequestParam(value = "teamId", required = false) Long teamId,
-            @RequestParam(value = "teamIds", required = false) Collection<Long> teamIds) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "班组编号；未传 teamIds 时使用") @RequestParam(value = "teamId", required = false) Long teamId,
+            @io.swagger.v3.oas.annotations.Parameter(description = "班组编号列表；非空时优先于 teamId，两个参数都省略返回空列表") @RequestParam(value = "teamIds", required = false) Collection<Long> teamIds) {
         List<MesCalTeamMemberDO> list;
         if (CollUtil.isNotEmpty(teamIds)) {
             list = teamMemberService.getTeamMemberListByTeamIds(teamIds);

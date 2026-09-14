@@ -125,6 +125,9 @@ public class CrmReceivableController {
     @Operation(summary = "导出回款 Excel")
     @PreAuthorize("@ss.hasPermission('crm:receivable:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportReceivableExcel(@Valid CrmReceivablePageReqVO exportReqVO,
                                       HttpServletResponse response) throws IOException {
         exportReqVO.setPageSize(PAGE_SIZE_NONE);
@@ -168,7 +171,7 @@ public class CrmReceivableController {
     @PutMapping("/submit")
     @Operation(summary = "提交回款审批")
     @PreAuthorize("@ss.hasPermission('crm:receivable:update')")
-    public CommonResult<Boolean> submitContract(@RequestParam("id") Long id) {
+    public CommonResult<Boolean> submitContract(@io.swagger.v3.oas.annotations.Parameter(description = "已有CRM 回款编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id) {
         receivableService.submitReceivable(id, getLoginUserId());
         return success(true);
     }

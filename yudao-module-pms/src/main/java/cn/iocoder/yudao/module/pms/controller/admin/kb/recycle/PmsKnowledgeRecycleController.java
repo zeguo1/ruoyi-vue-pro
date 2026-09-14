@@ -83,7 +83,7 @@ public class PmsKnowledgeRecycleController {
     @PreAuthorize("@ss.hasPermission('pms:kb:library:delete')")
     public CommonResult<PmsKnowledgeRecyclePreviewRespVO> getContentRecyclePreview(
             @RequestParam("id") Long id,
-            @RequestParam(value = "entityId", required = false) Long entityId) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "预览的级联内容编号，可省略") @RequestParam(value = "entityId", required = false) Long entityId) {
         PmsKnowledgeDocumentDO document = recycleService.getContentRecyclePreview(id, entityId, getLoginUserId());
         return success(BeanUtils.toBean(document, PmsKnowledgeRecyclePreviewRespVO.class,
                 o -> o.setName(document.getTitle())));

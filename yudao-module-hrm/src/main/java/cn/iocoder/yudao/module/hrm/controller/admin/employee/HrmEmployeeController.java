@@ -279,6 +279,9 @@ public class HrmEmployeeController {
     @Operation(summary = "导出员工档案")
     @PreAuthorize("@ss.hasPermission('hrm:employee:export')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportEmployee(@Validated HrmEmployeePageReqVO exportReqVO,
                                HttpServletResponse response) throws IOException {
         exportReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);
@@ -291,6 +294,9 @@ public class HrmEmployeeController {
     @Operation(summary = "获得员工档案导入模板")
     @PreAuthorize("@ss.hasPermission('hrm:employee:import')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void importTemplate(HttpServletResponse response) throws IOException {
         List<HrmEmployeeImportExcelVO> list = Collections.singletonList(
                 HrmEmployeeImportExcelVO.builder()
@@ -320,7 +326,7 @@ public class HrmEmployeeController {
         ExcelUtils.write(response, "员工档案导入模板.xlsx", "员工列表", HrmEmployeeImportExcelVO.class, list);
     }
 
-    @PostMapping("/import")
+    @PostMapping(value = "/import", consumes = "multipart/form-data")
     @Operation(summary = "导入员工档案")
     @Parameters({
             @Parameter(name = "file", description = "Excel 文件", required = true),

@@ -89,7 +89,7 @@ public class MenuController {
     @GetMapping("/get")
     @Operation(summary = "获取菜单信息")
     @PreAuthorize("@ss.hasPermission('system:menu:query')")
-    public CommonResult<MenuRespVO> getMenu(@RequestParam("id") Long id) {
+    public CommonResult<MenuRespVO> getMenu(@io.swagger.v3.oas.annotations.Parameter(description = "已有菜单编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id) {
         MenuDO menu = menuService.getMenu(id);
         return success(BeanUtils.toBean(menu, MenuRespVO.class));
     }

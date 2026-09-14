@@ -77,8 +77,8 @@ public class FmsClosingSchemeController {
     @DeleteMapping("/delete")
     @Operation(summary = "删除结账方案")
     @PreAuthorize("@ss.hasPermission('fms:closing:update')")
-    public CommonResult<Boolean> deleteClosingScheme(@RequestParam("accountSetId") @NotNull Long accountSetId,
-                                                     @RequestParam("id") @NotNull Long id) {
+    public CommonResult<Boolean> deleteClosingScheme(@io.swagger.v3.oas.annotations.Parameter(description = "账套编号；使用当前用户有权访问的已有账套") @RequestParam("accountSetId") @NotNull Long accountSetId,
+                                                     @io.swagger.v3.oas.annotations.Parameter(description = "已有结账方案编号；从对应查询接口获取，不要编造") @RequestParam("id") @NotNull Long id) {
         closingSchemeService.deleteClosingScheme(accountSetId, id, getLoginUserId());
         return success(true);
     }

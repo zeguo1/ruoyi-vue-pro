@@ -98,6 +98,9 @@ public class MesWmReturnIssueController {
     @Operation(summary = "导出生产退料单 Excel")
     @PreAuthorize("@ss.hasPermission('mes:wm-return-issue:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportReturnIssueExcel(@Valid MesWmReturnIssuePageReqVO pageReqVO,
                                        HttpServletResponse response) throws IOException {
         pageReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);

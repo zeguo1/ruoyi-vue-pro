@@ -60,7 +60,7 @@ public class IotOtaFirmwareController {
     @GetMapping("/get")
     @Operation(summary = "获得 OTA 固件")
     @PreAuthorize("@ss.hasPermission('iot:ota-firmware:query')")
-    public CommonResult<IotOtaFirmwareRespVO> getOtaFirmware(@RequestParam("id") Long id) {
+    public CommonResult<IotOtaFirmwareRespVO> getOtaFirmware(@io.swagger.v3.oas.annotations.Parameter(description = "已有OTA 固件编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id) {
         IotOtaFirmwareDO firmware = otaFirmwareService.getOtaFirmware(id);
         if (firmware == null) {
             return success(null);

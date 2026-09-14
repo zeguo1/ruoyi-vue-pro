@@ -86,6 +86,9 @@ public class DeliveryExpressController {
     @Operation(summary = "导出快递公司 Excel")
     @PreAuthorize("@ss.hasPermission('trade:delivery:express:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportDeliveryExpressExcel(@Valid DeliveryExpressExportReqVO exportReqVO,
               HttpServletResponse response) throws IOException {
         List<DeliveryExpressDO> list = deliveryExpressService.getDeliveryExpressList(exportReqVO);

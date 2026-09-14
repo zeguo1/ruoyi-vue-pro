@@ -75,7 +75,7 @@ public class RoleController {
     @GetMapping("/get")
     @Operation(summary = "获得角色信息")
     @PreAuthorize("@ss.hasPermission('system:role:query')")
-    public CommonResult<RoleRespVO> getRole(@RequestParam("id") Long id) {
+    public CommonResult<RoleRespVO> getRole(@io.swagger.v3.oas.annotations.Parameter(description = "已有角色编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id) {
         RoleDO role = roleService.getRole(id);
         return success(BeanUtils.toBean(role, RoleRespVO.class));
     }
@@ -100,6 +100,9 @@ public class RoleController {
     @Operation(summary = "导出角色 Excel")
     @ApiAccessLog(operateType = EXPORT)
     @PreAuthorize("@ss.hasPermission('system:role:export')")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void export(HttpServletResponse response, @Validated RolePageReqVO exportReqVO) throws IOException {
         exportReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);
         List<RoleDO> list = roleService.getRolePage(exportReqVO).getList();

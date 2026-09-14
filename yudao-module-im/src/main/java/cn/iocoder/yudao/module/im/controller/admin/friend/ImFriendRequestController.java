@@ -71,8 +71,8 @@ public class ImFriendRequestController {
     @PutMapping("/refuse")
     @Operation(summary = "拒绝好友申请")
     public CommonResult<Boolean> refuseFriendRequest(
-            @RequestParam("id") @NotNull(message = "申请编号不能为空") Long id,
-            @RequestParam(value = "handleContent", required = false)
+            @io.swagger.v3.oas.annotations.Parameter(description = "已有好友申请编号；从对应查询接口获取，不要编造") @RequestParam("id") @NotNull(message = "申请编号不能为空") Long id,
+            @io.swagger.v3.oas.annotations.Parameter(description = "拒绝申请的处理理由，可省略，最多 255 个字符") @RequestParam(value = "handleContent", required = false)
             @Size(max = 255, message = "处理理由最多 255 个字符") String handleContent) {
         friendRequestService.refuseFriendRequest(getLoginUserId(), id, handleContent);
         return success(true);

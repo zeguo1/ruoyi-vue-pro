@@ -147,6 +147,9 @@ public class FmsAuxiliaryItemController {
     @Operation(summary = "导出辅助核算项目")
     @PreAuthorize("@ss.hasPermission('fms:config:auxiliary:export')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportAuxiliaryItemExcel(
             @Valid FmsAuxiliaryItemPageReqVO pageReqVO, HttpServletResponse response) throws IOException {
         pageReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);
@@ -164,6 +167,9 @@ public class FmsAuxiliaryItemController {
     @Parameter(name = "type", description = "辅助核算类别类型", required = true, example = "1")
     @PreAuthorize("@ss.hasPermission('fms:config:auxiliary:import')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void getAuxiliaryItemImportTemplate(
             @RequestParam("type") @InEnum(FmsAuxiliaryTypeEnum.class) Integer type,
             HttpServletResponse response) throws IOException {
@@ -176,7 +182,7 @@ public class FmsAuxiliaryItemController {
                 FmsAuxiliaryItemImportExcelVO.class, Collections.singletonList(example));
     }
 
-    @PostMapping("/import")
+    @PostMapping(value = "/import", consumes = "multipart/form-data")
     @Operation(summary = "导入辅助核算项目")
     @Parameters({
             @Parameter(name = "accountSetId", description = "账套编号", required = true),

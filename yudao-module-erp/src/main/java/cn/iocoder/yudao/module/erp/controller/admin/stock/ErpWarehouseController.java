@@ -61,7 +61,7 @@ public class ErpWarehouseController {
             @Parameter(name = "status", description = "状态", required = true)
     })
     public CommonResult<Boolean> updateWarehouseDefaultStatus(@RequestParam("id") Long id,
-                                                              @RequestParam("defaultStatus") Boolean defaultStatus) {
+                                                              @io.swagger.v3.oas.annotations.Parameter(description = "是否设为默认，true 为默认，false 为非默认") @RequestParam("defaultStatus") Boolean defaultStatus) {
         warehouseService.updateWarehouseDefaultStatus(id, defaultStatus);
         return success(true);
     }
@@ -104,6 +104,9 @@ public class ErpWarehouseController {
     @Operation(summary = "导出仓库 Excel")
     @PreAuthorize("@ss.hasPermission('erp:warehouse:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportWarehouseExcel(@Valid ErpWarehousePageReqVO pageReqVO,
               HttpServletResponse response) throws IOException {
         pageReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);

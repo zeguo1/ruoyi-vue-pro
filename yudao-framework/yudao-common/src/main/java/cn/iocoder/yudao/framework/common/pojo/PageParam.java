@@ -22,12 +22,12 @@ public class PageParam implements Serializable {
      */
     public static final Integer PAGE_SIZE_NONE = -1;
 
-    @Schema(description = "页码，从 1 开始", requiredMode = Schema.RequiredMode.REQUIRED,example = "1")
+    @Schema(description = "页码，从 1 开始，省略为 1", requiredMode = Schema.RequiredMode.NOT_REQUIRED, defaultValue = "1", example = "1")
     @NotNull(message = "页码不能为空")
     @Min(value = 1, message = "页码最小值为 1")
     private Integer pageNo = PAGE_NO;
 
-    @Schema(description = "每页条数，最大值为 200", requiredMode = Schema.RequiredMode.REQUIRED, example = "10")
+    @Schema(description = "每页条数，省略为 10，范围 1 到 200；-1 仅供后端导出逻辑内部使用", requiredMode = Schema.RequiredMode.NOT_REQUIRED, defaultValue = "10", example = "10")
     @NotNull(message = "每页条数不能为空")
     @Min(value = 1, message = "每页条数最小值为 1")
     @Max(value = 200, message = "每页条数最大值为 200")

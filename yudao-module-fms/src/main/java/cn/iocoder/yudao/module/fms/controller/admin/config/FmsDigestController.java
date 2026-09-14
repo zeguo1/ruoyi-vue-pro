@@ -62,7 +62,7 @@ public class FmsDigestController {
     @Operation(summary = "删除常用摘要")
     @Parameter(name = "id", description = "常用摘要编号", required = true, example = "1024")
     @PreAuthorize("@ss.hasPermission('fms:config:digest:delete')")
-    public CommonResult<Boolean> deleteDigest(@RequestParam("accountSetId") @NotNull Long accountSetId,
+    public CommonResult<Boolean> deleteDigest(@io.swagger.v3.oas.annotations.Parameter(description = "账套编号；使用当前用户有权访问的已有账套") @RequestParam("accountSetId") @NotNull Long accountSetId,
                                               @RequestParam("id") @NotNull Long id) {
         digestService.deleteDigest(accountSetId, id, getLoginUserId());
         return success(true);

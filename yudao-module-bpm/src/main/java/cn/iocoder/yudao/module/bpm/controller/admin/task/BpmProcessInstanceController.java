@@ -207,7 +207,7 @@ public class BpmProcessInstanceController {
     @Parameter(name = "id", description = "流程实例的编号", required = true)
     @PreAuthorize("@ss.hasPermission('bpm:process-instance:query')")
     public CommonResult<BpmProcessPrintDataRespVO> getProcessInstancePrintData(
-            @RequestParam("processInstanceId") String processInstanceId) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "已有流程实例编号") @RequestParam("processInstanceId") String processInstanceId) {
         HistoricProcessInstance historicProcessInstance = processInstanceService.getHistoricProcessInstance(processInstanceId);
         if (historicProcessInstance == null) {
             throw exception(PROCESS_INSTANCE_NOT_EXISTS);

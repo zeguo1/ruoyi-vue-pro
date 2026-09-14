@@ -72,6 +72,9 @@ public class FmsLedgerController {
     @Operation(summary = "导出明细账")
     @PreAuthorize("@ss.hasPermission('fms:ledger:detail:export')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportDetail(@Valid FmsLedgerListReqVO listReqVO, HttpServletResponse response) throws IOException {
         List<FmsLedgerDetailExportRespVO> rows = convertList(
                 ledgerService.getDetailList(listReqVO, getLoginUserId()), item ->
@@ -93,6 +96,9 @@ public class FmsLedgerController {
     @Operation(summary = "导出总账")
     @PreAuthorize("@ss.hasPermission('fms:ledger:general:export')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportGeneral(@Valid FmsLedgerListReqVO listReqVO, HttpServletResponse response) throws IOException {
         ExcelUtils.write(response, "总账.xls", "总账", FmsLedgerGeneralRespVO.class,
                 ledgerService.getGeneralList(listReqVO, getLoginUserId()));
@@ -111,6 +117,9 @@ public class FmsLedgerController {
     @Operation(summary = "导出科目余额表")
     @PreAuthorize("@ss.hasPermission('fms:ledger:subject-balance:export')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportSubjectBalance(@Valid FmsLedgerListReqVO listReqVO, HttpServletResponse response) throws IOException {
         ExcelUtils.write(response, "科目余额表.xls", "科目余额表", FmsLedgerSubjectBalanceRespVO.class,
                 flattenSubjectBalanceList(ledgerService.getSubjectBalanceList(listReqVO, getLoginUserId())));
@@ -129,6 +138,9 @@ public class FmsLedgerController {
     @Operation(summary = "导出多栏账")
     @PreAuthorize("@ss.hasPermission('fms:ledger:multi-column:export')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportMultiColumn(@Valid FmsLedgerListReqVO listReqVO, HttpServletResponse response) throws IOException {
         FmsLedgerMultiColumnRespVO result = ledgerService.getMultiColumn(listReqVO, getLoginUserId());
         ExcelUtils.write(response, "多栏账.xls", "多栏账",
@@ -149,6 +161,9 @@ public class FmsLedgerController {
     @Operation(summary = "导出核算项目明细账")
     @PreAuthorize("@ss.hasPermission('fms:ledger:detail:export')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportAuxiliaryDetail(@Valid FmsLedgerAuxiliaryListReqVO listReqVO, HttpServletResponse response) throws IOException {
         ExcelUtils.write(response, "核算项目明细账.xls", "核算项目明细账",
                 FmsLedgerAuxiliaryDetailRespVO.class,
@@ -168,6 +183,9 @@ public class FmsLedgerController {
     @Operation(summary = "导出核算项目余额表")
     @PreAuthorize("@ss.hasPermission('fms:ledger:subject-balance:export')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportAuxiliaryBalance(@Valid FmsLedgerAuxiliaryListReqVO listReqVO, HttpServletResponse response) throws IOException {
         ExcelUtils.write(response, "核算项目余额表.xls", "核算项目余额表",
                 FmsLedgerAuxiliaryBalanceRespVO.class,
@@ -187,6 +205,9 @@ public class FmsLedgerController {
     @Operation(summary = "导出数量金额明细账")
     @PreAuthorize("@ss.hasPermission('fms:ledger:detail:export')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportQuantityDetail(@Valid FmsLedgerListReqVO listReqVO, HttpServletResponse response) throws IOException {
         ExcelUtils.write(response, "数量金额明细账.xls", "数量金额明细账",
                 FmsLedgerQuantityDetailRespVO.class,
@@ -206,6 +227,9 @@ public class FmsLedgerController {
     @Operation(summary = "导出数量金额总账")
     @PreAuthorize("@ss.hasPermission('fms:ledger:general:export')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportQuantityGeneral(@Valid FmsLedgerListReqVO listReqVO, HttpServletResponse response) throws IOException {
         ExcelUtils.write(response, "数量金额总账.xls", "数量金额总账",
                 FmsLedgerQuantityGeneralRespVO.class,

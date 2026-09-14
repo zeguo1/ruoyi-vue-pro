@@ -83,6 +83,9 @@ public class FmsInitialBalanceController {
     @Parameter(name = "accountSetId", description = "账套编号", required = true, example = "1024")
     @PreAuthorize("@ss.hasPermission('fms:config:initial-balance:export')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportInitialBalance(
             @RequestParam("accountSetId") @NotNull Long accountSetId,
             HttpServletResponse response) throws IOException {
@@ -99,6 +102,9 @@ public class FmsInitialBalanceController {
     @Parameter(name = "accountSetId", description = "账套编号", required = true, example = "1024")
     @PreAuthorize("@ss.hasPermission('fms:config:initial-balance:import')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/octet-stream",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void getInitialBalanceImportTemplate(@RequestParam("accountSetId") @NotNull Long accountSetId,
                                                 HttpServletResponse response)
             throws IOException {
@@ -114,14 +120,14 @@ public class FmsInitialBalanceController {
         ServletUtils.writeAttachment(response, "财务初始余额导入模板.xlsx", content);
     }
 
-    @PostMapping("/import")
+    @PostMapping(value = "/import", consumes = "multipart/form-data")
     @Operation(summary = "导入初始余额")
     @Parameter(name = "accountSetId", description = "账套编号", required = true, example = "1024")
     @PreAuthorize("@ss.hasPermission('fms:config:initial-balance:import')")
     @ApiAccessLog(operateType = OperateTypeEnum.IMPORT)
     public CommonResult<Integer> importInitialBalance(
             @RequestParam("accountSetId") @NotNull Long accountSetId,
-            @RequestParam("file") MultipartFile file) throws IOException {
+            @io.swagger.v3.oas.annotations.Parameter(description = "导入 Excel 文件，使用对应导入模板填写") @RequestParam("file") MultipartFile file) throws IOException {
         // 1. 读取 Excel
         List<FmsInitialBalanceExcelVO> rows;
         try {

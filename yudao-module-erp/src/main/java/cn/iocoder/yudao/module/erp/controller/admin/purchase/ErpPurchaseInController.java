@@ -78,8 +78,8 @@ public class ErpPurchaseInController {
     @PutMapping("/update-status")
     @Operation(summary = "更新采购入库的状态")
     @PreAuthorize("@ss.hasPermission('erp:purchase-in:update-status')")
-    public CommonResult<Boolean> updatePurchaseInStatus(@RequestParam("id") Long id,
-                                                      @RequestParam("status") Integer status) {
+    public CommonResult<Boolean> updatePurchaseInStatus(@io.swagger.v3.oas.annotations.Parameter(description = "已有采购入库单编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id,
+                                                      @io.swagger.v3.oas.annotations.Parameter(description = "目标审核状态：10 未审核（反审核），20 已审核；具体操作仍受单据业务状态限制") @cn.iocoder.yudao.framework.common.validation.InEnum(value = cn.iocoder.yudao.module.erp.enums.ErpAuditStatus.class, message = "审核状态只能是 10（未审核）或 20（已审核）") @RequestParam("status") Integer status) {
         purchaseInService.updatePurchaseInStatus(id, status);
         return success(true);
     }
@@ -126,6 +126,9 @@ public class ErpPurchaseInController {
     @Operation(summary = "导出采购入库 Excel")
     @PreAuthorize("@ss.hasPermission('erp:purchase-in:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportPurchaseInExcel(@Valid ErpPurchaseInPageReqVO pageReqVO,
                                     HttpServletResponse response) throws IOException {
         pageReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);

@@ -194,6 +194,9 @@ public class PmsWorkItemController {
     @GetMapping("/export-excel")
     @Operation(summary = "导出工作项")
     @PreAuthorize("@ss.hasPermission('pms:pm:work-item:export')")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportWorkItemList(@Valid PmsWorkItemPageReqVO pageReqVO,
                                     HttpServletResponse response) throws IOException {
         pageReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);
@@ -205,6 +208,9 @@ public class PmsWorkItemController {
     @GetMapping("/get-import-template")
     @Operation(summary = "下载工作项导入模板")
     @PreAuthorize("@ss.hasPermission('pms:pm:work-item:import')")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void getWorkItemImportTemplate(HttpServletResponse response) throws IOException {
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime deadline = now.plusDays(3);
@@ -218,7 +224,7 @@ public class PmsWorkItemController {
                 Collections.singletonList(example));
     }
 
-    @PostMapping("/import")
+    @PostMapping(value = "/import", consumes = "multipart/form-data")
     @Operation(summary = "导入工作项")
     @Parameters({
             @Parameter(name = "projectId", description = "项目编号", required = true, example = "1024"),

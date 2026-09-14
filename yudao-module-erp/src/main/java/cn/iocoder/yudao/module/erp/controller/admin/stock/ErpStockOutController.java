@@ -78,8 +78,8 @@ public class ErpStockOutController {
     @PutMapping("/update-status")
     @Operation(summary = "更新其它出库单的状态")
     @PreAuthorize("@ss.hasPermission('erp:stock-out:update-status')")
-    public CommonResult<Boolean> updateStockOutStatus(@RequestParam("id") Long id,
-                                                     @RequestParam("status") Integer status) {
+    public CommonResult<Boolean> updateStockOutStatus(@io.swagger.v3.oas.annotations.Parameter(description = "已有其它出库单编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id,
+                                                     @io.swagger.v3.oas.annotations.Parameter(description = "目标审核状态：10 未审核（反审核），20 已审核；具体操作仍受单据业务状态限制") @cn.iocoder.yudao.framework.common.validation.InEnum(value = cn.iocoder.yudao.module.erp.enums.ErpAuditStatus.class, message = "审核状态只能是 10（未审核）或 20（已审核）") @RequestParam("status") Integer status) {
         stockOutService.updateStockOutStatus(id, status);
         return success(true);
     }
@@ -126,6 +126,9 @@ public class ErpStockOutController {
     @Operation(summary = "导出其它出库单 Excel")
     @PreAuthorize("@ss.hasPermission('erp:stock-out:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportStockOutExcel(@Valid ErpStockOutPageReqVO pageReqVO,
               HttpServletResponse response) throws IOException {
         pageReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);

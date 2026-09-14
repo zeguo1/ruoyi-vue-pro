@@ -31,11 +31,11 @@ public class AppFileController {
     @Resource
     private FileService fileService;
 
-    @PostMapping("/upload")
+    @PostMapping(value = "/upload", consumes = "multipart/form-data")
     @Operation(summary = "上传文件")
-    @Parameter(name = "file", description = "文件附件", required = true,
-            schema = @Schema(type = "string", format = "binary"))
-    public CommonResult<String> uploadFile(@Valid AppFileUploadReqVO uploadReqVO) throws Exception {
+    @io.swagger.v3.oas.annotations.parameters.RequestBody(required = true, content = @io.swagger.v3.oas.annotations.media.Content(
+            mediaType = "multipart/form-data", schema = @io.swagger.v3.oas.annotations.media.Schema(implementation = AppFileUploadReqVO.class)))
+    public CommonResult<String> uploadFile(@io.swagger.v3.oas.annotations.Parameter(hidden = true) @Valid @org.springframework.web.bind.annotation.ModelAttribute AppFileUploadReqVO uploadReqVO) throws Exception {
         MultipartFile file = uploadReqVO.getFile();
         byte[] content = IoUtil.readBytes(file.getInputStream());
         return success(fileService.createFile(content, file.getOriginalFilename(),

@@ -45,7 +45,7 @@ public class PayTransferController {
     @GetMapping("/get")
     @Operation(summary = "获得转账订单")
     @PreAuthorize("@ss.hasPermission('pay:transfer:query')")
-    public CommonResult<PayTransferRespVO> getTransfer(@RequestParam("id") Long id) {
+    public CommonResult<PayTransferRespVO> getTransfer(@io.swagger.v3.oas.annotations.Parameter(description = "已有转账订单编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id) {
         PayTransferDO transfer = payTransferService.getTransfer(id);
         if (transfer == null) {
             return success(new PayTransferRespVO());
@@ -79,6 +79,9 @@ public class PayTransferController {
     @Operation(summary = "导出转账订单 Excel")
     @PreAuthorize("@ss.hasPermission('pay:transfer:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportTransfer(PayTransferPageReqVO pageReqVO,
                                HttpServletResponse response) throws IOException {
         pageReqVO.setPageSize(PAGE_SIZE_NONE);

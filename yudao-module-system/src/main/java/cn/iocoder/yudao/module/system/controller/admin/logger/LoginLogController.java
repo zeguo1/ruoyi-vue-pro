@@ -40,7 +40,7 @@ public class LoginLogController {
     @GetMapping("/get")
     @Operation(summary = "获得登录日志")
     @PreAuthorize("@ss.hasPermission('system:login-log:query')")
-    public CommonResult<LoginLogRespVO> getLoginLog(@RequestParam("id") Long id) {
+    public CommonResult<LoginLogRespVO> getLoginLog(@io.swagger.v3.oas.annotations.Parameter(description = "已有登录日志编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id) {
         LoginLogDO loginLog = loginLogService.getLoginLog(id);
         return success(BeanUtils.toBean(loginLog, LoginLogRespVO.class));
     }
@@ -57,6 +57,9 @@ public class LoginLogController {
     @Operation(summary = "导出登录日志 Excel")
     @PreAuthorize("@ss.hasPermission('system:login-log:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportLoginLog(HttpServletResponse response, @Valid LoginLogPageReqVO exportReqVO) throws IOException {
         exportReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);
         List<LoginLogDO> list = loginLogService.getLoginLogPage(exportReqVO).getList();

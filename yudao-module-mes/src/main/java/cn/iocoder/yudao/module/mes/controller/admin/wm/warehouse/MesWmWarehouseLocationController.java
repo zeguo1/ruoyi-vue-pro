@@ -98,9 +98,9 @@ public class MesWmWarehouseLocationController {
     @Operation(summary = "批量设置库区下所有库位的混放规则")
     @PreAuthorize("@ss.hasPermission('mes:wm-warehouse:update')")
     public CommonResult<Boolean> updateAreaByLocationId(
-            @RequestParam("locationId") Long locationId,
-            @RequestParam(value = "allowItemMixing", required = false) Boolean allowItemMixing,
-            @RequestParam(value = "allowBatchMixing", required = false) Boolean allowBatchMixing) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "库区编号，将更新该库区下的库位") @RequestParam("locationId") Long locationId,
+            @io.swagger.v3.oas.annotations.Parameter(description = "是否允许混放不同物料；省略时不修改此项") @RequestParam(value = "allowItemMixing", required = false) Boolean allowItemMixing,
+            @io.swagger.v3.oas.annotations.Parameter(description = "是否允许混放不同批次；省略时不修改此项") @RequestParam(value = "allowBatchMixing", required = false) Boolean allowBatchMixing) {
         areaService.updateByLocationId(locationId, allowItemMixing, allowBatchMixing);
         return success(true);
     }

@@ -63,7 +63,7 @@ public class FmsVoucherWordController {
     @Parameter(name = "id", description = "凭证字编号", required = true, example = "1024")
     @PreAuthorize("@ss.hasPermission('fms:config:voucher-word:delete')")
     public CommonResult<Boolean> deleteVoucherWord(
-            @RequestParam("accountSetId") @NotNull Long accountSetId,
+            @io.swagger.v3.oas.annotations.Parameter(description = "账套编号；使用当前用户有权访问的已有账套") @RequestParam("accountSetId") @NotNull Long accountSetId,
             @RequestParam("id") @NotNull Long id) {
         voucherWordService.deleteVoucherWord(accountSetId, id, getLoginUserId());
         return success(true);

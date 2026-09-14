@@ -155,6 +155,9 @@ public class CrmContractController {
     @Operation(summary = "导出合同 Excel")
     @PreAuthorize("@ss.hasPermission('crm:contract:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportContractExcel(@Valid CrmContractPageReqVO exportReqVO,
                                     HttpServletResponse response) throws IOException {
         PageResult<CrmContractDO> pageResult = contractService.getContractPage(exportReqVO, getLoginUserId());
@@ -174,7 +177,7 @@ public class CrmContractController {
     @PutMapping("/submit")
     @Operation(summary = "提交合同审批")
     @PreAuthorize("@ss.hasPermission('crm:contract:update')")
-    public CommonResult<Boolean> submitContract(@RequestParam("id") Long id) {
+    public CommonResult<Boolean> submitContract(@io.swagger.v3.oas.annotations.Parameter(description = "已有CRM 合同编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id) {
         contractService.submitContract(id, getLoginUserId());
         return success(true);
     }

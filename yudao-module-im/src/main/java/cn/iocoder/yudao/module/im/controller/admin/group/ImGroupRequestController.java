@@ -77,8 +77,8 @@ public class ImGroupRequestController {
     @PutMapping("/refuse")
     @Operation(summary = "拒绝加群申请（群主或管理员）")
     public CommonResult<Boolean> refuseGroupRequest(
-            @RequestParam("id") @NotNull(message = "申请编号不能为空") Long id,
-            @RequestParam(value = "handleContent", required = false)
+            @io.swagger.v3.oas.annotations.Parameter(description = "已有加群申请编号；从对应查询接口获取，不要编造") @RequestParam("id") @NotNull(message = "申请编号不能为空") Long id,
+            @io.swagger.v3.oas.annotations.Parameter(description = "拒绝申请的处理理由，可省略，最多 255 个字符") @RequestParam(value = "handleContent", required = false)
             @Size(max = 255, message = "处理理由最多 255 个字符") String handleContent) {
         groupRequestService.refuseGroupRequest(getLoginUserId(), id, handleContent);
         return success(true);

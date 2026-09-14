@@ -46,7 +46,7 @@ public class WmsHomeStatisticsController {
     @PreAuthorize("@ss.hasPermission('wms:home:query')")
     public CommonResult<List<WmsHomeOrderTrendRespVO>> getOrderTrend(
             @RequestParam(value = "days", defaultValue = "7") @Min(1) @Max(90) Integer days,
-            @RequestParam(value = "warehouseId", required = false) Long warehouseId) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "仓库编号筛选，可省略") @RequestParam(value = "warehouseId", required = false) Long warehouseId) {
         return success(homeStatisticsService.getOrderTrend(days, warehouseId));
     }
 
@@ -56,8 +56,8 @@ public class WmsHomeStatisticsController {
     @PreAuthorize("@ss.hasPermission('wms:home:query')")
     public CommonResult<WmsHomeInventorySummaryRespVO> getInventorySummary(
             @RequestParam(value = "warehouseId", required = false) Long warehouseId,
-            @RequestParam(value = "goodsLimit", defaultValue = "5") @Min(1) @Max(20) Integer goodsLimit,
-            @RequestParam(value = "warehouseLimit", defaultValue = "8") @Min(1) @Max(20) Integer warehouseLimit) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "库存商品汇总展示条数，默认 5，范围 1 到 20") @RequestParam(value = "goodsLimit", defaultValue = "5") @Min(1) @Max(20) Integer goodsLimit,
+            @io.swagger.v3.oas.annotations.Parameter(description = "仓库汇总展示条数，默认 8，范围 1 到 20") @RequestParam(value = "warehouseLimit", defaultValue = "8") @Min(1) @Max(20) Integer warehouseLimit) {
         return success(homeStatisticsService.getInventorySummary(warehouseId, goodsLimit, warehouseLimit));
     }
 

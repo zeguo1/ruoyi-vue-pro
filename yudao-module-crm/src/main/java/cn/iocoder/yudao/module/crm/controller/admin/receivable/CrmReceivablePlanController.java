@@ -124,6 +124,9 @@ public class CrmReceivablePlanController {
     @Operation(summary = "导出回款计划 Excel")
     @PreAuthorize("@ss.hasPermission('crm:receivable-plan:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportReceivablePlanExcel(@Valid CrmReceivablePlanPageReqVO exportReqVO,
                                           HttpServletResponse response) throws IOException {
         exportReqVO.setPageSize(PAGE_SIZE_NONE);

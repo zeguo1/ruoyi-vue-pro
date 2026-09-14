@@ -46,7 +46,7 @@ public class AppBrokerageRecordController {
 
     @GetMapping("/get-product-brokerage-price")
     @Operation(summary = "获得商品的分销金额")
-    public CommonResult<AppBrokerageProductPriceRespVO> getProductBrokeragePrice(@RequestParam("spuId") Long spuId) {
+    public CommonResult<AppBrokerageProductPriceRespVO> getProductBrokeragePrice(@io.swagger.v3.oas.annotations.Parameter(description = "已有商品 SPU 编号") @RequestParam("spuId") Long spuId) {
         return success(brokerageRecordService.calculateProductBrokeragePrice(getLoginUserId(), spuId));
     }
 

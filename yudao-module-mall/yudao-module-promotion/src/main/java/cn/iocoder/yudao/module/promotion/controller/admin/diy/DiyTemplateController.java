@@ -51,7 +51,7 @@ public class DiyTemplateController {
     @PutMapping("/use")
     @Operation(summary = "使用装修模板")
     @PreAuthorize("@ss.hasPermission('promotion:diy-template:use')")
-    public CommonResult<Boolean> useDiyTemplate(@RequestParam("id") Long id) {
+    public CommonResult<Boolean> useDiyTemplate(@io.swagger.v3.oas.annotations.Parameter(description = "已有装修模板编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id) {
         diyTemplateService.useDiyTemplate(id);
         return success(true);
     }

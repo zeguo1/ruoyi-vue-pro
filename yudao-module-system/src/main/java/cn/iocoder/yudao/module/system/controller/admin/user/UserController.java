@@ -133,7 +133,7 @@ public class UserController {
     @GetMapping({"/list-all-simple", "/simple-list"})
     @Operation(summary = "获取用户精简信息列表", description = "只包含被开启的用户，主要用于前端的下拉选项")
     public CommonResult<List<UserSimpleRespVO>> getSimpleUserList(
-            @RequestParam(value = "deptId", required = false) Long deptId) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "按部门编号筛选；省略时查询所有启用用户") @RequestParam(value = "deptId", required = false) Long deptId) {
         List<AdminUserDO> list = userService.getUserListByStatus(
                 CommonStatusEnum.ENABLE.getStatus(), deptId);
 
@@ -161,6 +161,9 @@ public class UserController {
     @Operation(summary = "导出用户")
     @PreAuthorize("@ss.hasPermission('system:user:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportUserList(@Validated UserPageReqVO exportReqVO,
                                HttpServletResponse response) throws IOException {
         exportReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);
@@ -174,6 +177,9 @@ public class UserController {
 
     @GetMapping("/get-import-template")
     @Operation(summary = "获得导入用户模板")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void importTemplate(HttpServletResponse response) throws IOException {
         // 手动创建导出 demo
         List<UserImportExcelVO> list = Arrays.asList(
@@ -186,7 +192,7 @@ public class UserController {
         ExcelUtils.write(response, "用户导入模板.xls", "用户列表", UserImportExcelVO.class, list);
     }
 
-    @PostMapping("/import")
+    @PostMapping(value = "/import", consumes = "multipart/form-data")
     @Operation(summary = "导入用户")
     @Parameters({
             @Parameter(name = "file", description = "Excel 文件", required = true),

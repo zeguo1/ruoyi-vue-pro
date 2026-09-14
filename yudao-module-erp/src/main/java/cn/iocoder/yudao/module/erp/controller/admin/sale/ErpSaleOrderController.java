@@ -63,6 +63,9 @@ public class ErpSaleOrderController {
     @PostMapping("/create")
     @Operation(summary = "创建销售订单")
     @PreAuthorize("@ss.hasPermission('erp:sale-order:create')")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", useReturnTypeSchema = true,
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/json", examples =
+                    @io.swagger.v3.oas.annotations.media.ExampleObject(name = "emptyItems", summary = "空订单明细在业务处理前被拒绝", value = "{\"code\":400,\"msg\":\"请求参数不正确:items: 订单清单不能为空\",\"data\":null}")))
     public CommonResult<Long> createSaleOrder(@Valid @RequestBody ErpSaleOrderSaveReqVO createReqVO) {
         return success(saleOrderService.createSaleOrder(createReqVO));
     }
@@ -78,8 +81,8 @@ public class ErpSaleOrderController {
     @PutMapping("/update-status")
     @Operation(summary = "更新销售订单的状态")
     @PreAuthorize("@ss.hasPermission('erp:sale-order:update-status')")
-    public CommonResult<Boolean> updateSaleOrderStatus(@RequestParam("id") Long id,
-                                                      @RequestParam("status") Integer status) {
+    public CommonResult<Boolean> updateSaleOrderStatus(@io.swagger.v3.oas.annotations.Parameter(description = "已有销售订单编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id,
+                                                      @io.swagger.v3.oas.annotations.Parameter(description = "目标审核状态：10 未审核（反审核），20 已审核；具体操作仍受单据业务状态限制") @cn.iocoder.yudao.framework.common.validation.InEnum(value = cn.iocoder.yudao.module.erp.enums.ErpAuditStatus.class, message = "审核状态只能是 10（未审核）或 20（已审核）") @RequestParam("status") Integer status) {
         saleOrderService.updateSaleOrderStatus(id, status);
         return success(true);
     }
@@ -126,6 +129,9 @@ public class ErpSaleOrderController {
     @Operation(summary = "导出销售订单 Excel")
     @PreAuthorize("@ss.hasPermission('erp:sale-order:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportSaleOrderExcel(@Valid ErpSaleOrderPageReqVO pageReqVO,
                                     HttpServletResponse response) throws IOException {
         pageReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);

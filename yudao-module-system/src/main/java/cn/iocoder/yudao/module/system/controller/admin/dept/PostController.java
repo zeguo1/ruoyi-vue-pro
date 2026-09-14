@@ -59,7 +59,7 @@ public class PostController {
     @DeleteMapping("/delete")
     @Operation(summary = "删除岗位")
     @PreAuthorize("@ss.hasPermission('system:post:delete')")
-    public CommonResult<Boolean> deletePost(@RequestParam("id") Long id) {
+    public CommonResult<Boolean> deletePost(@io.swagger.v3.oas.annotations.Parameter(description = "已有岗位编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id) {
         postService.deletePost(id);
         return success(true);
     }
@@ -67,7 +67,7 @@ public class PostController {
     @DeleteMapping("delete-list")
     @Operation(summary = "批量删除岗位")
     @PreAuthorize("@ss.hasPermission('system:post:delete')")
-    public CommonResult<Boolean> deletePostList(@RequestParam("ids") List<Long> ids) {
+    public CommonResult<Boolean> deletePostList(@io.swagger.v3.oas.annotations.Parameter(description = "已有岗位编号列表；从对应查询接口获取，不要编造") @RequestParam("ids") List<Long> ids) {
         postService.deletePostList(ids);
         return success(true);
     }
@@ -103,6 +103,9 @@ public class PostController {
     @Operation(summary = "岗位管理")
     @PreAuthorize("@ss.hasPermission('system:post:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void export(HttpServletResponse response, @Validated PostPageReqVO reqVO) throws IOException {
         reqVO.setPageSize(PageParam.PAGE_SIZE_NONE);
         List<PostDO> list = postService.getPostPage(reqVO).getList();

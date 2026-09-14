@@ -114,7 +114,7 @@ public class PmsWorkItemStatusController {
     @Operation(summary = "获得工作项看板状态列表")
     @PreAuthorize("@ss.hasPermission('pms:pm:work-item:query')")
     public CommonResult<List<PmsWorkItemStatusRespVO>> getWorkItemStatusList(
-            @RequestParam("projectId") Long projectId, @RequestParam("type") Integer workItemType) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "已有项目编号，需有项目读取权限") @RequestParam("projectId") Long projectId, @io.swagger.v3.oas.annotations.Parameter(description = "工作项类型，来自项目配置，与看板/状态配置中的类型一致") @RequestParam("type") Integer workItemType) {
         List<PmsWorkItemStatusDO> statuses = workItemStatusService.getWorkItemStatusList(projectId, workItemType,
                 getLoginUserId());
         return success(BeanUtils.toBean(statuses, PmsWorkItemStatusRespVO.class));
@@ -124,7 +124,7 @@ public class PmsWorkItemStatusController {
     @Operation(summary = "获得工作项看板列和状态映射")
     @PreAuthorize("@ss.hasPermission('pms:pm:work-item:query')")
     public CommonResult<PmsWorkItemBoardConfigRespVO> getWorkItemBoardConfig(
-            @RequestParam("projectId") Long projectId, @RequestParam("type") Integer workItemType) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "已有项目编号，需有项目读取权限") @RequestParam("projectId") Long projectId, @io.swagger.v3.oas.annotations.Parameter(description = "工作项类型，来自项目配置，与看板/状态配置中的类型一致") @RequestParam("type") Integer workItemType) {
         // 1. 校验项目可读并查询已保存的看板列、状态
         List<PmsWorkItemStatusDO> statuses = workItemStatusService
                 .getWorkItemStatusList(projectId, workItemType, getLoginUserId());

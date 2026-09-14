@@ -1,0 +1,1143 @@
+[
+  {
+    "operation": "GET /admin-api/crm/business/export-excel",
+    "handler": "cn.iocoder.yudao.module.crm.controller.admin.business.CrmBusinessController#exportBusinessExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/business/CrmBusinessController.java"
+  },
+  {
+    "operation": "GET /admin-api/crm/clue/export-excel",
+    "handler": "cn.iocoder.yudao.module.crm.controller.admin.clue.CrmClueController#exportClueExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/clue/CrmClueController.java"
+  },
+  {
+    "operation": "GET /admin-api/crm/contact/export-excel",
+    "handler": "cn.iocoder.yudao.module.crm.controller.admin.contact.CrmContactController#exportContactExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/contact/CrmContactController.java"
+  },
+  {
+    "operation": "GET /admin-api/crm/contract/export-excel",
+    "handler": "cn.iocoder.yudao.module.crm.controller.admin.contract.CrmContractController#exportContractExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/contract/CrmContractController.java"
+  },
+  {
+    "operation": "GET /admin-api/crm/customer/export-excel",
+    "handler": "cn.iocoder.yudao.module.crm.controller.admin.customer.CrmCustomerController#exportCustomerExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/customer/CrmCustomerController.java"
+  },
+  {
+    "operation": "GET /admin-api/crm/customer/get-import-template",
+    "handler": "cn.iocoder.yudao.module.crm.controller.admin.customer.CrmCustomerController#importTemplate",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/customer/CrmCustomerController.java"
+  },
+  {
+    "operation": "GET /admin-api/crm/product/export-excel",
+    "handler": "cn.iocoder.yudao.module.crm.controller.admin.product.CrmProductController#exportProductExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/product/CrmProductController.java"
+  },
+  {
+    "operation": "GET /admin-api/crm/receivable-plan/export-excel",
+    "handler": "cn.iocoder.yudao.module.crm.controller.admin.receivable.CrmReceivablePlanController#exportReceivablePlanExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/receivable/CrmReceivablePlanController.java"
+  },
+  {
+    "operation": "GET /admin-api/crm/receivable/export-excel",
+    "handler": "cn.iocoder.yudao.module.crm.controller.admin.receivable.CrmReceivableController#exportReceivableExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/receivable/CrmReceivableController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/account/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.finance.ErpAccountController#exportAccountExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/finance/ErpAccountController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/customer/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.sale.ErpCustomerController#exportCustomerExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/sale/ErpCustomerController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/finance-payment/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.finance.ErpFinancePaymentController#exportFinancePaymentExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/finance/ErpFinancePaymentController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/finance-receipt/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.finance.ErpFinanceReceiptController#exportFinanceReceiptExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/finance/ErpFinanceReceiptController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/product-category/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.product.ErpProductCategoryController#exportProductCategoryExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/product/ErpProductCategoryController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/product-unit/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.product.ErpProductUnitController#exportProductUnitExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/product/ErpProductUnitController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/product/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.product.ErpProductController#exportProductExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/product/ErpProductController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/purchase-in/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.purchase.ErpPurchaseInController#exportPurchaseInExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/purchase/ErpPurchaseInController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/purchase-order/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.purchase.ErpPurchaseOrderController#exportPurchaseOrderExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/purchase/ErpPurchaseOrderController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/purchase-return/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.purchase.ErpPurchaseReturnController#exportPurchaseReturnExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/purchase/ErpPurchaseReturnController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/sale-order/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.sale.ErpSaleOrderController#exportSaleOrderExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/sale/ErpSaleOrderController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/sale-out/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.sale.ErpSaleOutController#exportSaleOutExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/sale/ErpSaleOutController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/sale-return/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.sale.ErpSaleReturnController#exportSaleReturnExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/sale/ErpSaleReturnController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/stock-check/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpStockCheckController#exportStockCheckExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpStockCheckController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/stock-in/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpStockInController#exportStockInExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpStockInController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/stock-move/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpStockMoveController#exportStockMoveExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpStockMoveController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/stock-out/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpStockOutController#exportStockOutExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpStockOutController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/stock-record/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpStockRecordController#exportStockRecordExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpStockRecordController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/stock/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpStockController#exportStockExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpStockController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/supplier/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.purchase.ErpSupplierController#exportSupplierExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/purchase/ErpSupplierController.java"
+  },
+  {
+    "operation": "GET /admin-api/erp/warehouse/export-excel",
+    "handler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpWarehouseController#exportWarehouseExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpWarehouseController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/config/auxiliary-item/export-excel",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsAuxiliaryItemController#exportAuxiliaryItemExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/FmsAuxiliaryItemController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/config/auxiliary-item/get-import-template",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsAuxiliaryItemController#getAuxiliaryItemImportTemplate",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/FmsAuxiliaryItemController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/config/initial-balance/export-excel",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsInitialBalanceController#exportInitialBalance",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/FmsInitialBalanceController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/config/initial-balance/get-import-template",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsInitialBalanceController#getInitialBalanceImportTemplate",
+    "mediaType": "application/octet-stream",
+    "basis": "ServletUtils.writeAttachment",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/FmsInitialBalanceController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/config/subject/export-excel",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsSubjectController#exportSubject",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/FmsSubjectController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/config/subject/get-import-template",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsSubjectController#getSubjectImportTemplate",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/FmsSubjectController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/ledger/auxiliary-balance/export-excel",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.ledger.FmsLedgerController#exportAuxiliaryBalance",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/ledger/FmsLedgerController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/ledger/auxiliary-detail/export-excel",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.ledger.FmsLedgerController#exportAuxiliaryDetail",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/ledger/FmsLedgerController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/ledger/detail/export-excel",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.ledger.FmsLedgerController#exportDetail",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/ledger/FmsLedgerController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/ledger/general/export-excel",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.ledger.FmsLedgerController#exportGeneral",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/ledger/FmsLedgerController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/ledger/multi-column/export-excel",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.ledger.FmsLedgerController#exportMultiColumn",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/ledger/FmsLedgerController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/ledger/quantity-detail/export-excel",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.ledger.FmsLedgerController#exportQuantityDetail",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/ledger/FmsLedgerController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/ledger/quantity-general/export-excel",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.ledger.FmsLedgerController#exportQuantityGeneral",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/ledger/FmsLedgerController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/ledger/subject-balance/export-excel",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.ledger.FmsLedgerController#exportSubjectBalance",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/ledger/FmsLedgerController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/report/balance-sheet/export-excel",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.report.FmsBalanceSheetController#exportBalanceSheet",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/report/FmsBalanceSheetController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/report/cash-flow-statement/export-excel",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.report.FmsCashFlowStatementController#exportCashFlowStatement",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/report/FmsCashFlowStatementController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/report/income-statement/export-excel",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.report.FmsIncomeStatementController#exportIncomeStatement",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/report/FmsIncomeStatementController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/voucher/export-excel",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.voucher.FmsVoucherController#exportVoucherExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/voucher/FmsVoucherController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/voucher/get-import-template",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.voucher.FmsVoucherController#getVoucherImportTemplate",
+    "mediaType": "application/octet-stream",
+    "basis": "ServletUtils.writeAttachment",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/voucher/FmsVoucherController.java"
+  },
+  {
+    "operation": "GET /admin-api/fms/voucher/statistics/export-excel",
+    "handler": "cn.iocoder.yudao.module.fms.controller.admin.voucher.FmsVoucherController#exportVoucherStatisticsExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/voucher/FmsVoucherController.java"
+  },
+  {
+    "operation": "GET /admin-api/hrm/attendance/clock/export-excel",
+    "handler": "cn.iocoder.yudao.module.hrm.controller.admin.attendance.HrmAttendanceClockController#exportAttendanceClock",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-hrm/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/attendance/HrmAttendanceClockController.java"
+  },
+  {
+    "operation": "GET /admin-api/hrm/attendance/leave/export-excel",
+    "handler": "cn.iocoder.yudao.module.hrm.controller.admin.attendance.HrmAttendanceLeaveController#exportAttendanceLeave",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-hrm/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/attendance/HrmAttendanceLeaveController.java"
+  },
+  {
+    "operation": "GET /admin-api/hrm/attendance/statistics/month-record-export-excel",
+    "handler": "cn.iocoder.yudao.module.hrm.controller.admin.attendance.HrmAttendanceStatisticsController#exportAttendanceMonthRecord",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-hrm/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/attendance/HrmAttendanceStatisticsController.java"
+  },
+  {
+    "operation": "GET /admin-api/hrm/employee/export-excel",
+    "handler": "cn.iocoder.yudao.module.hrm.controller.admin.employee.HrmEmployeeController#exportEmployee",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-hrm/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/HrmEmployeeController.java"
+  },
+  {
+    "operation": "GET /admin-api/hrm/employee/get-import-template",
+    "handler": "cn.iocoder.yudao.module.hrm.controller.admin.employee.HrmEmployeeController#importTemplate",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-hrm/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/HrmEmployeeController.java"
+  },
+  {
+    "operation": "GET /admin-api/hrm/portal/attendance/statistics/export-excel",
+    "handler": "cn.iocoder.yudao.module.hrm.controller.admin.portal.attendance.HrmPortalAttendanceStatisticsController#exportAttendanceMonthDetail",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-hrm/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/attendance/HrmPortalAttendanceStatisticsController.java"
+  },
+  {
+    "operation": "GET /admin-api/hrm/salary/employee-info/get-change-import-template",
+    "handler": "cn.iocoder.yudao.module.hrm.controller.admin.salary.HrmSalaryEmployeeInfoController#getChangeImportTemplate",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-hrm/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/salary/HrmSalaryEmployeeInfoController.java"
+  },
+  {
+    "operation": "GET /admin-api/hrm/salary/employee-info/get-fix-import-template",
+    "handler": "cn.iocoder.yudao.module.hrm.controller.admin.salary.HrmSalaryEmployeeInfoController#getFixImportTemplate",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-hrm/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/salary/HrmSalaryEmployeeInfoController.java"
+  },
+  {
+    "operation": "GET /admin-api/hrm/salary/month-record/get-additional-deduction-import-template",
+    "handler": "cn.iocoder.yudao.module.hrm.controller.admin.salary.HrmSalaryMonthRecordController#getAdditionalDeductionImportTemplate",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-hrm/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/salary/HrmSalaryMonthRecordController.java"
+  },
+  {
+    "operation": "GET /admin-api/hrm/salary/month-record/get-attendance-import-template",
+    "handler": "cn.iocoder.yudao.module.hrm.controller.admin.salary.HrmSalaryMonthRecordController#getAttendanceImportTemplate",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-hrm/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/salary/HrmSalaryMonthRecordController.java"
+  },
+  {
+    "operation": "GET /admin-api/hrm/salary/month-record/get-cumulative-tax-import-template",
+    "handler": "cn.iocoder.yudao.module.hrm.controller.admin.salary.HrmSalaryMonthRecordController#getCumulativeTaxImportTemplate",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-hrm/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/salary/HrmSalaryMonthRecordController.java"
+  },
+  {
+    "operation": "GET /admin-api/infra/api-access-log/export-excel",
+    "handler": "cn.iocoder.yudao.module.infra.controller.admin.logger.ApiAccessLogController#exportApiAccessLogExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/logger/ApiAccessLogController.java"
+  },
+  {
+    "operation": "GET /admin-api/infra/api-error-log/export-excel",
+    "handler": "cn.iocoder.yudao.module.infra.controller.admin.logger.ApiErrorLogController#exportApiErrorLogExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/logger/ApiErrorLogController.java"
+  },
+  {
+    "operation": "GET /admin-api/infra/codegen/download",
+    "handler": "cn.iocoder.yudao.module.infra.controller.admin.codegen.CodegenController#downloadCodegen",
+    "mediaType": "application/octet-stream",
+    "basis": "ServletUtils.writeAttachment",
+    "source": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/codegen/CodegenController.java"
+  },
+  {
+    "operation": "GET /admin-api/infra/config/export-excel",
+    "handler": "cn.iocoder.yudao.module.infra.controller.admin.config.ConfigController#exportConfig",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/config/ConfigController.java"
+  },
+  {
+    "operation": "GET /admin-api/infra/demo01-contact/export-excel",
+    "handler": "cn.iocoder.yudao.module.infra.controller.admin.demo.demo01.Demo01ContactController#exportDemo01ContactExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo01/Demo01ContactController.java"
+  },
+  {
+    "operation": "GET /admin-api/infra/demo02-category/export-excel",
+    "handler": "cn.iocoder.yudao.module.infra.controller.admin.demo.demo02.Demo02CategoryController#exportDemo02CategoryExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo02/Demo02CategoryController.java"
+  },
+  {
+    "operation": "GET /admin-api/infra/demo03-student-erp/export-excel",
+    "handler": "cn.iocoder.yudao.module.infra.controller.admin.demo.demo03.erp.Demo03StudentErpController#exportDemo03StudentExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo03/erp/Demo03StudentErpController.java"
+  },
+  {
+    "operation": "GET /admin-api/infra/demo03-student-inner/export-excel",
+    "handler": "cn.iocoder.yudao.module.infra.controller.admin.demo.demo03.inner.Demo03StudentInnerController#exportDemo03StudentExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo03/inner/Demo03StudentInnerController.java"
+  },
+  {
+    "operation": "GET /admin-api/infra/demo03-student-normal/export-excel",
+    "handler": "cn.iocoder.yudao.module.infra.controller.admin.demo.demo03.normal.Demo03StudentNormalController#exportDemo03StudentExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo03/normal/Demo03StudentNormalController.java"
+  },
+  {
+    "operation": "GET /admin-api/infra/file/{configId}/get/**",
+    "handler": "cn.iocoder.yudao.module.infra.controller.admin.file.FileController#getFileContent",
+    "mediaType": "application/octet-stream",
+    "basis": "ServletUtils.writeAttachment",
+    "source": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/file/FileController.java"
+  },
+  {
+    "operation": "GET /admin-api/infra/job-log/export-excel",
+    "handler": "cn.iocoder.yudao.module.infra.controller.admin.job.JobLogController#exportJobLogExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/job/JobLogController.java"
+  },
+  {
+    "operation": "GET /admin-api/infra/job/export-excel",
+    "handler": "cn.iocoder.yudao.module.infra.controller.admin.job.JobController#exportJobExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/job/JobController.java"
+  },
+  {
+    "operation": "GET /admin-api/iot/device/export-excel",
+    "handler": "cn.iocoder.yudao.module.iot.controller.admin.device.IotDeviceController#exportDeviceExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-iot/yudao-module-iot-biz/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/device/IotDeviceController.java"
+  },
+  {
+    "operation": "GET /admin-api/iot/device/get-import-template",
+    "handler": "cn.iocoder.yudao.module.iot.controller.admin.device.IotDeviceController#importTemplate",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-iot/yudao-module-iot-biz/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/device/IotDeviceController.java"
+  },
+  {
+    "operation": "GET /admin-api/iot/product/export-excel",
+    "handler": "cn.iocoder.yudao.module.iot.controller.admin.product.IotProductController#exportProductExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-iot/yudao-module-iot-biz/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/product/IotProductController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/cal/plan/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.cal.plan.MesCalPlanController#exportPlanExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/cal/plan/MesCalPlanController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/cal/team/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.cal.team.MesCalTeamController#exportTeamExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/cal/team/MesCalTeamController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/dv/check-plan/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.dv.checkplan.MesDvCheckPlanController#exportCheckPlanExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/checkplan/MesDvCheckPlanController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/dv/check-record/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.dv.checkrecord.MesDvCheckRecordController#exportCheckRecordExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/checkrecord/MesDvCheckRecordController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/dv/machinery/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.dv.machinery.MesDvMachineryController#exportMachineryExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/machinery/MesDvMachineryController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/dv/machinery/get-import-template",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.dv.machinery.MesDvMachineryController#importTemplate",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/machinery/MesDvMachineryController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/dv/mainten-record-line/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.dv.maintenrecord.MesDvMaintenRecordLineController#exportMaintenRecordLineExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/maintenrecord/MesDvMaintenRecordLineController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/dv/mainten-record/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.dv.maintenrecord.MesDvMaintenRecordController#exportMaintenRecordExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/maintenrecord/MesDvMaintenRecordController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/dv/repair-line/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.dv.repair.MesDvRepairLineController#exportRepairLineExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/repair/MesDvRepairLineController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/dv/repair/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.dv.repair.MesDvRepairController#exportRepairExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/repair/MesDvRepairController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/dv/subject/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.dv.subject.MesDvSubjectController#exportSubjectExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/subject/MesDvSubjectController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/md-client/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.md.client.MesMdClientController#exportClientExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/client/MesMdClientController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/md-client/get-import-template",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.md.client.MesMdClientController#importTemplate",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/client/MesMdClientController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/md-vendor/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.md.vendor.MesMdVendorController#exportVendorExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/vendor/MesMdVendorController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/md-vendor/get-import-template",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.md.vendor.MesMdVendorController#importTemplate",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/vendor/MesMdVendorController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/md-workshop/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.md.workstation.MesMdWorkshopController#exportWorkshopExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/workstation/MesMdWorkshopController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/md-workstation/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.md.workstation.MesMdWorkstationController#exportWorkstationExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/workstation/MesMdWorkstationController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/md/auto-code-rule/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.md.autocode.MesMdAutoCodeRuleController#exportAutoCodeRuleExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/autocode/MesMdAutoCodeRuleController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/md/item/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.md.item.MesMdItemController#exportItemExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/item/MesMdItemController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/md/item/get-import-template",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.md.item.MesMdItemController#importTemplate",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/item/MesMdItemController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/md/unit-measure/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.md.unitmeasure.MesMdUnitMeasureController#exportUnitMeasureExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/unitmeasure/MesMdUnitMeasureController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/pro/andon-record/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.pro.andon.MesProAndonRecordController#exportAndonRecordExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/andon/MesProAndonRecordController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/pro/card/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.pro.card.MesProCardController#exportCardExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/card/MesProCardController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/pro/feedback/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.pro.feedback.MesProFeedbackController#exportFeedbackExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/feedback/MesProFeedbackController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/pro/process/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.pro.process.MesProProcessController#exportProcessExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/process/MesProProcessController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/pro/route/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.pro.route.MesProRouteController#exportRouteExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/route/MesProRouteController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/pro/task/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.pro.task.MesProTaskController#exportTaskExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/task/MesProTaskController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/pro/work-order/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.pro.workorder.MesProWorkOrderController#exportWorkOrderExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/workorder/MesProWorkOrderController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/pro/workrecord/log/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.pro.workrecord.MesProWorkRecordController#exportWorkRecordLogExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/workrecord/MesProWorkRecordController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/qc/defect/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.qc.defect.MesQcDefectController#exportDefectExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/defect/MesQcDefectController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/qc/indicator/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.qc.indicator.MesQcIndicatorController#exportIndicatorExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/indicator/MesQcIndicatorController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/qc/ipqc/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.qc.ipqc.MesQcIpqcController#exportIpqcExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/ipqc/MesQcIpqcController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/qc/iqc/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.qc.iqc.MesQcIqcController#exportIqcExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/iqc/MesQcIqcController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/qc/oqc/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.qc.oqc.MesQcOqcController#exportOqcExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/oqc/MesQcOqcController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/qc/rqc/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.qc.rqc.MesQcRqcController#exportRqcExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/rqc/MesQcRqcController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/qc/template/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.qc.template.MesQcTemplateController#exportTemplateExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/template/MesQcTemplateController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/tm/tool-type/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.tm.tool.MesTmToolTypeController#exportToolTypeExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/tm/tool/MesTmToolTypeController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/tm/tool/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.tm.tool.MesTmToolController#exportToolExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/tm/tool/MesTmToolController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/arrival-notice/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.arrivalnotice.MesWmArrivalNoticeController#exportArrivalNoticeExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/arrivalnotice/MesWmArrivalNoticeController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/barcode/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.barcode.MesWmBarcodeController#exportBarcodeExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/barcode/MesWmBarcodeController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/item-receipt/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.itemreceipt.MesWmItemReceiptController#exportItemReceiptExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/itemreceipt/MesWmItemReceiptController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/material-stock/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.materialstock.MesWmMaterialStockController#exportMaterialStockExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/materialstock/MesWmMaterialStockController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/misc-issue/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.miscissue.MesWmMiscIssueController#exportMiscIssueExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/miscissue/MesWmMiscIssueController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/misc-receipt/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.miscreceipt.MesWmMiscReceiptController#exportMiscReceiptExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/miscreceipt/MesWmMiscReceiptController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/outsource-issue/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.outsourceissue.MesWmOutsourceIssueController#exportOutsourceIssueExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/outsourceissue/MesWmOutsourceIssueController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/outsource-receipt/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.outsourcereceipt.MesWmOutsourceReceiptController#exportOutsourceReceiptExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/outsourcereceipt/MesWmOutsourceReceiptController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/product-issue/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.productissue.MesWmProductIssueController#exportProductIssueExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/productissue/MesWmProductIssueController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/product-receipt/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.productreceipt.MesWmProductReceiptController#exportProductReceiptExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/productreceipt/MesWmProductReceiptController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/product-sales/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.productsales.MesWmProductSalesController#exportProductSalesExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/productsales/MesWmProductSalesController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/return-issue/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.returnissue.MesWmReturnIssueController#exportReturnIssueExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/returnissue/MesWmReturnIssueController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/return-sales/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.returnsales.MesWmReturnSalesController#exportReturnSalesExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/returnsales/MesWmReturnSalesController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/return-vendor/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.returnvendor.MesWmReturnVendorController#exportReturnVendorExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/returnvendor/MesWmReturnVendorController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/sales-notice/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.salesnotice.MesWmSalesNoticeController#exportSalesNoticeExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/salesnotice/MesWmSalesNoticeController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/sn/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.sn.MesWmSnController#exportSnExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/sn/MesWmSnController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/sn/group-export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.sn.MesWmSnController#exportSnGroupExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/sn/MesWmSnController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/stocktaking-plan/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.stocktaking.plan.MesWmStockTakingPlanController#exportStockTakingPlanExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/plan/MesWmStockTakingPlanController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/stocktaking-task/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.stocktaking.task.MesWmStockTakingTaskController#exportStockTakingTaskExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/MesWmStockTakingTaskController.java"
+  },
+  {
+    "operation": "GET /admin-api/mes/wm/transfer/export-excel",
+    "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.transfer.MesWmTransferController#exportTransferExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/transfer/MesWmTransferController.java"
+  },
+  {
+    "operation": "GET /admin-api/pay/order/export-excel",
+    "handler": "cn.iocoder.yudao.module.pay.controller.admin.order.PayOrderController#exportOrderExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/order/PayOrderController.java"
+  },
+  {
+    "operation": "GET /admin-api/pay/refund/export-excel",
+    "handler": "cn.iocoder.yudao.module.pay.controller.admin.refund.PayRefundController#exportRefundExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/refund/PayRefundController.java"
+  },
+  {
+    "operation": "GET /admin-api/pay/transfer/export-excel",
+    "handler": "cn.iocoder.yudao.module.pay.controller.admin.transfer.PayTransferController#exportTransfer",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/transfer/PayTransferController.java"
+  },
+  {
+    "operation": "GET /admin-api/pms/pm/work-item/export-excel",
+    "handler": "cn.iocoder.yudao.module.pms.controller.admin.pm.workitem.PmsWorkItemController#exportWorkItemList",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-pms/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/pm/workitem/PmsWorkItemController.java"
+  },
+  {
+    "operation": "GET /admin-api/pms/pm/work-item/get-import-template",
+    "handler": "cn.iocoder.yudao.module.pms.controller.admin.pm.workitem.PmsWorkItemController#getWorkItemImportTemplate",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-pms/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/pm/workitem/PmsWorkItemController.java"
+  },
+  {
+    "operation": "GET /admin-api/product/spu/export-excel",
+    "handler": "cn.iocoder.yudao.module.product.controller.admin.spu.ProductSpuController#exportSpuList",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/spu/ProductSpuController.java"
+  },
+  {
+    "operation": "GET /admin-api/statistics/product/export-excel",
+    "handler": "cn.iocoder.yudao.module.statistics.controller.admin.product.ProductStatisticsController#exportProductStatisticsExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mall/yudao-module-statistics/src/main/java/cn/iocoder/yudao/module/statistics/controller/admin/product/ProductStatisticsController.java"
+  },
+  {
+    "operation": "GET /admin-api/statistics/trade/export-excel",
+    "handler": "cn.iocoder.yudao.module.statistics.controller.admin.trade.TradeStatisticsController#exportTradeStatisticsExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mall/yudao-module-statistics/src/main/java/cn/iocoder/yudao/module/statistics/controller/admin/trade/TradeStatisticsController.java"
+  },
+  {
+    "operation": "GET /admin-api/system/dict-data/export-excel",
+    "handler": "cn.iocoder.yudao.module.system.controller.admin.dict.DictDataController#export",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/DictDataController.java"
+  },
+  {
+    "operation": "GET /admin-api/system/dict-type/export-excel",
+    "handler": "cn.iocoder.yudao.module.system.controller.admin.dict.DictTypeController#export",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/DictTypeController.java"
+  },
+  {
+    "operation": "GET /admin-api/system/login-log/export-excel",
+    "handler": "cn.iocoder.yudao.module.system.controller.admin.logger.LoginLogController#exportLoginLog",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/logger/LoginLogController.java"
+  },
+  {
+    "operation": "GET /admin-api/system/operate-log/export-excel",
+    "handler": "cn.iocoder.yudao.module.system.controller.admin.logger.OperateLogController#exportOperateLog",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/logger/OperateLogController.java"
+  },
+  {
+    "operation": "GET /admin-api/system/post/export-excel",
+    "handler": "cn.iocoder.yudao.module.system.controller.admin.dept.PostController#export",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dept/PostController.java"
+  },
+  {
+    "operation": "GET /admin-api/system/role/export-excel",
+    "handler": "cn.iocoder.yudao.module.system.controller.admin.permission.RoleController#export",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/permission/RoleController.java"
+  },
+  {
+    "operation": "GET /admin-api/system/sms-log/export-excel",
+    "handler": "cn.iocoder.yudao.module.system.controller.admin.sms.SmsLogController#exportSmsLogExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/sms/SmsLogController.java"
+  },
+  {
+    "operation": "GET /admin-api/system/sms-template/export-excel",
+    "handler": "cn.iocoder.yudao.module.system.controller.admin.sms.SmsTemplateController#exportSmsTemplateExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/sms/SmsTemplateController.java"
+  },
+  {
+    "operation": "GET /admin-api/system/tenant/export-excel",
+    "handler": "cn.iocoder.yudao.module.system.controller.admin.tenant.TenantController#exportTenantExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/tenant/TenantController.java"
+  },
+  {
+    "operation": "GET /admin-api/system/user/export-excel",
+    "handler": "cn.iocoder.yudao.module.system.controller.admin.user.UserController#exportUserList",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/user/UserController.java"
+  },
+  {
+    "operation": "GET /admin-api/system/user/get-import-template",
+    "handler": "cn.iocoder.yudao.module.system.controller.admin.user.UserController#importTemplate",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/user/UserController.java"
+  },
+  {
+    "operation": "GET /admin-api/trade/delivery/express/export-excel",
+    "handler": "cn.iocoder.yudao.module.trade.controller.admin.delivery.DeliveryExpressController#exportDeliveryExpressExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-mall/yudao-module-trade/src/main/java/cn/iocoder/yudao/module/trade/controller/admin/delivery/DeliveryExpressController.java"
+  },
+  {
+    "operation": "GET /admin-api/wms/check-order/export-excel",
+    "handler": "cn.iocoder.yudao.module.wms.controller.admin.order.check.WmsCheckOrderController#exportCheckOrderExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-wms/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/order/check/WmsCheckOrderController.java"
+  },
+  {
+    "operation": "GET /admin-api/wms/item-brand/export-excel",
+    "handler": "cn.iocoder.yudao.module.wms.controller.admin.md.item.WmsItemBrandController#exportItemBrandExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-wms/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/item/WmsItemBrandController.java"
+  },
+  {
+    "operation": "GET /admin-api/wms/item/export-excel",
+    "handler": "cn.iocoder.yudao.module.wms.controller.admin.md.item.WmsItemController#exportItemExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-wms/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/item/WmsItemController.java"
+  },
+  {
+    "operation": "GET /admin-api/wms/merchant/export-excel",
+    "handler": "cn.iocoder.yudao.module.wms.controller.admin.md.merchant.WmsMerchantController#exportMerchantExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-wms/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/merchant/WmsMerchantController.java"
+  },
+  {
+    "operation": "GET /admin-api/wms/movement-order/export-excel",
+    "handler": "cn.iocoder.yudao.module.wms.controller.admin.order.movement.WmsMovementOrderController#exportMovementOrderExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-wms/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/order/movement/WmsMovementOrderController.java"
+  },
+  {
+    "operation": "GET /admin-api/wms/receipt-order/export-excel",
+    "handler": "cn.iocoder.yudao.module.wms.controller.admin.order.receipt.WmsReceiptOrderController#exportReceiptOrderExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-wms/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/order/receipt/WmsReceiptOrderController.java"
+  },
+  {
+    "operation": "GET /admin-api/wms/shipment-order/export-excel",
+    "handler": "cn.iocoder.yudao.module.wms.controller.admin.order.shipment.WmsShipmentOrderController#exportShipmentOrderExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-wms/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/order/shipment/WmsShipmentOrderController.java"
+  },
+  {
+    "operation": "GET /admin-api/wms/warehouse/export-excel",
+    "handler": "cn.iocoder.yudao.module.wms.controller.admin.md.warehouse.WmsWarehouseController#exportWarehouseExcel",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "ExcelUtils.write",
+    "source": "yudao-module-wms/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/warehouse/WmsWarehouseController.java"
+  },
+  {
+    "operation": "GET /admin-api/hrm/attendance/statistics/month-daily-export-excel",
+    "handler": "cn.iocoder.yudao.module.hrm.controller.admin.attendance.HrmAttendanceStatisticsController#exportAttendanceMonthDailyOverview",
+    "mediaType": "application/vnd.ms-excel",
+    "basis": "writeAttendanceMonthDailyOverview -> ExcelUtils.write",
+    "source": "yudao-module-hrm/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/attendance/HrmAttendanceStatisticsController.java"
+  }
+]

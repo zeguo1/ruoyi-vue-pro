@@ -86,6 +86,9 @@ public class MesMdVendorController {
     @Operation(summary = "导出供应商 Excel")
     @PreAuthorize("@ss.hasPermission('mes:md-vendor:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportVendorExcel(@Valid MesMdVendorPageReqVO pageReqVO,
                                   HttpServletResponse response) throws IOException {
         pageReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);
@@ -97,6 +100,9 @@ public class MesMdVendorController {
 
     @GetMapping("/get-import-template")
     @Operation(summary = "获得供应商导入模板")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void importTemplate(HttpServletResponse response) throws IOException {
         // 手动创建导出 demo
         List<MesMdVendorImportExcelVO> list = Collections.singletonList(
@@ -107,7 +113,7 @@ public class MesMdVendorController {
         ExcelUtils.write(response, "供应商导入模板.xls", "供应商列表", MesMdVendorImportExcelVO.class, list);
     }
 
-    @PostMapping("/import")
+    @PostMapping(value = "/import", consumes = "multipart/form-data")
     @Operation(summary = "导入供应商")
     @Parameters({
             @Parameter(name = "file", description = "Excel 文件", required = true),

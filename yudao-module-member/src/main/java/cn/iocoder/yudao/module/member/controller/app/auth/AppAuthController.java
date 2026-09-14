@@ -126,7 +126,7 @@ public class AppAuthController {
     @Operation(summary = "创建微信 JS SDK 初始化所需的签名",
             description = "参考 https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html 文档")
     @PermitAll
-    public CommonResult<SocialWxJsapiSignatureRespDTO> createWeixinMpJsapiSignature(@RequestParam("url") String url) {
+    public CommonResult<SocialWxJsapiSignatureRespDTO> createWeixinMpJsapiSignature(@io.swagger.v3.oas.annotations.Parameter(description = "需要使用微信 JS SDK 的网页完整 URL，用于生成签名") @RequestParam("url") String url) {
         SocialWxJsapiSignatureRespDTO signature = socialClientApi.createWxMpJsapiSignature(
                 UserTypeEnum.MEMBER.getValue(), url);
         return success(AuthConvert.INSTANCE.convert(signature));

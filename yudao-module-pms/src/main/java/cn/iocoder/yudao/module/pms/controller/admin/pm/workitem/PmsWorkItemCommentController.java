@@ -75,7 +75,7 @@ public class PmsWorkItemCommentController {
     @Operation(summary = "获得工作项评论列表")
     @PreAuthorize("@ss.hasPermission('pms:pm:work-item:query')")
     public CommonResult<List<PmsWorkItemCommentRespVO>> getWorkItemCommentList(
-            @RequestParam("workItemId") Long workItemId) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "已有工作项编号") @RequestParam("workItemId") Long workItemId) {
         List<PmsWorkItemCommentDO> comments = commentService.getWorkItemCommentList(workItemId, getLoginUserId());
         // 拼接 VO：批量查询评论人和回复对象
         Set<Long> userIds = convertSet(comments, PmsWorkItemCommentDO::getUserId);

@@ -63,6 +63,9 @@ public class ProductStatisticsController {
     @GetMapping("/export-excel")
     @Operation(summary = "导出获得商品统计明细 Excel（日期维度）")
     @PreAuthorize("@ss.hasPermission('statistics:product:export')")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportProductStatisticsExcel(ProductStatisticsReqVO reqVO, HttpServletResponse response) throws IOException {
         List<ProductStatisticsDO> list = productStatisticsService.getProductStatisticsList(reqVO);
         // 导出 Excel

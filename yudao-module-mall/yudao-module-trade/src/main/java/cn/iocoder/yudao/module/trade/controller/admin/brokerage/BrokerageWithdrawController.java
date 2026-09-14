@@ -45,7 +45,7 @@ public class BrokerageWithdrawController {
     @PutMapping("/approve")
     @Operation(summary = "通过申请")
     @PreAuthorize("@ss.hasPermission('trade:brokerage-withdraw:audit')")
-    public CommonResult<Boolean> approveBrokerageWithdraw(@RequestParam("id") Long id) {
+    public CommonResult<Boolean> approveBrokerageWithdraw(@io.swagger.v3.oas.annotations.Parameter(description = "已有分销提现申请编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id) {
         brokerageWithdrawService.auditBrokerageWithdraw(id,
                 BrokerageWithdrawStatusEnum.AUDIT_SUCCESS, "", getClientIP());
         return success(true);

@@ -93,6 +93,9 @@ public class MesMdUnitMeasureController {
     @Operation(summary = "导出计量单位 Excel")
     @PreAuthorize("@ss.hasPermission('mes:md-unit-measure:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportUnitMeasureExcel(@Valid MesMdUnitMeasurePageReqVO pageReqVO,
               HttpServletResponse response) throws IOException {
         pageReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);

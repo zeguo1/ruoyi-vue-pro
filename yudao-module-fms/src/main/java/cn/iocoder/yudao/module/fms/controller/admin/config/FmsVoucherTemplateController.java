@@ -62,8 +62,8 @@ public class FmsVoucherTemplateController {
     @DeleteMapping("/delete")
     @Operation(summary = "删除凭证模板")
     @PreAuthorize("@ss.hasPermission('fms:config:voucher-template:delete')")
-    public CommonResult<Boolean> deleteVoucherTemplate(@RequestParam("accountSetId") @NotNull Long accountSetId,
-                                                       @RequestParam("id") @NotNull Long id) {
+    public CommonResult<Boolean> deleteVoucherTemplate(@io.swagger.v3.oas.annotations.Parameter(description = "账套编号；使用当前用户有权访问的已有账套") @RequestParam("accountSetId") @NotNull Long accountSetId,
+                                                       @io.swagger.v3.oas.annotations.Parameter(description = "已有凭证模板编号；从对应查询接口获取，不要编造") @RequestParam("id") @NotNull Long id) {
         voucherTemplateService.deleteVoucherTemplate(accountSetId, id, getLoginUserId());
         return success(true);
     }
@@ -72,7 +72,7 @@ public class FmsVoucherTemplateController {
     @Operation(summary = "获得凭证模板列表")
     @PreAuthorize("@ss.hasPermission('fms:config:voucher-template:query')")
     public CommonResult<List<FmsVoucherTemplateRespVO>> getVoucherTemplateList(
-            @RequestParam("accountSetId") @NotNull Long accountSetId) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "账套编号；使用当前用户有权访问的已有账套") @RequestParam("accountSetId") @NotNull Long accountSetId) {
         accountSetService.validateAccountSetReadPermission(accountSetId, getLoginUserId());
         return success(buildVoucherTemplateRespVOList(accountSetId));
     }
@@ -80,7 +80,7 @@ public class FmsVoucherTemplateController {
     @GetMapping("/simple-list")
     @Operation(summary = "获得凭证模板精简列表", description = "主要用于录凭证时套用凭证模板")
     public CommonResult<List<FmsVoucherTemplateRespVO>> getVoucherTemplateSimpleList(
-            @RequestParam("accountSetId") @NotNull Long accountSetId) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "账套编号；使用当前用户有权访问的已有账套") @RequestParam("accountSetId") @NotNull Long accountSetId) {
         accountSetService.validateAccountSetReadPermission(accountSetId, getLoginUserId());
         return success(buildVoucherTemplateRespVOList(accountSetId));
     }

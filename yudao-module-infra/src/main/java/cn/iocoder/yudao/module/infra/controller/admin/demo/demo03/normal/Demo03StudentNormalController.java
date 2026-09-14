@@ -92,6 +92,9 @@ public class Demo03StudentNormalController {
     @Operation(summary = "导出学生 Excel")
     @PreAuthorize("@ss.hasPermission('infra:demo03-student:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportDemo03StudentExcel(@Valid Demo03StudentNormalPageReqVO pageReqVO,
                                          HttpServletResponse response) throws IOException {
         pageReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);

@@ -128,8 +128,8 @@ public class FmsVoucherController {
     @Operation(summary = "删除凭证")
     @PreAuthorize("@ss.hasPermission('fms:voucher:delete')")
     public CommonResult<Boolean> deleteVoucherList(
-            @RequestParam("accountSetId") @NotNull Long accountSetId,
-            @RequestParam("ids") @NotEmpty List<Long> ids) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "账套编号；使用当前用户有权访问的已有账套") @RequestParam("accountSetId") @NotNull Long accountSetId,
+            @io.swagger.v3.oas.annotations.Parameter(description = "已有凭证编号列表；从对应查询接口获取，不要编造") @RequestParam("ids") @NotEmpty List<Long> ids) {
         voucherService.deleteVoucherList(accountSetId, ids, getLoginUserId());
         return success(true);
     }
@@ -162,8 +162,8 @@ public class FmsVoucherController {
     @GetMapping("/get")
     @Operation(summary = "获得凭证详情")
     @PreAuthorize("@ss.hasAnyPermissions('fms:voucher:query', 'fms:voucher:update')")
-    public CommonResult<FmsVoucherRespVO> getVoucher(@RequestParam("accountSetId") @NotNull Long accountSetId,
-                                                     @RequestParam("id") @NotNull Long id) {
+    public CommonResult<FmsVoucherRespVO> getVoucher(@io.swagger.v3.oas.annotations.Parameter(description = "账套编号；使用当前用户有权访问的已有账套") @RequestParam("accountSetId") @NotNull Long accountSetId,
+                                                     @io.swagger.v3.oas.annotations.Parameter(description = "已有凭证编号；从对应查询接口获取，不要编造") @RequestParam("id") @NotNull Long id) {
         FmsVoucherDO voucher = voucherService.getVoucher(accountSetId, id, getLoginUserId());
         return success(buildVoucherRespVO(accountSetId, voucher));
     }
@@ -172,8 +172,8 @@ public class FmsVoucherController {
     @Operation(summary = "获得凭证科目余额列表")
     @PreAuthorize("@ss.hasAnyPermissions('fms:voucher:query', 'fms:voucher:create', 'fms:voucher:update')")
     public CommonResult<List<FmsVoucherSubjectBalanceRespVO>> getVoucherSubjectBalanceList(
-            @RequestParam("accountSetId") @NotNull Long accountSetId,
-            @RequestParam("month") @Pattern(regexp = "\\d{4}-(0[1-9]|1[0-2])", message = "会计期间格式不正确") String month) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "账套编号；使用当前用户有权访问的已有账套") @RequestParam("accountSetId") @NotNull Long accountSetId,
+            @io.swagger.v3.oas.annotations.Parameter(description = "会计期间，格式 yyyy-MM") @RequestParam("month") @Pattern(regexp = "\\d{4}-(0[1-9]|1[0-2])", message = "会计期间格式不正确") String month) {
         List<FmsLedgerSubjectBalanceRespVO> balances = ledgerService.getSubjectBalanceList(
                 new FmsLedgerListReqVO().setAccountSetId(accountSetId).setStartMonth(month).setEndMonth(month), getLoginUserId());
         // 拼接 VO 返回
@@ -186,11 +186,11 @@ public class FmsVoucherController {
     @Operation(summary = "获得凭证辅助核算组合余额")
     @PreAuthorize("@ss.hasAnyPermissions('fms:voucher:query', 'fms:voucher:create', 'fms:voucher:update')")
     public CommonResult<FmsVoucherSubjectBalanceRespVO> getVoucherAuxiliaryBalance(
-            @RequestParam("accountSetId") @NotNull Long accountSetId,
-            @RequestParam("month")
+            @io.swagger.v3.oas.annotations.Parameter(description = "账套编号；使用当前用户有权访问的已有账套") @RequestParam("accountSetId") @NotNull Long accountSetId,
+            @io.swagger.v3.oas.annotations.Parameter(description = "会计期间，格式 yyyy-MM") @RequestParam("month")
             @Pattern(regexp = "\\d{4}-(0[1-9]|1[0-2])", message = "会计期间格式不正确") String month,
-            @RequestParam("subjectId") @NotNull Long subjectId,
-            @RequestParam("auxiliaryItemIds") @NotEmpty List<Long> auxiliaryItemIds) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "已有会计科目编号") @RequestParam("subjectId") @NotNull Long subjectId,
+            @io.swagger.v3.oas.annotations.Parameter(description = "辅助核算项目编号列表，至少一项，来自当前账套配置") @RequestParam("auxiliaryItemIds") @NotEmpty List<Long> auxiliaryItemIds) {
         BigDecimal signedBalance = ledgerService.getAuxiliaryCombinationBalance(
                 accountSetId, month, subjectId, auxiliaryItemIds, getLoginUserId());
         return success(new FmsVoucherSubjectBalanceRespVO().setSubjectId(subjectId)
@@ -220,6 +220,9 @@ public class FmsVoucherController {
     @Operation(summary = "导出凭证")
     @PreAuthorize("@ss.hasPermission('fms:voucher:export')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportVoucherExcel(@Valid FmsVoucherPageReqVO exportReqVO, HttpServletResponse response)
             throws IOException {
         exportReqVO.setPageSize(PAGE_SIZE_NONE);
@@ -233,13 +236,16 @@ public class FmsVoucherController {
     @Operation(summary = "获得凭证导入模板")
     @PreAuthorize("@ss.hasPermission('fms:voucher:import')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
-    public void getVoucherImportTemplate(@RequestParam("accountSetId") @NotNull Long accountSetId,
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/octet-stream",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
+    public void getVoucherImportTemplate(@io.swagger.v3.oas.annotations.Parameter(description = "账套编号；使用当前用户有权访问的已有账套") @RequestParam("accountSetId") @NotNull Long accountSetId,
                                          HttpServletResponse response) throws IOException {
         FmsVoucherImportTemplateVO templateData = voucherService.getVoucherImportTemplateData(accountSetId, getLoginUserId());
         ServletUtils.writeAttachment(response, "凭证导入模板.xlsx", FmsVoucherImportExcelHelper.writeTemplate(templateData));
     }
 
-    @PostMapping("/import")
+    @PostMapping(value = "/import", consumes = "multipart/form-data")
     @Operation(summary = "导入凭证")
     @Parameters({
             @Parameter(name = "accountSetId", description = "账套编号", required = true),
@@ -282,6 +288,9 @@ public class FmsVoucherController {
     @Operation(summary = "导出凭证汇总")
     @PreAuthorize("@ss.hasPermission('fms:voucher:statistics:export')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportVoucherStatisticsExcel(
             @Valid FmsVoucherStatisticsReqVO queryReqVO, HttpServletResponse response) throws IOException {
         List<FmsVoucherStatisticsRespVO> list = voucherService.getVoucherStatisticsList(queryReqVO, getLoginUserId());

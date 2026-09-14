@@ -63,7 +63,7 @@ public class PmsWorkItemLabelController {
     @Operation(summary = "获得工作项标签列表")
     @PreAuthorize("@ss.hasPermission('pms:pm:work-item:query')")
     public CommonResult<List<PmsWorkItemLabelRespVO>> getWorkItemLabelList(
-            @RequestParam(value = "name", required = false) String name) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "工作项标签名称筛选，可省略") @RequestParam(value = "name", required = false) String name) {
         List<PmsWorkItemLabelDO> labels = labelService.getWorkItemLabelList(name);
         return success(BeanUtils.toBean(labels, PmsWorkItemLabelRespVO.class));
     }

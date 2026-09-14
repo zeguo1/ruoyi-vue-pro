@@ -159,6 +159,9 @@ public class IotDeviceController {
     @Operation(summary = "导出设备 Excel")
     @PreAuthorize("@ss.hasPermission('iot:device:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportDeviceExcel(@Valid IotDevicePageReqVO exportReqVO,
                                   HttpServletResponse response) throws IOException {
         exportReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);
@@ -211,12 +214,12 @@ public class IotDeviceController {
         }));
     }
 
-    @PostMapping("/import")
+    @PostMapping(value = "/import", consumes = "multipart/form-data")
     @Operation(summary = "导入设备")
     @PreAuthorize("@ss.hasPermission('iot:device:import')")
     public CommonResult<IotDeviceImportRespVO> importDevice(
-            @RequestParam("file") MultipartFile file,
-            @RequestParam(value = "updateSupport", required = false, defaultValue = "false") Boolean updateSupport)
+            @io.swagger.v3.oas.annotations.Parameter(description = "导入 Excel 文件，使用对应导入模板填写") @RequestParam("file") MultipartFile file,
+            @io.swagger.v3.oas.annotations.Parameter(description = "是否更新已存在的数据，默认 false") @RequestParam(value = "updateSupport", required = false, defaultValue = "false") Boolean updateSupport)
             throws Exception {
         List<IotDeviceImportExcelVO> list = ExcelUtils.read(file, IotDeviceImportExcelVO.class);
         return success(deviceService.importDevice(list, updateSupport));
@@ -224,6 +227,9 @@ public class IotDeviceController {
 
     @GetMapping("/get-import-template")
     @Operation(summary = "获得导入设备模板")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void importTemplate(HttpServletResponse response) throws IOException {
         // 手动创建导出 demo
         List<IotDeviceImportExcelVO> list = Arrays.asList(
@@ -238,7 +244,7 @@ public class IotDeviceController {
     @GetMapping("/get-auth-info")
     @Operation(summary = "获得设备连接信息")
     @PreAuthorize("@ss.hasPermission('iot:device:auth-info')")
-    public CommonResult<IotDeviceAuthInfoRespVO> getDeviceAuthInfo(@RequestParam("id") Long id) {
+    public CommonResult<IotDeviceAuthInfoRespVO> getDeviceAuthInfo(@io.swagger.v3.oas.annotations.Parameter(description = "已有设备编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id) {
         return success(deviceService.getDeviceAuthInfo(id));
     }
 

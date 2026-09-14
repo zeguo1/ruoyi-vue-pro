@@ -64,7 +64,7 @@ public class PayNotifyController {
     @Operation(summary = "支付渠道的统一【支付】回调")
     @PermitAll
     @TenantIgnore
-    public String notifyOrder(@PathVariable("channelId") Long channelId,
+    public String notifyOrder(@io.swagger.v3.oas.annotations.Parameter(description = "已配置的支付渠道编号；回调格式由该渠道决定") @PathVariable("channelId") Long channelId,
                               @RequestParam(required = false) Map<String, String> params,
                               @RequestBody(required = false) String body,
                               @RequestHeader Map<String, String> headers) {
@@ -86,7 +86,7 @@ public class PayNotifyController {
     @Operation(summary = "支付渠道的统一【退款】回调")
     @PermitAll
     @TenantIgnore
-    public String notifyRefund(@PathVariable("channelId") Long channelId,
+    public String notifyRefund(@io.swagger.v3.oas.annotations.Parameter(description = "已配置的支付渠道编号；回调格式由该渠道决定") @PathVariable("channelId") Long channelId,
                                @RequestParam(required = false) Map<String, String> params,
                                @RequestBody(required = false) String body,
                                @RequestHeader Map<String, String> headers) {
@@ -108,7 +108,7 @@ public class PayNotifyController {
     @Operation(summary = "支付渠道的统一【转账】回调")
     @PermitAll
     @TenantIgnore
-    public String notifyTransfer(@PathVariable("channelId") Long channelId,
+    public String notifyTransfer(@io.swagger.v3.oas.annotations.Parameter(description = "已配置的支付渠道编号；回调格式由该渠道决定") @PathVariable("channelId") Long channelId,
                                  @RequestParam(required = false) Map<String, String> params,
                                  @RequestBody(required = false) String body,
                                  @RequestHeader Map<String, String> headers) {

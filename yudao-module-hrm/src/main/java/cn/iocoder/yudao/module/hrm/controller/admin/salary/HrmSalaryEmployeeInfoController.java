@@ -146,6 +146,9 @@ public class HrmSalaryEmployeeInfoController {
     @Operation(summary = "获得薪资档案定薪导入模板")
     @PreAuthorize("@ss.hasPermission('hrm:salary:employee-info:import')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void getFixImportTemplate(HttpServletResponse response) throws IOException {
         List<HrmSalaryOptionDO> options = salaryEmployeeInfoService.getSalaryImportOptionList();
         List<List<String>> head = buildFixSalaryImportHead(options);
@@ -153,7 +156,7 @@ public class HrmSalaryEmployeeInfoController {
         ExcelUtils.write(response, "薪资档案定薪导入模板.xls", "薪资档案", head, data);
     }
 
-    @PostMapping("/import-fix")
+    @PostMapping(value = "/import-fix", consumes = "multipart/form-data")
     @Operation(summary = "导入薪资档案定薪")
     @Parameter(name = "file", description = "Excel 文件", required = true)
     @PreAuthorize("@ss.hasPermission('hrm:salary:employee-info:import')")
@@ -167,6 +170,9 @@ public class HrmSalaryEmployeeInfoController {
     @Operation(summary = "获得薪资档案调薪导入模板")
     @PreAuthorize("@ss.hasPermission('hrm:salary:employee-info:import')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void getChangeImportTemplate(HttpServletResponse response) throws IOException {
         List<HrmSalaryOptionDO> options = salaryEmployeeInfoService.getSalaryImportOptionList();
         List<List<String>> head = buildChangeSalaryImportHead(options);
@@ -174,7 +180,7 @@ public class HrmSalaryEmployeeInfoController {
         ExcelUtils.write(response, "薪资档案调薪导入模板.xls", "薪资档案", head, data);
     }
 
-    @PostMapping("/import-change")
+    @PostMapping(value = "/import-change", consumes = "multipart/form-data")
     @Operation(summary = "导入薪资档案调薪")
     @Parameter(name = "file", description = "Excel 文件", required = true)
     @PreAuthorize("@ss.hasPermission('hrm:salary:employee-info:import')")

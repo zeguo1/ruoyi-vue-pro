@@ -40,7 +40,7 @@ public class AiKnowledgeDocumentController {
     @GetMapping("/get")
     @Operation(summary = "获取文档详情")
     @PreAuthorize("@ss.hasPermission('ai:knowledge:query')")
-    public CommonResult<AiKnowledgeDocumentRespVO> getKnowledgeDocument(@RequestParam("id") Long id) {
+    public CommonResult<AiKnowledgeDocumentRespVO> getKnowledgeDocument(@io.swagger.v3.oas.annotations.Parameter(description = "已有知识库文档编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id) {
         AiKnowledgeDocumentDO document = documentService.getKnowledgeDocument(id);
         return success(BeanUtils.toBean(document, AiKnowledgeDocumentRespVO.class));
     }
@@ -82,7 +82,7 @@ public class AiKnowledgeDocumentController {
     @DeleteMapping("/delete")
     @Operation(summary = "删除文档")
     @PreAuthorize("@ss.hasPermission('ai:knowledge:delete')")
-    public CommonResult<Boolean> deleteKnowledgeDocument(@RequestParam("id") Long id) {
+    public CommonResult<Boolean> deleteKnowledgeDocument(@io.swagger.v3.oas.annotations.Parameter(description = "已有知识库文档编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id) {
         documentService.deleteKnowledgeDocument(id);
         return success(true);
     }

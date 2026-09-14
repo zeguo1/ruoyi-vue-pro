@@ -189,12 +189,15 @@ public class GlobalExceptionHandler {
         log.warn("[methodArgumentTypeInvalidFormatExceptionHandler]", ex);
         if (ex.getCause() instanceof InvalidFormatException) {
             InvalidFormatException invalidFormatException = (InvalidFormatException) ex.getCause();
-            return CommonResult.error(BAD_REQUEST.getCode(), String.format("请求参数类型错误:%s", invalidFormatException.getValue()));
+            String field = invalidFormatException.getPath().stream()
+                    .map(ref -> ref.getFieldName() != null ? ref.getFieldName() : "[" + ref.getIndex() + "]")
+                    .collect(java.util.stream.Collectors.joining(".")).replace(".[", "[");
+            return CommonResult.error(BAD_REQUEST.getCode(), "请求参数格式不正确:" + field);
         }
         if (StrUtil.startWith(ex.getMessage(), "Required request body is missing")) {
             return CommonResult.error(BAD_REQUEST.getCode(), "请求参数类型错误: request body 缺失");
         }
-        return defaultExceptionHandler(ServletUtils.getRequest(), ex);
+        return CommonResult.error(BAD_REQUEST.getCode(), "请求体 JSON 格式不正确或字段类型不匹配");
     }
 
     /**

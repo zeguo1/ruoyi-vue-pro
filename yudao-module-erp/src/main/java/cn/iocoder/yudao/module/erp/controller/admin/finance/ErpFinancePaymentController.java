@@ -74,8 +74,8 @@ public class ErpFinancePaymentController {
     @PutMapping("/update-status")
     @Operation(summary = "更新付款单的状态")
     @PreAuthorize("@ss.hasPermission('erp:finance-payment:update-status')")
-    public CommonResult<Boolean> updateFinancePaymentStatus(@RequestParam("id") Long id,
-                                                           @RequestParam("status") Integer status) {
+    public CommonResult<Boolean> updateFinancePaymentStatus(@io.swagger.v3.oas.annotations.Parameter(description = "已有付款单编号；从对应查询接口获取，不要编造") @RequestParam("id") Long id,
+                                                           @io.swagger.v3.oas.annotations.Parameter(description = "目标审核状态：10 未审核（反审核），20 已审核；具体操作仍受单据业务状态限制") @cn.iocoder.yudao.framework.common.validation.InEnum(value = cn.iocoder.yudao.module.erp.enums.ErpAuditStatus.class, message = "审核状态只能是 10（未审核）或 20（已审核）") @RequestParam("status") Integer status) {
         financePaymentService.updateFinancePaymentStatus(id, status);
         return success(true);
     }
@@ -115,6 +115,9 @@ public class ErpFinancePaymentController {
     @Operation(summary = "导出付款单 Excel")
     @PreAuthorize("@ss.hasPermission('erp:finance-payment:export')")
     @ApiAccessLog(operateType = EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportFinancePaymentExcel(@Valid ErpFinancePaymentPageReqVO pageReqVO,
                                          HttpServletResponse response) throws IOException {
         pageReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);

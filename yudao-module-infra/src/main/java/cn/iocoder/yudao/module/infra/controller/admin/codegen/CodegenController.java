@@ -144,6 +144,9 @@ public class CodegenController {
     @GetMapping("/download")
     @Parameter(name = "tableId", description = "表编号", required = true, example = "1024")
     @PreAuthorize("@ss.hasPermission('infra:codegen:download')")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/octet-stream",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void downloadCodegen(@RequestParam("tableId") Long tableId,
                                 HttpServletResponse response) throws IOException {
         // 生成代码

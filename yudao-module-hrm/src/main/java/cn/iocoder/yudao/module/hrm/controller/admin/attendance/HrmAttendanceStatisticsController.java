@@ -97,6 +97,9 @@ public class HrmAttendanceStatisticsController {
     @Operation(summary = "导出员工月度考勤汇总")
     @PreAuthorize("@ss.hasPermission('hrm:attendance:statistics:export')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportAttendanceMonthRecord(@Validated HrmAttendanceMonthRecordPageReqVO exportReqVO,
                                             HttpServletResponse response) throws IOException {
         exportReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);
@@ -110,6 +113,9 @@ public class HrmAttendanceStatisticsController {
     @Operation(summary = "导出员工月度打卡概况")
     @PreAuthorize("@ss.hasPermission('hrm:attendance:clock:export')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportAttendanceMonthDailyOverview(@Validated HrmAttendanceMonthRecordPageReqVO exportReqVO,
                                                    HttpServletResponse response) throws IOException {
         exportReqVO.setPageSize(PageParam.PAGE_SIZE_NONE);

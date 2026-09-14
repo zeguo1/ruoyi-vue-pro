@@ -68,6 +68,9 @@ public class DeptController {
     @GetMapping("/list")
     @Operation(summary = "获取部门列表")
     @PreAuthorize("@ss.hasPermission('system:dept:query')")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", useReturnTypeSchema = true,
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/json", examples =
+                    @io.swagger.v3.oas.annotations.media.ExampleObject(name = "emptyResult", summary = "没有匹配部门时仍为业务成功", value = "{\"code\":0,\"msg\":\"\",\"data\":[]}")))
     public CommonResult<List<DeptRespVO>> getDeptList(DeptListReqVO reqVO) {
         List<DeptDO> list = deptService.getDeptList(reqVO);
         return success(BeanUtils.toBean(list, DeptRespVO.class));
@@ -85,6 +88,9 @@ public class DeptController {
     @Operation(summary = "获得部门信息")
     @Parameter(name = "id", description = "编号", required = true, example = "1024")
     @PreAuthorize("@ss.hasPermission('system:dept:query')")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", useReturnTypeSchema = true,
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/json", examples =
+                    @io.swagger.v3.oas.annotations.media.ExampleObject(name = "emptyResult", summary = "部门不存在时 data 为 null，仍为业务成功", value = "{\"code\":0,\"msg\":\"\",\"data\":null}")))
     public CommonResult<DeptRespVO> getDept(@RequestParam("id") Long id) {
         DeptDO dept = deptService.getDept(id);
         return success(BeanUtils.toBean(dept, DeptRespVO.class));

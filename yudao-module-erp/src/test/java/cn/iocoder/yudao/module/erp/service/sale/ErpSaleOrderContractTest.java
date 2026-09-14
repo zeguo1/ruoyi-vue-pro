@@ -151,6 +151,9 @@ class ErpSaleOrderContractTest extends BaseDbUnitTest {
         JsonNode response = call(body, false);
         assertEquals(scenario.equals("unitMissing") ? 1020201012 : 1020201011, response.path("code").asInt(), response.toString());
         assertTrue(response.path("msg").asText().contains("items[1]."), response.toString());
+        if (scenario.equals("missing")) {
+            java.nio.file.Files.writeString(java.nio.file.Path.of("target/v6-missing-product-response.json"), response.toPrettyString());
+        }
         verifyNoInteractions(numbers);
         emptyDatabase();
     }
@@ -191,6 +194,8 @@ class ErpSaleOrderContractTest extends BaseDbUnitTest {
         JsonNode response = call(body, false);
         assertEquals(0, response.path("code").asInt(), response.toString());
         assertEquals(0, new BigDecimal("250").compareTo(orders.selectById(response.path("data").asLong()).getTotalPrice()));
+        java.nio.file.Files.writeString(java.nio.file.Path.of("target/v6-valid-order-request.json"), body.toPrettyString());
+        java.nio.file.Files.writeString(java.nio.file.Path.of("target/v6-valid-order-response.json"), response.toPrettyString());
     }
 
     @Test

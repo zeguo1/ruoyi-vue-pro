@@ -17,6 +17,8 @@ class ContractSchemaCustomizerTest {
     static class Responses {
         public cn.iocoder.yudao.framework.common.pojo.CommonResult<Boolean> json() { return null; }
         public org.springframework.core.io.Resource download() { return null; }
+        public void ids(@org.springframework.web.bind.annotation.RequestParam("ids") List<Long> ids) {}
+        public void id(@org.springframework.web.bind.annotation.RequestParam Long id) {}
         public org.springframework.web.servlet.mvc.method.annotation.SseEmitter stream() { return null; }
     }
     @Test void jsonMediaIsPreciseWithoutRewritingDownloadsStreamsOrExplicitMedia() throws Exception {
@@ -32,6 +34,32 @@ class ContractSchemaCustomizerTest {
                         new Content().addMediaType("text/event-stream", new MediaType()))));
         new ContractSchemaCustomizer().customize(explicit, new org.springframework.web.method.HandlerMethod(new Responses(), Responses.class.getMethod("json")));
         assertTrue(explicit.getResponses().get("200").getContent().containsKey("text/event-stream"));
+    }
+    @Test void responseExamplesKeepTheInferredGenericResultSchema() throws Exception {
+        String ref = "#/components/schemas/cn.iocoder.yudao.framework.common.pojo.CommonResultJava.lang.Boolean";
+        var json = new MediaType().schema(new StringSchema()).addExamples("failure",
+                new io.swagger.v3.oas.models.examples.Example().value(Map.of("code", 400, "msg", "invalid")));
+        var operation = new Operation().responses(new io.swagger.v3.oas.models.responses.ApiResponses()
+                .addApiResponse("200", new io.swagger.v3.oas.models.responses.ApiResponse().content(new Content()
+                        .addMediaType("application/json", json).addMediaType("*/*", new MediaType().schema(new Schema<>().$ref(ref))))));
+        new ContractSchemaCustomizer().customize(operation, new org.springframework.web.method.HandlerMethod(new Responses(), Responses.class.getMethod("json")));
+        assertEquals(ref, json.getSchema().get$ref());
+        assertTrue(json.getExamples().containsKey("failure"));
+        assertEquals(Set.of("application/json"), operation.getResponses().get("200").getContent().keySet());
+    }
+    @Test void restoresArrayQueryTypeFromActualMethodEvenWhenFlatParameterSchemaIsString() throws Exception {
+        var op = new Operation().addParametersItem(new io.swagger.v3.oas.models.parameters.QueryParameter()
+                .name("ids").schema(new StringSchema()).description("已有记录编号列表"));
+        new ContractSchemaCustomizer().customize(op, new org.springframework.web.method.HandlerMethod(new Responses(), Responses.class.getMethod("ids", List.class)));
+        var schema = op.getParameters().get(0).getSchema();
+        assertEquals("array", schema.getType());
+        assertEquals("integer", schema.getItems().getType());
+        assertTrue(op.getParameters().get(0).getRequired());
+        var implicit = new Operation().addParametersItem(new io.swagger.v3.oas.models.parameters.QueryParameter()
+                .name("id").schema(new StringSchema()._default("")));
+        new ContractSchemaCustomizer().customize(implicit, new org.springframework.web.method.HandlerMethod(new Responses(), Responses.class.getMethod("id", Long.class)));
+        assertEquals("integer", implicit.getParameters().get(0).getSchema().getType());
+        assertNull(implicit.getParameters().get(0).getSchema().getDefault());
     }
     static class Fields {
         @Min(5) @Positive BigDecimal amount;

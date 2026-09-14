@@ -48,6 +48,9 @@ public class FmsIncomeStatementController {
     @Operation(summary = "导出利润表")
     @PreAuthorize("@ss.hasPermission('fms:report:income-statement:export')")
     @ApiAccessLog(operateType = OperateTypeEnum.EXPORT)
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "成功时返回文件字节；不适用 CommonResult 的 code 成功条件",
+            content = @io.swagger.v3.oas.annotations.media.Content(mediaType = "application/vnd.ms-excel",
+                    schema = @io.swagger.v3.oas.annotations.media.Schema(type = "string", format = "binary")))
     public void exportIncomeStatement(@Valid FmsReportListReqVO listReqVO, HttpServletResponse response) throws IOException {
         List<FmsReportItemRespVO> list = incomeStatementService.getIncomeStatement(listReqVO, getLoginUserId());
         ExcelUtils.write(response, "利润表.xls", "利润表", FmsReportItemRespVO.class, list);

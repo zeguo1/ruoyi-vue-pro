@@ -52,7 +52,7 @@ public class AppPayWalletTransactionController {
     @Operation(summary = "获得钱包流水统计")
     @Parameter(name = "times", description = "时间段", required = true)
     public CommonResult<AppPayWalletTransactionSummaryRespVO> getWalletTransactionSummary(
-            @RequestParam("createTime") @DateTimeFormat(pattern = FORMAT_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND) LocalDateTime[] createTime) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "流水统计的起止时间，两个值，格式 yyyy-MM-dd HH:mm:ss") @RequestParam("createTime") @DateTimeFormat(pattern = FORMAT_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND) LocalDateTime[] createTime) {
         AppPayWalletTransactionSummaryRespVO summary = payWalletTransactionService.getWalletTransactionSummary(
                 getLoginUserId(), UserTypeEnum.MEMBER.getValue(), createTime);
         return success(summary);

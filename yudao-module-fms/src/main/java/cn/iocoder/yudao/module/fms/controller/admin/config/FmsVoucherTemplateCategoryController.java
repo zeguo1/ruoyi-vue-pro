@@ -60,8 +60,8 @@ public class FmsVoucherTemplateCategoryController {
     @DeleteMapping("/delete")
     @Operation(summary = "删除凭证模板分类")
     @PreAuthorize("@ss.hasPermission('fms:config:voucher-template-category:delete')")
-    public CommonResult<Boolean> deleteTemplateCategory(@RequestParam("accountSetId") @NotNull Long accountSetId,
-                                                        @RequestParam("id") @NotNull Long id) {
+    public CommonResult<Boolean> deleteTemplateCategory(@io.swagger.v3.oas.annotations.Parameter(description = "账套编号；使用当前用户有权访问的已有账套") @RequestParam("accountSetId") @NotNull Long accountSetId,
+                                                        @io.swagger.v3.oas.annotations.Parameter(description = "已有凭证模板分类编号；从对应查询接口获取，不要编造") @RequestParam("id") @NotNull Long id) {
         voucherTemplateService.deleteTemplateCategory(accountSetId, id, getLoginUserId());
         return success(true);
     }
@@ -70,7 +70,7 @@ public class FmsVoucherTemplateCategoryController {
     @Operation(summary = "获得凭证模板分类列表")
     @PreAuthorize("@ss.hasPermission('fms:config:voucher-template-category:query')")
     public CommonResult<List<FmsVoucherTemplateCategoryRespVO>> getTemplateCategoryList(
-            @RequestParam("accountSetId") @NotNull Long accountSetId) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "账套编号；使用当前用户有权访问的已有账套") @RequestParam("accountSetId") @NotNull Long accountSetId) {
         accountSetService.validateAccountSetReadPermission(accountSetId, getLoginUserId());
         List<FmsVoucherTemplateCategoryDO> categories = voucherTemplateService.getTemplateCategoryList(accountSetId);
         return success(BeanUtils.toBean(categories, FmsVoucherTemplateCategoryRespVO.class));
@@ -79,7 +79,7 @@ public class FmsVoucherTemplateCategoryController {
     @GetMapping("/simple-list")
     @Operation(summary = "获得凭证模板分类精简列表", description = "主要用于前端的下拉选项")
     public CommonResult<List<FmsVoucherTemplateCategoryRespVO>> getTemplateCategorySimpleList(
-            @RequestParam("accountSetId") @NotNull Long accountSetId) {
+            @io.swagger.v3.oas.annotations.Parameter(description = "账套编号；使用当前用户有权访问的已有账套") @RequestParam("accountSetId") @NotNull Long accountSetId) {
         accountSetService.validateAccountSetReadPermission(accountSetId, getLoginUserId());
         List<FmsVoucherTemplateCategoryDO> categories = voucherTemplateService.getTemplateCategoryList(accountSetId);
         return success(convertList(categories, category -> new FmsVoucherTemplateCategoryRespVO()

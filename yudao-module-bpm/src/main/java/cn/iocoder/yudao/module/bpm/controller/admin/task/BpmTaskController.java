@@ -173,7 +173,7 @@ public class BpmTaskController {
     @Operation(summary = "获取所有可退回的节点", description = "用于【流程详情】的【退回】按钮")
     @Parameter(name = "taskId", description = "当前任务ID", required = true)
     @PreAuthorize("@ss.hasPermission('bpm:task:update')")
-    public CommonResult<List<BpmTaskRespVO>> getTaskListByReturn(@RequestParam("id") String id) {
+    public CommonResult<List<BpmTaskRespVO>> getTaskListByReturn(@io.swagger.v3.oas.annotations.Parameter(description = "已有工作流任务编号；从对应查询接口获取，不要编造") @RequestParam("id") String id) {
         List<UserTask> userTaskList = taskService.getUserTaskListByReturn(id);
         return success(convertList(userTaskList, userTask -> // 只返回 id 和 name
                 new BpmTaskRespVO().setName(userTask.getName()).setTaskDefinitionKey(userTask.getId())));
@@ -230,7 +230,7 @@ public class BpmTaskController {
     @PutMapping("/withdraw")
     @Operation(summary = "撤回任务")
     @PreAuthorize("@ss.hasPermission('bpm:task:update')")
-    public CommonResult<Boolean> withdrawTask(@RequestParam("taskId") String taskId) {
+    public CommonResult<Boolean> withdrawTask(@io.swagger.v3.oas.annotations.Parameter(description = "已有工作流任务编号") @RequestParam("taskId") String taskId) {
         taskService.withdrawTask(getLoginUserId(), taskId);
         return success(true);
     }

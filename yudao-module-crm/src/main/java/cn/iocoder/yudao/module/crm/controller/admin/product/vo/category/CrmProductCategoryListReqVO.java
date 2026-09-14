@@ -19,7 +19,7 @@ public class CrmProductCategoryListReqVO {
     private Long parentId;
 
     @ExcelProperty("创建时间")
-    @Schema(description = "创建时间查询条件")
+    @Schema(hidden = true, description = "兼容保留字段；当前产品分类查询不使用此条件，不作为工具筛选输入")
     private LocalDateTime createTime;
 
 }
