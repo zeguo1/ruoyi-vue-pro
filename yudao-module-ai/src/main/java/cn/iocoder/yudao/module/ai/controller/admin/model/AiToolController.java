@@ -42,7 +42,7 @@ public class AiToolController {
     @PutMapping("/update")
     @Operation(summary = "更新工具")
     @PreAuthorize("@ss.hasPermission('ai:tool:update')")
-    public CommonResult<Boolean> updateTool(@Valid @RequestBody AiToolSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateTool(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody AiToolSaveReqVO updateReqVO) {
         toolService.updateTool(updateReqVO);
         return success(true);
     }

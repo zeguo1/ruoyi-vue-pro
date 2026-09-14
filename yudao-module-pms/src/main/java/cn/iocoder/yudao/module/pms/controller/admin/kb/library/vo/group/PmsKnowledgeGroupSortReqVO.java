@@ -15,7 +15,8 @@ public class PmsKnowledgeGroupSortReqVO {
 
     @Schema(description = "知识库分组排序项", requiredMode = Schema.RequiredMode.REQUIRED)
     @NotEmpty(message = "知识库分组排序项不能为空")
-    private List<@Valid Item> items;
+    @jakarta.validation.Valid
+    private List<@jakarta.validation.constraints.NotNull(message = "明细元素不能为空") @Valid Item> items;
 
     @Schema(description = "管理后台 - PMS 知识库分组排序项 Request VO")
     @Data

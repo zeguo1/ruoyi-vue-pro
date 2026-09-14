@@ -9,6 +9,7 @@ import lombok.Data;
 public class CodegenColumnSaveReqVO {
 
     @Schema(description = "编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "1")
+    @NotNull(message = "待修改的定义编号不能为空")
     private Long id;
 
     @Schema(description = "表编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "1")

@@ -3,6 +3,7 @@ package cn.iocoder.yudao.server.controller;
 import cn.iocoder.yudao.framework.common.pojo.CommonResult;
 import cn.iocoder.yudao.framework.common.util.servlet.ServletUtils;
 import jakarta.annotation.security.PermitAll;
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import static cn.iocoder.yudao.framework.common.exception.enums.GlobalErrorCodeC
  *
  * @author 芋道源码
  */
+@Hidden // Fallback diagnostics are not callable business contracts.
 @RestController
 @Slf4j
 public class DefaultController {

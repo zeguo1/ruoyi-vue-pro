@@ -9,7 +9,8 @@ import lombok.Data;
 @Data
 public class IotProductCategorySaveReqVO {
 
-    @Schema(description = "分类 ID", requiredMode = Schema.RequiredMode.REQUIRED, example = "25284")
+    @Schema(description = "分类 ID；新增可省略，修改时必须提交已有记录编号", requiredMode = Schema.RequiredMode.NOT_REQUIRED, example = "25284")
+    @jakarta.validation.constraints.NotNull(groups = cn.iocoder.yudao.framework.common.validation.Update.class, message = "修改时编号不能为空")
     private Long id;
 
     @Schema(description = "分类名字", requiredMode = Schema.RequiredMode.REQUIRED, example = "王五")

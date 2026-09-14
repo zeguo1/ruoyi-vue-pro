@@ -22,7 +22,8 @@ public class AppTradeOrderSettlementReqVO {
 
     @Schema(description = "商品项数组", requiredMode = Schema.RequiredMode.REQUIRED)
     @NotEmpty(message = "商品不能为空")
-    private List<Item> items;
+    @jakarta.validation.Valid
+    private List<@jakarta.validation.constraints.NotNull(message = "明细元素不能为空") Item> items;
 
     @Schema(description = "优惠劵编号", example = "1024")
     private Long couponId;
@@ -74,7 +75,7 @@ public class AppTradeOrderSettlementReqVO {
             return true;
         }
         // 校验订单项是否超出
-        return items.size() == 1;
+        return items == null || items.size() == 1;
     }
 
     @Data
@@ -82,15 +83,14 @@ public class AppTradeOrderSettlementReqVO {
     @Valid
     public static class Item {
 
-        @Schema(description = "商品 SKU 编号", example = "2048")
-        @NotNull(message = "商品 SKU 编号不能为空")
+        @Schema(description = "商品 SKU 编号；直接购买时与 count 一起提交，使用购物车项 cartId 时可省略", example = "2048")
         private Long skuId;
 
-        @Schema(description = "购买数量", example = "1")
+        @Schema(description = "购买数量；直接购买时与 skuId 一起提交，至少 1；使用 cartId 时由购物车取得", example = "1")
         @Min(value = 1, message = "购买数量最小值为 {value}")
         private Integer count;
 
-        @Schema(description = "购物车项的编号", example = "1024")
+        @Schema(description = "当前用户的购物车项编号；与 skuId + count 两种方式至少提供一种", example = "1024")
         private Long cartId;
 
         @AssertTrue(message = "商品不正确")

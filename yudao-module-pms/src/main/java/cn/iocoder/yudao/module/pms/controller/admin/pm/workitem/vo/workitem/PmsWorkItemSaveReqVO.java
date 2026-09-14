@@ -99,11 +99,13 @@ public class PmsWorkItemSaveReqVO {
     @Min(value = 0, message = "剩余工时不能小于 0")
     private Integer remainingHours;
 
+    @Schema(hidden = true) // 跨字段校验方法，不是请求参数
     @AssertTrue(message = "工作项结束时间必须晚于开始时间")
     public boolean isTimeValid() {
         return startTime == null || endTime == null || startTime.isBefore(endTime);
     }
 
+    @Schema(hidden = true) // 跨字段校验方法，不是请求参数
     @AssertTrue(message = "填写剩余工时时必须同时填写实际投入工时")
     public boolean isWorkLogValid() {
         return remainingHours == null || actualHours != null;

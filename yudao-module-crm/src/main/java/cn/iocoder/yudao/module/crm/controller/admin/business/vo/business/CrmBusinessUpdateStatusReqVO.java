@@ -22,6 +22,7 @@ public class CrmBusinessUpdateStatusReqVO {
     @InEnum(value = CrmBusinessEndStatusEnum.class)
     private Integer endStatus;
 
+    @Schema(hidden = true) // 跨字段校验方法，不是请求参数
     @AssertTrue(message = "变更状态不正确")
     public boolean isStatusValid() {
         return statusId != null || endStatus != null;

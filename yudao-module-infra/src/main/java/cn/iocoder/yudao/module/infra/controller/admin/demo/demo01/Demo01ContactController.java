@@ -46,7 +46,7 @@ public class Demo01ContactController {
     @PutMapping("/update")
     @Operation(summary = "更新示例联系人")
     @PreAuthorize("@ss.hasPermission('infra:demo01-contact:update')")
-    public CommonResult<Boolean> updateDemo01Contact(@Valid @RequestBody Demo01ContactSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateDemo01Contact(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody Demo01ContactSaveReqVO updateReqVO) {
         demo01ContactService.updateDemo01Contact(updateReqVO);
         return success(true);
     }

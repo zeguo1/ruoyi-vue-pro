@@ -18,6 +18,7 @@ public class AppPayWalletRechargeCreateReqVO {
     @Schema(description = "充值套餐编号", example = "1024")
     private Long packageId;
 
+    @Schema(hidden = true) // 跨字段校验方法，不是请求参数
     @AssertTrue(message = "充值金额和充钱套餐不能同时为空")
     public boolean isValidPayPriceAndPackageId() {
         return Objects.nonNull(payPrice) || Objects.nonNull(packageId);

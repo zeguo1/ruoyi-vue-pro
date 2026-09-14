@@ -74,7 +74,7 @@ public class CrmReceivablePlanController {
     @PutMapping("/update")
     @Operation(summary = "更新回款计划")
     @PreAuthorize("@ss.hasPermission('crm:receivable-plan:update')")
-    public CommonResult<Boolean> updateReceivablePlan(@Valid @RequestBody CrmReceivablePlanSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateReceivablePlan(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody CrmReceivablePlanSaveReqVO updateReqVO) {
         receivablePlanService.updateReceivablePlan(updateReqVO);
         return success(true);
     }

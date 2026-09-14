@@ -44,7 +44,7 @@ public class Demo02CategoryController {
     @PutMapping("/update")
     @Operation(summary = "更新示例分类")
     @PreAuthorize("@ss.hasPermission('infra:demo02-category:update')")
-    public CommonResult<Boolean> updateDemo02Category(@Valid @RequestBody Demo02CategorySaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateDemo02Category(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody Demo02CategorySaveReqVO updateReqVO) {
         demo02CategoryService.updateDemo02Category(updateReqVO);
         return success(true);
     }

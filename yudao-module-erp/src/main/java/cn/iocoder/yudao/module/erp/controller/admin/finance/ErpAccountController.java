@@ -49,7 +49,7 @@ public class ErpAccountController {
     @PutMapping("/update")
     @Operation(summary = "更新结算账户")
     @PreAuthorize("@ss.hasPermission('erp:account:update')")
-    public CommonResult<Boolean> updateAccount(@Valid @RequestBody ErpAccountSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateAccount(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody ErpAccountSaveReqVO updateReqVO) {
         accountService.updateAccount(updateReqVO);
         return success(true);
     }

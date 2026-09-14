@@ -44,11 +44,13 @@ public class AuthLoginReqVO extends CaptchaVerificationReqVO {
     @Schema(description = "state", requiredMode = Schema.RequiredMode.REQUIRED, example = "9b2ffbc1-7425-4155-9894-9d5c08541d62")
     private String socialState;
 
+    @Schema(hidden = true) // 跨字段校验方法，不是请求参数
     @AssertTrue(message = "授权码不能为空")
     public boolean isSocialCodeValid() {
         return socialType == null || StrUtil.isNotEmpty(socialCode);
     }
 
+    @Schema(hidden = true) // 跨字段校验方法，不是请求参数
     @AssertTrue(message = "授权 state 不能为空")
     public boolean isSocialState() {
         return socialType == null || StrUtil.isNotEmpty(socialState);

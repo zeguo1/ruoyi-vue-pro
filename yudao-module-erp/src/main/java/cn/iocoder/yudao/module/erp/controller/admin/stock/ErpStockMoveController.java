@@ -66,7 +66,7 @@ public class ErpStockMoveController {
     @PutMapping("/update")
     @Operation(summary = "更新库存调拨单")
     @PreAuthorize("@ss.hasPermission('erp:stock-move:update')")
-    public CommonResult<Boolean> updateStockMove(@Valid @RequestBody ErpStockMoveSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateStockMove(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody ErpStockMoveSaveReqVO updateReqVO) {
         stockMoveService.updateStockMove(updateReqVO);
         return success(true);
     }

@@ -89,7 +89,7 @@ public class MesProFeedbackController {
     @PutMapping("/update")
     @Operation(summary = "更新生产报工")
     @PreAuthorize("@ss.hasPermission('mes:pro-feedback:update')")
-    public CommonResult<Boolean> updateFeedback(@Valid @RequestBody MesProFeedbackSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateFeedback(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesProFeedbackSaveReqVO updateReqVO) {
         feedbackService.updateFeedback(updateReqVO);
         return success(true);
     }

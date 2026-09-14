@@ -35,6 +35,7 @@ public class BpmOALeaveCreateReqVO {
     @Schema(description = "发起人自选审批人 Map", example = "{taskKey1: [1, 2]}")
     private Map<String, List<Long>> startUserSelectAssignees;
 
+    @Schema(hidden = true) // 跨字段校验方法，不是请求参数
     @AssertTrue(message = "结束时间，需要在开始时间之后")
     public boolean isEndTimeValid() {
         return !getEndTime().isBefore(getStartTime());

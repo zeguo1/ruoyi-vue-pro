@@ -86,15 +86,19 @@ public class FmsLedgerQuantityDetailRespVO {
     private BigDecimal unitPrice;
 
     @ExcelProperty("期初单价")
+    @Schema(description = "期初单价")
     private BigDecimal openingUnitPrice;
 
     @ExcelProperty("本期单价")
+    @Schema(description = "本期单价")
     private BigDecimal periodUnitPrice;
 
     @ExcelProperty("累计单价")
+    @Schema(description = "本年累计单价")
     private BigDecimal yearUnitPrice;
 
     @ExcelProperty("期末单价")
+    @Schema(description = "期末单价")
     private BigDecimal endingUnitPrice;
 
     @Schema(description = "计量单位", example = "件")

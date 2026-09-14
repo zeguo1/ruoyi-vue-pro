@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 import static cn.iocoder.yudao.framework.common.pojo.CommonResult.success;
 import static cn.iocoder.yudao.framework.web.core.util.WebFrameworkUtils.getLoginUserId;
 
-@Tag(name = "用户 APP - 分销用户")
+@Tag(name = "用户 APP - 分销记录")
 @RestController
 @RequestMapping("/trade/brokerage-record")
 @Validated

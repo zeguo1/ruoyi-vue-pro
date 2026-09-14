@@ -20,7 +20,8 @@ import static cn.iocoder.yudao.framework.common.util.date.DateUtils.FORMAT_YEAR_
 @Data
 public class CrmBusinessSaveReqVO {
 
-    @Schema(description = "主键", requiredMode = Schema.RequiredMode.REQUIRED, example = "32129")
+    @Schema(description = "主键；新增可省略，修改时必须提交已有记录编号", requiredMode = Schema.RequiredMode.NOT_REQUIRED, example = "32129")
+    @jakarta.validation.constraints.NotNull(groups = cn.iocoder.yudao.framework.common.validation.Update.class, message = "修改时编号不能为空")
     private Long id;
 
     @Schema(description = "商机名称", requiredMode = Schema.RequiredMode.REQUIRED, example = "李四")
@@ -66,7 +67,8 @@ public class CrmBusinessSaveReqVO {
     private Long contactId; // 使用场景，在【联系人详情】添加商机时，如果需要关联两者，需要传递 contactId 字段
 
     @Schema(description = "产品列表")
-    private List<BusinessProduct> products;
+    @jakarta.validation.Valid
+    private List<@jakarta.validation.constraints.NotNull(message = "明细元素不能为空") BusinessProduct> products;
 
     @Schema(description = "产品列表")
     @Data

@@ -51,7 +51,7 @@ public class MesMdVendorController {
     @PutMapping("/update")
     @Operation(summary = "更新供应商")
     @PreAuthorize("@ss.hasPermission('mes:md-vendor:update')")
-    public CommonResult<Boolean> updateVendor(@Valid @RequestBody MesMdVendorSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateVendor(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesMdVendorSaveReqVO updateReqVO) {
         vendorService.updateVendor(updateReqVO);
         return success(true);
     }

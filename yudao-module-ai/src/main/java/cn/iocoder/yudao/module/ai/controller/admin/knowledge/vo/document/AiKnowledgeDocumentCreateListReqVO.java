@@ -23,7 +23,8 @@ public class AiKnowledgeDocumentCreateListReqVO {
 
     @Schema(description = "文档列表", requiredMode = Schema.RequiredMode.REQUIRED)
     @NotEmpty(message = "文档列表不能为空")
-    private List<Document> list;
+    @jakarta.validation.Valid
+    private List<@jakarta.validation.constraints.NotNull(message = "明细元素不能为空") Document> list;
 
     @Schema(description = "文档")
     @Data

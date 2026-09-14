@@ -53,7 +53,7 @@ public class CrmCustomerLimitConfigController {
     @PutMapping("/update")
     @Operation(summary = "更新客户限制配置")
     @PreAuthorize("@ss.hasPermission('crm:customer-limit-config:update')")
-    public CommonResult<Boolean> updateCustomerLimitConfig(@Valid @RequestBody CrmCustomerLimitConfigSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateCustomerLimitConfig(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody CrmCustomerLimitConfigSaveReqVO updateReqVO) {
         customerLimitConfigService.updateCustomerLimitConfig(updateReqVO);
         return success(true);
     }

@@ -70,7 +70,7 @@ public class ErpStockOutController {
     @PutMapping("/update")
     @Operation(summary = "更新其它出库单")
     @PreAuthorize("@ss.hasPermission('erp:stock-out:update')")
-    public CommonResult<Boolean> updateStockOut(@Valid @RequestBody ErpStockOutSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateStockOut(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody ErpStockOutSaveReqVO updateReqVO) {
         stockOutService.updateStockOut(updateReqVO);
         return success(true);
     }

@@ -12,7 +12,8 @@ import java.util.List;
 @Data
 public class ErpPurchaseOrderSaveReqVO {
 
-    @Schema(description = "编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "17386")
+    @Schema(description = "编号；新增可省略，修改时必须提交已有记录编号", requiredMode = Schema.RequiredMode.NOT_REQUIRED, example = "17386")
+    @jakarta.validation.constraints.NotNull(groups = cn.iocoder.yudao.framework.common.validation.Update.class, message = "修改时编号不能为空")
     private Long id;
 
     @Schema(description = "供应商编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "1724")
@@ -26,7 +27,7 @@ public class ErpPurchaseOrderSaveReqVO {
     @NotNull(message = "采购时间不能为空")
     private LocalDateTime orderTime;
 
-    @Schema(description = "优惠率，百分比", requiredMode = Schema.RequiredMode.REQUIRED, example = "99.88")
+    @Schema(description = "优惠率，百分比；省略时后端按 0 计算", defaultValue = "0", example = "99.88")
     private BigDecimal discountPercent;
 
     @Schema(description = "定金金额，单位：元", example = "7127")
@@ -39,7 +40,9 @@ public class ErpPurchaseOrderSaveReqVO {
     private String remark;
 
     @Schema(description = "订单清单列表")
-    private List<Item> items;
+    @jakarta.validation.constraints.NotEmpty(message = "单据明细不能为空")
+    @jakarta.validation.Valid
+    private List<@jakarta.validation.constraints.NotNull(message = "明细元素不能为空") Item> items;
 
     @Data
     public static class Item {
@@ -51,11 +54,11 @@ public class ErpPurchaseOrderSaveReqVO {
         @NotNull(message = "产品编号不能为空")
         private Long productId;
 
-        @Schema(description = "产品单位单位", requiredMode = Schema.RequiredMode.REQUIRED, example = "3113")
-        @NotNull(message = "产品单位单位不能为空")
+        @Schema(description = "产品单位编号，由后端根据产品资料取得，调用方无需提交，提交值会被忽略", accessMode = Schema.AccessMode.READ_ONLY)
+        @com.fasterxml.jackson.annotation.JsonProperty(access = com.fasterxml.jackson.annotation.JsonProperty.Access.READ_ONLY)
         private Long productUnitId;
 
-        @Schema(description = "产品单价", example = "100.00")
+        @Schema(description = "产品单价，单位：元，由调用方依据实际业务提供；可省略，省略时本行不计价，后端不会自动从产品资料补价", example = "100.00")
         private BigDecimal productPrice;
 
         @Schema(description = "产品数量", requiredMode = Schema.RequiredMode.REQUIRED, example = "100.00")

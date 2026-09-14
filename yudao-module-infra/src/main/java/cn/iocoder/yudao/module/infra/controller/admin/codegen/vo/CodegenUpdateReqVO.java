@@ -15,10 +15,12 @@ public class CodegenUpdateReqVO {
 
     @Valid // 校验内嵌的字段
     @NotNull(message = "表定义不能为空")
+    @Schema(description = "代码生成表配置")
     private CodegenTableSaveReqVO table;
 
     @Valid // 校验内嵌的字段
     @NotNull(message = "字段定义不能为空")
+    @Schema(description = "代码生成字段配置列表")
     private List<CodegenColumnSaveReqVO> columns;
 
 }

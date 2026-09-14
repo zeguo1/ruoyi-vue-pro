@@ -48,7 +48,7 @@ public class MesMdUnitMeasureController {
     @PutMapping("/update")
     @Operation(summary = "更新计量单位")
     @PreAuthorize("@ss.hasPermission('mes:md-unit-measure:update')")
-    public CommonResult<Boolean> updateUnitMeasure(@Valid @RequestBody MesMdUnitMeasureSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateUnitMeasure(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesMdUnitMeasureSaveReqVO updateReqVO) {
         unitMeasureService.updateUnitMeasure(updateReqVO);
         return success(true);
     }

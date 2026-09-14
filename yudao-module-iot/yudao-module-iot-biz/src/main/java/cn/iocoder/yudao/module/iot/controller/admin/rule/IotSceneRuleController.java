@@ -43,7 +43,7 @@ public class IotSceneRuleController {
     @PutMapping("/update")
     @Operation(summary = "更新场景联动")
     @PreAuthorize("@ss.hasPermission('iot:scene-rule:update')")
-    public CommonResult<Boolean> updateSceneRule(@Valid @RequestBody IotSceneRuleSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateSceneRule(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody IotSceneRuleSaveReqVO updateReqVO) {
         sceneRuleService.updateSceneRule(updateReqVO);
         return success(true);
     }

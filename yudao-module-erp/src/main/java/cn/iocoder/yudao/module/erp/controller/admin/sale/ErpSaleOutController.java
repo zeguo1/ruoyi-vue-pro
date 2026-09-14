@@ -70,7 +70,7 @@ public class ErpSaleOutController {
     @PutMapping("/update")
     @Operation(summary = "更新销售出库")
     @PreAuthorize("@ss.hasPermission('erp:sale-out:update')")
-    public CommonResult<Boolean> updateSaleOut(@Valid @RequestBody ErpSaleOutSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateSaleOut(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody ErpSaleOutSaveReqVO updateReqVO) {
         saleOutService.updateSaleOut(updateReqVO);
         return success(true);
     }

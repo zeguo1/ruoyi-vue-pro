@@ -82,13 +82,16 @@ public class FmsSubjectSaveReqVO {
     private Boolean migrateParentData;
 
     @Schema(description = "辅助核算历史数据迁移项目数组")
-    private List<AuxiliaryMapping> auxiliaryMappings;
+    @jakarta.validation.Valid
+    private List<@jakarta.validation.constraints.NotNull(message = "明细元素不能为空") AuxiliaryMapping> auxiliaryMappings;
 
+    @Schema(hidden = true) // 跨字段校验方法，不是请求参数
     @AssertTrue(message = "科目类别与科目类型不匹配")
     public boolean isCategoryValid() {
         return type == null || category == null || FmsSubjectCategoryEnum.valueOf(type, category) != null;
     }
 
+    @Schema(hidden = true) // 跨字段校验方法，不是请求参数
     @AssertTrue(message = "启用数量核算时数量单位不能为空")
     public boolean isQuantityUnitValid() {
         return !Boolean.TRUE.equals(quantityAccounting) || StrUtil.isNotBlank(quantityUnit);

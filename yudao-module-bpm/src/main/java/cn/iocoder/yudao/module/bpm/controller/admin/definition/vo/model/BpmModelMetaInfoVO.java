@@ -76,6 +76,7 @@ public class BpmModelMetaInfoVO {
     private Boolean allowWithdrawTask;
 
     @Schema(description = "流程 ID 规则", example = "{}")
+    @jakarta.validation.Valid
     private ProcessIdRule processIdRule;
 
     @Schema(description = "自动去重类型", example = "1")
@@ -83,21 +84,27 @@ public class BpmModelMetaInfoVO {
     private Integer autoApprovalType;
 
     @Schema(description = "标题设置", example = "{}")
+    @jakarta.validation.Valid
     private TitleSetting titleSetting;
 
     @Schema(description = "摘要设置", example = "{}")
+    @jakarta.validation.Valid
     private SummarySetting summarySetting;
 
     @Schema(description = "流程前置通知设置", example = "{}")
+    @jakarta.validation.Valid
     private HttpRequestSetting processBeforeTriggerSetting;
 
     @Schema(description = "流程后置通知设置", example = "{}")
+    @jakarta.validation.Valid
     private HttpRequestSetting processAfterTriggerSetting;
 
     @Schema(description = "任务前置通知设置", example = "{}")
+    @jakarta.validation.Valid
     private HttpRequestSetting taskBeforeTriggerSetting;
 
     @Schema(description = "任务后置通知设置", example = "{}")
+    @jakarta.validation.Valid
     private HttpRequestSetting taskAfterTriggerSetting;
 
     @Schema(description = "自定义打印模板设置", example = "{}")

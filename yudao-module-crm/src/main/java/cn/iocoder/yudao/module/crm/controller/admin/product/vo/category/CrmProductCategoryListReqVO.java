@@ -11,12 +11,15 @@ import java.time.LocalDateTime;
 public class CrmProductCategoryListReqVO {
 
     @ExcelProperty("名称")
+    @Schema(description = "产品分类名称查询条件")
     private String name;
 
     @ExcelProperty("父级 id")
+    @Schema(description = "父产品分类编号查询条件")
     private Long parentId;
 
     @ExcelProperty("创建时间")
+    @Schema(description = "创建时间查询条件")
     private LocalDateTime createTime;
 
 }

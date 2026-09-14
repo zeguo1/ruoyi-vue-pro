@@ -14,6 +14,7 @@ public class CombinationRecordPageItemRespVO extends CombinationRecordBaseVO {
 
     // ========== 活动相关 ==========
 
+    @Schema(description = "关联的拼团活动信息")
     private CombinationActivityRespVO activity;
 
 }

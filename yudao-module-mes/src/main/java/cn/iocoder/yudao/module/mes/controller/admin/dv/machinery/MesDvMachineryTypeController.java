@@ -41,7 +41,7 @@ public class MesDvMachineryTypeController {
     @PutMapping("/update")
     @Operation(summary = "更新设备类型")
     @PreAuthorize("@ss.hasPermission('mes:dv-machinery-type:update')")
-    public CommonResult<Boolean> updateMachineryType(@Valid @RequestBody MesDvMachineryTypeSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateMachineryType(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesDvMachineryTypeSaveReqVO updateReqVO) {
         machineryTypeService.updateMachineryType(updateReqVO);
         return success(true);
     }

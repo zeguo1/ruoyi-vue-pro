@@ -70,7 +70,7 @@ public class ErpSaleReturnController {
     @PutMapping("/update")
     @Operation(summary = "更新销售退货")
     @PreAuthorize("@ss.hasPermission('erp:sale-return:update')")
-    public CommonResult<Boolean> updateSaleReturn(@Valid @RequestBody ErpSaleReturnSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateSaleReturn(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody ErpSaleReturnSaveReqVO updateReqVO) {
         saleReturnService.updateSaleReturn(updateReqVO);
         return success(true);
     }

@@ -53,7 +53,7 @@ public class MesMdClientController {
     @PutMapping("/update")
     @Operation(summary = "更新客户")
     @PreAuthorize("@ss.hasPermission('mes:md-client:update')")
-    public CommonResult<Boolean> updateClient(@Valid @RequestBody MesMdClientSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateClient(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesMdClientSaveReqVO updateReqVO) {
         clientService.updateClient(updateReqVO);
         return success(true);
     }

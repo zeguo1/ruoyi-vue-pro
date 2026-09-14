@@ -1,0 +1,312 @@
+[
+  {
+    "model": "yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/model/vo/apikey/AiApiKeySaveReqVO.java",
+    "controller": "yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/model/AiApiKeyController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/model/vo/tool/AiToolSaveReqVO.java",
+    "controller": "yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/model/AiToolController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo03/inner/vo/Demo03StudentInnerSaveReqVO.java",
+    "controller": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo03/inner/Demo03StudentInnerController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo03/normal/vo/Demo03StudentNormalSaveReqVO.java",
+    "controller": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo03/normal/Demo03StudentNormalController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo03/erp/vo/Demo03StudentErpSaveReqVO.java",
+    "controller": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo03/erp/Demo03StudentErpController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo02/vo/Demo02CategorySaveReqVO.java",
+    "controller": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo02/Demo02CategoryController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo01/vo/Demo01ContactSaveReqVO.java",
+    "controller": "yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo01/Demo01ContactController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/warehouse/vo/MesWmWarehouseSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/warehouse/MesWmWarehouseController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/warehouse/vo/area/MesWmWarehouseAreaSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/warehouse/MesWmWarehouseAreaController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/warehouse/vo/location/MesWmWarehouseLocationSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/warehouse/MesWmWarehouseLocationController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/card/vo/MesProCardSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/card/MesProCardController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/card/vo/process/MesProCardProcessSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/card/MesProCardProcessController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/andon/vo/config/MesProAndonConfigSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/andon/MesProAndonConfigController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/task/vo/MesProTaskSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/task/MesProTaskController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/workorder/vo/MesProWorkOrderSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/workorder/MesProWorkOrderController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/workorder/vo/bom/MesProWorkOrderBomSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/workorder/MesProWorkOrderBomController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/feedback/vo/MesProFeedbackSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/feedback/MesProFeedbackController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/defect/vo/MesQcDefectSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/defect/MesQcDefectController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/indicator/vo/MesQcIndicatorSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/indicator/MesQcIndicatorController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/machinery/vo/type/MesDvMachineryTypeSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/machinery/MesDvMachineryTypeController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/machinery/vo/MesDvMachinerySaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/machinery/MesDvMachineryController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/subject/vo/MesDvSubjectSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/subject/MesDvSubjectController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/item/vo/type/MesMdItemTypeSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/item/MesMdItemTypeController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/item/vo/MesMdItemSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/item/MesMdItemController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/vendor/vo/MesMdVendorSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/vendor/MesMdVendorController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/client/vo/MesMdClientSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/client/MesMdClientController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/workstation/vo/workshop/MesMdWorkshopSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/workstation/MesMdWorkshopController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/workstation/vo/MesMdWorkstationSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/workstation/MesMdWorkstationController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/unitmeasure/vo/MesMdUnitMeasureSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/unitmeasure/MesMdUnitMeasureController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/tm/tool/vo/type/MesTmToolTypeSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/tm/tool/MesTmToolTypeController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/tm/tool/vo/MesTmToolSaveReqVO.java",
+    "controller": "yudao-module-mes/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/tm/tool/MesTmToolController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-iot/yudao-module-iot-biz/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/rule/vo/scene/IotSceneRuleSaveReqVO.java",
+    "controller": "yudao-module-iot/yudao-module-iot-biz/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/rule/IotSceneRuleController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-iot/yudao-module-iot-biz/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/product/vo/category/IotProductCategorySaveReqVO.java",
+    "controller": "yudao-module-iot/yudao-module-iot-biz/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/product/IotProductCategoryController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-iot/yudao-module-iot-biz/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/device/vo/group/IotDeviceGroupSaveReqVO.java",
+    "controller": "yudao-module-iot/yudao-module-iot-biz/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/device/IotDeviceGroupController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/vo/warehouse/ErpWarehouseSaveReqVO.java",
+    "controller": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpWarehouseController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/vo/check/ErpStockCheckSaveReqVO.java",
+    "controller": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpStockCheckController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/vo/in/ErpStockInSaveReqVO.java",
+    "controller": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpStockInController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/vo/out/ErpStockOutSaveReqVO.java",
+    "controller": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpStockOutController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/vo/move/ErpStockMoveSaveReqVO.java",
+    "controller": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpStockMoveController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/finance/vo/payment/ErpFinancePaymentSaveReqVO.java",
+    "controller": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/finance/ErpFinancePaymentController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/finance/vo/receipt/ErpFinanceReceiptSaveReqVO.java",
+    "controller": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/finance/ErpFinanceReceiptController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/finance/vo/account/ErpAccountSaveReqVO.java",
+    "controller": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/finance/ErpAccountController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/sale/vo/returns/ErpSaleReturnSaveReqVO.java",
+    "controller": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/sale/ErpSaleReturnController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/sale/vo/customer/ErpCustomerSaveReqVO.java",
+    "controller": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/sale/ErpCustomerController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/sale/vo/out/ErpSaleOutSaveReqVO.java",
+    "controller": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/sale/ErpSaleOutController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/product/vo/product/ProductSaveReqVO.java",
+    "controller": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/product/ErpProductController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/product/vo/unit/ErpProductUnitSaveReqVO.java",
+    "controller": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/product/ErpProductUnitController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/product/vo/category/ErpProductCategorySaveReqVO.java",
+    "controller": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/product/ErpProductCategoryController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/purchase/vo/in/ErpPurchaseInSaveReqVO.java",
+    "controller": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/purchase/ErpPurchaseInController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/purchase/vo/order/ErpPurchaseOrderSaveReqVO.java",
+    "controller": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/purchase/ErpPurchaseOrderController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/purchase/vo/returns/ErpPurchaseReturnSaveReqVO.java",
+    "controller": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/purchase/ErpPurchaseReturnController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/purchase/vo/supplier/ErpSupplierSaveReqVO.java",
+    "controller": "yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/purchase/ErpSupplierController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/business/vo/business/CrmBusinessSaveReqVO.java",
+    "controller": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/business/CrmBusinessController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/business/vo/status/CrmBusinessStatusSaveReqVO.java",
+    "controller": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/business/CrmBusinessStatusController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/receivable/vo/plan/CrmReceivablePlanSaveReqVO.java",
+    "controller": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/receivable/CrmReceivablePlanController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/customer/vo/limitconfig/CrmCustomerLimitConfigSaveReqVO.java",
+    "controller": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/customer/CrmCustomerLimitConfigController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/customer/vo/customer/CrmCustomerSaveReqVO.java",
+    "controller": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/customer/CrmCustomerController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/contract/vo/contract/CrmContractSaveReqVO.java",
+    "controller": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/contract/CrmContractController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/point/vo/activity/PointActivitySaveReqVO.java",
+    "controller": "yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/point/PointActivityController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/vo/category/BpmCategorySaveReqVO.java",
+    "controller": "yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/BpmCategoryController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/vo/listener/BpmProcessListenerSaveReqVO.java",
+    "controller": "yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/BpmProcessListenerController.java",
+    "field": "id"
+  },
+  {
+    "model": "yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/vo/expression/BpmProcessExpressionSaveReqVO.java",
+    "controller": "yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/BpmProcessExpressionController.java",
+    "field": "id"
+  }
+]

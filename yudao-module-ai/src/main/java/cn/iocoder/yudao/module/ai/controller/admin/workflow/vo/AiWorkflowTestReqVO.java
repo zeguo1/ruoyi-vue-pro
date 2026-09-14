@@ -20,6 +20,7 @@ public class AiWorkflowTestReqVO {
     @Schema(description = "参数", requiredMode = Schema.RequiredMode.REQUIRED, example = "{}")
     private Map<String, Object> params;
 
+    @Schema(hidden = true) // 跨字段校验方法，不是请求参数
     @AssertTrue(message = "工作流或模型，必须传递一个")
     public boolean isGraphValid() {
         return id != null || StrUtil.isNotEmpty(graph);

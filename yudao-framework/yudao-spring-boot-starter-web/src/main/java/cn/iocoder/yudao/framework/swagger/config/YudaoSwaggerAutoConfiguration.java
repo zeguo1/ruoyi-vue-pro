@@ -52,6 +52,16 @@ import static cn.iocoder.yudao.framework.web.core.util.WebFrameworkUtils.HEADER_
 @Import(Knife4jOpenApiCustomizer.class)
 public class YudaoSwaggerAutoConfiguration {
 
+    @Bean
+    public ContractSchemaCustomizer contractSchemaCustomizer() {
+        return new ContractSchemaCustomizer();
+    }
+
+    @Bean
+    public JavadocProvider javadocProvider() {
+        return new ContractJavadocProvider();
+    }
+
     // ========== 全局 OpenAPI 配置 ==========
 
     @Bean
@@ -158,7 +168,7 @@ public class YudaoSwaggerAutoConfiguration {
                 .name(HttpHeaders.AUTHORIZATION) // header 名
                 .description("认证 Token") // 描述
                 .in(String.valueOf(SecurityScheme.In.HEADER)) // 请求 header
-                .schema(new StringSchema()._default("Bearer test1").name(HEADER_TENANT_ID).description("认证 Token")); // 默认：使用用户编号为 1
+                .schema(new StringSchema().name(HttpHeaders.AUTHORIZATION).description("认证 Token")); // 不提供伪造的默认令牌
     }
 
     /**

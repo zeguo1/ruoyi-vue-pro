@@ -38,7 +38,7 @@ public class BpmProcessExpressionController {
     @PutMapping("/update")
     @Operation(summary = "更新流程表达式")
     @PreAuthorize("@ss.hasPermission('bpm:process-expression:update')")
-    public CommonResult<Boolean> updateProcessExpression(@Valid @RequestBody BpmProcessExpressionSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateProcessExpression(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody BpmProcessExpressionSaveReqVO updateReqVO) {
         processExpressionService.updateProcessExpression(updateReqVO);
         return success(true);
     }

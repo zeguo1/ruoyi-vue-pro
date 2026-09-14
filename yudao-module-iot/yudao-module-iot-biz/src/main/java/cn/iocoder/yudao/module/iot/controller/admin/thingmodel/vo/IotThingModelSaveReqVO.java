@@ -34,7 +34,7 @@ public class IotThingModelSaveReqVO {
     @NotEmpty(message = "功能名称不能为空")
     private String name;
 
-    @Schema(description = "功能描述", requiredMode = Schema.RequiredMode.REQUIRED, example = "用于监测环境温度的传感器")
+    @Schema(description = "功能描述", example = "用于监测环境温度的传感器")
     private String description;
 
     @Schema(description = "功能类型", requiredMode = Schema.RequiredMode.REQUIRED, example = "1")
@@ -42,15 +42,15 @@ public class IotThingModelSaveReqVO {
     @InEnum(IotThingModelTypeEnum.class)
     private Integer type;
 
-    @Schema(description = "属性", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "属性定义，仅功能类型 type=1 时使用")
     @Valid
     private ThingModelProperty property;
 
-    @Schema(description = "服务", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "服务定义，仅功能类型 type=2 时使用")
     @Valid
     private ThingModelService service;
 
-    @Schema(description = "事件", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "事件定义，仅功能类型 type=3 时使用")
     @Valid
     private ThingModelEvent event;
 

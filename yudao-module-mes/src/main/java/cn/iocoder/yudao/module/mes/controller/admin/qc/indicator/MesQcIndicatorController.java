@@ -46,7 +46,7 @@ public class MesQcIndicatorController {
     @PutMapping("/update")
     @Operation(summary = "更新质检指标")
     @PreAuthorize("@ss.hasPermission('mes:qc-indicator:update')")
-    public CommonResult<Boolean> updateIndicator(@Valid @RequestBody MesQcIndicatorSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateIndicator(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesQcIndicatorSaveReqVO updateReqVO) {
         indicatorService.updateIndicator(updateReqVO);
         return success(true);
     }

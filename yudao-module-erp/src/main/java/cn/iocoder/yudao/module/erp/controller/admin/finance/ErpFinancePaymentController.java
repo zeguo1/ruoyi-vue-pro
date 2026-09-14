@@ -66,7 +66,7 @@ public class ErpFinancePaymentController {
     @PutMapping("/update")
     @Operation(summary = "更新付款单")
     @PreAuthorize("@ss.hasPermission('erp:finance-payment:update')")
-    public CommonResult<Boolean> updateFinancePayment(@Valid @RequestBody ErpFinancePaymentSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateFinancePayment(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody ErpFinancePaymentSaveReqVO updateReqVO) {
         financePaymentService.updateFinancePayment(updateReqVO);
         return success(true);
     }

@@ -43,7 +43,7 @@ public class BpmCategoryController {
     @PutMapping("/update")
     @Operation(summary = "更新流程分类")
     @PreAuthorize("@ss.hasPermission('bpm:category:update')")
-    public CommonResult<Boolean> updateCategory(@Valid @RequestBody BpmCategorySaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateCategory(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody BpmCategorySaveReqVO updateReqVO) {
         categoryService.updateCategory(updateReqVO);
         return success(true);
     }

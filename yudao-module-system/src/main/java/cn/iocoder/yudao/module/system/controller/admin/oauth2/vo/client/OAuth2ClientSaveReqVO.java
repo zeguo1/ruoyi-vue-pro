@@ -73,6 +73,7 @@ public class OAuth2ClientSaveReqVO {
     @Schema(description = "附加信息", example = "{yunai: true}")
     private String additionalInformation;
 
+    @Schema(hidden = true) // 跨字段校验方法，不是请求参数
     @AssertTrue(message = "附加信息必须是 JSON 格式")
     public boolean isAdditionalInformationJson() {
         return StrUtil.isEmpty(additionalInformation) || JsonUtils.isJson(additionalInformation);

@@ -46,7 +46,7 @@ public class MesDvSubjectController {
     @PutMapping("/update")
     @Operation(summary = "更新点检保养项目")
     @PreAuthorize("@ss.hasPermission('mes:dv-subject:update')")
-    public CommonResult<Boolean> updateSubject(@Valid @RequestBody MesDvSubjectSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateSubject(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesDvSubjectSaveReqVO updateReqVO) {
         subjectService.updateSubject(updateReqVO);
         return success(true);
     }

@@ -88,7 +88,7 @@ public class CrmContractController {
     @PutMapping("/update")
     @Operation(summary = "更新合同")
     @PreAuthorize("@ss.hasPermission('crm:contract:update')")
-    public CommonResult<Boolean> updateContract(@Valid @RequestBody CrmContractSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateContract(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody CrmContractSaveReqVO updateReqVO) {
         contractService.updateContract(updateReqVO);
         return success(true);
     }

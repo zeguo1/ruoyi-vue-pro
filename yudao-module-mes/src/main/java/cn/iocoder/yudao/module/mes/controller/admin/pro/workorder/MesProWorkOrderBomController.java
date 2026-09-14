@@ -62,7 +62,7 @@ public class MesProWorkOrderBomController {
     @PutMapping("/update")
     @Operation(summary = "更新工单 BOM")
     @PreAuthorize("@ss.hasPermission('mes:pro-work-order:update')")
-    public CommonResult<Boolean> updateWorkOrderBom(@Valid @RequestBody MesProWorkOrderBomSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateWorkOrderBom(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesProWorkOrderBomSaveReqVO updateReqVO) {
         workOrderBomService.updateWorkOrderBom(updateReqVO);
         return success(true);
     }

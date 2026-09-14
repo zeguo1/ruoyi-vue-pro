@@ -85,7 +85,7 @@ public class MesProTaskController {
     @PutMapping("/update")
     @Operation(summary = "更新生产任务")
     @PreAuthorize("@ss.hasPermission('mes:pro-task:update')")
-    public CommonResult<Boolean> updateTask(@Valid @RequestBody MesProTaskSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateTask(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesProTaskSaveReqVO updateReqVO) {
         taskService.updateTask(updateReqVO);
         return success(true);
     }

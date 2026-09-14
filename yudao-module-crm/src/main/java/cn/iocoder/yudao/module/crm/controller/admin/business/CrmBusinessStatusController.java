@@ -56,7 +56,7 @@ public class CrmBusinessStatusController {
     @PutMapping("/update")
     @Operation(summary = "更新商机状态")
     @PreAuthorize("@ss.hasPermission('crm:business-status:update')")
-    public CommonResult<Boolean> updateBusinessStatus(@Valid @RequestBody CrmBusinessStatusSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateBusinessStatus(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody CrmBusinessStatusSaveReqVO updateReqVO) {
         businessStatusTypeService.updateBusinessStatus(updateReqVO);
         return success(true);
     }

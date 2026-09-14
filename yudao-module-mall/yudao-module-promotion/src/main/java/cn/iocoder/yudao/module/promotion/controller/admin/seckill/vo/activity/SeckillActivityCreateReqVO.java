@@ -16,6 +16,7 @@ import java.util.List;
 public class SeckillActivityCreateReqVO extends SeckillActivityBaseVO {
 
     @Schema(description = "秒杀商品", requiredMode = Schema.RequiredMode.REQUIRED)
-    private List<SeckillProductBaseVO> products;
+    @jakarta.validation.Valid
+    private List<@jakarta.validation.constraints.NotNull(message = "明细元素不能为空") SeckillProductBaseVO> products;
 
 }

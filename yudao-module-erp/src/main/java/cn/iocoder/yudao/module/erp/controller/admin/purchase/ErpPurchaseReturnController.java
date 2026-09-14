@@ -70,7 +70,7 @@ public class ErpPurchaseReturnController {
     @PutMapping("/update")
     @Operation(summary = "更新采购退货")
     @PreAuthorize("@ss.hasPermission('erp:purchase-return:update')")
-    public CommonResult<Boolean> updatePurchaseReturn(@Valid @RequestBody ErpPurchaseReturnSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updatePurchaseReturn(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody ErpPurchaseReturnSaveReqVO updateReqVO) {
         purchaseReturnService.updatePurchaseReturn(updateReqVO);
         return success(true);
     }

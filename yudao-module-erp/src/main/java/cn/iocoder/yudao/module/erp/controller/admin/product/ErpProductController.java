@@ -48,7 +48,7 @@ public class ErpProductController {
     @PutMapping("/update")
     @Operation(summary = "更新产品")
     @PreAuthorize("@ss.hasPermission('erp:product:update')")
-    public CommonResult<Boolean> updateProduct(@Valid @RequestBody ProductSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateProduct(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody ProductSaveReqVO updateReqVO) {
         productService.updateProduct(updateReqVO);
         return success(true);
     }

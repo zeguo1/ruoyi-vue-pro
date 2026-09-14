@@ -87,18 +87,21 @@ public class MpAutoReplyBaseVO {
     @URL(message = "回复的高质量音乐链接格式不正确", groups = MusicMessageGroup.class)
     private String responseHqMusicUrl;
 
+    @Schema(hidden = true)
     @AssertTrue(message = "请求的关键字不能为空")
     public boolean isRequestKeywordValid() {
         return ObjectUtil.notEqual(type, MpAutoReplyTypeEnum.KEYWORD)
                 || requestKeyword != null;
     }
 
+    @Schema(hidden = true)
     @AssertTrue(message = "请求的关键字的匹配不能为空")
     public boolean isRequestMatchValid() {
         return ObjectUtil.notEqual(type, MpAutoReplyTypeEnum.KEYWORD)
                 || requestMatch != null;
     }
 
+    @Schema(hidden = true)
     @AssertTrue(message = "请求的消息类型不能为空")
     public boolean isRequestMessageTypeValid() {
         return ObjectUtil.notEqual(type, MpAutoReplyTypeEnum.MESSAGE)

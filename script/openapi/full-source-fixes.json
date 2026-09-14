@@ -1,0 +1,54 @@
+[
+  {
+    "file": "yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/workflow/vo/AiWorkflowTestReqVO.java",
+    "hiddenValidationGetters": 1
+  },
+  {
+    "file": "yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/oa/vo/BpmOALeaveCreateReqVO.java",
+    "hiddenValidationGetters": 1
+  },
+  {
+    "file": "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/business/vo/business/CrmBusinessUpdateStatusReqVO.java",
+    "hiddenValidationGetters": 1
+  },
+  {
+    "file": "yudao-module-fms/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/vo/subject/FmsSubjectSaveReqVO.java",
+    "hiddenValidationGetters": 2
+  },
+  {
+    "file": "yudao-module-member/src/main/java/cn/iocoder/yudao/module/member/controller/app/auth/vo/AppAuthLoginReqVO.java",
+    "hiddenValidationGetters": 2
+  },
+  {
+    "file": "yudao-module-member/src/main/java/cn/iocoder/yudao/module/member/controller/app/auth/vo/AppAuthSmsLoginReqVO.java",
+    "hiddenValidationGetters": 2
+  },
+  {
+    "file": "yudao-module-mp/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/material/vo/MpMaterialUploadPermanentReqVO.java",
+    "hiddenValidationGetters": 2
+  },
+  {
+    "file": "yudao-module-mp/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/message/vo/autoreply/MpAutoReplyBaseVO.java",
+    "hiddenValidationGetters": 3
+  },
+  {
+    "file": "yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/demo/vo/withdraw/PayDemoWithdrawCreateReqVO.java",
+    "hiddenValidationGetters": 1
+  },
+  {
+    "file": "yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/controller/app/wallet/vo/recharge/AppPayWalletRechargeCreateReqVO.java",
+    "hiddenValidationGetters": 1
+  },
+  {
+    "file": "yudao-module-pms/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/pm/workitem/vo/workitem/PmsWorkItemSaveReqVO.java",
+    "hiddenValidationGetters": 2
+  },
+  {
+    "file": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/auth/vo/AuthLoginReqVO.java",
+    "hiddenValidationGetters": 2
+  },
+  {
+    "file": "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/oauth2/vo/client/OAuth2ClientSaveReqVO.java",
+    "hiddenValidationGetters": 1
+  }
+]

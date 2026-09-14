@@ -12,13 +12,13 @@ import lombok.ToString;
 @ToString(callSuper = true)
 public class MpAccountPageReqVO extends PageParam {
 
-    @Schema(name = "公众号名称", description = "模糊匹配")
+    @Schema(description = "公众号名称，模糊匹配")
     private String name;
 
-    @Schema(name = "公众号账号", description = "模糊匹配")
+    @Schema(description = "公众号账号，模糊匹配")
     private String account;
 
-    @Schema(name = "公众号 appid", description = "模糊匹配")
+    @Schema(description = "公众号 appid，模糊匹配")
     private String appId;
 
 }

@@ -57,7 +57,7 @@ public class MesMdWorkshopController {
     @PutMapping("/update")
     @Operation(summary = "更新车间")
     @PreAuthorize("@ss.hasPermission('mes:md-workshop:update')")
-    public CommonResult<Boolean> updateWorkshop(@Valid @RequestBody MesMdWorkshopSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateWorkshop(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesMdWorkshopSaveReqVO updateReqVO) {
         workshopService.updateWorkshop(updateReqVO);
         return success(true);
     }

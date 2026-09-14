@@ -41,7 +41,7 @@ public class MesMdItemTypeController {
     @PutMapping("/update")
     @Operation(summary = "更新物料产品分类")
     @PreAuthorize("@ss.hasPermission('mes:md-item-type:update')")
-    public CommonResult<Boolean> updateItemType(@Valid @RequestBody MesMdItemTypeSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateItemType(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesMdItemTypeSaveReqVO updateReqVO) {
         itemTypeService.updateItemType(updateReqVO);
         return success(true);
     }

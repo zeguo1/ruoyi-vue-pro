@@ -60,7 +60,7 @@ public class MesMdWorkstationController {
     @PutMapping("/update")
     @Operation(summary = "更新工作站")
     @PreAuthorize("@ss.hasPermission('mes:md-workstation:update')")
-    public CommonResult<Boolean> updateWorkstation(@Valid @RequestBody MesMdWorkstationSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateWorkstation(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesMdWorkstationSaveReqVO updateReqVO) {
         workstationService.updateWorkstation(updateReqVO);
         return success(true);
     }

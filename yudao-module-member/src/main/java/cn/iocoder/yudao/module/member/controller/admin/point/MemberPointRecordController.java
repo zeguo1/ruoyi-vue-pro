@@ -25,7 +25,7 @@ import java.util.List;
 import static cn.iocoder.yudao.framework.common.pojo.CommonResult.success;
 import static cn.iocoder.yudao.framework.common.util.collection.CollectionUtils.convertSet;
 
-@Tag(name = "管理后台 - 签到记录")
+@Tag(name = "管理后台 - 积分记录")
 @RestController
 @RequestMapping("/member/point/record")
 @Validated

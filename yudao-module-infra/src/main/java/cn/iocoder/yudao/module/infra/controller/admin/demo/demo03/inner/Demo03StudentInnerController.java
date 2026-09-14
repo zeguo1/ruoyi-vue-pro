@@ -48,7 +48,7 @@ public class Demo03StudentInnerController {
     @PutMapping("/update")
     @Operation(summary = "更新学生")
     @PreAuthorize("@ss.hasPermission('infra:demo03-student:update')")
-    public CommonResult<Boolean> updateDemo03Student(@Valid @RequestBody Demo03StudentInnerSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateDemo03Student(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody Demo03StudentInnerSaveReqVO updateReqVO) {
         demo03StudentInnerService.updateDemo03Student(updateReqVO);
         return success(true);
     }

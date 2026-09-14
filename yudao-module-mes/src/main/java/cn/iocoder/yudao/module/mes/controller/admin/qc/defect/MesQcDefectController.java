@@ -46,7 +46,7 @@ public class MesQcDefectController {
     @PutMapping("/update")
     @Operation(summary = "更新缺陷类型")
     @PreAuthorize("@ss.hasPermission('mes:qc-defect:update')")
-    public CommonResult<Boolean> updateDefect(@Valid @RequestBody MesQcDefectSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateDefect(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesQcDefectSaveReqVO updateReqVO) {
         defectService.updateDefect(updateReqVO);
         return success(true);
     }

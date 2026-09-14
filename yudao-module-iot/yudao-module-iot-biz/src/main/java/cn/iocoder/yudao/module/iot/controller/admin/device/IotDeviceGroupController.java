@@ -45,7 +45,7 @@ public class IotDeviceGroupController {
     @PutMapping("/update")
     @Operation(summary = "更新设备分组")
     @PreAuthorize("@ss.hasPermission('iot:device-group:update')")
-    public CommonResult<Boolean> updateDeviceGroup(@Valid @RequestBody IotDeviceGroupSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateDeviceGroup(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody IotDeviceGroupSaveReqVO updateReqVO) {
         deviceGroupService.updateDeviceGroup(updateReqVO);
         return success(true);
     }

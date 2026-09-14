@@ -49,6 +49,7 @@ public class AppBargainRecordDetailRespVO {
 
     // ========== 助力记录 ==========
 
+    @Schema(description = "助力操作状态：1 可助力，2 助力次数已满，3 已助力；无活动或本人记录时为空")
     private Integer helpAction;
 
 }

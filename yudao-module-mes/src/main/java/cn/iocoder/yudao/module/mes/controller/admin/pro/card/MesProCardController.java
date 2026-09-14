@@ -64,7 +64,7 @@ public class MesProCardController {
     @PutMapping("/update")
     @Operation(summary = "更新生产流转卡")
     @PreAuthorize("@ss.hasPermission('mes:pro-card:update')")
-    public CommonResult<Boolean> updateCard(@Valid @RequestBody MesProCardSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateCard(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesProCardSaveReqVO updateReqVO) {
         cardService.updateCard(updateReqVO);
         return success(true);
     }

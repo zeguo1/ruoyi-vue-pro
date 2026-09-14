@@ -57,6 +57,7 @@ public class FmsLedgerQuantityGeneralRespVO {
     private BigDecimal openingCreditAmount;
 
     @ExcelProperty({"期初余额", "金额"})
+    @Schema(description = "期初结存金额")
     private BigDecimal openingAmount;
 
     @Schema(description = "本期借方数量")
@@ -112,6 +113,7 @@ public class FmsLedgerQuantityGeneralRespVO {
     private BigDecimal endingCreditAmount;
 
     @ExcelProperty({"期末余额", "金额"})
+    @Schema(description = "期末结存金额")
     private BigDecimal endingAmount;
 
     @Schema(description = "下级科目")

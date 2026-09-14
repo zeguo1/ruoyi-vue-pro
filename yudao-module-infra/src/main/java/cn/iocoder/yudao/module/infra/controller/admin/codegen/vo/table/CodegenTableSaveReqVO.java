@@ -14,6 +14,7 @@ import lombok.Data;
 public class CodegenTableSaveReqVO {
 
     @Schema(description = "编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "1")
+    @NotNull(message = "待修改的定义编号不能为空")
     private Long id;
 
     @Schema(description = "生成场景，参见 CodegenSceneEnum 枚举", requiredMode = Schema.RequiredMode.REQUIRED, example = "1")

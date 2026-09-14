@@ -3,6 +3,7 @@ package cn.iocoder.yudao.module.iot.controller.admin.rule.vo.data.rule;
 import cn.iocoder.yudao.framework.common.enums.CommonStatusEnum;
 import cn.iocoder.yudao.framework.common.validation.InEnum;
 import cn.iocoder.yudao.module.iot.dal.dataobject.rule.IotDataRuleDO;
+import cn.iocoder.yudao.module.iot.dal.dataobject.rule.IotDataRuleDO.SourceConfig;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -31,7 +32,8 @@ public class IotDataRuleSaveReqVO {
 
     @Schema(description = "数据源配置数组", requiredMode = Schema.RequiredMode.REQUIRED)
     @NotEmpty(message = "数据源配置数组不能为空")
-    private List<IotDataRuleDO.SourceConfig> sourceConfigs;
+    @jakarta.validation.Valid
+    private List<@jakarta.validation.constraints.NotNull(message = "明细元素不能为空") SourceConfig> sourceConfigs;
 
     @Schema(description = "数据目的编号数组", requiredMode = Schema.RequiredMode.REQUIRED)
     @NotEmpty(message = "数据目的编号数组不能为空")

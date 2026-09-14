@@ -55,7 +55,7 @@ public class MesProAndonConfigController {
     @PutMapping("/update")
     @Operation(summary = "更新安灯呼叫配置")
     @PreAuthorize("@ss.hasPermission('mes:pro-andon-config:update')")
-    public CommonResult<Boolean> updateAndonConfig(@Valid @RequestBody MesProAndonConfigSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateAndonConfig(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesProAndonConfigSaveReqVO updateReqVO) {
         andonConfigService.updateAndonConfig(updateReqVO);
         return success(true);
     }

@@ -70,7 +70,7 @@ public class ErpPurchaseInController {
     @PutMapping("/update")
     @Operation(summary = "更新采购入库")
     @PreAuthorize("@ss.hasPermission('erp:purchase-in:update')")
-    public CommonResult<Boolean> updatePurchaseIn(@Valid @RequestBody ErpPurchaseInSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updatePurchaseIn(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody ErpPurchaseInSaveReqVO updateReqVO) {
         purchaseInService.updatePurchaseIn(updateReqVO);
         return success(true);
     }

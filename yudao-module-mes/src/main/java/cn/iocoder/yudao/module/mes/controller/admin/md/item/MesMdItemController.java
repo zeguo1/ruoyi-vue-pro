@@ -63,7 +63,7 @@ public class MesMdItemController {
     @PutMapping("/update")
     @Operation(summary = "更新物料产品")
     @PreAuthorize("@ss.hasPermission('mes:md-item:update')")
-    public CommonResult<Boolean> updateItem(@Valid @RequestBody MesMdItemSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateItem(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesMdItemSaveReqVO updateReqVO) {
         itemService.updateItem(updateReqVO);
         return success(true);
     }

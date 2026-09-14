@@ -56,7 +56,7 @@ public class MesTmToolController {
     @PutMapping("/update")
     @Operation(summary = "更新工具")
     @PreAuthorize("@ss.hasPermission('mes:tm-tool:update')")
-    public CommonResult<Boolean> updateTool(@Valid @RequestBody MesTmToolSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateTool(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesTmToolSaveReqVO updateReqVO) {
         toolService.updateTool(updateReqVO);
         return success(true);
     }

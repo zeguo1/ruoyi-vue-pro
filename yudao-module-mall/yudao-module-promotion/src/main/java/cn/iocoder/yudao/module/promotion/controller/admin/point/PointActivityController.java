@@ -52,7 +52,7 @@ public class PointActivityController {
     @PutMapping("/update")
     @Operation(summary = "更新积分商城活动")
     @PreAuthorize("@ss.hasPermission('promotion:point-activity:update')")
-    public CommonResult<Boolean> updatePointActivity(@Valid @RequestBody PointActivitySaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updatePointActivity(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody PointActivitySaveReqVO updateReqVO) {
         pointActivityService.updatePointActivity(updateReqVO);
         return success(true);
     }

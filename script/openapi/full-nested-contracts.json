@@ -1,0 +1,146 @@
+[
+  {
+    "class": "cn.iocoder.yudao.module.ai.controller.admin.knowledge.vo.document.AiKnowledgeDocumentCreateListReqVO",
+    "owner": "cn.iocoder.yudao.module.ai.controller.admin.knowledge.vo.document.AiKnowledgeDocumentCreateListReqVO",
+    "field": "list",
+    "javaType": "java.util.List<cn.iocoder.yudao.module.ai.controller.admin.knowledge.vo.document.AiKnowledgeDocumentCreateListReqVO$Document>"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelSaveReqVO",
+    "owner": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelMetaInfoVO",
+    "field": "processAfterTriggerSetting",
+    "javaType": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelMetaInfoVO$HttpRequestSetting"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelSaveReqVO",
+    "owner": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelMetaInfoVO",
+    "field": "processBeforeTriggerSetting",
+    "javaType": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelMetaInfoVO$HttpRequestSetting"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelSaveReqVO",
+    "owner": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelMetaInfoVO",
+    "field": "processIdRule",
+    "javaType": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelMetaInfoVO$ProcessIdRule"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelSaveReqVO",
+    "owner": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelMetaInfoVO",
+    "field": "summarySetting",
+    "javaType": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelMetaInfoVO$SummarySetting"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelSaveReqVO",
+    "owner": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelMetaInfoVO",
+    "field": "taskAfterTriggerSetting",
+    "javaType": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelMetaInfoVO$HttpRequestSetting"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelSaveReqVO",
+    "owner": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelMetaInfoVO",
+    "field": "taskBeforeTriggerSetting",
+    "javaType": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelMetaInfoVO$HttpRequestSetting"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelSaveReqVO",
+    "owner": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelMetaInfoVO",
+    "field": "titleSetting",
+    "javaType": "cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.BpmModelMetaInfoVO$TitleSetting"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.crm.controller.admin.business.vo.business.CrmBusinessSaveReqVO",
+    "owner": "cn.iocoder.yudao.module.crm.controller.admin.business.vo.business.CrmBusinessSaveReqVO",
+    "field": "products",
+    "javaType": "java.util.List<cn.iocoder.yudao.module.crm.controller.admin.business.vo.business.CrmBusinessSaveReqVO$BusinessProduct>"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.crm.controller.admin.contract.vo.contract.CrmContractSaveReqVO",
+    "owner": "cn.iocoder.yudao.module.crm.controller.admin.contract.vo.contract.CrmContractSaveReqVO",
+    "field": "products",
+    "javaType": "java.util.List<cn.iocoder.yudao.module.crm.controller.admin.contract.vo.contract.CrmContractSaveReqVO$Product>"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.in.ErpPurchaseInSaveReqVO",
+    "owner": "cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.in.ErpPurchaseInSaveReqVO",
+    "field": "items",
+    "javaType": "java.util.List<cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.in.ErpPurchaseInSaveReqVO$Item>"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.order.ErpPurchaseOrderSaveReqVO",
+    "owner": "cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.order.ErpPurchaseOrderSaveReqVO",
+    "field": "items",
+    "javaType": "java.util.List<cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.order.ErpPurchaseOrderSaveReqVO$Item>"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.returns.ErpPurchaseReturnSaveReqVO",
+    "owner": "cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.returns.ErpPurchaseReturnSaveReqVO",
+    "field": "items",
+    "javaType": "java.util.List<cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.returns.ErpPurchaseReturnSaveReqVO$Item>"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.erp.controller.admin.sale.vo.out.ErpSaleOutSaveReqVO",
+    "owner": "cn.iocoder.yudao.module.erp.controller.admin.sale.vo.out.ErpSaleOutSaveReqVO",
+    "field": "items",
+    "javaType": "java.util.List<cn.iocoder.yudao.module.erp.controller.admin.sale.vo.out.ErpSaleOutSaveReqVO$Item>"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.erp.controller.admin.sale.vo.returns.ErpSaleReturnSaveReqVO",
+    "owner": "cn.iocoder.yudao.module.erp.controller.admin.sale.vo.returns.ErpSaleReturnSaveReqVO",
+    "field": "items",
+    "javaType": "java.util.List<cn.iocoder.yudao.module.erp.controller.admin.sale.vo.returns.ErpSaleReturnSaveReqVO$Item>"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.fms.controller.admin.config.vo.subject.FmsSubjectSaveReqVO",
+    "owner": "cn.iocoder.yudao.module.fms.controller.admin.config.vo.subject.FmsSubjectSaveReqVO",
+    "field": "auxiliaryMappings",
+    "javaType": "java.util.List<cn.iocoder.yudao.module.fms.controller.admin.config.vo.subject.FmsSubjectSaveReqVO$AuxiliaryMapping>"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.hrm.controller.admin.insurance.vo.scheme.HrmInsuranceSchemeSaveReqVO",
+    "owner": "cn.iocoder.yudao.module.hrm.controller.admin.insurance.vo.scheme.HrmInsuranceSchemeSaveReqVO",
+    "field": "projectList",
+    "javaType": "java.util.List<cn.iocoder.yudao.module.hrm.controller.admin.insurance.vo.scheme.HrmInsuranceSchemeProjectSaveReqVO>"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.iot.controller.admin.rule.vo.data.rule.IotDataRuleSaveReqVO",
+    "owner": "cn.iocoder.yudao.module.iot.controller.admin.rule.vo.data.rule.IotDataRuleSaveReqVO",
+    "field": "sourceConfigs",
+    "javaType": "java.util.List<cn.iocoder.yudao.module.iot.dal.dataobject.rule.IotDataRuleDO$SourceConfig>"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.pms.controller.admin.kb.library.vo.group.PmsKnowledgeGroupSortReqVO",
+    "owner": "cn.iocoder.yudao.module.pms.controller.admin.kb.library.vo.group.PmsKnowledgeGroupSortReqVO",
+    "field": "items",
+    "javaType": "java.util.List<cn.iocoder.yudao.module.pms.controller.admin.kb.library.vo.group.PmsKnowledgeGroupSortReqVO$Item>"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.promotion.controller.admin.point.vo.activity.PointActivitySaveReqVO",
+    "owner": "cn.iocoder.yudao.module.promotion.controller.admin.point.vo.activity.PointActivitySaveReqVO",
+    "field": "products",
+    "javaType": "java.util.List<cn.iocoder.yudao.module.promotion.controller.admin.point.vo.product.PointProductSaveReqVO>"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.promotion.controller.admin.seckill.vo.activity.SeckillActivityCreateReqVO",
+    "owner": "cn.iocoder.yudao.module.promotion.controller.admin.seckill.vo.activity.SeckillActivityCreateReqVO",
+    "field": "products",
+    "javaType": "java.util.List<cn.iocoder.yudao.module.promotion.controller.admin.seckill.vo.product.SeckillProductBaseVO>"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.promotion.controller.admin.seckill.vo.activity.SeckillActivityUpdateReqVO",
+    "owner": "cn.iocoder.yudao.module.promotion.controller.admin.seckill.vo.activity.SeckillActivityUpdateReqVO",
+    "field": "products",
+    "javaType": "java.util.List<cn.iocoder.yudao.module.promotion.controller.admin.seckill.vo.product.SeckillProductBaseVO>"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.trade.controller.app.order.vo.AppTradeOrderSettlementReqVO",
+    "owner": "cn.iocoder.yudao.module.trade.controller.app.order.vo.AppTradeOrderSettlementReqVO",
+    "field": "items",
+    "javaType": "java.util.List<cn.iocoder.yudao.module.trade.controller.app.order.vo.AppTradeOrderSettlementReqVO$Item>"
+  },
+  {
+    "class": "cn.iocoder.yudao.module.trade.controller.app.order.vo.AppTradeOrderCreateReqVO",
+    "owner": "cn.iocoder.yudao.module.trade.controller.app.order.vo.AppTradeOrderSettlementReqVO",
+    "field": "items",
+    "javaType": "java.util.List<cn.iocoder.yudao.module.trade.controller.app.order.vo.AppTradeOrderSettlementReqVO$Item>"
+  }
+]

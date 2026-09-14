@@ -66,7 +66,7 @@ public class ErpFinanceReceiptController {
     @PutMapping("/update")
     @Operation(summary = "更新收款单")
     @PreAuthorize("@ss.hasPermission('erp:finance-receipt:update')")
-    public CommonResult<Boolean> updateFinanceReceipt(@Valid @RequestBody ErpFinanceReceiptSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateFinanceReceipt(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody ErpFinanceReceiptSaveReqVO updateReqVO) {
         financeReceiptService.updateFinanceReceipt(updateReqVO);
         return success(true);
     }

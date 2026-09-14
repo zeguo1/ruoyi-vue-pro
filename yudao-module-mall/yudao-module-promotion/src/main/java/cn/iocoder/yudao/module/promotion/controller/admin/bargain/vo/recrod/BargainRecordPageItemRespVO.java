@@ -33,6 +33,7 @@ public class BargainRecordPageItemRespVO extends BargainRecordBaseVO {
 
     // ========== 活动相关 ==========
 
+    @Schema(description = "关联的砍价活动信息")
     private BargainActivityRespVO activity;
 
 }

@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 public class CrmFollowUpRecordSaveReqVO {
 
-    @Schema(description = "编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "28800")
+    @Schema(description = "跟进记录编号，新增时无需提交", example = "28800")
     private Long id;
 
     @Schema(description = "数据类型", requiredMode = Schema.RequiredMode.REQUIRED, example = "2")

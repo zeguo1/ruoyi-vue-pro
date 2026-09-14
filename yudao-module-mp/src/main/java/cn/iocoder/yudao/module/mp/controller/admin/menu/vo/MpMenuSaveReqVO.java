@@ -18,6 +18,7 @@ public class MpMenuSaveReqVO {
 
     @NotEmpty(message = "菜单不能为空")
     @Valid
+    @Schema(description = "公众号自定义菜单列表")
     private List<Menu> menus;
 
     @Schema(description = "管理后台 - 公众号菜单保存时的每个菜单")

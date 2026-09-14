@@ -36,6 +36,7 @@ public class MpMaterialUploadPermanentReqVO {
     @Schema(description = "视频素材的描述 文件类型为 video 时，必填", example = "视频素材的描述")
     private String introduction;
 
+    @Schema(hidden = true) // 跨字段校验方法，不是请求参数
     @AssertTrue(message = "标题不能为空")
     public boolean isTitleValid() {
         // 生成场景为管理后台时，必须设置上级菜单，不然生成的菜单 SQL 是无父级菜单的
@@ -43,6 +44,7 @@ public class MpMaterialUploadPermanentReqVO {
                 || title != null;
     }
 
+    @Schema(hidden = true) // 跨字段校验方法，不是请求参数
     @AssertTrue(message = "描述不能为空")
     public boolean isIntroductionValid() {
         // 生成场景为管理后台时，必须设置上级菜单，不然生成的菜单 SQL 是无父级菜单的

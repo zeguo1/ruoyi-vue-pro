@@ -48,7 +48,7 @@ public class ErpSupplierController {
     @PutMapping("/update")
     @Operation(summary = "更新供应商")
     @PreAuthorize("@ss.hasPermission('erp:supplier:update')")
-    public CommonResult<Boolean> updateSupplier(@Valid @RequestBody ErpSupplierSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateSupplier(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody ErpSupplierSaveReqVO updateReqVO) {
         supplierService.updateSupplier(updateReqVO);
         return success(true);
     }

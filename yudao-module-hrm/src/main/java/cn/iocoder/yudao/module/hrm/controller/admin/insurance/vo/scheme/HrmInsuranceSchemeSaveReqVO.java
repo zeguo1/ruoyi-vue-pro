@@ -39,6 +39,7 @@ public class HrmInsuranceSchemeSaveReqVO {
 
     @Schema(description = "社保项目列表", requiredMode = Schema.RequiredMode.REQUIRED)
     @NotEmpty(message = "社保项目不能为空")
-    private List<@NotNull(message = "社保项目不能为空") @Valid HrmInsuranceSchemeProjectSaveReqVO> projectList;
+    @jakarta.validation.Valid
+    private List<@jakarta.validation.constraints.NotNull(message = "明细元素不能为空") @NotNull(message = "社保项目不能为空") @Valid HrmInsuranceSchemeProjectSaveReqVO> projectList;
 
 }

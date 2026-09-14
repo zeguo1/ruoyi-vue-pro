@@ -53,7 +53,7 @@ public class MesWmWarehouseAreaController {
     @PutMapping("/update")
     @Operation(summary = "更新库位")
     @PreAuthorize("@ss.hasPermission('mes:wm-warehouse:update')")
-    public CommonResult<Boolean> updateWarehouseArea(@Valid @RequestBody MesWmWarehouseAreaSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateWarehouseArea(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmWarehouseAreaSaveReqVO updateReqVO) {
         areaService.updateWarehouseArea(updateReqVO);
         return success(true);
     }

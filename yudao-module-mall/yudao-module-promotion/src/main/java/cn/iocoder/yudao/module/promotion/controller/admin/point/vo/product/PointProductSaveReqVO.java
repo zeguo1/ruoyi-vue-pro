@@ -8,15 +8,15 @@ import lombok.Data;
 @Data
 public class PointProductSaveReqVO {
 
-    @Schema(description = "积分商城商品编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "31718")
+    @Schema(description = "积分商城商品编号，新增时无需提交", example = "31718")
     private Long id;
 
-    @Schema(description = "积分商城活动 id", requiredMode = Schema.RequiredMode.REQUIRED, example = "29388")
-    @NotNull(message = "积分商城活动 id不能为空")
+    @Schema(description = "积分商城活动编号，由后端根据所属活动取得，无需提交", accessMode = Schema.AccessMode.READ_ONLY)
+    @com.fasterxml.jackson.annotation.JsonProperty(access = com.fasterxml.jackson.annotation.JsonProperty.Access.READ_ONLY)
     private Long activityId;
 
-    @Schema(description = "商品 SPU 编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "8112")
-    @NotNull(message = "商品 SPU 编号不能为空")
+    @Schema(description = "商品 SPU 编号，由后端根据活动商品取得，无需提交", accessMode = Schema.AccessMode.READ_ONLY)
+    @com.fasterxml.jackson.annotation.JsonProperty(access = com.fasterxml.jackson.annotation.JsonProperty.Access.READ_ONLY)
     private Long spuId;
 
     @Schema(description = "商品 SKU 编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "2736")
@@ -39,8 +39,8 @@ public class PointProductSaveReqVO {
     @NotNull(message = "积分商城商品不能为空")
     private Integer stock;
 
-    @Schema(description = "积分商城商品状态", requiredMode = Schema.RequiredMode.REQUIRED, example = "2")
-    @NotNull(message = "积分商城商品状态不能为空")
+    @Schema(description = "积分商城商品状态，由后端根据所属活动取得，无需提交", accessMode = Schema.AccessMode.READ_ONLY)
+    @com.fasterxml.jackson.annotation.JsonProperty(access = com.fasterxml.jackson.annotation.JsonProperty.Access.READ_ONLY)
     private Integer activityStatus;
 
 }

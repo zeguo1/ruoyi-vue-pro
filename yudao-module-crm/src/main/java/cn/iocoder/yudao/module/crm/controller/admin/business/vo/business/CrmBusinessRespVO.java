@@ -64,11 +64,12 @@ public class CrmBusinessRespVO {
     @ExcelProperty("商机状态")
     private String statusName;
 
-    @Schema
     @ExcelProperty("结束状态")
+    @Schema(description = "商机结束状态，取值参见商机结束状态枚举")
     private Integer endStatus;
 
     @ExcelProperty("结束时的备注")
+    @Schema(description = "商机结束备注")
     private String endRemark;
 
     @Schema(description = "预计成交日期")

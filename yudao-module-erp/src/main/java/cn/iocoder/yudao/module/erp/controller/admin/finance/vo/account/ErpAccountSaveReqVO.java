@@ -11,7 +11,8 @@ import lombok.Data;
 @Data
 public class ErpAccountSaveReqVO {
 
-    @Schema(description = "结算账户编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "28684")
+    @Schema(description = "结算账户编号；新增可省略，修改时必须提交已有记录编号", requiredMode = Schema.RequiredMode.NOT_REQUIRED, example = "28684")
+    @jakarta.validation.constraints.NotNull(groups = cn.iocoder.yudao.framework.common.validation.Update.class, message = "修改时编号不能为空")
     private Long id;
 
     @Schema(description = "账户名称", requiredMode = Schema.RequiredMode.REQUIRED, example = "张三")

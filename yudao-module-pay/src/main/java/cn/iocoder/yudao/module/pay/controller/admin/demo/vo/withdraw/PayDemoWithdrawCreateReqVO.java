@@ -32,6 +32,7 @@ public class PayDemoWithdrawCreateReqVO {
     @InEnum(PayDemoWithdrawTypeEnum.class)
     private Integer type;
 
+    @Schema(hidden = true) // 跨字段校验方法，不是请求参数
     @AssertTrue(message = "收款人姓名")
     public boolean isUserNameValid() {
         // 特殊：支付宝必须填写用户名！！！

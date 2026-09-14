@@ -42,7 +42,7 @@ public class AiApiKeyController {
     @PutMapping("/update")
     @Operation(summary = "更新 API 密钥")
     @PreAuthorize("@ss.hasPermission('ai:api-key:update')")
-    public CommonResult<Boolean> updateApiKey(@Valid @RequestBody AiApiKeySaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateApiKey(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody AiApiKeySaveReqVO updateReqVO) {
         apiKeyService.updateApiKey(updateReqVO);
         return success(true);
     }

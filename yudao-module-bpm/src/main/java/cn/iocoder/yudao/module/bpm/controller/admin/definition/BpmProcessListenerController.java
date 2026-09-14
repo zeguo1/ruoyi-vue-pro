@@ -38,7 +38,7 @@ public class BpmProcessListenerController {
     @PutMapping("/update")
     @Operation(summary = "更新流程监听器")
     @PreAuthorize("@ss.hasPermission('bpm:process-listener:update')")
-    public CommonResult<Boolean> updateProcessListener(@Valid @RequestBody BpmProcessListenerSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateProcessListener(@org.springframework.validation.annotation.Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody BpmProcessListenerSaveReqVO updateReqVO) {
         processListenerService.updateProcessListener(updateReqVO);
         return success(true);
     }

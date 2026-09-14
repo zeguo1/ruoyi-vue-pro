@@ -7,6 +7,7 @@ import cn.iocoder.yudao.framework.common.exception.enums.GlobalErrorCodeConstant
 import cn.iocoder.yudao.framework.common.exception.util.ServiceExceptionUtil;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -24,16 +25,19 @@ public class CommonResult<T> implements Serializable {
      *
      * @see ErrorCode#getCode()
      */
+    @Schema(description = "业务状态码，0 表示成功，非 0 表示失败；不能只依据 HTTP 状态判断成功", example = "0")
     private Integer code;
     /**
      * 错误提示，用户可阅读
      *
      * @see ErrorCode#getMsg() ()
      */
+    @Schema(description = "业务结果说明；失败时为可阅读的错误原因")
     private String msg;
     /**
      * 返回数据
      */
+    @Schema(description = "业务结果数据，结构由具体接口定义")
     private T data;
 
     /**
