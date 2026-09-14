@@ -1,0 +1,30 @@
+# Development candidate; do not enable in production before applying migrations and completing the handoff checklist.
+# No passwords or service keys are committed. Secret values belong in the deployment secret store.
+mgs:
+  trial:
+    storage-enabled: false # Enable only after additive migration; existing installations remain unaffected.
+    enabled: false # New enrollment gate. Turning it off does not disable maintenance of existing records.
+    environment: null # Confirm deployment/environment identity before enabling.
+    demo-tenant-id: 1 # User confirmed tenant 1 is the demonstration tenant.
+    operator-tenant-id: null # ID of the separate 栖云 corporate tenant; must never equal demo-tenant-id.
+    owner-user-id: null # Active internal CRM owner in the 栖云 tenant.
+    duration-days: null # Server decision, never supplied by an Agent.
+    max-applications: null
+    oauth-client-id: null # Dedicated internal OAuth client with mgs.trial scope; access TTL 60–1800 seconds.
+    mgs-login-url: null # Real HTTPS address for viewing the results.
+    knowdo-base-url: null # Real HTTPS internal service endpoint, not an Agent/chat endpoint.
+    outbound-key-id: null
+    outbound-secret: ${MGS_TRIAL_KNOWDO_SECRET:}
+    keys: {} # key ID -> {issuer, secret, capabilities:[TOOLS | EVENTS | AUTHORIZATION | DELIVERY]}; use separate least-privilege keys.
+    login-delivery:
+      active-key-id: null # Required before opening new enrollment.
+      encryption-keys: {} # Versioned key ID -> base64 of 32 cryptographically random bytes. Secret store only; separate from HMAC keys.
+      # Retain each previous key until its unclaimed/retryable encrypted deliveries have expired or been purged.
+    operator-bootstrap: # Internal one-time setup only; not part of visitor/tool input.
+      enabled: false
+      contact-name: null # Confirm the internal corporate contact; do not use a visitor's details.
+      username: null # Internal administrator login; never handed to trial applicants.
+      password: ${MGS_TRIAL_OPERATOR_INITIAL_PASSWORD:} # 12–16 chars, deployment secret store only.
+      expire-time: null # Corporate tenant validity required by the existing tenant service, not trial duration.
+      account-count: null # Confirm corporate capacity; this is not the visitor application quota.
+      menu-ids: [] # Reviewed corporate menu snapshot with all ancestors; must contain crm:trial:query/recover and crm:clue:query.

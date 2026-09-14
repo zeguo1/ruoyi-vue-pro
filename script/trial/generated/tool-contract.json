@@ -1,0 +1,800 @@
+{
+  "contractVersion": "mgs-trial-v1-candidate",
+  "openapiVersion": "1.0.0-full-contract-v6",
+  "openapiSha256": "82a301def7a1cd82e80947d717420087db288e722b1e3cfc75719286d03a63ab",
+  "operations": [
+    {
+      "key": "GET /admin-api/crm/trial-business/customer",
+      "operationId": "TrialBusiness_customer",
+      "parameterMapping": [
+        {
+          "source": "OpenAPI parameter",
+          "in": "header",
+          "path": "tenant-id",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "format": "int32",
+            "default": 1,
+            "description": "租户编号"
+          }
+        },
+        {
+          "source": "OpenAPI parameter",
+          "in": "header",
+          "path": "Authorization",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "description": "认证 Token"
+          }
+        }
+      ],
+      "requestSuccess": {
+        "path": "code",
+        "equals": 0
+      },
+      "errorMessagePath": "msg",
+      "accountReadyCondition": null,
+      "readOnly": true,
+      "trustedServiceContract": null,
+      "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
+      "manualVerification": [
+        "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
+        "No claim that KnowDo has imported/applied this file; real WeChat end-to-end validation remains pending."
+      ]
+    },
+    {
+      "key": "POST /admin-api/crm/trial-business/follow-up",
+      "operationId": "TrialBusiness_followUp",
+      "parameterMapping": [
+        {
+          "source": "OpenAPI parameter",
+          "in": "header",
+          "path": "tenant-id",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "format": "int32",
+            "default": 1,
+            "description": "租户编号"
+          }
+        },
+        {
+          "source": "OpenAPI parameter",
+          "in": "header",
+          "path": "Authorization",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "description": "认证 Token"
+          }
+        },
+        {
+          "source": "OpenAPI requestBody",
+          "in": "requestBody",
+          "mediaType": "application/json",
+          "path": "idempotencyKey",
+          "type": "string",
+          "requiredInParent": true,
+          "description": "本次业务操作幂等键，重复提交必须保持内容一致",
+          "schema": {
+            "type": "string",
+            "description": "本次业务操作幂等键，重复提交必须保持内容一致",
+            "minLength": 1,
+            "pattern": "[a-zA-Z0-9_.:-]{16,128}"
+          }
+        },
+        {
+          "source": "OpenAPI requestBody",
+          "in": "requestBody",
+          "mediaType": "application/json",
+          "path": "content",
+          "type": "string",
+          "requiredInParent": true,
+          "description": "用户确认的跟进内容，不得填写密码、验证码等凭据",
+          "schema": {
+            "type": "string",
+            "description": "用户确认的跟进内容，不得填写密码、验证码等凭据",
+            "maxLength": 1000,
+            "minLength": 0
+          }
+        },
+        {
+          "source": "OpenAPI requestBody",
+          "in": "requestBody",
+          "mediaType": "application/json",
+          "path": "type",
+          "type": "integer",
+          "requiredInParent": true,
+          "description": "实际跟进类型，从 follow-up-types 查询选择，不要编造",
+          "schema": {
+            "type": "integer",
+            "format": "int32",
+            "description": "实际跟进类型，从 follow-up-types 查询选择，不要编造"
+          }
+        },
+        {
+          "source": "OpenAPI requestBody",
+          "in": "requestBody",
+          "mediaType": "application/json",
+          "path": "nextTime",
+          "type": null,
+          "requiredInParent": true,
+          "description": "用户指定的下次联系时间；未提供时请询问用户；JSON 入参支持整数毫秒时间戳或 ISO 8601 日期时间字符串；JSON 返回为整数毫秒时间戳；不合法的值会被拒绝",
+          "schema": {
+            "description": "用户指定的下次联系时间；未提供时请询问用户；JSON 入参支持整数毫秒时间戳或 ISO 8601 日期时间字符串；JSON 返回为整数毫秒时间戳；不合法的值会被拒绝",
+            "oneOf": [
+              {
+                "type": "integer",
+                "format": "int64",
+                "description": "Unix 毫秒时间戳；按服务端时区转换成本地时间"
+              },
+              {
+                "type": "string",
+                "description": "ISO 8601 日期时间，可含时区偏移；无偏移时按服务端本地时间；兼容整数字符串时间戳"
+              }
+            ],
+            "x-wire-java-type": "LocalDateTime",
+            "x-wire-direction": "input"
+          }
+        }
+      ],
+      "requestSuccess": {
+        "path": "code",
+        "equals": 0
+      },
+      "errorMessagePath": "msg",
+      "accountReadyCondition": null,
+      "readOnly": false,
+      "trustedServiceContract": null,
+      "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
+      "manualVerification": [
+        "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
+        "No claim that KnowDo has imported/applied this file; real WeChat end-to-end validation remains pending."
+      ]
+    },
+    {
+      "key": "GET /admin-api/crm/trial-business/follow-up-types",
+      "operationId": "TrialBusiness_types",
+      "parameterMapping": [
+        {
+          "source": "OpenAPI parameter",
+          "in": "header",
+          "path": "tenant-id",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "format": "int32",
+            "default": 1,
+            "description": "租户编号"
+          }
+        },
+        {
+          "source": "OpenAPI parameter",
+          "in": "header",
+          "path": "Authorization",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "description": "认证 Token"
+          }
+        }
+      ],
+      "requestSuccess": {
+        "path": "code",
+        "equals": 0
+      },
+      "errorMessagePath": "msg",
+      "accountReadyCondition": null,
+      "readOnly": true,
+      "trustedServiceContract": null,
+      "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
+      "manualVerification": [
+        "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
+        "No claim that KnowDo has imported/applied this file; real WeChat end-to-end validation remains pending."
+      ]
+    },
+    {
+      "key": "GET /admin-api/crm/trial-business/follow-ups",
+      "operationId": "TrialBusiness_followUps",
+      "parameterMapping": [
+        {
+          "source": "OpenAPI parameter",
+          "in": "header",
+          "path": "tenant-id",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "format": "int32",
+            "default": 1,
+            "description": "租户编号"
+          }
+        },
+        {
+          "source": "OpenAPI parameter",
+          "in": "header",
+          "path": "Authorization",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "description": "认证 Token"
+          }
+        }
+      ],
+      "requestSuccess": {
+        "path": "code",
+        "equals": 0
+      },
+      "errorMessagePath": "msg",
+      "accountReadyCondition": null,
+      "readOnly": true,
+      "trustedServiceContract": null,
+      "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
+      "manualVerification": [
+        "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
+        "No claim that KnowDo has imported/applied this file; real WeChat end-to-end validation remains pending."
+      ]
+    },
+    {
+      "key": "POST /admin-api/crm/trial-event/accept",
+      "operationId": "TrialEvent_accept",
+      "parameterMapping": [
+        {
+          "source": "OpenAPI requestBody",
+          "in": "requestBody",
+          "mediaType": "application/json",
+          "path": "eventId",
+          "type": "string",
+          "requiredInParent": true,
+          "description": "",
+          "schema": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "[a-zA-Z0-9_.:-]{16,128}"
+          }
+        },
+        {
+          "source": "OpenAPI requestBody",
+          "in": "requestBody",
+          "mediaType": "application/json",
+          "path": "applicationId",
+          "type": "string",
+          "requiredInParent": true,
+          "description": "",
+          "schema": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "[a-f0-9-]{36}"
+          }
+        },
+        {
+          "source": "OpenAPI requestBody",
+          "in": "requestBody",
+          "mediaType": "application/json",
+          "path": "type",
+          "type": "string",
+          "requiredInParent": true,
+          "description": "",
+          "schema": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "BOUND|FIRST_BUSINESS_COMPLETED"
+          }
+        },
+        {
+          "source": "OpenAPI requestBody",
+          "in": "requestBody",
+          "mediaType": "application/json",
+          "path": "knowdoMemberId",
+          "type": "string",
+          "requiredInParent": true,
+          "description": "已完成知办成员步骤返回的成员编号，必须与申请一致",
+          "schema": {
+            "type": "string",
+            "description": "已完成知办成员步骤返回的成员编号，必须与申请一致",
+            "maxLength": 128,
+            "minLength": 0
+          }
+        },
+        {
+          "source": "OpenAPI requestBody",
+          "in": "requestBody",
+          "mediaType": "application/json",
+          "path": "businessRecordId",
+          "type": "string",
+          "requiredInParent": false,
+          "description": "首次业务完成时提供本次 MGS 跟进编号；MGS 核验实际持久化结果，不只信任事件名称",
+          "schema": {
+            "type": "string",
+            "description": "首次业务完成时提供本次 MGS 跟进编号；MGS 核验实际持久化结果，不只信任事件名称",
+            "maxLength": 32,
+            "minLength": 0
+          }
+        }
+      ],
+      "requestSuccess": {
+        "path": "code",
+        "equals": 0
+      },
+      "errorMessagePath": "msg",
+      "accountReadyCondition": null,
+      "readOnly": false,
+      "trustedServiceContract": {
+        "modelMaySupplyIdentity": false,
+        "capability": "EVENTS",
+        "version": "mgs-trial-v1",
+        "trustedHeaders": [
+          "X-Mgs-Trial-Key",
+          "X-Mgs-Trial-Timestamp",
+          "X-Mgs-Trial-Nonce",
+          "X-Mgs-Trial-Subject",
+          "X-Mgs-Trial-Verified",
+          "X-Mgs-Trial-Email",
+          "X-Mgs-Trial-Confirmation",
+          "X-Mgs-Trial-Idempotency",
+          "X-Mgs-Trial-Signature"
+        ]
+      },
+      "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
+      "manualVerification": [
+        "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
+        "No claim that KnowDo has imported/applied this file; real WeChat end-to-end validation remains pending."
+      ]
+    },
+    {
+      "key": "GET /admin-api/crm/trial-operations/get",
+      "operationId": "TrialOperations_get",
+      "parameterMapping": [
+        {
+          "source": "OpenAPI parameter",
+          "in": "query",
+          "path": "applicationId",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "source": "OpenAPI parameter",
+          "in": "header",
+          "path": "tenant-id",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "format": "int32",
+            "default": 1,
+            "description": "租户编号"
+          }
+        },
+        {
+          "source": "OpenAPI parameter",
+          "in": "header",
+          "path": "Authorization",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "description": "认证 Token"
+          }
+        }
+      ],
+      "requestSuccess": {
+        "path": "code",
+        "equals": 0
+      },
+      "errorMessagePath": "msg",
+      "accountReadyCondition": null,
+      "readOnly": true,
+      "trustedServiceContract": null,
+      "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
+      "manualVerification": [
+        "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
+        "No claim that KnowDo has imported/applied this file; real WeChat end-to-end validation remains pending."
+      ]
+    },
+    {
+      "key": "GET /admin-api/crm/trial-operations/page",
+      "operationId": "TrialOperations_page",
+      "parameterMapping": [
+        {
+          "source": "OpenAPI parameter",
+          "in": "query",
+          "path": "pageNo",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "format": "int32",
+            "default": 1,
+            "minimum": 1
+          }
+        },
+        {
+          "source": "OpenAPI parameter",
+          "in": "query",
+          "path": "pageSize",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "format": "int32",
+            "default": 20,
+            "maximum": 100,
+            "minimum": 1
+          }
+        },
+        {
+          "source": "OpenAPI parameter",
+          "in": "header",
+          "path": "tenant-id",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "format": "int32",
+            "default": 1,
+            "description": "租户编号"
+          }
+        },
+        {
+          "source": "OpenAPI parameter",
+          "in": "header",
+          "path": "Authorization",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "description": "认证 Token"
+          }
+        }
+      ],
+      "requestSuccess": {
+        "path": "code",
+        "equals": 0
+      },
+      "errorMessagePath": "msg",
+      "accountReadyCondition": null,
+      "readOnly": true,
+      "trustedServiceContract": null,
+      "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
+      "manualVerification": [
+        "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
+        "No claim that KnowDo has imported/applied this file; real WeChat end-to-end validation remains pending."
+      ]
+    },
+    {
+      "key": "POST /admin-api/crm/trial-operations/recover",
+      "operationId": "TrialOperations_recover",
+      "parameterMapping": [
+        {
+          "source": "OpenAPI parameter",
+          "in": "header",
+          "path": "tenant-id",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "format": "int32",
+            "default": 1,
+            "description": "租户编号"
+          }
+        },
+        {
+          "source": "OpenAPI parameter",
+          "in": "header",
+          "path": "Authorization",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "description": "认证 Token"
+          }
+        },
+        {
+          "source": "OpenAPI requestBody",
+          "in": "requestBody",
+          "mediaType": "application/json",
+          "path": "applicationId",
+          "type": "string",
+          "requiredInParent": true,
+          "description": "submit_trial_application 返回的申请编号",
+          "schema": {
+            "type": "string",
+            "description": "submit_trial_application 返回的申请编号",
+            "example": "00000000-0000-0000-0000-000000000001",
+            "minLength": 1,
+            "pattern": "[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
+          }
+        }
+      ],
+      "requestSuccess": {
+        "path": "code",
+        "equals": 0
+      },
+      "errorMessagePath": "msg",
+      "accountReadyCondition": null,
+      "readOnly": false,
+      "trustedServiceContract": null,
+      "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
+      "manualVerification": [
+        "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
+        "No claim that KnowDo has imported/applied this file; real WeChat end-to-end validation remains pending."
+      ]
+    },
+    {
+      "key": "POST /admin-api/crm/trial-tool/create-accounts",
+      "operationId": "create_trial_accounts",
+      "parameterMapping": [
+        {
+          "source": "OpenAPI requestBody",
+          "in": "requestBody",
+          "mediaType": "application/json",
+          "path": "applicationId",
+          "type": "string",
+          "requiredInParent": true,
+          "description": "submit_trial_application 返回的申请编号",
+          "schema": {
+            "type": "string",
+            "description": "submit_trial_application 返回的申请编号",
+            "example": "00000000-0000-0000-0000-000000000001",
+            "minLength": 1,
+            "pattern": "[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
+          }
+        }
+      ],
+      "requestSuccess": {
+        "path": "code",
+        "equals": 0
+      },
+      "errorMessagePath": "msg",
+      "accountReadyCondition": {
+        "all": [
+          {
+            "path": "code",
+            "equals": 0
+          },
+          {
+            "path": "data.accountReady",
+            "equals": true
+          }
+        ]
+      },
+      "readOnly": false,
+      "trustedServiceContract": {
+        "modelMaySupplyIdentity": false,
+        "capability": "TOOLS",
+        "version": "mgs-trial-v1",
+        "trustedHeaders": [
+          "X-Mgs-Trial-Key",
+          "X-Mgs-Trial-Timestamp",
+          "X-Mgs-Trial-Nonce",
+          "X-Mgs-Trial-Subject",
+          "X-Mgs-Trial-Verified",
+          "X-Mgs-Trial-Email",
+          "X-Mgs-Trial-Confirmation",
+          "X-Mgs-Trial-Idempotency",
+          "X-Mgs-Trial-Signature"
+        ]
+      },
+      "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
+      "manualVerification": [
+        "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
+        "No claim that KnowDo has imported/applied this file; real WeChat end-to-end validation remains pending."
+      ]
+    },
+    {
+      "key": "POST /admin-api/crm/trial-tool/guide",
+      "operationId": "get_trial_guide",
+      "parameterMapping": [
+        {
+          "source": "OpenAPI requestBody",
+          "in": "requestBody",
+          "mediaType": "application/json",
+          "path": "applicationId",
+          "type": "string",
+          "requiredInParent": true,
+          "description": "submit_trial_application 返回的申请编号",
+          "schema": {
+            "type": "string",
+            "description": "submit_trial_application 返回的申请编号",
+            "example": "00000000-0000-0000-0000-000000000001",
+            "minLength": 1,
+            "pattern": "[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
+          }
+        }
+      ],
+      "requestSuccess": {
+        "path": "code",
+        "equals": 0
+      },
+      "errorMessagePath": "msg",
+      "accountReadyCondition": {
+        "all": [
+          {
+            "path": "code",
+            "equals": 0
+          },
+          {
+            "path": "data.accountReady",
+            "equals": true
+          }
+        ]
+      },
+      "readOnly": true,
+      "trustedServiceContract": {
+        "modelMaySupplyIdentity": false,
+        "capability": "TOOLS",
+        "version": "mgs-trial-v1",
+        "trustedHeaders": [
+          "X-Mgs-Trial-Key",
+          "X-Mgs-Trial-Timestamp",
+          "X-Mgs-Trial-Nonce",
+          "X-Mgs-Trial-Subject",
+          "X-Mgs-Trial-Verified",
+          "X-Mgs-Trial-Email",
+          "X-Mgs-Trial-Confirmation",
+          "X-Mgs-Trial-Idempotency",
+          "X-Mgs-Trial-Signature"
+        ]
+      },
+      "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
+      "manualVerification": [
+        "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
+        "No claim that KnowDo has imported/applied this file; real WeChat end-to-end validation remains pending."
+      ]
+    },
+    {
+      "key": "POST /admin-api/crm/trial-tool/status",
+      "operationId": "get_trial_status",
+      "parameterMapping": [
+        {
+          "source": "OpenAPI requestBody",
+          "in": "requestBody",
+          "mediaType": "application/json",
+          "path": "applicationId",
+          "type": "string",
+          "requiredInParent": true,
+          "description": "submit_trial_application 返回的申请编号",
+          "schema": {
+            "type": "string",
+            "description": "submit_trial_application 返回的申请编号",
+            "example": "00000000-0000-0000-0000-000000000001",
+            "minLength": 1,
+            "pattern": "[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
+          }
+        }
+      ],
+      "requestSuccess": {
+        "path": "code",
+        "equals": 0
+      },
+      "errorMessagePath": "msg",
+      "accountReadyCondition": {
+        "all": [
+          {
+            "path": "code",
+            "equals": 0
+          },
+          {
+            "path": "data.accountReady",
+            "equals": true
+          }
+        ]
+      },
+      "readOnly": true,
+      "trustedServiceContract": {
+        "modelMaySupplyIdentity": false,
+        "capability": "TOOLS",
+        "version": "mgs-trial-v1",
+        "trustedHeaders": [
+          "X-Mgs-Trial-Key",
+          "X-Mgs-Trial-Timestamp",
+          "X-Mgs-Trial-Nonce",
+          "X-Mgs-Trial-Subject",
+          "X-Mgs-Trial-Verified",
+          "X-Mgs-Trial-Email",
+          "X-Mgs-Trial-Confirmation",
+          "X-Mgs-Trial-Idempotency",
+          "X-Mgs-Trial-Signature"
+        ]
+      },
+      "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
+      "manualVerification": [
+        "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
+        "No claim that KnowDo has imported/applied this file; real WeChat end-to-end validation remains pending."
+      ]
+    },
+    {
+      "key": "POST /admin-api/crm/trial-tool/submit",
+      "operationId": "submit_trial_application",
+      "parameterMapping": [
+        {
+          "source": "OpenAPI requestBody",
+          "in": "requestBody",
+          "mediaType": "application/json",
+          "path": "team",
+          "type": "string",
+          "requiredInParent": true,
+          "description": "团队名称，仅用于留资，不用于合并身份",
+          "schema": {
+            "type": "string",
+            "description": "团队名称，仅用于留资，不用于合并身份",
+            "example": "示例体验团队",
+            "maxLength": 100,
+            "minLength": 0
+          }
+        },
+        {
+          "source": "OpenAPI requestBody",
+          "in": "requestBody",
+          "mediaType": "application/json",
+          "path": "contactName",
+          "type": "string",
+          "requiredInParent": true,
+          "description": "联系人称呼",
+          "schema": {
+            "type": "string",
+            "description": "联系人称呼",
+            "example": "王女士",
+            "maxLength": 30,
+            "minLength": 0
+          }
+        },
+        {
+          "source": "OpenAPI requestBody",
+          "in": "requestBody",
+          "mediaType": "application/json",
+          "path": "scenario",
+          "type": "string",
+          "requiredInParent": true,
+          "description": "首期体验场景：查询虚构客户并新增跟进",
+          "schema": {
+            "type": "string",
+            "description": "首期体验场景：查询虚构客户并新增跟进",
+            "enum": [
+              "CRM_FOLLOW_UP"
+            ],
+            "example": "CRM_FOLLOW_UP",
+            "minLength": 1,
+            "pattern": "CRM_FOLLOW_UP"
+          }
+        }
+      ],
+      "requestSuccess": {
+        "path": "code",
+        "equals": 0
+      },
+      "errorMessagePath": "msg",
+      "accountReadyCondition": {
+        "all": [
+          {
+            "path": "code",
+            "equals": 0
+          },
+          {
+            "path": "data.accountReady",
+            "equals": true
+          }
+        ]
+      },
+      "readOnly": false,
+      "trustedServiceContract": {
+        "modelMaySupplyIdentity": false,
+        "capability": "TOOLS",
+        "version": "mgs-trial-v1",
+        "trustedHeaders": [
+          "X-Mgs-Trial-Key",
+          "X-Mgs-Trial-Timestamp",
+          "X-Mgs-Trial-Nonce",
+          "X-Mgs-Trial-Subject",
+          "X-Mgs-Trial-Verified",
+          "X-Mgs-Trial-Email",
+          "X-Mgs-Trial-Confirmation",
+          "X-Mgs-Trial-Idempotency",
+          "X-Mgs-Trial-Signature"
+        ]
+      },
+      "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
+      "manualVerification": [
+        "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
+        "No claim that KnowDo has imported/applied this file; real WeChat end-to-end validation remains pending."
+      ]
+    }
+  ],
+  "credentialEndpointsExcluded": true,
+  "realEndToEndVerified": false
+}
