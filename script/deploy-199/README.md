@@ -58,3 +58,8 @@ docker compose -f script/deploy-199/compose.yaml stop
 TDengine 入口包装脚本仅去除供应商脚本的 `set -x`，防止初始化密码进入日志；其余初始化步骤保持原样。
 
 `taos.cfg` 使用标准的 2 GiB 数据写入保留空间，并限制日志。注意监控共享宿主机的磁盘容量，低于保留空间时 TDengine 会拒绝写入。
+
+
+### 共享主机的 TDengine 内存预留
+
+`taos.cfg` 显式设置 `minReservedMemorySize 1024`（MB），避免默认预留整机 20% 内存导致当前共享主机在后端重启时连表结构查询都报 `Query memory exhausted`。已有数据目录可能优先读取 `dnode/config/local.json`；升级后应查询 `SHOW DNODE 1 VARIABLES LIKE 'minReservedMemorySize'`，不能只依据文本配置判断生效。此次实例已备份原持久化配置并将该值设为 1024，重启后完成读回验证。操作背景、备份位置及验证见 [ERP 交接报告](../openapi/ERP_ORDER_HANDOFF.md#部署依赖恢复记录)。

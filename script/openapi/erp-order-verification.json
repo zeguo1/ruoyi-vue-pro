@@ -1,0 +1,485 @@
+{
+  "source": "http://192.168.1.199:8088/v3/api-docs",
+  "sha256": "7fcccdace0550b09084ed9565e2b92edf22f56873ae4e3d50f68c747a07838ef",
+  "version": "1.0.0-erp-order-contract-v2",
+  "salesOrderContracts": [
+    {
+      "method": "POST",
+      "path": "/admin-api/erp/sale-order/create",
+      "itemRef": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.sale.vo.order.ErpSaleOrderSaveReqVO.Item",
+      "required": [
+        "count",
+        "productId",
+        "productPrice"
+      ],
+      "fields": [
+        "count",
+        "id",
+        "productId",
+        "productPrice",
+        "productUnitId",
+        "remark",
+        "taxPercent"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/erp/sale-order/update",
+      "itemRef": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.sale.vo.order.ErpSaleOrderSaveReqVO.Item",
+      "required": [
+        "count",
+        "productId",
+        "productPrice"
+      ],
+      "fields": [
+        "count",
+        "id",
+        "productId",
+        "productPrice",
+        "productUnitId",
+        "remark",
+        "taxPercent"
+      ]
+    }
+  ],
+  "remainingSharedItemOperations": [],
+  "beforeSha256": "94fe440c6f42d0798773ed4c887d5a1a433887d65f15253e51c57c01343bef54",
+  "previouslyAffectedOperations": [
+    {
+      "method": "PUT",
+      "path": "/admin-api/pms/pm/project-group/update-sort",
+      "summary": "修改项目分组排序"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/pms/kb/group/update-sort",
+      "summary": "修改知识库分组排序"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/mes/qc/indicator-result/update",
+      "summary": "更新检验结果"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/fms/report/cash-flow-statement/update",
+      "summary": "更新现金流量表"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/fms/report/cash-flow-statement/adjustment/update",
+      "summary": "更新现金流量辅助数据"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/erp/stock-out/update",
+      "summary": "更新其它出库单"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/erp/stock-move/update",
+      "summary": "更新库存调拨单"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/erp/stock-in/update",
+      "summary": "更新其它入库单"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/erp/stock-check/update",
+      "summary": "更新库存调拨单"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/erp/sale-return/update",
+      "summary": "更新销售退货"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/erp/sale-out/update",
+      "summary": "更新销售出库"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/erp/sale-order/update",
+      "summary": "更新销售订单"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/erp/purchase-return/update",
+      "summary": "更新采购退货"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/erp/purchase-order/update",
+      "summary": "更新采购订单"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/erp/purchase-in/update",
+      "summary": "更新采购入库"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/erp/finance-receipt/update",
+      "summary": "更新收款单"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/erp/finance-payment/update",
+      "summary": "更新付款单"
+    },
+    {
+      "method": "POST",
+      "path": "/app-api/trade/order/create",
+      "summary": "创建订单"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/mes/qc/indicator-result/create",
+      "summary": "创建检验结果"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/erp/stock-out/create",
+      "summary": "创建其它出库单"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/erp/stock-move/create",
+      "summary": "创建库存调拨单"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/erp/stock-in/create",
+      "summary": "创建其它入库单"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/erp/stock-check/create",
+      "summary": "创建库存调拨单"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/erp/sale-return/create",
+      "summary": "创建销售退货"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/erp/sale-out/create",
+      "summary": "创建销售出库"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/erp/sale-order/create",
+      "summary": "创建销售订单"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/erp/purchase-return/create",
+      "summary": "创建采购退货"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/erp/purchase-order/create",
+      "summary": "创建采购订单"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/erp/purchase-in/create",
+      "summary": "创建采购入库"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/erp/finance-receipt/create",
+      "summary": "创建收款单"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/erp/finance-payment/create",
+      "summary": "创建付款单"
+    },
+    {
+      "method": "GET",
+      "path": "/app-api/trade/order/settlement",
+      "summary": "获得订单结算信息"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/trade/order/page",
+      "summary": "获得交易订单分页"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/trade/order/get-detail",
+      "summary": "获得交易订单详情"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/trade/order/get-by-pick-up-verify-code",
+      "summary": "查询核销码对应的订单"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/work-item-work-log/project-report",
+      "summary": "获得项目工时报表"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/kb/recycle/content-detail",
+      "summary": "获得知识库最近删除详情"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/mes/qc/indicator-result/page",
+      "summary": "获得检验结果分页"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/mes/qc/indicator-result/get-detail",
+      "summary": "获得检验结果明细（含检测项模板）"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/im/face-pack/list",
+      "summary": "获得启用的表情包列表（含表情）"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/stock-out/page",
+      "summary": "获得其它出库单分页"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/stock-out/get",
+      "summary": "获得其它出库单"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/stock-move/page",
+      "summary": "获得库存调拨单分页"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/stock-move/get",
+      "summary": "获得库存调拨单"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/stock-in/page",
+      "summary": "获得其它入库单分页"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/stock-in/get",
+      "summary": "获得其它入库单"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/stock-check/page",
+      "summary": "获得库存调拨单分页"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/stock-check/get",
+      "summary": "获得库存调拨单"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/sale-return/page",
+      "summary": "获得销售退货分页"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/sale-return/get",
+      "summary": "获得销售退货"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/sale-out/page",
+      "summary": "获得销售出库分页"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/sale-out/get",
+      "summary": "获得销售出库"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/sale-order/page",
+      "summary": "获得销售订单分页"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/sale-order/get",
+      "summary": "获得销售订单"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/purchase-return/page",
+      "summary": "获得采购退货分页"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/purchase-return/get",
+      "summary": "获得采购退货"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/purchase-order/page",
+      "summary": "获得采购订单分页"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/purchase-order/get",
+      "summary": "获得采购订单"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/purchase-in/page",
+      "summary": "获得采购入库分页"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/purchase-in/get",
+      "summary": "获得采购入库"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/finance-receipt/page",
+      "summary": "获得收款单分页"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/finance-receipt/get",
+      "summary": "获得收款单"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/finance-payment/page",
+      "summary": "获得付款单分页"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/finance-payment/get",
+      "summary": "获得付款单"
+    }
+  ],
+  "previousSharedItemFields": [
+    "id",
+    "sort"
+  ],
+  "verifiedItemModels": [
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.finance.vo.payment.ErpFinancePaymentRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.finance.vo.payment.ErpFinancePaymentSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.finance.vo.receipt.ErpFinanceReceiptRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.finance.vo.receipt.ErpFinanceReceiptSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.in.ErpPurchaseInRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.in.ErpPurchaseInSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.order.ErpPurchaseOrderRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.order.ErpPurchaseOrderSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.returns.ErpPurchaseReturnRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.returns.ErpPurchaseReturnSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.sale.vo.order.ErpSaleOrderRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.sale.vo.order.ErpSaleOrderSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.sale.vo.out.ErpSaleOutRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.sale.vo.out.ErpSaleOutSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.sale.vo.returns.ErpSaleReturnRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.sale.vo.returns.ErpSaleReturnSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.in.ErpStockInRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.in.ErpStockInSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.move.ErpStockMoveRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.move.ErpStockMoveSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.out.ErpStockOutRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.out.ErpStockOutSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.fms.controller.admin.report.vo.cashflow.FmsCashFlowAdjustmentUpdateReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.fms.controller.admin.report.vo.cashflow.FmsCashFlowStatementUpdateReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.im.controller.admin.face.vo.pack.ImFacePackUserRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.mes.controller.admin.qc.indicatorresult.vo.MesQcIndicatorResultRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.mes.controller.admin.qc.indicatorresult.vo.MesQcIndicatorResultSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.pms.controller.admin.kb.library.vo.group.PmsKnowledgeGroupSortReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.pms.controller.admin.kb.recycle.vo.PmsKnowledgeRecycleDetailRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.pms.controller.admin.pm.project.vo.group.PmsProjectGroupSortReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.pms.controller.admin.pm.workitem.vo.worklog.PmsProjectWorkLogReportRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.trade.controller.admin.order.vo.TradeOrderDetailRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.trade.controller.admin.order.vo.TradeOrderPageItemRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.trade.controller.app.order.vo.AppTradeOrderSettlementReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.trade.controller.app.order.vo.AppTradeOrderSettlementRespVO.Item"
+  ],
+  "modelsNotExposedAsComponents": [
+    "#/components/schemas/cn.iocoder.yudao.module.mes.controller.admin.wm.stocktaking.task.vo.line.MesWmStockTakingTaskLineBatchUpdateReqVO.Item"
+  ],
+  "validatedAtUtc": "2026-09-14T09:25:09.264968+00:00",
+  "codeCommits": [
+    "21cacef401",
+    "2cce380008"
+  ],
+  "erpDocument": {
+    "source": "http://192.168.1.199:8088/v3/api-docs/erp",
+    "sha256": "4c12dd4350c9f8f9b3e61c86932c74253d878c9aacbaafe96bf95d0615c7c1b3",
+    "version": "1.0.0-erp-order-contract-v2",
+    "salesOrderContracts": [
+      {
+        "method": "POST",
+        "path": "/admin-api/erp/sale-order/create",
+        "itemRef": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.sale.vo.order.ErpSaleOrderSaveReqVO.Item",
+        "required": [
+          "count",
+          "productId",
+          "productPrice"
+        ],
+        "fields": [
+          "count",
+          "id",
+          "productId",
+          "productPrice",
+          "productUnitId",
+          "remark",
+          "taxPercent"
+        ]
+      },
+      {
+        "method": "PUT",
+        "path": "/admin-api/erp/sale-order/update",
+        "itemRef": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.sale.vo.order.ErpSaleOrderSaveReqVO.Item",
+        "required": [
+          "count",
+          "productId",
+          "productPrice"
+        ],
+        "fields": [
+          "count",
+          "id",
+          "productId",
+          "productPrice",
+          "productUnitId",
+          "remark",
+          "taxPercent"
+        ]
+      }
+    ]
+  },
+  "tests": {
+    "ErpSaleOrderContractTest": {
+      "tests": 24,
+      "failures": 0,
+      "errors": 0
+    },
+    "OpenApiItemSchemaTest": {
+      "tests": 2,
+      "failures": 0,
+      "errors": 0
+    }
+  },
+  "deployment": {
+    "service": "mgs199-server-1",
+    "healthy": true,
+    "restartCount": 0,
+    "jarSha256": "441f472e2bf83d84768f47b9ed66cb3da4d71c17b7ed0343ea146a97a0b41fc5",
+    "knowdoSynced": false,
+    "productionTestOrdersCreated": false
+  }
+}
