@@ -1,0 +1,37 @@
+{
+  "origin": "isolated H2 / mocked MVC tests; identifiers are test fixtures, no production orders",
+  "validSalesOrderRequest": {
+    "customerId": 201,
+    "orderTime": "2026-09-14T10:00:00",
+    "items": [
+      {
+        "productId": 101,
+        "count": 2.5,
+        "productPrice": 100
+      }
+    ]
+  },
+  "validSalesOrderResponse": {
+    "code": 0,
+    "msg": "",
+    "data": 1
+  },
+  "invalidItemResponse": {
+    "code": 400,
+    "msg": "请求参数不正确:items[0].count: 产品数量不能为空"
+  },
+  "missingProductResponse": {
+    "code": 1020201011,
+    "msg": "items[1].productId: 产品(102)不存在或已停用"
+  },
+  "emptyDepartmentListResponse": {
+    "code": 0,
+    "msg": "",
+    "data": []
+  },
+  "missingDepartmentResponse": {
+    "code": 0,
+    "msg": "",
+    "data": null
+  }
+}

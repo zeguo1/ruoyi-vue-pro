@@ -1,0 +1,18 @@
+{
+  "affected-operations.json": "4f4bc77d90b02ec93ccdf33091268dd8b96f871c67c1182fa600d11a6e766c7d",
+  "deployment-status.json": "b13ba1f46ed056f76e36ea573b6a09e9b463c058d843155aaf84ff7fc6370586",
+  "handler-inventory.json.gz": "81fad1f96a8aceaef2fd228dafdd14ccfcffd90e294d2be30181e16405efcdc2",
+  "integration-checklist-all.json.gz": "c77decbd780b177588a1de0e42e17407eeb202f5474a075e4e8f9122c01abc0a",
+  "integration-checklist-raw.json.gz": "cc0ec61cf1e19c2c09df61d4c93137add16ed680ecb3ffe9952030d3fd9a2cea",
+  "integration-summary-all.json": "15f61737ee9de51c3ab5ce364d76748c7e6afb73d0fcc39b06c0be4a748345f3",
+  "integration-summary-raw.json": "73228ba8f7d55acaf6e814721ea903c9c3da2f922098240ceb01a78967571aba",
+  "manual-review.json": "a659de1b42215f477062bdcb341ed9ecc73b8e65fd2237089fa64f21fcf27629",
+  "model-inventory.json.gz": "9ba32b8fd2148e37825a553e3f4b0b98bca366486eb207582e2b442456f66612",
+  "openapi-all.json.gz": "03c4a77c56e30ed62dbb5fc7d943402db6d6c05e684ec1bb46b7da7b973e70cb",
+  "openapi-raw.json.gz": "e60dc203ad1ff19fd1b6f68aa09977d2b9b0e404f0767883ce62f9803c763077",
+  "request-response-examples.json": "d98c1266e61eb9a583db80755fc42cdab339247e9c6ead7f8c8aaa037479ed16",
+  "schema-audit-all.json": "b80c8e3f600594bd9b354b097704130d70403181a055cadac81b17059b694b4a",
+  "schema-audit-raw.json": "f6e9db4ed36e95b6abeb79575941c6d1692c3fae85e3a0b3a7bf91f73979b7af",
+  "test-results.json": "484193bbdc73ed3768a706deb8c2d1b15e309d7d7d74ba7cbe59eff4dfeb0163",
+  "wire-verification.json": "92db86fa12f8d8e223415985043ffb2ba4fc42d0c26df0bb20f0838a580fe325"
+}

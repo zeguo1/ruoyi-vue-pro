@@ -1,0 +1,20 @@
+{
+  "checkedAtUtc": "2026-09-14T15:09:52.146319+00:00",
+  "action": "read-only metadata check",
+  "candidateVersion": "1.0.0-full-contract-v6",
+  "candidateDeployed": false,
+  "candidateRuntimeDocumentVerified": false,
+  "liveUrl": "http://192.168.1.199:8088/v3/api-docs/all",
+  "liveDocumentVersion": "1.0.0-full-contract-v5",
+  "liveDocumentSha256": "88eb1ca72d5312ceb4bb3b47fd94d8a0a566febcb40872bb72df67aa10963b36",
+  "container": {
+    "name": "mgs199-server-1",
+    "state": "running",
+    "health": "healthy",
+    "startedAt": "2026-09-14T12:59:48.072822618Z"
+  },
+  "runningJarSha256": "5e6d134bfedc2705da72a6046a175fa0191a68f681b51c4d5d1c56a874f35207",
+  "businessWrites": false,
+  "connectorPublished": false,
+  "knowdoSynced": false
+}

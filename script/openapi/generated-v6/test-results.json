@@ -1,0 +1,121 @@
+{
+  "junit": [
+    {
+      "name": "BackendHandoffContractTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "report": "yudao-server/target/surefire-reports/TEST-cn.iocoder.yudao.server.contract.BackendHandoffContractTest.xml"
+    },
+    {
+      "name": "ContractSchemaCustomizerTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "report": "yudao-server/target/surefire-reports/TEST-cn.iocoder.yudao.server.contract.ContractSchemaCustomizerTest.xml"
+    },
+    {
+      "name": "ErpSaleOrderContractTest",
+      "tests": 24,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "report": "yudao-module-erp/target/surefire-reports/TEST-cn.iocoder.yudao.module.erp.service.sale.ErpSaleOrderContractTest.xml"
+    },
+    {
+      "name": "ExternalOpenApiContractTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "report": "yudao-server/target/surefire-reports/TEST-cn.iocoder.yudao.server.contract.ExternalOpenApiContractTest.xml"
+    },
+    {
+      "name": "FullContractValidationTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "report": "yudao-server/target/surefire-reports/TEST-cn.iocoder.yudao.server.contract.FullContractValidationTest.xml"
+    },
+    {
+      "name": "FullOpenApiExportTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "report": "yudao-server/target/surefire-reports/TEST-cn.iocoder.yudao.server.contract.FullOpenApiExportTest.xml"
+    },
+    {
+      "name": "FullOpenApiModelAuditTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "report": "yudao-server/target/surefire-reports/TEST-cn.iocoder.yudao.server.contract.FullOpenApiModelAuditTest.xml"
+    },
+    {
+      "name": "OpenApiItemSchemaTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "report": "yudao-server/target/surefire-reports/TEST-cn.iocoder.yudao.server.contract.OpenApiItemSchemaTest.xml"
+    },
+    {
+      "name": "WireContractTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "report": "yudao-server/target/surefire-reports/TEST-cn.iocoder.yudao.server.contract.WireContractTest.xml"
+    }
+  ],
+  "junitTotals": {
+    "tests": 49,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "pythonUnitTests": {
+    "tests": 7,
+    "failures": 0,
+    "errors": 0,
+    "command": "python3 -m unittest discover -s script/openapi/tests -v"
+  },
+  "coverage": {
+    "realGeneratedOpenapi": true,
+    "explicitBindings": 2339,
+    "sourceModelReferences": 450,
+    "modelClasses": 2130,
+    "downloadDeclarations": 163,
+    "salesOrderDatabase": "isolated H2; real transactional service and MyBatis mappers; external APIs/Redis mocked; rejects invalid input without order/detail writes",
+    "wireTests": "production Jackson serializers/deserializers in MockMvc, mocked business services, no file/storage/network writes",
+    "notCovered": [
+      "production business CRUD",
+      "production authentication/role permissions",
+      "third-party callback signatures",
+      "external storage/messaging integrations",
+      "asynchronous business completion",
+      "KnowDo import execution"
+    ]
+  },
+  "runtime": "Java 17 / Maven; Python 3.10 with jsonschema 4.26.0 in /tmp/mgs-openapi-v6-env",
+  "verificationFiles": [
+    "schema-audit-all.json",
+    "schema-audit-raw.json",
+    "wire-verification.json"
+  ],
+  "deployed": false,
+  "knowdoModified": false,
+  "productionBusinessWrites": false,
+  "sourceRevision": "8eda2e0ea41702d78e88ad2ea83efd78b922e152",
+  "handoffExampleChecks": {
+    "origin": "actual H2 request/response fixtures",
+    "cases": 3,
+    "schemaValidationPassed": true,
+    "typedSuccessClassificationPassed": true
+  }
+}
