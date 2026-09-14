@@ -1,7 +1,7 @@
 {
   "contractVersion": "mgs-trial-v1-candidate",
   "openapiVersion": "1.0.0-full-contract-v6",
-  "openapiSha256": "82a301def7a1cd82e80947d717420087db288e722b1e3cfc75719286d03a63ab",
+  "openapiSha256": "12750922c29f568df04022f2de64dcb3c5de2ddc2c1facb109d1f66f6dd68b14",
   "operations": [
     {
       "key": "GET /admin-api/crm/trial-business/customer",
@@ -321,9 +321,9 @@
       "accountReadyCondition": null,
       "readOnly": false,
       "trustedServiceContract": {
-        "modelMaySupplyIdentity": false,
-        "capability": "EVENTS",
         "version": "mgs-trial-v1",
+        "capability": "EVENTS",
+        "modelMaySupplyIdentity": false,
         "trustedHeaders": [
           "X-Mgs-Trial-Key",
           "X-Mgs-Trial-Timestamp",
@@ -555,9 +555,9 @@
       },
       "readOnly": false,
       "trustedServiceContract": {
-        "modelMaySupplyIdentity": false,
-        "capability": "TOOLS",
         "version": "mgs-trial-v1",
+        "capability": "TOOLS",
+        "modelMaySupplyIdentity": false,
         "trustedHeaders": [
           "X-Mgs-Trial-Key",
           "X-Mgs-Trial-Timestamp",
@@ -616,9 +616,9 @@
       },
       "readOnly": true,
       "trustedServiceContract": {
-        "modelMaySupplyIdentity": false,
-        "capability": "TOOLS",
         "version": "mgs-trial-v1",
+        "capability": "TOOLS",
+        "modelMaySupplyIdentity": false,
         "trustedHeaders": [
           "X-Mgs-Trial-Key",
           "X-Mgs-Trial-Timestamp",
@@ -677,9 +677,9 @@
       },
       "readOnly": true,
       "trustedServiceContract": {
-        "modelMaySupplyIdentity": false,
-        "capability": "TOOLS",
         "version": "mgs-trial-v1",
+        "capability": "TOOLS",
+        "modelMaySupplyIdentity": false,
         "trustedHeaders": [
           "X-Mgs-Trial-Key",
           "X-Mgs-Trial-Timestamp",
@@ -773,9 +773,9 @@
       },
       "readOnly": false,
       "trustedServiceContract": {
-        "modelMaySupplyIdentity": false,
-        "capability": "TOOLS",
         "version": "mgs-trial-v1",
+        "capability": "TOOLS",
+        "modelMaySupplyIdentity": false,
         "trustedHeaders": [
           "X-Mgs-Trial-Key",
           "X-Mgs-Trial-Timestamp",

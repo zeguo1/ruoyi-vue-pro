@@ -1,5 +1,5 @@
 {
-  "scope": "Local H2 unit and integration suites, actual corporate Tenant/Package/Menu/AdminUser/Role/Permission provisioning, actual AuthController HTTP login and OAuth services/Redis DAO, actual CRM/permissions/MVC joint journey, encrypted credential delivery, HMAC and state machine, isolated Springdoc, existing login/OAuth regression. KnowDo and peripheral services are explicit doubles; Redis protocol uses isolated jedis-mock; joint permission caches use ConcurrentMapCacheManager. No production or real KnowDo/WeChat calls.",
+  "scope": "Local H2 unit and integration suites, actual corporate Tenant/Package/Menu/AdminUser/Role/Permission provisioning, actual AuthController HTTP login and OAuth services/Redis DAO, actual CRM/permissions/MVC joint journey, encrypted credential delivery, HMAC and state machine, isolated Springdoc, existing login/OAuth regression. KnowDo and peripheral services are explicit doubles; Redis protocol uses isolated jedis-mock; joint permission caches use ConcurrentMapCacheManager. No production or real KnowDo/WeChat calls. File-backed H2 cold-process restart tests force-terminate a child JVM at three boundaries and resume in a separate JVM, using real local MGS provisioning and a separately persisted KnowDo fixture.",
   "tests": [
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialOrchestratorTest",
@@ -8,7 +8,7 @@
       "errors": 0,
       "skipped": 0,
       "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialOrchestratorTest.xml",
-      "reportModifiedAt": "2026-09-14T18:15:14.138433+00:00"
+      "reportModifiedAt": "2026-09-14T18:38:54.123805+00:00"
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialServiceAuthTest",
@@ -17,7 +17,7 @@
       "errors": 0,
       "skipped": 0,
       "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialServiceAuthTest.xml",
-      "reportModifiedAt": "2026-09-14T18:15:13.866407+00:00"
+      "reportModifiedAt": "2026-09-14T18:38:53.867792+00:00"
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialAuthorizationTest",
@@ -26,7 +26,7 @@
       "errors": 0,
       "skipped": 0,
       "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialAuthorizationTest.xml",
-      "reportModifiedAt": "2026-09-14T18:15:13.422366+00:00"
+      "reportModifiedAt": "2026-09-14T18:38:26.006392+00:00"
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.MgsTrialOAuthGatewayTest",
@@ -35,7 +35,7 @@
       "errors": 0,
       "skipped": 0,
       "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.MgsTrialOAuthGatewayTest.xml",
-      "reportModifiedAt": "2026-09-14T18:15:14.510468+00:00"
+      "reportModifiedAt": "2026-09-14T18:38:54.507824+00:00"
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.KnowdoResponseBoundTest",
@@ -44,7 +44,7 @@
       "errors": 0,
       "skipped": 0,
       "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.KnowdoResponseBoundTest.xml",
-      "reportModifiedAt": "2026-09-14T18:15:13.854406+00:00"
+      "reportModifiedAt": "2026-09-14T18:38:26.450414+00:00"
     },
     {
       "class": "cn.iocoder.yudao.module.system.service.auth.AdminAuthServiceImplTest",
@@ -71,7 +71,7 @@
       "errors": 0,
       "skipped": 0,
       "evidence": "yudao-server/target/surefire-reports/TEST-cn.iocoder.yudao.server.contract.TrialOpenApiExportTest.xml",
-      "reportModifiedAt": "2026-09-14T18:15:25.847522+00:00"
+      "reportModifiedAt": "2026-09-14T18:39:07.232463+00:00"
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialBusinessIntegrationTest",
@@ -80,7 +80,7 @@
       "failures": 0,
       "errors": 0,
       "skipped": 0,
-      "reportModifiedAt": "2026-09-14T18:15:11.286200+00:00"
+      "reportModifiedAt": "2026-09-14T18:38:23.806281+00:00"
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialOperatorBootstrapTest",
@@ -89,7 +89,7 @@
       "failures": 0,
       "errors": 0,
       "skipped": 0,
-      "reportModifiedAt": "2026-09-14T18:15:13.970417+00:00"
+      "reportModifiedAt": "2026-09-14T18:38:53.963797+00:00"
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialLoginDeliveryTest",
@@ -98,7 +98,7 @@
       "failures": 0,
       "errors": 0,
       "skipped": 0,
-      "reportModifiedAt": "2026-09-14T18:15:09.262113+00:00"
+      "reportModifiedAt": "2026-09-14T18:38:21.702175+00:00"
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.MgsTrialAccountIntegrationTest",
@@ -107,7 +107,7 @@
       "failures": 0,
       "errors": 0,
       "skipped": 0,
-      "reportModifiedAt": "2026-09-14T18:15:14.314449+00:00"
+      "reportModifiedAt": "2026-09-14T18:38:54.283813+00:00"
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialCorporateTenantIntegrationTest",
@@ -116,7 +116,7 @@
       "failures": 0,
       "errors": 0,
       "skipped": 0,
-      "reportModifiedAt": "2026-09-14T18:15:13.822403+00:00"
+      "reportModifiedAt": "2026-09-14T18:38:26.418412+00:00"
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialLocalJourneyIntegrationTest",
@@ -125,10 +125,19 @@
       "failures": 0,
       "errors": 0,
       "skipped": 0,
-      "reportModifiedAt": "2026-09-14T18:15:13.342358+00:00"
+      "reportModifiedAt": "2026-09-14T18:38:25.942388+00:00"
+    },
+    {
+      "class": "cn.iocoder.yudao.module.crm.service.trial.TrialProcessRestartTest",
+      "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialProcessRestartTest.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "reportModifiedAt": "2026-09-14T18:38:53.851791+00:00"
     }
   ],
-  "total": 89,
+  "total": 92,
   "realEndToEndVerified": false,
   "limitations": [
     "Corporate bootstrap now covers actual Tenant/Package/Menu/AdminUser/Role/Permission services on H2; config, department/post, MQ and CRM/OAuth boundaries remain doubles. MySQL and deployed initialization are unverified.",
@@ -136,7 +145,27 @@
     "OAuth validation and system permission directory are fixture boundaries in the separate CRM MVC tests.",
     "Export/file denial is verified before sentinel MVC handlers, not against actual object storage.",
     "KnowDo binding credential forwarding/replay/expiry and WeChat end-to-end are not verified.",
-    "Actual AuthController login/OAuth/CRM joint HTTP tests now pass, but real browser-to-backend, MySQL, KnowDo safe cards, WeChat and OS process crash exercises remain unverified. See ACCEPTANCE.md."
+    "Actual AuthController login/OAuth/CRM joint HTTP tests and file-H2 JVM crash recovery pass. Real browser-to-backend, MySQL, KnowDo safe cards, WeChat, host/power loss and deployed restart/network fault exercises remain unverified. See ACCEPTANCE.md."
   ],
-  "frontendEvidence": "frontend-test-evidence.json (5 isolated browser scenarios; fixture API/login, separate from backend test count)"
+  "frontendEvidence": "frontend-test-evidence.json (5 isolated browser scenarios; fixture API/login, separate from backend test count)",
+  "processRestart": {
+    "class": "cn.iocoder.yudao.module.crm.service.trial.TrialProcessRestartTest",
+    "boundaries": [
+      "LOCAL_UNCOMMITTED",
+      "LOCAL_COMMITTED",
+      "REMOTE_COMMITTED"
+    ],
+    "termination": "Process.destroyForcibly on the exact signalled child JVM; a new JVM reopens its temporary H2 files",
+    "assertions": [
+      "uncommitted account/role/escrow rolled back",
+      "committed CRM and MGS resource IDs preserved",
+      "active remote lease cannot be stolen",
+      "all provisioning steps DONE and application READY after recovery",
+      "one ordinary user, role, customer and grant; no additional tenants",
+      "exactly one ensure invocation per remote step across both JVMs"
+    ],
+    "leaseExpiry": "Only the isolated test lease timestamp is advanced after verifying active-lease denial; production 60-second lease is unchanged",
+    "knowdo": "separate committed file-H2 fixture; not a real service or network call",
+    "realMySqlVerified": false
+  }
 }
