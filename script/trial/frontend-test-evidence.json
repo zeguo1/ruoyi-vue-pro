@@ -793,7 +793,34 @@
       "/tmp/mgs-trial-full-typecheck.log",
       "/tmp/mgs-trial-antd-typecheck.log"
     ],
-    "hook": "frontend lefthook.yml checkType remains a pre-commit requirement; not bypassed"
+    "hook": "frontend lefthook.yml checkType remains a pre-commit requirement; not bypassed",
+    "boundedAppAttempts": [
+      {
+        "heapMiB": 1792,
+        "memoryMaxMiB": 2560,
+        "swapMaxMiB": 0,
+        "cpuQuota": "200%",
+        "timeoutSeconds": 180,
+        "command": "NODE_OPTIONS=--max-old-space-size=1792 pnpm exec vue-tsc --noEmit --skipLibCheck -p apps/web-antd/tsconfig.json",
+        "exitCode": 1,
+        "result": "JavaScript heap out of memory; compiler SIGABRT; no completed typecheck",
+        "log": "/tmp/mgs-trial-antd-typecheck-bounded.log",
+        "verifiedAt": "2026-09-14T19:09:35.159417+00:00"
+      },
+      {
+        "heapMiB": 2048,
+        "memoryMaxMiB": 2560,
+        "swapMaxMiB": 0,
+        "cpuQuota": "200%",
+        "timeoutSeconds": 180,
+        "command": "NODE_OPTIONS=--max-old-space-size=2048 pnpm exec vue-tsc --noEmit --skipLibCheck -p apps/web-antd/tsconfig.json",
+        "exitCode": 1,
+        "result": "JavaScript heap out of memory; compiler SIGABRT; no completed typecheck",
+        "log": "/tmp/mgs-trial-antd-typecheck-2048.log",
+        "verifiedAt": "2026-09-14T19:09:35.159417+00:00"
+      }
+    ],
+    "analysis": "App package script hardcodes an 8192 MiB heap. Direct invocation of the same full app compiler/config with 1792 and 2048 MiB heaps also failed under the existing 2560 MiB total-memory bound; no files, compiler scope or hooks changed."
   },
   "postBrowserFormatting": "Date display/type and fixture timestamp changed, then all five fixture scenarios, ESLint, Stylelint, type-aware Oxlint and scoped vue-tsc passed; no later frontend source edit.",
   "dateFixChecks": {

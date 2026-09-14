@@ -1,0 +1,12 @@
+{
+  "observedAt": "2026-09-14T19:09:35.159417+00:00",
+  "method": "GET",
+  "url": "http://192.168.1.199:8088/v3/api-docs",
+  "authenticated": false,
+  "openapiVersion": "3.1.0",
+  "infoVersion": "1.0.0-full-contract-v5",
+  "pathCount": 3324,
+  "trialPaths": [],
+  "responseSha256": "85a251fd9753a9a87257ba1fb72f64496e711b84ff6b5b94ef6269aefa246580",
+  "interpretation": "This live document exposes no trial routes. It is distinct from the 12-operation isolated candidate export. Does not establish a running Git revision or enable/disable settings. No deployment or business write performed."
+}
