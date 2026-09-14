@@ -18,6 +18,17 @@ import java.util.*;
 /** Keep generated contracts faithful to validation metadata, including OpenAPI 3.1 numeric bounds. */
 public class ContractSchemaCustomizer implements PropertyCustomizer, GlobalOpenApiCustomizer, GlobalOperationCustomizer {
 
+    private static final Map<String, Map<String, String>> EXTERNAL_DESCRIPTIONS = externalDescriptions();
+
+    private static Map<String, Map<String, String>> externalDescriptions() {
+        try (var input = new org.springframework.core.io.ClassPathResource("openapi/external-schema-descriptions.json").getInputStream()) {
+            return io.swagger.v3.core.util.Json.mapper().readValue(input,
+                    new com.fasterxml.jackson.core.type.TypeReference<Map<String, Map<String, String>>>() {});
+        } catch (java.io.IOException e) {
+            throw new IllegalStateException("Cannot load verified SDK contract descriptions", e);
+        }
+    }
+
     @Override
     @SuppressWarnings({"rawtypes", "unchecked"})
     public Schema customize(Schema schema, AnnotatedType type) {
@@ -90,6 +101,16 @@ public class ContractSchemaCustomizer implements PropertyCustomizer, GlobalOpenA
         Set<Schema<?>> seen = Collections.newSetFromMap(new IdentityHashMap<>());
         if (api.getComponents() != null && api.getComponents().getSchemas() != null) {
             api.getComponents().getSchemas().forEach((name, schema) -> {
+                Map<String, String> external = EXTERNAL_DESCRIPTIONS.get(name);
+                if (external != null && schema.getProperties() != null) {
+                    if (blank(schema.getDescription())) schema.setDescription(external.get("@description"));
+                    // SDK copy/status helper setters are not business fields and have no response getter.
+                    for (String hidden : external.getOrDefault("@hide", "").split(",")) schema.getProperties().remove(hidden);
+                    external.forEach((field, description) -> {
+                        Schema property = (Schema) schema.getProperties().get(field);
+                        if (property != null && blank(property.getDescription())) property.setDescription(description);
+                    });
+                }
                 if (name.startsWith("cn.iocoder.") && schema.getProperties() != null) {
                     Schema translation = (Schema) schema.getProperties().get("transMap");
                     if (translation != null && blank(translation.getDescription()))

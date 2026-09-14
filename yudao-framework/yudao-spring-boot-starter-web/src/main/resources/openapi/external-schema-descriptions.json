@@ -1,0 +1,161 @@
+{
+  "me.chanjar.weixin.mp.bean.draft.WxMpDraftArticles": {
+    "@description": "微信公众号草稿文章，字段名按本系统 Jackson 接口格式提交",
+    "title": "文章标题",
+    "author": "文章作者",
+    "digest": "文章摘要；微信根据文章类型和内容处理未填写的摘要",
+    "content": "图文正文 HTML；图片应使用微信图文图片上传接口取得的地址",
+    "contentSourceUrl": "点击阅读原文时打开的地址",
+    "thumbMediaId": "封面图片的微信永久素材 media_id",
+    "showCoverPic": "是否显示封面：0 不显示，1 显示",
+    "needOpenComment": "评论开关：0 关闭，1 开启",
+    "onlyFansCanComment": "评论范围：0 所有人，1 仅粉丝",
+    "url": "文章访问链接",
+    "thumbUrl": "封面图片地址",
+    "articleType": "文章类型：news 图文消息，newspic 图片消息；微信默认 news",
+    "picCrop2351": "2.35:1 封面裁剪坐标，格式 X1_Y1_X2_Y2，基于左上角 0,0 到右下角 1,1 的归一化坐标",
+    "picCrop11": "1:1 封面裁剪坐标，格式 X1_Y1_X2_Y2",
+    "imageInfo": "图片消息的图片列表，微信最多支持 20 张，首张为封面",
+    "coverInfo": "图片消息的封面裁剪配置",
+    "productInfo": "图片消息关联的商品信息"
+  },
+  "me.chanjar.weixin.mp.bean.draft.WxMpDraftCoverInfo": {
+    "@description": "图片消息封面裁剪配置",
+    "cropPercentList": "各封面比例的裁剪区域列表"
+  },
+  "me.chanjar.weixin.mp.bean.draft.WxMpDraftCoverInfo.CropPercent": {
+    "@description": "一个封面比例的裁剪区域",
+    "ratio": "封面比例：1_1、16_9 或 2.35_1",
+    "x1": "左上角横坐标，使用 0 到 1 的归一化坐标字符串",
+    "y1": "左上角纵坐标，使用 0 到 1 的归一化坐标字符串",
+    "x2": "右下角横坐标，使用 0 到 1 的归一化坐标字符串",
+    "y2": "右下角纵坐标，使用 0 到 1 的归一化坐标字符串"
+  },
+  "me.chanjar.weixin.mp.bean.draft.WxMpDraftImageInfo": {
+    "@description": "图片消息图片信息",
+    "imageList": "图片素材列表"
+  },
+  "me.chanjar.weixin.mp.bean.draft.WxMpDraftImageInfo.ImageItem": {
+    "@description": "图片消息中的一张图片",
+    "imageMediaId": "图片在微信素材库中的 media_id"
+  },
+  "me.chanjar.weixin.mp.bean.draft.WxMpDraftProductInfo": {
+    "@description": "图片消息商品信息",
+    "footerProductInfo": "底部商品配置信息"
+  },
+  "me.chanjar.weixin.mp.bean.draft.WxMpDraftProductInfo.FooterProductInfo": {
+    "@description": "图片消息底部商品配置",
+    "productKey": "微信商品标识 product_key，应使用已获取的真实商品标识"
+  },
+  "me.chanjar.weixin.mp.bean.draft.WxMpAddDraft": {
+    "@description": "新建微信公众号草稿",
+    "articles": "草稿中的文章列表"
+  },
+  "me.chanjar.weixin.mp.bean.draft.WxMpDraftInfo": {
+    "@description": "微信公众号草稿内容",
+    "newsItem": "草稿文章列表"
+  },
+  "me.chanjar.weixin.mp.bean.draft.WxMpDraftItem": {
+    "@description": "微信公众号草稿记录",
+    "mediaId": "草稿的微信素材 media_id",
+    "content": "草稿内容",
+    "updateTime": "微信返回的最后更新时间，Unix 时间戳，单位：秒"
+  },
+  "me.chanjar.weixin.mp.bean.freepublish.WxMpFreePublishArticles": {
+    "@description": "微信公众号已发布文章",
+    "title": "文章标题",
+    "author": "文章作者",
+    "digest": "文章摘要；微信根据文章类型和内容处理未填写的摘要",
+    "content": "图文正文 HTML；图片应使用微信图文图片上传接口取得的地址",
+    "contentSourceUrl": "点击阅读原文时打开的地址",
+    "thumbMediaId": "封面图片的微信永久素材 media_id",
+    "showCoverPic": "是否显示封面：0 不显示，1 显示",
+    "needOpenComment": "评论开关：0 关闭，1 开启",
+    "onlyFansCanComment": "评论范围：0 所有人，1 仅粉丝",
+    "url": "文章访问链接",
+    "thumbUrl": "封面图片地址",
+    "isDeleted": "文章是否已被删除的微信返回标记"
+  },
+  "me.chanjar.weixin.mp.bean.freepublish.WxMpFreePublishInfo": {
+    "@description": "微信公众号已发布内容",
+    "newsItem": "已发布文章列表"
+  },
+  "me.chanjar.weixin.mp.bean.freepublish.WxMpFreePublishItem": {
+    "@description": "微信公众号发布记录",
+    "articleId": "微信发布文章标识 article_id",
+    "content": "已发布内容",
+    "updateTime": "微信返回的最后更新时间，Unix 时间戳，单位：秒"
+  },
+  "org.flowable.bpmn.model.ExtensionAttribute": {
+    "@description": "Flowable BPMN 扩展属性",
+    "name": "XML 属性名",
+    "value": "XML 属性值",
+    "namespacePrefix": "XML 命名空间前缀",
+    "namespace": "XML 命名空间 URI",
+    "@hide": "values"
+  },
+  "org.flowable.bpmn.model.ExtensionElement": {
+    "@description": "Flowable BPMN 扩展元素",
+    "id": "BPMN 元素标识",
+    "xmlRowNumber": "来源 BPMN XML 的行号，解析定位信息",
+    "xmlColumnNumber": "来源 BPMN XML 的列号，解析定位信息",
+    "attributes": "扩展属性映射，按属性名分组",
+    "name": "XML 元素名",
+    "namespacePrefix": "XML 命名空间前缀",
+    "namespace": "XML 命名空间 URI",
+    "elementText": "XML 元素文本内容",
+    "childElements": "子扩展元素映射，按元素名分组",
+    "@hide": "values",
+    "extensionElements": "BPMN 扩展元素映射，按元素名分组"
+  },
+  "org.flowable.bpmn.model.IOParameter": {
+    "@description": "Flowable 流程输入或输出参数映射",
+    "id": "BPMN 元素标识",
+    "xmlRowNumber": "来源 BPMN XML 的行号，解析定位信息",
+    "xmlColumnNumber": "来源 BPMN XML 的列号，解析定位信息",
+    "attributes": "扩展属性映射，按属性名分组",
+    "extensionElements": "BPMN 扩展元素映射，按元素名分组",
+    "source": "来源变量名称",
+    "sourceExpression": "来源变量取值表达式",
+    "target": "目标变量名称",
+    "targetExpression": "目标变量名称表达式",
+    "transient": "是否作为瞬态变量传递",
+    "@hide": "values"
+  },
+  "com.anji.captcha.model.vo.CaptchaVO": {
+    "@description": "验证码组件请求或响应；各阶段只使用对应字段",
+    "captchaId": "验证码服务分配的验证码编号",
+    "projectCode": "验证码所属项目标识",
+    "captchaType": "验证码类型：clickWord 文字点选，blockPuzzle 滑动拼图",
+    "captchaOriginalPath": "验证码原图资源路径配置",
+    "captchaFontType": "验证码文字字体配置",
+    "captchaFontSize": "验证码文字字号配置",
+    "secretKey": "本次验证码坐标数据加密使用的密钥，由验证码服务返回",
+    "originalImageBase64": "验证码背景原图的 Base64 数据",
+    "point": "滑块或点选坐标信息",
+    "jigsawImageBase64": "滑块图片的 Base64 数据",
+    "wordList": "需要依次点选的文字列表",
+    "pointList": "点选坐标列表",
+    "pointJson": "按验证码组件约定加密编码的坐标数据",
+    "token": "本次验证码挑战的唯一标识，由验证码服务返回",
+    "result": "验证码校验结果",
+    "captchaVerification": "完成校验后供业务接口二次验证使用的凭据",
+    "clientUid": "客户端验证码组件实例的 UUID",
+    "ts": "客户端请求时间，SDK 预留字段",
+    "browserInfo": "客户端 IP 与 User-Agent 标识信息"
+  },
+  "com.anji.captcha.model.vo.PointVO": {
+    "@description": "验证码坐标信息",
+    "secretKey": "验证码坐标加密使用的密钥",
+    "x": "横坐标",
+    "y": "纵坐标"
+  },
+  "com.anji.captcha.model.common.ResponseModel": {
+    "@description": "验证码组件响应封装",
+    "repCode": "验证码组件结果码，成功值为 0000",
+    "repMsg": "验证码处理结果说明",
+    "repData": "验证码获取或校验结果数据",
+    "success": "是否处理成功，由结果码计算",
+    "@hide": "repCodeEnum"
+  }
+}
