@@ -66,6 +66,9 @@ class OpenApiItemSchemaTest {
     void orderRequestAndPmsSortModelsCannotOverwriteEachOther() {
         for (Class<?> type : new Class<?>[]{ErpSaleOrderSaveReqVO.class, ErpSaleOrderUpdateReqVO.class}) {
             ResolvedSchema resolved = converters().resolveAsResolvedSchema(new AnnotatedType(type).resolveAsRef(true));
+            new cn.iocoder.yudao.module.erp.framework.swagger.ErpSaleOrderOpenApiCustomizer().customise(
+                    new io.swagger.v3.oas.models.OpenAPI().components(
+                            new io.swagger.v3.oas.models.Components().schemas(resolved.referencedSchemas)));
             Schema<?> order = schema(type);
             Schema<?> array = (Schema<?>) order.getProperties().get("items");
             Schema<?> item = resolved.referencedSchemas.get(array.getItems().get$ref().substring("#/components/schemas/".length()));
@@ -74,6 +77,11 @@ class OpenApiItemSchemaTest {
             assertFalse(item.getRequired().contains("productUnitId"));
             assertTrue(Boolean.TRUE.equals(((Schema<?>) item.getProperties().get("productUnitId")).getReadOnly()));
             assertFalse(item.getProperties().containsKey("sort"));
+            for (String field : Set.of("count", "productPrice")) {
+                var serialized = io.swagger.v3.core.util.Json31.mapper().valueToTree(item.getProperties().get(field));
+                assertTrue(serialized.path("exclusiveMinimum").isNumber(), serialized.toString());
+                assertEquals(0, serialized.path("exclusiveMinimum").decimalValue().compareTo(java.math.BigDecimal.ZERO));
+            }
             assertTrue(order.getRequired().contains("items"));
             assertEquals(type == ErpSaleOrderUpdateReqVO.class, order.getRequired().contains("id"));
         }

@@ -1,7 +1,7 @@
 package cn.iocoder.yudao.module.erp.controller.admin.sale.vo.order;
 
-import io.swagger.v3.oas.annotations.media.Schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import lombok.Data;
@@ -17,7 +17,7 @@ public class ErpSaleOrderSaveReqVO {
     @Schema(description = "订单编号；仅修改时必填，新增由后端生成，忽略传入值", example = "17386")
     private Long id;
 
-    @Schema(description = "客户编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "1724")
+    @Schema(description = "客户编号", minimum = "1", requiredMode = Schema.RequiredMode.REQUIRED, example = "1724")
     @NotNull(message = "客户编号不能为空")
     @Positive(message = "客户编号必须大于 0")
     private Long customerId;
@@ -58,7 +58,7 @@ public class ErpSaleOrderSaveReqVO {
         @Schema(description = "订单项编号", example = "11756")
         private Long id;
 
-        @Schema(description = "产品编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "3113")
+        @Schema(description = "产品编号", minimum = "1", requiredMode = Schema.RequiredMode.REQUIRED, example = "3113")
         @NotNull(message = "产品编号不能为空")
         @Positive(message = "产品编号必须大于 0")
         private Long productId;
@@ -72,7 +72,7 @@ public class ErpSaleOrderSaveReqVO {
         @DecimalMin(value = "0", inclusive = false, message = "产品单价必须大于 0")
         private BigDecimal productPrice;
 
-        @Schema(description = "产品数量", requiredMode = Schema.RequiredMode.REQUIRED, example = "100.00")
+        @Schema(description = "产品数量，必须大于 0，以产品资料中的单位计量", requiredMode = Schema.RequiredMode.REQUIRED, example = "100.00")
         @NotNull(message = "产品数量不能为空")
         @DecimalMin(value = "0", inclusive = false, message = "产品数量必须大于 0")
         private BigDecimal count;

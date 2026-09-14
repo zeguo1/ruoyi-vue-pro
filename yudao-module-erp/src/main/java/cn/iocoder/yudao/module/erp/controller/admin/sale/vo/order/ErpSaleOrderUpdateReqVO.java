@@ -10,7 +10,7 @@ public class ErpSaleOrderUpdateReqVO extends ErpSaleOrderSaveReqVO {
     @Override
     @NotNull(message = "订单编号不能为空")
     @Positive(message = "订单编号必须大于 0")
-    @Schema(description = "待修改的订单编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "17386")
+    @Schema(description = "待修改的订单编号", minimum = "1", requiredMode = Schema.RequiredMode.REQUIRED, example = "17386")
     public Long getId() {
         return super.getId();
     }

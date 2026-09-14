@@ -84,6 +84,10 @@ def verify(document):
         assert set(item['properties']) == {'id', 'productId', 'productUnitId', 'productPrice', 'count', 'taxPercent', 'remark'}
         assert {'productId', 'productPrice', 'count'} <= set(item['required'])
         assert 'productUnitId' not in item['required']
+        for field in ('count', 'productPrice'):
+            bound = item['properties'][field].get('exclusiveMinimum')
+            assert type(bound) in (int, float) and bound == 0, (path, field, 'must document > 0')
+        assert item['properties']['productId']['minimum'] == 1
         assert item['properties']['productUnitId']['readOnly'] is True
         assert {'customerId', 'orderTime', 'items'} <= set(order['required'])
         assert ('id' in order['required']) == (action == 'update')
