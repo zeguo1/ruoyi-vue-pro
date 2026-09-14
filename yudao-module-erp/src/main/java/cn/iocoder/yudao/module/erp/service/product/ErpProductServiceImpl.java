@@ -68,11 +68,16 @@ public class ErpProductServiceImpl implements ErpProductService {
     }
 
     @Override
+    public List<ErpProductDO> getProductList(Collection<Long> ids) {
+        return CollUtil.isEmpty(ids) ? Collections.emptyList() : productMapper.selectByIds(ids);
+    }
+
+    @Override
     public List<ErpProductDO> validProductList(Collection<Long> ids) {
         if (CollUtil.isEmpty(ids)) {
             return Collections.emptyList();
         }
-        List<ErpProductDO> list = productMapper.selectByIds(ids);
+        List<ErpProductDO> list = getProductList(ids);
         Map<Long, ErpProductDO> productMap = convertMap(list, ErpProductDO::getId);
         for (Long id : ids) {
             ErpProductDO product = productMap.get(id);

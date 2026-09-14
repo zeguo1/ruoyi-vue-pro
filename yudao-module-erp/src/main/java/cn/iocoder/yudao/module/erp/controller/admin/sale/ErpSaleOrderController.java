@@ -12,6 +12,7 @@ import cn.iocoder.yudao.module.erp.controller.admin.product.vo.product.ErpProduc
 import cn.iocoder.yudao.module.erp.controller.admin.sale.vo.order.ErpSaleOrderPageReqVO;
 import cn.iocoder.yudao.module.erp.controller.admin.sale.vo.order.ErpSaleOrderRespVO;
 import cn.iocoder.yudao.module.erp.controller.admin.sale.vo.order.ErpSaleOrderSaveReqVO;
+import cn.iocoder.yudao.module.erp.controller.admin.sale.vo.order.ErpSaleOrderUpdateReqVO;
 import cn.iocoder.yudao.module.erp.dal.dataobject.sale.ErpCustomerDO;
 import cn.iocoder.yudao.module.erp.dal.dataobject.sale.ErpSaleOrderDO;
 import cn.iocoder.yudao.module.erp.dal.dataobject.sale.ErpSaleOrderItemDO;
@@ -69,7 +70,7 @@ public class ErpSaleOrderController {
     @PutMapping("/update")
     @Operation(summary = "更新销售订单")
     @PreAuthorize("@ss.hasPermission('erp:sale-order:update')")
-    public CommonResult<Boolean> updateSaleOrder(@Valid @RequestBody ErpSaleOrderSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateSaleOrder(@Valid @RequestBody ErpSaleOrderUpdateReqVO updateReqVO) {
         saleOrderService.updateSaleOrder(updateReqVO);
         return success(true);
     }

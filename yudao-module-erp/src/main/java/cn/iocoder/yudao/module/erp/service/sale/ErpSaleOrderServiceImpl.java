@@ -3,6 +3,7 @@ package cn.iocoder.yudao.module.erp.service.sale;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.iocoder.yudao.framework.common.pojo.PageResult;
+import cn.iocoder.yudao.framework.common.enums.CommonStatusEnum;
 import cn.iocoder.yudao.framework.common.util.number.MoneyUtils;
 import cn.iocoder.yudao.framework.common.util.object.BeanUtils;
 import cn.iocoder.yudao.module.erp.controller.admin.sale.vo.order.ErpSaleOrderPageReqVO;
@@ -23,6 +24,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -84,11 +86,11 @@ public class ErpSaleOrderServiceImpl implements ErpSaleOrderService {
 
         // 2.1 插入订单
         ErpSaleOrderDO saleOrder = BeanUtils.toBean(createReqVO, ErpSaleOrderDO.class, in -> in
-                .setNo(no).setStatus(ErpAuditStatus.PROCESS.getStatus()));
+                .setId(null).setNo(no).setStatus(ErpAuditStatus.PROCESS.getStatus()));
         calculateTotalPrice(saleOrder, saleOrderItems);
         saleOrderMapper.insert(saleOrder);
         // 2.2 插入订单项
-        saleOrderItems.forEach(o -> o.setOrderId(saleOrder.getId()));
+        saleOrderItems.forEach(o -> o.setId(null).setOrderId(saleOrder.getId()));
         saleOrderItemMapper.insertBatch(saleOrderItems);
         return saleOrder.getId();
     }
@@ -163,21 +165,28 @@ public class ErpSaleOrderServiceImpl implements ErpSaleOrderService {
     }
 
     private List<ErpSaleOrderItemDO> validateSaleOrderItems(List<ErpSaleOrderSaveReqVO.Item> list) {
-        // 1. 校验产品存在
-        List<ErpProductDO> productList = productService.validProductList(
-                convertSet(list, ErpSaleOrderSaveReqVO.Item::getProductId));
-        Map<Long, ErpProductDO> productMap = convertMap(productList, ErpProductDO::getId);
-        // 2. 转化为 ErpSaleOrderItemDO 列表
-        return convertList(list, o -> BeanUtils.toBean(o, ErpSaleOrderItemDO.class, item -> {
-            item.setProductUnitId(productMap.get(item.getProductId()).getUnitId());
-            item.setTotalPrice(MoneyUtils.priceMultiply(item.getProductPrice(), item.getCount()));
-            if (item.getTotalPrice() == null) {
-                return;
+        // 保留明细索引，校验产品及单位后再转换，避免依赖空 Map 值。
+        Map<Long, ErpProductDO> products = convertMap(productService.getProductList(
+                convertSet(list, ErpSaleOrderSaveReqVO.Item::getProductId)), ErpProductDO::getId);
+        List<ErpSaleOrderItemDO> items = new ArrayList<>(list.size());
+        for (int i = 0; i < list.size(); i++) {
+            ErpSaleOrderSaveReqVO.Item requestItem = list.get(i);
+            ErpProductDO product = products.get(requestItem.getProductId());
+            if (product == null || CommonStatusEnum.isDisable(product.getStatus())) {
+                throw exception(SALE_ORDER_ITEM_PRODUCT_INVALID, i, requestItem.getProductId());
             }
+            if (product.getUnitId() == null) {
+                throw exception(SALE_ORDER_ITEM_UNIT_MISSING, i, requestItem.getProductId());
+            }
+            ErpSaleOrderItemDO item = BeanUtils.toBean(requestItem, ErpSaleOrderItemDO.class);
+            item.setProductUnitId(product.getUnitId());
+            item.setTotalPrice(MoneyUtils.priceMultiply(item.getProductPrice(), item.getCount()));
             if (item.getTaxPercent() != null) {
                 item.setTaxPrice(MoneyUtils.priceMultiplyPercent(item.getTotalPrice(), item.getTaxPercent()));
             }
-        }));
+            items.add(item);
+        }
+        return items;
     }
 
     private void updateSaleOrderItemList(Long id, List<ErpSaleOrderItemDO> newList) {

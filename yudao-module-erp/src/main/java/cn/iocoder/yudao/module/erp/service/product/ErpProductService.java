@@ -50,6 +50,9 @@ public interface ErpProductService {
      */
     List<ErpProductDO> validProductList(Collection<Long> ids);
 
+    /** 批量读取产品，允许调用方结合明细位置报告不存在或停用的产品。 */
+    List<ErpProductDO> getProductList(Collection<Long> ids);
+
     /**
      * 获得产品
      *

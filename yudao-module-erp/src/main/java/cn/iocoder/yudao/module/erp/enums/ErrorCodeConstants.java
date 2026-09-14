@@ -63,6 +63,8 @@ ErrorCode PURCHASE_ORDER_ITEM_RETURN_FAIL_IN_EXCEED = new ErrorCode(1_030_101_00
     ErrorCode SALE_ORDER_ITEM_OUT_FAIL_PRODUCT_EXCEED = new ErrorCode(1_020_201_007, "销售订单项({})超过最大允许出库数量({})");
     ErrorCode SALE_ORDER_PROCESS_FAIL_EXISTS_OUT = new ErrorCode(1_020_201_008, "反审核失败，已存在对应的销售出库单");
     ErrorCode SALE_ORDER_ITEM_RETURN_FAIL_OUT_EXCEED = new ErrorCode(1_020_201_009, "销售订单项({})超过最大允许退货数量({})");
+    ErrorCode SALE_ORDER_ITEM_PRODUCT_INVALID = new ErrorCode(1_020_201_011, "items[{}].productId: 产品({})不存在或已停用");
+    ErrorCode SALE_ORDER_ITEM_UNIT_MISSING = new ErrorCode(1_020_201_012, "items[{}].productUnitId: 产品({})未配置单位，请完善产品资料");
     ErrorCode SALE_ORDER_PROCESS_FAIL_EXISTS_RETURN = new ErrorCode(1_020_201_010, "反审核失败，已存在对应的销售退货单");
 
     // ========== ERP 销售出库（1-030-202-000） ==========

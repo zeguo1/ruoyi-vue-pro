@@ -39,6 +39,7 @@ server:
 --- #################### 接口文档配置 ####################
 
 springdoc:
+  use-fqn: true # 使用完整类名（含外部类），避免跨模块 Item 等同名模型覆盖
   api-docs:
     enabled: true
     path: /v3/api-docs
@@ -310,7 +311,7 @@ yudao:
   swagger:
     title: 芋道快速开发平台
     description: 提供管理后台、用户 App 的所有功能
-    version: ${yudao.info.version}
+    version: ${yudao.info.version}-erp-order-contract-v2
     url: ${yudao.web.admin-ui.url}
     email: xingyu4j@vip.qq.com
     license: MIT

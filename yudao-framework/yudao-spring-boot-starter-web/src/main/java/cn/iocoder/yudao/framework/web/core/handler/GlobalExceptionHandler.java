@@ -158,7 +158,7 @@ public class GlobalExceptionHandler {
                 errorMessage = allErrors.get(0).getDefaultMessage();
             }
         } else {
-            errorMessage = fieldError.getDefaultMessage();
+            errorMessage = fieldError.getField() + ": " + fieldError.getDefaultMessage();
         }
         // 转换 CommonResult
         if (StrUtil.isEmpty(errorMessage)) {
@@ -204,7 +204,7 @@ public class GlobalExceptionHandler {
     public CommonResult<?> constraintViolationExceptionHandler(ConstraintViolationException ex) {
         log.warn("[constraintViolationExceptionHandler]", ex);
         ConstraintViolation<?> constraintViolation = ex.getConstraintViolations().iterator().next();
-        return CommonResult.error(BAD_REQUEST.getCode(), String.format("请求参数不正确:%s", constraintViolation.getMessage()));
+        return CommonResult.error(BAD_REQUEST.getCode(), String.format("请求参数不正确:%s: %s", constraintViolation.getPropertyPath(), constraintViolation.getMessage()));
     }
 
     /**
