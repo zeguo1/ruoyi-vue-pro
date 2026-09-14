@@ -26,7 +26,7 @@ public class TrialOpenApiCustomizer implements GlobalOpenApiCustomizer {
         if (document.getComponents() == null) { document.setComponents(new Components()); }
         document.getComponents().addSecuritySchemes("MgsTrialSignature", new SecurityScheme().type(SecurityScheme.Type.APIKEY)
                 .in(SecurityScheme.In.HEADER).name("X-Mgs-Trial-Signature")
-                .description("HMAC-SHA256 服务请求签名，不是静态 API Key。可信会话身份与完整签名 header 由服务端注入；见 mgs-trial-v1 契约。"));
+                .description("仅限 HTTPS 安全请求的 HMAC-SHA256 服务签名，不是静态 API Key。可信会话身份与完整签名 header 由服务端注入；见 mgs-trial-v1 契约。"));
         document.getPaths().forEach((path, item) -> {
             boolean tool = path.startsWith("/admin-api/crm/trial-tool/");
             boolean event = path.equals("/admin-api/crm/trial-event/accept");
@@ -37,6 +37,7 @@ public class TrialOpenApiCustomizer implements GlobalOpenApiCustomizer {
                 }
                 operation.setSecurity(List.of(new SecurityRequirement().addList("MgsTrialSignature")));
                 operation.addExtension("x-mgs-service-contract", Map.of("version", "mgs-trial-v1", "capability", tool ? "TOOLS" : "EVENTS",
+                        "transport", "https", "secureRequestRequired", true,
                         "modelMaySupplyIdentity", false, "trustedHeaders", List.of("X-Mgs-Trial-Key", "X-Mgs-Trial-Timestamp", "X-Mgs-Trial-Nonce",
                                 "X-Mgs-Trial-Subject", "X-Mgs-Trial-Verified", "X-Mgs-Trial-Email", "X-Mgs-Trial-Confirmation", "X-Mgs-Trial-Idempotency", "X-Mgs-Trial-Signature")));
                 if (tool) {

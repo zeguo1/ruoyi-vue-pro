@@ -32,6 +32,8 @@ mgs-trial-v1
 
 允许时钟误差 120 秒；已使用 nonce 在数据库拒绝重放，即使业务响应丢失也必须以新 nonce、原幂等键恢复。禁止 tenant-id、visit-tenant-id 和查询串。验证主体绝不能来自模型自报的邮箱、手机号或企业域。签名方必须核验对话会话、联系验证和当前申请确认的绑定；不能只替模型提供的 header 签名。
 
+全部带 TrialCapability 的服务入口（工具、事件、私有授权与交付）在验签前统一要求容器将请求识别为安全请求（HttpServletRequest.isSecure）。明文 HTTP 即使签名正确也拒绝；调用方自己提供 X-Forwarded-Proto/Forwarded 不构成 HTTPS 依据。TLS 在代理终止时，部署方须限定可信代理并正确配置容器的安全请求识别，不得开放直接后端访问后再全量信任转发头。本地 MockMvc 仅验证此判断和请求链，真实 TLS/代理路径仍待部署环境联调。
+
 ## 结果语义
 `code=0`（数字）只代表本次命令/查询成功；非 0 为失败，msg 为安全错误说明。
 整套开户就绪条件是 `code=0 AND data.accountReady=true`。SUBMITTED/PROVISIONING 均不是账号就绪，READY 也不是公众号已绑定或业务已完成。过期时 accountReady 恒为 false。

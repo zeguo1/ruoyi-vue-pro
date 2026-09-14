@@ -12,6 +12,7 @@
 
 1. 在隔离环境运行 `bash script/trial/run-tests.sh`，登录/OAuth 原有回归另运行 `python3 script/trial/run-auth-regression.py`。新业务集成测试包含真实 Spring MVC、令牌/租户过滤器、方法权限、CRM 权限切面、客户/跟进/数据权限服务及 MyBatis；OAuth 校验、系统权限目录、字典、用户目录和其他业务服务仍有测试替身。H2 不是生产 MySQL。
 2. 核对配置示例中所有 `null`：实际 HTTPS 地址、试用期限/配额、专用 OAuth 客户端、服务密钥、企业初始化联系人/容量/有效期及菜单。不要从模型参数取得这些配置。
+   全部试用服务签名入口要求容器识别为安全请求。TLS 在代理终止时，须配置有限的可信代理并隔离直接后端入口，验证 `isSecure` 正确；不能仅向明文请求添加 X-Forwarded-Proto 来绕过。该路径尚未在运行环境验收。
 3. 知办实现并共同验证 `KNOWDO_CONTRACT_DRAFT.md` 的内部接口、可信身份和安全卡片。尚未找到对方可联调实现；不得仅凭 adapter 测试开启申请。
 4. **MGS 私有登录交付已实现，知办安全卡片和实际浏览器登录仍待联调**。普通账号密码仅加密保存并通过 DELIVERY 服务签名接口交付原主体，个人业务 OAuth 交换不等同于浏览器登录。新增 `login-delivery` 加密密钥配置缺失时关闭新申请；不要将密钥或私有响应交给模型。
 5. 按 MGS 自身发布规程准备单独构建目录、备份与回滚制品。现有运行实例绑定了 `yudao-server/target/yudao-server.jar` 和 `web-antd/dist`；不要在开发工作树运行打包或前端 build 覆盖这些挂载。

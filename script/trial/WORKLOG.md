@@ -162,3 +162,12 @@
 - 本轮增加 1 个显式启用的 JUnit 浏览器专项（内含两个账号场景），累计后端测试报告 93 项；此前 92 项报告保留其原执行时间。本专项不是默认 run-tests.sh 的隐式依赖，无 TRIAL_UI_URL 时跳过，不能将跳过计为通过。
 - 日期修复后原五项模拟 API 浏览器回归重跑通过，涉及文件 ESLint/Stylelint/带类型 Oxlint 和限定范围 vue-tsc 通过。前端源码和证据已更新，10 个文件仍暂存且未提交；全量 checkType 例外仍未获确认，也未绕过钩子。
 - 新增 BROWSER_JOURNEY.md、browser-live-test-evidence.json，并同步验收/运维/契约边界。临时后端、浏览器和本轮 Vite 已结束，5198 端口已关闭；无部署或真实业务写入。真实知办安全卡片、防转发/重放/过期、公众号绑定和部署环境联调仍未完成。
+
+## 第十阶段：工具 HTTP 入口与 HTTPS 约束（2026-09-14）
+
+- 再次核对适用规则，MGS 仓库和父目录没有 AGENTS.md；知办 AGENTS.md 的部署协作规则不适用于本次只读检查。仅在 /opt/knowdo 的 apps/packages/services 查询约定路径、标识和开户相关实现，仍未找到本次契约的可联调接口；此结果不证明其他名称的通用 API 不存在。没有修改知办或发送跨任务消息。
+- 发现 TrialServiceAuth 注释/契约要求 HTTPS，但通用验签入口未检查安全请求标志，只有私有凭据 Controller 检查。统一在所有 TrialCapability 入口验签前要求 request.isSecure；明文签名请求以及自行附加 X-Forwarded-Proto/Forwarded 均不能替代实际安全请求。没有启用全局转发头信任或改动运行代理。
+- 新增 TrialToolHttpIntegrationTest 5 项回归，实际贯通 RequestBodyAdvice、生产 JSON 转换模块、Bean Validation、Controller、HMAC/nonce 数据库和本地 MGS 服务。验证四工具受理/只读/就绪区别，未确认不创建账号，状态查询不重放写入，指南使用精确持久化客户 ID；另覆盖身份归属、缺少确认、无签名、篡改、错误密钥能力、租户头、nonce 重放、越权/无效模型字段、超大请求，以及关闭新开户后仍能查询和维护到期记录。
+- TrialServiceAuthTest 增加明文/伪造转发头拒绝测试。专项 11 项通过后，完整 run-tests.sh 通过 67 项试用测试 + 1 项 Springdoc；随后增加 OpenAPI HTTPS 扩展断言并单独重跑 Springdoc 通过。此前 30 项登录/OAuth 和 1 项真实隔离后端浏览器报告保留原执行时间，累计 99 项，不宣称全部在本轮重跑。
+- 生成 OpenAPI 的服务安全说明及 x-mgs-service-contract 现在包含 transport=https、secureRequestRequired=true（布尔）；派生 tool-contract 同样已核对，仍为 12 个公开候选接口。更新对接契约和部署说明的可信代理条件。
+- MockMvc secure 标志只证明应用入口约束生效，真实 TLS 握手、代理信任链、知办服务及公众号仍未联调。运行服务未部署、新开户未启用、没有真实业务写入。前端仍保持原有候选暂存状态，完整 checkType 门槛及其例外确认未解决。

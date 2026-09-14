@@ -1,7 +1,7 @@
 {
   "contractVersion": "mgs-trial-v1-candidate",
   "openapiVersion": "1.0.0-full-contract-v6",
-  "openapiSha256": "12750922c29f568df04022f2de64dcb3c5de2ddc2c1facb109d1f66f6dd68b14",
+  "openapiSha256": "a1a8bd168a4d542dc09d0858be17a01dc32068523e8eb7b6833f8bb648e32d86",
   "operations": [
     {
       "key": "GET /admin-api/crm/trial-business/customer",
@@ -321,8 +321,7 @@
       "accountReadyCondition": null,
       "readOnly": false,
       "trustedServiceContract": {
-        "version": "mgs-trial-v1",
-        "capability": "EVENTS",
+        "transport": "https",
         "modelMaySupplyIdentity": false,
         "trustedHeaders": [
           "X-Mgs-Trial-Key",
@@ -334,7 +333,10 @@
           "X-Mgs-Trial-Confirmation",
           "X-Mgs-Trial-Idempotency",
           "X-Mgs-Trial-Signature"
-        ]
+        ],
+        "capability": "EVENTS",
+        "secureRequestRequired": true,
+        "version": "mgs-trial-v1"
       },
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
@@ -555,8 +557,7 @@
       },
       "readOnly": false,
       "trustedServiceContract": {
-        "version": "mgs-trial-v1",
-        "capability": "TOOLS",
+        "transport": "https",
         "modelMaySupplyIdentity": false,
         "trustedHeaders": [
           "X-Mgs-Trial-Key",
@@ -568,7 +569,10 @@
           "X-Mgs-Trial-Confirmation",
           "X-Mgs-Trial-Idempotency",
           "X-Mgs-Trial-Signature"
-        ]
+        ],
+        "capability": "TOOLS",
+        "secureRequestRequired": true,
+        "version": "mgs-trial-v1"
       },
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
@@ -616,8 +620,7 @@
       },
       "readOnly": true,
       "trustedServiceContract": {
-        "version": "mgs-trial-v1",
-        "capability": "TOOLS",
+        "transport": "https",
         "modelMaySupplyIdentity": false,
         "trustedHeaders": [
           "X-Mgs-Trial-Key",
@@ -629,7 +632,10 @@
           "X-Mgs-Trial-Confirmation",
           "X-Mgs-Trial-Idempotency",
           "X-Mgs-Trial-Signature"
-        ]
+        ],
+        "capability": "TOOLS",
+        "secureRequestRequired": true,
+        "version": "mgs-trial-v1"
       },
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
@@ -677,8 +683,7 @@
       },
       "readOnly": true,
       "trustedServiceContract": {
-        "version": "mgs-trial-v1",
-        "capability": "TOOLS",
+        "transport": "https",
         "modelMaySupplyIdentity": false,
         "trustedHeaders": [
           "X-Mgs-Trial-Key",
@@ -690,7 +695,10 @@
           "X-Mgs-Trial-Confirmation",
           "X-Mgs-Trial-Idempotency",
           "X-Mgs-Trial-Signature"
-        ]
+        ],
+        "capability": "TOOLS",
+        "secureRequestRequired": true,
+        "version": "mgs-trial-v1"
       },
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
@@ -773,8 +781,7 @@
       },
       "readOnly": false,
       "trustedServiceContract": {
-        "version": "mgs-trial-v1",
-        "capability": "TOOLS",
+        "transport": "https",
         "modelMaySupplyIdentity": false,
         "trustedHeaders": [
           "X-Mgs-Trial-Key",
@@ -786,7 +793,10 @@
           "X-Mgs-Trial-Confirmation",
           "X-Mgs-Trial-Idempotency",
           "X-Mgs-Trial-Signature"
-        ]
+        ],
+        "capability": "TOOLS",
+        "secureRequestRequired": true,
+        "version": "mgs-trial-v1"
       },
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [

@@ -30,6 +30,7 @@ class TrialServiceAuthTest {
     }
     MockHttpServletRequest signed(String body) {
         var req = new MockHttpServletRequest("POST", "/admin-api/crm/trial-tool/submit");
+        req.setSecure(true);
         Map<String,String> headers = Map.of("Key", "test-key", "Timestamp", Long.toString(Instant.now().getEpochSecond()),
                 "Nonce", UUID.randomUUID().toString(), "Subject", "trusted-user", "Verified", "true", "Email", "verified@example.invalid",
                 "Confirmation", "receipt", "Idempotency", "test-request-0001");
@@ -71,5 +72,13 @@ class TrialServiceAuthTest {
         assertThrows(ServiceException.class, properties::newPolicy);
         properties.setEnabled(true);
         assertThrows(ServiceException.class, properties::newPolicy);
+    }
+    @Test void plaintextAndSelfAssertedForwardedHttpsAreRejected() {
+        var request = signed("{}"); request.setSecure(false);
+        request.addHeader("X-Forwarded-Proto", "https");
+        request.addHeader("Forwarded", "proto=https");
+        assertThrows(ServiceException.class, () -> auth.verify(request, "{}".getBytes(StandardCharsets.UTF_8), "TOOLS"));
+        request.setSecure(true);
+        assertEquals("trusted-user", auth.verify(request, "{}".getBytes(StandardCharsets.UTF_8), "TOOLS").subjectId());
     }
 }

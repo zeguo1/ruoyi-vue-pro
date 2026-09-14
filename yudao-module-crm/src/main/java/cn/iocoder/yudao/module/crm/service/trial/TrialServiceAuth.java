@@ -25,7 +25,8 @@ public class TrialServiceAuth {
 
     // This protocol is exclusively service-to-service over TLS. No header is a tool input.
     public TrialIdentity verify(HttpServletRequest request, byte[] body, String capability) {
-        if (body.length > 16_384 || request.getQueryString() != null
+        // Trust only the container's secure-request decision, never caller-supplied forwarding headers.
+        if (!request.isSecure() || body.length > 16_384 || request.getQueryString() != null
                 || request.getHeader("tenant-id") != null || request.getHeader("visit-tenant-id") != null) {
             throw TrialException.unauthorized();
         }

@@ -74,6 +74,9 @@ class TrialOpenApiExportTest {
                     assertFalse(Set.of("tenant-id", "Authorization").contains(parameter.path("name").asText()));
                 }
                 assertTrue(operation.path("security").get(0).has("MgsTrialSignature"));
+                assertEquals("https", operation.path("x-mgs-service-contract").path("transport").asText());
+                assertTrue(operation.path("x-mgs-service-contract").path("secureRequestRequired").isBoolean());
+                assertTrue(operation.path("x-mgs-service-contract").path("secureRequestRequired").asBoolean());
                 var conditions = operation.path("x-mgs-account-ready-condition").path("all");
                 assertTrue(conditions.get(0).path("equals").isInt());
                 assertEquals(0, conditions.get(0).path("equals").asInt());
@@ -94,6 +97,9 @@ class TrialOpenApiExportTest {
                 JsonNode data = resolve(doc, envelope.path("properties").path("data"));
                 assertTrue(data.path("properties").has("accountReady"), entry.getKey());
             }
+            var eventContract = doc.path("paths").path("/admin-api/crm/trial-event/accept").path("post").path("x-mgs-service-contract");
+            assertEquals("https", eventContract.path("transport").asText());
+            assertTrue(eventContract.path("secureRequestRequired").asBoolean());
         }
     }
 

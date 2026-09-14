@@ -4,7 +4,7 @@
 
 | 要求 | 已验证证据 | 当前边界 |
 | --- | --- | --- |
-| 可信主体、确认、请求幂等、防重放、篡改字段拒绝 | TrialServiceAuthTest、TrialOrchestratorTest、实际 Springdoc 输出 | 知办公开客服的可信服务入口仍由知办实现 |
+| 可信主体、确认、请求幂等、防重放、篡改字段拒绝 | TrialServiceAuthTest、TrialToolHttpIntegrationTest、TrialOrchestratorTest、实际 Springdoc 输出；完整 RequestBodyAdvice/正式 JSON 转换/校验/Controller/本地服务链验证；所有服务签名入口统一拒绝非安全请求 | MockMvc 的 secure 标志验证应用约束，不代表真实 TLS/代理联调；知办公开客服的可信服务入口仍由知办实现 |
 | 运营 CRM 留资、MGS 普通账号与虚构客户 | TrialLocalJourneyIntegrationTest 使用实际 Clue/User/Role/Menu/Permission/Customer 服务和同一 H2 数据库 | 没有创建运行环境账号或业务；没有自动转客户 |
 | 栖云企业初始化 | TrialCorporateTenantIntegrationTest，实际 Tenant/Package/Menu/User/Role/Permission 服务、动态事务 | 生产资料/容量/菜单/有效期未配置，MySQL 初始化未执行 |
 | 浏览器登录与个人授权共享本人业务结果 | TrialLocalJourneyIntegrationTest；新增 TrialBrowserJourneyTest：实际 web-antd 浏览器登录临时 Tomcat，个人授权 HTTP 写入，页面读取同一记录编号和刷新保留，另一账号为空；正式 JSON 时间戳渲染回归 | 本地 H2、独立 jedis-mock、ConcurrentMapCacheManager；知办和外围模块替身。实际浏览器已连接隔离后端，但没有连接部署实例/MySQL/知办/公众号；见 BROWSER_JOURNEY.md |
