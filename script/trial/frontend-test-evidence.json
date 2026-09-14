@@ -1,6 +1,6 @@
 {
   "scope": "Actual web-antd rendering with Playwright-intercepted fixture APIs, including fake login. Not real backend login, tenant creation, KnowDo, WeChat, deployment or business writes.",
-  "recordedAt": "2026-09-14T18:26:21.807804+00:00",
+  "recordedAt": "2026-09-14T18:56:33.497774+00:00",
   "browserPlugin": "absent; regular Playwright used",
   "environment": {
     "url": "http://127.0.0.1:5198",
@@ -9,7 +9,7 @@
     "api": "Every /admin-api request fulfilled in browser route interception",
     "externalAssets": "Images replaced by fixture SVG; other remote requests blocked"
   },
-  "command": "CHROMIUM_EXECUTABLE=<installed chromium> OUT=/tmp/mgs-trial-browser/delivery node scripts/trial/browser-smoke.mjs",
+  "command": "CHROMIUM_EXECUTABLE=<installed chromium> OUT=/tmp/mgs-trial-browser/date-fix pnpm exec node scripts/trial/browser-smoke.mjs",
   "exitCode": 0,
   "scenarioCount": 5,
   "scenarios": [
@@ -21,9 +21,75 @@
       "blank": false,
       "overlay": 0,
       "horizontalOverflow": false,
-      "unknown": [],
-      "passed": true,
-      "apiRequests": [
+      "logs": [
+        "[Vben Form] BREAKING CHANGE: Named field slot control bindings moved to `slotProps.componentProps`. Replace `v-bind=\"slotProps\"` with `v-bind=\"slotProps.componentProps\"`. See https://doc.vben.pro/components/common-ui/vben-form.html",
+        "Failed to load resource: net::ERR_FAILED",
+        "[StorageManager] empty prefix combined with LocalStorageDriver — clear()/keys() will affect every localStorage entry.",
+        "[Vben Form] Legacy dependency callbacks are deprecated. Use `dependencies.resolve(context)` instead.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop."
+      ],
+      "calls": [
         {
           "method": "GET",
           "path": "/admin-api/system/tenant/get-by-website",
@@ -95,16 +161,24 @@
           "query": "?pageNo=2&pageSize=20"
         }
       ],
-      "console": {
-        "unhandledPageErrors": [],
-        "knownColumnResizeWarnings": 50,
-        "knownWarnings": [
-          "[Vben Form] BREAKING CHANGE: Named field slot control bindings moved to `slotProps.componentProps`. Replace `v-bind=\"slotProps\"` with `v-bind=\"slotProps.componentProps\"`. See https://doc.vben.pro/components/common-ui/vben-form.html",
-          "Failed to load resource: net::ERR_FAILED",
-          "[StorageManager] empty prefix combined with LocalStorageDriver — clear()/keys() will affect every localStorage entry.",
-          "[Vben Form] Legacy dependency callbacks are deprecated. Use `dependencies.resolve(context)` instead."
-        ]
-      }
+      "unknown": [],
+      "external": [
+        "https://hm.baidu.com/hm.js",
+        "https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp",
+        "https://unpkg.com/@vbenjs/static-source@0.1.7/source/avatar-v1.webp",
+        "https://api.iconify.design/lucide.json",
+        "https://api.iconify.design/carbon.json",
+        "https://api.iconify.design/ep.json",
+        "https://api.iconify.design/fluent-mdl2.json",
+        "https://api.simplesvg.com/lucide.json",
+        "https://api.simplesvg.com/carbon.json",
+        "https://api.simplesvg.com/ep.json",
+        "https://api.simplesvg.com/fluent-mdl2.json",
+        "https://api.unisvg.com/lucide.json",
+        "https://api.unisvg.com/carbon.json",
+        "https://api.unisvg.com/ep.json",
+        "https://api.unisvg.com/fluent-mdl2.json"
+      ]
     },
     {
       "role": "readonly",
@@ -114,9 +188,67 @@
       "blank": false,
       "overlay": 0,
       "horizontalOverflow": false,
-      "unknown": [],
-      "passed": true,
-      "apiRequests": [
+      "logs": [
+        "[Vben Form] BREAKING CHANGE: Named field slot control bindings moved to `slotProps.componentProps`. Replace `v-bind=\"slotProps\"` with `v-bind=\"slotProps.componentProps\"`. See https://doc.vben.pro/components/common-ui/vben-form.html",
+        "Failed to load resource: net::ERR_FAILED",
+        "[StorageManager] empty prefix combined with LocalStorageDriver — clear()/keys() will affect every localStorage entry.",
+        "[Vben Form] Legacy dependency callbacks are deprecated. Use `dependencies.resolve(context)` instead.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop."
+      ],
+      "calls": [
         {
           "method": "GET",
           "path": "/admin-api/system/tenant/get-by-website",
@@ -173,16 +305,24 @@
           "query": "?pageNo=2&pageSize=20"
         }
       ],
-      "console": {
-        "unhandledPageErrors": [],
-        "knownColumnResizeWarnings": 42,
-        "knownWarnings": [
-          "[Vben Form] BREAKING CHANGE: Named field slot control bindings moved to `slotProps.componentProps`. Replace `v-bind=\"slotProps\"` with `v-bind=\"slotProps.componentProps\"`. See https://doc.vben.pro/components/common-ui/vben-form.html",
-          "Failed to load resource: net::ERR_FAILED",
-          "[StorageManager] empty prefix combined with LocalStorageDriver — clear()/keys() will affect every localStorage entry.",
-          "[Vben Form] Legacy dependency callbacks are deprecated. Use `dependencies.resolve(context)` instead."
-        ]
-      }
+      "unknown": [],
+      "external": [
+        "https://hm.baidu.com/hm.js",
+        "https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp",
+        "https://unpkg.com/@vbenjs/static-source@0.1.7/source/avatar-v1.webp",
+        "https://api.iconify.design/lucide.json",
+        "https://api.iconify.design/carbon.json",
+        "https://api.iconify.design/ep.json",
+        "https://api.iconify.design/fluent-mdl2.json",
+        "https://api.simplesvg.com/lucide.json",
+        "https://api.simplesvg.com/carbon.json",
+        "https://api.simplesvg.com/ep.json",
+        "https://api.simplesvg.com/fluent-mdl2.json",
+        "https://api.unisvg.com/lucide.json",
+        "https://api.unisvg.com/carbon.json",
+        "https://api.unisvg.com/ep.json",
+        "https://api.unisvg.com/fluent-mdl2.json"
+      ]
     },
     {
       "role": "trial",
@@ -192,9 +332,28 @@
       "blank": false,
       "overlay": 0,
       "horizontalOverflow": false,
-      "unknown": [],
-      "passed": true,
-      "apiRequests": [
+      "logs": [
+        "[Vben Form] BREAKING CHANGE: Named field slot control bindings moved to `slotProps.componentProps`. Replace `v-bind=\"slotProps\"` with `v-bind=\"slotProps.componentProps\"`. See https://doc.vben.pro/components/common-ui/vben-form.html",
+        "Failed to load resource: net::ERR_FAILED",
+        "[StorageManager] empty prefix combined with LocalStorageDriver — clear()/keys() will affect every localStorage entry.",
+        "[Vben Form] Legacy dependency callbacks are deprecated. Use `dependencies.resolve(context)` instead.",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "[Vben Form] BREAKING CHANGE: Named field slot control bindings moved to `slotProps.componentProps`. Replace `v-bind=\"slotProps\"` with `v-bind=\"slotProps.componentProps\"`. See https://doc.vben.pro/components/common-ui/vben-form.html",
+        "Failed to load resource: net::ERR_FAILED",
+        "[StorageManager] empty prefix combined with LocalStorageDriver — clear()/keys() will affect every localStorage entry.",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED"
+      ],
+      "calls": [
         {
           "method": "GET",
           "path": "/admin-api/system/tenant/get-by-website",
@@ -261,16 +420,27 @@
           "query": ""
         }
       ],
-      "console": {
-        "unhandledPageErrors": [],
-        "knownColumnResizeWarnings": 0,
-        "knownWarnings": [
-          "[Vben Form] BREAKING CHANGE: Named field slot control bindings moved to `slotProps.componentProps`. Replace `v-bind=\"slotProps\"` with `v-bind=\"slotProps.componentProps\"`. See https://doc.vben.pro/components/common-ui/vben-form.html",
-          "Failed to load resource: net::ERR_FAILED",
-          "[StorageManager] empty prefix combined with LocalStorageDriver — clear()/keys() will affect every localStorage entry.",
-          "[Vben Form] Legacy dependency callbacks are deprecated. Use `dependencies.resolve(context)` instead."
-        ]
-      }
+      "unknown": [],
+      "external": [
+        "https://hm.baidu.com/hm.js",
+        "https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp",
+        "https://unpkg.com/@vbenjs/static-source@0.1.7/source/avatar-v1.webp",
+        "https://api.iconify.design/ep.json",
+        "https://api.iconify.design/fluent-mdl2.json",
+        "https://api.simplesvg.com/ep.json",
+        "https://api.simplesvg.com/fluent-mdl2.json",
+        "https://api.unisvg.com/ep.json",
+        "https://api.unisvg.com/fluent-mdl2.json",
+        "https://hm.baidu.com/hm.js",
+        "https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp",
+        "https://unpkg.com/@vbenjs/static-source@0.1.7/source/avatar-v1.webp",
+        "https://api.iconify.design/ep.json",
+        "https://api.iconify.design/fluent-mdl2.json",
+        "https://api.simplesvg.com/ep.json",
+        "https://api.simplesvg.com/fluent-mdl2.json",
+        "https://api.unisvg.com/ep.json",
+        "https://api.unisvg.com/fluent-mdl2.json"
+      ]
     },
     {
       "role": "operator",
@@ -280,9 +450,72 @@
       "blank": false,
       "overlay": 0,
       "horizontalOverflow": false,
-      "unknown": [],
-      "passed": true,
-      "apiRequests": [
+      "logs": [
+        "[Vben Form] BREAKING CHANGE: Named field slot control bindings moved to `slotProps.componentProps`. Replace `v-bind=\"slotProps\"` with `v-bind=\"slotProps.componentProps\"`. See https://doc.vben.pro/components/common-ui/vben-form.html",
+        "Failed to load resource: net::ERR_FAILED",
+        "[StorageManager] empty prefix combined with LocalStorageDriver — clear()/keys() will affect every localStorage entry.",
+        "[Vben Form] Legacy dependency callbacks are deprecated. Use `dependencies.resolve(context)` instead.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop.",
+        "[Vue warn]: Component emitted event \"columnResize\" but it is neither declared in the emits option nor as an \"onColumnResize\" prop."
+      ],
+      "calls": [
         {
           "method": "GET",
           "path": "/admin-api/system/tenant/get-by-website",
@@ -354,16 +587,21 @@
           "query": "?pageNo=2&pageSize=20"
         }
       ],
-      "console": {
-        "unhandledPageErrors": [],
-        "knownColumnResizeWarnings": 50,
-        "knownWarnings": [
-          "[Vben Form] BREAKING CHANGE: Named field slot control bindings moved to `slotProps.componentProps`. Replace `v-bind=\"slotProps\"` with `v-bind=\"slotProps.componentProps\"`. See https://doc.vben.pro/components/common-ui/vben-form.html",
-          "Failed to load resource: net::ERR_FAILED",
-          "[StorageManager] empty prefix combined with LocalStorageDriver — clear()/keys() will affect every localStorage entry.",
-          "[Vben Form] Legacy dependency callbacks are deprecated. Use `dependencies.resolve(context)` instead."
-        ]
-      }
+      "unknown": [],
+      "external": [
+        "https://hm.baidu.com/hm.js",
+        "https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp",
+        "https://unpkg.com/@vbenjs/static-source@0.1.7/source/avatar-v1.webp",
+        "https://api.iconify.design/ep.json",
+        "https://api.iconify.design/fluent-mdl2.json",
+        "https://api.iconify.design/lucide.json",
+        "https://api.unisvg.com/ep.json",
+        "https://api.unisvg.com/fluent-mdl2.json",
+        "https://api.unisvg.com/lucide.json",
+        "https://api.simplesvg.com/ep.json",
+        "https://api.simplesvg.com/fluent-mdl2.json",
+        "https://api.simplesvg.com/lucide.json"
+      ]
     },
     {
       "role": "trial",
@@ -373,9 +611,28 @@
       "blank": false,
       "overlay": 0,
       "horizontalOverflow": false,
-      "unknown": [],
-      "passed": true,
-      "apiRequests": [
+      "logs": [
+        "[Vben Form] BREAKING CHANGE: Named field slot control bindings moved to `slotProps.componentProps`. Replace `v-bind=\"slotProps\"` with `v-bind=\"slotProps.componentProps\"`. See https://doc.vben.pro/components/common-ui/vben-form.html",
+        "Failed to load resource: net::ERR_FAILED",
+        "[StorageManager] empty prefix combined with LocalStorageDriver — clear()/keys() will affect every localStorage entry.",
+        "[Vben Form] Legacy dependency callbacks are deprecated. Use `dependencies.resolve(context)` instead.",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "[Vben Form] BREAKING CHANGE: Named field slot control bindings moved to `slotProps.componentProps`. Replace `v-bind=\"slotProps\"` with `v-bind=\"slotProps.componentProps\"`. See https://doc.vben.pro/components/common-ui/vben-form.html",
+        "Failed to load resource: net::ERR_FAILED",
+        "[StorageManager] empty prefix combined with LocalStorageDriver — clear()/keys() will affect every localStorage entry.",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED"
+      ],
+      "calls": [
         {
           "method": "GET",
           "path": "/admin-api/system/tenant/get-by-website",
@@ -442,16 +699,27 @@
           "query": ""
         }
       ],
-      "console": {
-        "unhandledPageErrors": [],
-        "knownColumnResizeWarnings": 0,
-        "knownWarnings": [
-          "[Vben Form] BREAKING CHANGE: Named field slot control bindings moved to `slotProps.componentProps`. Replace `v-bind=\"slotProps\"` with `v-bind=\"slotProps.componentProps\"`. See https://doc.vben.pro/components/common-ui/vben-form.html",
-          "Failed to load resource: net::ERR_FAILED",
-          "[StorageManager] empty prefix combined with LocalStorageDriver — clear()/keys() will affect every localStorage entry.",
-          "[Vben Form] Legacy dependency callbacks are deprecated. Use `dependencies.resolve(context)` instead."
-        ]
-      }
+      "unknown": [],
+      "external": [
+        "https://hm.baidu.com/hm.js",
+        "https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp",
+        "https://unpkg.com/@vbenjs/static-source@0.1.7/source/avatar-v1.webp",
+        "https://api.iconify.design/ep.json",
+        "https://api.iconify.design/fluent-mdl2.json",
+        "https://api.unisvg.com/ep.json",
+        "https://api.unisvg.com/fluent-mdl2.json",
+        "https://api.simplesvg.com/ep.json",
+        "https://api.simplesvg.com/fluent-mdl2.json",
+        "https://hm.baidu.com/hm.js",
+        "https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp",
+        "https://unpkg.com/@vbenjs/static-source@0.1.7/source/avatar-v1.webp",
+        "https://api.iconify.design/ep.json",
+        "https://api.iconify.design/fluent-mdl2.json",
+        "https://api.simplesvg.com/ep.json",
+        "https://api.simplesvg.com/fluent-mdl2.json",
+        "https://api.unisvg.com/ep.json",
+        "https://api.unisvg.com/fluent-mdl2.json"
+      ]
     }
   ],
   "additionalAssertions": [
@@ -475,17 +743,17 @@
     }
   ],
   "sourceSha256": {
-    "apps/web-antd/src/api/crm/trial/index.ts": "3d829ef01adb28d155b1414d2f34c7fc6471d6dad502923515c94c9e03fc902d",
+    "apps/web-antd/src/api/crm/trial/index.ts": "576a66e95951b5179d29a196cbcc4360b71bdf4cafe8526bb18d8ef62a1bb7f4",
     "apps/web-antd/src/views/crm/trial/operations/index.vue": "e86f1dda11964f4909efc8ed1be7a2df6a83eb412066123a48fadf980531ee4b",
-    "apps/web-antd/src/views/crm/trial/experience/index.vue": "dbc09987ec905fdd6668975e26d281df935b7e09bd03dc6b67e3d8c54115c855",
+    "apps/web-antd/src/views/crm/trial/experience/index.vue": "77a293dcc787ab8373ea563f2537a9167aab1d2c783a4f20f5d71b180c61a94b",
     "apps/web-antd/src/utils/trial.ts": "664373f33cacce3cc2c45922474d7a6d4cb93c60bed8480961a1eb7a964def3d",
     "apps/web-antd/src/store/auth.ts": "ac215c5809696d1e99ee6dfa144b37d10f771779ed5c752c33371b75a5e06cd6",
     "apps/web-antd/src/router/guard.ts": "6b1d9a7cb99ab98cef344f95e2950d85358b00193f39f7c9005f2956bc001b5b",
     "apps/web-antd/src/layouts/basic.vue": "3ec0ba0768b174972dbfb753fddbf27399ab627a06c466d7ede49501f04fdb5b",
-    "scripts/trial/browser-smoke.mjs": "e35d823eaf4781b3f4713938b58ecd2257504c0d64b78fa116648ba9446de357"
+    "scripts/trial/browser-smoke.mjs": "b6b12697d5a60c909260e3de988e5aa6c1ee81ac0c3f44346383db610065e7f6"
   },
-  "localRawEvidence": "/tmp/mgs-trial-browser/post-lint/flows.json",
-  "screenshotsDirectory": "/tmp/mgs-trial-browser/post-lint",
+  "localRawEvidence": "/tmp/mgs-trial-browser/date-fix/flows.json",
+  "screenshotsDirectory": "/tmp/mgs-trial-browser/date-fix",
   "limitations": [
     "No real backend or credentials used, despite exercising actual login UI.",
     "No real safe-card or WeChat binding test.",
@@ -503,7 +771,7 @@
       "command": "NODE_OPTIONS=--max-old-space-size=1536 pnpm exec vue-tsc --noEmit --skipLibCheck -p apps/web-antd/tsconfig.trial.json",
       "exitCode": 0,
       "scope": "New trial pages/API and their imported type graph; not a full application check",
-      "report": "/tmp/mgs-trial-scoped-typecheck-final.log"
+      "report": "/tmp/mgs-trial-date-typecheck.log"
     },
     "eslint": {
       "exitCode": 0,
@@ -527,5 +795,28 @@
     ],
     "hook": "frontend lefthook.yml checkType remains a pre-commit requirement; not bypassed"
   },
-  "postBrowserFormatting": "Oxfmt whitespace formatting applied after browser rerun; ESLint and scoped vue-tsc passed again. No additional behavior changes."
+  "postBrowserFormatting": "Date display/type and fixture timestamp changed, then all five fixture scenarios, ESLint, Stylelint, type-aware Oxlint and scoped vue-tsc passed; no later frontend source edit.",
+  "dateFixChecks": {
+    "files": [
+      "apps/web-antd/src/api/crm/trial/index.ts",
+      "apps/web-antd/src/views/crm/trial/experience/index.vue",
+      "scripts/trial/browser-smoke.mjs"
+    ],
+    "eslint": {
+      "exitCode": 0,
+      "log": "/tmp/mgs-trial-date-eslint.log"
+    },
+    "stylelint": {
+      "exitCode": 0,
+      "log": "/tmp/mgs-trial-date-stylelint.log"
+    },
+    "oxlintTypeAware": {
+      "exitCode": 0,
+      "log": "/tmp/mgs-trial-date-oxlint.log"
+    },
+    "vueTscScoped": {
+      "exitCode": 0,
+      "log": "/tmp/mgs-trial-date-typecheck.log"
+    }
+  }
 }

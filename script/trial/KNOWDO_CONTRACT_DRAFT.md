@@ -71,7 +71,7 @@ POST
 事件 `POST /admin-api/crm/trial-event/accept` 使用 EVENTS 独立签名能力，body `{eventId,applicationId,type,knowdoMemberId,businessRecordId?}`。MGS 按主体归属、成员映射、事件幂等键核验；首次业务必须有本申请实际持久化跟进及已绑定事实。通知发送失败不触发重新开户。
 
 ## 当前验证边界
-已运行本地 H2 状态机/签名测试、实际 MGS 登录/OAuth/CRM/权限链路的 MockMvc 联合测试，以及三个边界的独立 JVM 强制中断与文件 H2 冷启动恢复测试。知办仍为明确替身；实际浏览器与后端联网、真实知办安全卡片、公众号及部署环境尚未联调。参见 ACCEPTANCE.md 和 test-evidence.json；此文件为对接候选，尚不是上线验收结果。
+已运行本地 H2 状态机/签名测试、实际 MGS 登录/OAuth/CRM/权限链路的 MockMvc 联合测试、三个边界的独立 JVM 强制中断与文件 H2 冷启动恢复，以及实际 web-antd 浏览器连接临时 Tomcat 的登录/Agent 写入/本人结果读取和两账号隔离。知办仍为明确替身；真实知办安全卡片、公众号及部署环境尚未联调。参见 ACCEPTANCE.md、BROWSER_JOURNEY.md 和 test-evidence.json；此文件为对接候选，尚不是上线验收结果。
 
 
 ## MGS 个人授权交付（已实现，待真实联调）

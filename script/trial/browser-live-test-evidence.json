@@ -1,0 +1,209 @@
+{
+  "browser": "Playwright (Browser plugin not available)",
+  "backend": "Loopback Tomcat; actual MGS login/OAuth/permissions/CRM; H2 and jedis-mock; KnowDo and dictionary fixtures",
+  "apiResponsesMocked": false,
+  "realKnowdoOrWeChatVerified": false,
+  "scenarios": [
+    {
+      "width": 1440,
+      "account": 1,
+      "calls": [
+        {
+          "method": "GET",
+          "path": "/admin-api/system/tenant/get-by-website"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/system/tenant/simple-list"
+        },
+        {
+          "method": "POST",
+          "path": "/admin-api/system/auth/login"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/system/auth/get-permission-info"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/crm/trial-business/customer"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/crm/trial-business/follow-ups"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/crm/trial-business/customer"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/crm/trial-business/follow-ups"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/system/auth/get-permission-info"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/crm/trial-business/customer"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/crm/trial-business/follow-ups"
+        }
+      ],
+      "console": [
+        "[Vben Form] BREAKING CHANGE: Named field slot control bindings moved to `slotProps.componentProps`. Replace `v-bind=\"slotProps\"` with `v-bind=\"slotProps.componentProps\"`. See https://doc.vben.pro/components/common-ui/vben-form.html",
+        "Failed to load resource: net::ERR_FAILED",
+        "[StorageManager] empty prefix combined with LocalStorageDriver — clear()/keys() will affect every localStorage entry.",
+        "[Vben Form] Legacy dependency callbacks are deprecated. Use `dependencies.resolve(context)` instead.",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "[Vben Form] BREAKING CHANGE: Named field slot control bindings moved to `slotProps.componentProps`. Replace `v-bind=\"slotProps\"` with `v-bind=\"slotProps.componentProps\"`. See https://doc.vben.pro/components/common-ui/vben-form.html",
+        "Failed to load resource: net::ERR_FAILED",
+        "[StorageManager] empty prefix combined with LocalStorageDriver — clear()/keys() will affect every localStorage entry.",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED"
+      ],
+      "externalBlocked": [
+        "https://hm.baidu.com/hm.js",
+        "https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp",
+        "https://api.iconify.design/ep.json",
+        "https://api.iconify.design/fluent-mdl2.json",
+        "https://api.simplesvg.com/ep.json",
+        "https://api.simplesvg.com/fluent-mdl2.json",
+        "https://api.unisvg.com/ep.json",
+        "https://api.unisvg.com/fluent-mdl2.json",
+        "https://hm.baidu.com/hm.js",
+        "https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp",
+        "https://api.iconify.design/ep.json",
+        "https://api.iconify.design/fluent-mdl2.json",
+        "https://api.unisvg.com/ep.json",
+        "https://api.unisvg.com/fluent-mdl2.json",
+        "https://api.simplesvg.com/ep.json",
+        "https://api.simplesvg.com/fluent-mdl2.json"
+      ],
+      "checks": {
+        "agentWriteBrowserReadSameId": true,
+        "reloadPreservesResult": true,
+        "productionTimestampRenderedAsDate": true,
+        "actualLogin": true,
+        "pageIdentity": true,
+        "notBlank": true,
+        "noLoadingOverlay": true,
+        "noFrameworkOverlay": true,
+        "noHorizontalOverflow": true,
+        "noPageErrors": true,
+        "noUnexpectedConsoleErrors": true,
+        "noWriteButtons": true
+      },
+      "url": "http://127.0.0.1:5198/trial-experience",
+      "title": "我的业务体验 - 芋道管理系统"
+    },
+    {
+      "width": 390,
+      "account": 2,
+      "calls": [
+        {
+          "method": "GET",
+          "path": "/admin-api/system/tenant/get-by-website"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/system/tenant/simple-list"
+        },
+        {
+          "method": "POST",
+          "path": "/admin-api/system/auth/login"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/system/auth/get-permission-info"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/crm/trial-business/customer"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/crm/trial-business/follow-ups"
+        }
+      ],
+      "console": [
+        "[Vben Form] BREAKING CHANGE: Named field slot control bindings moved to `slotProps.componentProps`. Replace `v-bind=\"slotProps\"` with `v-bind=\"slotProps.componentProps\"`. See https://doc.vben.pro/components/common-ui/vben-form.html",
+        "Failed to load resource: net::ERR_FAILED",
+        "[StorageManager] empty prefix combined with LocalStorageDriver — clear()/keys() will affect every localStorage entry.",
+        "[Vben Form] Legacy dependency callbacks are deprecated. Use `dependencies.resolve(context)` instead.",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED"
+      ],
+      "externalBlocked": [
+        "https://hm.baidu.com/hm.js",
+        "https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp",
+        "https://api.iconify.design/ep.json",
+        "https://api.iconify.design/fluent-mdl2.json",
+        "https://api.simplesvg.com/ep.json",
+        "https://api.simplesvg.com/fluent-mdl2.json",
+        "https://api.unisvg.com/ep.json",
+        "https://api.unisvg.com/fluent-mdl2.json"
+      ],
+      "checks": {
+        "otherAccountCannotReadRecord": true,
+        "actualLogin": true,
+        "pageIdentity": true,
+        "notBlank": true,
+        "noLoadingOverlay": true,
+        "noFrameworkOverlay": true,
+        "noHorizontalOverflow": true,
+        "noPageErrors": true,
+        "noUnexpectedConsoleErrors": true,
+        "noWriteButtons": true
+      },
+      "url": "http://127.0.0.1:5198/trial-experience",
+      "title": "我的业务体验 - 芋道管理系统"
+    }
+  ],
+  "recordedAt": "2026-09-14T18:56:33.497774+00:00",
+  "exitCode": 0,
+  "sourceSha256": {
+    "apps/web-antd/src/api/crm/trial/index.ts": "576a66e95951b5179d29a196cbcc4360b71bdf4cafe8526bb18d8ef62a1bb7f4",
+    "apps/web-antd/src/views/crm/trial/operations/index.vue": "e86f1dda11964f4909efc8ed1be7a2df6a83eb412066123a48fadf980531ee4b",
+    "apps/web-antd/src/views/crm/trial/experience/index.vue": "77a293dcc787ab8373ea563f2537a9167aab1d2c783a4f20f5d71b180c61a94b",
+    "apps/web-antd/src/utils/trial.ts": "664373f33cacce3cc2c45922474d7a6d4cb93c60bed8480961a1eb7a964def3d",
+    "apps/web-antd/src/store/auth.ts": "ac215c5809696d1e99ee6dfa144b37d10f771779ed5c752c33371b75a5e06cd6",
+    "apps/web-antd/src/router/guard.ts": "6b1d9a7cb99ab98cef344f95e2950d85358b00193f39f7c9005f2956bc001b5b",
+    "apps/web-antd/src/layouts/basic.vue": "3ec0ba0768b174972dbfb753fddbf27399ab627a06c466d7ede49501f04fdb5b",
+    "scripts/trial/browser-smoke.mjs": "b6b12697d5a60c909260e3de988e5aa6c1ee81ac0c3f44346383db610065e7f6"
+  },
+  "backendTestSha256": "b4a901f9e518f50df27f050ce37dc4c8b100ca5c06c1b7fcfcfdd1bb05cbda1b",
+  "browserScriptSha256": "94fe57bb7293f8adb189e8bee10ba6e17662d73b8e69b3ba6825407c6864f89d",
+  "invocation": "See BROWSER_JOURNEY.md; TRIAL_UI_URL=http://127.0.0.1:5198, JVM and browser UTC, explicit installed Chromium headless-shell revision 1243",
+  "report": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialBrowserJourneyTest.xml",
+  "log": "/tmp/mgs-trial-live-backend-final.log",
+  "screenshotsDirectory": "/tmp/mgs-trial-live-browser-final",
+  "regressionBeforeFix": {
+    "failedAssertion": "Next-contact time must be readable, not a raw epoch number",
+    "log": "/tmp/mgs-trial-live-before-date-fix.log",
+    "screenshot": "/tmp/mgs-trial-live-browser-before-date-fix/failed-1.png"
+  },
+  "limitations": [
+    "H2 and jedis-mock, not MySQL or deployed cache",
+    "KnowDo, dictionary/contact verification and peripheral services are fixtures",
+    "No real website signup, safe-card, WeChat or deployment validation",
+    "Mobile shared header toolbar has limited visible space; this change does not redesign shared navigation",
+    "Frontend full checkType gate remains unmet; frontend candidate not committed"
+  ]
+}

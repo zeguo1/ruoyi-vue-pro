@@ -1,5 +1,5 @@
 {
-  "scope": "Local H2 unit and integration suites, actual corporate Tenant/Package/Menu/AdminUser/Role/Permission provisioning, actual AuthController HTTP login and OAuth services/Redis DAO, actual CRM/permissions/MVC joint journey, encrypted credential delivery, HMAC and state machine, isolated Springdoc, existing login/OAuth regression. KnowDo and peripheral services are explicit doubles; Redis protocol uses isolated jedis-mock; joint permission caches use ConcurrentMapCacheManager. No production or real KnowDo/WeChat calls. File-backed H2 cold-process restart tests force-terminate a child JVM at three boundaries and resume in a separate JVM, using real local MGS provisioning and a separately persisted KnowDo fixture.",
+  "scope": "Local H2 unit and integration suites, actual corporate Tenant/Package/Menu/AdminUser/Role/Permission provisioning, actual AuthController HTTP login and OAuth services/Redis DAO, actual CRM/permissions/MVC joint journey, encrypted credential delivery, HMAC and state machine, isolated Springdoc, existing login/OAuth regression. KnowDo and peripheral services are explicit doubles; Redis protocol uses isolated jedis-mock; joint permission caches use ConcurrentMapCacheManager. No production or real KnowDo/WeChat calls. File-backed H2 cold-process restart tests force-terminate a child JVM at three boundaries and resume in a separate JVM, using real local MGS provisioning and a separately persisted KnowDo fixture. Opt-in Playwright browser login and Agent HTTP write/read-back through ephemeral loopback Tomcat, with production timestamp serializer and actual menu migration.",
   "tests": [
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialOrchestratorTest",
@@ -135,9 +135,18 @@
       "errors": 0,
       "skipped": 0,
       "reportModifiedAt": "2026-09-14T18:38:53.851791+00:00"
+    },
+    {
+      "class": "cn.iocoder.yudao.module.crm.service.trial.TrialBrowserJourneyTest",
+      "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialBrowserJourneyTest.xml",
+      "reportModifiedAt": "2026-09-14T18:53:10.072184+00:00",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
     }
   ],
-  "total": 92,
+  "total": 93,
   "realEndToEndVerified": false,
   "limitations": [
     "Corporate bootstrap now covers actual Tenant/Package/Menu/AdminUser/Role/Permission services on H2; config, department/post, MQ and CRM/OAuth boundaries remain doubles. MySQL and deployed initialization are unverified.",
@@ -145,9 +154,9 @@
     "OAuth validation and system permission directory are fixture boundaries in the separate CRM MVC tests.",
     "Export/file denial is verified before sentinel MVC handlers, not against actual object storage.",
     "KnowDo binding credential forwarding/replay/expiry and WeChat end-to-end are not verified.",
-    "Actual AuthController login/OAuth/CRM joint HTTP tests and file-H2 JVM crash recovery pass. Real browser-to-backend, MySQL, KnowDo safe cards, WeChat, host/power loss and deployed restart/network fault exercises remain unverified. See ACCEPTANCE.md."
+    "Actual browser-to-isolated-Tomcat login, Agent write/read-back and two-account isolation now pass. MySQL, real KnowDo safe cards, WeChat, host/power loss and deployed restart/network fault exercises remain unverified."
   ],
-  "frontendEvidence": "frontend-test-evidence.json (5 isolated browser scenarios; fixture API/login, separate from backend test count)",
+  "frontendEvidence": "frontend-test-evidence.json: 5 fixture scenarios; browser-live-test-evidence.json: 2 actual isolated-backend browser contexts within the single TrialBrowserJourneyTest, not two additional backend tests.",
   "processRestart": {
     "class": "cn.iocoder.yudao.module.crm.service.trial.TrialProcessRestartTest",
     "boundaries": [
