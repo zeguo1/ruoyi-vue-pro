@@ -1,6 +1,6 @@
 {
   "scope": "Actual web-antd rendering with Playwright-intercepted fixture APIs, including fake login. Not real backend login, tenant creation, KnowDo, WeChat, deployment or business writes.",
-  "recordedAt": "2026-09-14T17:55:18.800766+00:00",
+  "recordedAt": "2026-09-14T18:26:21.807804+00:00",
   "browserPlugin": "absent; regular Playwright used",
   "environment": {
     "url": "http://127.0.0.1:5198",
@@ -475,17 +475,17 @@
     }
   ],
   "sourceSha256": {
-    "apps/web-antd/src/api/crm/trial/index.ts": "8ad1fae080664c30377e77dce924406c51b666b4ce357bba639d9ee77268c795",
-    "apps/web-antd/src/views/crm/trial/operations/index.vue": "33cc83898c630dfeb67e7c0c663774e7eeb06ebb222060c113d3d5803968c50e",
-    "apps/web-antd/src/views/crm/trial/experience/index.vue": "d71904f48ea11340bac50da3f32f86e3ed361b37ee0aeadc627781b18efb370c",
+    "apps/web-antd/src/api/crm/trial/index.ts": "3d829ef01adb28d155b1414d2f34c7fc6471d6dad502923515c94c9e03fc902d",
+    "apps/web-antd/src/views/crm/trial/operations/index.vue": "e86f1dda11964f4909efc8ed1be7a2df6a83eb412066123a48fadf980531ee4b",
+    "apps/web-antd/src/views/crm/trial/experience/index.vue": "dbc09987ec905fdd6668975e26d281df935b7e09bd03dc6b67e3d8c54115c855",
     "apps/web-antd/src/utils/trial.ts": "664373f33cacce3cc2c45922474d7a6d4cb93c60bed8480961a1eb7a964def3d",
     "apps/web-antd/src/store/auth.ts": "ac215c5809696d1e99ee6dfa144b37d10f771779ed5c752c33371b75a5e06cd6",
     "apps/web-antd/src/router/guard.ts": "6b1d9a7cb99ab98cef344f95e2950d85358b00193f39f7c9005f2956bc001b5b",
     "apps/web-antd/src/layouts/basic.vue": "3ec0ba0768b174972dbfb753fddbf27399ab627a06c466d7ede49501f04fdb5b",
-    "scripts/trial/browser-smoke.mjs": "6abf61221e68d134d42409991ea2272ff9e75e2f39a9181bca69e25792acef00"
+    "scripts/trial/browser-smoke.mjs": "e35d823eaf4781b3f4713938b58ecd2257504c0d64b78fa116648ba9446de357"
   },
-  "localRawEvidence": "/tmp/mgs-trial-browser/delivery/flows.json",
-  "screenshotsDirectory": "/tmp/mgs-trial-browser/delivery",
+  "localRawEvidence": "/tmp/mgs-trial-browser/post-lint/flows.json",
+  "screenshotsDirectory": "/tmp/mgs-trial-browser/post-lint",
   "limitations": [
     "No real backend or credentials used, despite exercising actual login UI.",
     "No real safe-card or WeChat binding test.",
@@ -496,12 +496,36 @@
   "staticChecks": {
     "oxlint": {
       "scope": "7 affected production source files and browser-smoke.mjs",
-      "exitCode": 0
+      "exitCode": 0,
+      "typeAware": true
     },
     "vueTsc": {
       "command": "NODE_OPTIONS=--max-old-space-size=1536 pnpm exec vue-tsc --noEmit --skipLibCheck -p apps/web-antd/tsconfig.trial.json",
       "exitCode": 0,
-      "scope": "New trial pages/API and their imported type graph; not a full application check"
+      "scope": "New trial pages/API and their imported type graph; not a full application check",
+      "report": "/tmp/mgs-trial-scoped-typecheck-final.log"
+    },
+    "eslint": {
+      "exitCode": 0,
+      "scope": "All 8 changed production and browser-script JS/TS/Vue files"
+    },
+    "stylelint": {
+      "exitCode": 0,
+      "scope": "3 changed Vue files"
     }
-  }
+  },
+  "fullTypecheck": {
+    "passed": false,
+    "globalCommand": "pnpm run check:type --concurrency=1",
+    "actualAppCommand": "pnpm --filter @vben/web-antd typecheck",
+    "memoryMax": "2560M",
+    "memorySwapMax": "128M",
+    "result": "Both transient isolated check units reported oom-kill; global check stopped in web-antdv-next, actual-app check also failed. No pass inferred.",
+    "logs": [
+      "/tmp/mgs-trial-full-typecheck.log",
+      "/tmp/mgs-trial-antd-typecheck.log"
+    ],
+    "hook": "frontend lefthook.yml checkType remains a pre-commit requirement; not bypassed"
+  },
+  "postBrowserFormatting": "Oxfmt whitespace formatting applied after browser rerun; ESLint and scoped vue-tsc passed again. No additional behavior changes."
 }

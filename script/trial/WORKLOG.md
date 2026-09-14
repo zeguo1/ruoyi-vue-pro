@@ -136,3 +136,10 @@
 - 知办 lookup/ensure 是明确测试替身，事件也是隔离输入；字典、部门/岗位、配置/MQ及其他业务外围仍有替身。未运行真实官网、知办安全卡片或公众号；对象重建不是 OS 进程崩溃验收。完整边界汇总在 ACCEPTANCE.md。
 - 联合测试对齐了旧系统单测 DDL 与仓库正式 SQL 的已确认差异：登录日志 tenant_id 列、浏览器 OAuth grant 可为 null 的 scopes。仅修改新测试数据库装配；没有修改生产 SQL 约束或登录行为来使测试通过。测试配置使用项目已有 Redisson 客户端，没有新增依赖。
 - 统一回归现包含 58 项试用测试和 1 项实际 Springdoc 输出；原登录/OAuth 30 项回归本轮重新执行，具体结果及时间见 test-evidence.json。浏览器的 5 个 fixture 场景沿用上一阶段独立证据，不扩大其含义。
+
+### 候选提交与前端门槛（2026-09-14）
+
+- 后端功能、迁移、契约和 89 项通过的测试证据已提交为 `fc1a45c4a4751fec0ca7c4fa3c2a2670cdf9302a`，推送至 origin 的 `feat/knowdo-trial-onboarding`；远端分支 SHA 已读回核对。没有合并或部署。
+- 前端完成 ESLint 自动格式/导入排序修正；带类型信息的 Oxlint、ESLint、Stylelint、限定范围 vue-tsc 通过，5 个浏览器场景重跑通过；随后仅做 Oxfmt 空白格式整理并重新通过 ESLint/vue-tsc。前端 10 个文件已暂存，尚未提交。
+- `lefthook.yml` 的 checkType 要求 `pnpm check:type`。在独立 systemd 临时任务中用 MemoryMax=2560M / MemorySwapMax=128M 和串行任务运行完整检查：全仓库在 web-antdv-next 触发 oom-kill；单独检查实际发布的 web-antd 同样触发内存上限。没有绕过钩子，也没有声称全量检查通过。临时任务均已结束，仅本地测试进程被限制；生产 JAR/dist 和容器保持不变。
+- 前端提交需解决完整检查资源条件，或获得明确的候选提交检查范围例外。真实知办接口、安全卡片、公众号联调和上线配置仍是独立待完成项，不因后端分支已推送而视为生效。
