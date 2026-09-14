@@ -1,0 +1,324 @@
+[
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 104,
+    "schema_count": 106,
+    "property_count": 507,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0
+    },
+    "sha256": "4a73d96108020f8dd3c7346675b5ea11bf65fe2cc0378641288c9879708ab028",
+    "group": "ai",
+    "url": "http://192.168.1.199:8088/v3/api-docs/ai"
+  },
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 3040,
+    "schema_count": 3193,
+    "property_count": 17814,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0,
+      "wildcard_operations": 1
+    },
+    "sha256": "f36abfc2a193647e116830cc069a9d2ce78ef4eafb7231fa5c0f51680eb95ebf",
+    "group": "all",
+    "url": "http://192.168.1.199:8088/v3/api-docs/all"
+  },
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 79,
+    "schema_count": 119,
+    "property_count": 596,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0
+    },
+    "sha256": "d21fe7320ddf0bde6f0bdc5e8405cdb8bd6e774dafcdf29545172b063ad42d1b",
+    "group": "bpm",
+    "url": "http://192.168.1.199:8088/v3/api-docs/bpm"
+  },
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 167,
+    "schema_count": 161,
+    "property_count": 857,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0
+    },
+    "sha256": "f6c515fe8165d6d0afb3af44717625f636a89514d1f477f4dd85d4b3d1991f25",
+    "group": "crm",
+    "url": "http://192.168.1.199:8088/v3/api-docs/crm"
+  },
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 146,
+    "schema_count": 144,
+    "property_count": 960,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0
+    },
+    "sha256": "a48468d32990a8242042d0f1bfbe185d861f4893df865698e474b2a4b7efd34c",
+    "group": "erp",
+    "url": "http://192.168.1.199:8088/v3/api-docs/erp"
+  },
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 141,
+    "schema_count": 156,
+    "property_count": 904,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0
+    },
+    "sha256": "9a81a933ad875c8cae35ba378f86da5e6fd982d0958eb0479b7f8201a89e3f0f",
+    "group": "fms",
+    "url": "http://192.168.1.199:8088/v3/api-docs/fms"
+  },
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 311,
+    "schema_count": 357,
+    "property_count": 2289,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0
+    },
+    "sha256": "36ef86f15c7c5279946bbb0385e110fc8d183c3827c9a1a3fdf3409737c4830e",
+    "group": "hrm",
+    "url": "http://192.168.1.199:8088/v3/api-docs/hrm"
+  },
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 127,
+    "schema_count": 132,
+    "property_count": 625,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0
+    },
+    "sha256": "21cc55628136e1a560ac261ff331a6e1a8ac6748ef43b00bef3f508050eae183",
+    "group": "im",
+    "url": "http://192.168.1.199:8088/v3/api-docs/im"
+  },
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 116,
+    "schema_count": 95,
+    "property_count": 452,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0,
+      "wildcard_operations": 1
+    },
+    "sha256": "aa02225eb74784451f551df00495535a554b7bf00cc8e4e2c9393a2b62bbe8c4",
+    "group": "infra",
+    "url": "http://192.168.1.199:8088/v3/api-docs/infra"
+  },
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 102,
+    "schema_count": 134,
+    "property_count": 577,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0
+    },
+    "sha256": "ae01e49f2e06a49ebf26054be2c3b83a1eb73ef0cb9fde0b29217d2ee5874ed6",
+    "group": "iot",
+    "url": "http://192.168.1.199:8088/v3/api-docs/iot"
+  },
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 72,
+    "schema_count": 102,
+    "property_count": 410,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0
+    },
+    "sha256": "738d43ba29c067f25ba3c7ec57353f8638b91a4f9bfe5f42559b53478c7a66b0",
+    "group": "member",
+    "url": "http://192.168.1.199:8088/v3/api-docs/member"
+  },
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 766,
+    "schema_count": 639,
+    "property_count": 4080,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0
+    },
+    "sha256": "4dd23c2c3e1cbe5552db5df1b70a8a859a95ce74006eb835a5155bb2907fadc6",
+    "group": "mes",
+    "url": "http://192.168.1.199:8088/v3/api-docs/mes"
+  },
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 52,
+    "schema_count": 74,
+    "property_count": 382,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0
+    },
+    "sha256": "6f7c523af301f4d0f5cc43bf0682c4bcceffcbf2d658df7d89cad3a57c961df7",
+    "group": "mp",
+    "url": "http://192.168.1.199:8088/v3/api-docs/mp"
+  },
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 60,
+    "schema_count": 87,
+    "property_count": 461,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0
+    },
+    "sha256": "aa861464a890ac0d0723fb13128cb9515884a473a58f1bd36d32b10efd2d3dfc",
+    "group": "pay",
+    "url": "http://192.168.1.199:8088/v3/api-docs/pay"
+  },
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 145,
+    "schema_count": 166,
+    "property_count": 803,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0
+    },
+    "sha256": "614d025883c40afd492cd55624b961a90ec96e3ab3e36581455822f911a1ab61",
+    "group": "pms",
+    "url": "http://192.168.1.199:8088/v3/api-docs/pms"
+  },
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 55,
+    "schema_count": 75,
+    "property_count": 399,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0
+    },
+    "sha256": "af6f27ddac9068b54e4d86da71041f6966e80f4e95a6181860586f810f8367d8",
+    "group": "product",
+    "url": "http://192.168.1.199:8088/v3/api-docs/product"
+  },
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 172,
+    "schema_count": 213,
+    "property_count": 1141,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0
+    },
+    "sha256": "049d7482617042f4516c1bab57d52a9d14b80f07ee4735d9856f02ae7ca24275",
+    "group": "promotion",
+    "url": "http://192.168.1.199:8088/v3/api-docs/promotion"
+  },
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 212,
+    "schema_count": 198,
+    "property_count": 921,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0
+    },
+    "sha256": "2b301d041b8fdcc0e4c319134fc082719c89c2c3f286190fa49969f9b2872380",
+    "group": "system",
+    "url": "http://192.168.1.199:8088/v3/api-docs/system"
+  },
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 98,
+    "schema_count": 160,
+    "property_count": 976,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0
+    },
+    "sha256": "e149b16ddf221e05f09362a83e77d6baade0fb43f64a127b97d9d4a04fca7760",
+    "group": "trade",
+    "url": "http://192.168.1.199:8088/v3/api-docs/trade"
+  },
+  {
+    "version": "1.0.0-full-contract-v4",
+    "operation_count": 77,
+    "schema_count": 82,
+    "property_count": 480,
+    "issue_counts": {
+      "duplicate_operation_ids": 0,
+      "missing_operation_summaries": 0,
+      "missing_owned_operation_summaries": 0,
+      "missing_owned_property_descriptions": 0,
+      "missing_property_descriptions": 0
+    },
+    "sha256": "75a09f298dd967d359e011a553caf8bd78856d7f5e9d1a355422227436a4876d",
+    "group": "wms",
+    "url": "http://192.168.1.199:8088/v3/api-docs/wms"
+  }
+]

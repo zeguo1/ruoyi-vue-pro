@@ -1,0 +1,27 @@
+[
+  {
+    "artifact": "jimubi-spring-boot3-starter-2.5.0-sources.jar",
+    "sha256": "3b4830929f5fd2f1122789aa42e8091f324fc3380075023270b1b53264794b5f",
+    "javaSourceFiles": 0
+  },
+  {
+    "artifact": "jimureport-spring-boot3-starter-2.5.1-sources.jar",
+    "sha256": "9940e8537012ccd4818a3e959690a1f008286f730981e15f85406c515042953f",
+    "javaSourceFiles": 0
+  },
+  {
+    "artifact": "captcha-1.4.0-sources.jar",
+    "sha256": "e11581326070965e4cce7b68a8995f1e2fccb16f69a88d664675d6a0bd4c551d",
+    "javaSourceFiles": 29
+  },
+  {
+    "artifact": "flowable-bpmn-model-8.0.0-sources.jar",
+    "sha256": "f7eed4434e74b162f36f05408ea31f9e376ac33fbb9804e6e5b247417295b733",
+    "javaSourceFiles": 118
+  },
+  {
+    "artifact": "weixin-java-mp-4.8.6-20260825.155844-sources.jar",
+    "sha256": "80d3ebb436ac388fcedc75291ec532d9e321f762ff4dd8460f41efced9ce21a3",
+    "javaSourceFiles": 428
+  }
+]

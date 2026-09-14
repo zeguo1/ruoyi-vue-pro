@@ -1,0 +1,74 @@
+{
+  "verifiedAt": "2026-09-14T10:43:06.723439+00:00",
+  "version": "1.0.0-full-contract-v4",
+  "sourceCommits": [
+    "5462876c28",
+    "2ec0c4db7a"
+  ],
+  "tests": [
+    {
+      "name": "ErpSaleOrderContractTest",
+      "tests": 24,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "OpenApiItemSchemaTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "FullOpenApiModelAuditTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "FullOpenApiExportTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "FullContractValidationTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "ContractSchemaCustomizerTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "ExternalOpenApiContractTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "totalTests": 35,
+  "jarSha256": "55f42073265b2b585f51e7c65f747c73770e2bab04cdbdf764d691eec0628976",
+  "businessOpenApiSha256": "f36abfc2a193647e116830cc069a9d2ce78ef4eafb7231fa5c0f51680eb95ebf",
+  "rawOpenApiSha256": "812d53d3a64a7f966371bb71f768e53583c93829a329bd5d447daead2be42316",
+  "container": "mgs199-server-1",
+  "containerStatus": "running",
+  "health": "healthy",
+  "startedAt": "2026-09-14T10:37:04.119329782Z",
+  "restartCount": 0,
+  "isolatedModelInventoryCount": 2128,
+  "isolatedSourceRefComparisons": 455,
+  "runtimeSourceRefComparisons": 450,
+  "businessGroupCount": 20,
+  "knowDoConnectorSynchronized": false,
+  "productionBusinessTestWrites": 0
+}

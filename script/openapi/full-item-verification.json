@@ -1,0 +1,88 @@
+{
+  "source": "http://192.168.1.199:8088/v3/api-docs",
+  "sha256": "812d53d3a64a7f966371bb71f768e53583c93829a329bd5d447daead2be42316",
+  "version": "1.0.0-full-contract-v4",
+  "salesOrderContracts": [
+    {
+      "method": "POST",
+      "path": "/admin-api/erp/sale-order/create",
+      "itemRef": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.sale.vo.order.ErpSaleOrderSaveReqVO.Item",
+      "required": [
+        "count",
+        "productId",
+        "productPrice"
+      ],
+      "fields": [
+        "count",
+        "id",
+        "productId",
+        "productPrice",
+        "productUnitId",
+        "remark",
+        "taxPercent"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/erp/sale-order/update",
+      "itemRef": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.sale.vo.order.ErpSaleOrderSaveReqVO.Item",
+      "required": [
+        "count",
+        "productId",
+        "productPrice"
+      ],
+      "fields": [
+        "count",
+        "id",
+        "productId",
+        "productPrice",
+        "productUnitId",
+        "remark",
+        "taxPercent"
+      ]
+    }
+  ],
+  "remainingSharedItemOperations": [],
+  "verifiedItemModels": [
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.finance.vo.payment.ErpFinancePaymentRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.finance.vo.payment.ErpFinancePaymentSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.finance.vo.receipt.ErpFinanceReceiptRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.finance.vo.receipt.ErpFinanceReceiptSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.in.ErpPurchaseInRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.in.ErpPurchaseInSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.order.ErpPurchaseOrderRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.order.ErpPurchaseOrderSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.returns.ErpPurchaseReturnRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.purchase.vo.returns.ErpPurchaseReturnSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.sale.vo.order.ErpSaleOrderRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.sale.vo.order.ErpSaleOrderSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.sale.vo.out.ErpSaleOutRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.sale.vo.out.ErpSaleOutSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.sale.vo.returns.ErpSaleReturnRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.sale.vo.returns.ErpSaleReturnSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.in.ErpStockInRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.in.ErpStockInSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.move.ErpStockMoveRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.move.ErpStockMoveSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.out.ErpStockOutRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.out.ErpStockOutSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.fms.controller.admin.report.vo.cashflow.FmsCashFlowAdjustmentUpdateReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.fms.controller.admin.report.vo.cashflow.FmsCashFlowStatementUpdateReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.im.controller.admin.face.vo.pack.ImFacePackUserRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.mes.controller.admin.qc.indicatorresult.vo.MesQcIndicatorResultRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.mes.controller.admin.qc.indicatorresult.vo.MesQcIndicatorResultSaveReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.pms.controller.admin.kb.library.vo.group.PmsKnowledgeGroupSortReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.pms.controller.admin.kb.recycle.vo.PmsKnowledgeRecycleDetailRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.pms.controller.admin.pm.project.vo.group.PmsProjectGroupSortReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.pms.controller.admin.pm.workitem.vo.worklog.PmsProjectWorkLogReportRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.trade.controller.admin.order.vo.TradeOrderDetailRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.trade.controller.admin.order.vo.TradeOrderPageItemRespVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.trade.controller.app.order.vo.AppTradeOrderSettlementReqVO.Item",
+    "#/components/schemas/cn.iocoder.yudao.module.trade.controller.app.order.vo.AppTradeOrderSettlementRespVO.Item"
+  ],
+  "modelsNotExposedAsComponents": [
+    "#/components/schemas/cn.iocoder.yudao.module.mes.controller.admin.wm.stocktaking.task.vo.line.MesWmStockTakingTaskLineBatchUpdateReqVO.Item"
+  ]
+}
