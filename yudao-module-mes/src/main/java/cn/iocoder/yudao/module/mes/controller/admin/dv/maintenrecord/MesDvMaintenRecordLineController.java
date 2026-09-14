@@ -55,7 +55,7 @@ public class MesDvMaintenRecordLineController {
     @PutMapping("/update")
     @Operation(summary = "更新设备保养记录明细")
     @PreAuthorize("@ss.hasPermission('mes:dv-mainten-record:update')")
-    public CommonResult<Boolean> updateMaintenRecordLine(@Valid @RequestBody MesDvMaintenRecordLineSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateMaintenRecordLine(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesDvMaintenRecordLineSaveReqVO updateReqVO) {
         maintenRecordLineService.updateMaintenRecordLine(updateReqVO);
         return success(true);
     }

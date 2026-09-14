@@ -46,7 +46,7 @@ public class MesCalPlanController {
     @PutMapping("/update")
     @Operation(summary = "更新排班计划")
     @PreAuthorize("@ss.hasPermission('mes:cal-plan:update')")
-    public CommonResult<Boolean> updatePlan(@Valid @RequestBody MesCalPlanSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updatePlan(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesCalPlanSaveReqVO updateReqVO) {
         planService.updatePlan(updateReqVO);
         return success(true);
     }

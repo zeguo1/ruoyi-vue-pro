@@ -53,7 +53,7 @@ public class IotProductController {
     @PutMapping("/update")
     @Operation(summary = "更新产品")
     @PreAuthorize("@ss.hasPermission('iot:product:update')")
-    public CommonResult<Boolean> updateProduct(@Valid @RequestBody IotProductSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateProduct(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody IotProductSaveReqVO updateReqVO) {
         productService.updateProduct(updateReqVO);
         return success(true);
     }

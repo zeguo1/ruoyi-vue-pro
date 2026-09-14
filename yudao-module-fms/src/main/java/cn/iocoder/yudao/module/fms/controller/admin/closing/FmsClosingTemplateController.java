@@ -57,7 +57,7 @@ public class FmsClosingTemplateController {
     @Operation(summary = "更新结账模板")
     @PreAuthorize("@ss.hasPermission('fms:closing:update')")
     public CommonResult<Boolean> updateClosingTemplate(
-            @Valid @RequestBody FmsClosingTemplateSaveReqVO updateReqVO) {
+            @Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody FmsClosingTemplateSaveReqVO updateReqVO) {
         closingTemplateService.updateClosingTemplate(updateReqVO, getLoginUserId());
         return success(true);
     }

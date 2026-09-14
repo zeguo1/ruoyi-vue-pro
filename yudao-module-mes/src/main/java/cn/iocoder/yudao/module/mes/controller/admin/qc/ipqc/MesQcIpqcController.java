@@ -76,7 +76,7 @@ public class MesQcIpqcController {
     @PutMapping("/update")
     @Operation(summary = "更新过程检验单")
     @PreAuthorize("@ss.hasPermission('mes:qc-ipqc:update')")
-    public CommonResult<Boolean> updateIpqc(@Valid @RequestBody MesQcIpqcSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateIpqc(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesQcIpqcSaveReqVO updateReqVO) {
         ipqcService.updateIpqc(updateReqVO);
         return success(true);
     }

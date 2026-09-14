@@ -79,7 +79,7 @@ public class HrmRecruitPostController {
     @PutMapping("/update")
     @Operation(summary = "更新招聘职位")
     @PreAuthorize("@ss.hasPermission('hrm:recruit:post:update')")
-    public CommonResult<Boolean> updateRecruitPost(@Valid @RequestBody HrmRecruitPostSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateRecruitPost(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody HrmRecruitPostSaveReqVO updateReqVO) {
         recruitPostService.updateRecruitPost(updateReqVO);
         return success(true);
     }

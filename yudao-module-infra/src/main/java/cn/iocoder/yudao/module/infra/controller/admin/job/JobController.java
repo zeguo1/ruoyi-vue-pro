@@ -52,7 +52,7 @@ public class JobController {
     @PutMapping("/update")
     @Operation(summary = "更新定时任务")
     @PreAuthorize("@ss.hasPermission('infra:job:update')")
-    public CommonResult<Boolean> updateJob(@Valid @RequestBody JobSaveReqVO updateReqVO)
+    public CommonResult<Boolean> updateJob(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody JobSaveReqVO updateReqVO)
             throws SchedulerException {
         jobService.updateJob(updateReqVO);
         return success(true);

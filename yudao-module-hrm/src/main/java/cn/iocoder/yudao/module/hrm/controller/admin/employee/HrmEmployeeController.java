@@ -139,7 +139,7 @@ public class HrmEmployeeController {
     @PutMapping("/update")
     @Operation(summary = "更新员工档案")
     @PreAuthorize("@ss.hasPermission('hrm:employee:update')")
-    public CommonResult<Boolean> updateEmployee(@Valid @RequestBody HrmEmployeeSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateEmployee(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody HrmEmployeeSaveReqVO updateReqVO) {
         employeeService.updateEmployee(updateReqVO);
         return success(true);
     }

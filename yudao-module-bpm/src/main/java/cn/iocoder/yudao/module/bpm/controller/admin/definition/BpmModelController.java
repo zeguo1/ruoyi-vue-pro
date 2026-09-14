@@ -168,7 +168,7 @@ public class BpmModelController {
     @PutMapping("/update")
     @Operation(summary = "修改模型")
     @PreAuthorize("@ss.hasPermission('bpm:model:update')")
-    public CommonResult<Boolean> updateModel(@Valid @RequestBody BpmModelSaveReqVO modelVO) {
+    public CommonResult<Boolean> updateModel(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody BpmModelSaveReqVO modelVO) {
         modelService.updateModel(getLoginUserId(), modelVO);
         return success(true);
     }

@@ -63,7 +63,7 @@ public class FmsSubjectController {
     @PutMapping("/update")
     @Operation(summary = "更新科目")
     @PreAuthorize("@ss.hasPermission('fms:config:subject:update')")
-    public CommonResult<Boolean> updateSubject(@Valid @RequestBody FmsSubjectSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateSubject(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody FmsSubjectSaveReqVO updateReqVO) {
         subjectService.updateSubject(updateReqVO, getLoginUserId());
         return success(true);
     }

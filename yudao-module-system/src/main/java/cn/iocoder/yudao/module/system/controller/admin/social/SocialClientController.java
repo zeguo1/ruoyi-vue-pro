@@ -44,7 +44,7 @@ public class SocialClientController {
     @PutMapping("/update")
     @Operation(summary = "更新社交客户端")
     @PreAuthorize("@ss.hasPermission('system:social-client:update')")
-    public CommonResult<Boolean> updateSocialClient(@Valid @RequestBody SocialClientSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateSocialClient(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody SocialClientSaveReqVO updateReqVO) {
         socialClientService.updateSocialClient(updateReqVO);
         return success(true);
     }

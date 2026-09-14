@@ -110,7 +110,7 @@ public class FmsVoucherController {
     @PutMapping("/update")
     @Operation(summary = "更新凭证")
     @PreAuthorize("@ss.hasPermission('fms:voucher:update')")
-    public CommonResult<Boolean> updateVoucher(@Valid @RequestBody FmsVoucherSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateVoucher(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody FmsVoucherSaveReqVO updateReqVO) {
         voucherService.updateVoucher(updateReqVO, getLoginUserId());
         return success(true);
     }

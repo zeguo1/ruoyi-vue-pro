@@ -75,7 +75,7 @@ public class CrmReceivableController {
     @PutMapping("/update")
     @Operation(summary = "更新回款")
     @PreAuthorize("@ss.hasPermission('crm:receivable:update')")
-    public CommonResult<Boolean> updateReceivable(@Valid @RequestBody CrmReceivableSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateReceivable(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody CrmReceivableSaveReqVO updateReqVO) {
         receivableService.updateReceivable(updateReqVO);
         return success(true);
     }

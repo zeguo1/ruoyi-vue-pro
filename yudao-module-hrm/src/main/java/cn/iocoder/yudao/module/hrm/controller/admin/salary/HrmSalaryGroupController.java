@@ -67,7 +67,7 @@ public class HrmSalaryGroupController {
     @PutMapping("/update")
     @Operation(summary = "修改薪资组")
     @PreAuthorize("@ss.hasPermission('hrm:salary:group:update')")
-    public CommonResult<Boolean> updateSalaryGroup(@Valid @RequestBody HrmSalaryGroupSaveReqVO reqVO) {
+    public CommonResult<Boolean> updateSalaryGroup(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody HrmSalaryGroupSaveReqVO reqVO) {
         salaryGroupService.updateSalaryGroup(reqVO);
         return success(true);
     }

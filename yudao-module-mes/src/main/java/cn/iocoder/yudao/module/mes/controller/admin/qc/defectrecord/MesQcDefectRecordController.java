@@ -38,7 +38,7 @@ public class MesQcDefectRecordController {
     @PutMapping("/update")
     @Operation(summary = "更新质检缺陷记录")
     @PreAuthorize("@ss.hasPermission('mes:qc-defect:update')")
-    public CommonResult<Boolean> updateDefectRecord(@Valid @RequestBody MesQcDefectRecordSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateDefectRecord(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesQcDefectRecordSaveReqVO updateReqVO) {
         defectRecordService.updateDefectRecord(updateReqVO);
         return success(true);
     }

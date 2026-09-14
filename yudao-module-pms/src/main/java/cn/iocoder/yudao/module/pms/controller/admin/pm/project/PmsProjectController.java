@@ -75,7 +75,7 @@ public class PmsProjectController {
     @PutMapping("/update")
     @Operation(summary = "更新项目")
     @PreAuthorize("@ss.hasPermission('pms:pm:project:update')")
-    public CommonResult<Boolean> updateProject(@Valid @RequestBody PmsProjectSaveReqVO saveReqVO) {
+    public CommonResult<Boolean> updateProject(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody PmsProjectSaveReqVO saveReqVO) {
         projectService.updateProject(saveReqVO, getLoginUserId());
         return success(true);
     }

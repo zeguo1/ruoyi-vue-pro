@@ -47,7 +47,7 @@ public class MesMdWorkstationToolController {
     @PutMapping("/update")
     @Operation(summary = "更新工装夹具资源")
     @PreAuthorize("@ss.hasPermission('mes:md-workstation:update')")
-    public CommonResult<Boolean> updateWorkstationTool(@Valid @RequestBody MesMdWorkstationToolSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateWorkstationTool(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesMdWorkstationToolSaveReqVO updateReqVO) {
         workstationToolService.updateWorkstationTool(updateReqVO);
         return success(true);
     }

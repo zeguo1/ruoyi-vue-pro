@@ -53,7 +53,7 @@ public class FmsAccountSetController {
     @PutMapping("/update")
     @Operation(summary = "更新账套")
     @PreAuthorize("@ss.hasPermission('fms:config:account-set:update')")
-    public CommonResult<Boolean> updateAccountSet(@Valid @RequestBody FmsAccountSetSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateAccountSet(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody FmsAccountSetSaveReqVO updateReqVO) {
         accountSetService.updateAccountSet(updateReqVO, getLoginUserId());
         return success(true);
     }

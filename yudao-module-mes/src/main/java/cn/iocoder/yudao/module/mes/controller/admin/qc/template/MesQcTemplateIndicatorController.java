@@ -53,7 +53,7 @@ public class MesQcTemplateIndicatorController {
     @PutMapping("/update")
     @Operation(summary = "更新质检方案-检测指标项")
     @PreAuthorize("@ss.hasPermission('mes:qc-template:update')")
-    public CommonResult<Boolean> updateTemplateIndicator(@Valid @RequestBody MesQcTemplateIndicatorSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateTemplateIndicator(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesQcTemplateIndicatorSaveReqVO updateReqVO) {
         templateIndicatorService.updateTemplateIndicator(updateReqVO);
         return success(true);
     }

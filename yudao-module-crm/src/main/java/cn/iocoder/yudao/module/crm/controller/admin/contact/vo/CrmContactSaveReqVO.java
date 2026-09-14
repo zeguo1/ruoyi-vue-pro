@@ -18,7 +18,8 @@ import static cn.iocoder.yudao.framework.common.util.date.DateUtils.FORMAT_YEAR_
 @Data
 public class CrmContactSaveReqVO {
 
-    @Schema(description = "主键", example = "3167")
+    @Schema(description = "主键；创建时可省略，不要编造编号；修改时必须提交已有记录编号", example = "3167", requiredMode = io.swagger.v3.oas.annotations.media.Schema.RequiredMode.NOT_REQUIRED)
+    @jakarta.validation.constraints.NotNull(message = "修改记录编号不能为空", groups = cn.iocoder.yudao.framework.common.validation.Update.class)
     private Long id;
 
     @Schema(description = "姓名", example = "芋艿")

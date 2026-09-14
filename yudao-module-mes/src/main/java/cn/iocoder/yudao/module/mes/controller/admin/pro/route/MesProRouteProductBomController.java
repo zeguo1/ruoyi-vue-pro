@@ -54,7 +54,7 @@ public class MesProRouteProductBomController {
     @PutMapping("/update")
     @Operation(summary = "更新工艺路线产品 BOM")
     @PreAuthorize("@ss.hasPermission('mes:pro-route:update')")
-    public CommonResult<Boolean> updateRouteProductBom(@Valid @RequestBody MesProRouteProductBomSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateRouteProductBom(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesProRouteProductBomSaveReqVO updateReqVO) {
         routeProductBomService.updateRouteProductBom(updateReqVO);
         return success(true);
     }

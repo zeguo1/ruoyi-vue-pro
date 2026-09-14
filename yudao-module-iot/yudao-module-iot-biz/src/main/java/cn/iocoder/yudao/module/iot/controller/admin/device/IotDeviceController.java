@@ -55,7 +55,7 @@ public class IotDeviceController {
     @PutMapping("/update")
     @Operation(summary = "更新设备")
     @PreAuthorize("@ss.hasPermission('iot:device:update')")
-    public CommonResult<Boolean> updateDevice(@Valid @RequestBody IotDeviceSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateDevice(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody IotDeviceSaveReqVO updateReqVO) {
         deviceService.updateDevice(updateReqVO);
         return success(true);
     }

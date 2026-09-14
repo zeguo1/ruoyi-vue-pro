@@ -48,7 +48,7 @@ public class MesWmBarcodeController {
     @PutMapping("/update")
     @Operation(summary = "更新条码")
     @PreAuthorize("@ss.hasPermission('mes:wm-barcode:update')")
-    public CommonResult<Boolean> updateBarcode(@Valid @RequestBody MesWmBarcodeSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateBarcode(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmBarcodeSaveReqVO updateReqVO) {
         barcodeService.updateBarcode(updateReqVO);
         return success(true);
     }

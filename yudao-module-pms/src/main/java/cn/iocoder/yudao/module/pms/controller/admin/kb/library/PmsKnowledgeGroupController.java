@@ -51,7 +51,7 @@ public class PmsKnowledgeGroupController {
     @PutMapping("/update")
     @Operation(summary = "修改知识库分组")
     @PreAuthorize("@ss.hasPermission('pms:kb:library:update')")
-    public CommonResult<Boolean> updateGroup(@Valid @RequestBody PmsKnowledgeGroupSaveReqVO saveReqVO) {
+    public CommonResult<Boolean> updateGroup(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody PmsKnowledgeGroupSaveReqVO saveReqVO) {
         knowledgeGroupService.updateGroup(saveReqVO, getLoginUserId());
         return success(true);
     }

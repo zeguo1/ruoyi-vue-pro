@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 public class Demo03StudentInnerSaveReqVO {
 
-    @Schema(description = "编号；新增可省略，修改时必须提交已有记录编号", requiredMode = Schema.RequiredMode.NOT_REQUIRED, example = "8525")
+    @Schema(description = "编号；创建时可省略，不要编造编号；修改时必须提交已有记录编号", requiredMode = Schema.RequiredMode.NOT_REQUIRED, example = "8525")
     @jakarta.validation.constraints.NotNull(groups = cn.iocoder.yudao.framework.common.validation.Update.class, message = "修改时编号不能为空")
     private Long id;
 
@@ -35,9 +35,13 @@ public class Demo03StudentInnerSaveReqVO {
     private String description;
 
     @Schema(description = "学生课程列表")
+    @jakarta.validation.Valid
+    @jakarta.validation.groups.ConvertGroup(from = cn.iocoder.yudao.framework.common.validation.Update.class, to = jakarta.validation.groups.Default.class)
     private List<Demo03CourseDO> demo03Courses;
 
     @Schema(description = "学生班级")
+    @jakarta.validation.Valid
+    @jakarta.validation.groups.ConvertGroup(from = cn.iocoder.yudao.framework.common.validation.Update.class, to = jakarta.validation.groups.Default.class)
     private Demo03GradeDO demo03Grade;
 
 }

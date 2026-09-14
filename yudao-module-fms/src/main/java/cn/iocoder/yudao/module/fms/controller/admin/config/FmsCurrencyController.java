@@ -49,7 +49,7 @@ public class FmsCurrencyController {
     @PutMapping("/update")
     @Operation(summary = "更新币别")
     @PreAuthorize("@ss.hasPermission('fms:config:currency:update')")
-    public CommonResult<Boolean> updateCurrency(@Valid @RequestBody FmsCurrencySaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateCurrency(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody FmsCurrencySaveReqVO updateReqVO) {
         currencyService.updateCurrency(updateReqVO, getLoginUserId());
         return success(true);
     }

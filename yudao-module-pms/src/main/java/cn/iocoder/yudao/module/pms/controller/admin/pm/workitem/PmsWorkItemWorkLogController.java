@@ -64,7 +64,7 @@ public class PmsWorkItemWorkLogController {
     @PutMapping("/update")
     @Operation(summary = "更新工作项工时记录")
     @PreAuthorize("@ss.hasPermission('pms:pm:work-item:update')")
-    public CommonResult<Boolean> updateWorkItemWorkLog(@Valid @RequestBody PmsWorkItemWorkLogSaveReqVO saveReqVO) {
+    public CommonResult<Boolean> updateWorkItemWorkLog(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody PmsWorkItemWorkLogSaveReqVO saveReqVO) {
         workLogService.updateWorkItemWorkLog(saveReqVO, getLoginUserId());
         return success(true);
     }

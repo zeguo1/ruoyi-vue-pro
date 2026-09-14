@@ -53,7 +53,7 @@ public class FmsVoucherWordController {
     @PutMapping("/update")
     @Operation(summary = "修改凭证字")
     @PreAuthorize("@ss.hasPermission('fms:config:voucher-word:update')")
-    public CommonResult<Boolean> updateVoucherWord(@Valid @RequestBody FmsVoucherWordSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateVoucherWord(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody FmsVoucherWordSaveReqVO updateReqVO) {
         voucherWordService.updateVoucherWord(updateReqVO, getLoginUserId());
         return success(true);
     }

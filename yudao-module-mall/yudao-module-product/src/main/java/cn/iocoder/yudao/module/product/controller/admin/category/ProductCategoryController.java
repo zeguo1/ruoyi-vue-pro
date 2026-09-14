@@ -40,7 +40,7 @@ public class ProductCategoryController {
     @PutMapping("/update")
     @Operation(summary = "更新商品分类")
     @PreAuthorize("@ss.hasPermission('product:category:update')")
-    public CommonResult<Boolean> updateCategory(@Valid @RequestBody ProductCategorySaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateCategory(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody ProductCategorySaveReqVO updateReqVO) {
         categoryService.updateCategory(updateReqVO);
         return success(true);
     }

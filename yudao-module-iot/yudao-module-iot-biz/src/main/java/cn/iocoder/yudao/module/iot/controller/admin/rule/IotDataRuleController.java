@@ -38,7 +38,7 @@ public class IotDataRuleController {
     @PutMapping("/update")
     @Operation(summary = "更新数据流转规则")
     @PreAuthorize("@ss.hasPermission('iot:data-rule:update')")
-    public CommonResult<Boolean> updateDataRule(@Valid @RequestBody IotDataRuleSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateDataRule(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody IotDataRuleSaveReqVO updateReqVO) {
         dataRuleService.updateDataRule(updateReqVO);
         return success(true);
     }

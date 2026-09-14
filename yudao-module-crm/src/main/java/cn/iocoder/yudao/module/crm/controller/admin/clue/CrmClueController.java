@@ -71,7 +71,7 @@ public class CrmClueController {
     @PutMapping("/update")
     @Operation(summary = "更新线索")
     @PreAuthorize("@ss.hasPermission('crm:clue:update')")
-    public CommonResult<Boolean> updateClue(@Valid @RequestBody CrmClueSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateClue(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody CrmClueSaveReqVO updateReqVO) {
         clueService.updateClue(updateReqVO);
         return success(true);
     }

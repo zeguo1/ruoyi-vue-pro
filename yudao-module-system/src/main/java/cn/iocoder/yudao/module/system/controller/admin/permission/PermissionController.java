@@ -39,9 +39,11 @@ public class PermissionController {
     }
 
     @PostMapping("/assign-role-menu")
-    @Operation(summary = "赋予角色菜单")
+    @Operation(summary = "赋予角色菜单", description = "全量替换角色的菜单权限，不是追加；menuIds 遗漏、null 或空数组均清空全部菜单授权。追加时先查询现有菜单并合并。超出租户套餐的菜单会被过滤。")
     @PreAuthorize("@ss.hasPermission('system:permission:assign-role-menu')")
     public CommonResult<Boolean> assignRoleMenu(@Validated @RequestBody PermissionAssignRoleMenuReqVO reqVO) {
+        // Filtering requires a mutable set, including the omitted/null case.
+        reqVO.setMenuIds(reqVO.getMenuIds() == null ? new java.util.HashSet<>() : new java.util.HashSet<>(reqVO.getMenuIds()));
         // 开启多租户的情况下，需要过滤掉未开通的菜单
         tenantService.handleTenantMenu(menuIds -> reqVO.getMenuIds().removeIf(menuId -> !CollUtil.contains(menuIds, menuId)));
 
@@ -66,7 +68,7 @@ public class PermissionController {
         return success(permissionService.getUserRoleIdListByUserId(userId));
     }
 
-    @Operation(summary = "赋予用户角色")
+    @Operation(summary = "赋予用户角色", description = "全量替换用户的角色，不是追加；roleIds 遗漏、null 或空数组均清空全部角色授权。追加时先查询已有角色并合并。")
     @PostMapping("/assign-user-role")
     @PreAuthorize("@ss.hasPermission('system:permission:assign-user-role')")
     public CommonResult<Boolean> assignUserRole(@Validated @RequestBody PermissionAssignUserRoleReqVO reqVO) {

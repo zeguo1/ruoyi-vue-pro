@@ -50,7 +50,7 @@ public class HrmRecruitChannelController {
     @PutMapping("/update")
     @Operation(summary = "更新招聘渠道")
     @PreAuthorize("@ss.hasPermission('hrm:recruit:channel:update')")
-    public CommonResult<Boolean> updateRecruitChannel(@Valid @RequestBody HrmRecruitChannelSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateRecruitChannel(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody HrmRecruitChannelSaveReqVO updateReqVO) {
         recruitChannelService.updateRecruitChannel(updateReqVO);
         return success(true);
     }

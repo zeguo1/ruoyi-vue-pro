@@ -45,7 +45,7 @@ public class MesWmMiscReceiptController {
     @PutMapping("/update")
     @Operation(summary = "修改杂项入库单")
     @PreAuthorize("@ss.hasPermission('mes:wm:misc-receipt:update')")
-    public CommonResult<Boolean> updateMiscReceipt(@Valid @RequestBody MesWmMiscReceiptSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateMiscReceipt(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmMiscReceiptSaveReqVO updateReqVO) {
         miscReceiptService.updateMiscReceipt(updateReqVO);
         return success(true);
     }

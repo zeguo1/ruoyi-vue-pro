@@ -47,7 +47,7 @@ public class NoticeController {
     @PutMapping("/update")
     @Operation(summary = "修改通知公告")
     @PreAuthorize("@ss.hasPermission('system:notice:update')")
-    public CommonResult<Boolean> updateNotice(@Valid @RequestBody NoticeSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateNotice(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody NoticeSaveReqVO updateReqVO) {
         noticeService.updateNotice(updateReqVO);
         return success(true);
     }

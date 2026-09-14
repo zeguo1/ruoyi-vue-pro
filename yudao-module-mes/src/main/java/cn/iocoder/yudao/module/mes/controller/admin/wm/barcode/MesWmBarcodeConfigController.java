@@ -38,7 +38,7 @@ public class MesWmBarcodeConfigController {
     @PutMapping("/update")
     @Operation(summary = "更新条码配置")
     @PreAuthorize("@ss.hasPermission('mes:wm-barcode-config:update')")
-    public CommonResult<Boolean> updateBarcodeConfig(@Valid @RequestBody MesWmBarcodeConfigSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateBarcodeConfig(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmBarcodeConfigSaveReqVO updateReqVO) {
         barcodeConfigService.updateBarcodeConfig(updateReqVO);
         return success(true);
     }

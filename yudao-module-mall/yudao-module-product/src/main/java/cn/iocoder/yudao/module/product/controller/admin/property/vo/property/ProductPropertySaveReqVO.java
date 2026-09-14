@@ -8,7 +8,8 @@ import lombok.Data;
 @Data
 public class ProductPropertySaveReqVO {
 
-    @Schema(description = "主键", example = "1")
+    @Schema(description = "主键；创建时可省略，不要编造编号；修改时必须提交已有记录编号", example = "1", requiredMode = io.swagger.v3.oas.annotations.media.Schema.RequiredMode.NOT_REQUIRED)
+    @jakarta.validation.constraints.NotNull(message = "修改记录编号不能为空", groups = cn.iocoder.yudao.framework.common.validation.Update.class)
     private Long id;
 
     @Schema(description = "名称", requiredMode = Schema.RequiredMode.REQUIRED, example = "颜色")

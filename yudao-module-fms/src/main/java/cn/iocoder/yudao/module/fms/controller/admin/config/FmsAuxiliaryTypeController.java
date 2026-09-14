@@ -49,7 +49,7 @@ public class FmsAuxiliaryTypeController {
     @PutMapping("/update")
     @Operation(summary = "更新辅助核算类别")
     @PreAuthorize("@ss.hasPermission('fms:config:auxiliary:update')")
-    public CommonResult<Boolean> updateAuxiliaryType(@Valid @RequestBody FmsAuxiliaryTypeSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateAuxiliaryType(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody FmsAuxiliaryTypeSaveReqVO updateReqVO) {
         auxiliaryTypeService.updateAuxiliaryType(updateReqVO, getLoginUserId());
         return success(true);
     }

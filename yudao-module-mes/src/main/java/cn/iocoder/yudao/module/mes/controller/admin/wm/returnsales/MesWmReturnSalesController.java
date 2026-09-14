@@ -55,7 +55,7 @@ public class MesWmReturnSalesController {
     @PutMapping("/update")
     @Operation(summary = "修改销售退货单")
     @PreAuthorize("@ss.hasPermission('mes:wm-return-sales:update')")
-    public CommonResult<Boolean> updateReturnSales(@Valid @RequestBody MesWmReturnSalesSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateReturnSales(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmReturnSalesSaveReqVO updateReqVO) {
         returnSalesService.updateReturnSales(updateReqVO);
         return success(true);
     }

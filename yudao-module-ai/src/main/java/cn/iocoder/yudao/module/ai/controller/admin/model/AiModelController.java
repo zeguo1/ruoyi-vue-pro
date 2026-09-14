@@ -42,7 +42,7 @@ public class AiModelController {
     @PutMapping("/update")
     @Operation(summary = "更新模型")
     @PreAuthorize("@ss.hasPermission('ai:model:update')")
-    public CommonResult<Boolean> updateModel(@Valid @RequestBody AiModelSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateModel(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody AiModelSaveReqVO updateReqVO) {
         modelService.updateModel(updateReqVO);
         return success(true);
     }

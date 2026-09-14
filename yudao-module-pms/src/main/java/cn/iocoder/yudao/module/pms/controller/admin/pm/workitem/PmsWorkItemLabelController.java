@@ -45,7 +45,7 @@ public class PmsWorkItemLabelController {
     @PutMapping("/update")
     @Operation(summary = "修改工作项标签")
     @PreAuthorize("@ss.hasPermission('pms:pm:work-item:update')")
-    public CommonResult<Boolean> updateWorkItemLabel(@Valid @RequestBody PmsWorkItemLabelSaveReqVO saveReqVO) {
+    public CommonResult<Boolean> updateWorkItemLabel(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody PmsWorkItemLabelSaveReqVO saveReqVO) {
         labelService.updateWorkItemLabel(saveReqVO);
         return success(true);
     }

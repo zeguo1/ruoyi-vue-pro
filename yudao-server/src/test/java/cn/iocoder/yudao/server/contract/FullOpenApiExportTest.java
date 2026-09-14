@@ -80,6 +80,8 @@ class FullOpenApiExportTest {
                 });
             });
             var contracts = io.swagger.v3.core.util.Json.mapper().readTree(Files.readString(Path.of("../script/openapi/full-update-contracts.json")));
+            var additional = io.swagger.v3.core.util.Json.mapper().readTree(Files.readString(Path.of("../script/openapi/v5-update-contracts.json")));
+            ((com.fasterxml.jackson.databind.node.ArrayNode) contracts).addAll((com.fasterxml.jackson.databind.node.ArrayNode) additional);
             for (var contract : contracts) {
                 String schemaName = contract.path("model").asText().split("/src/main/java/")[1].replace('/', '.').replace(".java", "");
                 var schema = schemas.path(schemaName);

@@ -12,7 +12,8 @@ import java.util.Set;
 @Data
 public class IotDeviceSaveReqVO {
 
-    @Schema(description = "设备编号", example = "177")
+    @Schema(description = "设备编号；创建时可省略，不要编造编号；修改时必须提交已有记录编号", example = "177", requiredMode = io.swagger.v3.oas.annotations.media.Schema.RequiredMode.NOT_REQUIRED)
+    @jakarta.validation.constraints.NotNull(message = "修改记录编号不能为空", groups = cn.iocoder.yudao.framework.common.validation.Update.class)
     private Long id;
 
     @Schema(description = "设备名称", requiredMode = Schema.RequiredMode.AUTO, example = "王五")

@@ -52,7 +52,7 @@ public class IotAlertConfigController {
     @PutMapping("/update")
     @Operation(summary = "更新告警配置")
     @PreAuthorize("@ss.hasPermission('iot:alert-config:update')")
-    public CommonResult<Boolean> updateAlertConfig(@Valid @RequestBody IotAlertConfigSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateAlertConfig(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody IotAlertConfigSaveReqVO updateReqVO) {
         alertConfigService.updateAlertConfig(updateReqVO);
         return success(true);
     }

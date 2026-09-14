@@ -54,7 +54,7 @@ public class FmsClosingSchemeController {
     @PutMapping("/update")
     @Operation(summary = "修改结账方案")
     @PreAuthorize("@ss.hasPermission('fms:closing:update')")
-    public CommonResult<Boolean> updateClosingScheme(@Valid @RequestBody FmsClosingSchemeSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateClosingScheme(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody FmsClosingSchemeSaveReqVO updateReqVO) {
         closingSchemeService.updateClosingScheme(updateReqVO, getLoginUserId());
         return success(true);
     }

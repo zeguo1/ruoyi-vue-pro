@@ -51,6 +51,7 @@ public class DeptServiceImpl implements DeptService {
 
         // 插入部门
         DeptDO dept = BeanUtils.toBean(createReqVO, DeptDO.class);
+        dept.setId(null); // 创建时由数据库生成编号，忽略调用方传入的 id。
         deptMapper.insert(dept);
         return dept.getId();
     }

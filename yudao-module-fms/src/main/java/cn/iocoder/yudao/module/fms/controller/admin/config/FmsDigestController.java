@@ -53,7 +53,7 @@ public class FmsDigestController {
     @PutMapping("/update")
     @Operation(summary = "修改常用摘要")
     @PreAuthorize("@ss.hasPermission('fms:config:digest:update')")
-    public CommonResult<Boolean> updateDigest(@Valid @RequestBody FmsDigestSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateDigest(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody FmsDigestSaveReqVO updateReqVO) {
         digestService.updateDigest(updateReqVO, getLoginUserId());
         return success(true);
     }

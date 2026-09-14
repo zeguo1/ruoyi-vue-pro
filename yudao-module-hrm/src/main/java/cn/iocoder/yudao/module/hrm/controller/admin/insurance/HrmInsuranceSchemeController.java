@@ -63,7 +63,7 @@ public class HrmInsuranceSchemeController {
     @PutMapping("/update")
     @Operation(summary = "更新社保方案")
     @PreAuthorize("@ss.hasPermission('hrm:insurance:scheme:update')")
-    public CommonResult<Boolean> updateScheme(@Valid @RequestBody HrmInsuranceSchemeSaveReqVO reqVO) {
+    public CommonResult<Boolean> updateScheme(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody HrmInsuranceSchemeSaveReqVO reqVO) {
         insuranceSchemeService.updateScheme(reqVO);
         return success(true);
     }

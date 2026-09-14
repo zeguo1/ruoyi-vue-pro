@@ -16,7 +16,8 @@ import java.math.BigDecimal;
 @Data
 public class MesWmReturnSalesLineSaveReqVO {
 
-    @Schema(description = "行ID", example = "1")
+    @Schema(description = "行ID；创建时可省略，不要编造编号；修改时必须提交已有记录编号", example = "1", requiredMode = io.swagger.v3.oas.annotations.media.Schema.RequiredMode.NOT_REQUIRED)
+    @jakarta.validation.constraints.NotNull(message = "修改记录编号不能为空", groups = cn.iocoder.yudao.framework.common.validation.Update.class)
     private Long id;
 
     @Schema(description = "退货单ID", requiredMode = Schema.RequiredMode.REQUIRED, example = "1")

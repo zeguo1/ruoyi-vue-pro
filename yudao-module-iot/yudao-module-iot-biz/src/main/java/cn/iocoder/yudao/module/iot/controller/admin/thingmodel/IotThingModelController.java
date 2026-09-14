@@ -46,7 +46,7 @@ public class IotThingModelController {
     @PutMapping("/update")
     @Operation(summary = "更新产品物模型")
     @PreAuthorize("@ss.hasPermission('iot:thing-model:update')")
-    public CommonResult<Boolean> updateThingModel(@Valid @RequestBody IotThingModelSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateThingModel(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody IotThingModelSaveReqVO updateReqVO) {
         thingModelService.updateThingModel(updateReqVO);
         return success(true);
     }

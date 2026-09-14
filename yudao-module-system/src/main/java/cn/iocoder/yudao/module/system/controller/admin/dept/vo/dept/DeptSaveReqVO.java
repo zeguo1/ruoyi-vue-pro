@@ -14,7 +14,8 @@ import jakarta.validation.constraints.Size;
 @Data
 public class DeptSaveReqVO {
 
-    @Schema(description = "部门编号", example = "1024")
+    @Schema(description = "部门编号；创建时由后端生成，无需提交，传入值忽略；修改时必须提交已有记录编号", example = "1024", requiredMode = io.swagger.v3.oas.annotations.media.Schema.RequiredMode.NOT_REQUIRED)
+    @jakarta.validation.constraints.NotNull(message = "修改记录编号不能为空", groups = cn.iocoder.yudao.framework.common.validation.Update.class)
     private Long id;
 
     @Schema(description = "部门名称", requiredMode = Schema.RequiredMode.REQUIRED, example = "芋道")

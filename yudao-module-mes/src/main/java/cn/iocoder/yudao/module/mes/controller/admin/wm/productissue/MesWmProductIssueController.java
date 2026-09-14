@@ -63,7 +63,7 @@ public class MesWmProductIssueController {
     @PutMapping("/update")
     @Operation(summary = "修改领料出库单")
     @PreAuthorize("@ss.hasPermission('mes:wm-product-issue:update')")
-    public CommonResult<Boolean> updateProductIssue(@Valid @RequestBody MesWmProductIssueSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateProductIssue(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmProductIssueSaveReqVO updateReqVO) {
         issueService.updateProductIssue(updateReqVO);
         return success(true);
     }

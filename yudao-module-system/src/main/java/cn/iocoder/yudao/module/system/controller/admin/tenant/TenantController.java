@@ -85,7 +85,7 @@ public class TenantController {
     @PutMapping("/update")
     @Operation(summary = "更新租户")
     @PreAuthorize("@ss.hasPermission('system:tenant:update')")
-    public CommonResult<Boolean> updateTenant(@Valid @RequestBody TenantSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateTenant(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody TenantSaveReqVO updateReqVO) {
         tenantService.updateTenant(updateReqVO);
         return success(true);
     }

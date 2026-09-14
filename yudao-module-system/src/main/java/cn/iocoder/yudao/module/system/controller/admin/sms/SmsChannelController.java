@@ -1,5 +1,6 @@
 package cn.iocoder.yudao.module.system.controller.admin.sms;
 
+import org.springframework.validation.annotation.Validated;
 import cn.iocoder.yudao.framework.common.pojo.CommonResult;
 import cn.iocoder.yudao.framework.common.pojo.PageResult;
 import cn.iocoder.yudao.framework.common.util.object.BeanUtils;
@@ -40,7 +41,7 @@ public class SmsChannelController {
     @PutMapping("/update")
     @Operation(summary = "更新短信渠道")
     @PreAuthorize("@ss.hasPermission('system:sms-channel:update')")
-    public CommonResult<Boolean> updateSmsChannel(@Valid @RequestBody SmsChannelSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateSmsChannel(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody SmsChannelSaveReqVO updateReqVO) {
         smsChannelService.updateSmsChannel(updateReqVO);
         return success(true);
     }

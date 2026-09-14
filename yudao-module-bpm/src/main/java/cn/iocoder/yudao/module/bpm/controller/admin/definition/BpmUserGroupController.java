@@ -42,7 +42,7 @@ public class BpmUserGroupController {
     @PutMapping("/update")
     @Operation(summary = "更新用户组")
     @PreAuthorize("@ss.hasPermission('bpm:user-group:update')")
-    public CommonResult<Boolean> updateUserGroup(@Valid @RequestBody BpmUserGroupSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateUserGroup(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody BpmUserGroupSaveReqVO updateReqVO) {
         userGroupService.updateUserGroup(updateReqVO);
         return success(true);
     }

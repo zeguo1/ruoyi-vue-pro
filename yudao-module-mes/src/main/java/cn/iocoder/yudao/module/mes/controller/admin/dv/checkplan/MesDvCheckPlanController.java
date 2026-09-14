@@ -46,7 +46,7 @@ public class MesDvCheckPlanController {
     @PutMapping("/update")
     @Operation(summary = "更新点检保养方案")
     @PreAuthorize("@ss.hasPermission('mes:dv-check-plan:update')")
-    public CommonResult<Boolean> updateCheckPlan(@Valid @RequestBody MesDvCheckPlanSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateCheckPlan(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesDvCheckPlanSaveReqVO updateReqVO) {
         checkPlanService.updateCheckPlan(updateReqVO);
         return success(true);
     }

@@ -64,7 +64,7 @@ public class MesDvRepairController {
     @PutMapping("/update")
     @Operation(summary = "更新维修工单")
     @PreAuthorize("@ss.hasPermission('mes:dv-repair:update')")
-    public CommonResult<Boolean> updateRepair(@Valid @RequestBody MesDvRepairSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateRepair(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesDvRepairSaveReqVO updateReqVO) {
         repairService.updateRepair(updateReqVO);
         return success(true);
     }

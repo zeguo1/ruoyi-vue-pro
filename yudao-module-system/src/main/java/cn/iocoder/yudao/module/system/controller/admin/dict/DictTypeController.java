@@ -48,7 +48,7 @@ public class DictTypeController {
     @PutMapping("/update")
     @Operation(summary = "修改字典类型")
     @PreAuthorize("@ss.hasPermission('system:dict:update')")
-    public CommonResult<Boolean> updateDictType(@Valid @RequestBody DictTypeSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateDictType(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody DictTypeSaveReqVO updateReqVO) {
         dictTypeService.updateDictType(updateReqVO);
         return success(true);
     }

@@ -51,7 +51,7 @@ public class PostController {
     @PutMapping("/update")
     @Operation(summary = "修改岗位")
     @PreAuthorize("@ss.hasPermission('system:post:update')")
-    public CommonResult<Boolean> updatePost(@Valid @RequestBody PostSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updatePost(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody PostSaveReqVO updateReqVO) {
         postService.updatePost(updateReqVO);
         return success(true);
     }

@@ -58,7 +58,7 @@ public class MesWmPackageController {
     @PutMapping("/update")
     @Operation(summary = "修改装箱单")
     @PreAuthorize("@ss.hasPermission('mes:wm-package:update')")
-    public CommonResult<Boolean> updatePackage(@Valid @RequestBody MesWmPackageSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updatePackage(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmPackageSaveReqVO updateReqVO) {
         packageService.updatePackage(updateReqVO);
         return success(true);
     }

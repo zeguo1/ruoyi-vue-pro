@@ -57,7 +57,7 @@ public class PmsWorkItemCommentController {
     @PutMapping("/update")
     @Operation(summary = "修改工作项评论")
     @PreAuthorize("@ss.hasPermission('pms:pm:work-item:update')")
-    public CommonResult<Boolean> updateWorkItemComment(@Valid @RequestBody PmsWorkItemCommentSaveReqVO saveReqVO) {
+    public CommonResult<Boolean> updateWorkItemComment(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody PmsWorkItemCommentSaveReqVO saveReqVO) {
         commentService.updateWorkItemComment(saveReqVO, getLoginUserId());
         return success(true);
     }

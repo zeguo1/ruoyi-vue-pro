@@ -46,7 +46,7 @@ public class MesCalTeamController {
     @PutMapping("/update")
     @Operation(summary = "更新班组")
     @PreAuthorize("@ss.hasPermission('mes:cal-team:update')")
-    public CommonResult<Boolean> updateTeam(@Valid @RequestBody MesCalTeamSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateTeam(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesCalTeamSaveReqVO updateReqVO) {
         teamService.updateTeam(updateReqVO);
         return success(true);
     }

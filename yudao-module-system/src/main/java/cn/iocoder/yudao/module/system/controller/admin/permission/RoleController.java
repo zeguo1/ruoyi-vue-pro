@@ -49,7 +49,7 @@ public class RoleController {
     @PutMapping("/update")
     @Operation(summary = "修改角色")
     @PreAuthorize("@ss.hasPermission('system:role:update')")
-    public CommonResult<Boolean> updateRole(@Valid @RequestBody RoleSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateRole(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody RoleSaveReqVO updateReqVO) {
         roleService.updateRole(updateReqVO);
         return success(true);
     }

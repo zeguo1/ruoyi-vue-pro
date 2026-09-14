@@ -57,7 +57,7 @@ public class MesWmItemReceiptLineController {
     @PutMapping("/update")
     @Operation(summary = "修改采购入库单行")
     @PreAuthorize("@ss.hasPermission('mes:wm-item-receipt:update')")
-    public CommonResult<Boolean> updateItemReceiptLine(@Valid @RequestBody MesWmItemReceiptLineSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateItemReceiptLine(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmItemReceiptLineSaveReqVO updateReqVO) {
         itemReceiptLineService.updateItemReceiptLine(updateReqVO);
         return success(true);
     }

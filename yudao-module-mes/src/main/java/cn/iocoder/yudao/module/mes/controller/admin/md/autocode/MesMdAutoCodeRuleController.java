@@ -48,7 +48,7 @@ public class MesMdAutoCodeRuleController {
     @PutMapping("/update")
     @Operation(summary = "更新编码规则")
     @PreAuthorize("@ss.hasPermission('mes:auto-code-rule:update')")
-    public CommonResult<Boolean> updateAutoCodeRule(@Valid @RequestBody MesMdAutoCodeRuleSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateAutoCodeRule(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesMdAutoCodeRuleSaveReqVO updateReqVO) {
         ruleService.updateAutoCodeRule(updateReqVO);
         return success(true);
     }

@@ -50,7 +50,7 @@ public class HrmSalaryTaxRuleController {
     @PutMapping("/update")
     @Operation(summary = "修改计税规则")
     @PreAuthorize("@ss.hasPermission('hrm:salary:tax-rule:update')")
-    public CommonResult<Boolean> updateSalaryTaxRule(@Valid @RequestBody HrmSalaryTaxRuleSaveReqVO reqVO) {
+    public CommonResult<Boolean> updateSalaryTaxRule(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody HrmSalaryTaxRuleSaveReqVO reqVO) {
         salaryTaxRuleService.updateSalaryTaxRule(reqVO);
         return success(true);
     }

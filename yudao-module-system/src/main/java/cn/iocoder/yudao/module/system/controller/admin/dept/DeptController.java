@@ -42,7 +42,7 @@ public class DeptController {
     @PutMapping("update")
     @Operation(summary = "更新部门")
     @PreAuthorize("@ss.hasPermission('system:dept:update')")
-    public CommonResult<Boolean> updateDept(@Valid @RequestBody DeptSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateDept(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody DeptSaveReqVO updateReqVO) {
         deptService.updateDept(updateReqVO);
         return success(true);
     }

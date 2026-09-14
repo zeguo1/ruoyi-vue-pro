@@ -53,7 +53,7 @@ public class MesWmReturnIssueLineController {
     @PutMapping("/update")
     @Operation(summary = "修改生产退料单行")
     @PreAuthorize("@ss.hasPermission('mes:wm-return-issue:update')")
-    public CommonResult<Boolean> updateReturnIssueLine(@Valid @RequestBody MesWmReturnIssueLineSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateReturnIssueLine(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmReturnIssueLineSaveReqVO updateReqVO) {
         issueLineService.updateReturnIssueLine(updateReqVO);
         return success(true);
     }

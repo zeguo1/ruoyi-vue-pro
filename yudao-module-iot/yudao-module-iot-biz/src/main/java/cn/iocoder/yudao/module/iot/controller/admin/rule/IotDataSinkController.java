@@ -42,7 +42,7 @@ public class IotDataSinkController {
     @PutMapping("/update")
     @Operation(summary = "更新数据目的")
     @PreAuthorize("@ss.hasPermission('iot:data-sink:update')")
-    public CommonResult<Boolean> updateDataSink(@Valid @RequestBody IotDataSinkSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateDataSink(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody IotDataSinkSaveReqVO updateReqVO) {
         dataSinkService.updateDataSink(updateReqVO);
         return success(true);
     }

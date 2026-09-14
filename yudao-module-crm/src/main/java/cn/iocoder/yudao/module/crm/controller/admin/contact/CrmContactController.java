@@ -74,7 +74,7 @@ public class CrmContactController {
     @PutMapping("/update")
     @Operation(summary = "更新联系人")
     @PreAuthorize("@ss.hasPermission('crm:contact:update')")
-    public CommonResult<Boolean> updateContact(@Valid @RequestBody CrmContactSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateContact(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody CrmContactSaveReqVO updateReqVO) {
         contactService.updateContact(updateReqVO);
         return success(true);
     }

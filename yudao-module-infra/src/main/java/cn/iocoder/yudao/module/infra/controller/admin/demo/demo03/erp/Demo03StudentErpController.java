@@ -122,7 +122,7 @@ public class Demo03StudentErpController {
     @PutMapping("/demo03-course/update")
     @Operation(summary = "更新学生课程")
     @PreAuthorize("@ss.hasPermission('infra:demo03-student:update')")
-    public CommonResult<Boolean> updateDemo03Course(@Valid @RequestBody Demo03CourseDO demo03Course) {
+    public CommonResult<Boolean> updateDemo03Course(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody Demo03CourseDO demo03Course) {
         demo03StudentErpService.updateDemo03Course(demo03Course);
         return success(true);
     }
@@ -174,7 +174,7 @@ public class Demo03StudentErpController {
     @PutMapping("/demo03-grade/update")
     @Operation(summary = "更新学生班级")
     @PreAuthorize("@ss.hasPermission('infra:demo03-student:update')")
-    public CommonResult<Boolean> updateDemo03Grade(@Valid @RequestBody Demo03GradeDO demo03Grade) {
+    public CommonResult<Boolean> updateDemo03Grade(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody Demo03GradeDO demo03Grade) {
         demo03StudentErpService.updateDemo03Grade(demo03Grade);
         return success(true);
     }

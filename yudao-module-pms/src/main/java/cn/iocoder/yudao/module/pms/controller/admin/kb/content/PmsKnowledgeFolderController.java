@@ -71,7 +71,7 @@ public class PmsKnowledgeFolderController {
     @PutMapping("/update")
     @Operation(summary = "更新文件夹")
     @PreAuthorize("@ss.hasPermission('pms:kb:library:update')")
-    public CommonResult<Boolean> updateFolder(@Valid @RequestBody PmsKnowledgeFolderSaveReqVO saveReqVO) {
+    public CommonResult<Boolean> updateFolder(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody PmsKnowledgeFolderSaveReqVO saveReqVO) {
         folderService.updateFolder(saveReqVO, getLoginUserId());
         return success(true);
     }

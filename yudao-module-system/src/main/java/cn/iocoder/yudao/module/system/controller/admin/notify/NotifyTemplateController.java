@@ -48,7 +48,7 @@ public class NotifyTemplateController {
     @PutMapping("/update")
     @Operation(summary = "更新站内信模版")
     @PreAuthorize("@ss.hasPermission('system:notify-template:update')")
-    public CommonResult<Boolean> updateNotifyTemplate(@Valid @RequestBody NotifyTemplateSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateNotifyTemplate(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody NotifyTemplateSaveReqVO updateReqVO) {
         notifyTemplateService.updateNotifyTemplate(updateReqVO);
         return success(true);
     }

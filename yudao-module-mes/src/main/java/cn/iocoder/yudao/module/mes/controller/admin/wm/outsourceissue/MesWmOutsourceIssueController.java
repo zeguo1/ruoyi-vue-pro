@@ -59,7 +59,7 @@ public class MesWmOutsourceIssueController {
     @PutMapping("/update")
     @Operation(summary = "修改外协发料单")
     @PreAuthorize("@ss.hasPermission('mes:wm-outsource-issue:update')")
-    public CommonResult<Boolean> updateOutsourceIssue(@Valid @RequestBody MesWmOutsourceIssueSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateOutsourceIssue(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmOutsourceIssueSaveReqVO updateReqVO) {
         outsourceIssueService.updateOutsourceIssue(updateReqVO);
         return success(true);
     }

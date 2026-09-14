@@ -41,7 +41,7 @@ public class ProductPropertyController {
     @PutMapping("/update")
     @Operation(summary = "更新属性项")
     @PreAuthorize("@ss.hasPermission('product:property:update')")
-    public CommonResult<Boolean> updateProperty(@Valid @RequestBody ProductPropertySaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateProperty(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody ProductPropertySaveReqVO updateReqVO) {
         productPropertyService.updateProperty(updateReqVO);
         return success(true);
     }

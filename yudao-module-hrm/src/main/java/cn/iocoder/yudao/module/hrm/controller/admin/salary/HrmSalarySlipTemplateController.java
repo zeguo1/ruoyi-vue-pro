@@ -52,7 +52,7 @@ public class HrmSalarySlipTemplateController {
     @Operation(summary = "更新工资条模板")
     @PreAuthorize("@ss.hasPermission('hrm:salary:slip:update')")
     public CommonResult<Boolean> updateSalarySlipTemplate(
-            @Valid @RequestBody HrmSalarySlipTemplateSaveReqVO updateReqVO) {
+            @Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody HrmSalarySlipTemplateSaveReqVO updateReqVO) {
         salarySlipTemplateService.updateSalarySlipTemplate(updateReqVO);
         return success(true);
     }

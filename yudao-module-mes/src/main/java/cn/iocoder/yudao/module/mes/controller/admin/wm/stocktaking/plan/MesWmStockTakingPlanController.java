@@ -46,7 +46,7 @@ public class MesWmStockTakingPlanController {
     @PutMapping("/update")
     @Operation(summary = "修改盘点方案")
     @PreAuthorize("@ss.hasPermission('mes:wm-stock-taking-plan:update')")
-    public CommonResult<Boolean> updateStockTakingPlan(@Valid @RequestBody MesWmStockTakingPlanSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateStockTakingPlan(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmStockTakingPlanSaveReqVO updateReqVO) {
         stockTakingPlanService.updateStockTakingPlan(updateReqVO);
         return success(true);
     }

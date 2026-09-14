@@ -86,7 +86,7 @@ public class MesWmStockTakingTaskLineController {
     @PutMapping("/update")
     @Operation(summary = "更新盘点任务行")
     @PreAuthorize("@ss.hasPermission('mes:wm-stock-taking-task:update')")
-    public CommonResult<Boolean> updateStockTakingTaskLine(@Valid @RequestBody MesWmStockTakingTaskLineSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateStockTakingTaskLine(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmStockTakingTaskLineSaveReqVO updateReqVO) {
         stockTakingTaskLineService.updateStockTakingTaskLine(updateReqVO);
         return success(true);
     }

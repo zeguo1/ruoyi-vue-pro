@@ -41,7 +41,7 @@ public class ImChannelManagerController {
     @PutMapping("/update")
     @Operation(summary = "修改频道")
     @PreAuthorize("@ss.hasPermission('im:manager:channel:update')")
-    public CommonResult<Boolean> updateChannel(@Valid @RequestBody ImChannelSaveReqVO reqVO) {
+    public CommonResult<Boolean> updateChannel(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody ImChannelSaveReqVO reqVO) {
         channelService.updateChannel(reqVO);
         return success(true);
     }

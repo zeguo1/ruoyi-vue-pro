@@ -57,7 +57,7 @@ public class CrmPerformanceConfigController {
     @PutMapping("/update")
     @Operation(summary = "更新业绩目标")
     @PreAuthorize("@ss.hasPermission('crm:performance-config:update')")
-    public CommonResult<Boolean> updatePerformanceConfig(@Valid @RequestBody CrmPerformanceConfigSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updatePerformanceConfig(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody CrmPerformanceConfigSaveReqVO updateReqVO) {
         performanceConfigService.updatePerformanceConfig(updateReqVO);
         return success(true);
     }

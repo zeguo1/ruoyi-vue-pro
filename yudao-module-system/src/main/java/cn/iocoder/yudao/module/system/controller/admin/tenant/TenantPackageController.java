@@ -42,7 +42,7 @@ public class TenantPackageController {
     @PutMapping("/update")
     @Operation(summary = "更新租户套餐")
     @PreAuthorize("@ss.hasPermission('system:tenant-package:update')")
-    public CommonResult<Boolean> updateTenantPackage(@Valid @RequestBody TenantPackageSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateTenantPackage(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody TenantPackageSaveReqVO updateReqVO) {
         tenantPackageService.updateTenantPackage(updateReqVO);
         return success(true);
     }

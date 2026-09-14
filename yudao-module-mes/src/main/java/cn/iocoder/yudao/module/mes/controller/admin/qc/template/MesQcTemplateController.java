@@ -46,7 +46,7 @@ public class MesQcTemplateController {
     @PutMapping("/update")
     @Operation(summary = "更新质检方案")
     @PreAuthorize("@ss.hasPermission('mes:qc-template:update')")
-    public CommonResult<Boolean> updateTemplate(@Valid @RequestBody MesQcTemplateSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateTemplate(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesQcTemplateSaveReqVO updateReqVO) {
         templateService.updateTemplate(updateReqVO);
         return success(true);
     }

@@ -48,7 +48,7 @@ public class MesProProcessController {
     @PutMapping("/update")
     @Operation(summary = "更新生产工序")
     @PreAuthorize("@ss.hasPermission('mes:pro-process:update')")
-    public CommonResult<Boolean> updateProcess(@Valid @RequestBody MesProProcessSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateProcess(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesProProcessSaveReqVO updateReqVO) {
         processService.updateProcess(updateReqVO);
         return success(true);
     }

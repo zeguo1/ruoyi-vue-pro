@@ -1,6 +1,11 @@
 package cn.iocoder.yudao.module.system.controller.admin.captcha;
 
 import cn.hutool.core.util.StrUtil;
+import cn.iocoder.yudao.module.system.controller.admin.captcha.vo.CaptchaGetReqVO;
+import cn.iocoder.yudao.module.system.controller.admin.captcha.vo.CaptchaCheckReqVO;
+import cn.iocoder.yudao.framework.common.util.object.BeanUtils;
+import jakarta.validation.Valid;
+import org.springframework.validation.BindingResult;
 import cn.iocoder.yudao.framework.common.util.servlet.ServletUtils;
 import cn.iocoder.yudao.framework.tenant.core.aop.TenantIgnore;
 import com.anji.captcha.model.common.ResponseModel;
@@ -18,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Tag(name = "管理后台 - 验证码")
 @RestController("adminCaptchaController")
-@RequestMapping("/system/captcha")
+@RequestMapping(value = "/system/captcha", produces = "application/json")
 public class CaptchaController {
 
     @Resource
@@ -28,7 +33,9 @@ public class CaptchaController {
     @Operation(summary = "获得验证码")
     @PermitAll
     @TenantIgnore
-    public ResponseModel get(@RequestBody CaptchaVO data, HttpServletRequest request) {
+    public ResponseModel get(@Valid @RequestBody CaptchaGetReqVO reqVO, BindingResult errors, HttpServletRequest request) {
+        if (errors.hasErrors()) return invalidRequest(errors);
+        CaptchaVO data = BeanUtils.toBean(reqVO, CaptchaVO.class);
         assert request.getRemoteHost() != null;
         data.setBrowserInfo(getRemoteId(request));
         return captchaService.get(data);
@@ -38,9 +45,18 @@ public class CaptchaController {
     @Operation(summary = "校验验证码")
     @PermitAll
     @TenantIgnore
-    public ResponseModel check(@RequestBody CaptchaVO data, HttpServletRequest request) {
+    public ResponseModel check(@Valid @RequestBody CaptchaCheckReqVO reqVO, BindingResult errors, HttpServletRequest request) {
+        if (errors.hasErrors()) return invalidRequest(errors);
+        CaptchaVO data = BeanUtils.toBean(reqVO, CaptchaVO.class);
         data.setBrowserInfo(getRemoteId(request));
         return captchaService.check(data);
+    }
+
+    private static ResponseModel invalidRequest(BindingResult errors) {
+        String message = errors.getFieldErrors().stream()
+                .map(error -> error.getField() + ": " + error.getDefaultMessage()).sorted()
+                .collect(java.util.stream.Collectors.joining("; "));
+        return ResponseModel.errorMsg(com.anji.captcha.model.common.RepCodeEnum.PARAM_FORMAT_ERROR, message);
     }
 
     public static String getRemoteId(HttpServletRequest request) {

@@ -41,7 +41,7 @@ public class BpmFormController {
     @PutMapping("/update")
     @Operation(summary = "更新动态表单")
     @PreAuthorize("@ss.hasPermission('bpm:form:update')")
-    public CommonResult<Boolean> updateForm(@Valid @RequestBody BpmFormSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateForm(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody BpmFormSaveReqVO updateReqVO) {
         formService.updateForm(updateReqVO);
         return success(true);
     }

@@ -73,7 +73,7 @@ public class FmsAuxiliaryItemController {
     @Operation(summary = "更新辅助核算项目")
     @PreAuthorize("@ss.hasPermission('fms:config:auxiliary:update')")
     public CommonResult<Boolean> updateAuxiliaryItem(
-            @Valid @RequestBody FmsAuxiliaryItemSaveReqVO updateReqVO) {
+            @Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody FmsAuxiliaryItemSaveReqVO updateReqVO) {
         auxiliaryItemService.updateAuxiliaryItem(updateReqVO, getLoginUserId());
         return success(true);
     }

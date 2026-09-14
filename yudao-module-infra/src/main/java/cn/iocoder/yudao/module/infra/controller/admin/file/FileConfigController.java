@@ -40,7 +40,7 @@ public class FileConfigController {
     @PutMapping("/update")
     @Operation(summary = "更新文件配置")
     @PreAuthorize("@ss.hasPermission('infra:file-config:update')")
-    public CommonResult<Boolean> updateFileConfig(@Valid @RequestBody FileConfigSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateFileConfig(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody FileConfigSaveReqVO updateReqVO) {
         fileConfigService.updateFileConfig(updateReqVO);
         return success(true);
     }

@@ -41,7 +41,7 @@ public class ImFacePackItemManagerController {
     @PutMapping("/update")
     @Operation(summary = "修改表情")
     @PreAuthorize("@ss.hasPermission('im:manager:face-pack-item:update')")
-    public CommonResult<Boolean> updateFacePackItem(@Valid @RequestBody ImFacePackItemSaveReqVO reqVO) {
+    public CommonResult<Boolean> updateFacePackItem(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody ImFacePackItemSaveReqVO reqVO) {
         facePackItemService.updateFacePackItem(reqVO);
         return success(true);
     }

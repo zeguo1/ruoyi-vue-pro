@@ -1,5 +1,6 @@
 package cn.iocoder.yudao.module.system.controller.admin.sms;
 
+import org.springframework.validation.annotation.Validated;
 import cn.iocoder.yudao.framework.apilog.core.annotation.ApiAccessLog;
 import cn.iocoder.yudao.framework.common.enums.CommonStatusEnum;
 import cn.iocoder.yudao.framework.common.pojo.CommonResult;
@@ -50,7 +51,7 @@ public class SmsTemplateController {
     @PutMapping("/update")
     @Operation(summary = "更新短信模板")
     @PreAuthorize("@ss.hasPermission('system:sms-template:update')")
-    public CommonResult<Boolean> updateSmsTemplate(@Valid @RequestBody SmsTemplateSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateSmsTemplate(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody SmsTemplateSaveReqVO updateReqVO) {
         smsTemplateService.updateSmsTemplate(updateReqVO);
         return success(true);
     }

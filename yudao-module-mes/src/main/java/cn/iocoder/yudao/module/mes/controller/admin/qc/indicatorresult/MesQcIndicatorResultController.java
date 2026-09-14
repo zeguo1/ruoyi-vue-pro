@@ -65,7 +65,7 @@ public class MesQcIndicatorResultController {
     @PutMapping("/update")
     @Operation(summary = "更新检验结果")
     @PreAuthorize("@ss.hasPermission('mes:qc-iqc:update')")
-    public CommonResult<Boolean> updateIndicatorResult(@Valid @RequestBody MesQcIndicatorResultSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateIndicatorResult(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesQcIndicatorResultSaveReqVO updateReqVO) {
         resultService.updateIndicatorResult(updateReqVO);
         return success(true);
     }

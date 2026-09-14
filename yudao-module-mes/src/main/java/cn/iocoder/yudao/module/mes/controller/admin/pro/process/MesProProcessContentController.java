@@ -38,7 +38,7 @@ public class MesProProcessContentController {
     @PutMapping("/update")
     @Operation(summary = "更新生产工序内容")
     @PreAuthorize("@ss.hasPermission('mes:pro-process:update')")
-    public CommonResult<Boolean> updateProcessContent(@Valid @RequestBody MesProProcessContentSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateProcessContent(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesProProcessContentSaveReqVO updateReqVO) {
         processContentService.updateProcessContent(updateReqVO);
         return success(true);
     }

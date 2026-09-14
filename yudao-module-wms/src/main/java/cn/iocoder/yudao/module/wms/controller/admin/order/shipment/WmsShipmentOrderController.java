@@ -80,7 +80,7 @@ public class WmsShipmentOrderController {
     @PutMapping("/update")
     @Operation(summary = "更新出库单")
     @PreAuthorize("@ss.hasPermission('wms:shipment-order:update')")
-    public CommonResult<Boolean> updateShipmentOrder(@Valid @RequestBody WmsShipmentOrderSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateShipmentOrder(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody WmsShipmentOrderSaveReqVO updateReqVO) {
         shipmentOrderService.updateShipmentOrder(updateReqVO);
         return success(true);
     }

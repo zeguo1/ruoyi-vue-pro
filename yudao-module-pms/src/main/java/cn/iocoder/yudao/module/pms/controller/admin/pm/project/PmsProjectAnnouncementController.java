@@ -58,7 +58,7 @@ public class PmsProjectAnnouncementController {
     @Operation(summary = "更新项目公告")
     @PreAuthorize("@ss.hasPermission('pms:pm:project:update')")
     public CommonResult<Boolean> updateProjectAnnouncement(
-            @Valid @RequestBody PmsProjectAnnouncementSaveReqVO saveReqVO) {
+            @Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody PmsProjectAnnouncementSaveReqVO saveReqVO) {
         projectAnnouncementService.updateProjectAnnouncement(saveReqVO, getLoginUserId());
         return success(true);
     }

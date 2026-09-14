@@ -48,7 +48,7 @@ public class MesMdWorkstationWorkerController {
     @PutMapping("/update")
     @Operation(summary = "更新人力资源")
     @PreAuthorize("@ss.hasPermission('mes:md-workstation:update')")
-    public CommonResult<Boolean> updateWorkstationWorker(@Valid @RequestBody MesMdWorkstationWorkerSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateWorkstationWorker(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesMdWorkstationWorkerSaveReqVO updateReqVO) {
         workstationWorkerService.updateWorkstationWorker(updateReqVO);
         return success(true);
     }

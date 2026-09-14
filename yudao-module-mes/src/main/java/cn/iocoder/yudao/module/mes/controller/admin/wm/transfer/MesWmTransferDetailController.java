@@ -63,7 +63,7 @@ public class MesWmTransferDetailController {
     @PutMapping("/update")
     @Operation(summary = "修改调拨明细")
     @PreAuthorize("@ss.hasPermission('mes:wm-transfer:update')")
-    public CommonResult<Boolean> updateTransferDetail(@Valid @RequestBody MesWmTransferDetailSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateTransferDetail(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmTransferDetailSaveReqVO updateReqVO) {
         transferDetailService.updateTransferDetail(updateReqVO);
         return success(true);
     }

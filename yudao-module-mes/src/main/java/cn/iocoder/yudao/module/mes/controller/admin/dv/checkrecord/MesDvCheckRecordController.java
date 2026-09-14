@@ -64,7 +64,7 @@ public class MesDvCheckRecordController {
     @PutMapping("/update")
     @Operation(summary = "更新设备点检记录")
     @PreAuthorize("@ss.hasPermission('mes:dv-check-record:update')")
-    public CommonResult<Boolean> updateCheckRecord(@Valid @RequestBody MesDvCheckRecordSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateCheckRecord(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesDvCheckRecordSaveReqVO updateReqVO) {
         checkRecordService.updateCheckRecord(updateReqVO);
         return success(true);
     }

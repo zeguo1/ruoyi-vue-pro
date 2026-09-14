@@ -10,7 +10,8 @@ import java.math.BigDecimal;
 @Data
 public class MesWmProductSalesDetailSaveReqVO {
 
-    @Schema(description = "编号", example = "1024")
+    @Schema(description = "编号；创建时可省略，不要编造编号；修改时必须提交已有记录编号", example = "1024", requiredMode = io.swagger.v3.oas.annotations.media.Schema.RequiredMode.NOT_REQUIRED)
+    @jakarta.validation.constraints.NotNull(message = "修改记录编号不能为空", groups = cn.iocoder.yudao.framework.common.validation.Update.class)
     private Long id;
 
     @Schema(description = "出库单行ID", requiredMode = Schema.RequiredMode.REQUIRED, example = "1")

@@ -38,7 +38,7 @@ public class MesMdAutoCodePartController {
     @PutMapping("/update")
     @Operation(summary = "更新规则组成")
     @PreAuthorize("@ss.hasPermission('mes:auto-code-rule:update')")
-    public CommonResult<Boolean> updateAutoCodePart(@Valid @RequestBody MesMdAutoCodePartSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateAutoCodePart(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesMdAutoCodePartSaveReqVO updateReqVO) {
         partService.updateAutoCodePart(updateReqVO);
         return success(true);
     }

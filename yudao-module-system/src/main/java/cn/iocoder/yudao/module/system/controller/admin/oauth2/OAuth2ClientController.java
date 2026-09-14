@@ -40,7 +40,7 @@ public class OAuth2ClientController {
     @PutMapping("/update")
     @Operation(summary = "更新 OAuth2 客户端")
     @PreAuthorize("@ss.hasPermission('system:oauth2-client:update')")
-    public CommonResult<Boolean> updateOAuth2Client(@Valid @RequestBody OAuth2ClientSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateOAuth2Client(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody OAuth2ClientSaveReqVO updateReqVO) {
         oAuth2ClientService.updateOAuth2Client(updateReqVO);
         return success(true);
     }

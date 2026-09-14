@@ -65,7 +65,7 @@ public class WmsItemController {
     @PutMapping("/update")
     @Operation(summary = "更新商品")
     @PreAuthorize("@ss.hasPermission('wms:item:update')")
-    public CommonResult<Boolean> updateItem(@Valid @RequestBody WmsItemSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateItem(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody WmsItemSaveReqVO updateReqVO) {
         itemService.updateItem(updateReqVO);
         return success(true);
     }

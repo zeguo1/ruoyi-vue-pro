@@ -89,7 +89,7 @@ public class MesWmStockTakingTaskResultController {
     @Operation(summary = "更新盘点结果")
     @PreAuthorize("@ss.hasPermission('mes:wm-stock-taking-task:update')")
     @Transactional(rollbackFor = Exception.class)
-    public CommonResult<Boolean> updateStockTakingTaskResult(@Valid @RequestBody MesWmStockTakingTaskResultSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateStockTakingTaskResult(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmStockTakingTaskResultSaveReqVO updateReqVO) {
         stockTakingTaskResultService.updateStockTakingTaskResult(updateReqVO);
         return success(true);
     }

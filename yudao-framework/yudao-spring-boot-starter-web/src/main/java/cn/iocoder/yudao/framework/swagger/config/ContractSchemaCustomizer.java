@@ -39,6 +39,9 @@ public class ContractSchemaCustomizer implements PropertyCustomizer, GlobalOpenA
             if (annotation instanceof io.swagger.v3.oas.annotations.media.Schema doc) {
                 // An unspecified annotation default is not a real business default.
                 if (doc.defaultValue().isEmpty() && "".equals(schema.getDefault())) clearDefault(schema);
+                if (doc.nullable() && schema.getType() != null) {
+                    schema.setTypes(new LinkedHashSet<>(Arrays.asList(schema.getType(), "null")));
+                }
             }
             if (annotation.annotationType().getName().equals("io.swagger.annotations.ApiModelProperty")
                     && blank(schema.getDescription())) {
@@ -67,6 +70,18 @@ public class ContractSchemaCustomizer implements PropertyCustomizer, GlobalOpenA
 
     @Override
     public Operation customize(Operation operation, HandlerMethod handler) {
+        // CommonResult is serialized by MVC's JSON converter. Keep downloads, streams,
+        // callbacks and explicitly declared response media types intact.
+        if (handler.getMethod().getReturnType() == cn.iocoder.yudao.framework.common.pojo.CommonResult.class
+                && operation.getResponses() != null) {
+            operation.getResponses().values().forEach(response -> {
+                var content = response.getContent();
+                if (content != null && content.containsKey("*/*") && content.size() == 1) {
+                    var media = content.remove("*/*");
+                    content.addMediaType("application/json", media);
+                }
+            });
+        }
         if (blank(operation.getSummary())) {
             for (Annotation annotation : handler.getMethod().getAnnotations()) {
                 if (annotation.annotationType().getName().equals("io.swagger.annotations.ApiOperation")) {
@@ -85,8 +100,11 @@ public class ContractSchemaCustomizer implements PropertyCustomizer, GlobalOpenA
                 operation.getRequestBody().getContent().values().forEach(media -> {
                     // This requirement belongs only to the update operation, never to the shared create schema.
                     var update = new io.swagger.v3.oas.models.media.ObjectSchema();
-                    update.addProperty("id", new io.swagger.v3.oas.models.media.IntegerSchema().format("int64")
-                            .description("要修改的已有记录编号"));
+                    var idField = org.springframework.util.ReflectionUtils.findField(parameter.getParameterType(), "id");
+                    Schema<?> id = idField != null && idField.getType() == String.class
+                            ? new io.swagger.v3.oas.models.media.StringSchema()
+                            : new io.swagger.v3.oas.models.media.IntegerSchema().format("int64");
+                    update.addProperty("id", id.description("要修改的已有记录编号，必须来自已有记录，不要编造"));
                     update.addRequiredItem("id");
                     media.setSchema(new io.swagger.v3.oas.models.media.ComposedSchema()
                             .addAllOfItem(media.getSchema()).addAllOfItem(update));

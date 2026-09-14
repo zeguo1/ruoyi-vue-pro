@@ -55,7 +55,7 @@ public class MesWmArrivalNoticeController {
     @PutMapping("/update")
     @Operation(summary = "修改到货通知单")
     @PreAuthorize("@ss.hasPermission('mes:wm-arrival-notice:update')")
-    public CommonResult<Boolean> updateArrivalNotice(@Valid @RequestBody MesWmArrivalNoticeSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateArrivalNotice(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmArrivalNoticeSaveReqVO updateReqVO) {
         arrivalNoticeService.updateArrivalNotice(updateReqVO);
         return success(true);
     }

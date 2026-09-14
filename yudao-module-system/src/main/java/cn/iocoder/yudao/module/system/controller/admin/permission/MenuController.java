@@ -43,7 +43,7 @@ public class MenuController {
     @PutMapping("/update")
     @Operation(summary = "修改菜单")
     @PreAuthorize("@ss.hasPermission('system:menu:update')")
-    public CommonResult<Boolean> updateMenu(@Valid @RequestBody MenuSaveVO updateReqVO) {
+    public CommonResult<Boolean> updateMenu(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MenuSaveVO updateReqVO) {
         menuService.updateMenu(updateReqVO);
         return success(true);
     }

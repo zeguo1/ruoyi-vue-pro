@@ -68,7 +68,7 @@ public class MesQcOqcController {
     @PutMapping("/update")
     @Operation(summary = "更新出货检验单")
     @PreAuthorize("@ss.hasPermission('mes:qc-oqc:update')")
-    public CommonResult<Boolean> updateOqc(@Valid @RequestBody MesQcOqcSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateOqc(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesQcOqcSaveReqVO updateReqVO) {
         oqcService.updateOqc(updateReqVO);
         return success(true);
     }

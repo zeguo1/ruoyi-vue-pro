@@ -57,7 +57,7 @@ public class MesMdProductBomController {
     @PutMapping("/update")
     @Operation(summary = "更新产品BOM")
     @PreAuthorize("@ss.hasPermission('mes:md-item:update')")
-    public CommonResult<Boolean> updateProductBom(@Valid @RequestBody MesMdProductBomSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateProductBom(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesMdProductBomSaveReqVO updateReqVO) {
         productBomService.updateProductBom(updateReqVO);
         return success(true);
     }

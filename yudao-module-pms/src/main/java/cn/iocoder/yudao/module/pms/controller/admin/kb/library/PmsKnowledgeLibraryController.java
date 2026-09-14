@@ -78,7 +78,7 @@ public class PmsKnowledgeLibraryController {
     @PutMapping("/update")
     @Operation(summary = "更新知识库")
     @PreAuthorize("@ss.hasPermission('pms:kb:library:update')")
-    public CommonResult<Boolean> updateLibrary(@Valid @RequestBody PmsKnowledgeLibrarySaveReqVO saveReqVO) {
+    public CommonResult<Boolean> updateLibrary(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody PmsKnowledgeLibrarySaveReqVO saveReqVO) {
         libraryService.updateLibrary(saveReqVO, getLoginUserId());
         return success(true);
     }

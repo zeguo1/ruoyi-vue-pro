@@ -80,7 +80,7 @@ public class WmsReceiptOrderController {
     @PutMapping("/update")
     @Operation(summary = "更新入库单")
     @PreAuthorize("@ss.hasPermission('wms:receipt-order:update')")
-    public CommonResult<Boolean> updateReceiptOrder(@Valid @RequestBody WmsReceiptOrderSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateReceiptOrder(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody WmsReceiptOrderSaveReqVO updateReqVO) {
         receiptOrderService.updateReceiptOrder(updateReqVO);
         return success(true);
     }

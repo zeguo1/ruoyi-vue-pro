@@ -55,7 +55,7 @@ public class HrmEmployeeContractController {
     @PutMapping("/update")
     @Operation(summary = "更新员工合同")
     @PreAuthorize("@ss.hasPermission('hrm:employee:update')")
-    public CommonResult<Boolean> updateContract(@Valid @RequestBody HrmEmployeeContractSaveReqVO reqVO) {
+    public CommonResult<Boolean> updateContract(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody HrmEmployeeContractSaveReqVO reqVO) {
         contractService.updateContract(reqVO);
         return success(true);
     }

@@ -74,7 +74,7 @@ public class HrmPerformancePlanController {
     @PutMapping("/update")
     @Operation(summary = "更新绩效计划")
     @PreAuthorize("@ss.hasPermission('hrm:performance:plan:update')")
-    public CommonResult<Boolean> updatePerformancePlan(@Valid @RequestBody HrmPerformancePlanSaveReqVO reqVO) {
+    public CommonResult<Boolean> updatePerformancePlan(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody HrmPerformancePlanSaveReqVO reqVO) {
         performancePlanService.updatePerformancePlan(reqVO);
         return success(true);
     }

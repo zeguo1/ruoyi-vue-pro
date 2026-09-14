@@ -65,7 +65,7 @@ public class MesWmMiscIssueLineController {
     @PutMapping("/update")
     @Operation(summary = "修改杂项出库单行")
     @PreAuthorize("@ss.hasPermission('mes:wm-misc-issue:update')")
-    public CommonResult<Boolean> updateMiscIssueLine(@Valid @RequestBody MesWmMiscIssueLineSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateMiscIssueLine(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmMiscIssueLineSaveReqVO updateReqVO) {
         miscIssueLineService.updateMiscIssueLine(updateReqVO);
         return success(true);
     }

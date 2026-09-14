@@ -61,7 +61,7 @@ public class UserController {
     @PutMapping("update")
     @Operation(summary = "修改用户")
     @PreAuthorize("@ss.hasPermission('system:user:update')")
-    public CommonResult<Boolean> updateUser(@Valid @RequestBody UserSaveReqVO reqVO) {
+    public CommonResult<Boolean> updateUser(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody UserSaveReqVO reqVO) {
         userService.updateUser(reqVO);
         return success(true);
     }

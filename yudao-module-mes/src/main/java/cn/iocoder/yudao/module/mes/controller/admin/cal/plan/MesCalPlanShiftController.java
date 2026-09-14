@@ -40,7 +40,7 @@ public class MesCalPlanShiftController {
     @PutMapping("/update")
     @Operation(summary = "更新计划班次")
     @PreAuthorize("@ss.hasPermission('mes:cal-plan:update')")
-    public CommonResult<Boolean> updatePlanShift(@Valid @RequestBody MesCalPlanShiftSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updatePlanShift(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesCalPlanShiftSaveReqVO updateReqVO) {
         planShiftService.updatePlanShift(updateReqVO);
         return success(true);
     }

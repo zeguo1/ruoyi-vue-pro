@@ -17,7 +17,7 @@ import java.util.List;
 @Data
 public class HrmSalaryEmployeeInfoUpdateReqVO {
 
-    @Schema(description = "定薪/调薪记录编号；编辑待生效或已取消记录时传入", example = "1024")
+    @Schema(description = "定薪/调薪记录编号；新建记录时省略，编辑待生效或已取消记录时传入已有编号；首次定薪会按员工查找既有定薪记录", example = "1024")
     private Long id;
 
     @Schema(description = "员工编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "1024")

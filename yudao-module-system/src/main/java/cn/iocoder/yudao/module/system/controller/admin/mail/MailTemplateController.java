@@ -1,5 +1,6 @@
 package cn.iocoder.yudao.module.system.controller.admin.mail;
 
+import org.springframework.validation.annotation.Validated;
 import cn.iocoder.yudao.framework.common.enums.CommonStatusEnum;
 import cn.iocoder.yudao.framework.common.pojo.CommonResult;
 import cn.iocoder.yudao.framework.common.pojo.PageResult;
@@ -41,7 +42,7 @@ public class MailTemplateController {
     @PutMapping("/update")
     @Operation(summary = "修改邮件模版")
     @PreAuthorize("@ss.hasPermission('system:mail-template:update')")
-    public CommonResult<Boolean> updateMailTemplate(@Valid @RequestBody MailTemplateSaveReqVO updateReqVO){
+    public CommonResult<Boolean> updateMailTemplate(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MailTemplateSaveReqVO updateReqVO){
         mailTempleService.updateMailTemplate(updateReqVO);
         return success(true);
     }

@@ -52,7 +52,7 @@ public class FmsVoucherTemplateCategoryController {
     @Operation(summary = "修改凭证模板分类")
     @PreAuthorize("@ss.hasPermission('fms:config:voucher-template-category:update')")
     public CommonResult<Boolean> updateTemplateCategory(
-            @Valid @RequestBody FmsVoucherTemplateCategorySaveReqVO updateReqVO) {
+            @Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody FmsVoucherTemplateCategorySaveReqVO updateReqVO) {
         voucherTemplateService.updateTemplateCategory(updateReqVO, getLoginUserId());
         return success(true);
     }

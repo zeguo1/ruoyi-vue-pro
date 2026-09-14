@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 public class IotSceneRuleSaveReqVO {
 
-    @Schema(description = "场景编号；新增可省略，修改时必须提交已有记录编号", requiredMode = Schema.RequiredMode.NOT_REQUIRED, example = "15865")
+    @Schema(description = "场景编号；创建时可省略，不要编造编号；修改时必须提交已有记录编号", requiredMode = Schema.RequiredMode.NOT_REQUIRED, example = "15865")
     @jakarta.validation.constraints.NotNull(groups = cn.iocoder.yudao.framework.common.validation.Update.class, message = "修改时编号不能为空")
     private Long id;
 

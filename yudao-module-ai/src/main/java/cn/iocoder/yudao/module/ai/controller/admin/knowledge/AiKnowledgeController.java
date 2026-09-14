@@ -59,7 +59,7 @@ public class AiKnowledgeController {
     @PutMapping("/update")
     @Operation(summary = "更新知识库")
     @PreAuthorize("@ss.hasPermission('ai:knowledge:update')")
-    public CommonResult<Boolean> updateKnowledge(@RequestBody @Valid AiKnowledgeSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateKnowledge(@RequestBody @Validated(cn.iocoder.yudao.framework.common.validation.Update.class) AiKnowledgeSaveReqVO updateReqVO) {
         knowledgeService.updateKnowledge(updateReqVO);
         return success(true);
     }

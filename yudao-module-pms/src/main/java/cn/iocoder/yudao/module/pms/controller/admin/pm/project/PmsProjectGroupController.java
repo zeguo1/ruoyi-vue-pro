@@ -52,7 +52,7 @@ public class PmsProjectGroupController {
     @PutMapping("/update")
     @Operation(summary = "修改项目分组")
     @PreAuthorize("@ss.hasPermission('pms:pm:project-group:update')")
-    public CommonResult<Boolean> updateProjectGroup(@Valid @RequestBody PmsProjectGroupSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateProjectGroup(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody PmsProjectGroupSaveReqVO updateReqVO) {
         projectGroupService.updateProjectGroup(updateReqVO, getLoginUserId());
         return success(true);
     }

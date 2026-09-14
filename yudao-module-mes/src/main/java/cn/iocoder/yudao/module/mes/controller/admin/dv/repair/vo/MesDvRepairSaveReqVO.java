@@ -11,7 +11,8 @@ import java.time.LocalDateTime;
 @Data
 public class MesDvRepairSaveReqVO {
 
-    @Schema(description = "编号", requiredMode = Schema.RequiredMode.NOT_REQUIRED, example = "1024")
+    @Schema(description = "编号；创建时可省略，不要编造编号；修改时必须提交已有记录编号", requiredMode = Schema.RequiredMode.NOT_REQUIRED, example = "1024")
+    @jakarta.validation.constraints.NotNull(message = "修改记录编号不能为空", groups = cn.iocoder.yudao.framework.common.validation.Update.class)
     private Long id;
 
     @Schema(description = "维修工单编码", requiredMode = Schema.RequiredMode.REQUIRED, example = "REP2024001")

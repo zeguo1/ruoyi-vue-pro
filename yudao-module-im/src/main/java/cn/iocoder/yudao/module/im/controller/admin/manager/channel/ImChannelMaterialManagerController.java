@@ -49,7 +49,7 @@ public class ImChannelMaterialManagerController {
     @PutMapping("/update")
     @Operation(summary = "修改素材")
     @PreAuthorize("@ss.hasPermission('im:manager:channel-material:update')")
-    public CommonResult<Boolean> updateMaterial(@Valid @RequestBody ImChannelMaterialSaveReqVO reqVO) {
+    public CommonResult<Boolean> updateMaterial(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody ImChannelMaterialSaveReqVO reqVO) {
         channelMaterialService.updateMaterial(reqVO);
         return success(true);
     }

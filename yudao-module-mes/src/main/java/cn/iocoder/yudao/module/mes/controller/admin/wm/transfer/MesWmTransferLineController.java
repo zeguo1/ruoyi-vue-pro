@@ -63,7 +63,7 @@ public class MesWmTransferLineController {
     @PutMapping("/update")
     @Operation(summary = "修改转移单行")
     @PreAuthorize("@ss.hasPermission('mes:wm-transfer:update')")
-    public CommonResult<Boolean> updateTransferLine(@Valid @RequestBody MesWmTransferLineSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateTransferLine(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmTransferLineSaveReqVO updateReqVO) {
         transferLineService.updateTransferLine(updateReqVO);
         return success(true);
     }

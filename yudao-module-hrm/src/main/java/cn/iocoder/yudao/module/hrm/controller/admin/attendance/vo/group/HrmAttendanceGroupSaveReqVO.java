@@ -43,7 +43,8 @@ public class HrmAttendanceGroupSaveReqVO {
     private static final Set<Integer> POINT_RADIUS_VALUES = new HashSet<>(
             Arrays.asList(100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000));
 
-    @Schema(description = "考勤组编号", example = "1024")
+    @Schema(description = "考勤组编号；创建时可省略，不要编造编号；修改时必须提交已有记录编号", example = "1024", requiredMode = io.swagger.v3.oas.annotations.media.Schema.RequiredMode.NOT_REQUIRED)
+    @jakarta.validation.constraints.NotNull(message = "修改记录编号不能为空", groups = cn.iocoder.yudao.framework.common.validation.Update.class)
     private Long id;
 
     @Schema(description = "名称", requiredMode = Schema.RequiredMode.REQUIRED, example = "总部考勤组")

@@ -38,7 +38,7 @@ public class MesWmStockTakingPlanParamController {
     @PutMapping("/update")
     @Operation(summary = "修改盘点方案参数")
     @PreAuthorize("@ss.hasPermission('mes:wm-stock-taking-plan:update')")
-    public CommonResult<Boolean> updateStockTakingPlanParam(@Valid @RequestBody MesWmStockTakingPlanParamSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateStockTakingPlanParam(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmStockTakingPlanParamSaveReqVO updateReqVO) {
         stockTakingPlanParamService.updateStockTakingPlanParam(updateReqVO);
         return success(true);
     }

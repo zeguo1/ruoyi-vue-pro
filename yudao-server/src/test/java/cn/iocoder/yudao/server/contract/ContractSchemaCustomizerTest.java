@@ -14,6 +14,25 @@ import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ContractSchemaCustomizerTest {
+    static class Responses {
+        public cn.iocoder.yudao.framework.common.pojo.CommonResult<Boolean> json() { return null; }
+        public org.springframework.core.io.Resource download() { return null; }
+        public org.springframework.web.servlet.mvc.method.annotation.SseEmitter stream() { return null; }
+    }
+    @Test void jsonMediaIsPreciseWithoutRewritingDownloadsStreamsOrExplicitMedia() throws Exception {
+        for (String name : List.of("json", "download", "stream")) {
+            var operation = new io.swagger.v3.oas.models.Operation().responses(new io.swagger.v3.oas.models.responses.ApiResponses()
+                    .addApiResponse("200", new io.swagger.v3.oas.models.responses.ApiResponse().content(
+                            new Content().addMediaType("*/*", new MediaType().schema(new ObjectSchema())))));
+            new ContractSchemaCustomizer().customize(operation, new org.springframework.web.method.HandlerMethod(new Responses(), Responses.class.getMethod(name)));
+            assertTrue(operation.getResponses().get("200").getContent().containsKey(name.equals("json") ? "application/json" : "*/*"));
+        }
+        var explicit = new io.swagger.v3.oas.models.Operation().responses(new io.swagger.v3.oas.models.responses.ApiResponses()
+                .addApiResponse("200", new io.swagger.v3.oas.models.responses.ApiResponse().content(
+                        new Content().addMediaType("text/event-stream", new MediaType()))));
+        new ContractSchemaCustomizer().customize(explicit, new org.springframework.web.method.HandlerMethod(new Responses(), Responses.class.getMethod("json")));
+        assertTrue(explicit.getResponses().get("200").getContent().containsKey("text/event-stream"));
+    }
     static class Fields {
         @Min(5) @Positive BigDecimal amount;
         @DecimalMin(value="0", inclusive=false) BigDecimal positive;

@@ -55,7 +55,7 @@ public class MesWmSalesNoticeController {
     @PutMapping("/update")
     @Operation(summary = "修改发货通知单")
     @PreAuthorize("@ss.hasPermission('mes:wm-sales-notice:update')")
-    public CommonResult<Boolean> updateSalesNotice(@Valid @RequestBody MesWmSalesNoticeSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateSalesNotice(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmSalesNoticeSaveReqVO updateReqVO) {
         salesNoticeService.updateSalesNotice(updateReqVO);
         return success(true);
     }

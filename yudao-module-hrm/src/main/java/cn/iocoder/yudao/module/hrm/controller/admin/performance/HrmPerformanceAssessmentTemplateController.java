@@ -61,7 +61,7 @@ public class HrmPerformanceAssessmentTemplateController {
     @Operation(summary = "更新绩效考核模板")
     @PreAuthorize("@ss.hasPermission('hrm:performance:assessment-template:update')")
     public CommonResult<Boolean> updatePerformanceAssessmentTemplate(
-            @Valid @RequestBody HrmPerformanceAssessmentTemplateSaveReqVO updateReqVO) {
+            @Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody HrmPerformanceAssessmentTemplateSaveReqVO updateReqVO) {
         assessmentTemplateService.updatePerformanceAssessmentTemplate(updateReqVO);
         return success(true);
     }

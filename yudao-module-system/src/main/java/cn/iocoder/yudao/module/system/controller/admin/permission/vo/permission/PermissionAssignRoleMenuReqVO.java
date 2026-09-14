@@ -15,7 +15,7 @@ public class PermissionAssignRoleMenuReqVO {
     @NotNull(message = "角色编号不能为空")
     private Long roleId;
 
-    @Schema(description = "菜单编号列表", example = "1,3,5")
-    private Set<Long> menuIds = Collections.emptySet(); // 兜底
+    @Schema(description = "菜单编号完整列表，全量替换已有授权；可省略，遗漏、null 或空数组均清空全部授权；追加需先查询并合并已有编号", nullable = true)
+    private Set<@NotNull(message = "授权编号不能为空") Long> menuIds = Collections.emptySet(); // 兜底
 
 }

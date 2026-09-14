@@ -76,7 +76,7 @@ public class WmsMovementOrderController {
     @PutMapping("/update")
     @Operation(summary = "更新移库单")
     @PreAuthorize("@ss.hasPermission('wms:movement-order:update')")
-    public CommonResult<Boolean> updateMovementOrder(@Valid @RequestBody WmsMovementOrderSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateMovementOrder(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody WmsMovementOrderSaveReqVO updateReqVO) {
         movementOrderService.updateMovementOrder(updateReqVO);
         return success(true);
     }

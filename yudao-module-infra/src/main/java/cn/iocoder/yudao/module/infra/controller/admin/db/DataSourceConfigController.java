@@ -38,7 +38,7 @@ public class DataSourceConfigController {
     @PutMapping("/update")
     @Operation(summary = "更新数据源配置")
     @PreAuthorize("@ss.hasPermission('infra:data-source-config:update')")
-    public CommonResult<Boolean> updateDataSourceConfig(@Valid @RequestBody DataSourceConfigSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateDataSourceConfig(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody DataSourceConfigSaveReqVO updateReqVO) {
         dataSourceConfigService.updateDataSourceConfig(updateReqVO);
         return success(true);
     }

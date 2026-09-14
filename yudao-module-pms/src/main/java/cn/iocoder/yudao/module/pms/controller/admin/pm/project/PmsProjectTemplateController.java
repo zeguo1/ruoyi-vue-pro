@@ -46,7 +46,7 @@ public class PmsProjectTemplateController {
     @PutMapping("/update")
     @Operation(summary = "更新项目模板")
     @PreAuthorize("@ss.hasPermission('pms:pm:project-template:update')")
-    public CommonResult<Boolean> updateProjectTemplate(@Valid @RequestBody PmsProjectTemplateSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateProjectTemplate(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody PmsProjectTemplateSaveReqVO updateReqVO) {
         projectTemplateService.updateProjectTemplate(updateReqVO);
         return success(true);
     }

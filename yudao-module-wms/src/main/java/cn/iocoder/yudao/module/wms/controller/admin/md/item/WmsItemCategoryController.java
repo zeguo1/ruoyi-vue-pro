@@ -39,7 +39,7 @@ public class WmsItemCategoryController {
     @PutMapping("/update")
     @Operation(summary = "更新商品分类")
     @PreAuthorize("@ss.hasPermission('wms:item-category:update')")
-    public CommonResult<Boolean> updateItemCategory(@Valid @RequestBody WmsItemCategorySaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateItemCategory(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody WmsItemCategorySaveReqVO updateReqVO) {
         categoryService.updateItemCategory(updateReqVO);
         return success(true);
     }

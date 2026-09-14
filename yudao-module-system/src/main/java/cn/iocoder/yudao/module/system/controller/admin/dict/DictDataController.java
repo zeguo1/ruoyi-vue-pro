@@ -49,7 +49,7 @@ public class DictDataController {
     @PutMapping("/update")
     @Operation(summary = "修改字典数据")
     @PreAuthorize("@ss.hasPermission('system:dict:update')")
-    public CommonResult<Boolean> updateDictData(@Valid @RequestBody DictDataSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateDictData(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody DictDataSaveReqVO updateReqVO) {
         dictDataService.updateDictData(updateReqVO);
         return success(true);
     }

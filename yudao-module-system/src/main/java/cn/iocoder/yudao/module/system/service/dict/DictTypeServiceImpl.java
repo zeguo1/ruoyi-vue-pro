@@ -56,6 +56,7 @@ public class DictTypeServiceImpl implements DictTypeService {
 
         // 插入字典类型
         DictTypeDO dictType = BeanUtils.toBean(createReqVO, DictTypeDO.class);
+        dictType.setId(null); // 创建时由数据库生成编号，忽略调用方传入的 id。
         dictType.setDeletedTime(LocalDateTimeUtils.EMPTY); // 唯一索引，避免 null 值
         dictTypeMapper.insert(dictType);
         return dictType.getId();

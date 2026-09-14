@@ -76,7 +76,7 @@ public class WmsCheckOrderController {
     @PutMapping("/update")
     @Operation(summary = "更新盘库单")
     @PreAuthorize("@ss.hasPermission('wms:check-order:update')")
-    public CommonResult<Boolean> updateCheckOrder(@Valid @RequestBody WmsCheckOrderSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateCheckOrder(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody WmsCheckOrderSaveReqVO updateReqVO) {
         checkOrderService.updateCheckOrder(updateReqVO);
         return success(true);
     }

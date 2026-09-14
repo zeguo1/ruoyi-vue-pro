@@ -55,7 +55,7 @@ public class MesProTaskIssueController {
     @PutMapping("/update")
     @Operation(summary = "更新生产任务投料")
     @PreAuthorize("@ss.hasPermission('mes:pro-task-issue:update')")
-    public CommonResult<Boolean> updateTaskIssue(@Valid @RequestBody MesProTaskIssueSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateTaskIssue(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesProTaskIssueSaveReqVO updateReqVO) {
         taskIssueService.updateTaskIssue(updateReqVO);
         return success(true);
     }

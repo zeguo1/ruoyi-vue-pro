@@ -47,7 +47,7 @@ public class HrmSalaryChangeTemplateController {
     @Operation(summary = "更新调薪模板")
     @PreAuthorize("@ss.hasPermission('hrm:salary:change-template:update')")
     public CommonResult<Boolean> updateSalaryChangeTemplate(
-            @Valid @RequestBody HrmSalaryChangeTemplateSaveReqVO updateReqVO) {
+            @Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody HrmSalaryChangeTemplateSaveReqVO updateReqVO) {
         salaryChangeTemplateService.updateSalaryChangeTemplate(updateReqVO);
         return success(true);
     }

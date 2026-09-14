@@ -60,7 +60,7 @@ public class HrmRecruitInterviewController {
     @PutMapping("/update")
     @Operation(summary = "更新招聘面试")
     @PreAuthorize("@ss.hasPermission('hrm:recruit:interview:update')")
-    public CommonResult<Boolean> updateRecruitInterview(@Valid @RequestBody HrmRecruitInterviewSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateRecruitInterview(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody HrmRecruitInterviewSaveReqVO updateReqVO) {
         recruitInterviewService.updateRecruitInterview(updateReqVO);
         return success(true);
     }

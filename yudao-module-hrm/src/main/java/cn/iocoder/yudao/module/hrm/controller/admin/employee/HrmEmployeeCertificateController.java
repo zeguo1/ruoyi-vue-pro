@@ -57,7 +57,7 @@ public class HrmEmployeeCertificateController {
     @Operation(summary = "更新员工证书")
     @PreAuthorize("@ss.hasPermission('hrm:employee:update')")
     public CommonResult<Boolean> updateCertificate(
-            @Valid @RequestBody HrmEmployeeCertificateSaveReqVO reqVO) {
+            @Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody HrmEmployeeCertificateSaveReqVO reqVO) {
         certificateService.updateCertificate(reqVO);
         return success(true);
     }

@@ -69,7 +69,7 @@ public class AiKnowledgeSegmentController {
     @PutMapping("/update")
     @Operation(summary = "更新段落内容")
     @PreAuthorize("@ss.hasPermission('ai:knowledge:update')")
-    public CommonResult<Boolean> updateKnowledgeSegment(@Valid @RequestBody AiKnowledgeSegmentSaveReqVO reqVO) {
+    public CommonResult<Boolean> updateKnowledgeSegment(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody AiKnowledgeSegmentSaveReqVO reqVO) {
         segmentService.updateKnowledgeSegment(reqVO);
         return success(true);
     }

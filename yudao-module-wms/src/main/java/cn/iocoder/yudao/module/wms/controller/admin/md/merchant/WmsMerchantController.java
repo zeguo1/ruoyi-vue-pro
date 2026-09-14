@@ -47,7 +47,7 @@ public class WmsMerchantController {
     @PutMapping("/update")
     @Operation(summary = "更新往来企业")
     @PreAuthorize("@ss.hasPermission('wms:merchant:update')")
-    public CommonResult<Boolean> updateMerchant(@Valid @RequestBody WmsMerchantSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateMerchant(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody WmsMerchantSaveReqVO updateReqVO) {
         merchantService.updateMerchant(updateReqVO);
         return success(true);
     }

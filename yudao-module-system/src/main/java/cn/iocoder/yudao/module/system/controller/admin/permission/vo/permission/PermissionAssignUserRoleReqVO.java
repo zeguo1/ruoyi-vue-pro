@@ -15,7 +15,7 @@ public class PermissionAssignUserRoleReqVO {
     @NotNull(message = "用户编号不能为空")
     private Long userId;
 
-    @Schema(description = "角色编号列表", example = "1,3,5")
-    private Set<Long> roleIds = Collections.emptySet(); // 兜底
+    @Schema(description = "角色编号完整列表，全量替换已有授权；可省略，遗漏、null 或空数组均清空全部授权；追加需先查询并合并已有编号", nullable = true)
+    private Set<@NotNull(message = "授权编号不能为空") Long> roleIds = Collections.emptySet(); // 兜底
 
 }

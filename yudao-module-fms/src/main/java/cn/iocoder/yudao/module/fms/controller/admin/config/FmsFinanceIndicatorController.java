@@ -47,7 +47,7 @@ public class FmsFinanceIndicatorController {
     @PutMapping("/update")
     @Operation(summary = "修改首页财务指标")
     @PreAuthorize("@ss.hasPermission('fms:config:finance-indicator:update')")
-    public CommonResult<Boolean> update(@Valid @RequestBody FmsFinanceIndicatorSaveReqVO reqVO) {
+    public CommonResult<Boolean> update(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody FmsFinanceIndicatorSaveReqVO reqVO) {
         financeIndicatorService.updateFinanceIndicator(reqVO, getLoginUserId());
         return success(true);
     }

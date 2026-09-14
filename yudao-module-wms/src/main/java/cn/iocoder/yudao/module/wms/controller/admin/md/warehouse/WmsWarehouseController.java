@@ -46,7 +46,7 @@ public class WmsWarehouseController {
     @PutMapping("/update")
     @Operation(summary = "更新仓库")
     @PreAuthorize("@ss.hasPermission('wms:warehouse:update')")
-    public CommonResult<Boolean> updateWarehouse(@Valid @RequestBody WmsWarehouseSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateWarehouse(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody WmsWarehouseSaveReqVO updateReqVO) {
         warehouseService.updateWarehouse(updateReqVO);
         return success(true);
     }

@@ -56,7 +56,7 @@ public class PmsKnowledgeLibraryTemplateController {
     @Operation(summary = "更新知识库模板")
     @PreAuthorize("@ss.hasPermission('pms:kb:library-template:update')")
     public CommonResult<Boolean> updateLibraryTemplate(
-            @Valid @RequestBody PmsKnowledgeLibraryTemplateSaveReqVO updateReqVO) {
+            @Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody PmsKnowledgeLibraryTemplateSaveReqVO updateReqVO) {
         libraryTemplateService.updateLibraryTemplate(updateReqVO);
         return success(true);
     }

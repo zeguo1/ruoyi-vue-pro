@@ -77,7 +77,7 @@ public class HrmAttendanceClockController {
     @PutMapping("/update")
     @Operation(summary = "修改打卡记录")
     @PreAuthorize("@ss.hasPermission('hrm:attendance:clock:update')")
-    public CommonResult<Boolean> updateAttendanceClock(@Valid @RequestBody HrmAttendanceClockSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateAttendanceClock(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody HrmAttendanceClockSaveReqVO updateReqVO) {
         attendanceClockService.updateAttendanceClock(updateReqVO);
         return success(true);
     }

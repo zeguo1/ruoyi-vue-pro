@@ -1,6 +1,7 @@
 package cn.iocoder.yudao.module.system.controller.admin.mail;
 
 
+import org.springframework.validation.annotation.Validated;
 import cn.iocoder.yudao.framework.common.pojo.CommonResult;
 import cn.iocoder.yudao.framework.common.pojo.PageResult;
 import cn.iocoder.yudao.framework.common.util.object.BeanUtils;
@@ -40,7 +41,7 @@ public class MailAccountController {
     @PutMapping("/update")
     @Operation(summary = "修改邮箱账号")
     @PreAuthorize("@ss.hasPermission('system:mail-account:update')")
-    public CommonResult<Boolean> updateMailAccount(@Valid @RequestBody MailAccountSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateMailAccount(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MailAccountSaveReqVO updateReqVO) {
         mailAccountService.updateMailAccount(updateReqVO);
         return success(true);
     }

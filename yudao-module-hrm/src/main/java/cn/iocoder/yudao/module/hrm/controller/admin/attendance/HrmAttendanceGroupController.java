@@ -61,7 +61,7 @@ public class HrmAttendanceGroupController {
     @PutMapping("/update")
     @Operation(summary = "修改考勤组")
     @PreAuthorize("@ss.hasPermission('hrm:attendance:group:update')")
-    public CommonResult<Boolean> updateAttendanceGroup(@Valid @RequestBody HrmAttendanceGroupSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateAttendanceGroup(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody HrmAttendanceGroupSaveReqVO updateReqVO) {
         attendanceGroupService.updateAttendanceGroup(updateReqVO);
         return success(true);
     }

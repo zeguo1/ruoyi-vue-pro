@@ -46,7 +46,7 @@ public class WmsItemBrandController {
     @PutMapping("/update")
     @Operation(summary = "更新商品品牌")
     @PreAuthorize("@ss.hasPermission('wms:item-brand:update')")
-    public CommonResult<Boolean> updateItemBrand(@Valid @RequestBody WmsItemBrandSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateItemBrand(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody WmsItemBrandSaveReqVO updateReqVO) {
         brandService.updateItemBrand(updateReqVO);
         return success(true);
     }

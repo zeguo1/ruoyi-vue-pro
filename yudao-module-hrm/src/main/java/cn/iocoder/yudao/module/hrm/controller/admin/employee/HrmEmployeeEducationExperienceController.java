@@ -58,7 +58,7 @@ public class HrmEmployeeEducationExperienceController {
     @Operation(summary = "更新员工教育经历")
     @PreAuthorize("@ss.hasPermission('hrm:employee:update')")
     public CommonResult<Boolean> updateEducationExperience(
-            @Valid @RequestBody HrmEmployeeEducationExperienceSaveReqVO reqVO) {
+            @Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody HrmEmployeeEducationExperienceSaveReqVO reqVO) {
         educationExperienceService.updateEducationExperience(reqVO);
         return success(true);
     }

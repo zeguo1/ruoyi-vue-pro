@@ -50,7 +50,7 @@ public class ImSensitiveWordManagerController {
     @PutMapping("/update")
     @Operation(summary = "修改敏感词")
     @PreAuthorize("@ss.hasPermission('im:manager:sensitive-word:update')")
-    public CommonResult<Boolean> updateSensitiveWord(@Valid @RequestBody ImSensitiveWordSaveReqVO reqVO) {
+    public CommonResult<Boolean> updateSensitiveWord(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody ImSensitiveWordSaveReqVO reqVO) {
         sensitiveWordService.updateSensitiveWord(reqVO);
         return success(true);
     }

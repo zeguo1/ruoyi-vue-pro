@@ -49,7 +49,7 @@ public class HrmAttendanceHolidayController {
     @PutMapping("/update")
     @Operation(summary = "修改考勤节假日")
     @PreAuthorize("@ss.hasPermission('hrm:attendance:holiday:update')")
-    public CommonResult<Boolean> updateAttendanceHoliday(@Valid @RequestBody HrmAttendanceHolidaySaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateAttendanceHoliday(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody HrmAttendanceHolidaySaveReqVO updateReqVO) {
         attendanceHolidayService.updateAttendanceHoliday(updateReqVO);
         return success(true);
     }

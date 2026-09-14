@@ -53,7 +53,7 @@ public class ProductSpuController {
     @PutMapping("/update")
     @Operation(summary = "更新商品 SPU")
     @PreAuthorize("@ss.hasPermission('product:spu:update')")
-    public CommonResult<Boolean> updateSpu(@Valid @RequestBody ProductSpuSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateSpu(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody ProductSpuSaveReqVO updateReqVO) {
         productSpuService.updateSpu(updateReqVO);
         return success(true);
     }

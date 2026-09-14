@@ -49,7 +49,7 @@ public class MesProRouteController {
     @PutMapping("/update")
     @Operation(summary = "更新工艺路线")
     @PreAuthorize("@ss.hasPermission('mes:pro-route:update')")
-    public CommonResult<Boolean> updateRoute(@Valid @RequestBody MesProRouteSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateRoute(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesProRouteSaveReqVO updateReqVO) {
         routeService.updateRoute(updateReqVO);
         return success(true);
     }

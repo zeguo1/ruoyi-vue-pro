@@ -60,7 +60,7 @@ public class PmsIterationController {
     @PutMapping("/update")
     @Operation(summary = "更新项目迭代")
     @PreAuthorize("@ss.hasPermission('pms:pm:iteration:update')")
-    public CommonResult<Boolean> updateIteration(@Valid @RequestBody PmsIterationSaveReqVO saveReqVO) {
+    public CommonResult<Boolean> updateIteration(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody PmsIterationSaveReqVO saveReqVO) {
         iterationService.updateIteration(saveReqVO, getLoginUserId());
         return success(true);
     }

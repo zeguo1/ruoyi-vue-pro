@@ -52,7 +52,7 @@ public class MesQcTemplateItemController {
     @PutMapping("/update")
     @Operation(summary = "更新质检方案-产品关联")
     @PreAuthorize("@ss.hasPermission('mes:qc-template:update')")
-    public CommonResult<Boolean> updateTemplateItem(@Valid @RequestBody MesQcTemplateItemSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateTemplateItem(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesQcTemplateItemSaveReqVO updateReqVO) {
         templateItemService.updateTemplateItem(updateReqVO);
         return success(true);
     }

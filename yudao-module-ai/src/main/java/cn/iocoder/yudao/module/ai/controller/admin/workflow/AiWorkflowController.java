@@ -1,5 +1,6 @@
 package cn.iocoder.yudao.module.ai.controller.admin.workflow;
 
+import org.springframework.validation.annotation.Validated;
 import cn.iocoder.yudao.framework.common.pojo.CommonResult;
 import cn.iocoder.yudao.framework.common.pojo.PageResult;
 import cn.iocoder.yudao.framework.common.util.object.BeanUtils;
@@ -36,7 +37,7 @@ public class AiWorkflowController {
     @PutMapping("/update")
     @Operation(summary = "更新 AI 工作流")
     @PreAuthorize("@ss.hasPermission('ai:workflow:update')")
-    public CommonResult<Boolean> updateWorkflow(@Valid @RequestBody AiWorkflowSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateWorkflow(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody AiWorkflowSaveReqVO updateReqVO) {
         workflowService.updateWorkflow(updateReqVO);
         return success(true);
     }

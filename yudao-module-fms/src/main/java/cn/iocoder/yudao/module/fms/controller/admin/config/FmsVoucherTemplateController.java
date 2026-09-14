@@ -54,7 +54,7 @@ public class FmsVoucherTemplateController {
     @Operation(summary = "修改凭证模板")
     @PreAuthorize("@ss.hasPermission('fms:config:voucher-template:update')")
     public CommonResult<Boolean> updateVoucherTemplate(
-            @Valid @RequestBody FmsVoucherTemplateSaveReqVO updateReqVO) {
+            @Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody FmsVoucherTemplateSaveReqVO updateReqVO) {
         voucherTemplateService.updateVoucherTemplate(updateReqVO, getLoginUserId());
         return success(true);
     }

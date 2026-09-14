@@ -38,7 +38,7 @@ public class IotDeviceModbusPointController {
     @PutMapping("/update")
     @Operation(summary = "更新设备 Modbus 点位配置")
     @PreAuthorize("@ss.hasPermission('iot:device:update')")
-    public CommonResult<Boolean> updateDeviceModbusPoint(@Valid @RequestBody IotDeviceModbusPointSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateDeviceModbusPoint(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody IotDeviceModbusPointSaveReqVO updateReqVO) {
         modbusPointService.updateDeviceModbusPoint(updateReqVO);
         return success(true);
     }

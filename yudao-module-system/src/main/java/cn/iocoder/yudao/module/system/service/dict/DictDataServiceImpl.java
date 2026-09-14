@@ -71,6 +71,7 @@ public class DictDataServiceImpl implements DictDataService {
 
         // 插入字典类型
         DictDataDO dictData = BeanUtils.toBean(createReqVO, DictDataDO.class);
+        dictData.setId(null); // 创建时由数据库生成编号，忽略调用方传入的 id。
         dictDataMapper.insert(dictData);
         return dictData.getId();
     }

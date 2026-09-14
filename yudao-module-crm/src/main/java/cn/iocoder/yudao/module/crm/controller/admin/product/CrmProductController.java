@@ -53,7 +53,7 @@ public class CrmProductController {
     @PutMapping("/update")
     @Operation(summary = "更新产品")
     @PreAuthorize("@ss.hasPermission('crm:product:update')")
-    public CommonResult<Boolean> updateProduct(@Valid @RequestBody CrmProductSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateProduct(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody CrmProductSaveReqVO updateReqVO) {
         productService.updateProduct(updateReqVO);
         return success(true);
     }

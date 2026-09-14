@@ -48,7 +48,7 @@ public class ConfigController {
     @PutMapping("/update")
     @Operation(summary = "修改参数配置")
     @PreAuthorize("@ss.hasPermission('infra:config:update')")
-    public CommonResult<Boolean> updateConfig(@Valid @RequestBody ConfigSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateConfig(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody ConfigSaveReqVO updateReqVO) {
         configService.updateConfig(updateReqVO);
         return success(true);
     }

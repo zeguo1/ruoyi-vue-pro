@@ -62,7 +62,7 @@ public class AiChatRoleController {
 
     @PutMapping("/update-my")
     @Operation(summary = "更新【我的】聊天角色")
-    public CommonResult<Boolean> updateChatRoleMy(@Valid @RequestBody AiChatRoleSaveMyReqVO updateReqVO) {
+    public CommonResult<Boolean> updateChatRoleMy(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody AiChatRoleSaveMyReqVO updateReqVO) {
         chatRoleService.updateChatRoleMy(updateReqVO, getLoginUserId());
         return success(true);
     }
@@ -93,7 +93,7 @@ public class AiChatRoleController {
     @PutMapping("/update")
     @Operation(summary = "更新聊天角色")
     @PreAuthorize("@ss.hasPermission('ai:chat-role:update')")
-    public CommonResult<Boolean> updateChatRole(@Valid @RequestBody AiChatRoleSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateChatRole(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody AiChatRoleSaveReqVO updateReqVO) {
         chatRoleService.updateChatRole(updateReqVO);
         return success(true);
     }

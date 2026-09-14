@@ -53,7 +53,7 @@ public class MesWmReturnVendorLineController {
     @PutMapping("/update")
     @Operation(summary = "修改供应商退货单行")
     @PreAuthorize("@ss.hasPermission('mes:wm-return-vendor:update')")
-    public CommonResult<Boolean> updateReturnVendorLine(@Valid @RequestBody MesWmReturnVendorLineSaveReqVO updateReqVO) {
+    public CommonResult<Boolean> updateReturnVendorLine(@Validated(cn.iocoder.yudao.framework.common.validation.Update.class) @RequestBody MesWmReturnVendorLineSaveReqVO updateReqVO) {
         returnVendorLineService.updateReturnVendorLine(updateReqVO);
         return success(true);
     }
