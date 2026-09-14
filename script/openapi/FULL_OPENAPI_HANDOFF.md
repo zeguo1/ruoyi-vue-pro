@@ -1,5 +1,7 @@
 # 全量业务 OpenAPI 修复与知办交接
 
+> 本文保留 v4 历史记录。最新全业务后端契约修复及线上验证见 [BACKEND_HANDOFF_V5.md](BACKEND_HANDOFF_V5.md)，当前版本为 `1.0.0-full-contract-v5`。
+
 核验时间：2026-09-14T10:43:06.723439+00:00。最终版本：`1.0.0-full-contract-v4`。代码已提交并推送到 `origin/master-jdk17`，提交 `5462876c28`（全量模型、生成与请求校验）和 `2ec0c4db7a`（业务接口引用的 SDK 模型）。
 
 ## 当前可用文档与部署

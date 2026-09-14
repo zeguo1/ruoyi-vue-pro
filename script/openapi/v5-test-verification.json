@@ -1,0 +1,1921 @@
+{
+  "verifiedAt": "2026-09-14T13:00:19.993912+00:00",
+  "tests": [
+    {
+      "name": "cn.iocoder.yudao.server.contract.BackendHandoffContractTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.FullOpenApiModelAuditTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.ExternalOpenApiContractTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.OpenApiItemSchemaTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.ContractSchemaCustomizerTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.FullContractValidationTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.FullOpenApiExportTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.module.erp.service.sale.ErpSaleOrderContractTest",
+      "tests": 24,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "totalTests": 42,
+  "sourceCommit": "43de3eaaa7",
+  "jarSha256": "5e6d134bfedc2705da72a6046a175fa0191a68f681b51c4d5d1c56a874f35207",
+  "isolatedOpenApi": {
+    "version": "v0",
+    "sha256": "a8708626d10a9ed9d42fb868f22ed1cc4536a2486a9326e819561f1460f20079",
+    "operationCount": 3437,
+    "newUpdateContractsChecked": 192,
+    "allUpdateIdOperationsChecked": 339,
+    "commonResultJsonOperations": 2871,
+    "otherResponseMedia": [
+      {
+        "operation": "PUT /drag/onlDragShare/edit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragShare/edit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "PUT /drag/onlDragDatasetParam/edit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDatasetParam/edit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "PUT /drag/onlDragDatasetHead/edit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDatasetHead/edit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "PUT /drag/onlDragDatasetHead/copyById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDatasetHead/copyById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "PUT /drag/onlDragDataSource/edit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDataSource/edit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "PUT /drag/jimuReportIconLib/edit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/jimuReportIconLib/edit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/upload",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/updateNameById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/testConnection",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/test/submit/handle",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/test/submit/handle",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/source/unlinkDbByReportIdAndDbId",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/source/linkJmReportShareDb",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/source/delShareDbByDbId",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/source/datasource/files/add",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/source/dataset/files/single/save",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/show",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/show",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/sheet/reorderSheets",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/sheet/renameSheet",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/sheet/addSheet",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/share/batchCancelShareByIds",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/share/addAndEdit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/save",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/saveDb",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/revertReportById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/qurestSql",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/qurestApi",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/queryTableName",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/queryTableFields",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/querySourceCode",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/queryFieldBySql",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/queryFieldByBean",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/putFile",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/map/queryMapByCode",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/map/delMapSource",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/map/addMapData",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/loadTable",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/loadTableData",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/link/saveAndEdit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/link/delete",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/importReportConfig",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/importExcel",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/group/save",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/getQueryInfo",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/getQueryInfo",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/getCharData",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/generateTestData",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/form/validate/java",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/form/submit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/exportAllExcel",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/executeSelectApi",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/excelQueryName",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/excelCreate",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/editEnhance",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/dictItem/edit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/dictItem/add",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/dict/edit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/dict/batchRevert",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/dict/back",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/dict/add",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/deleteParamByIds",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/delDataSource",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/category/updateJmTypeByCategoryId",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/category/reductionById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/category/folder/sort",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/category/edit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/category/batchMoveFilesAndFolder",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/category/add",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/auto/export",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/auto/export/python/plugin",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/auto/export/plugin",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/auto/export/job/status/update",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/auto/export/job/save",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/auto/export/job/run/{jobId}",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/ai/tableMeta/sync",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/ai/tableMeta/syncOne",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/ai/tableMeta/saveOrUpdate",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/ai/tableMeta/relations",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/ai/tableMeta/enabled",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/ai/tableMeta/comment",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/ai/tableMeta/columns",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/ai/tableMeta/columns",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/ai/assistant/intentCheck",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/ai/assistant/generateSql",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/ai/assistant/generatePrompt",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/ai/assistant/generateChart",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/ai/assistant/generateChart/stream",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/ai/assistant/createReport/stream",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/ai/assistant/chooseTables",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/addViewCount/{id}",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/addDataSource",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jimureport/test/customCellEdit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/websocket/sendData",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/websocket/sendBtnData",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/page/saveCompToPage",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/page/recoveryDelete",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/page/importDragConfig",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/page/edit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/page/comp/edit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/page/comp/add",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/page/clearRecovery",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/page/aiPolishScreenPrompt",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/page/aiModifyScreenSse",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/page/aiGenerateScreen",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/page/aiGenerateScreenSse",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/page/aiDiscussScreenSse",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/page/add",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragShare/add",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDatasetParam/add",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDatasetHead/updateGroup",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDatasetHead/queryUsageCount",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDatasetHead/queryFileFieldBySql",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDatasetHead/queryFieldBySql",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDatasetHead/queryFieldByApi",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDatasetHead/previewData",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDatasetHead/getTotalData",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDatasetHead/getTotalDataByCompId",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDatasetHead/getRawTableData",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDatasetHead/getDataForDesign",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDatasetHead/getChartData",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDatasetHead/getAllChartData",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDatasetHead/add",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDatasetHead/addGroup",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDataSource/testConnection",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDataSource/executeSql",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/onlDragDataSource/add",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/jimuReportIconLib/add",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/comp/edit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/comp/add",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/category/reductionById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/category/edit",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/category/clearRecovery",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/category/add",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /admin-api/pay/notify/transfer/{channelId}",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /admin-api/pay/notify/refund/{channelId}",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /admin-api/pay/notify/order/{channelId}",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /admin-api/mp/open/{appId}",
+        "status": "200",
+        "mediaType": "text/plain;charset=utf-8"
+      },
+      {
+        "operation": "POST /admin-api/mp/open/{appId}",
+        "status": "200",
+        "mediaType": "application/xml;charset=UTF-8"
+      },
+      {
+        "operation": "POST /admin-api/mp/open/{appId}",
+        "status": "200",
+        "mediaType": "application/xml; charset=UTF-8"
+      },
+      {
+        "operation": "POST /admin-api/ai/write/generate-stream",
+        "status": "200",
+        "mediaType": "text/event-stream"
+      },
+      {
+        "operation": "POST /admin-api/ai/mind-map/generate-stream",
+        "status": "200",
+        "mediaType": "text/event-stream"
+      },
+      {
+        "operation": "POST /admin-api/ai/chat/message/send-stream",
+        "status": "200",
+        "mediaType": "text/event-stream"
+      },
+      {
+        "operation": "GET /jmreport/userinfo",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/test/test/i18n",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/test/submit/handle/repeat/check",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/test/submit/dict/political",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/test/getUserMsg",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/test/getUserList",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/test/getRoleList",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/test/getPopupList",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/test/getOrder",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/test/getDictSex",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/test/getDepartmentList",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/source/getJmReportSharedDbPageList",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/source/datasource/files/preview",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/source/datasource/files/get",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/source/dataset/files/single/get",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/sheet/getSheetList/{id}",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/sheet/getSheetData",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/share/verification",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/share/queryJurisdiction",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/share/getSharePageList",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/setTemplate",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/reportCopy",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/queryIsPage/{reportId}",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/query/report/folder",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/query/report/folder/template",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/query/multiple/initValue",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/open/list",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/mockPieData",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/mockChartData",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/map/mapList",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/loadDbData/{dbId}",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/link/queryByIds",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/link/getLinkData",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/initDataSource",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/group/query",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/group/get",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/getReportChars",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/getReportByUser",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/getMaintainDataSourceByPage",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/getListReportDb",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/getLinkageChartInfo",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/getDataSourceType",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/getDataSourceByPage",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/getDataSourceById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/getCount",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/get/{id}",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/form/repeat/check/{reportId}/{field}/{value}",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/form/getUserList",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/form/getTableDictList",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/form/getRoleList",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/form/getPopupList",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/form/getDictList",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/form/getDepartmentList",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/field/tree/{reportId}",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/exportReportConfig",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/excelQuery",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/excelQueryByTemplate",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/download/image",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/dictItem/list",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/dictCodeSearch",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/dict/refleshCache",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/dict/list",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/dict/deleteList",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/delDbData/{dbId}",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/dataCodeExist",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/checkParam/{id}",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/category/queryRecycleBin",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/category/query/report/count",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/category/list",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/category/getById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/auto/export/logs/query",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/auto/export/job/query",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/auto/export/job/get",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/auto/export/download/{batchNo}",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/auto/export/download/{batchNo}/{signature}",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/ai/tableMeta/page",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jimureport/test/getOne",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jimureport/test/getList",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/page/queryTemplateList",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/page/queryPageById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/page/queryById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/page/list",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/page/getShareInfo",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/page/getCount",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/page/exportDragConfig",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/page/copyPage",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/page/comp/queryById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/page/comp/createDefChart",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/page/comp/copyById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/page/aiScreenTaskStatus",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/page/addVisitsNumber",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/onlDragShare/getByPageId",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/onlDragDatasetParam/queryById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/onlDragDatasetParam/list",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/onlDragDatasetHead/updateChartOptSse",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/onlDragDatasetHead/queryById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/onlDragDatasetHead/queryByDbId",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/onlDragDatasetHead/queryAllById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/onlDragDatasetHead/list",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/onlDragDatasetHead/getMapDataByCode",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/onlDragDatasetHead/getLoginUser",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/onlDragDatasetHead/getDictByCodes",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/onlDragDatasetHead/getDbSetByCodeAndDb",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/onlDragDatasetHead/getAllGroup",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/onlDragDatasetHead/generateSqlSse",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/onlDragDatasetHead/generateChartSse",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/onlDragDataSource/queryByReportId",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/onlDragDataSource/queryById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/onlDragDataSource/list",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/onlDragDataSource/getOptions",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/mock/json/{filename}",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/jimuReportIconLib/queryById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/jimuReportIconLib/list",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/jimuDragMap/list",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/comp/treeList",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/comp/searchByKeywords",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/comp/queryCompTreeSync",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/comp/page",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/comp/list",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/category/queryRecycleList",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/category/queryRecycleCount",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/category/queryCountById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/category/list",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/category/getById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/bigscreen/skill/reload",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/bigscreen/skill/references",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/bigscreen/skill/reference",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/bigscreen/skill/meta",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/bigscreen/skill/main",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/bigscreen/skill/extract",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/source/datasource/files/del",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/source/datasource/files/del/file",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/sheet/deleteSheet",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/group/delete",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/dictItem/delete",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/dictItem/deleteBatch",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/dict/thoroughDelete",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/dict/delete",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/dict/deleteBatch",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/dict/batchRealDelete",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/delete",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/deleteReportById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/deleteFieldByIds",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/deleteBatch",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/clearRecycleBin",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/category/deleteById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/category/completelyDeleteById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/auto/export/logs",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/auto/export/job/delete",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /drag/page/physicalDelete",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /drag/page/delete",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /drag/page/deleteBatch",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /drag/page/comp/delete",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /drag/page/comp/deleteById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /drag/onlDragShare/delete",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /drag/onlDragDatasetParam/delete",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /drag/onlDragDatasetParam/deleteBatch",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /drag/onlDragDatasetHead/delete",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /drag/onlDragDatasetHead/delDragDataSetHeadGroup",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /drag/onlDragDataSource/delete",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /drag/onlDragDataSource/deleteBatch",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /drag/jimuReportIconLib/delete",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /drag/jimuReportIconLib/deleteBatch",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /drag/comp/delete",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /drag/comp/deleteBatch",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /drag/category/physicalDelete",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /drag/category/deleteById",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /jmreport/addChart",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "PUT /jmreport/addChart",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /jmreport/addChart",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /jmreport/addChart",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "OPTIONS /jmreport/addChart",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "HEAD /jmreport/addChart",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "PATCH /jmreport/addChart",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "GET /drag/page/refreshCache",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "PUT /drag/page/refreshCache",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "POST /drag/page/refreshCache",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "DELETE /drag/page/refreshCache",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "OPTIONS /drag/page/refreshCache",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "HEAD /drag/page/refreshCache",
+        "status": "200",
+        "mediaType": "*/*"
+      },
+      {
+        "operation": "PATCH /drag/page/refreshCache",
+        "status": "200",
+        "mediaType": "*/*"
+      }
+    ],
+    "errors": [],
+    "checkedUpdateOperations": [
+      "PUT /admin-api/wms/warehouse/update",
+      "PUT /admin-api/wms/shipment-order/update",
+      "PUT /admin-api/wms/receipt-order/update",
+      "PUT /admin-api/wms/movement-order/update",
+      "PUT /admin-api/wms/merchant/update",
+      "PUT /admin-api/wms/item/update",
+      "PUT /admin-api/wms/item-category/update",
+      "PUT /admin-api/wms/item-brand/update",
+      "PUT /admin-api/wms/check-order/update",
+      "PUT /admin-api/system/user/update",
+      "PUT /admin-api/system/tenant/update",
+      "PUT /admin-api/system/tenant-package/update",
+      "PUT /admin-api/system/social-client/update",
+      "PUT /admin-api/system/sms-template/update",
+      "PUT /admin-api/system/sms-channel/update",
+      "PUT /admin-api/system/role/update",
+      "PUT /admin-api/system/post/update",
+      "PUT /admin-api/system/oauth2-client/update",
+      "PUT /admin-api/system/notify-template/update",
+      "PUT /admin-api/system/notice/update",
+      "PUT /admin-api/system/menu/update",
+      "PUT /admin-api/system/mail-template/update",
+      "PUT /admin-api/system/mail-account/update",
+      "PUT /admin-api/system/dict-type/update",
+      "PUT /admin-api/system/dict-data/update",
+      "PUT /admin-api/system/dept/update",
+      "PUT /admin-api/product/spu/update",
+      "PUT /admin-api/product/property/value/update",
+      "PUT /admin-api/product/property/update",
+      "PUT /admin-api/product/category/update",
+      "PUT /admin-api/pms/pm/work-item/update",
+      "PUT /admin-api/pms/pm/work-item-work-log/update",
+      "PUT /admin-api/pms/pm/work-item-label/update",
+      "PUT /admin-api/pms/pm/work-item-comment/update",
+      "PUT /admin-api/pms/pm/project/update",
+      "PUT /admin-api/pms/pm/project-template/update",
+      "PUT /admin-api/pms/pm/project-group/update",
+      "PUT /admin-api/pms/pm/project-announcement/update",
+      "PUT /admin-api/pms/pm/iteration/update",
+      "PUT /admin-api/pms/kb/library/update",
+      "PUT /admin-api/pms/kb/library-template/update",
+      "PUT /admin-api/pms/kb/group/update",
+      "PUT /admin-api/pms/kb/folder/update",
+      "PUT /admin-api/pms/kb/document-label/update",
+      "PUT /admin-api/mes/wm/transfer/update",
+      "PUT /admin-api/mes/wm/transfer-line/update",
+      "PUT /admin-api/mes/wm/transfer-detail/update",
+      "PUT /admin-api/mes/wm/stocktaking-task/update",
+      "PUT /admin-api/mes/wm/stocktaking-task-result/update",
+      "PUT /admin-api/mes/wm/stocktaking-task-line/update",
+      "PUT /admin-api/mes/wm/stocktaking-plan/update",
+      "PUT /admin-api/mes/wm/stocktaking-plan-param/update",
+      "PUT /admin-api/mes/wm/sales-notice/update",
+      "PUT /admin-api/mes/wm/sales-notice-line/update",
+      "PUT /admin-api/mes/wm/return-vendor/update",
+      "PUT /admin-api/mes/wm/return-vendor-line/update",
+      "PUT /admin-api/mes/wm/return-vendor-detail/update",
+      "PUT /admin-api/mes/wm/return-sales/update",
+      "PUT /admin-api/mes/wm/return-sales-line/update",
+      "PUT /admin-api/mes/wm/return-sales-detail/update",
+      "PUT /admin-api/mes/wm/return-issue/update",
+      "PUT /admin-api/mes/wm/return-issue-line/update",
+      "PUT /admin-api/mes/wm/return-issue-detail/update",
+      "PUT /admin-api/mes/wm/product-sales/update",
+      "PUT /admin-api/mes/wm/product-sales-line/update",
+      "PUT /admin-api/mes/wm/product-sales-detail/update",
+      "PUT /admin-api/mes/wm/product-receipt/update",
+      "PUT /admin-api/mes/wm/product-receipt-line/update",
+      "PUT /admin-api/mes/wm/product-receipt-detail/update",
+      "PUT /admin-api/mes/wm/product-issue/update",
+      "PUT /admin-api/mes/wm/product-issue-line/update",
+      "PUT /admin-api/mes/wm/product-issue-detail/update",
+      "PUT /admin-api/mes/wm/package/update",
+      "PUT /admin-api/mes/wm/package-line/update",
+      "PUT /admin-api/mes/wm/outsource-receipt/update",
+      "PUT /admin-api/mes/wm/outsource-receipt-line/update",
+      "PUT /admin-api/mes/wm/outsource-receipt-detail/update",
+      "PUT /admin-api/mes/wm/outsource-issue/update",
+      "PUT /admin-api/mes/wm/outsource-issue-line/update",
+      "PUT /admin-api/mes/wm/outsource-issue-detail/update",
+      "PUT /admin-api/mes/wm/misc-receipt/update",
+      "PUT /admin-api/mes/wm/misc-receipt-line/update",
+      "PUT /admin-api/mes/wm/misc-issue/update",
+      "PUT /admin-api/mes/wm/misc-issue-line/update",
+      "PUT /admin-api/mes/wm/item-receipt/update",
+      "PUT /admin-api/mes/wm/item-receipt-line/update",
+      "PUT /admin-api/mes/wm/item-receipt-detail/update",
+      "PUT /admin-api/mes/wm/barcode/update",
+      "PUT /admin-api/mes/wm/barcode-config/update",
+      "PUT /admin-api/mes/wm/arrival-notice/update",
+      "PUT /admin-api/mes/wm/arrival-notice-line/update",
+      "PUT /admin-api/mes/qc/template/update",
+      "PUT /admin-api/mes/qc/template/item/update",
+      "PUT /admin-api/mes/qc/template/indicator/update",
+      "PUT /admin-api/mes/qc/rqc/update",
+      "PUT /admin-api/mes/qc/oqc/update",
+      "PUT /admin-api/mes/qc/iqc/update",
+      "PUT /admin-api/mes/qc/ipqc/update",
+      "PUT /admin-api/mes/qc/indicator-result/update",
+      "PUT /admin-api/mes/qc/defect-record/update",
+      "PUT /admin-api/mes/pro/task-issue/update",
+      "PUT /admin-api/mes/pro/route/update",
+      "PUT /admin-api/mes/pro/route-product/update",
+      "PUT /admin-api/mes/pro/route-product-bom/update",
+      "PUT /admin-api/mes/pro/route-process/update",
+      "PUT /admin-api/mes/pro/process/update",
+      "PUT /admin-api/mes/pro/process-content/update",
+      "PUT /admin-api/mes/md/product-sop/update",
+      "PUT /admin-api/mes/md/product-sip/update",
+      "PUT /admin-api/mes/md/product-bom/update",
+      "PUT /admin-api/mes/md/auto-code-rule/update",
+      "PUT /admin-api/mes/md/auto-code-part/update",
+      "PUT /admin-api/mes/md-workstation-worker/update",
+      "PUT /admin-api/mes/md-workstation-tool/update",
+      "PUT /admin-api/mes/dv/repair/update",
+      "PUT /admin-api/mes/dv/repair-line/update",
+      "PUT /admin-api/mes/dv/mainten-record/update",
+      "PUT /admin-api/mes/dv/mainten-record-line/update",
+      "PUT /admin-api/mes/dv/check-record/update",
+      "PUT /admin-api/mes/dv/check-record-line/update",
+      "PUT /admin-api/mes/dv/check-plan/update",
+      "PUT /admin-api/mes/cal/team/update",
+      "PUT /admin-api/mes/cal/plan/update",
+      "PUT /admin-api/mes/cal/plan-shift/update",
+      "PUT /admin-api/iot/thing-model/update",
+      "PUT /admin-api/iot/product/update",
+      "PUT /admin-api/iot/device/update",
+      "PUT /admin-api/iot/device-modbus-point/update",
+      "PUT /admin-api/iot/data-sink/update",
+      "PUT /admin-api/iot/data-rule/update",
+      "PUT /admin-api/iot/alert-config/update",
+      "PUT /admin-api/infra/job/update",
+      "PUT /admin-api/infra/file-config/update",
+      "PUT /admin-api/infra/data-source-config/update",
+      "PUT /admin-api/infra/config/update",
+      "PUT /admin-api/im/manager/sensitive-word/update",
+      "PUT /admin-api/im/manager/face-pack/update",
+      "PUT /admin-api/im/manager/face-pack-item/update",
+      "PUT /admin-api/im/manager/channel/update",
+      "PUT /admin-api/im/manager/channel-material/update",
+      "PUT /admin-api/hrm/salary/tax-rule/update",
+      "PUT /admin-api/hrm/salary/slip-template/update",
+      "PUT /admin-api/hrm/salary/group/update",
+      "PUT /admin-api/hrm/salary/change-template/update",
+      "PUT /admin-api/hrm/recruit/post/update",
+      "PUT /admin-api/hrm/recruit/interview/update",
+      "PUT /admin-api/hrm/recruit/channel/update",
+      "PUT /admin-api/hrm/recruit/candidate/update",
+      "PUT /admin-api/hrm/performance/result-template/update",
+      "PUT /admin-api/hrm/performance/plan/update",
+      "PUT /admin-api/hrm/performance/assessment-template/update",
+      "PUT /admin-api/hrm/insurance/scheme/update",
+      "PUT /admin-api/hrm/employee/work-experience/update",
+      "PUT /admin-api/hrm/employee/update",
+      "PUT /admin-api/hrm/employee/training-experience/update",
+      "PUT /admin-api/hrm/employee/education-experience/update",
+      "PUT /admin-api/hrm/employee/contract/update",
+      "PUT /admin-api/hrm/employee/contact/update",
+      "PUT /admin-api/hrm/employee/certificate/update",
+      "PUT /admin-api/hrm/attendance/holiday/update",
+      "PUT /admin-api/hrm/attendance/group/update",
+      "PUT /admin-api/hrm/attendance/clock/update",
+      "PUT /admin-api/fms/voucher/update",
+      "PUT /admin-api/fms/config/voucher-word/update",
+      "PUT /admin-api/fms/config/voucher-template/update",
+      "PUT /admin-api/fms/config/voucher-template-category/update",
+      "PUT /admin-api/fms/config/subject/update",
+      "PUT /admin-api/fms/config/finance-indicator/update",
+      "PUT /admin-api/fms/config/digest/update",
+      "PUT /admin-api/fms/config/currency/update",
+      "PUT /admin-api/fms/config/auxiliary-type/update",
+      "PUT /admin-api/fms/config/auxiliary-item/update",
+      "PUT /admin-api/fms/config/account-set/update",
+      "PUT /admin-api/fms/closing/template/update",
+      "PUT /admin-api/fms/closing/scheme/update",
+      "PUT /admin-api/crm/receivable/update",
+      "PUT /admin-api/crm/product/update",
+      "PUT /admin-api/crm/product-category/update",
+      "PUT /admin-api/crm/performance-config/update",
+      "PUT /admin-api/crm/contact/update",
+      "PUT /admin-api/crm/clue/update",
+      "PUT /admin-api/bpm/user-group/update",
+      "PUT /admin-api/bpm/model/update",
+      "PUT /admin-api/bpm/form/update",
+      "PUT /admin-api/ai/workflow/update",
+      "PUT /admin-api/ai/model/update",
+      "PUT /admin-api/ai/knowledge/update",
+      "PUT /admin-api/ai/knowledge/segment/update",
+      "PUT /admin-api/ai/chat-role/update",
+      "PUT /admin-api/ai/chat-role/update-my",
+      "PUT /admin-api/infra/demo03-student-erp/demo03-grade/update",
+      "PUT /admin-api/infra/demo03-student-erp/demo03-course/update"
+    ]
+  },
+  "productionBusinessTestWrites": 0,
+  "knowDoConnectorSynchronized": false
+}

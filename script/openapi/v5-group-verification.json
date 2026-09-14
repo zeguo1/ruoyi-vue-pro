@@ -1,0 +1,182 @@
+[
+  {
+    "group": "ai",
+    "operations": 104,
+    "schemas": 106,
+    "properties": 507,
+    "sha256": "dc3e386aa77a907ec4716eda3f4bc6ab37ca93687412eaffa758f3c7411adc3e",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  },
+  {
+    "group": "all",
+    "operations": 3040,
+    "schemas": 3193,
+    "properties": 17800,
+    "sha256": "88eb1ca72d5312ceb4bb3b47fd94d8a0a566febcb40872bb72df67aa10963b36",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  },
+  {
+    "group": "bpm",
+    "operations": 79,
+    "schemas": 119,
+    "properties": 596,
+    "sha256": "8b8c3044b627da649d5d6ecea02f85e85eee3a83687e092f543417fe4a32f47a",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  },
+  {
+    "group": "crm",
+    "operations": 167,
+    "schemas": 161,
+    "properties": 857,
+    "sha256": "a95c38033a25835376503f6219db3cda6efeac28ae151708c53af8889e0fb62d",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  },
+  {
+    "group": "erp",
+    "operations": 146,
+    "schemas": 144,
+    "properties": 960,
+    "sha256": "8e9588a5ded4ecc0c60032510ae3fce8919e91c9c93ea32d8dcc53309590c37a",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  },
+  {
+    "group": "fms",
+    "operations": 141,
+    "schemas": 156,
+    "properties": 904,
+    "sha256": "c6e638ede0f1a2eee0c2eae321573387ceb4cf57f4228bd384f9da22e56c4ea7",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  },
+  {
+    "group": "hrm",
+    "operations": 311,
+    "schemas": 357,
+    "properties": 2289,
+    "sha256": "aaead5c9273fd6b58234b698cde2b07176d0ac1aaea9b952483d4006e27b5035",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  },
+  {
+    "group": "im",
+    "operations": 127,
+    "schemas": 132,
+    "properties": 625,
+    "sha256": "842f700a893f5453e4aae215f7c14782b5e9068166d7594eab8282ac6936d512",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  },
+  {
+    "group": "infra",
+    "operations": 116,
+    "schemas": 95,
+    "properties": 452,
+    "sha256": "0069865815d14a1396962490d08da4c30c7d7d50e87258ce45b258e7b2f6ab1f",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  },
+  {
+    "group": "iot",
+    "operations": 102,
+    "schemas": 134,
+    "properties": 577,
+    "sha256": "dae1bec82974d2104c25a4f13f4e53438327064c9d90d4ad2e25fdbec1441268",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  },
+  {
+    "group": "member",
+    "operations": 72,
+    "schemas": 102,
+    "properties": 410,
+    "sha256": "471f3783de77f1ac5f3be7bcf39464b3ecf0f92051057d827f2ee5195a389490",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  },
+  {
+    "group": "mes",
+    "operations": 766,
+    "schemas": 639,
+    "properties": 4080,
+    "sha256": "6b30d100dcbf7c6a75750c7866e799e5560edf72453eb481a5827ca69a23a846",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  },
+  {
+    "group": "mp",
+    "operations": 52,
+    "schemas": 74,
+    "properties": 382,
+    "sha256": "2cbd8fae5dcf1f1c49872e258fdebed0c49f00d525f08f1b2b22edb1157bea31",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  },
+  {
+    "group": "pay",
+    "operations": 60,
+    "schemas": 87,
+    "properties": 461,
+    "sha256": "785bd3350ee99b3bd76ce6a99ad36d678f2671e1c27e5fdb9cce5bbc1334e31b",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  },
+  {
+    "group": "pms",
+    "operations": 145,
+    "schemas": 166,
+    "properties": 803,
+    "sha256": "804784797e574bc54089cca73545260dc63f44eb1acb6b91e82713c1ec3ec839",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  },
+  {
+    "group": "product",
+    "operations": 55,
+    "schemas": 75,
+    "properties": 399,
+    "sha256": "5c12f642c59b15e8b37375f841dbbcac7ce1b2aff9df2ac3e8c2da17cb2eb097",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  },
+  {
+    "group": "promotion",
+    "operations": 172,
+    "schemas": 213,
+    "properties": 1141,
+    "sha256": "450d531c8567ee73b479cb6e5371035e8b3cb2aa29b3f30a6b68795c8996b7b1",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  },
+  {
+    "group": "system",
+    "operations": 212,
+    "schemas": 198,
+    "properties": 907,
+    "sha256": "3912766d2ef2cf8825e0f5b2ee6aff766d6ed9d6db25230f450152bc0b50adb0",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  },
+  {
+    "group": "trade",
+    "operations": 98,
+    "schemas": 160,
+    "properties": 976,
+    "sha256": "32ad7ced07d5fbbfb2ebafd5b960b7e6e3bfaf1ccc010d3b4ef521391fdd8168",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  },
+  {
+    "group": "wms",
+    "operations": 77,
+    "schemas": 82,
+    "properties": 480,
+    "sha256": "532137db0906650cfe72a20650b1fd1b15074f3deb39c12e905a0c4ac85af614",
+    "version": "1.0.0-full-contract-v5",
+    "errors": []
+  }
+]

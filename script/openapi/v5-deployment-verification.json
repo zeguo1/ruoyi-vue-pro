@@ -1,0 +1,48 @@
+{
+  "verifiedAt": "2026-09-14T13:03:42.088525+00:00",
+  "version": "1.0.0-full-contract-v5",
+  "sourceCommit": "43de3eaaa7",
+  "container": "mgs199-server-1",
+  "status": "running",
+  "health": "healthy",
+  "startedAt": "2026-09-14T12:59:48.072822618Z",
+  "restartCount": 0,
+  "jarSha256": "5e6d134bfedc2705da72a6046a175fa0191a68f681b51c4d5d1c56a874f35207",
+  "businessOpenApiSha256": "88eb1ca72d5312ceb4bb3b47fd94d8a0a566febcb40872bb72df67aa10963b36",
+  "groupCount": 20,
+  "offlineKnowDoSuccessCheck": {
+    "scope": "Local importer only; no connector changes, no business execution",
+    "documentVersion": "1.0.0-full-contract-v5",
+    "checks": [
+      {
+        "path": "/admin-api/erp/sale-order/create",
+        "mediaType": "application/json",
+        "success": {
+          "path": "code",
+          "equals": 0
+        },
+        "supported": true
+      },
+      {
+        "path": "/admin-api/system/dept/create",
+        "mediaType": "application/json",
+        "success": {
+          "path": "code",
+          "equals": 0
+        },
+        "supported": true
+      },
+      {
+        "path": "/admin-api/system/captcha/check",
+        "mediaType": "application/json",
+        "success": {
+          "path": "repCode",
+          "equals": "0000"
+        },
+        "supported": true
+      }
+    ]
+  },
+  "knowDoConnectorSynchronized": false,
+  "productionBusinessTestWrites": 0
+}
