@@ -96,3 +96,4 @@ mgs:
       enabled: false
     sms-verification:
       enabled: false
+      template-code: trial-mobile-verify
