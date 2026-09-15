@@ -13,7 +13,7 @@ import static cn.iocoder.yudao.framework.common.util.date.DateUtils.FORMAT_YEAR_
 @Data
 public class ConfigPageReqVO extends PageParam {
 
-    @Schema(description = "数据源名称，模糊匹配", example = "名称")
+    @Schema(description = "参数配置名称，模糊匹配", example = "名称")
     private String name;
 
     @Schema(description = "参数键名，模糊匹配", example = "yunai.db.username")

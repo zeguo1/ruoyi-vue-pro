@@ -58,6 +58,32 @@ def verify(document):
             check('0 表示成功' in code.get('description', '') and '非 0 表示失败' in code.get('description', ''),
                   key + ' 标准响应 Schema 缺少业务成功/失败依据')
 
+    for method, action in [('post', 'create'), ('put', 'update')]:
+        op = document['paths']['/admin-api/erp/stock-check/' + action][method]
+        schema, _ = evidence.resolve(op['requestBody']['content']['application/json']['schema'])
+        check('盘点' in schema.get('description', '') and '出库' not in schema.get('description', ''),
+              '库存盘点请求模型不能描述成出库单: ' + action)
+        for name in ('id', 'checkTime', 'items'):
+            field, _ = evidence.resolve(schema['properties'][name])
+            description = field.get('description', '')
+            expected = '已有记录编号' if action == 'update' and name == 'id' else '盘点'
+            check(expected in description and '出库' not in description, '库存盘点字段描述错误: ' + action + '.' + name)
+        detail, _ = evidence.resolve(schema['properties']['items']['items'])
+        check('盘点' in detail['properties']['id'].get('description', ''), '盘点明细编号描述错误')
+        check(('id' in schema.get('required', [])) == (action == 'update'), '盘点创建/更新 ID 必填性错误')
+    config = document['paths']['/admin-api/infra/config/page']['get']
+    name = next(p for p in config['parameters'] if p['name'] == 'name')
+    check('参数配置名称' in name.get('description', ''), '参数配置名称不应描述成数据源名称')
+    channel = document['paths']['/admin-api/system/sms-channel/page']['get']
+    status = next(p for p in channel['parameters'] if p['name'] == 'status')
+    check('短信渠道状态' in status.get('description', '') and '0 启用，1 停用' in status.get('description', ''),
+          '短信渠道状态说明不符')
+    warehouse = document['paths']['/admin-api/erp/warehouse/update-default-status']['put']
+    query = {p['name']: p for p in warehouse['parameters'] if p.get('in') == 'query'}
+    check(set(query) == {'id', 'defaultStatus'}, '仓库默认状态接口不得多出未绑定的 status 参数')
+    check(query.get('defaultStatus', {}).get('schema', {}).get('type') == 'boolean'
+          and all(p.get('required') for p in query.values()), '仓库默认状态须为必填布尔参数')
+
     for module in ('sale', 'purchase'):
         key = '/admin-api/erp/' + module + '-statistics/time-summary'
         count = next(p for p in document['paths'][key]['get']['parameters'] if p['name'] == 'count')

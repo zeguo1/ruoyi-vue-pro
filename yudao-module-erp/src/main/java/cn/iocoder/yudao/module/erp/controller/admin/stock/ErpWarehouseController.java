@@ -58,7 +58,7 @@ public class ErpWarehouseController {
     @Operation(summary = "更新仓库默认状态")
     @Parameters({
             @Parameter(name = "id", description = "编号", required = true),
-            @Parameter(name = "status", description = "状态", required = true)
+            @Parameter(name = "defaultStatus", description = "是否设为默认，true 为默认，false 为非默认", required = true)
     })
     public CommonResult<Boolean> updateWarehouseDefaultStatus(@RequestParam("id") Long id,
                                                               @io.swagger.v3.oas.annotations.Parameter(description = "是否设为默认，true 为默认，false 为非默认") @RequestParam("defaultStatus") Boolean defaultStatus) {

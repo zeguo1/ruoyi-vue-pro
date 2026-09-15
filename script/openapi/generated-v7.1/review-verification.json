@@ -1,0 +1,5323 @@
+{
+  "sha256": "d2d3e971dd474fa3fed0923540e083ab8ba5454e3cf38286c7476f2c0c4f327e",
+  "apiVersion": "1.0.0-full-contract-v7.1",
+  "operations": 3449,
+  "modules": {
+    "ai": 104,
+    "bpm": 79,
+    "crm": 179,
+    "erp": 146,
+    "fms": 141,
+    "hrm": 311,
+    "im": 127,
+    "infra": 116,
+    "iot": 102,
+    "member": 72,
+    "mes": 766,
+    "mp": 52,
+    "pay": 60,
+    "pms": 145,
+    "product": 55,
+    "promotion": 172,
+    "report": 19,
+    "statistics": 19,
+    "system": 212,
+    "third-party": 397,
+    "trade": 98,
+    "wms": 77
+  },
+  "commonResultChecked": 2883,
+  "errors": [],
+  "externalParametersWithoutBusinessDescription": [
+    {
+      "operation": "GET /jmreport/test/submit/handle",
+      "parameter": "dataIds",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/show",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/queryTableName",
+      "parameter": "dbSource",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/queryTableName",
+      "parameter": "tableName",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/queryTableName",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/queryTableName",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/queryTableFields",
+      "parameter": "dbSource",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/queryTableFields",
+      "parameter": "tableName",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/putFile",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/loadTable",
+      "parameter": "dbSource",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/loadTable",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/loadTable",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/getQueryInfo",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/getQueryInfo",
+      "parameter": "param",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/executeSelectApi",
+      "parameter": "api",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/executeSelectApi",
+      "parameter": "method",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/dict/batchRevert",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/auto/export/job/run/{jobId}",
+      "parameter": "jobId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/ai/tableMeta/columns",
+      "parameter": "dbSourceType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/ai/tableMeta/columns",
+      "parameter": "dbSourceId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/ai/tableMeta/columns",
+      "parameter": "tableName",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/addViewCount/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /drag/websocket/sendData",
+      "parameter": "chartId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /drag/websocket/sendData",
+      "parameter": "data",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /drag/page/recoveryDelete",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /drag/page/aiGenerateScreen",
+      "parameter": "prompt",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /drag/category/reductionById",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/submit/handle/repeat/check",
+      "parameter": "field",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/submit/handle/repeat/check",
+      "parameter": "value",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/submit/handle/repeat/check",
+      "parameter": "dataId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/submit/dict/political",
+      "parameter": "dictCode",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/submit/dict/political",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/submit/dict/political",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/submit/dict/political",
+      "parameter": "searchText",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/submit/dict/political",
+      "parameter": "queryAll",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getUserMsg",
+      "parameter": "cname",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getUserMsg",
+      "parameter": "did",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getUserMsg",
+      "parameter": "riqi",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getUserMsg",
+      "parameter": "riqi_begin",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getUserMsg",
+      "parameter": "riqi_end",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getUserList",
+      "parameter": "username",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getUserList",
+      "parameter": "realname",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getUserList",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getUserList",
+      "parameter": "queryAll",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getUserList",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getUserList",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getRoleList",
+      "parameter": "roleName",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getRoleList",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getRoleList",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getRoleList",
+      "parameter": "queryAll",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getRoleList",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getPopupList",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getPopupList",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getPopupList",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getOrder",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getDictSex",
+      "parameter": "dictCode",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getDictSex",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getDictSex",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getDictSex",
+      "parameter": "searchText",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getDictSex",
+      "parameter": "queryAll",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getDictSex",
+      "parameter": "initValue",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getDepartmentList",
+      "parameter": "departName",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getDepartmentList",
+      "parameter": "parentId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/test/getDepartmentList",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/source/getJmReportSharedDbPageList",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/source/getJmReportSharedDbPageList",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/source/getJmReportSharedDbPageList",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/source/datasource/files/preview",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/source/datasource/files/preview",
+      "parameter": "tableName",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/source/datasource/files/get",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/source/dataset/files/single/get",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/sheet/getSheetList/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/sheet/getSheetData",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/sheet/getSheetData",
+      "parameter": "sheetId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/share/verification",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/share/verification",
+      "parameter": "lock",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/share/queryJurisdiction",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/share/getSharePageList",
+      "parameter": "reportName",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/share/getSharePageList",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/share/getSharePageList",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/setTemplate",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/setTemplate",
+      "parameter": "template",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/reportCopy",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/queryIsPage/{reportId}",
+      "parameter": "reportId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/query/report/folder",
+      "parameter": "reportType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/query/report/folder",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/query/report/folder",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/query/report/folder",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/query/report/folder/template",
+      "parameter": "reportType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/query/report/folder/template",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/query/report/folder/template",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/query/report/folder/template",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/query/multiple/initValue",
+      "parameter": "key",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/query/multiple/initValue",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/query/multiple/initValue",
+      "parameter": "paramSearch",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/query/multiple/initValue",
+      "parameter": "intValue",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/open/list",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/open/list",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/open/list",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/map/mapList",
+      "parameter": "label",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/map/mapList",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/map/mapList",
+      "parameter": "current",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/map/mapList",
+      "parameter": "size",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/loadDbData/{dbId}",
+      "parameter": "dbId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/loadDbData/{dbId}",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/link/queryByIds",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/link/getLinkData",
+      "parameter": "linkType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/link/getLinkData",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/group/query",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/group/query",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/group/query",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/group/get",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/getReportChars",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/getReportChars",
+      "parameter": "charId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/getReportByUser",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/getReportByUser",
+      "parameter": "template",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/getMaintainDataSourceByPage",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/getMaintainDataSourceByPage",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/getMaintainDataSourceByPage",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/getMaintainDataSourceByPage",
+      "parameter": "type",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/getMaintainDataSourceByPage",
+      "parameter": "keyword",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/getListReportDb",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/getDataSourceType",
+      "parameter": "dbKey",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/getDataSourceByPage",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/getDataSourceByPage",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/getDataSourceByPage",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/getDataSourceById",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/get/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/generateTemplateByDesign",
+      "parameter": "desformId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/generateTemplateByDesign",
+      "parameter": "desformCode",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/generateTemplateByDesign",
+      "parameter": "regeneration",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/repeat/check/{reportId}/{field}/{value}",
+      "parameter": "reportId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/repeat/check/{reportId}/{field}/{value}",
+      "parameter": "field",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/repeat/check/{reportId}/{field}/{value}",
+      "parameter": "value",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/repeat/check/{reportId}/{field}/{value}",
+      "parameter": "dataId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getUserList",
+      "parameter": "username",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getUserList",
+      "parameter": "realname",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getUserList",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getUserList",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getUserList",
+      "parameter": "apiUrl",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getUserList",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getUserList",
+      "parameter": "queryAll",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getTableDictList",
+      "parameter": "dictCode",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getTableDictList",
+      "parameter": "searchSql",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getTableDictList",
+      "parameter": "searchText",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getTableDictList",
+      "parameter": "searchValue",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getTableDictList",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getTableDictList",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getTableDictList",
+      "parameter": "queryAll",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getRoleList",
+      "parameter": "roleName",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getRoleList",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getRoleList",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getRoleList",
+      "parameter": "apiUrl",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getRoleList",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getRoleList",
+      "parameter": "queryAll",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getPopupList",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getPopupList",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getPopupList",
+      "parameter": "apiUrl",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getPopupList",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getPopupList",
+      "parameter": "queryAll",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getDictList",
+      "parameter": "dictCode",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getDictList",
+      "parameter": "searchText",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getDictList",
+      "parameter": "searchValue",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getDictList",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getDictList",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getDictList",
+      "parameter": "queryAll",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getDepartmentList",
+      "parameter": "departName",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getDepartmentList",
+      "parameter": "parentId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getDepartmentList",
+      "parameter": "apiUrl",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/form/getDepartmentList",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/field/tree/{reportId}",
+      "parameter": "reportId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/exportReport",
+      "parameter": "exportParams",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/exportReport",
+      "parameter": "zipName",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/exportReportConfig",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/excelQuery",
+      "parameter": "reportType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/excelQuery",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/excelQuery",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/excelQuery",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/excelQueryByTemplate",
+      "parameter": "reportType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/excelQueryByTemplate",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/excelQueryByTemplate",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/excelQueryByTemplate",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dictItem/list",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dictItem/list",
+      "parameter": "dictId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dictItem/list",
+      "parameter": "itemText",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dictItem/list",
+      "parameter": "itemValue",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dictItem/list",
+      "parameter": "description",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dictItem/list",
+      "parameter": "sortOrder",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dictItem/list",
+      "parameter": "status",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dictItem/list",
+      "parameter": "createBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dictItem/list",
+      "parameter": "createTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dictItem/list",
+      "parameter": "updateBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dictItem/list",
+      "parameter": "updateTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dictItem/list",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dictItem/list",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dictCodeSearch",
+      "parameter": "key",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dictCodeSearch",
+      "parameter": "text",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dictCodeSearch",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dictCodeSearch",
+      "parameter": "paramSearch",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dictCodeSearch",
+      "parameter": "params",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dictCodeSearch",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dict/list",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dict/list",
+      "parameter": "type",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dict/list",
+      "parameter": "dictName",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dict/list",
+      "parameter": "dictCode",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dict/list",
+      "parameter": "description",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dict/list",
+      "parameter": "delFlag",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dict/list",
+      "parameter": "createBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dict/list",
+      "parameter": "createTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dict/list",
+      "parameter": "updateBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dict/list",
+      "parameter": "updateTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dict/list",
+      "parameter": "tenantId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dict/list",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dict/list",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/delDbData/{dbId}",
+      "parameter": "dbId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dataCodeExist",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/dataCodeExist",
+      "parameter": "code",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/checkParam/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/category/queryRecycleBin",
+      "parameter": "reportType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/category/queryRecycleBin",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/category/queryRecycleBin",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/category/queryRecycleBin",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/category/query/report/count",
+      "parameter": "categoryId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/category/list",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/category/list",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/category/list",
+      "parameter": "parentId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/category/list",
+      "parameter": "izLeaf",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/category/list",
+      "parameter": "delFlag",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/category/list",
+      "parameter": "sourceType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/category/list",
+      "parameter": "createBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/category/list",
+      "parameter": "createTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/category/list",
+      "parameter": "updateBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/category/list",
+      "parameter": "updateTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/category/list",
+      "parameter": "tenantId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/category/list",
+      "parameter": "sortNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/category/getById",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/auto/export/logs/query",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/auto/export/logs/query",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/auto/export/logs/query",
+      "parameter": "batchNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/auto/export/logs/query",
+      "parameter": "fromId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/auto/export/job/query",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/auto/export/job/query",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/auto/export/job/query",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/auto/export/job/get",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/auto/export/download/{batchNo}",
+      "parameter": "batchNo",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/auto/export/download/{batchNo}/{signature}",
+      "parameter": "batchNo",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/auto/export/download/{batchNo}/{signature}",
+      "parameter": "signature",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/ai/tableMeta/page",
+      "parameter": "dbSourceType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/ai/tableMeta/page",
+      "parameter": "dbSourceId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/ai/tableMeta/page",
+      "parameter": "tableName",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/ai/tableMeta/page",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/ai/tableMeta/page",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "path",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "desJson",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "template",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "coverUrl",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "backgroundColor",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "backgroundImage",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "theme",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "style",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "designType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "protectionCode",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "type",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "izTemplate",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "createBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "lowAppId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "tenantId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "appMenuGroupId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "createTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "updateBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "updateTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "updateCount",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "visitsNum",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "delFlag",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryTemplateList",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryPageById",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/queryById",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "path",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "desJson",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "template",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "coverUrl",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "backgroundColor",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "backgroundImage",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "theme",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "style",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "designType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "protectionCode",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "type",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "izTemplate",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "createBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "lowAppId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "tenantId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "appMenuGroupId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "createTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "updateBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "updateTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "updateCount",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "visitsNum",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "delFlag",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/list",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/getShareInfo",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/getShareInfo",
+      "parameter": "type",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/exportDragConfig",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/copyPage",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/comp/queryById",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/comp/createDefChart",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/comp/createDefChart",
+      "parameter": "code",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/comp/copyById",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/aiScreenTaskStatus",
+      "parameter": "requestId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/page/addVisitsNumber",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragShare/getByPageId",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetParam/queryById",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetParam/list",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetParam/list",
+      "parameter": "headId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetParam/list",
+      "parameter": "paramName",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetParam/list",
+      "parameter": "paramTxt",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetParam/list",
+      "parameter": "paramValue",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetParam/list",
+      "parameter": "orderNum",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetParam/list",
+      "parameter": "izSearch",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetParam/list",
+      "parameter": "widgetType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetParam/list",
+      "parameter": "searchMode",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetParam/list",
+      "parameter": "dictCode",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetParam/list",
+      "parameter": "createBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetParam/list",
+      "parameter": "createTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetParam/list",
+      "parameter": "updateBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetParam/list",
+      "parameter": "updateTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetParam/list",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetParam/list",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/updateChartOptSse",
+      "parameter": "content",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/updateChartOptSse",
+      "parameter": "component",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/queryById",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/queryByDbId",
+      "parameter": "dbId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/queryAllById",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/list",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/list",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/list",
+      "parameter": "code",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/list",
+      "parameter": "dbSource",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/list",
+      "parameter": "querySql",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/list",
+      "parameter": "content",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/list",
+      "parameter": "dataType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/list",
+      "parameter": "izAgent",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/list",
+      "parameter": "apiMethod",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/list",
+      "parameter": "parentId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/list",
+      "parameter": "lowAppId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/list",
+      "parameter": "tenantId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/list",
+      "parameter": "createTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/list",
+      "parameter": "createBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/list",
+      "parameter": "updateTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/list",
+      "parameter": "updateBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/list",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/list",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/getMapDataByCode",
+      "parameter": "code",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/getMapDataByCode",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/getDictByCodes",
+      "parameter": "codes",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/getDbSetByCodeAndDb",
+      "parameter": "code",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/getDbSetByCodeAndDb",
+      "parameter": "dbSource",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/generateSqlSse",
+      "parameter": "content",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/generateSqlSse",
+      "parameter": "dbId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/generateChartSse",
+      "parameter": "content",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/generateChartSse",
+      "parameter": "dbId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/generateChartSse",
+      "parameter": "fileId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/generateChartSse",
+      "parameter": "type",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/queryByReportId",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/queryById",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/list",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/list",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/list",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/list",
+      "parameter": "code",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/list",
+      "parameter": "remark",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/list",
+      "parameter": "dbType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/list",
+      "parameter": "dbDriver",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/list",
+      "parameter": "dbUrl",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/list",
+      "parameter": "dbUsername",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/list",
+      "parameter": "dbPassword",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/list",
+      "parameter": "type",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/list",
+      "parameter": "createBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/list",
+      "parameter": "createTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/list",
+      "parameter": "updateBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/list",
+      "parameter": "updateTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/list",
+      "parameter": "connectTimes",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/list",
+      "parameter": "tenantId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/list",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/list",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/getOptions",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/getOptions",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/getOptions",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/getOptions",
+      "parameter": "code",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/getOptions",
+      "parameter": "remark",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/getOptions",
+      "parameter": "dbType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/getOptions",
+      "parameter": "dbDriver",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/getOptions",
+      "parameter": "dbUrl",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/getOptions",
+      "parameter": "dbUsername",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/getOptions",
+      "parameter": "dbPassword",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/getOptions",
+      "parameter": "type",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/getOptions",
+      "parameter": "createBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/getOptions",
+      "parameter": "createTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/getOptions",
+      "parameter": "updateBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/getOptions",
+      "parameter": "updateTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/getOptions",
+      "parameter": "connectTimes",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/onlDragDataSource/getOptions",
+      "parameter": "tenantId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/mock/json/{filename}",
+      "parameter": "filename",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuReportIconLib/queryById",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuReportIconLib/list",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuReportIconLib/list",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuReportIconLib/list",
+      "parameter": "type",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuReportIconLib/list",
+      "parameter": "imageUrl",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuReportIconLib/list",
+      "parameter": "createBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuReportIconLib/list",
+      "parameter": "createTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuReportIconLib/list",
+      "parameter": "updateBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuReportIconLib/list",
+      "parameter": "updateTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuReportIconLib/list",
+      "parameter": "tenantId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuReportIconLib/list",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuReportIconLib/list",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuDragMap/list",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuDragMap/list",
+      "parameter": "label",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuDragMap/list",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuDragMap/list",
+      "parameter": "data",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuDragMap/list",
+      "parameter": "createBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuDragMap/list",
+      "parameter": "createTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuDragMap/list",
+      "parameter": "updateBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuDragMap/list",
+      "parameter": "updateTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuDragMap/list",
+      "parameter": "delFlag",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuDragMap/list",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/jimuDragMap/list",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/treeList",
+      "parameter": "excludeComp",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/searchByKeywords",
+      "parameter": "keyWord",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/queryCompTreeSync",
+      "parameter": "pid",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/queryCompTreeSync",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/page",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/page",
+      "parameter": "compName",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/page",
+      "parameter": "parentId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/page",
+      "parameter": "compType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/page",
+      "parameter": "typeId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/page",
+      "parameter": "compConfig",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/page",
+      "parameter": "icon",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/page",
+      "parameter": "orderNum",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/page",
+      "parameter": "status",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/page",
+      "parameter": "createBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/page",
+      "parameter": "createTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/page",
+      "parameter": "updateBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/page",
+      "parameter": "updateTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/page",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/page",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/list",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/list",
+      "parameter": "compName",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/list",
+      "parameter": "parentId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/list",
+      "parameter": "compType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/list",
+      "parameter": "typeId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/list",
+      "parameter": "compConfig",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/list",
+      "parameter": "icon",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/list",
+      "parameter": "orderNum",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/list",
+      "parameter": "status",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/list",
+      "parameter": "createBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/list",
+      "parameter": "createTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/list",
+      "parameter": "updateBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/comp/list",
+      "parameter": "updateTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleList",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleList",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleList",
+      "parameter": "sourceType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleList",
+      "parameter": "createBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleList",
+      "parameter": "tenantId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleList",
+      "parameter": "createTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleList",
+      "parameter": "updateBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleList",
+      "parameter": "updateTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleList",
+      "parameter": "delFlag",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleList",
+      "parameter": "style",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleList",
+      "parameter": "izTemplate",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleList",
+      "parameter": "pageNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleList",
+      "parameter": "pageSize",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleCount",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleCount",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleCount",
+      "parameter": "sourceType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleCount",
+      "parameter": "createBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleCount",
+      "parameter": "tenantId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleCount",
+      "parameter": "createTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleCount",
+      "parameter": "updateBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleCount",
+      "parameter": "updateTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleCount",
+      "parameter": "delFlag",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleCount",
+      "parameter": "style",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryRecycleCount",
+      "parameter": "izTemplate",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/queryCountById",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/list",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/list",
+      "parameter": "name",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/list",
+      "parameter": "parentId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/list",
+      "parameter": "izLeaf",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/list",
+      "parameter": "sourceType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/list",
+      "parameter": "createBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/list",
+      "parameter": "createTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/list",
+      "parameter": "updateBy",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/list",
+      "parameter": "updateTime",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/list",
+      "parameter": "tenantId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/list",
+      "parameter": "delFlag",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/list",
+      "parameter": "sortNo",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/list",
+      "parameter": "dragType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/category/getById",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /drag/bigscreen/skill/reference",
+      "parameter": "path",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/source/datasource/files/del",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/source/datasource/files/del",
+      "parameter": "tableName",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/source/datasource/files/del/file",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/source/datasource/files/del/file",
+      "parameter": "fileName",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/sheet/deleteSheet",
+      "parameter": "reportId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/sheet/deleteSheet",
+      "parameter": "sheetId",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/group/delete",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/dictItem/delete",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/dictItem/deleteBatch",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/dict/thoroughDelete",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/dict/delete",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/dict/deleteBatch",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/dict/batchRealDelete",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/delete",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/deleteReportById",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/deleteBatch",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/category/deleteById",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/category/completelyDeleteById",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/auto/export/logs",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/auto/export/job/delete",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /drag/page/physicalDelete",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /drag/page/delete",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /drag/page/deleteBatch",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /drag/page/comp/delete",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /drag/page/comp/deleteById",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /drag/onlDragShare/delete",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /drag/onlDragDatasetParam/delete",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /drag/onlDragDatasetParam/deleteBatch",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /drag/onlDragDatasetHead/delete",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /drag/onlDragDatasetHead/delDragDataSetHeadGroup",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /drag/onlDragDataSource/delete",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /drag/onlDragDataSource/deleteBatch",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /drag/jimuReportIconLib/delete",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /drag/jimuReportIconLib/deleteBatch",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /drag/comp/delete",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /drag/comp/deleteBatch",
+      "parameter": "ids",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /drag/category/physicalDelete",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /drag/category/deleteById",
+      "parameter": "id",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "type",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "jmRecordId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PUT /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PUT /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "type",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PUT /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "jmRecordId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "type",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "jmRecordId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "type",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "jmRecordId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "OPTIONS /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "OPTIONS /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "type",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "OPTIONS /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "jmRecordId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "HEAD /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "HEAD /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "type",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "HEAD /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "jmRecordId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PATCH /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PATCH /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "type",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PATCH /jmreport/view/{id}/{type}/{jmRecordId}",
+      "parameter": "jmRecordId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/view/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PUT /jmreport/view/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/view/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/view/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "OPTIONS /jmreport/view/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "HEAD /jmreport/view/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PATCH /jmreport/view/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "type",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "jmRecordId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PUT /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PUT /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "type",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PUT /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "jmRecordId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "type",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "jmRecordId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "type",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "jmRecordId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "OPTIONS /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "OPTIONS /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "type",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "OPTIONS /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "jmRecordId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "HEAD /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "HEAD /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "type",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "HEAD /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "jmRecordId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PATCH /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PATCH /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "type",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PATCH /jmreport/shareView/{id}/{type}/{jmRecordId}",
+      "parameter": "jmRecordId",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/shareView/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PUT /jmreport/shareView/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/shareView/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/shareView/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "OPTIONS /jmreport/shareView/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "HEAD /jmreport/shareView/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PATCH /jmreport/shareView/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/index/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PUT /jmreport/index/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/index/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/index/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "OPTIONS /jmreport/index/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "HEAD /jmreport/index/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PATCH /jmreport/index/{id}",
+      "parameter": "id",
+      "in": "path",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "GET /jmreport/addChart",
+      "parameter": "chartType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PUT /jmreport/addChart",
+      "parameter": "chartType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "POST /jmreport/addChart",
+      "parameter": "chartType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "DELETE /jmreport/addChart",
+      "parameter": "chartType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "OPTIONS /jmreport/addChart",
+      "parameter": "chartType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "HEAD /jmreport/addChart",
+      "parameter": "chartType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    },
+    {
+      "operation": "PATCH /jmreport/addChart",
+      "parameter": "chartType",
+      "in": "query",
+      "reason": "SDK 参数未声明业务说明，需要对应 SDK 实现或供应商文档，不能推断业务含义"
+    }
+  ],
+  "nonJsonRequestBodies": [
+    {
+      "operation": "POST /jmreport/importReportConfig",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /jmreport/importExcel",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /drag/page/importDragConfig",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /app-api/infra/file/upload",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /admin-api/system/user/import",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /admin-api/system/oauth2/token",
+      "mediaType": "application/x-www-form-urlencoded",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /admin-api/system/oauth2/check-token",
+      "mediaType": "application/x-www-form-urlencoded",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /admin-api/pms/pm/work-item/import",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /admin-api/mes/md/item/import",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /admin-api/mes/md-vendor/import",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /admin-api/mes/md-client/import",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /admin-api/mes/dv/machinery/import",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /admin-api/iot/device/import",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /admin-api/infra/file/upload",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /admin-api/hrm/salary/month-record/compute-import",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /admin-api/hrm/salary/employee-info/import-fix",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /admin-api/hrm/salary/employee-info/import-change",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /admin-api/hrm/employee/import",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /admin-api/fms/voucher/import",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /admin-api/fms/config/subject/import",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /admin-api/fms/config/initial-balance/import",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /admin-api/fms/config/auxiliary-item/import",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    },
+    {
+      "operation": "POST /admin-api/bpm/model/import",
+      "mediaType": "multipart/form-data",
+      "reason": "导入器必须保留媒体类型和字段序列化；不能忽略或改装为 JSON"
+    }
+  ],
+  "operationsWithoutDeclaredBusinessInputs": [
+    {
+      "operation": "PUT /admin-api/system/notify-message/update-all-read",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.notify.NotifyMessageController#updateAllNotifyMessageRead",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "PUT /admin-api/mes/pro/workrecord/clock-out",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.pro.workrecord.MesProWorkRecordController#clockOutWorkRecord",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "PUT /admin-api/hrm/salary/option/sync",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.salary.HrmSalaryOptionController#syncSalaryOption",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /jmreport/upload",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#e",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /jmreport/source/datasource/files/add",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.c#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /drag/page/clearRecovery",
+      "handler": "org.jeecg.modules.drag.b.m#e",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /drag/page/aiPolishScreenPrompt",
+      "handler": "org.jeecg.modules.drag.b.m#d",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /drag/page/aiModifyScreenSse",
+      "handler": "org.jeecg.modules.drag.b.m#b",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /drag/page/aiGenerateScreenSse",
+      "handler": "org.jeecg.modules.drag.b.m#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /drag/page/aiDiscussScreenSse",
+      "handler": "org.jeecg.modules.drag.b.m#c",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /app-api/member/sign-in/record/create",
+      "handler": "cn.iocoder.yudao.module.member.controller.app.signin.AppMemberSignInRecordController#createSignInRecord",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /app-api/member/auth/logout",
+      "handler": "cn.iocoder.yudao.module.member.controller.app.auth.AppAuthController#logout",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /admin-api/system/sms/callback/tencent",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.sms.SmsCallbackController#receiveTencentSmsStatus",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /admin-api/system/sms/callback/aliyun",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.sms.SmsCallbackController#receiveAliyunSmsStatus",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /admin-api/system/auth/logout",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.auth.AuthController#logout",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /admin-api/iot/product/sync-property-table",
+      "handler": "cn.iocoder.yudao.module.iot.controller.admin.product.IotProductController#syncProductPropertyTable",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /admin-api/infra/job/sync",
+      "handler": "cn.iocoder.yudao.module.infra.controller.admin.job.JobController#syncJob",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /admin-api/hrm/salary/month-record/create-next",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.salary.HrmSalaryMonthRecordController#createNextMonthRecord",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /admin-api/hrm/insurance/month-record/create-next",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.insurance.HrmInsuranceMonthRecordController#createNextMonthRecord",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /jmreport/verificationToken",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#c",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /jmreport/userinfo",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /jmreport/test/test/i18n",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.k#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /jmreport/mockPieData",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /jmreport/mockChartData",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#b",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /jmreport/initDataSource",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#b",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /jmreport/img/**",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#f",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /jmreport/getLinkageChartInfo",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#d",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /jmreport/getCount",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#getCount",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /jmreport/download/image",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#g",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /jmreport/dict/refleshCache",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.d#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /jmreport/dict/deleteList",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.d#b",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /jimureport/test/getOne",
+      "handler": "org.jeecg.modules.jmreport.test.a#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /jimureport/test/getList",
+      "handler": "org.jeecg.modules.jmreport.test.a#b",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /drag/page/getCount",
+      "handler": "org.jeecg.modules.drag.b.m#getCount",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/getLoginUser",
+      "handler": "org.jeecg.modules.drag.b.i#b",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /drag/onlDragDatasetHead/getAllGroup",
+      "handler": "org.jeecg.modules.drag.b.i#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /drag/bigscreen/skill/reload",
+      "handler": "org.jeecg.modules.drag.ai.bigscreen.skill.controller.BigScreenSkillController#reload",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /drag/bigscreen/skill/references",
+      "handler": "org.jeecg.modules.drag.ai.bigscreen.skill.controller.BigScreenSkillController#references",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /drag/bigscreen/skill/meta",
+      "handler": "org.jeecg.modules.drag.ai.bigscreen.skill.controller.BigScreenSkillController#meta",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /drag/bigscreen/skill/main",
+      "handler": "org.jeecg.modules.drag.ai.bigscreen.skill.controller.BigScreenSkillController#main",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /drag/bigscreen/skill/extract",
+      "handler": "org.jeecg.modules.drag.ai.bigscreen.skill.controller.BigScreenSkillController#extract",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/trade/order/get-count",
+      "handler": "cn.iocoder.yudao.module.trade.controller.app.order.AppTradeOrderController#getOrderCount",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/trade/delivery/express/list",
+      "handler": "cn.iocoder.yudao.module.trade.controller.app.delivery.AppDeliverExpressController#getDeliveryExpressList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/trade/config/get",
+      "handler": "cn.iocoder.yudao.module.trade.controller.app.config.AppTradeConfigController#getTradeConfig",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/trade/cart/list",
+      "handler": "cn.iocoder.yudao.module.trade.controller.app.cart.AppCartController#getCartList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/trade/cart/get-count",
+      "handler": "cn.iocoder.yudao.module.trade.controller.app.cart.AppCartController#getCartCount",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/trade/brokerage-user/get",
+      "handler": "cn.iocoder.yudao.module.trade.controller.app.brokerage.AppBrokerageUserController#getBrokerageUser",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/trade/brokerage-user/get-summary",
+      "handler": "cn.iocoder.yudao.module.trade.controller.app.brokerage.AppBrokerageUserController#getBrokerageUserSummary",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/system/area/tree",
+      "handler": "cn.iocoder.yudao.module.system.controller.app.ip.AppAreaController#getAreaTree",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/promotion/seckill-config/list",
+      "handler": "cn.iocoder.yudao.module.promotion.controller.app.seckill.AppSeckillConfigController#getSeckillConfigList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/promotion/seckill-activity/get-now",
+      "handler": "cn.iocoder.yudao.module.promotion.controller.app.seckill.AppSeckillActivityController#getNowSeckillActivity",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/promotion/diy-template/used",
+      "handler": "cn.iocoder.yudao.module.promotion.controller.app.diy.AppDiyTemplateController#getUsedDiyTemplate",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/promotion/coupon/get-unused-count",
+      "handler": "cn.iocoder.yudao.module.promotion.controller.app.coupon.AppCouponController#getUnusedCouponCount",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/promotion/combination-record/get-summary",
+      "handler": "cn.iocoder.yudao.module.promotion.controller.app.combination.AppCombinationRecordController#getCombinationRecordSummary",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/promotion/bargain-record/get-summary",
+      "handler": "cn.iocoder.yudao.module.promotion.controller.app.bargain.AppBargainRecordController#getBargainRecordSummary",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/product/favorite/get-count",
+      "handler": "cn.iocoder.yudao.module.product.controller.app.favorite.AppFavoriteController#getFavoriteCount",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/product/category/list",
+      "handler": "cn.iocoder.yudao.module.product.controller.app.category.AppCategoryController#getProductCategoryList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/pay/wallet/get",
+      "handler": "cn.iocoder.yudao.module.pay.controller.app.wallet.AppPayWalletController#getPayWallet",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/pay/wallet-recharge-package/list",
+      "handler": "cn.iocoder.yudao.module.pay.controller.app.wallet.AppPayWalletRechargePackageController#getWalletRechargePackageList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/member/user/get",
+      "handler": "cn.iocoder.yudao.module.member.controller.app.user.AppMemberUserController#getUserInfo",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/member/social-user/get-subscribe-template-list",
+      "handler": "cn.iocoder.yudao.module.member.controller.app.social.AppSocialUserController#getSubscribeTemplateList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/member/sign-in/record/get-summary",
+      "handler": "cn.iocoder.yudao.module.member.controller.app.signin.AppMemberSignInRecordController#getSignInRecordSummary",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/member/sign-in/config/list",
+      "handler": "cn.iocoder.yudao.module.member.controller.app.signin.AppMemberSignInConfigController#getSignInConfigList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/member/level/list",
+      "handler": "cn.iocoder.yudao.module.member.controller.app.level.AppMemberLevelController#getLevelList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/member/address/list",
+      "handler": "cn.iocoder.yudao.module.member.controller.app.address.AppAddressController#getAddressList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/member/address/get-default",
+      "handler": "cn.iocoder.yudao.module.member.controller.app.address.AppAddressController#getDefaultUserAddress",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/wms/warehouse/simple-list",
+      "handler": "cn.iocoder.yudao.module.wms.controller.admin.md.warehouse.WmsWarehouseController#getWarehouseSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/wms/item-category/simple-list",
+      "handler": "cn.iocoder.yudao.module.wms.controller.admin.md.item.WmsItemCategoryController#getItemCategorySimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/wms/item-brand/simple-list",
+      "handler": "cn.iocoder.yudao.module.wms.controller.admin.md.item.WmsItemBrandController#getItemBrandSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/trade/delivery/pick-up-store/simple-list",
+      "handler": "cn.iocoder.yudao.module.trade.controller.admin.delivery.DeliveryPickUpStoreController#getSimpleDeliveryPickUpStoreList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/trade/delivery/express/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.trade.controller.admin.delivery.DeliveryExpressController#getSimpleDeliveryExpressList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/trade/delivery/express-template/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.trade.controller.admin.delivery.DeliveryExpressTemplateController#getSimpleTemplateList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/trade/config/get",
+      "handler": "cn.iocoder.yudao.module.trade.controller.admin.config.TradeConfigController#getConfig",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/user/profile/get",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.user.UserProfileController#getUserProfile",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/user/get-import-template",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.user.UserController#importTemplate",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/tenant/simple-list",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.tenant.TenantController#getTenantSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/tenant-package/get-simple-list",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.tenant.TenantPackageController#getTenantPackageList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/tenant-package/simple-list",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.tenant.TenantPackageController#getTenantPackageList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/social-user/get-bind-list",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.social.SocialUserController#getBindSocialUserList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/sms-template/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.sms.SmsTemplateController#getSimpleSmsTemplateList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/sms-template/simple-list",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.sms.SmsTemplateController#getSimpleSmsTemplateList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/sms-channel/simple-list",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.sms.SmsChannelController#getSimpleSmsChannelList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/sms-channel/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.sms.SmsChannelController#getSimpleSmsChannelList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/role/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.permission.RoleController#getSimpleRoleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/role/simple-list",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.permission.RoleController#getSimpleRoleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/post/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.dept.PostController#getSimplePostList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/post/simple-list",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.dept.PostController#getSimplePostList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/oauth2/user/get",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.oauth2.OAuth2UserController#getUserInfo",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/notify-template/simple-list",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.notify.NotifyTemplateController#getSimpleNotifyTemplateList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/notify-template/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.notify.NotifyTemplateController#getSimpleNotifyTemplateList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/notify-message/get-unread-count",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.notify.NotifyMessageController#getUnreadNotifyMessageCount",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/menu/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.permission.MenuController#getSimpleMenuList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/menu/simple-list",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.permission.MenuController#getSimpleMenuList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/mail-template/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.mail.MailTemplateController#getSimpleMailTemplateList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/mail-template/simple-list",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.mail.MailTemplateController#getSimpleMailTemplateList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/mail-account/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.mail.MailAccountController#getSimpleMailAccountList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/mail-account/simple-list",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.mail.MailAccountController#getSimpleMailAccountList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/dict-type/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.dict.DictTypeController#getSimpleDictTypeList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/dict-type/simple-list",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.dict.DictTypeController#getSimpleDictTypeList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/dict-data/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.dict.DictDataController#getSimpleDictDataList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/dict-data/simple-list",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.dict.DictDataController#getSimpleDictDataList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/dept/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.dept.DeptController#getSimpleDeptList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/dept/simple-list",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.dept.DeptController#getSimpleDeptList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/auth/get-permission-info",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.auth.AuthController#getPermissionInfo",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/system/area/tree",
+      "handler": "cn.iocoder.yudao.module.system.controller.admin.ip.AreaController#getAreaTree",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/statistics/trade/summary",
+      "handler": "cn.iocoder.yudao.module.statistics.controller.admin.trade.TradeStatisticsController#getTradeSummaryComparison",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/statistics/trade/order-count",
+      "handler": "cn.iocoder.yudao.module.statistics.controller.admin.trade.TradeStatisticsController#getOrderCount",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/statistics/trade/order-comparison",
+      "handler": "cn.iocoder.yudao.module.statistics.controller.admin.trade.TradeStatisticsController#getOrderComparison",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/statistics/pay/summary",
+      "handler": "cn.iocoder.yudao.module.statistics.controller.admin.pay.PayStatisticsController#getWalletRechargePrice",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/statistics/member/user-count-comparison",
+      "handler": "cn.iocoder.yudao.module.statistics.controller.admin.member.MemberStatisticsController#getUserCountComparison",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/statistics/member/terminal-statistics-list",
+      "handler": "cn.iocoder.yudao.module.statistics.controller.admin.member.MemberStatisticsController#getMemberTerminalStatisticsList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/statistics/member/summary",
+      "handler": "cn.iocoder.yudao.module.statistics.controller.admin.member.MemberStatisticsController#getMemberSummary",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/statistics/member/sex-statistics-list",
+      "handler": "cn.iocoder.yudao.module.statistics.controller.admin.member.MemberStatisticsController#getMemberSexStatisticsList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/statistics/member/area-statistics-list",
+      "handler": "cn.iocoder.yudao.module.statistics.controller.admin.member.MemberStatisticsController#getMemberAreaStatisticsList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/promotion/seckill-config/simple-list",
+      "handler": "cn.iocoder.yudao.module.promotion.controller.admin.seckill.SeckillConfigController#getSeckillConfigSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/promotion/seckill-config/list",
+      "handler": "cn.iocoder.yudao.module.promotion.controller.admin.seckill.SeckillConfigController#getSeckillConfigList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/promotion/kefu-conversation/list",
+      "handler": "cn.iocoder.yudao.module.promotion.controller.admin.kefu.KeFuConversationController#getConversationList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/promotion/combination-record/get-summary",
+      "handler": "cn.iocoder.yudao.module.promotion.controller.admin.combination.CombinationRecordController#getCombinationRecordSummary",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/promotion/article-category/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.promotion.controller.admin.article.ArticleCategoryController#getSimpleDeptList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/product/spu/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.product.controller.admin.spu.ProductSpuController#getSpuSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/product/property/simple-list",
+      "handler": "cn.iocoder.yudao.module.product.controller.admin.property.ProductPropertyController#getPropertySimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/product/brand/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.product.controller.admin.brand.ProductBrandController#getSimpleBrandList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/pms/pm/work-item/get-import-template",
+      "handler": "cn.iocoder.yudao.module.pms.controller.admin.pm.workitem.PmsWorkItemController#getWorkItemImportTemplate",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/pms/pm/project/favorite-list",
+      "handler": "cn.iocoder.yudao.module.pms.controller.admin.pm.project.PmsProjectController#getFavoriteProjectList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/pms/pm/project-group/list",
+      "handler": "cn.iocoder.yudao.module.pms.controller.admin.pm.project.PmsProjectGroupController#getProjectGroupList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/pms/kb/recycle/library-list",
+      "handler": "cn.iocoder.yudao.module.pms.controller.admin.kb.recycle.PmsKnowledgeRecycleController#getLibraryRecycleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/pms/kb/library-template/simple-list",
+      "handler": "cn.iocoder.yudao.module.pms.controller.admin.kb.library.PmsKnowledgeLibraryTemplateController#getSimpleLibraryTemplateList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/pms/kb/group/list",
+      "handler": "cn.iocoder.yudao.module.pms.controller.admin.kb.library.PmsKnowledgeGroupController#getGroupList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/pms/kb/document-label/list",
+      "handler": "cn.iocoder.yudao.module.pms.controller.admin.kb.content.PmsKnowledgeDocumentLabelController#getDocumentLabelList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/pay/app/list",
+      "handler": "cn.iocoder.yudao.module.pay.controller.admin.app.PayAppController#getAppList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mp/tag/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.mp.controller.admin.tag.MpTagController#getSimpleTags",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mp/account/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.mp.controller.admin.account.MpAccountController#getSimpleAccounts",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/wm/warehouse/simple-list",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.wm.warehouse.MesWmWarehouseController#getWarehouseSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/tm/tool/simple-list",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.tm.tool.MesTmToolController#getToolSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/tm/tool-type/simple-list",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.tm.tool.MesTmToolTypeController#getToolTypeSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/qc/defect/simple-list",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.qc.defect.MesQcDefectController#getDefectSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/pro/workrecord/get-my",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.pro.workrecord.MesProWorkRecordController#getMyWorkRecord",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/pro/route/simple-list",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.pro.route.MesProRouteController#getRouteSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/pro/process/simple-list",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.pro.process.MesProProcessController#getProcessSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/pro/andon-config/list",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.pro.andon.MesProAndonConfigController#getAndonConfigList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/md/unit-measure/simple-list",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.md.unitmeasure.MesMdUnitMeasureController#getUnitMeasureSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/md/item/get-import-template",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.md.item.MesMdItemController#importTemplate",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/md/item-type/simple-list",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.md.item.MesMdItemTypeController#getItemTypeSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/md/auto-code-rule/simple-list",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.md.autocode.MesMdAutoCodeRuleController#getAutoCodeRuleSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/md-workshop/simple-list",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.md.workstation.MesMdWorkshopController#getWorkshopSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/md-vendor/get-import-template",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.md.vendor.MesMdVendorController#importTemplate",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/md-client/get-import-template",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.md.client.MesMdClientController#importTemplate",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/home-statistics/work-order-status",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.home.MesHomeStatisticsController#getWorkOrderStatusDistribution",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/home-statistics/summary",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.home.MesHomeStatisticsController#getHomeSummary",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/dv/subject/simple-list",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.dv.subject.MesDvSubjectController#getSubjectSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/dv/machinery/simple-list",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.dv.machinery.MesDvMachineryController#getMachinerySimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/dv/machinery/get-import-template",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.dv.machinery.MesDvMachineryController#importTemplate",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/dv/machinery-type/simple-list",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.dv.machinery.MesDvMachineryTypeController#getMachineryTypeSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/mes/cal/team/list",
+      "handler": "cn.iocoder.yudao.module.mes.controller.admin.cal.team.MesCalTeamController#getTeamList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/member/tag/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.member.controller.admin.tag.MemberTagController#getSimpleTagList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/member/sign-in/config/list",
+      "handler": "cn.iocoder.yudao.module.member.controller.admin.signin.MemberSignInConfigController#getSignInConfigList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/member/level/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.member.controller.admin.level.MemberLevelController#getSimpleLevelList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/member/group/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.member.controller.admin.group.MemberGroupController#getSimpleGroupList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/member/config/get",
+      "handler": "cn.iocoder.yudao.module.member.controller.admin.config.MemberConfigController#getConfig",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/iot/statistics/get-summary",
+      "handler": "cn.iocoder.yudao.module.iot.controller.admin.statistics.IotStatisticsController#getStatisticsSummary",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/iot/scene-rule/simple-list",
+      "handler": "cn.iocoder.yudao.module.iot.controller.admin.rule.IotSceneRuleController#getSceneRuleSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/iot/product-category/simple-list",
+      "handler": "cn.iocoder.yudao.module.iot.controller.admin.product.IotProductCategoryController#getSimpleProductCategoryList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/iot/device/location-list",
+      "handler": "cn.iocoder.yudao.module.iot.controller.admin.device.IotDeviceController#getDeviceLocationList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/iot/device/get-import-template",
+      "handler": "cn.iocoder.yudao.module.iot.controller.admin.device.IotDeviceController#importTemplate",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/iot/device-group/simple-list",
+      "handler": "cn.iocoder.yudao.module.iot.controller.admin.device.IotDeviceGroupController#getSimpleDeviceGroupList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/iot/data-sink/simple-list",
+      "handler": "cn.iocoder.yudao.module.iot.controller.admin.rule.IotDataSinkController#getDataSinkSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/iot/alert-config/simple-list",
+      "handler": "cn.iocoder.yudao.module.iot.controller.admin.alert.IotAlertConfigController#getAlertConfigSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/infra/redis/get-monitor-info",
+      "handler": "cn.iocoder.yudao.module.infra.controller.admin.redis.RedisController#getRedisMonitorInfo",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/infra/data-source-config/list",
+      "handler": "cn.iocoder.yudao.module.infra.controller.admin.db.DataSourceConfigController#getDataSourceConfigList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/im/manager/statistics/top-senders",
+      "handler": "cn.iocoder.yudao.module.im.controller.admin.manager.statistics.ImStatisticsManagerController#getTopSenders",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/im/manager/statistics/overview",
+      "handler": "cn.iocoder.yudao.module.im.controller.admin.manager.statistics.ImStatisticsManagerController#getOverview",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/im/manager/statistics/message-type-distribution",
+      "handler": "cn.iocoder.yudao.module.im.controller.admin.manager.statistics.ImStatisticsManagerController#getMessageTypeDistribution",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/im/manager/statistics/group-size-distribution",
+      "handler": "cn.iocoder.yudao.module.im.controller.admin.manager.statistics.ImStatisticsManagerController#getGroupSizeDistribution",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/im/manager/channel/simple-list",
+      "handler": "cn.iocoder.yudao.module.im.controller.admin.manager.channel.ImChannelManagerController#getSimpleChannelList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/im/group/list",
+      "handler": "cn.iocoder.yudao.module.im.controller.admin.group.ImGroupController#getMyGroupList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/im/group-request/unhandled-list",
+      "handler": "cn.iocoder.yudao.module.im.controller.admin.group.ImGroupRequestController#getUnhandledRequestList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/im/friend/list",
+      "handler": "cn.iocoder.yudao.module.im.controller.admin.friend.ImFriendController#getMyFriendList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/im/face-user-item/list",
+      "handler": "cn.iocoder.yudao.module.im.controller.admin.face.ImFaceUserItemController#getFaceUserItemList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/im/face-pack/list",
+      "handler": "cn.iocoder.yudao.module.im.controller.admin.face.ImFacePackController#getFacePackList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/salary/tax-rule/list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.salary.HrmSalaryTaxRuleController#getSalaryTaxRuleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/salary/slip-template/list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.salary.HrmSalarySlipTemplateController#getSalarySlipTemplateList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/salary/option/list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.salary.HrmSalaryOptionController#getSalaryOptionList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/salary/month-record/last",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.salary.HrmSalaryMonthRecordController#getLastMonthRecord",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/salary/group/simple-list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.salary.HrmSalaryGroupController#getSalaryGroupSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/salary/employee-info/get-fix-import-template",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.salary.HrmSalaryEmployeeInfoController#getFixImportTemplate",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/salary/employee-info/get-change-import-template",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.salary.HrmSalaryEmployeeInfoController#getChangeImportTemplate",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/salary/employee-info/get-adjustment-min-effect-date",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.salary.HrmSalaryEmployeeInfoController#getSalaryAdjustmentMinEffectDate",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/salary/config/get",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.salary.HrmSalaryConfigController#getSalaryConfig",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/salary/change-template/list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.salary.HrmSalaryChangeTemplateController#getSalaryChangeTemplateList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/recruit/post/simple-list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.recruit.HrmRecruitPostController#getRecruitPostSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/recruit/config/eliminate-reason/list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.recruit.HrmRecruitConfigController#getRecruitEliminateReasonList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/recruit/channel/simple-list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.recruit.HrmRecruitChannelController#getRecruitChannelSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/salary/slip/unread-summary",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.portal.salary.HrmPortalSalarySlipController#getUnreadSalarySlipSummary",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/employee/work-experience/list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.portal.employee.HrmPortalEmployeeWorkExperienceController#getWorkExperienceList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/employee/training-experience/list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.portal.employee.HrmPortalEmployeeTrainingExperienceController#getTrainingExperienceList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/employee/quit-info/get",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.portal.employee.HrmPortalEmployeeQuitInfoController#getQuitInfo",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/employee/get",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.portal.employee.HrmPortalEmployeeController#getEmployee",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/employee/get-bind-status",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.portal.employee.HrmPortalEmployeeController#getEmployeeBindStatus",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/employee/field-config/list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.portal.employee.HrmPortalEmployeeFieldConfigController#getEmployeeFieldConfigList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/employee/education-experience/list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.portal.employee.HrmPortalEmployeeEducationExperienceController#getEducationExperienceList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/employee/contact/list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.portal.employee.HrmPortalEmployeeContactController#getContactList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/employee/certificate/list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.portal.employee.HrmPortalEmployeeCertificateController#getCertificateList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/attendance/leave/list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.portal.attendance.HrmPortalAttendanceLeaveController#getAttendanceLeaveList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/attendance/clock/get-detail",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.portal.attendance.HrmPortalAttendanceClockController#getAttendanceClockDetail",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/performance/assessment/archive-plan-simple-list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.performance.HrmPerformanceAssessmentController#getPerformanceArchivePlanSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/performance/assessment-template/simple-list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.performance.HrmPerformanceAssessmentTemplateController#getPerformanceAssessmentTemplateSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/insurance/scheme/simple-list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.insurance.HrmInsuranceSchemeController#getSchemeSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/insurance/scheme/list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.insurance.HrmInsuranceSchemeController#getSchemeList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/insurance/month-record/last",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.insurance.HrmInsuranceMonthRecordController#getLastMonthRecord",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/home/team-statistics-summary",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.home.HrmHomeController#getTeamHomeStatisticsSummary",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/home/hr-statistics-summary",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.home.HrmHomeController#getHrHomeStatisticsSummary",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/employee/get-import-template",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.employee.HrmEmployeeController#importTemplate",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/employee/dept-statistics",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.employee.HrmEmployeeController#getEmployeeDeptStatistics",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/employee/config/archive-field/list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.employee.HrmEmployeeFieldConfigController#getEmployeeArchiveFieldConfigList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/employee/bound-user-id-list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.employee.HrmEmployeeController#getBoundUserIdList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/hrm/attendance/group/simple-list",
+      "handler": "cn.iocoder.yudao.module.hrm.controller.admin.attendance.HrmAttendanceGroupController#getAttendanceGroupSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/fms/config/subject/get-import-template",
+      "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsSubjectController#getSubjectImportTemplate",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/fms/config/account-set/list",
+      "handler": "cn.iocoder.yudao.module.fms.controller.admin.config.FmsAccountSetController#getAccountSetList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/erp/warehouse/simple-list",
+      "handler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpWarehouseController#getWarehouseSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/erp/supplier/simple-list",
+      "handler": "cn.iocoder.yudao.module.erp.controller.admin.purchase.ErpSupplierController#getSupplierSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/erp/sale-statistics/summary",
+      "handler": "cn.iocoder.yudao.module.erp.controller.admin.statistics.ErpSaleStatisticsController#getSaleSummary",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/erp/purchase-statistics/summary",
+      "handler": "cn.iocoder.yudao.module.erp.controller.admin.statistics.ErpPurchaseStatisticsController#getPurchaseSummary",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/erp/product/simple-list",
+      "handler": "cn.iocoder.yudao.module.erp.controller.admin.product.ErpProductController#getProductSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/erp/product-unit/simple-list",
+      "handler": "cn.iocoder.yudao.module.erp.controller.admin.product.ErpProductUnitController#getProductUnitSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/erp/product-category/simple-list",
+      "handler": "cn.iocoder.yudao.module.erp.controller.admin.product.ErpProductCategoryController#getProductCategorySimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/erp/customer/simple-list",
+      "handler": "cn.iocoder.yudao.module.erp.controller.admin.sale.ErpCustomerController#getCustomerSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/erp/account/simple-list",
+      "handler": "cn.iocoder.yudao.module.erp.controller.admin.finance.ErpAccountController#getWarehouseSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/crm/trial-business/follow-ups",
+      "handler": "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController#followUps",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/crm/trial-business/follow-up-types",
+      "handler": "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController#types",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/crm/trial-business/customer",
+      "handler": "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController#customer",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/crm/receivable/audit-count",
+      "handler": "cn.iocoder.yudao.module.crm.controller.admin.receivable.CrmReceivableController#getAuditReceivableCount",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/crm/receivable-plan/remind-count",
+      "handler": "cn.iocoder.yudao.module.crm.controller.admin.receivable.CrmReceivablePlanController#getReceivablePlanRemindCount",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/crm/product/simple-list",
+      "handler": "cn.iocoder.yudao.module.crm.controller.admin.product.CrmProductController#getProductSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/crm/customer/today-contact-count",
+      "handler": "cn.iocoder.yudao.module.crm.controller.admin.customer.CrmCustomerController#getTodayContactCustomerCount",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/crm/customer/simple-list",
+      "handler": "cn.iocoder.yudao.module.crm.controller.admin.customer.CrmCustomerController#getCustomerSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/crm/customer/put-pool-remind-count",
+      "handler": "cn.iocoder.yudao.module.crm.controller.admin.customer.CrmCustomerController#getPutPoolRemindCustomerCount",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/crm/customer/get-import-template",
+      "handler": "cn.iocoder.yudao.module.crm.controller.admin.customer.CrmCustomerController#importTemplate",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/crm/customer/follow-count",
+      "handler": "cn.iocoder.yudao.module.crm.controller.admin.customer.CrmCustomerController#getFollowCustomerCount",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/crm/customer-pool-config/get",
+      "handler": "cn.iocoder.yudao.module.crm.controller.admin.customer.CrmCustomerPoolConfigController#getCustomerPoolConfig",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/crm/contract/remind-count",
+      "handler": "cn.iocoder.yudao.module.crm.controller.admin.contract.CrmContractController#getRemindContractCount",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/crm/contract/audit-count",
+      "handler": "cn.iocoder.yudao.module.crm.controller.admin.contract.CrmContractController#getAuditContractCount",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/crm/contract-config/get",
+      "handler": "cn.iocoder.yudao.module.crm.controller.admin.contract.CrmContractConfigController#getCustomerPoolConfig",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/crm/contact/simple-all-list",
+      "handler": "cn.iocoder.yudao.module.crm.controller.admin.contact.CrmContactController#getSimpleContactList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/crm/clue/follow-count",
+      "handler": "cn.iocoder.yudao.module.crm.controller.admin.clue.CrmClueController#getFollowClueCount",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/crm/business/simple-all-list",
+      "handler": "cn.iocoder.yudao.module.crm.controller.admin.business.CrmBusinessController#getSimpleContactList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/crm/business-status/type-simple-list",
+      "handler": "cn.iocoder.yudao.module.crm.controller.admin.business.CrmBusinessStatusController#getBusinessStatusTypeSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/bpm/user-group/simple-list",
+      "handler": "cn.iocoder.yudao.module.bpm.controller.admin.definition.BpmUserGroupController#getUserGroupSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/bpm/process-definition/simple-list",
+      "handler": "cn.iocoder.yudao.module.bpm.controller.admin.definition.BpmProcessDefinitionController#getSimpleProcessDefinitionList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/bpm/form/list-all-simple",
+      "handler": "cn.iocoder.yudao.module.bpm.controller.admin.definition.BpmFormController#getFormSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/bpm/form/simple-list",
+      "handler": "cn.iocoder.yudao.module.bpm.controller.admin.definition.BpmFormController#getFormSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/bpm/category/simple-list",
+      "handler": "cn.iocoder.yudao.module.bpm.controller.admin.definition.BpmCategoryController#getCategorySimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/ai/tool/simple-list",
+      "handler": "cn.iocoder.yudao.module.ai.controller.admin.model.AiToolController#getToolSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/ai/knowledge/simple-list",
+      "handler": "cn.iocoder.yudao.module.ai.controller.admin.knowledge.AiKnowledgeController#getKnowledgeSimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/ai/chat/conversation/my-list",
+      "handler": "cn.iocoder.yudao.module.ai.controller.admin.chat.AiChatConversationController#getChatConversationMyList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/ai/chat-role/category-list",
+      "handler": "cn.iocoder.yudao.module.ai.controller.admin.model.AiChatRoleController#getChatRoleCategoryList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /admin-api/ai/api-key/simple-list",
+      "handler": "cn.iocoder.yudao.module.ai.controller.admin.model.AiApiKeyController#getApiKeySimpleList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "DELETE /jmreport/clearRecycleBin",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#e",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "DELETE /app-api/product/browse-history/clean",
+      "handler": "cn.iocoder.yudao.module.product.controller.app.history.AppProductBrowseHistoryController#deleteBrowseHistory",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "DELETE /admin-api/ai/chat/conversation/delete-by-unpinned",
+      "handler": "cn.iocoder.yudao.module.ai.controller.admin.chat.AiChatConversationController#deleteChatConversationMyByUnpinned",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /jmreport/print",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "PUT /jmreport/print",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /jmreport/print",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "DELETE /jmreport/print",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "OPTIONS /jmreport/print",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "HEAD /jmreport/print",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "PATCH /jmreport/print",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /jmreport/list",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#b",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "PUT /jmreport/list",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#b",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /jmreport/list",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#b",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "DELETE /jmreport/list",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#b",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "OPTIONS /jmreport/list",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#b",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "HEAD /jmreport/list",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#b",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "PATCH /jmreport/list",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#b",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /jmreport/group/view",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#d",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "PUT /jmreport/group/view",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#d",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /jmreport/group/view",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#d",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "DELETE /jmreport/group/view",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#d",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "OPTIONS /jmreport/group/view",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#d",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "HEAD /jmreport/group/view",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#d",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "PATCH /jmreport/group/view",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#d",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /jmreport/demo",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "PUT /jmreport/demo",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /jmreport/demo",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "DELETE /jmreport/demo",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "OPTIONS /jmreport/demo",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "HEAD /jmreport/demo",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "PATCH /jmreport/demo",
+      "handler": "org.jeecg.modules.jmreport.desreport.b.a#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /drag/page/refreshCache",
+      "handler": "org.jeecg.modules.drag.b.m#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "PUT /drag/page/refreshCache",
+      "handler": "org.jeecg.modules.drag.b.m#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /drag/page/refreshCache",
+      "handler": "org.jeecg.modules.drag.b.m#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "DELETE /drag/page/refreshCache",
+      "handler": "org.jeecg.modules.drag.b.m#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "OPTIONS /drag/page/refreshCache",
+      "handler": "org.jeecg.modules.drag.b.m#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "HEAD /drag/page/refreshCache",
+      "handler": "org.jeecg.modules.drag.b.m#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "PATCH /drag/page/refreshCache",
+      "handler": "org.jeecg.modules.drag.b.m#a",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "GET /app-api/promotion/article-category/list",
+      "handler": "cn.iocoder.yudao.module.promotion.controller.app.article.AppArticleCategoryController#getArticleCategoryList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "PUT /app-api/promotion/article-category/list",
+      "handler": "cn.iocoder.yudao.module.promotion.controller.app.article.AppArticleCategoryController#getArticleCategoryList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "POST /app-api/promotion/article-category/list",
+      "handler": "cn.iocoder.yudao.module.promotion.controller.app.article.AppArticleCategoryController#getArticleCategoryList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "DELETE /app-api/promotion/article-category/list",
+      "handler": "cn.iocoder.yudao.module.promotion.controller.app.article.AppArticleCategoryController#getArticleCategoryList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "OPTIONS /app-api/promotion/article-category/list",
+      "handler": "cn.iocoder.yudao.module.promotion.controller.app.article.AppArticleCategoryController#getArticleCategoryList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "HEAD /app-api/promotion/article-category/list",
+      "handler": "cn.iocoder.yudao.module.promotion.controller.app.article.AppArticleCategoryController#getArticleCategoryList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    },
+    {
+      "operation": "PATCH /app-api/promotion/article-category/list",
+      "handler": "cn.iocoder.yudao.module.promotion.controller.app.article.AppArticleCategoryController#getArticleCategoryList",
+      "basis": "OpenAPI 未声明业务输入；空映射本身不构成错误，动态 Servlet/SDK 参数仍须按实际协议核验"
+    }
+  ],
+  "successSemanticsRequiringManualReview": [
+    {
+      "operation": "POST /admin-api/system/oauth2/authorize",
+      "reason": "code=0 仅代表处理完成，data 可能为空或含 access_denied，不能认定同意授权"
+    }
+  ]
+}

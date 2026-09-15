@@ -17,7 +17,7 @@ import static cn.iocoder.yudao.framework.common.util.date.DateUtils.FORMAT_YEAR_
 @ToString(callSuper = true)
 public class SmsChannelPageReqVO extends PageParam {
 
-    @Schema(description = "任务状态", example = "1")
+    @Schema(description = "短信渠道状态：0 启用，1 停用；省略则不按状态筛选", example = "1")
     private Integer status;
 
     @Schema(description = "短信签名，模糊匹配", example = "芋道源码")

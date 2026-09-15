@@ -1,0 +1,82 @@
+{
+  "junit": [
+    {
+      "name": "cn.iocoder.yudao.server.contract.BackendHandoffContractTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.FullOpenApiModelAuditTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.ExternalOpenApiContractTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.QueryContractRegressionTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.WireContractTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.OpenApiItemSchemaTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.ContractSchemaCustomizerTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.FullContractValidationTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.FullOpenApiExportTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.module.erp.service.sale.ErpSaleOrderContractTest",
+      "tests": 24,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "totalJUnit": 51,
+  "pythonTests": 9,
+  "pythonFailures": 0,
+  "targetedExportAssertionsPassed": true,
+  "deployed": false,
+  "runningDocumentVersion": "1.0.0-full-contract-v6",
+  "knowdoApplied": false,
+  "realBusinessWrites": false
+}

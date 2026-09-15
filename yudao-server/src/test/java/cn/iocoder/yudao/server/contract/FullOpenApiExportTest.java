@@ -26,7 +26,7 @@ class FullOpenApiExportTest {
     @Import(cn.iocoder.yudao.framework.jackson.config.YudaoJacksonAutoConfiguration.class)
     static class Documentation implements WebMvcConfigurer {
         @Bean org.springdoc.core.providers.JavadocProvider javadocProvider() { return new cn.iocoder.yudao.framework.swagger.config.ContractJavadocProvider(); }
-        @Bean io.swagger.v3.oas.models.OpenAPI apiInfo() { return new io.swagger.v3.oas.models.OpenAPI().info(new io.swagger.v3.oas.models.info.Info().title("MGS integration candidate (not deployed)").version("1.0.0-full-contract-v7")); }
+        @Bean io.swagger.v3.oas.models.OpenAPI apiInfo() { return new io.swagger.v3.oas.models.OpenAPI().info(new io.swagger.v3.oas.models.info.Info().title("MGS integration candidate (not deployed)").version("1.0.0-full-contract-v7.1")); }
         @Bean org.springdoc.core.models.GroupedOpenApi all() { return cn.iocoder.yudao.framework.swagger.config.YudaoSwaggerAutoConfiguration.buildGroupedOpenApi("all", ""); }
         @Bean ContractSchemaCustomizer contractSchemaCustomizer() { return new ContractSchemaCustomizer(); }
         @Override public void configurePathMatch(PathMatchConfigurer configurer) {

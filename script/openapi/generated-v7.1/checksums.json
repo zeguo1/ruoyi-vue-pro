@@ -1,0 +1,13 @@
+{
+  "affected-operations.json": "86d5c21c673b6fd92c6603f2b98cf66645feaadb6bf7d9a8a4a4ba72f0a2af93",
+  "integration-checklist-all.json.gz": "b752dc24b5afae38250b3ba6b1821c60537cade08a6364e9481adc55bcdd7d5f",
+  "integration-checklist-raw.json.gz": "70889cd11d4ebacd33b2f8f8a23de891916b271da07da3f96a3aa2a1d4a14522",
+  "openapi-all.json.gz": "8c756646fd7ddac9fe65b71db1e5180bb8d63ec219223acca8551d1caf299171",
+  "openapi-raw.json.gz": "b0d1111a3229d6c042c6e9c823457e213df58ae4d9aae88098c722e78ca24911",
+  "review-verification.json": "1abf1dde4631fb078b2add7cb3607cc63f7557004181592d8419a1cabb72dc12",
+  "schema-audit-all.json": "fe5e568b463e8a304f7fa18bd2ae2bda992923fe859d4b57bbff793dc68280a2",
+  "schema-audit-raw.json": "9d8d3c64e253a3925bb54fb9766c447d67493899898e44ed45e72c995a583ed0",
+  "test-results.json": "0a412d531c0c0a0508abc8db05134b11388cef3cb046f99d24cb60bfc2618f97",
+  "wire-verification-all.json": "bd303987769507c95ea15b9842e5aa01d8062db1ef9799f8881c0a62ccacd2e1",
+  "wire-verification-raw.json": "c004ca4fd45ca1064c426acd07fdcc28bf1e58c221502acd7e76315419670217"
+}

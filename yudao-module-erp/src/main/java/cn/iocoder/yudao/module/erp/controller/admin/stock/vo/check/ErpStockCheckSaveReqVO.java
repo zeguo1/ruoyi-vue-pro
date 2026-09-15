@@ -10,16 +10,16 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Schema(description = "管理后台 - ERP 其它出库单新增/修改 Request VO")
+@Schema(description = "管理后台 - ERP 库存盘点单新增/修改 Request VO")
 @Data
 public class ErpStockCheckSaveReqVO {
 
-    @Schema(description = "出库编号；创建时可省略，不要编造编号；修改时必须提交已有记录编号", requiredMode = Schema.RequiredMode.NOT_REQUIRED, example = "11756")
+    @Schema(description = "盘点编号；创建时可省略，不要编造编号；修改时必须提交已有记录编号", requiredMode = Schema.RequiredMode.NOT_REQUIRED, example = "11756")
     @jakarta.validation.constraints.NotNull(groups = cn.iocoder.yudao.framework.common.validation.Update.class, message = "修改时编号不能为空")
     private Long id;
 
-    @Schema(description = "出库时间", requiredMode = Schema.RequiredMode.REQUIRED)
-    @NotNull(message = "出库时间不能为空")
+    @Schema(description = "盘点时间", requiredMode = Schema.RequiredMode.REQUIRED)
+    @NotNull(message = "盘点时间不能为空")
     private LocalDateTime checkTime;
 
     @Schema(description = "备注", example = "随便")
@@ -28,15 +28,15 @@ public class ErpStockCheckSaveReqVO {
     @Schema(description = "附件 URL", example = "https://www.iocoder.cn/1.doc")
     private String fileUrl;
 
-    @Schema(description = "出库项列表", requiredMode = Schema.RequiredMode.REQUIRED)
-    @NotEmpty(message = "出库项列表不能为空")
+    @Schema(description = "盘点明细列表", requiredMode = Schema.RequiredMode.REQUIRED)
+    @NotEmpty(message = "盘点明细列表不能为空")
     @Valid
     private List<Item> items;
 
     @Data
     public static class Item {
 
-        @Schema(description = "出库项编号", example = "11756")
+        @Schema(description = "盘点明细编号", example = "11756")
         private Long id;
 
         @Schema(description = "仓库编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "3113")

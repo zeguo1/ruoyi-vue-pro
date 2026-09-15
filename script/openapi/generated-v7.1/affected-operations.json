@@ -1,0 +1,1691 @@
+{
+  "version": "1.0.0-full-contract-v7.1",
+  "operations": {
+    "POST /admin-api/erp/stock-check/create": {
+      "operationId": "ErpStockCheck_createStockCheck",
+      "summary": "创建库存盘点单",
+      "openapiPointer": "#/paths/~1admin-api~1erp~1stock-check~1create/post",
+      "javaHandler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpStockCheckController#createStockCheck",
+      "javaHandlerSignature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<java.lang.Long> cn.iocoder.yudao.module.erp.controller.admin.stock.ErpStockCheckController.createStockCheck(cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO)",
+      "parameterMappings": [
+        {
+          "source": {
+            "in": "header",
+            "fieldPath": "tenant-id",
+            "schemaPointer": "#/paths/~1admin-api~1erp~1stock-check~1create/post/parameters/0/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1erp~1stock-check~1create/post/parameters/0/schema"
+            ]
+          },
+          "target": {
+            "in": "header",
+            "fieldPath": "tenant-id"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "租户编号",
+          "format": "int32",
+          "default": 1,
+          "serialization": {
+            "style": "simple",
+            "explode": false
+          }
+        },
+        {
+          "source": {
+            "in": "header",
+            "fieldPath": "Authorization",
+            "schemaPointer": "#/paths/~1admin-api~1erp~1stock-check~1create/post/parameters/1/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1erp~1stock-check~1create/post/parameters/1/schema"
+            ]
+          },
+          "target": {
+            "in": "header",
+            "fieldPath": "Authorization"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "认证 Token",
+          "serialization": {
+            "style": "simple",
+            "explode": false
+          }
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "$",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "$",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "object"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "管理后台 - ERP 库存盘点单新增/修改 Request VO",
+          "structureOnly": true
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "id",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/id",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/id"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "id",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "盘点编号；创建时可省略，不要编造编号；修改时必须提交已有记录编号",
+          "format": "int64"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "checkTime",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/checkTime",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/checkTime"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "checkTime",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "integer",
+            "string"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "盘点时间；JSON 入参支持整数毫秒时间戳或 ISO 8601 日期时间字符串；JSON 返回为整数毫秒时间戳；不合法的值会被拒绝"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "remark",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/remark",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/remark"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "remark",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "备注"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "fileUrl",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/fileUrl",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/fileUrl"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "fileUrl",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "附件 URL"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/items",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/items"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "array"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "盘点明细列表",
+          "minItems": 1,
+          "structureOnly": true
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items[]",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items[]",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "object"
+          ],
+          "requiredWhenParentPresent": false,
+          "structureOnly": true
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items[].id",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/id",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/id"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items[].id",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "盘点明细编号",
+          "format": "int64"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items[].warehouseId",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/warehouseId",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/warehouseId"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items[].warehouseId",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "仓库编号",
+          "format": "int64"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items[].productId",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/productId",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/productId"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items[].productId",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "产品编号",
+          "format": "int64"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items[].productPrice",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/productPrice",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/productPrice"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items[].productPrice",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "number"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "产品单价"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items[].stockCount",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/stockCount",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/stockCount"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items[].stockCount",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "number"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "账面数量（当前库存）"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items[].actualCount",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/actualCount",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/actualCount"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items[].actualCount",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "number"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "实际数量（实际库存）"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items[].count",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/count",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/count"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items[].count",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "number"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "盈亏数量"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items[].remark",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/remark",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/remark"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items[].remark",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "备注"
+        }
+      ],
+      "derivedFields": [],
+      "parameterConstraints": null,
+      "businessInput": null,
+      "responseContracts": [
+        {
+          "status": "200",
+          "mediaType": "application/json",
+          "types": [
+            "object"
+          ],
+          "schemaPointer": "#/paths/~1admin-api~1erp~1stock-check~1create/post/responses/200/content/application~1json/schema"
+        }
+      ],
+      "successCondition": {
+        "path": "code",
+        "equals": 0
+      },
+      "successValueType": "integer",
+      "errorMessagePath": "msg",
+      "successMeaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
+      "basis": {
+        "javaReturnType": "cn.iocoder.yudao.framework.common.pojo.CommonResult<java.lang.Long>",
+        "responses": [
+          {
+            "response": "200",
+            "mediaType": "application/json",
+            "schema": {
+              "$ref": "#/components/schemas/cn.iocoder.yudao.framework.common.pojo.CommonResultJava.lang.Long"
+            },
+            "successFieldDescription": "业务状态码，0 表示成功，非 0 表示失败；不能只依据 HTTP 状态判断成功"
+          }
+        ]
+      },
+      "manualReview": []
+    },
+    "PUT /admin-api/erp/stock-check/update": {
+      "operationId": "ErpStockCheck_updateStockCheck",
+      "summary": "更新库存盘点单",
+      "openapiPointer": "#/paths/~1admin-api~1erp~1stock-check~1update/put",
+      "javaHandler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpStockCheckController#updateStockCheck",
+      "javaHandlerSignature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<java.lang.Boolean> cn.iocoder.yudao.module.erp.controller.admin.stock.ErpStockCheckController.updateStockCheck(cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO)",
+      "parameterMappings": [
+        {
+          "source": {
+            "in": "header",
+            "fieldPath": "tenant-id",
+            "schemaPointer": "#/paths/~1admin-api~1erp~1stock-check~1update/put/parameters/0/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1erp~1stock-check~1update/put/parameters/0/schema"
+            ]
+          },
+          "target": {
+            "in": "header",
+            "fieldPath": "tenant-id"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "租户编号",
+          "format": "int32",
+          "default": 1,
+          "serialization": {
+            "style": "simple",
+            "explode": false
+          }
+        },
+        {
+          "source": {
+            "in": "header",
+            "fieldPath": "Authorization",
+            "schemaPointer": "#/paths/~1admin-api~1erp~1stock-check~1update/put/parameters/1/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1erp~1stock-check~1update/put/parameters/1/schema"
+            ]
+          },
+          "target": {
+            "in": "header",
+            "fieldPath": "Authorization"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "认证 Token",
+          "serialization": {
+            "style": "simple",
+            "explode": false
+          }
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "$",
+            "schemaPointer": "#/paths/~1admin-api~1erp~1stock-check~1update/put/requestBody/content/application~1json/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1erp~1stock-check~1update/put/requestBody/content/application~1json/schema"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "$",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "object"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "管理后台 - ERP 库存盘点单新增/修改 Request VO",
+          "structureOnly": true
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "id",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/id",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/id",
+              "#/paths/~1admin-api~1erp~1stock-check~1update/put/requestBody/content/application~1json/schema/allOf/1/properties/id"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "id",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "要修改的已有记录编号，必须来自已有记录，不要编造",
+          "format": "int64"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "checkTime",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/checkTime",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/checkTime"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "checkTime",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "integer",
+            "string"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "盘点时间；JSON 入参支持整数毫秒时间戳或 ISO 8601 日期时间字符串；JSON 返回为整数毫秒时间戳；不合法的值会被拒绝"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "remark",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/remark",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/remark"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "remark",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "备注"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "fileUrl",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/fileUrl",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/fileUrl"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "fileUrl",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "附件 URL"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/items",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO/properties/items"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "array"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "盘点明细列表",
+          "minItems": 1,
+          "structureOnly": true
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items[]",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items[]",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "object"
+          ],
+          "requiredWhenParentPresent": false,
+          "structureOnly": true
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items[].id",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/id",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/id"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items[].id",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "盘点明细编号",
+          "format": "int64"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items[].warehouseId",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/warehouseId",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/warehouseId"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items[].warehouseId",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "仓库编号",
+          "format": "int64"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items[].productId",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/productId",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/productId"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items[].productId",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "产品编号",
+          "format": "int64"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items[].productPrice",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/productPrice",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/productPrice"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items[].productPrice",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "number"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "产品单价"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items[].stockCount",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/stockCount",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/stockCount"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items[].stockCount",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "number"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "账面数量（当前库存）"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items[].actualCount",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/actualCount",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/actualCount"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items[].actualCount",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "number"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "实际数量（实际库存）"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items[].count",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/count",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/count"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items[].count",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "number"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "盈亏数量"
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "items[].remark",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/remark",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.erp.controller.admin.stock.vo.check.ErpStockCheckSaveReqVO.Item/properties/remark"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "items[].remark",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "备注"
+        }
+      ],
+      "derivedFields": [],
+      "parameterConstraints": null,
+      "businessInput": null,
+      "responseContracts": [
+        {
+          "status": "200",
+          "mediaType": "application/json",
+          "types": [
+            "object"
+          ],
+          "schemaPointer": "#/paths/~1admin-api~1erp~1stock-check~1update/put/responses/200/content/application~1json/schema"
+        }
+      ],
+      "successCondition": {
+        "path": "code",
+        "equals": 0
+      },
+      "successValueType": "integer",
+      "errorMessagePath": "msg",
+      "successMeaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
+      "basis": {
+        "javaReturnType": "cn.iocoder.yudao.framework.common.pojo.CommonResult<java.lang.Boolean>",
+        "responses": [
+          {
+            "response": "200",
+            "mediaType": "application/json",
+            "schema": {
+              "$ref": "#/components/schemas/cn.iocoder.yudao.framework.common.pojo.CommonResultJava.lang.Boolean"
+            },
+            "successFieldDescription": "业务状态码，0 表示成功，非 0 表示失败；不能只依据 HTTP 状态判断成功"
+          }
+        ]
+      },
+      "manualReview": []
+    },
+    "GET /admin-api/infra/config/page": {
+      "operationId": "Config_getConfigPage",
+      "summary": "获取参数配置分页",
+      "openapiPointer": "#/paths/~1admin-api~1infra~1config~1page/get",
+      "javaHandler": "cn.iocoder.yudao.module.infra.controller.admin.config.ConfigController#getConfigPage",
+      "javaHandlerSignature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.framework.common.pojo.PageResult<cn.iocoder.yudao.module.infra.controller.admin.config.vo.ConfigRespVO>> cn.iocoder.yudao.module.infra.controller.admin.config.ConfigController.getConfigPage(cn.iocoder.yudao.module.infra.controller.admin.config.vo.ConfigPageReqVO)",
+      "parameterMappings": [
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "name",
+            "schemaPointer": "#/paths/~1admin-api~1infra~1config~1page/get/parameters/0/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1infra~1config~1page/get/parameters/0/schema"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "name"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "参数配置名称，模糊匹配",
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "key",
+            "schemaPointer": "#/paths/~1admin-api~1infra~1config~1page/get/parameters/1/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1infra~1config~1page/get/parameters/1/schema"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "key"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "参数键名，模糊匹配",
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "type",
+            "schemaPointer": "#/paths/~1admin-api~1infra~1config~1page/get/parameters/2/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1infra~1config~1page/get/parameters/2/schema"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "type"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "参数类型，参见 SysConfigTypeEnum 枚举",
+          "format": "int32",
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "createTime",
+            "schemaPointer": "#/paths/~1admin-api~1infra~1config~1page/get/parameters/3/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1infra~1config~1page/get/parameters/3/schema"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "createTime"
+          },
+          "types": [
+            "array"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "创建时间",
+          "structureOnly": true,
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "createTime[]",
+            "schemaPointer": "#/paths/~1admin-api~1infra~1config~1page/get/parameters/3/schema/items",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1infra~1config~1page/get/parameters/3/schema/items"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "createTime[]"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "创建时间；查询/表单字符串，格式 yyyy-MM-dd HH:mm:ss",
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "pageNo",
+            "schemaPointer": "#/paths/~1admin-api~1infra~1config~1page/get/parameters/4/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1infra~1config~1page/get/parameters/4/schema"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "pageNo"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "页码，从 1 开始，省略为 1",
+          "format": "int32",
+          "default": 1,
+          "minimum": 1,
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "pageSize",
+            "schemaPointer": "#/paths/~1admin-api~1infra~1config~1page/get/parameters/5/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1infra~1config~1page/get/parameters/5/schema"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "pageSize"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "每页条数，省略为 10，范围 1 到 200；-1 仅供后端导出逻辑内部使用",
+          "format": "int32",
+          "default": 10,
+          "minimum": 1,
+          "maximum": 200,
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "header",
+            "fieldPath": "tenant-id",
+            "schemaPointer": "#/paths/~1admin-api~1infra~1config~1page/get/parameters/6/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1infra~1config~1page/get/parameters/6/schema"
+            ]
+          },
+          "target": {
+            "in": "header",
+            "fieldPath": "tenant-id"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "租户编号",
+          "format": "int32",
+          "default": 1,
+          "serialization": {
+            "style": "simple",
+            "explode": false
+          }
+        },
+        {
+          "source": {
+            "in": "header",
+            "fieldPath": "Authorization",
+            "schemaPointer": "#/paths/~1admin-api~1infra~1config~1page/get/parameters/7/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1infra~1config~1page/get/parameters/7/schema"
+            ]
+          },
+          "target": {
+            "in": "header",
+            "fieldPath": "Authorization"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "认证 Token",
+          "serialization": {
+            "style": "simple",
+            "explode": false
+          }
+        }
+      ],
+      "derivedFields": [],
+      "parameterConstraints": null,
+      "businessInput": null,
+      "responseContracts": [
+        {
+          "status": "200",
+          "mediaType": "application/json",
+          "types": [
+            "object"
+          ],
+          "schemaPointer": "#/paths/~1admin-api~1infra~1config~1page/get/responses/200/content/application~1json/schema"
+        }
+      ],
+      "successCondition": {
+        "path": "code",
+        "equals": 0
+      },
+      "successValueType": "integer",
+      "errorMessagePath": "msg",
+      "successMeaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
+      "basis": {
+        "javaReturnType": "cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.framework.common.pojo.PageResult<cn.iocoder.yudao.module.infra.controller.admin.config.vo.ConfigRespVO>>",
+        "responses": [
+          {
+            "response": "200",
+            "mediaType": "application/json",
+            "schema": {
+              "$ref": "#/components/schemas/cn.iocoder.yudao.framework.common.pojo.CommonResultCn.iocoder.yudao.framework.common.pojo.PageResultCn.iocoder.yudao.module.infra.controller.admin.config.vo.ConfigRespVO"
+            },
+            "successFieldDescription": "业务状态码，0 表示成功，非 0 表示失败；不能只依据 HTTP 状态判断成功"
+          }
+        ]
+      },
+      "manualReview": []
+    },
+    "GET /admin-api/infra/config/export-excel": {
+      "operationId": "Config_exportConfig",
+      "summary": "导出参数配置",
+      "openapiPointer": "#/paths/~1admin-api~1infra~1config~1export-excel/get",
+      "javaHandler": "cn.iocoder.yudao.module.infra.controller.admin.config.ConfigController#exportConfig",
+      "javaHandlerSignature": "public void cn.iocoder.yudao.module.infra.controller.admin.config.ConfigController.exportConfig(cn.iocoder.yudao.module.infra.controller.admin.config.vo.ConfigPageReqVO,jakarta.servlet.http.HttpServletResponse) throws java.io.IOException",
+      "parameterMappings": [
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "name",
+            "schemaPointer": "#/paths/~1admin-api~1infra~1config~1export-excel/get/parameters/0/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1infra~1config~1export-excel/get/parameters/0/schema"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "name"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "参数配置名称，模糊匹配",
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "key",
+            "schemaPointer": "#/paths/~1admin-api~1infra~1config~1export-excel/get/parameters/1/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1infra~1config~1export-excel/get/parameters/1/schema"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "key"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "参数键名，模糊匹配",
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "type",
+            "schemaPointer": "#/paths/~1admin-api~1infra~1config~1export-excel/get/parameters/2/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1infra~1config~1export-excel/get/parameters/2/schema"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "type"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "参数类型，参见 SysConfigTypeEnum 枚举",
+          "format": "int32",
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "createTime",
+            "schemaPointer": "#/paths/~1admin-api~1infra~1config~1export-excel/get/parameters/3/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1infra~1config~1export-excel/get/parameters/3/schema"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "createTime"
+          },
+          "types": [
+            "array"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "创建时间",
+          "structureOnly": true,
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "createTime[]",
+            "schemaPointer": "#/paths/~1admin-api~1infra~1config~1export-excel/get/parameters/3/schema/items",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1infra~1config~1export-excel/get/parameters/3/schema/items"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "createTime[]"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "创建时间；查询/表单字符串，格式 yyyy-MM-dd HH:mm:ss",
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "pageNo",
+            "schemaPointer": "#/paths/~1admin-api~1infra~1config~1export-excel/get/parameters/4/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1infra~1config~1export-excel/get/parameters/4/schema"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "pageNo"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "页码，从 1 开始，省略为 1",
+          "format": "int32",
+          "default": 1,
+          "minimum": 1,
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "pageSize",
+            "schemaPointer": "#/paths/~1admin-api~1infra~1config~1export-excel/get/parameters/5/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1infra~1config~1export-excel/get/parameters/5/schema"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "pageSize"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "每页条数，省略为 10，范围 1 到 200；-1 仅供后端导出逻辑内部使用",
+          "format": "int32",
+          "default": 10,
+          "minimum": 1,
+          "maximum": 200,
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "header",
+            "fieldPath": "tenant-id",
+            "schemaPointer": "#/paths/~1admin-api~1infra~1config~1export-excel/get/parameters/6/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1infra~1config~1export-excel/get/parameters/6/schema"
+            ]
+          },
+          "target": {
+            "in": "header",
+            "fieldPath": "tenant-id"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "租户编号",
+          "format": "int32",
+          "default": 1,
+          "serialization": {
+            "style": "simple",
+            "explode": false
+          }
+        },
+        {
+          "source": {
+            "in": "header",
+            "fieldPath": "Authorization",
+            "schemaPointer": "#/paths/~1admin-api~1infra~1config~1export-excel/get/parameters/7/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1infra~1config~1export-excel/get/parameters/7/schema"
+            ]
+          },
+          "target": {
+            "in": "header",
+            "fieldPath": "Authorization"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "认证 Token",
+          "serialization": {
+            "style": "simple",
+            "explode": false
+          }
+        }
+      ],
+      "derivedFields": [],
+      "parameterConstraints": null,
+      "businessInput": null,
+      "responseContracts": [
+        {
+          "status": "200",
+          "mediaType": "application/vnd.ms-excel",
+          "types": [
+            "string"
+          ],
+          "schemaPointer": "#/paths/~1admin-api~1infra~1config~1export-excel/get/responses/200/content/application~1vnd.ms-excel/schema"
+        }
+      ],
+      "successCondition": null,
+      "successValueType": null,
+      "errorMessagePath": null,
+      "successMeaning": null,
+      "basis": {
+        "javaReturnType": "void"
+      },
+      "manualReview": [
+        "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+      ]
+    },
+    "GET /admin-api/system/sms-channel/page": {
+      "operationId": "SmsChannel_getSmsChannelPage",
+      "summary": "获得短信渠道分页",
+      "openapiPointer": "#/paths/~1admin-api~1system~1sms-channel~1page/get",
+      "javaHandler": "cn.iocoder.yudao.module.system.controller.admin.sms.SmsChannelController#getSmsChannelPage",
+      "javaHandlerSignature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.framework.common.pojo.PageResult<cn.iocoder.yudao.module.system.controller.admin.sms.vo.channel.SmsChannelRespVO>> cn.iocoder.yudao.module.system.controller.admin.sms.SmsChannelController.getSmsChannelPage(cn.iocoder.yudao.module.system.controller.admin.sms.vo.channel.SmsChannelPageReqVO)",
+      "parameterMappings": [
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "status",
+            "schemaPointer": "#/paths/~1admin-api~1system~1sms-channel~1page/get/parameters/0/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1system~1sms-channel~1page/get/parameters/0/schema"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "status"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "短信渠道状态：0 启用，1 停用；省略则不按状态筛选",
+          "format": "int32",
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "signature",
+            "schemaPointer": "#/paths/~1admin-api~1system~1sms-channel~1page/get/parameters/1/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1system~1sms-channel~1page/get/parameters/1/schema"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "signature"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "短信签名，模糊匹配",
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "createTime",
+            "schemaPointer": "#/paths/~1admin-api~1system~1sms-channel~1page/get/parameters/2/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1system~1sms-channel~1page/get/parameters/2/schema"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "createTime"
+          },
+          "types": [
+            "array"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "创建时间",
+          "structureOnly": true,
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "createTime[]",
+            "schemaPointer": "#/paths/~1admin-api~1system~1sms-channel~1page/get/parameters/2/schema/items",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1system~1sms-channel~1page/get/parameters/2/schema/items"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "createTime[]"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "创建时间；查询/表单字符串，格式 yyyy-MM-dd HH:mm:ss",
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "pageNo",
+            "schemaPointer": "#/paths/~1admin-api~1system~1sms-channel~1page/get/parameters/3/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1system~1sms-channel~1page/get/parameters/3/schema"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "pageNo"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "页码，从 1 开始，省略为 1",
+          "format": "int32",
+          "default": 1,
+          "minimum": 1,
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "pageSize",
+            "schemaPointer": "#/paths/~1admin-api~1system~1sms-channel~1page/get/parameters/4/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1system~1sms-channel~1page/get/parameters/4/schema"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "pageSize"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "每页条数，省略为 10，范围 1 到 200；-1 仅供后端导出逻辑内部使用",
+          "format": "int32",
+          "default": 10,
+          "minimum": 1,
+          "maximum": 200,
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "header",
+            "fieldPath": "tenant-id",
+            "schemaPointer": "#/paths/~1admin-api~1system~1sms-channel~1page/get/parameters/5/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1system~1sms-channel~1page/get/parameters/5/schema"
+            ]
+          },
+          "target": {
+            "in": "header",
+            "fieldPath": "tenant-id"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "租户编号",
+          "format": "int32",
+          "default": 1,
+          "serialization": {
+            "style": "simple",
+            "explode": false
+          }
+        },
+        {
+          "source": {
+            "in": "header",
+            "fieldPath": "Authorization",
+            "schemaPointer": "#/paths/~1admin-api~1system~1sms-channel~1page/get/parameters/6/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1system~1sms-channel~1page/get/parameters/6/schema"
+            ]
+          },
+          "target": {
+            "in": "header",
+            "fieldPath": "Authorization"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "认证 Token",
+          "serialization": {
+            "style": "simple",
+            "explode": false
+          }
+        }
+      ],
+      "derivedFields": [],
+      "parameterConstraints": null,
+      "businessInput": null,
+      "responseContracts": [
+        {
+          "status": "200",
+          "mediaType": "application/json",
+          "types": [
+            "object"
+          ],
+          "schemaPointer": "#/paths/~1admin-api~1system~1sms-channel~1page/get/responses/200/content/application~1json/schema"
+        }
+      ],
+      "successCondition": {
+        "path": "code",
+        "equals": 0
+      },
+      "successValueType": "integer",
+      "errorMessagePath": "msg",
+      "successMeaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
+      "basis": {
+        "javaReturnType": "cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.framework.common.pojo.PageResult<cn.iocoder.yudao.module.system.controller.admin.sms.vo.channel.SmsChannelRespVO>>",
+        "responses": [
+          {
+            "response": "200",
+            "mediaType": "application/json",
+            "schema": {
+              "$ref": "#/components/schemas/cn.iocoder.yudao.framework.common.pojo.CommonResultCn.iocoder.yudao.framework.common.pojo.PageResultCn.iocoder.yudao.module.system.controller.admin.sms.vo.channel.SmsChannelRespVO"
+            },
+            "successFieldDescription": "业务状态码，0 表示成功，非 0 表示失败；不能只依据 HTTP 状态判断成功"
+          }
+        ]
+      },
+      "manualReview": []
+    },
+    "PUT /admin-api/erp/warehouse/update-default-status": {
+      "operationId": "ErpWarehouse_updateWarehouseDefaultStatus",
+      "summary": "更新仓库默认状态",
+      "openapiPointer": "#/paths/~1admin-api~1erp~1warehouse~1update-default-status/put",
+      "javaHandler": "cn.iocoder.yudao.module.erp.controller.admin.stock.ErpWarehouseController#updateWarehouseDefaultStatus",
+      "javaHandlerSignature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<java.lang.Boolean> cn.iocoder.yudao.module.erp.controller.admin.stock.ErpWarehouseController.updateWarehouseDefaultStatus(java.lang.Long,java.lang.Boolean)",
+      "parameterMappings": [
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "id",
+            "schemaPointer": "#/paths/~1admin-api~1erp~1warehouse~1update-default-status/put/parameters/0/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1erp~1warehouse~1update-default-status/put/parameters/0/schema"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "id"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "编号",
+          "format": "int64",
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "query",
+            "fieldPath": "defaultStatus",
+            "schemaPointer": "#/paths/~1admin-api~1erp~1warehouse~1update-default-status/put/parameters/1/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1erp~1warehouse~1update-default-status/put/parameters/1/schema"
+            ]
+          },
+          "target": {
+            "in": "query",
+            "fieldPath": "defaultStatus"
+          },
+          "types": [
+            "boolean"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "是否设为默认，true 为默认，false 为非默认",
+          "serialization": {
+            "style": "form",
+            "explode": true
+          }
+        },
+        {
+          "source": {
+            "in": "header",
+            "fieldPath": "tenant-id",
+            "schemaPointer": "#/paths/~1admin-api~1erp~1warehouse~1update-default-status/put/parameters/2/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1erp~1warehouse~1update-default-status/put/parameters/2/schema"
+            ]
+          },
+          "target": {
+            "in": "header",
+            "fieldPath": "tenant-id"
+          },
+          "types": [
+            "integer"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "租户编号",
+          "format": "int32",
+          "default": 1,
+          "serialization": {
+            "style": "simple",
+            "explode": false
+          }
+        },
+        {
+          "source": {
+            "in": "header",
+            "fieldPath": "Authorization",
+            "schemaPointer": "#/paths/~1admin-api~1erp~1warehouse~1update-default-status/put/parameters/3/schema",
+            "constraintPointers": [
+              "#/paths/~1admin-api~1erp~1warehouse~1update-default-status/put/parameters/3/schema"
+            ]
+          },
+          "target": {
+            "in": "header",
+            "fieldPath": "Authorization"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": false,
+          "description": "认证 Token",
+          "serialization": {
+            "style": "simple",
+            "explode": false
+          }
+        }
+      ],
+      "derivedFields": [],
+      "parameterConstraints": null,
+      "businessInput": null,
+      "responseContracts": [
+        {
+          "status": "200",
+          "mediaType": "application/json",
+          "types": [
+            "object"
+          ],
+          "schemaPointer": "#/paths/~1admin-api~1erp~1warehouse~1update-default-status/put/responses/200/content/application~1json/schema"
+        }
+      ],
+      "successCondition": {
+        "path": "code",
+        "equals": 0
+      },
+      "successValueType": "integer",
+      "errorMessagePath": "msg",
+      "successMeaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
+      "basis": {
+        "javaReturnType": "cn.iocoder.yudao.framework.common.pojo.CommonResult<java.lang.Boolean>",
+        "responses": [
+          {
+            "response": "200",
+            "mediaType": "application/json",
+            "schema": {
+              "$ref": "#/components/schemas/cn.iocoder.yudao.framework.common.pojo.CommonResultJava.lang.Boolean"
+            },
+            "successFieldDescription": "业务状态码，0 表示成功，非 0 表示失败；不能只依据 HTTP 状态判断成功"
+          }
+        ]
+      },
+      "manualReview": []
+    }
+  }
+}
