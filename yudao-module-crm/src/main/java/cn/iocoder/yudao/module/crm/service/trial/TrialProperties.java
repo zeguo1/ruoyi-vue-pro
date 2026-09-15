@@ -27,8 +27,29 @@ public class TrialProperties {
     private String mgsLoginUrl;
     private String oauthClientId;
     private Map<String, ServiceKey> keys = Map.of();
+    private Connector connector = new Connector();
     private LoginDelivery loginDelivery = new LoginDelivery();
     private SmsVerification smsVerification = new SmsVerification();
+
+    /** Disabled until TLS, private cards and counterpart callbacks have been verified. */
+    @Data
+    public static class Connector {
+        private boolean enabled;
+        private Map<String, ConnectorKey> keys = Map.of();
+    }
+
+    @Data
+    public static class ConnectorKey {
+        private boolean enabled;
+        private String issuer;
+        @lombok.ToString.Exclude
+        private String tokenSha256;
+        private java.time.Instant expiresAt;
+        private Set<String> capabilities = Set.of();
+        private Set<String> assistantIds = Set.of();
+        private Set<String> audiences = Set.of();
+        private Set<String> channels = Set.of();
+    }
 
     @Data
     public static class SmsVerification {

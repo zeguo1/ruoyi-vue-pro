@@ -133,6 +133,18 @@ public class TrialSmsVerificationService {
         });
     }
 
+    /** The connector never receives a proof from model arguments; recover it from MGS's verified state. */
+    public TrialIdentity connectorSubmissionIdentity(TrialIdentity identity) {
+        config();
+        var rows = jdbc.queryForList("SELECT id,verify_key_hash,proof_hash FROM crm_trial_sms_challenge WHERE identity_hash=? AND state='VERIFIED' AND proof_expires_at>? ORDER BY verified_at DESC,id DESC LIMIT 1",
+                identity.identityHash(), at(Instant.now()));
+        if (rows.isEmpty()) throw invalid();
+        var row = rows.get(0);
+        String token = proof((String) row.get("id"), (String) row.get("verify_key_hash"));
+        if (!TrialServiceAuth.sha256(token).equals(row.get("proof_hash"))) throw invalid();
+        return new TrialIdentity(identity.issuer(), identity.subjectId(), "", "", identity.idempotencyKey(), token);
+    }
+
     private TrialProperties.SmsVerification config() {
         properties.newPolicy();
         var config = properties.getSmsVerification();

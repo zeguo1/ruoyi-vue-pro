@@ -1,0 +1,422 @@
+{
+  "formatVersion": 1,
+  "source": {
+    "openapiVersion": "3.1.0",
+    "apiVersion": "1.0.0-full-contract-v7.2",
+    "sha256": "b92f0d23d48e2b10ec99222ed4006de558f956c0b01a101d4ddba342fbc69fad",
+    "context": "isolated-source-export-with-production-Jackson-and-springdoc-config",
+    "deployed": false,
+    "knowdoApplied": false
+  },
+  "mappingConvention": {
+    "source": "OpenAPI input structure, not KnowDo tool parameter names",
+    "root": "$",
+    "arrayElement": "[]",
+    "requiredWhenParentPresent": "只表示直接父对象存在时的必填；必须同时满足祖先 required 与分支约束",
+    "structureOnly": "结构节点，不与叶节点重复提交",
+    "references": "allOf 为交集；保留 JSON Schema 原始指针作为完整约束依据"
+  },
+  "summary": {
+    "operations": 4,
+    "modules": {
+      "crm": 4
+    },
+    "withConfirmedSuccess": 4,
+    "requiringManualReview": 0,
+    "referenceErrors": [],
+    "manualReasonCounts": {}
+  },
+  "operations": {
+    "POST /admin-api/crm/trial-connector/create-accounts": {
+      "operationId": "connector_create_trial_accounts",
+      "summary": "受理本人已确认申请的开户",
+      "openapiPointer": "#/paths/~1admin-api~1crm~1trial-connector~1create-accounts/post",
+      "javaHandler": "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialConnectorController#create",
+      "javaHandlerSignature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialConnectorController.create(cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO,jakarta.servlet.http.HttpServletRequest)",
+      "parameterMappings": [
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "$",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "$",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "object"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "本人试用申请引用；仅知道编号不能查询或开户",
+          "structureOnly": true
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "applicationId",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO/properties/applicationId",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO/properties/applicationId"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "applicationId",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "登记本人试用申请接口返回的申请编号",
+          "minLength": 1,
+          "pattern": "[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
+        }
+      ],
+      "derivedFields": [],
+      "parameterConstraints": null,
+      "businessInput": null,
+      "responseContracts": [
+        {
+          "status": "200",
+          "mediaType": "application/json",
+          "types": [
+            "object"
+          ],
+          "schemaPointer": "#/paths/~1admin-api~1crm~1trial-connector~1create-accounts/post/responses/200/content/application~1json/schema"
+        }
+      ],
+      "successCondition": {
+        "path": "code",
+        "equals": 0
+      },
+      "successValueType": "integer",
+      "errorMessagePath": "msg",
+      "successMeaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
+      "basis": {
+        "javaReturnType": "cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO>",
+        "responses": [
+          {
+            "response": "200",
+            "mediaType": "application/json",
+            "schema": {
+              "$ref": "#/components/schemas/cn.iocoder.yudao.framework.common.pojo.CommonResultCn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO"
+            },
+            "successFieldDescription": "业务状态码，0 表示成功，非 0 表示失败；不能只依据 HTTP 状态判断成功"
+          }
+        ]
+      },
+      "manualReview": []
+    },
+    "POST /admin-api/crm/trial-connector/guide": {
+      "operationId": "connector_get_trial_guide",
+      "summary": "查询本人试用指南",
+      "openapiPointer": "#/paths/~1admin-api~1crm~1trial-connector~1guide/post",
+      "javaHandler": "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialConnectorController#guide",
+      "javaHandlerSignature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialGuideRespVO> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialConnectorController.guide(cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO,jakarta.servlet.http.HttpServletRequest)",
+      "parameterMappings": [
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "$",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "$",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "object"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "本人试用申请引用；仅知道编号不能查询或开户",
+          "structureOnly": true
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "applicationId",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO/properties/applicationId",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO/properties/applicationId"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "applicationId",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "登记本人试用申请接口返回的申请编号",
+          "minLength": 1,
+          "pattern": "[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
+        }
+      ],
+      "derivedFields": [],
+      "parameterConstraints": null,
+      "businessInput": null,
+      "responseContracts": [
+        {
+          "status": "200",
+          "mediaType": "application/json",
+          "types": [
+            "object"
+          ],
+          "schemaPointer": "#/paths/~1admin-api~1crm~1trial-connector~1guide/post/responses/200/content/application~1json/schema"
+        }
+      ],
+      "successCondition": {
+        "path": "code",
+        "equals": 0
+      },
+      "successValueType": "integer",
+      "errorMessagePath": "msg",
+      "successMeaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
+      "basis": {
+        "javaReturnType": "cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialGuideRespVO>",
+        "responses": [
+          {
+            "response": "200",
+            "mediaType": "application/json",
+            "schema": {
+              "$ref": "#/components/schemas/cn.iocoder.yudao.framework.common.pojo.CommonResultCn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialGuideRespVO"
+            },
+            "successFieldDescription": "业务状态码，0 表示成功，非 0 表示失败；不能只依据 HTTP 状态判断成功"
+          }
+        ]
+      },
+      "manualReview": []
+    },
+    "POST /admin-api/crm/trial-connector/status": {
+      "operationId": "connector_get_trial_status",
+      "summary": "查询本人试用申请状态",
+      "openapiPointer": "#/paths/~1admin-api~1crm~1trial-connector~1status/post",
+      "javaHandler": "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialConnectorController#status",
+      "javaHandlerSignature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialConnectorController.status(cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO,jakarta.servlet.http.HttpServletRequest)",
+      "parameterMappings": [
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "$",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "$",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "object"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "本人试用申请引用；仅知道编号不能查询或开户",
+          "structureOnly": true
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "applicationId",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO/properties/applicationId",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO/properties/applicationId"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "applicationId",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "登记本人试用申请接口返回的申请编号",
+          "minLength": 1,
+          "pattern": "[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
+        }
+      ],
+      "derivedFields": [],
+      "parameterConstraints": null,
+      "businessInput": null,
+      "responseContracts": [
+        {
+          "status": "200",
+          "mediaType": "application/json",
+          "types": [
+            "object"
+          ],
+          "schemaPointer": "#/paths/~1admin-api~1crm~1trial-connector~1status/post/responses/200/content/application~1json/schema"
+        }
+      ],
+      "successCondition": {
+        "path": "code",
+        "equals": 0
+      },
+      "successValueType": "integer",
+      "errorMessagePath": "msg",
+      "successMeaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
+      "basis": {
+        "javaReturnType": "cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO>",
+        "responses": [
+          {
+            "response": "200",
+            "mediaType": "application/json",
+            "schema": {
+              "$ref": "#/components/schemas/cn.iocoder.yudao.framework.common.pojo.CommonResultCn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO"
+            },
+            "successFieldDescription": "业务状态码，0 表示成功，非 0 表示失败；不能只依据 HTTP 状态判断成功"
+          }
+        ]
+      },
+      "manualReview": []
+    },
+    "POST /admin-api/crm/trial-connector/submit": {
+      "operationId": "connector_submit_trial_application",
+      "summary": "登记本人试用申请",
+      "openapiPointer": "#/paths/~1admin-api~1crm~1trial-connector~1submit/post",
+      "javaHandler": "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialConnectorController#submit",
+      "javaHandlerSignature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialConnectorController.submit(cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialSubmitReqVO,jakarta.servlet.http.HttpServletRequest)",
+      "parameterMappings": [
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "$",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialSubmitReqVO",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialSubmitReqVO"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "$",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "object"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "知办可信服务提交试用申请；身份由可信服务认证取得，联系方式以 MGS 验证记录为准，均不属于模型参数",
+          "structureOnly": true
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "team",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialSubmitReqVO/properties/team",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialSubmitReqVO/properties/team"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "team",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "团队名称，仅用于留资，不用于合并身份",
+          "minLength": 0,
+          "maxLength": 100
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "contactName",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialSubmitReqVO/properties/contactName",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialSubmitReqVO/properties/contactName"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "contactName",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "联系人称呼",
+          "minLength": 0,
+          "maxLength": 30
+        },
+        {
+          "source": {
+            "in": "requestBody",
+            "fieldPath": "scenario",
+            "schemaPointer": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialSubmitReqVO/properties/scenario",
+            "constraintPointers": [
+              "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialSubmitReqVO/properties/scenario"
+            ]
+          },
+          "target": {
+            "in": "requestBody",
+            "fieldPath": "scenario",
+            "mediaType": "application/json"
+          },
+          "types": [
+            "string"
+          ],
+          "requiredWhenParentPresent": true,
+          "description": "首期体验场景：查询虚构客户并新增跟进",
+          "enum": [
+            "CRM_FOLLOW_UP"
+          ],
+          "minLength": 1,
+          "pattern": "CRM_FOLLOW_UP"
+        }
+      ],
+      "derivedFields": [],
+      "parameterConstraints": null,
+      "businessInput": null,
+      "responseContracts": [
+        {
+          "status": "200",
+          "mediaType": "application/json",
+          "types": [
+            "object"
+          ],
+          "schemaPointer": "#/paths/~1admin-api~1crm~1trial-connector~1submit/post/responses/200/content/application~1json/schema"
+        }
+      ],
+      "successCondition": {
+        "path": "code",
+        "equals": 0
+      },
+      "successValueType": "integer",
+      "errorMessagePath": "msg",
+      "successMeaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
+      "basis": {
+        "javaReturnType": "cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO>",
+        "responses": [
+          {
+            "response": "200",
+            "mediaType": "application/json",
+            "schema": {
+              "$ref": "#/components/schemas/cn.iocoder.yudao.framework.common.pojo.CommonResultCn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO"
+            },
+            "successFieldDescription": "业务状态码，0 表示成功，非 0 表示失败；不能只依据 HTTP 状态判断成功"
+          }
+        ]
+      },
+      "manualReview": []
+    }
+  }
+}

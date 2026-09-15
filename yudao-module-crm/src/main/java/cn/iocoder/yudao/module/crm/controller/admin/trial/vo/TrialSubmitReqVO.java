@@ -8,7 +8,7 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
-@Schema(additionalProperties = Schema.AdditionalPropertiesValue.FALSE, description = "知办可信服务提交试用申请；身份及经验证联系方式通过服务签名提供，不属于模型参数")
+@Schema(additionalProperties = Schema.AdditionalPropertiesValue.FALSE, description = "知办可信服务提交试用申请；身份由可信服务认证取得，联系方式以 MGS 验证记录为准，均不属于模型参数")
 public class TrialSubmitReqVO {
     @NotBlank @Size(max = 100)
     @Schema(description = "团队名称，仅用于留资，不用于合并身份", example = "示例体验团队")

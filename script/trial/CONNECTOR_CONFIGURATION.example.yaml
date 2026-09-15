@@ -1,0 +1,24 @@
+# Merge only this new subtree into existing mgs.trial settings; disabled template, not deployable credentials.
+mgs:
+  trial:
+    connector:
+      enabled: false
+      keys:
+        knowdo-tools-202609:
+          enabled: false
+          issuer: knowdo-trial
+          token-sha256: '<TOOLS Token 的 64 位小写 SHA-256，由离线工具生成>'
+          expires-at: '2026-12-14T00:00:00Z' # 按实际签发时间设置，过期即拒绝
+          capabilities: [TOOLS]
+          assistant-ids: ['<实际助手ID>']
+          audiences: [anonymous] # 仅开启业务实际需要的 audience
+          channels: ['<实际渠道值>']
+        knowdo-card-202609:
+          enabled: false
+          issuer: knowdo-trial # 必须与工具 Token 相同，issuer 参与用户身份绑定
+          token-sha256: '<安全卡片 Token 的 64 位小写 SHA-256>'
+          expires-at: '2026-12-14T00:00:00Z'
+          capabilities: [SMS_VERIFICATION, CONSENT]
+          assistant-ids: ['<实际助手ID>']
+          audiences: [anonymous]
+          channels: ['<实际渠道值>']

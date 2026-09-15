@@ -1,0 +1,16 @@
+{
+  "apiVersion": "1.0.0-full-contract-v7.2",
+  "readOnlySourceProbe": true,
+  "importedTools": 4,
+  "commonResultProcessingSuccessChecked": 4,
+  "evidenceAccepted": 4,
+  "failures": [],
+  "authorizationCompletionIsSeparate": true,
+  "connectorConfigurationInspected": false,
+  "knowdoApplied": false,
+  "unsupportedBodies": [],
+  "paginationSentToReview": null,
+  "warnings": [
+    "导入工具默认标记为有副作用；发布前核对服务对象、参数映射、成功条件及读写语义。"
+  ]
+}

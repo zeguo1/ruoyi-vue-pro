@@ -4,9 +4,11 @@ set -euo pipefail
 cd "$(dirname "$0")/../.."
 export MAVEN_OPTS='-Xmx512m -XX:ActiveProcessorCount=2'
 mvn -q -pl yudao-module-crm -am test \
-  -Dtest=TrialOrchestratorTest,TrialServiceAuthTest,TrialToolHttpIntegrationTest,TrialSmsVerificationTest,MgsTrialSmsSenderTest,TrialAuthorizationTest,MgsTrialOAuthGatewayTest,KnowdoResponseBoundTest,TrialBusinessIntegrationTest,TrialOperatorBootstrapTest,TrialLoginDeliveryTest,MgsTrialAccountIntegrationTest,TrialCorporateTenantIntegrationTest,TrialLocalJourneyIntegrationTest,TrialProcessRestartTest \
+  -Dtest=TrialConnectorHttpIntegrationTest,TrialOrchestratorTest,TrialServiceAuthTest,TrialToolHttpIntegrationTest,TrialSmsVerificationTest,MgsTrialSmsSenderTest,TrialAuthorizationTest,MgsTrialOAuthGatewayTest,KnowdoResponseBoundTest,TrialBusinessIntegrationTest,TrialOperatorBootstrapTest,TrialLoginDeliveryTest,MgsTrialAccountIntegrationTest,TrialCorporateTenantIntegrationTest,TrialLocalJourneyIntegrationTest,TrialProcessRestartTest \
   -Dsurefire.failIfNoSpecifiedTests=false \
   -DargLine='-Xmx384m -XX:ActiveProcessorCount=2'
+
+python3 -m unittest discover -s script/trial -p 'test_connector_key.py' -v
 
 # Generate docs without loading business infrastructure or modifying the running JAR.
 mvn -q -pl yudao-server -am test \

@@ -1,0 +1,158 @@
+{
+  "date": "2026-09-15",
+  "apiVersion": "1.0.0-full-contract-v7.2",
+  "protocolVersion": "mgs-trial-connector-v1",
+  "deployed": false,
+  "productionWrites": false,
+  "realSmsSent": false,
+  "knowdoApplied": false,
+  "javaSuites": [
+    {
+      "class": "TrialConnectorHttpIntegrationTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "TrialToolHttpIntegrationTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "TrialServiceAuthTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "TrialSmsVerificationTest",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "TrialAuthorizationTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "TrialOrchestratorTest",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "TrialBrowserJourneyTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1
+    },
+    {
+      "class": "FullOpenApiExportTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "ContractSchemaCustomizerTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "WireContractTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "QueryContractRegressionTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "BackendHandoffContractTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "FullContractValidationTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "FullOpenApiModelAuditTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "ExternalOpenApiContractTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "OpenApiItemSchemaTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "ErpSaleOrderContractTest",
+      "tests": 24,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "pythonKeyTests": {
+    "tests": 4,
+    "failures": 0
+  },
+  "openapi": {
+    "operations": 3056,
+    "bindingsChecked": 2353,
+    "referenceErrors": [],
+    "manualReviewOperations": 209,
+    "connectorOperations": 4,
+    "connectorCommonResultEvidenceAccepted": 4
+  },
+  "sha256": {
+    "openapi.json": "b92f0d23d48e2b10ec99222ed4006de558f956c0b01a101d4ddba342fbc69fad",
+    "knowdo-import-probe.json": "07aea929e6f8d4d47efc4cd2e86981b43ac1309e85ef42da838061f551fd759a",
+    "integration-summary.json": "6ffb0cd35bef57149440f70b2b7a1d70a66abb524b16bc667e67e811a97c9b17",
+    "integration-checklist.json": "95be7f4f75327a549a73bc21177c0630ca155a736df2e5eafc2709c9af46156f"
+  },
+  "limitations": [
+    "隔离 H2 数据库与 Redis 替身，未执行生产 MySQL 迁移",
+    "短信发送与知办回调使用测试替身",
+    "浏览器专用测试按条件跳过；未执行真实安全卡片联调",
+    "知办 lookup/ensure 回调实现、私有安全卡片及生产 HTTPS 边界尚待联调"
+  ],
+  "pythonOpenApiTests": {
+    "tests": 9,
+    "failures": 0
+  }
+}
