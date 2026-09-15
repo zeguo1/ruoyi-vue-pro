@@ -1,0 +1,119 @@
+{
+  "operations": 3052,
+  "bindingsChecked": 2349,
+  "documentedDownloads": 163,
+  "bindingManualReview": [
+    {
+      "operation": "POST /admin-api/pay/notify/transfer/{channelId}",
+      "argument": {
+        "required": false,
+        "mvcRequired": false,
+        "name": "params",
+        "javaType": "java.util.Map<java.lang.String, java.lang.String>",
+        "in": "query"
+      },
+      "reason": "MVC 动态参数 Map，键来自调用时的请求，不能固定映射为 params 字段"
+    },
+    {
+      "operation": "POST /admin-api/pay/notify/refund/{channelId}",
+      "argument": {
+        "required": false,
+        "mvcRequired": false,
+        "name": "params",
+        "javaType": "java.util.Map<java.lang.String, java.lang.String>",
+        "in": "query"
+      },
+      "reason": "MVC 动态参数 Map，键来自调用时的请求，不能固定映射为 params 字段"
+    },
+    {
+      "operation": "POST /admin-api/pay/notify/order/{channelId}",
+      "argument": {
+        "required": false,
+        "mvcRequired": false,
+        "name": "params",
+        "javaType": "java.util.Map<java.lang.String, java.lang.String>",
+        "in": "query"
+      },
+      "reason": "MVC 动态参数 Map，键来自调用时的请求，不能固定映射为 params 字段"
+    },
+    {
+      "operation": "GET /admin-api/report/go-view/data/get-by-http",
+      "argument": {
+        "required": false,
+        "mvcRequired": false,
+        "name": "params",
+        "javaType": "java.util.Map<java.lang.String, java.lang.String>",
+        "in": "query"
+      },
+      "reason": "MVC 动态参数 Map，键来自调用时的请求，不能固定映射为 params 字段"
+    },
+    {
+      "operation": "PUT /admin-api/report/go-view/data/get-by-http",
+      "argument": {
+        "required": false,
+        "mvcRequired": false,
+        "name": "params",
+        "javaType": "java.util.Map<java.lang.String, java.lang.String>",
+        "in": "query"
+      },
+      "reason": "MVC 动态参数 Map，键来自调用时的请求，不能固定映射为 params 字段"
+    },
+    {
+      "operation": "POST /admin-api/report/go-view/data/get-by-http",
+      "argument": {
+        "required": false,
+        "mvcRequired": false,
+        "name": "params",
+        "javaType": "java.util.Map<java.lang.String, java.lang.String>",
+        "in": "query"
+      },
+      "reason": "MVC 动态参数 Map，键来自调用时的请求，不能固定映射为 params 字段"
+    },
+    {
+      "operation": "DELETE /admin-api/report/go-view/data/get-by-http",
+      "argument": {
+        "required": false,
+        "mvcRequired": false,
+        "name": "params",
+        "javaType": "java.util.Map<java.lang.String, java.lang.String>",
+        "in": "query"
+      },
+      "reason": "MVC 动态参数 Map，键来自调用时的请求，不能固定映射为 params 字段"
+    },
+    {
+      "operation": "OPTIONS /admin-api/report/go-view/data/get-by-http",
+      "argument": {
+        "required": false,
+        "mvcRequired": false,
+        "name": "params",
+        "javaType": "java.util.Map<java.lang.String, java.lang.String>",
+        "in": "query"
+      },
+      "reason": "MVC 动态参数 Map，键来自调用时的请求，不能固定映射为 params 字段"
+    },
+    {
+      "operation": "HEAD /admin-api/report/go-view/data/get-by-http",
+      "argument": {
+        "required": false,
+        "mvcRequired": false,
+        "name": "params",
+        "javaType": "java.util.Map<java.lang.String, java.lang.String>",
+        "in": "query"
+      },
+      "reason": "MVC 动态参数 Map，键来自调用时的请求，不能固定映射为 params 字段"
+    },
+    {
+      "operation": "PATCH /admin-api/report/go-view/data/get-by-http",
+      "argument": {
+        "required": false,
+        "mvcRequired": false,
+        "name": "params",
+        "javaType": "java.util.Map<java.lang.String, java.lang.String>",
+        "in": "query"
+      },
+      "reason": "MVC 动态参数 Map，键来自调用时的请求，不能固定映射为 params 字段"
+    }
+  ],
+  "referenceErrors": [],
+  "errors": []
+}

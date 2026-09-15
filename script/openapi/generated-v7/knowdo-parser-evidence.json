@@ -1,0 +1,732 @@
+{
+  "apiVersion": "1.0.0-full-contract-v7",
+  "readOnlySourceProbe": true,
+  "importedTools": 3415,
+  "commonResultProcessingSuccessChecked": 2871,
+  "evidenceAccepted": 2871,
+  "failures": [],
+  "authorizationCompletionIsSeparate": true,
+  "connectorConfigurationInspected": false,
+  "knowdoApplied": false,
+  "unsupportedBodies": [
+    {
+      "endpoint": "POST /jmreport/importReportConfig",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /jmreport/importExcel",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /drag/page/importDragConfig",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /app-api/infra/file/upload",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "directory",
+          "to": "directory",
+          "location": "query",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "directory": {
+            "type": "string",
+            "description": "文件目录"
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/system/user/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/system/oauth2/token",
+      "media": [
+        "application/x-www-form-urlencoded"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/system/oauth2/check-token",
+      "media": [
+        "application/x-www-form-urlencoded"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/pms/pm/work-item/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/mes/md/item/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/mes/md-vendor/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/mes/md-client/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/mes/dv/machinery/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/iot/device/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/infra/file/upload",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "directory",
+          "to": "directory",
+          "location": "query",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "directory": {
+            "type": "string",
+            "description": "文件目录"
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/hrm/salary/month-record/compute-import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/hrm/salary/employee-info/import-fix",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/hrm/salary/employee-info/import-change",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/hrm/employee/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/fms/voucher/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/fms/config/subject/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/fms/config/initial-balance/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/fms/config/auxiliary-item/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/bpm/model/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    }
+  ],
+  "paginationBeforeReview": {
+    "type": "object",
+    "properties": {
+      "readStatus": {
+        "type": "boolean",
+        "description": "是否已读"
+      },
+      "createTime": {
+        "type": "array",
+        "description": "创建时间",
+        "items": {
+          "type": "string",
+          "description": "创建时间；查询/表单字符串，格式 yyyy-MM-dd HH:mm:ss"
+        }
+      },
+      "pageNo": {
+        "type": "integer",
+        "description": "页码，从 1 开始，省略为 1",
+        "minimum": 1,
+        "format": "int32",
+        "default": 1
+      },
+      "pageSize": {
+        "type": "integer",
+        "description": "每页条数，省略为 10，范围 1 到 200；-1 仅供后端导出逻辑内部使用",
+        "minimum": 1,
+        "maximum": 200,
+        "format": "int32",
+        "default": 10
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "paginationSentToReview": {
+    "type": "object",
+    "required": [],
+    "properties": {
+      "readStatus": {
+        "type": "boolean",
+        "description": "是否已读"
+      },
+      "createTime": {
+        "type": "array",
+        "description": "创建时间",
+        "items": {
+          "type": "string",
+          "description": "创建时间；查询/表单字符串，格式 yyyy-MM-dd HH:mm:ss"
+        }
+      },
+      "pageNo": {
+        "type": "integer",
+        "description": "页码，从 1 开始，省略为 1"
+      },
+      "pageSize": {
+        "type": "integer",
+        "description": "每页条数，省略为 10，范围 1 到 200；-1 仅供后端导出逻辑内部使用"
+      }
+    }
+  },
+  "warnings": [
+    "updateWarehouse: 请求体需手工核对",
+    "updateShipmentOrder: 请求体需手工核对",
+    "updateReceiptOrder: 请求体需手工核对",
+    "updateMovementOrder: 请求体需手工核对",
+    "updateMerchant: 请求体需手工核对",
+    "updateItem: 请求体需手工核对",
+    "updateItemCategory: 请求体需手工核对",
+    "updateItemBrand: 请求体需手工核对",
+    "updateCheckOrder: 请求体需手工核对",
+    "updateUser_1: 请求体需手工核对",
+    "updateTenant: 请求体需手工核对",
+    "updateTenantPackage: 请求体需手工核对",
+    "updateSocialClient: 请求体需手工核对",
+    "updateSmsTemplate: 请求体需手工核对",
+    "updateSmsChannel: 请求体需手工核对",
+    "updateRole: 请求体需手工核对",
+    "updatePost: 请求体需手工核对",
+    "updateOAuth2Client: 请求体需手工核对",
+    "updateNotifyTemplate: 请求体需手工核对",
+    "updateNotice: 请求体需手工核对",
+    "updateMenu: 请求体需手工核对",
+    "updateMailTemplate: 请求体需手工核对",
+    "updateMailAccount: 请求体需手工核对",
+    "updateDictType: 请求体需手工核对",
+    "updateDictData: 请求体需手工核对",
+    "updateDept: 请求体需手工核对",
+    "updatePointActivity: 请求体需手工核对",
+    "updateSpu: 请求体需手工核对",
+    "updatePropertyValue: 请求体需手工核对",
+    "updateProperty: 请求体需手工核对",
+    "updateCategory: 请求体需手工核对",
+    "updateWorkItem: 请求体需手工核对",
+    "updateWorkItemWorkLog: 请求体需手工核对",
+    "updateWorkItemLabel: 请求体需手工核对",
+    "updateWorkItemComment: 请求体需手工核对",
+    "updateProject_1: 请求体需手工核对",
+    "updateProjectTemplate: 请求体需手工核对",
+    "updateProjectGroup: 请求体需手工核对",
+    "updateProjectAnnouncement: 请求体需手工核对",
+    "updateIteration: 请求体需手工核对",
+    "updateLibrary: 请求体需手工核对",
+    "updateLibraryTemplate: 请求体需手工核对",
+    "updateGroup: 请求体需手工核对",
+    "updateFolder: 请求体需手工核对",
+    "updateDocumentLabel: 请求体需手工核对",
+    "deleteDraft: 请求体需手工核对",
+    "updateWarehouse_1: 请求体需手工核对",
+    "updateWarehouseLocation: 请求体需手工核对",
+    "updateWarehouseArea: 请求体需手工核对",
+    "updateTransfer: 请求体需手工核对",
+    "updateTransferLine: 请求体需手工核对",
+    "updateTransferDetail: 请求体需手工核对",
+    "updateStockTakingTask: 请求体需手工核对",
+    "updateStockTakingTaskResult: 请求体需手工核对",
+    "updateStockTakingTaskLine: 请求体需手工核对",
+    "updateStockTakingPlan: 请求体需手工核对",
+    "updateStockTakingPlanParam: 请求体需手工核对",
+    "updateSalesNotice: 请求体需手工核对",
+    "updateSalesNoticeLine: 请求体需手工核对",
+    "updateReturnVendor: 请求体需手工核对",
+    "updateReturnVendorLine: 请求体需手工核对",
+    "updateReturnVendorDetail: 请求体需手工核对",
+    "updateReturnSales: 请求体需手工核对",
+    "updateReturnSalesLine: 请求体需手工核对",
+    "updateReturnSalesDetail: 请求体需手工核对",
+    "updateReturnIssue: 请求体需手工核对",
+    "updateReturnIssueLine: 请求体需手工核对",
+    "updateReturnIssueDetail: 请求体需手工核对",
+    "updateProductSales: 请求体需手工核对",
+    "updateProductSalesLine: 请求体需手工核对",
+    "updateProductSalesDetail: 请求体需手工核对",
+    "updateProductReceipt: 请求体需手工核对",
+    "updateProductReceiptLine: 请求体需手工核对",
+    "updateProductReceiptDetail: 请求体需手工核对",
+    "updateProductIssue: 请求体需手工核对",
+    "updateProductIssueLine: 请求体需手工核对",
+    "updateProductIssueDetail: 请求体需手工核对",
+    "updatePackage: 请求体需手工核对",
+    "updatePackageLine: 请求体需手工核对",
+    "updateOutsourceReceipt: 请求体需手工核对",
+    "updateOutsourceReceiptLine: 请求体需手工核对",
+    "updateOutsourceReceiptDetail: 请求体需手工核对",
+    "updateOutsourceIssue: 请求体需手工核对",
+    "updateOutsourceIssueLine: 请求体需手工核对",
+    "updateOutsourceIssueDetail: 请求体需手工核对",
+    "updateMiscReceipt: 请求体需手工核对",
+    "updateMiscReceiptLine: 请求体需手工核对",
+    "updateMiscIssue: 请求体需手工核对",
+    "updateMiscIssueLine: 请求体需手工核对",
+    "updateItemReceipt: 请求体需手工核对",
+    "updateItemReceiptLine: 请求体需手工核对",
+    "updateItemReceiptDetail: 请求体需手工核对",
+    "updateBarcode: 请求体需手工核对",
+    "updateBarcodeConfig: 请求体需手工核对",
+    "updateArrivalNotice: 请求体需手工核对",
+    "updateArrivalNoticeLine: 请求体需手工核对",
+    "updateTool: 请求体需手工核对",
+    "updateToolType: 请求体需手工核对",
+    "updateTemplate: 请求体需手工核对",
+    "updateTemplateItem: 请求体需手工核对",
+    "updateTemplateIndicator: 请求体需手工核对",
+    "updateRqc: 请求体需手工核对",
+    "updateOqc: 请求体需手工核对",
+    "updateIqc: 请求体需手工核对",
+    "updateIpqc: 请求体需手工核对",
+    "updateIndicator: 请求体需手工核对",
+    "updateIndicatorResult: 请求体需手工核对",
+    "updateDefect: 请求体需手工核对",
+    "updateDefectRecord: 请求体需手工核对",
+    "updateWorkOrder: 请求体需手工核对",
+    "updateWorkOrderBom: 请求体需手工核对",
+    "updateTask: 请求体需手工核对",
+    "updateTaskIssue: 请求体需手工核对",
+    "updateRoute: 请求体需手工核对",
+    "updateRouteProduct: 请求体需手工核对",
+    "updateRouteProductBom: 请求体需手工核对",
+    "updateRouteProcess: 请求体需手工核对",
+    "updateProcess: 请求体需手工核对",
+    "updateProcessContent: 请求体需手工核对",
+    "updateFeedback: 请求体需手工核对",
+    "updateCard: 请求体需手工核对",
+    "updateCardProcess: 请求体需手工核对",
+    "updateAndonConfig: 请求体需手工核对",
+    "updateUnitMeasure: 请求体需手工核对",
+    "updateProductSop: 请求体需手工核对",
+    "updateProductSip: 请求体需手工核对",
+    "updateProductBom: 请求体需手工核对",
+    "updateItem_1: 请求体需手工核对",
+    "updateItemType: 请求体需手工核对",
+    "updateAutoCodeRule: 请求体需手工核对",
+    "updateAutoCodePart: 请求体需手工核对",
+    "updateWorkstation: 请求体需手工核对",
+    "updateWorkstationWorker: 请求体需手工核对",
+    "updateWorkstationTool: 请求体需手工核对",
+    "updateWorkshop: 请求体需手工核对",
+    "updateVendor: 请求体需手工核对",
+    "updateClient: 请求体需手工核对",
+    "updateSubject: 请求体需手工核对",
+    "updateRepair: 请求体需手工核对",
+    "updateRepairLine: 请求体需手工核对",
+    "updateMaintenRecord: 请求体需手工核对",
+    "updateMaintenRecordLine: 请求体需手工核对",
+    "updateMachinery: 请求体需手工核对",
+    "updateMachineryType: 请求体需手工核对",
+    "updateCheckRecord: 请求体需手工核对",
+    "updateCheckRecordLine: 请求体需手工核对",
+    "updateCheckPlan: 请求体需手工核对",
+    "updateTeam: 请求体需手工核对",
+    "updatePlan: 请求体需手工核对",
+    "updatePlanShift: 请求体需手工核对",
+    "updateThingModel: 请求体需手工核对",
+    "updateSceneRule: 请求体需手工核对",
+    "updateProduct: 请求体需手工核对",
+    "updateProductCategory: 请求体需手工核对",
+    "updateDevice: 请求体需手工核对",
+    "updateDeviceModbusPoint: 请求体需手工核对",
+    "updateDeviceGroup_1: 请求体需手工核对",
+    "updateDataSink: 请求体需手工核对",
+    "updateDataRule: 请求体需手工核对",
+    "updateAlertConfig: 请求体需手工核对",
+    "updateJob: 请求体需手工核对",
+    "updateFileConfig: 请求体需手工核对",
+    "updateDemo03Student: 请求体需手工核对",
+    "updateDemo03Student_1: 请求体需手工核对",
+    "updateDemo03Student_2: 请求体需手工核对",
+    "updateDemo03Grade: 请求体需手工核对",
+    "updateDemo03Course: 请求体需手工核对",
+    "updateDemo02Category: 请求体需手工核对",
+    "updateDemo01Contact: 请求体需手工核对",
+    "updateDataSourceConfig: 请求体需手工核对",
+    "updateConfig_1: 请求体需手工核对",
+    "updateSensitiveWord: 请求体需手工核对",
+    "updateFacePack: 请求体需手工核对",
+    "updateFacePackItem: 请求体需手工核对",
+    "updateChannel_1: 请求体需手工核对",
+    "updateMaterial: 请求体需手工核对",
+    "updateSalaryTaxRule: 请求体需手工核对",
+    "updateSalarySlipTemplate: 请求体需手工核对",
+    "updateMonthEmployeeRecordList: 请求体需手工核对",
+    "updateSalaryGroup: 请求体需手工核对",
+    "updateSalaryChangeTemplate: 请求体需手工核对",
+    "updateRecruitPost: 请求体需手工核对",
+    "updateRecruitInterview: 请求体需手工核对",
+    "updateRecruitChannel: 请求体需手工核对",
+    "updateRecruitCandidate: 请求体需手工核对",
+    "updatePerformanceResultTemplate: 请求体需手工核对",
+    "updatePerformancePlan: 请求体需手工核对",
+    "updatePerformanceAssessmentTemplate: 请求体需手工核对",
+    "updateScheme: 请求体需手工核对",
+    "updateWorkExperience: 请求体需手工核对",
+    "updateEmployee_1: 请求体需手工核对",
+    "updateTrainingExperience: 请求体需手工核对",
+    "updateEducationExperience: 请求体需手工核对",
+    "updateContract: 请求体需手工核对",
+    "updateContact: 请求体需手工核对",
+    "updateCertificate: 请求体需手工核对",
+    "updateAttendanceHoliday: 请求体需手工核对",
+    "updateAttendanceGroup: 请求体需手工核对",
+    "updateAttendanceClock: 请求体需手工核对",
+    "updateVoucher: 请求体需手工核对",
+    "updateVoucherWord: 请求体需手工核对",
+    "updateVoucherTemplate: 请求体需手工核对",
+    "updateTemplateCategory: 请求体需手工核对",
+    "updateSubject_1: 请求体需手工核对",
+    "update: 请求体需手工核对",
+    "updateDigest: 请求体需手工核对",
+    "updateCurrency: 请求体需手工核对",
+    "updateAuxiliaryType: 请求体需手工核对",
+    "updateAuxiliaryItem: 请求体需手工核对",
+    "updateAccountSet: 请求体需手工核对",
+    "updateClosingTemplate: 请求体需手工核对",
+    "updateClosingScheme: 请求体需手工核对",
+    "updateWarehouse_2: 请求体需手工核对",
+    "updateSupplier: 请求体需手工核对",
+    "updateStockOut: 请求体需手工核对",
+    "updateStockMove: 请求体需手工核对",
+    "updateStockIn: 请求体需手工核对",
+    "updateStockCheck: 请求体需手工核对",
+    "updateSaleReturn: 请求体需手工核对",
+    "updateSaleOut: 请求体需手工核对",
+    "updatePurchaseReturn: 请求体需手工核对",
+    "updatePurchaseOrder: 请求体需手工核对",
+    "updatePurchaseIn: 请求体需手工核对",
+    "updateProduct_1: 请求体需手工核对",
+    "updateProductUnit: 请求体需手工核对",
+    "updateProductCategory_1: 请求体需手工核对",
+    "updateFinanceReceipt: 请求体需手工核对",
+    "updateFinancePayment: 请求体需手工核对",
+    "updateCustomer: 请求体需手工核对",
+    "updateAccount_1: 请求体需手工核对",
+    "updateReceivable: 请求体需手工核对",
+    "updateReceivablePlan: 请求体需手工核对",
+    "updateProduct_2: 请求体需手工核对",
+    "updateProductCategory_2: 请求体需手工核对",
+    "updatePerformanceConfig: 请求体需手工核对",
+    "updateCustomer_1: 请求体需手工核对",
+    "updateCustomerLimitConfig: 请求体需手工核对",
+    "updateContract_1: 请求体需手工核对",
+    "updateContact_1: 请求体需手工核对",
+    "updateClue: 请求体需手工核对",
+    "updateBusiness: 请求体需手工核对",
+    "updateBusinessStatus_1: 请求体需手工核对",
+    "updateUserGroup: 请求体需手工核对",
+    "updateProcessListener: 请求体需手工核对",
+    "updateProcessExpression: 请求体需手工核对",
+    "updateModel: 请求体需手工核对",
+    "updateForm: 请求体需手工核对",
+    "updateCategory_1: 请求体需手工核对",
+    "updateWorkflow: 请求体需手工核对",
+    "updateTool_1: 请求体需手工核对",
+    "updateModel_1: 请求体需手工核对",
+    "updateKnowledge: 请求体需手工核对",
+    "updateKnowledgeSegment: 请求体需手工核对",
+    "updateChatRole: 请求体需手工核对",
+    "updateChatRoleMy: 请求体需手工核对",
+    "updateApiKey: 请求体需手工核对",
+    "a_5: 请求体需手工核对",
+    "a_20: 请求体需手工核对",
+    "a_21: 请求体需手工核对",
+    "a_24: 请求体需手工核对",
+    "e_2: 请求体需手工核对",
+    "a_40: 请求体需手工核对",
+    "b_25: 请求体需手工核对",
+    "e_3: 请求体需手工核对",
+    "f: 请求体需手工核对",
+    "c_11: 请求体需手工核对",
+    "d_4: 请求体需手工核对",
+    "g: 请求体需手工核对",
+    "b_26: 请求体需手工核对",
+    "f_1: 请求体需手工核对",
+    "e_4: 请求体需手工核对",
+    "c_12: 请求体需手工核对",
+    "d_5: 请求体需手工核对",
+    "a_43: 请求体需手工核对",
+    "a_49: 请求体需手工核对",
+    "a_57: 请求体需手工核对",
+    "uploadFile: 请求体需手工核对",
+    "importExcel: 请求体需手工核对",
+    "receiveQiniuSmsStatus: 请求体需手工核对",
+    "receiveHuaweiSmsStatus: 请求体需手工核对",
+    "postAccessToken: 请求体需手工核对",
+    "checkToken: 请求体需手工核对",
+    "importWorkItemList: 请求体需手工核对",
+    "notifyTransfer: 请求体需手工核对",
+    "notifyRefund: 请求体需手工核对",
+    "notifyOrder: 请求体需手工核对",
+    "handleMessage: 请求体需手工核对",
+    "importExcel_1: 请求体需手工核对",
+    "importExcel_2: 请求体需手工核对",
+    "importExcel_3: 请求体需手工核对",
+    "importExcel_4: 请求体需手工核对",
+    "importDevice: 请求体需手工核对",
+    "uploadFile_1: 请求体需手工核对",
+    "webhook: 请求体需手工核对",
+    "computeMonthRecordWithImport: 请求体需手工核对",
+    "importFixExcel: 请求体需手工核对",
+    "importChangeExcel: 请求体需手工核对",
+    "importExcel_5: 请求体需手工核对",
+    "createEmployeeList: 请求体需手工核对",
+    "importVoucher: 请求体需手工核对",
+    "importSubject: 请求体需手工核对",
+    "importInitialBalance: 请求体需手工核对",
+    "importAuxiliaryItem: 请求体需手工核对",
+    "importModel: 请求体需手工核对",
+    "e_9: 请求体需手工核对",
+    "getDataByHttp: 请求体需手工核对",
+    "getDataByHttp_1: 请求体需手工核对",
+    "getDataByHttp_2: 请求体需手工核对",
+    "getDataByHttp_4: 请求体需手工核对",
+    "getDataByHttp_3: 请求体需手工核对",
+    "导入工具默认标记为有副作用；发布前核对服务对象、参数映射、成功条件及读写语义。"
+  ]
+}

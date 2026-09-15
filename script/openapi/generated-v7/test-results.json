@@ -1,0 +1,84 @@
+{
+  "sourceCommit": "52328f668e66b7360c77771c53d089f5df3bb852",
+  "junit": [
+    {
+      "name": "cn.iocoder.yudao.server.contract.BackendHandoffContractTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.FullOpenApiModelAuditTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.ExternalOpenApiContractTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.QueryContractRegressionTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.WireContractTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.OpenApiItemSchemaTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.ContractSchemaCustomizerTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.FullContractValidationTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.server.contract.FullOpenApiExportTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "cn.iocoder.yudao.module.erp.service.sale.ErpSaleOrderContractTest",
+      "tests": 24,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "totalJUnit": 51,
+  "pythonTests": 9,
+  "pythonFailures": 0,
+  "scope": "真实 Springdoc 导出、MVC 与 H2 隔离测试；无生产业务写入，无知办数据库/连接器操作",
+  "limitations": [
+    "非全部接口真实端到端业务调用",
+    "两个 easyTrans 运行时自动配置路径未进入源码控制器扫描",
+    "SDK 业务摘要/字段语义及动态流程输入保留人工核验"
+  ]
+}

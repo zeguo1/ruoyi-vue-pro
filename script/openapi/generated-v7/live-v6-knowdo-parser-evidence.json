@@ -1,0 +1,95 @@
+{
+  "knowdoSourceReadOnly": true,
+  "importedTools": 3417,
+  "commonResultChecked": 2871,
+  "successEvidenceAccepted": 2871,
+  "failures": [],
+  "targets": [
+    {
+      "path": "/admin-api/system/oauth2/check-token",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "mappings": []
+    },
+    {
+      "path": "/admin-api/system/notify-message/my-page",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "readStatus": {
+            "type": "boolean",
+            "description": "是否已读"
+          },
+          "createTime": {
+            "type": "array",
+            "description": "创建时间",
+            "items": {
+              "type": "string",
+              "description": "创建时间；查询/表单字符串，格式 yyyy-MM-dd HH:mm:ss"
+            }
+          },
+          "pageNo": {
+            "type": "integer",
+            "description": "页码，从 1 开始，省略为 1",
+            "minimum": 1,
+            "format": "int32",
+            "default": 1
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "每页条数，省略为 10，范围 1 到 200；-1 仅供后端导出逻辑内部使用",
+            "minimum": 1,
+            "maximum": 200,
+            "format": "int32",
+            "default": 10
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "mappings": [
+        {
+          "from": "readStatus",
+          "to": "readStatus",
+          "location": "query",
+          "transform": "identity"
+        },
+        {
+          "from": "createTime",
+          "to": "createTime",
+          "location": "query",
+          "transform": "identity"
+        },
+        {
+          "from": "pageNo",
+          "to": "pageNo",
+          "location": "query",
+          "transform": "identity"
+        },
+        {
+          "from": "pageSize",
+          "to": "pageSize",
+          "location": "query",
+          "transform": "identity"
+        }
+      ]
+    },
+    {
+      "path": "/admin-api/erp/product-category/simple-list",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "mappings": []
+    }
+  ],
+  "warnings": [
+    "checkToken: 请求体需手工核对"
+  ]
+}

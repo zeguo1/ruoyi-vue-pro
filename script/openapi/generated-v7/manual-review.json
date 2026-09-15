@@ -1,0 +1,4483 @@
+{
+  "business": {
+    "POST /admin-api/ai/chat/message/send-stream": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "POST /admin-api/ai/image/draw": [
+      "requestBody:options 为动态键值结构，具体业务字段不能从 OpenAPI 确定"
+    ],
+    "POST /admin-api/ai/mind-map/generate-stream": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "POST /admin-api/ai/workflow/test": [
+      "requestBody:params 为动态键值结构，具体业务字段不能从 OpenAPI 确定"
+    ],
+    "POST /admin-api/ai/write/generate-stream": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "POST /admin-api/bpm/model/create": [
+      "requestBody:simpleModel.childNode 递归对象，映射只展开到首次循环",
+      "requestBody:simpleModel.childProcessSetting.inVariables[].attributes 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:simpleModel.childProcessSetting.inVariables[].extensionElements 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:simpleModel.childProcessSetting.outVariables[].attributes 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:simpleModel.childProcessSetting.outVariables[].extensionElements 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:simpleModel.conditionNodes[] 递归对象，映射只展开到首次循环",
+      "requestBody:simpleModel.fieldsPermission[] 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:simpleModel.triggerSetting.formSettings[].updateFormFields 为动态键值结构，具体业务字段不能从 OpenAPI 确定"
+    ],
+    "POST /admin-api/bpm/model/simple/update": [
+      "requestBody:simpleModel.childNode 递归对象，映射只展开到首次循环",
+      "requestBody:simpleModel.childProcessSetting.inVariables[].attributes 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:simpleModel.childProcessSetting.inVariables[].extensionElements 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:simpleModel.childProcessSetting.outVariables[].attributes 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:simpleModel.childProcessSetting.outVariables[].extensionElements 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:simpleModel.conditionNodes[] 递归对象，映射只展开到首次循环",
+      "requestBody:simpleModel.fieldsPermission[] 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:simpleModel.triggerSetting.formSettings[].updateFormFields 为动态键值结构，具体业务字段不能从 OpenAPI 确定"
+    ],
+    "PUT /admin-api/bpm/model/update": [
+      "requestBody:simpleModel.childNode 递归对象，映射只展开到首次循环",
+      "requestBody:simpleModel.childProcessSetting.inVariables[].attributes 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:simpleModel.childProcessSetting.inVariables[].extensionElements 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:simpleModel.childProcessSetting.outVariables[].attributes 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:simpleModel.childProcessSetting.outVariables[].extensionElements 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:simpleModel.conditionNodes[] 递归对象，映射只展开到首次循环",
+      "requestBody:simpleModel.fieldsPermission[] 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:simpleModel.triggerSetting.formSettings[].updateFormFields 为动态键值结构，具体业务字段不能从 OpenAPI 确定"
+    ],
+    "POST /admin-api/bpm/oa/leave/create": [
+      "requestBody:startUserSelectAssignees 为动态键值结构，具体业务字段不能从 OpenAPI 确定"
+    ],
+    "POST /admin-api/bpm/process-instance/create": [
+      "requestBody:startUserSelectAssignees 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:variables 为动态键值结构，具体业务字段不能从 OpenAPI 确定"
+    ],
+    "PUT /admin-api/bpm/task/approve": [
+      "requestBody:nextAssignees 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:variables 为动态键值结构，具体业务字段不能从 OpenAPI 确定"
+    ],
+    "GET /admin-api/crm/business/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/crm/clue/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/crm/contact/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/crm/contract/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/crm/customer/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/crm/customer/get-import-template": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/crm/product/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/crm/receivable-plan/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/crm/receivable/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/account/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/customer/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/finance-payment/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/finance-receipt/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/product-category/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/product-unit/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/product/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/purchase-in/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/purchase-order/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/purchase-return/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/sale-order/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/sale-out/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/sale-return/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/stock-check/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/stock-in/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/stock-move/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/stock-out/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/stock-record/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/stock/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/supplier/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/erp/warehouse/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/fms/config/auxiliary-item/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/fms/config/auxiliary-item/get-import-template": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/fms/config/initial-balance/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/fms/config/initial-balance/get-import-template": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "POST /admin-api/fms/config/initial-balance/import": [
+      "requestBody:file 缺少字段业务说明"
+    ],
+    "GET /admin-api/fms/config/subject/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/fms/config/subject/get-import-template": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/fms/ledger/auxiliary-balance/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/fms/ledger/auxiliary-detail/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/fms/ledger/detail/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/fms/ledger/general/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/fms/ledger/multi-column/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/fms/ledger/quantity-detail/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/fms/ledger/quantity-general/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/fms/ledger/subject-balance/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/fms/report/balance-sheet/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/fms/report/cash-flow-statement/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/fms/report/income-statement/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/fms/voucher/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/fms/voucher/get-import-template": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/fms/voucher/statistics/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/hrm/attendance/clock/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/hrm/attendance/leave/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/hrm/attendance/statistics/month-daily-export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/hrm/attendance/statistics/month-record-export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/hrm/employee/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/hrm/employee/get-import-template": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/hrm/portal/attendance/statistics/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/hrm/salary/employee-info/get-change-import-template": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/hrm/salary/employee-info/get-fix-import-template": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/hrm/salary/month-record/get-additional-deduction-import-template": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/hrm/salary/month-record/get-attendance-import-template": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/hrm/salary/month-record/get-cumulative-tax-import-template": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "POST /admin-api/im/livekit/webhook": [
+      "String @RequestBody 接收原始请求体文本；须核实该接口的 JSON/XML/文本协议，不能自动包装成 JSON 字符串"
+    ],
+    "GET /admin-api/infra/api-access-log/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/infra/api-error-log/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/infra/codegen/download": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/infra/config/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/infra/demo01-contact/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/infra/demo02-category/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/infra/demo03-student-erp/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/infra/demo03-student-inner/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/infra/demo03-student-normal/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "POST /admin-api/infra/file-config/create": [
+      "requestBody:config 为动态键值结构，具体业务字段不能从 OpenAPI 确定"
+    ],
+    "PUT /admin-api/infra/file-config/update": [
+      "requestBody:config 为动态键值结构，具体业务字段不能从 OpenAPI 确定"
+    ],
+    "GET /admin-api/infra/file/{configId}/get/**": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "路径含 Spring 通配符；需提供真实剩余路径规则，不能直接作为 OpenAPI URL 模板"
+    ],
+    "GET /admin-api/infra/job-log/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/infra/job/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "POST /admin-api/iot/data-sink/create": [
+      "requestBody:config 存在 oneOf 对象分支，须选择实际分支后映射（未猜测分支）"
+    ],
+    "PUT /admin-api/iot/data-sink/update": [
+      "requestBody:config 存在 oneOf 对象分支，须选择实际分支后映射（未猜测分支）"
+    ],
+    "GET /admin-api/iot/device/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/iot/device/get-import-template": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "POST /admin-api/iot/device/import": [
+      "requestBody:file 缺少字段业务说明"
+    ],
+    "POST /admin-api/iot/device/message/send": [
+      "requestBody:params 未声明可确定的输入类型"
+    ],
+    "GET /admin-api/iot/product/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "POST /admin-api/iot/thing-model/create": [
+      "requestBody:event.outputParams[].dataSpecs 存在 oneOf 对象分支，须选择实际分支后映射（未猜测分支）",
+      "requestBody:event.outputParams[].dataSpecsList[] 存在 oneOf 对象分支，须选择实际分支后映射（未猜测分支）",
+      "requestBody:property.dataSpecs 存在 oneOf 对象分支，须选择实际分支后映射（未猜测分支）",
+      "requestBody:property.dataSpecsList[] 存在 oneOf 对象分支，须选择实际分支后映射（未猜测分支）",
+      "requestBody:service.inputParams[].dataSpecs 存在 oneOf 对象分支，须选择实际分支后映射（未猜测分支）",
+      "requestBody:service.inputParams[].dataSpecsList[] 存在 oneOf 对象分支，须选择实际分支后映射（未猜测分支）",
+      "requestBody:service.outputParams[].dataSpecs 存在 oneOf 对象分支，须选择实际分支后映射（未猜测分支）",
+      "requestBody:service.outputParams[].dataSpecsList[] 存在 oneOf 对象分支，须选择实际分支后映射（未猜测分支）"
+    ],
+    "PUT /admin-api/iot/thing-model/update": [
+      "requestBody:event.outputParams[].dataSpecs 存在 oneOf 对象分支，须选择实际分支后映射（未猜测分支）",
+      "requestBody:event.outputParams[].dataSpecsList[] 存在 oneOf 对象分支，须选择实际分支后映射（未猜测分支）",
+      "requestBody:property.dataSpecs 存在 oneOf 对象分支，须选择实际分支后映射（未猜测分支）",
+      "requestBody:property.dataSpecsList[] 存在 oneOf 对象分支，须选择实际分支后映射（未猜测分支）",
+      "requestBody:service.inputParams[].dataSpecs 存在 oneOf 对象分支，须选择实际分支后映射（未猜测分支）",
+      "requestBody:service.inputParams[].dataSpecsList[] 存在 oneOf 对象分支，须选择实际分支后映射（未猜测分支）",
+      "requestBody:service.outputParams[].dataSpecs 存在 oneOf 对象分支，须选择实际分支后映射（未猜测分支）",
+      "requestBody:service.outputParams[].dataSpecsList[] 存在 oneOf 对象分支，须选择实际分支后映射（未猜测分支）"
+    ],
+    "GET /admin-api/mes/cal/plan/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/cal/team/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/dv/check-plan/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/dv/check-record/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/dv/machinery/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/dv/machinery/get-import-template": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/dv/mainten-record-line/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/dv/mainten-record/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/dv/repair-line/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/dv/repair/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/dv/subject/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/md-client/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/md-client/get-import-template": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/md-vendor/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/md-vendor/get-import-template": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/md-workshop/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/md-workstation/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/md/auto-code-rule/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/md/item/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/md/item/get-import-template": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/md/unit-measure/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/pro/andon-record/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/pro/card/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/pro/feedback/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/pro/process/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/pro/route/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/pro/task/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/pro/work-order/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/pro/workrecord/log/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/qc/defect/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/qc/indicator/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/qc/ipqc/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/qc/iqc/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/qc/oqc/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/qc/rqc/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/qc/template/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/tm/tool-type/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/tm/tool/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/arrival-notice/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/barcode/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/item-receipt/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/material-stock/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/misc-issue/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/misc-receipt/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/outsource-issue/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/outsource-receipt/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/product-issue/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/product-receipt/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/product-sales/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/return-issue/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/return-sales/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/return-vendor/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/sales-notice/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/sn/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/sn/group-export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/stocktaking-plan/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/stocktaking-task/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/mes/wm/transfer/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "POST /admin-api/mp/menu/save": [
+      "requestBody:menus[].children[] 递归对象，映射只展开到首次循环"
+    ],
+    "POST /admin-api/mp/message-template/send": [
+      "requestBody:data 为动态键值结构，具体业务字段不能从 OpenAPI 确定"
+    ],
+    "GET /admin-api/mp/open/{appId}": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "POST /admin-api/mp/open/{appId}": [
+      "String @RequestBody 接收原始请求体文本；须核实该接口的 JSON/XML/文本协议，不能自动包装成 JSON 字符串",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "POST /admin-api/pay/notify/order/{channelId}": [
+      "String @RequestBody 接收原始请求体文本；须核实该接口的 JSON/XML/文本协议，不能自动包装成 JSON 字符串",
+      "动态请求参数/请求头 Map：具体键由业务或渠道协议决定，不能把 Java 参数名当作 HTTP 字段名",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "POST /admin-api/pay/notify/refund/{channelId}": [
+      "String @RequestBody 接收原始请求体文本；须核实该接口的 JSON/XML/文本协议，不能自动包装成 JSON 字符串",
+      "动态请求参数/请求头 Map：具体键由业务或渠道协议决定，不能把 Java 参数名当作 HTTP 字段名",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "POST /admin-api/pay/notify/transfer/{channelId}": [
+      "String @RequestBody 接收原始请求体文本；须核实该接口的 JSON/XML/文本协议，不能自动包装成 JSON 字符串",
+      "动态请求参数/请求头 Map：具体键由业务或渠道协议决定，不能把 Java 参数名当作 HTTP 字段名",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/pay/order/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "POST /admin-api/pay/order/submit": [
+      "requestBody:channelExtras 为动态键值结构，具体业务字段不能从 OpenAPI 确定"
+    ],
+    "GET /admin-api/pay/refund/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/pay/transfer/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/pms/pm/work-item/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/pms/pm/work-item/get-import-template": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/product/spu/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "POST /admin-api/promotion/reward-activity/create": [
+      "requestBody:rules[].giveCouponTemplateCounts 为动态键值结构，具体业务字段不能从 OpenAPI 确定"
+    ],
+    "PUT /admin-api/promotion/reward-activity/update": [
+      "requestBody:rules[].giveCouponTemplateCounts 为动态键值结构，具体业务字段不能从 OpenAPI 确定"
+    ],
+    "DELETE /admin-api/report/go-view/data/get-by-http": [
+      "String @RequestBody 接收原始请求体文本；须核实该接口的 JSON/XML/文本协议，不能自动包装成 JSON 字符串",
+      "动态请求参数/请求头 Map：具体键由业务或渠道协议决定，不能把 Java 参数名当作 HTTP 字段名"
+    ],
+    "GET /admin-api/report/go-view/data/get-by-http": [
+      "String @RequestBody 接收原始请求体文本；须核实该接口的 JSON/XML/文本协议，不能自动包装成 JSON 字符串",
+      "动态请求参数/请求头 Map：具体键由业务或渠道协议决定，不能把 Java 参数名当作 HTTP 字段名"
+    ],
+    "HEAD /admin-api/report/go-view/data/get-by-http": [
+      "String @RequestBody 接收原始请求体文本；须核实该接口的 JSON/XML/文本协议，不能自动包装成 JSON 字符串",
+      "动态请求参数/请求头 Map：具体键由业务或渠道协议决定，不能把 Java 参数名当作 HTTP 字段名"
+    ],
+    "OPTIONS /admin-api/report/go-view/data/get-by-http": [
+      "String @RequestBody 接收原始请求体文本；须核实该接口的 JSON/XML/文本协议，不能自动包装成 JSON 字符串",
+      "动态请求参数/请求头 Map：具体键由业务或渠道协议决定，不能把 Java 参数名当作 HTTP 字段名"
+    ],
+    "PATCH /admin-api/report/go-view/data/get-by-http": [
+      "String @RequestBody 接收原始请求体文本；须核实该接口的 JSON/XML/文本协议，不能自动包装成 JSON 字符串",
+      "动态请求参数/请求头 Map：具体键由业务或渠道协议决定，不能把 Java 参数名当作 HTTP 字段名"
+    ],
+    "POST /admin-api/report/go-view/data/get-by-http": [
+      "String @RequestBody 接收原始请求体文本；须核实该接口的 JSON/XML/文本协议，不能自动包装成 JSON 字符串",
+      "动态请求参数/请求头 Map：具体键由业务或渠道协议决定，不能把 Java 参数名当作 HTTP 字段名"
+    ],
+    "PUT /admin-api/report/go-view/data/get-by-http": [
+      "String @RequestBody 接收原始请求体文本；须核实该接口的 JSON/XML/文本协议，不能自动包装成 JSON 字符串",
+      "动态请求参数/请求头 Map：具体键由业务或渠道协议决定，不能把 Java 参数名当作 HTTP 字段名"
+    ],
+    "GET /admin-api/statistics/product/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/statistics/trade/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/system/dict-data/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/system/dict-type/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/system/login-log/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "POST /admin-api/system/mail-template/send-mail": [
+      "requestBody:templateParams 为动态键值结构，具体业务字段不能从 OpenAPI 确定"
+    ],
+    "POST /admin-api/system/notify-template/send-notify": [
+      "requestBody:templateParams 为动态键值结构，具体业务字段不能从 OpenAPI 确定"
+    ],
+    "POST /admin-api/system/oauth2/authorize": [
+      "code=0 仅代表处理完成，data 可能为空或含 access_denied，不能认定同意授权"
+    ],
+    "GET /admin-api/system/operate-log/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/system/post/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/system/role/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/system/sms-log/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/system/sms-template/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "POST /admin-api/system/sms-template/send-sms": [
+      "requestBody:templateParams 为动态键值结构，具体业务字段不能从 OpenAPI 确定"
+    ],
+    "POST /admin-api/system/sms/callback/huawei": [
+      "String @RequestBody 接收原始请求体文本；须核实该接口的 JSON/XML/文本协议，不能自动包装成 JSON 字符串"
+    ],
+    "POST /admin-api/system/sms/callback/qiniu": [
+      "String @RequestBody 接收原始请求体文本；须核实该接口的 JSON/XML/文本协议，不能自动包装成 JSON 字符串"
+    ],
+    "POST /admin-api/system/social-client/send-subscribe-message": [
+      "requestBody:messages 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/system/tenant/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/system/user/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/system/user/get-import-template": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/trade/delivery/express/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/wms/check-order/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/wms/item-brand/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/wms/item/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/wms/merchant/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/wms/movement-order/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/wms/receipt-order/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/wms/shipment-order/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "GET /admin-api/wms/warehouse/export-excel": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断"
+    ],
+    "POST /app-api/pay/order/submit": [
+      "requestBody:channelExtras 为动态键值结构，具体业务字段不能从 OpenAPI 确定"
+    ]
+  },
+  "rawOnly": {
+    "GET /drag/bigscreen/skill/extract": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/bigscreen/skill/main": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/bigscreen/skill/meta": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/bigscreen/skill/reference": [
+      "query:path 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/bigscreen/skill/references": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/bigscreen/skill/reload": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/category/add": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:delFlag 缺少字段业务说明",
+      "requestBody:dragType 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izLeaf 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:parentId 缺少字段业务说明",
+      "requestBody:sortNo 缺少字段业务说明",
+      "requestBody:sourceType 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/category/clearRecovery": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:delFlag 缺少字段业务说明",
+      "requestBody:dragType 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izLeaf 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:parentId 缺少字段业务说明",
+      "requestBody:sortNo 缺少字段业务说明",
+      "requestBody:sourceType 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /drag/category/deleteById": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/category/edit": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:delFlag 缺少字段业务说明",
+      "requestBody:dragType 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izLeaf 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:parentId 缺少字段业务说明",
+      "requestBody:sortNo 缺少字段业务说明",
+      "requestBody:sourceType 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/category/getById": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/category/list": [
+      "query:createBy 缺少字段业务说明",
+      "query:createTime 缺少字段业务说明",
+      "query:delFlag 缺少字段业务说明",
+      "query:dragType 缺少字段业务说明",
+      "query:id 缺少字段业务说明",
+      "query:izLeaf 缺少字段业务说明",
+      "query:name 缺少字段业务说明",
+      "query:parentId 缺少字段业务说明",
+      "query:sortNo 缺少字段业务说明",
+      "query:sourceType 缺少字段业务说明",
+      "query:tenantId 缺少字段业务说明",
+      "query:updateBy 缺少字段业务说明",
+      "query:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /drag/category/physicalDelete": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/category/queryCountById": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/category/queryRecycleCount": [
+      "query:createBy 缺少字段业务说明",
+      "query:createTime 缺少字段业务说明",
+      "query:delFlag 缺少字段业务说明",
+      "query:id 缺少字段业务说明",
+      "query:izTemplate 缺少字段业务说明",
+      "query:name 缺少字段业务说明",
+      "query:sourceType 缺少字段业务说明",
+      "query:style 缺少字段业务说明",
+      "query:tenantId 缺少字段业务说明",
+      "query:updateBy 缺少字段业务说明",
+      "query:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/category/queryRecycleList": [
+      "query:createBy 缺少字段业务说明",
+      "query:createTime 缺少字段业务说明",
+      "query:delFlag 缺少字段业务说明",
+      "query:id 缺少字段业务说明",
+      "query:izTemplate 缺少字段业务说明",
+      "query:name 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:sourceType 缺少字段业务说明",
+      "query:style 缺少字段业务说明",
+      "query:tenantId 缺少字段业务说明",
+      "query:updateBy 缺少字段业务说明",
+      "query:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/category/reductionById": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/comp/add": [
+      "requestBody:compConfig 缺少字段业务说明",
+      "requestBody:compName 缺少字段业务说明",
+      "requestBody:compType 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:icon 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:orderNum 缺少字段业务说明",
+      "requestBody:parentId 缺少字段业务说明",
+      "requestBody:status 缺少字段业务说明",
+      "requestBody:typeId 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /drag/comp/delete": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /drag/comp/deleteBatch": [
+      "query:ids 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/comp/edit": [
+      "requestBody:compConfig 缺少字段业务说明",
+      "requestBody:compName 缺少字段业务说明",
+      "requestBody:compType 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:icon 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:orderNum 缺少字段业务说明",
+      "requestBody:parentId 缺少字段业务说明",
+      "requestBody:status 缺少字段业务说明",
+      "requestBody:typeId 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/comp/list": [
+      "query:compConfig 缺少字段业务说明",
+      "query:compName 缺少字段业务说明",
+      "query:compType 缺少字段业务说明",
+      "query:createBy 缺少字段业务说明",
+      "query:createTime 缺少字段业务说明",
+      "query:icon 缺少字段业务说明",
+      "query:id 缺少字段业务说明",
+      "query:orderNum 缺少字段业务说明",
+      "query:parentId 缺少字段业务说明",
+      "query:status 缺少字段业务说明",
+      "query:typeId 缺少字段业务说明",
+      "query:updateBy 缺少字段业务说明",
+      "query:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/comp/page": [
+      "query:compConfig 缺少字段业务说明",
+      "query:compName 缺少字段业务说明",
+      "query:compType 缺少字段业务说明",
+      "query:createBy 缺少字段业务说明",
+      "query:createTime 缺少字段业务说明",
+      "query:icon 缺少字段业务说明",
+      "query:id 缺少字段业务说明",
+      "query:orderNum 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:parentId 缺少字段业务说明",
+      "query:status 缺少字段业务说明",
+      "query:typeId 缺少字段业务说明",
+      "query:updateBy 缺少字段业务说明",
+      "query:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/comp/queryCompTreeSync": [
+      "query:ids 缺少字段业务说明",
+      "query:pid 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/comp/searchByKeywords": [
+      "query:keyWord 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/comp/treeList": [
+      "query:excludeComp 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/jimuDragMap/list": [
+      "query:createBy 缺少字段业务说明",
+      "query:createTime 缺少字段业务说明",
+      "query:data 缺少字段业务说明",
+      "query:delFlag 缺少字段业务说明",
+      "query:id 缺少字段业务说明",
+      "query:label 缺少字段业务说明",
+      "query:name 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:updateBy 缺少字段业务说明",
+      "query:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/jimuReportIconLib/add": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:imageUrl 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:type 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /drag/jimuReportIconLib/delete": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /drag/jimuReportIconLib/deleteBatch": [
+      "query:ids 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/jimuReportIconLib/edit": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:imageUrl 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:type 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PUT /drag/jimuReportIconLib/edit": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:imageUrl 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:type 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/jimuReportIconLib/list": [
+      "query:createBy 缺少字段业务说明",
+      "query:createTime 缺少字段业务说明",
+      "query:id 缺少字段业务说明",
+      "query:imageUrl 缺少字段业务说明",
+      "query:name 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:tenantId 缺少字段业务说明",
+      "query:type 缺少字段业务说明",
+      "query:updateBy 缺少字段业务说明",
+      "query:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/jimuReportIconLib/queryById": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/mock/json/{filename}": [
+      "path:filename 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDataSource/add": [
+      "requestBody:code 缺少字段业务说明",
+      "requestBody:connectTimes 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dbDriver 缺少字段业务说明",
+      "requestBody:dbPassword 缺少字段业务说明",
+      "requestBody:dbType 缺少字段业务说明",
+      "requestBody:dbUrl 缺少字段业务说明",
+      "requestBody:dbUsername 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:remark 缺少字段业务说明",
+      "requestBody:reportId 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:type 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /drag/onlDragDataSource/delete": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /drag/onlDragDataSource/deleteBatch": [
+      "query:ids 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDataSource/edit": [
+      "requestBody:code 缺少字段业务说明",
+      "requestBody:connectTimes 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dbDriver 缺少字段业务说明",
+      "requestBody:dbPassword 缺少字段业务说明",
+      "requestBody:dbType 缺少字段业务说明",
+      "requestBody:dbUrl 缺少字段业务说明",
+      "requestBody:dbUsername 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:remark 缺少字段业务说明",
+      "requestBody:reportId 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:type 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PUT /drag/onlDragDataSource/edit": [
+      "requestBody:code 缺少字段业务说明",
+      "requestBody:connectTimes 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dbDriver 缺少字段业务说明",
+      "requestBody:dbPassword 缺少字段业务说明",
+      "requestBody:dbType 缺少字段业务说明",
+      "requestBody:dbUrl 缺少字段业务说明",
+      "requestBody:dbUsername 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:remark 缺少字段业务说明",
+      "requestBody:reportId 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:type 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDataSource/executeSql": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/onlDragDataSource/getOptions": [
+      "query:code 缺少字段业务说明",
+      "query:connectTimes 缺少字段业务说明",
+      "query:createBy 缺少字段业务说明",
+      "query:createTime 缺少字段业务说明",
+      "query:dbDriver 缺少字段业务说明",
+      "query:dbPassword 缺少字段业务说明",
+      "query:dbType 缺少字段业务说明",
+      "query:dbUrl 缺少字段业务说明",
+      "query:dbUsername 缺少字段业务说明",
+      "query:id 缺少字段业务说明",
+      "query:name 缺少字段业务说明",
+      "query:remark 缺少字段业务说明",
+      "query:reportId 缺少字段业务说明",
+      "query:tenantId 缺少字段业务说明",
+      "query:type 缺少字段业务说明",
+      "query:updateBy 缺少字段业务说明",
+      "query:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/onlDragDataSource/list": [
+      "query:code 缺少字段业务说明",
+      "query:connectTimes 缺少字段业务说明",
+      "query:createBy 缺少字段业务说明",
+      "query:createTime 缺少字段业务说明",
+      "query:dbDriver 缺少字段业务说明",
+      "query:dbPassword 缺少字段业务说明",
+      "query:dbType 缺少字段业务说明",
+      "query:dbUrl 缺少字段业务说明",
+      "query:dbUsername 缺少字段业务说明",
+      "query:id 缺少字段业务说明",
+      "query:name 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:remark 缺少字段业务说明",
+      "query:reportId 缺少字段业务说明",
+      "query:tenantId 缺少字段业务说明",
+      "query:type 缺少字段业务说明",
+      "query:updateBy 缺少字段业务说明",
+      "query:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/onlDragDataSource/queryById": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/onlDragDataSource/queryByReportId": [
+      "query:reportId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDataSource/testConnection": [
+      "requestBody:dbDriver 缺少字段业务说明",
+      "requestBody:dbName 缺少字段业务说明",
+      "requestBody:dbPassword 缺少字段业务说明",
+      "requestBody:dbType 缺少字段业务说明",
+      "requestBody:dbUrl 缺少字段业务说明",
+      "requestBody:dbUsername 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDatasetHead/add": [
+      "requestBody:apiMethod 缺少字段业务说明",
+      "requestBody:code 缺少字段业务说明",
+      "requestBody:content 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dataType 缺少字段业务说明",
+      "requestBody:datasetItemList 缺少字段业务说明",
+      "requestBody:datasetItemList[].createBy 缺少字段业务说明",
+      "requestBody:datasetItemList[].createTime 缺少字段业务说明",
+      "requestBody:datasetItemList[].dictCode 缺少字段业务说明",
+      "requestBody:datasetItemList[].dictTable 缺少字段业务说明",
+      "requestBody:datasetItemList[].dictText 缺少字段业务说明",
+      "requestBody:datasetItemList[].fieldName 缺少字段业务说明",
+      "requestBody:datasetItemList[].fieldTxt 缺少字段业务说明",
+      "requestBody:datasetItemList[].fieldType 缺少字段业务说明",
+      "requestBody:datasetItemList[].headId 缺少字段业务说明",
+      "requestBody:datasetItemList[].id 缺少字段业务说明",
+      "requestBody:datasetItemList[].izSearch 缺少字段业务说明",
+      "requestBody:datasetItemList[].izShow 缺少字段业务说明",
+      "requestBody:datasetItemList[].izTotal 缺少字段业务说明",
+      "requestBody:datasetItemList[].orderNum 缺少字段业务说明",
+      "requestBody:datasetItemList[].searchMode 缺少字段业务说明",
+      "requestBody:datasetItemList[].updateBy 缺少字段业务说明",
+      "requestBody:datasetItemList[].updateTime 缺少字段业务说明",
+      "requestBody:datasetItemList[].widgetType 缺少字段业务说明",
+      "requestBody:datasetParamList 缺少字段业务说明",
+      "requestBody:datasetParamList[].createBy 缺少字段业务说明",
+      "requestBody:datasetParamList[].createTime 缺少字段业务说明",
+      "requestBody:datasetParamList[].dictCode 缺少字段业务说明",
+      "requestBody:datasetParamList[].headId 缺少字段业务说明",
+      "requestBody:datasetParamList[].id 缺少字段业务说明",
+      "requestBody:datasetParamList[].izSearch 缺少字段业务说明",
+      "requestBody:datasetParamList[].orderNum 缺少字段业务说明",
+      "requestBody:datasetParamList[].paramName 缺少字段业务说明",
+      "requestBody:datasetParamList[].paramTxt 缺少字段业务说明",
+      "requestBody:datasetParamList[].paramValue 缺少字段业务说明",
+      "requestBody:datasetParamList[].searchMode 缺少字段业务说明",
+      "requestBody:datasetParamList[].updateBy 缺少字段业务说明",
+      "requestBody:datasetParamList[].updateTime 缺少字段业务说明",
+      "requestBody:datasetParamList[].widgetType 缺少字段业务说明",
+      "requestBody:dbSource 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izAgent 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:parentId 缺少字段业务说明",
+      "requestBody:querySql 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDatasetHead/addGroup": [
+      "requestBody:apiMethod 缺少字段业务说明",
+      "requestBody:code 缺少字段业务说明",
+      "requestBody:content 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dataType 缺少字段业务说明",
+      "requestBody:dbSource 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izAgent 缺少字段业务说明",
+      "requestBody:lowAppId 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:parentId 缺少字段业务说明",
+      "requestBody:querySql 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDatasetHead/copyById": [
+      "requestBody:apiMethod 缺少字段业务说明",
+      "requestBody:code 缺少字段业务说明",
+      "requestBody:content 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dataType 缺少字段业务说明",
+      "requestBody:datasetItemList 缺少字段业务说明",
+      "requestBody:datasetItemList[].createBy 缺少字段业务说明",
+      "requestBody:datasetItemList[].createTime 缺少字段业务说明",
+      "requestBody:datasetItemList[].dictCode 缺少字段业务说明",
+      "requestBody:datasetItemList[].dictTable 缺少字段业务说明",
+      "requestBody:datasetItemList[].dictText 缺少字段业务说明",
+      "requestBody:datasetItemList[].fieldName 缺少字段业务说明",
+      "requestBody:datasetItemList[].fieldTxt 缺少字段业务说明",
+      "requestBody:datasetItemList[].fieldType 缺少字段业务说明",
+      "requestBody:datasetItemList[].headId 缺少字段业务说明",
+      "requestBody:datasetItemList[].id 缺少字段业务说明",
+      "requestBody:datasetItemList[].izSearch 缺少字段业务说明",
+      "requestBody:datasetItemList[].izShow 缺少字段业务说明",
+      "requestBody:datasetItemList[].izTotal 缺少字段业务说明",
+      "requestBody:datasetItemList[].orderNum 缺少字段业务说明",
+      "requestBody:datasetItemList[].searchMode 缺少字段业务说明",
+      "requestBody:datasetItemList[].updateBy 缺少字段业务说明",
+      "requestBody:datasetItemList[].updateTime 缺少字段业务说明",
+      "requestBody:datasetItemList[].widgetType 缺少字段业务说明",
+      "requestBody:datasetParamList 缺少字段业务说明",
+      "requestBody:datasetParamList[].createBy 缺少字段业务说明",
+      "requestBody:datasetParamList[].createTime 缺少字段业务说明",
+      "requestBody:datasetParamList[].dictCode 缺少字段业务说明",
+      "requestBody:datasetParamList[].headId 缺少字段业务说明",
+      "requestBody:datasetParamList[].id 缺少字段业务说明",
+      "requestBody:datasetParamList[].izSearch 缺少字段业务说明",
+      "requestBody:datasetParamList[].orderNum 缺少字段业务说明",
+      "requestBody:datasetParamList[].paramName 缺少字段业务说明",
+      "requestBody:datasetParamList[].paramTxt 缺少字段业务说明",
+      "requestBody:datasetParamList[].paramValue 缺少字段业务说明",
+      "requestBody:datasetParamList[].searchMode 缺少字段业务说明",
+      "requestBody:datasetParamList[].updateBy 缺少字段业务说明",
+      "requestBody:datasetParamList[].updateTime 缺少字段业务说明",
+      "requestBody:datasetParamList[].widgetType 缺少字段业务说明",
+      "requestBody:dbSource 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izAgent 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:parentId 缺少字段业务说明",
+      "requestBody:querySql 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PUT /drag/onlDragDatasetHead/copyById": [
+      "requestBody:apiMethod 缺少字段业务说明",
+      "requestBody:code 缺少字段业务说明",
+      "requestBody:content 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dataType 缺少字段业务说明",
+      "requestBody:datasetItemList 缺少字段业务说明",
+      "requestBody:datasetItemList[].createBy 缺少字段业务说明",
+      "requestBody:datasetItemList[].createTime 缺少字段业务说明",
+      "requestBody:datasetItemList[].dictCode 缺少字段业务说明",
+      "requestBody:datasetItemList[].dictTable 缺少字段业务说明",
+      "requestBody:datasetItemList[].dictText 缺少字段业务说明",
+      "requestBody:datasetItemList[].fieldName 缺少字段业务说明",
+      "requestBody:datasetItemList[].fieldTxt 缺少字段业务说明",
+      "requestBody:datasetItemList[].fieldType 缺少字段业务说明",
+      "requestBody:datasetItemList[].headId 缺少字段业务说明",
+      "requestBody:datasetItemList[].id 缺少字段业务说明",
+      "requestBody:datasetItemList[].izSearch 缺少字段业务说明",
+      "requestBody:datasetItemList[].izShow 缺少字段业务说明",
+      "requestBody:datasetItemList[].izTotal 缺少字段业务说明",
+      "requestBody:datasetItemList[].orderNum 缺少字段业务说明",
+      "requestBody:datasetItemList[].searchMode 缺少字段业务说明",
+      "requestBody:datasetItemList[].updateBy 缺少字段业务说明",
+      "requestBody:datasetItemList[].updateTime 缺少字段业务说明",
+      "requestBody:datasetItemList[].widgetType 缺少字段业务说明",
+      "requestBody:datasetParamList 缺少字段业务说明",
+      "requestBody:datasetParamList[].createBy 缺少字段业务说明",
+      "requestBody:datasetParamList[].createTime 缺少字段业务说明",
+      "requestBody:datasetParamList[].dictCode 缺少字段业务说明",
+      "requestBody:datasetParamList[].headId 缺少字段业务说明",
+      "requestBody:datasetParamList[].id 缺少字段业务说明",
+      "requestBody:datasetParamList[].izSearch 缺少字段业务说明",
+      "requestBody:datasetParamList[].orderNum 缺少字段业务说明",
+      "requestBody:datasetParamList[].paramName 缺少字段业务说明",
+      "requestBody:datasetParamList[].paramTxt 缺少字段业务说明",
+      "requestBody:datasetParamList[].paramValue 缺少字段业务说明",
+      "requestBody:datasetParamList[].searchMode 缺少字段业务说明",
+      "requestBody:datasetParamList[].updateBy 缺少字段业务说明",
+      "requestBody:datasetParamList[].updateTime 缺少字段业务说明",
+      "requestBody:datasetParamList[].widgetType 缺少字段业务说明",
+      "requestBody:dbSource 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izAgent 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:parentId 缺少字段业务说明",
+      "requestBody:querySql 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /drag/onlDragDatasetHead/delDragDataSetHeadGroup": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /drag/onlDragDatasetHead/delete": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDatasetHead/edit": [
+      "requestBody:apiMethod 缺少字段业务说明",
+      "requestBody:code 缺少字段业务说明",
+      "requestBody:content 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dataType 缺少字段业务说明",
+      "requestBody:datasetItemList 缺少字段业务说明",
+      "requestBody:datasetItemList[].createBy 缺少字段业务说明",
+      "requestBody:datasetItemList[].createTime 缺少字段业务说明",
+      "requestBody:datasetItemList[].dictCode 缺少字段业务说明",
+      "requestBody:datasetItemList[].dictTable 缺少字段业务说明",
+      "requestBody:datasetItemList[].dictText 缺少字段业务说明",
+      "requestBody:datasetItemList[].fieldName 缺少字段业务说明",
+      "requestBody:datasetItemList[].fieldTxt 缺少字段业务说明",
+      "requestBody:datasetItemList[].fieldType 缺少字段业务说明",
+      "requestBody:datasetItemList[].headId 缺少字段业务说明",
+      "requestBody:datasetItemList[].id 缺少字段业务说明",
+      "requestBody:datasetItemList[].izSearch 缺少字段业务说明",
+      "requestBody:datasetItemList[].izShow 缺少字段业务说明",
+      "requestBody:datasetItemList[].izTotal 缺少字段业务说明",
+      "requestBody:datasetItemList[].orderNum 缺少字段业务说明",
+      "requestBody:datasetItemList[].searchMode 缺少字段业务说明",
+      "requestBody:datasetItemList[].updateBy 缺少字段业务说明",
+      "requestBody:datasetItemList[].updateTime 缺少字段业务说明",
+      "requestBody:datasetItemList[].widgetType 缺少字段业务说明",
+      "requestBody:datasetParamList 缺少字段业务说明",
+      "requestBody:datasetParamList[].createBy 缺少字段业务说明",
+      "requestBody:datasetParamList[].createTime 缺少字段业务说明",
+      "requestBody:datasetParamList[].dictCode 缺少字段业务说明",
+      "requestBody:datasetParamList[].headId 缺少字段业务说明",
+      "requestBody:datasetParamList[].id 缺少字段业务说明",
+      "requestBody:datasetParamList[].izSearch 缺少字段业务说明",
+      "requestBody:datasetParamList[].orderNum 缺少字段业务说明",
+      "requestBody:datasetParamList[].paramName 缺少字段业务说明",
+      "requestBody:datasetParamList[].paramTxt 缺少字段业务说明",
+      "requestBody:datasetParamList[].paramValue 缺少字段业务说明",
+      "requestBody:datasetParamList[].searchMode 缺少字段业务说明",
+      "requestBody:datasetParamList[].updateBy 缺少字段业务说明",
+      "requestBody:datasetParamList[].updateTime 缺少字段业务说明",
+      "requestBody:datasetParamList[].widgetType 缺少字段业务说明",
+      "requestBody:dbSource 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izAgent 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:parentId 缺少字段业务说明",
+      "requestBody:querySql 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PUT /drag/onlDragDatasetHead/edit": [
+      "requestBody:apiMethod 缺少字段业务说明",
+      "requestBody:code 缺少字段业务说明",
+      "requestBody:content 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dataType 缺少字段业务说明",
+      "requestBody:datasetItemList 缺少字段业务说明",
+      "requestBody:datasetItemList[].createBy 缺少字段业务说明",
+      "requestBody:datasetItemList[].createTime 缺少字段业务说明",
+      "requestBody:datasetItemList[].dictCode 缺少字段业务说明",
+      "requestBody:datasetItemList[].dictTable 缺少字段业务说明",
+      "requestBody:datasetItemList[].dictText 缺少字段业务说明",
+      "requestBody:datasetItemList[].fieldName 缺少字段业务说明",
+      "requestBody:datasetItemList[].fieldTxt 缺少字段业务说明",
+      "requestBody:datasetItemList[].fieldType 缺少字段业务说明",
+      "requestBody:datasetItemList[].headId 缺少字段业务说明",
+      "requestBody:datasetItemList[].id 缺少字段业务说明",
+      "requestBody:datasetItemList[].izSearch 缺少字段业务说明",
+      "requestBody:datasetItemList[].izShow 缺少字段业务说明",
+      "requestBody:datasetItemList[].izTotal 缺少字段业务说明",
+      "requestBody:datasetItemList[].orderNum 缺少字段业务说明",
+      "requestBody:datasetItemList[].searchMode 缺少字段业务说明",
+      "requestBody:datasetItemList[].updateBy 缺少字段业务说明",
+      "requestBody:datasetItemList[].updateTime 缺少字段业务说明",
+      "requestBody:datasetItemList[].widgetType 缺少字段业务说明",
+      "requestBody:datasetParamList 缺少字段业务说明",
+      "requestBody:datasetParamList[].createBy 缺少字段业务说明",
+      "requestBody:datasetParamList[].createTime 缺少字段业务说明",
+      "requestBody:datasetParamList[].dictCode 缺少字段业务说明",
+      "requestBody:datasetParamList[].headId 缺少字段业务说明",
+      "requestBody:datasetParamList[].id 缺少字段业务说明",
+      "requestBody:datasetParamList[].izSearch 缺少字段业务说明",
+      "requestBody:datasetParamList[].orderNum 缺少字段业务说明",
+      "requestBody:datasetParamList[].paramName 缺少字段业务说明",
+      "requestBody:datasetParamList[].paramTxt 缺少字段业务说明",
+      "requestBody:datasetParamList[].paramValue 缺少字段业务说明",
+      "requestBody:datasetParamList[].searchMode 缺少字段业务说明",
+      "requestBody:datasetParamList[].updateBy 缺少字段业务说明",
+      "requestBody:datasetParamList[].updateTime 缺少字段业务说明",
+      "requestBody:datasetParamList[].widgetType 缺少字段业务说明",
+      "requestBody:dbSource 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izAgent 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:parentId 缺少字段业务说明",
+      "requestBody:querySql 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/onlDragDatasetHead/generateChartSse": [
+      "query:content 缺少字段业务说明",
+      "query:dbId 缺少字段业务说明",
+      "query:fileId 缺少字段业务说明",
+      "query:type 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/onlDragDatasetHead/generateSqlSse": [
+      "query:content 缺少字段业务说明",
+      "query:dbId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDatasetHead/getAllChartData": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/onlDragDatasetHead/getAllGroup": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDatasetHead/getChartData": [
+      "requestBody:apiMethod 缺少字段业务说明",
+      "requestBody:code 缺少字段业务说明",
+      "requestBody:content 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dataType 缺少字段业务说明",
+      "requestBody:datasetItemList 缺少字段业务说明",
+      "requestBody:datasetItemList[].createBy 缺少字段业务说明",
+      "requestBody:datasetItemList[].createTime 缺少字段业务说明",
+      "requestBody:datasetItemList[].dictCode 缺少字段业务说明",
+      "requestBody:datasetItemList[].dictTable 缺少字段业务说明",
+      "requestBody:datasetItemList[].dictText 缺少字段业务说明",
+      "requestBody:datasetItemList[].fieldName 缺少字段业务说明",
+      "requestBody:datasetItemList[].fieldTxt 缺少字段业务说明",
+      "requestBody:datasetItemList[].fieldType 缺少字段业务说明",
+      "requestBody:datasetItemList[].headId 缺少字段业务说明",
+      "requestBody:datasetItemList[].id 缺少字段业务说明",
+      "requestBody:datasetItemList[].izSearch 缺少字段业务说明",
+      "requestBody:datasetItemList[].izShow 缺少字段业务说明",
+      "requestBody:datasetItemList[].izTotal 缺少字段业务说明",
+      "requestBody:datasetItemList[].orderNum 缺少字段业务说明",
+      "requestBody:datasetItemList[].searchMode 缺少字段业务说明",
+      "requestBody:datasetItemList[].updateBy 缺少字段业务说明",
+      "requestBody:datasetItemList[].updateTime 缺少字段业务说明",
+      "requestBody:datasetItemList[].widgetType 缺少字段业务说明",
+      "requestBody:datasetParamList 缺少字段业务说明",
+      "requestBody:datasetParamList[].createBy 缺少字段业务说明",
+      "requestBody:datasetParamList[].createTime 缺少字段业务说明",
+      "requestBody:datasetParamList[].dictCode 缺少字段业务说明",
+      "requestBody:datasetParamList[].headId 缺少字段业务说明",
+      "requestBody:datasetParamList[].id 缺少字段业务说明",
+      "requestBody:datasetParamList[].izSearch 缺少字段业务说明",
+      "requestBody:datasetParamList[].orderNum 缺少字段业务说明",
+      "requestBody:datasetParamList[].paramName 缺少字段业务说明",
+      "requestBody:datasetParamList[].paramTxt 缺少字段业务说明",
+      "requestBody:datasetParamList[].paramValue 缺少字段业务说明",
+      "requestBody:datasetParamList[].searchMode 缺少字段业务说明",
+      "requestBody:datasetParamList[].updateBy 缺少字段业务说明",
+      "requestBody:datasetParamList[].updateTime 缺少字段业务说明",
+      "requestBody:datasetParamList[].widgetType 缺少字段业务说明",
+      "requestBody:dbSource 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izAgent 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:parentId 缺少字段业务说明",
+      "requestBody:querySql 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDatasetHead/getDataForDesign": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/onlDragDatasetHead/getDbSetByCodeAndDb": [
+      "query:code 缺少字段业务说明",
+      "query:dbSource 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/onlDragDatasetHead/getDictByCodes": [
+      "query:codes 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/onlDragDatasetHead/getLoginUser": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/onlDragDatasetHead/getMapDataByCode": [
+      "query:code 缺少字段业务说明",
+      "query:name 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDatasetHead/getRawTableData": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDatasetHead/getTotalData": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDatasetHead/getTotalDataByCompId": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/onlDragDatasetHead/list": [
+      "query:apiMethod 缺少字段业务说明",
+      "query:code 缺少字段业务说明",
+      "query:content 缺少字段业务说明",
+      "query:createBy 缺少字段业务说明",
+      "query:createTime 缺少字段业务说明",
+      "query:dataType 缺少字段业务说明",
+      "query:dbSource 缺少字段业务说明",
+      "query:id 缺少字段业务说明",
+      "query:izAgent 缺少字段业务说明",
+      "query:lowAppId 缺少字段业务说明",
+      "query:name 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:parentId 缺少字段业务说明",
+      "query:querySql 缺少字段业务说明",
+      "query:tenantId 缺少字段业务说明",
+      "query:updateBy 缺少字段业务说明",
+      "query:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDatasetHead/previewData": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/onlDragDatasetHead/queryAllById": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/onlDragDatasetHead/queryByDbId": [
+      "query:dbId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/onlDragDatasetHead/queryById": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDatasetHead/queryFieldByApi": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDatasetHead/queryFieldBySql": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDatasetHead/queryFileFieldBySql": [
+      "requestBody:dbCode 缺少字段业务说明",
+      "requestBody:dbType 缺少字段业务说明",
+      "requestBody:paramArray 缺少字段业务说明",
+      "requestBody:sql 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDatasetHead/queryUsageCount": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/onlDragDatasetHead/updateChartOptSse": [
+      "query:component 缺少字段业务说明",
+      "query:content 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDatasetHead/updateGroup": [
+      "requestBody:apiMethod 缺少字段业务说明",
+      "requestBody:code 缺少字段业务说明",
+      "requestBody:content 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dataType 缺少字段业务说明",
+      "requestBody:dbSource 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izAgent 缺少字段业务说明",
+      "requestBody:lowAppId 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:parentId 缺少字段业务说明",
+      "requestBody:querySql 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDatasetParam/add": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dictCode 缺少字段业务说明",
+      "requestBody:headId 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izSearch 缺少字段业务说明",
+      "requestBody:orderNum 缺少字段业务说明",
+      "requestBody:paramName 缺少字段业务说明",
+      "requestBody:paramTxt 缺少字段业务说明",
+      "requestBody:paramValue 缺少字段业务说明",
+      "requestBody:searchMode 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "requestBody:widgetType 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /drag/onlDragDatasetParam/delete": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /drag/onlDragDatasetParam/deleteBatch": [
+      "query:ids 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragDatasetParam/edit": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dictCode 缺少字段业务说明",
+      "requestBody:headId 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izSearch 缺少字段业务说明",
+      "requestBody:orderNum 缺少字段业务说明",
+      "requestBody:paramName 缺少字段业务说明",
+      "requestBody:paramTxt 缺少字段业务说明",
+      "requestBody:paramValue 缺少字段业务说明",
+      "requestBody:searchMode 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "requestBody:widgetType 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PUT /drag/onlDragDatasetParam/edit": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dictCode 缺少字段业务说明",
+      "requestBody:headId 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izSearch 缺少字段业务说明",
+      "requestBody:orderNum 缺少字段业务说明",
+      "requestBody:paramName 缺少字段业务说明",
+      "requestBody:paramTxt 缺少字段业务说明",
+      "requestBody:paramValue 缺少字段业务说明",
+      "requestBody:searchMode 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "requestBody:widgetType 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/onlDragDatasetParam/list": [
+      "query:createBy 缺少字段业务说明",
+      "query:createTime 缺少字段业务说明",
+      "query:dictCode 缺少字段业务说明",
+      "query:headId 缺少字段业务说明",
+      "query:id 缺少字段业务说明",
+      "query:izSearch 缺少字段业务说明",
+      "query:orderNum 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:paramName 缺少字段业务说明",
+      "query:paramTxt 缺少字段业务说明",
+      "query:paramValue 缺少字段业务说明",
+      "query:searchMode 缺少字段业务说明",
+      "query:updateBy 缺少字段业务说明",
+      "query:updateTime 缺少字段业务说明",
+      "query:widgetType 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/onlDragDatasetParam/queryById": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragShare/add": [
+      "requestBody:dragId 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:lastUpdateTime 缺少字段业务说明",
+      "requestBody:previewLock 缺少字段业务说明",
+      "requestBody:previewLockStatus 缺少字段业务说明",
+      "requestBody:previewUrl 缺少字段业务说明",
+      "requestBody:shareToken 缺少字段业务说明",
+      "requestBody:status 缺少字段业务说明",
+      "requestBody:termOfValidity 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /drag/onlDragShare/delete": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/onlDragShare/edit": [
+      "requestBody:dragId 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:lastUpdateTime 缺少字段业务说明",
+      "requestBody:previewLock 缺少字段业务说明",
+      "requestBody:previewLockStatus 缺少字段业务说明",
+      "requestBody:previewUrl 缺少字段业务说明",
+      "requestBody:shareToken 缺少字段业务说明",
+      "requestBody:status 缺少字段业务说明",
+      "requestBody:termOfValidity 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PUT /drag/onlDragShare/edit": [
+      "requestBody:dragId 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:lastUpdateTime 缺少字段业务说明",
+      "requestBody:previewLock 缺少字段业务说明",
+      "requestBody:previewLockStatus 缺少字段业务说明",
+      "requestBody:previewUrl 缺少字段业务说明",
+      "requestBody:shareToken 缺少字段业务说明",
+      "requestBody:status 缺少字段业务说明",
+      "requestBody:termOfValidity 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/onlDragShare/getByPageId": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/page/add": [
+      "requestBody:appMenuGroupId 缺少字段业务说明",
+      "requestBody:backgroundColor 缺少字段业务说明",
+      "requestBody:backgroundImage 缺少字段业务说明",
+      "requestBody:coverUrl 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:delFlag 缺少字段业务说明",
+      "requestBody:desJson 缺少字段业务说明",
+      "requestBody:designType 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izTemplate 缺少字段业务说明",
+      "requestBody:lowAppId 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:path 缺少字段业务说明",
+      "requestBody:protectionCode 缺少字段业务说明",
+      "requestBody:style 缺少字段业务说明",
+      "requestBody:template 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:theme 缺少字段业务说明",
+      "requestBody:type 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateCount 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "requestBody:visitsNum 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/page/addVisitsNumber": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/page/aiDiscussScreenSse": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/page/aiGenerateScreen": [
+      "query:prompt 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/page/aiGenerateScreenSse": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/page/aiModifyScreenSse": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/page/aiPolishScreenPrompt": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/page/aiScreenTaskStatus": [
+      "query:requestId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/page/clearRecovery": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/page/comp/add": [
+      "requestBody:compId 缺少字段业务说明",
+      "requestBody:component 缺少字段业务说明",
+      "requestBody:config 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:pageId 缺少字段业务说明",
+      "requestBody:parentId 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/page/comp/copyById": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/page/comp/createDefChart": [
+      "query:code 缺少字段业务说明",
+      "query:name 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /drag/page/comp/delete": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /drag/page/comp/deleteById": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/page/comp/edit": [
+      "requestBody:compId 缺少字段业务说明",
+      "requestBody:component 缺少字段业务说明",
+      "requestBody:config 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:pageId 缺少字段业务说明",
+      "requestBody:parentId 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/page/comp/queryById": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/page/copyPage": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /drag/page/delete": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /drag/page/deleteBatch": [
+      "query:ids 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/page/edit": [
+      "requestBody:appMenuGroupId 缺少字段业务说明",
+      "requestBody:backgroundColor 缺少字段业务说明",
+      "requestBody:backgroundImage 缺少字段业务说明",
+      "requestBody:coverUrl 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:delFlag 缺少字段业务说明",
+      "requestBody:desJson 缺少字段业务说明",
+      "requestBody:designType 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izTemplate 缺少字段业务说明",
+      "requestBody:lowAppId 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:path 缺少字段业务说明",
+      "requestBody:protectionCode 缺少字段业务说明",
+      "requestBody:style 缺少字段业务说明",
+      "requestBody:template 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:theme 缺少字段业务说明",
+      "requestBody:type 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateCount 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "requestBody:visitsNum 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/page/exportDragConfig": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/page/getCount": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/page/getShareInfo": [
+      "query:id 缺少字段业务说明",
+      "query:type 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/page/importDragConfig": [
+      "requestBody:file 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/page/list": [
+      "query:appMenuGroupId 缺少字段业务说明",
+      "query:backgroundColor 缺少字段业务说明",
+      "query:backgroundImage 缺少字段业务说明",
+      "query:coverUrl 缺少字段业务说明",
+      "query:createBy 缺少字段业务说明",
+      "query:createTime 缺少字段业务说明",
+      "query:delFlag 缺少字段业务说明",
+      "query:desJson 缺少字段业务说明",
+      "query:designType 缺少字段业务说明",
+      "query:id 缺少字段业务说明",
+      "query:izTemplate 缺少字段业务说明",
+      "query:lowAppId 缺少字段业务说明",
+      "query:name 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:path 缺少字段业务说明",
+      "query:protectionCode 缺少字段业务说明",
+      "query:style 缺少字段业务说明",
+      "query:template 缺少字段业务说明",
+      "query:tenantId 缺少字段业务说明",
+      "query:theme 缺少字段业务说明",
+      "query:type 缺少字段业务说明",
+      "query:updateBy 缺少字段业务说明",
+      "query:updateCount 缺少字段业务说明",
+      "query:updateTime 缺少字段业务说明",
+      "query:visitsNum 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /drag/page/physicalDelete": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/page/queryById": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/page/queryPageById": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/page/queryTemplateList": [
+      "query:appMenuGroupId 缺少字段业务说明",
+      "query:backgroundColor 缺少字段业务说明",
+      "query:backgroundImage 缺少字段业务说明",
+      "query:coverUrl 缺少字段业务说明",
+      "query:createBy 缺少字段业务说明",
+      "query:createTime 缺少字段业务说明",
+      "query:delFlag 缺少字段业务说明",
+      "query:desJson 缺少字段业务说明",
+      "query:designType 缺少字段业务说明",
+      "query:id 缺少字段业务说明",
+      "query:izTemplate 缺少字段业务说明",
+      "query:lowAppId 缺少字段业务说明",
+      "query:name 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:path 缺少字段业务说明",
+      "query:protectionCode 缺少字段业务说明",
+      "query:style 缺少字段业务说明",
+      "query:template 缺少字段业务说明",
+      "query:tenantId 缺少字段业务说明",
+      "query:theme 缺少字段业务说明",
+      "query:type 缺少字段业务说明",
+      "query:updateBy 缺少字段业务说明",
+      "query:updateCount 缺少字段业务说明",
+      "query:updateTime 缺少字段业务说明",
+      "query:visitsNum 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/page/recoveryDelete": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /drag/page/refreshCache": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /drag/page/refreshCache": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "HEAD /drag/page/refreshCache": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "OPTIONS /drag/page/refreshCache": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PATCH /drag/page/refreshCache": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/page/refreshCache": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PUT /drag/page/refreshCache": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/page/saveCompToPage": [
+      "requestBody:appMenuGroupId 缺少字段业务说明",
+      "requestBody:backgroundColor 缺少字段业务说明",
+      "requestBody:backgroundImage 缺少字段业务说明",
+      "requestBody:coverUrl 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:delFlag 缺少字段业务说明",
+      "requestBody:desJson 缺少字段业务说明",
+      "requestBody:designType 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izTemplate 缺少字段业务说明",
+      "requestBody:lowAppId 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:path 缺少字段业务说明",
+      "requestBody:protectionCode 缺少字段业务说明",
+      "requestBody:style 缺少字段业务说明",
+      "requestBody:template 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:theme 缺少字段业务说明",
+      "requestBody:type 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateCount 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "requestBody:visitsNum 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/websocket/sendBtnData": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /drag/websocket/sendData": [
+      "query:chartId 缺少字段业务说明",
+      "query:data 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jimureport/test/callback": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jimureport/test/customCellEdit": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jimureport/test/getList": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jimureport/test/getOne": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/addChart": [
+      "query:chartType 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/addChart": [
+      "query:chartType 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "HEAD /jmreport/addChart": [
+      "query:chartType 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "OPTIONS /jmreport/addChart": [
+      "query:chartType 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PATCH /jmreport/addChart": [
+      "query:chartType 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/addChart": [
+      "query:chartType 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PUT /jmreport/addChart": [
+      "query:chartType 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/addDataSource": [
+      "requestBody:code 缺少字段业务说明",
+      "requestBody:connectTimes 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dbChName 缺少字段业务说明",
+      "requestBody:dbDriver 缺少字段业务说明",
+      "requestBody:dbPassword 缺少字段业务说明",
+      "requestBody:dbType 缺少字段业务说明",
+      "requestBody:dbUrl 缺少字段业务说明",
+      "requestBody:dbUsername 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:keyword 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:remark 缺少字段业务说明",
+      "requestBody:reportId 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:type 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "requestBody:withoutDbType 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/addViewCount/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/ai/assistant/chooseTables": [
+      "requestBody:$ 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/ai/assistant/createReport/stream": [
+      "requestBody:$ 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/ai/assistant/generateChart": [
+      "requestBody:$ 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/ai/assistant/generateChart/stream": [
+      "requestBody:$ 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/ai/assistant/generatePrompt": [
+      "requestBody:$ 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/ai/assistant/generateSql": [
+      "requestBody:$ 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/ai/assistant/intentCheck": [
+      "requestBody:$ 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/ai/tableMeta/columns": [
+      "query:dbSourceId 缺少字段业务说明",
+      "query:dbSourceType 缺少字段业务说明",
+      "query:tableName 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/ai/tableMeta/columns": [
+      "requestBody:$ 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/ai/tableMeta/comment": [
+      "requestBody:$ 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/ai/tableMeta/enabled": [
+      "requestBody:$ 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/ai/tableMeta/page": [
+      "query:dbSourceId 缺少字段业务说明",
+      "query:dbSourceType 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:tableName 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/ai/tableMeta/relations": [
+      "requestBody:$ 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/ai/tableMeta/saveOrUpdate": [
+      "requestBody:columnsJson 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dbSourceId 缺少字段业务说明",
+      "requestBody:dbSourceType 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:isEnabled 缺少字段业务说明",
+      "requestBody:relationsJson 缺少字段业务说明",
+      "requestBody:schemaName 缺少字段业务说明",
+      "requestBody:sourceComment 缺少字段业务说明",
+      "requestBody:syncedTime 缺少字段业务说明",
+      "requestBody:tableComment 缺少字段业务说明",
+      "requestBody:tableName 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/ai/tableMeta/sync": [
+      "requestBody:$ 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/ai/tableMeta/syncOne": [
+      "requestBody:$ 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/auto/export": [
+      "requestBody:batchNo 缺少字段业务说明",
+      "requestBody:domain 缺少字段业务说明",
+      "requestBody:exportFrom 缺少字段业务说明",
+      "requestBody:exportLogId 缺少字段业务说明",
+      "requestBody:exportType 缺少字段业务说明",
+      "requestBody:fileSyncPath 缺少字段业务说明",
+      "requestBody:fileSyncedPath 缺少字段业务说明",
+      "requestBody:fromId 缺少字段业务说明",
+      "requestBody:fromName 缺少字段业务说明",
+      "requestBody:receiverEmail 缺少字段业务说明",
+      "requestBody:reportIds 缺少字段业务说明",
+      "requestBody:reportParams 缺少字段业务说明",
+      "requestBody:reportParams4ExportMore 缺少字段业务说明",
+      "requestBody:reportParams4ExportMore.componentType 缺少字段业务说明",
+      "requestBody:reportParams4ExportMore.componentType.typeName 缺少字段业务说明",
+      "requestBody:reportParams4ExportMore.empty 缺少字段业务说明",
+      "requestBody:reportParams4ExportMore.relatedArray 未声明可确定的输入类型",
+      "requestBody:reportParams4ExportMore.relatedArray 缺少字段业务说明",
+      "requestBody:reportParams4ExportMore[] 未声明可确定的输入类型",
+      "requestBody:reportParams4Py 缺少字段业务说明",
+      "requestBody:reportParams4Py[] 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:reportParams[].exportType 缺少字段业务说明",
+      "requestBody:reportParams[].fileName 缺少字段业务说明",
+      "requestBody:reportParams[].id 缺少字段业务说明",
+      "requestBody:reportParams[].params 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:reportParams[].params 缺少字段业务说明",
+      "requestBody:reportParams[].sheetId 缺少字段业务说明",
+      "requestBody:token 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/auto/export/download/{batchNo}": [
+      "path:batchNo 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/auto/export/download/{batchNo}/{signature}": [
+      "path:batchNo 缺少字段业务说明",
+      "path:signature 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/auto/export/job/delete": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/auto/export/job/get": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/auto/export/job/query": [
+      "query:name 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/auto/export/job/run/{jobId}": [
+      "path:jobId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/auto/export/job/save": [
+      "requestBody:beginTime 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:endTime 缺少字段业务说明",
+      "requestBody:execInterval 缺少字段业务说明",
+      "requestBody:fileSyncPath 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:lastRunTime 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:receiverEmail 缺少字段业务说明",
+      "requestBody:reportConf 缺少字段业务说明",
+      "requestBody:status 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/auto/export/job/status/update": [
+      "requestBody:beginTime 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:endTime 缺少字段业务说明",
+      "requestBody:execInterval 缺少字段业务说明",
+      "requestBody:fileSyncPath 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:lastRunTime 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:receiverEmail 缺少字段业务说明",
+      "requestBody:reportConf 缺少字段业务说明",
+      "requestBody:status 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/auto/export/logs": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/auto/export/logs/query": [
+      "query:batchNo 缺少字段业务说明",
+      "query:fromId 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/auto/export/plugin": [
+      "requestBody:batchNo 缺少字段业务说明",
+      "requestBody:domain 缺少字段业务说明",
+      "requestBody:exportFrom 缺少字段业务说明",
+      "requestBody:exportLogId 缺少字段业务说明",
+      "requestBody:exportType 缺少字段业务说明",
+      "requestBody:fileSyncPath 缺少字段业务说明",
+      "requestBody:fileSyncedPath 缺少字段业务说明",
+      "requestBody:fromId 缺少字段业务说明",
+      "requestBody:fromName 缺少字段业务说明",
+      "requestBody:receiverEmail 缺少字段业务说明",
+      "requestBody:reportIds 缺少字段业务说明",
+      "requestBody:reportParams 缺少字段业务说明",
+      "requestBody:reportParams4ExportMore 缺少字段业务说明",
+      "requestBody:reportParams4ExportMore.componentType 缺少字段业务说明",
+      "requestBody:reportParams4ExportMore.componentType.typeName 缺少字段业务说明",
+      "requestBody:reportParams4ExportMore.empty 缺少字段业务说明",
+      "requestBody:reportParams4ExportMore.relatedArray 未声明可确定的输入类型",
+      "requestBody:reportParams4ExportMore.relatedArray 缺少字段业务说明",
+      "requestBody:reportParams4ExportMore[] 未声明可确定的输入类型",
+      "requestBody:reportParams4Py 缺少字段业务说明",
+      "requestBody:reportParams4Py[] 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:reportParams[].exportType 缺少字段业务说明",
+      "requestBody:reportParams[].fileName 缺少字段业务说明",
+      "requestBody:reportParams[].id 缺少字段业务说明",
+      "requestBody:reportParams[].params 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:reportParams[].params 缺少字段业务说明",
+      "requestBody:reportParams[].sheetId 缺少字段业务说明",
+      "requestBody:token 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/auto/export/python/plugin": [
+      "requestBody:batchNo 缺少字段业务说明",
+      "requestBody:domain 缺少字段业务说明",
+      "requestBody:exportFrom 缺少字段业务说明",
+      "requestBody:exportLogId 缺少字段业务说明",
+      "requestBody:exportType 缺少字段业务说明",
+      "requestBody:fileSyncPath 缺少字段业务说明",
+      "requestBody:fileSyncedPath 缺少字段业务说明",
+      "requestBody:fromId 缺少字段业务说明",
+      "requestBody:fromName 缺少字段业务说明",
+      "requestBody:receiverEmail 缺少字段业务说明",
+      "requestBody:reportIds 缺少字段业务说明",
+      "requestBody:reportParams 缺少字段业务说明",
+      "requestBody:reportParams4ExportMore 缺少字段业务说明",
+      "requestBody:reportParams4ExportMore.componentType 缺少字段业务说明",
+      "requestBody:reportParams4ExportMore.componentType.typeName 缺少字段业务说明",
+      "requestBody:reportParams4ExportMore.empty 缺少字段业务说明",
+      "requestBody:reportParams4ExportMore.relatedArray 未声明可确定的输入类型",
+      "requestBody:reportParams4ExportMore.relatedArray 缺少字段业务说明",
+      "requestBody:reportParams4ExportMore[] 未声明可确定的输入类型",
+      "requestBody:reportParams4Py 缺少字段业务说明",
+      "requestBody:reportParams4Py[] 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:reportParams[].exportType 缺少字段业务说明",
+      "requestBody:reportParams[].fileName 缺少字段业务说明",
+      "requestBody:reportParams[].id 缺少字段业务说明",
+      "requestBody:reportParams[].params 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:reportParams[].params 缺少字段业务说明",
+      "requestBody:reportParams[].sheetId 缺少字段业务说明",
+      "requestBody:token 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/category/add": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:delFlag 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izLeaf 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:parentId 缺少字段业务说明",
+      "requestBody:sortNo 缺少字段业务说明",
+      "requestBody:sourceType 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/category/batchMoveFilesAndFolder": [
+      "requestBody:formParentId 缺少字段业务说明",
+      "requestBody:jimuReportList 缺少字段业务说明",
+      "requestBody:jimuReportList[].apiCode 缺少字段业务说明",
+      "requestBody:jimuReportList[].apiMethod 缺少字段业务说明",
+      "requestBody:jimuReportList[].apiUrl 缺少字段业务说明",
+      "requestBody:jimuReportList[].code 缺少字段业务说明",
+      "requestBody:jimuReportList[].createBy 缺少字段业务说明",
+      "requestBody:jimuReportList[].createTime 缺少字段业务说明",
+      "requestBody:jimuReportList[].cssStr 缺少字段业务说明",
+      "requestBody:jimuReportList[].currentSheetId 缺少字段业务说明",
+      "requestBody:jimuReportList[].currentSheetName 缺少字段业务说明",
+      "requestBody:jimuReportList[].dataList 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:jimuReportList[].dataList 缺少字段业务说明",
+      "requestBody:jimuReportList[].delFlag 缺少字段业务说明",
+      "requestBody:jimuReportList[].dictInfo 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:jimuReportList[].dictInfo 缺少字段业务说明",
+      "requestBody:jimuReportList[].id 缺少字段业务说明",
+      "requestBody:jimuReportList[].isMultiSheet 缺少字段业务说明",
+      "requestBody:jimuReportList[].isRefresh 缺少字段业务说明",
+      "requestBody:jimuReportList[].jsStr 缺少字段业务说明",
+      "requestBody:jimuReportList[].jsonStr 缺少字段业务说明",
+      "requestBody:jimuReportList[].name 缺少字段业务说明",
+      "requestBody:jimuReportList[].note 缺少字段业务说明",
+      "requestBody:jimuReportList[].pyStr 缺少字段业务说明",
+      "requestBody:jimuReportList[].shareViewUrl 缺少字段业务说明",
+      "requestBody:jimuReportList[].sheets 缺少字段业务说明",
+      "requestBody:jimuReportList[].sheets[] 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:jimuReportList[].status 缺少字段业务说明",
+      "requestBody:jimuReportList[].submitForm 缺少字段业务说明",
+      "requestBody:jimuReportList[].template 缺少字段业务说明",
+      "requestBody:jimuReportList[].tenantId 缺少字段业务说明",
+      "requestBody:jimuReportList[].thumb 缺少字段业务说明",
+      "requestBody:jimuReportList[].type 缺少字段业务说明",
+      "requestBody:jimuReportList[].updateBy 缺少字段业务说明",
+      "requestBody:jimuReportList[].updateCount 缺少字段业务说明",
+      "requestBody:jimuReportList[].updateTime 缺少字段业务说明",
+      "requestBody:toParentId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/category/completelyDeleteById": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/category/deleteById": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/category/edit": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:delFlag 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izLeaf 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:parentId 缺少字段业务说明",
+      "requestBody:sortNo 缺少字段业务说明",
+      "requestBody:sourceType 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/category/folder/sort": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/category/getById": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/category/list": [
+      "query:createBy 缺少字段业务说明",
+      "query:createTime 缺少字段业务说明",
+      "query:delFlag 缺少字段业务说明",
+      "query:id 缺少字段业务说明",
+      "query:izLeaf 缺少字段业务说明",
+      "query:name 缺少字段业务说明",
+      "query:parentId 缺少字段业务说明",
+      "query:sortNo 缺少字段业务说明",
+      "query:sourceType 缺少字段业务说明",
+      "query:tenantId 缺少字段业务说明",
+      "query:updateBy 缺少字段业务说明",
+      "query:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/category/query/report/count": [
+      "query:categoryId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/category/queryRecycleBin": [
+      "query:name 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:reportType 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/category/reductionById": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:delFlag 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:izLeaf 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:parentId 缺少字段业务说明",
+      "requestBody:sortNo 缺少字段业务说明",
+      "requestBody:sourceType 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/category/updateJmTypeByCategoryId": [
+      "requestBody:apiCode 缺少字段业务说明",
+      "requestBody:apiMethod 缺少字段业务说明",
+      "requestBody:apiUrl 缺少字段业务说明",
+      "requestBody:code 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:cssStr 缺少字段业务说明",
+      "requestBody:currentSheetId 缺少字段业务说明",
+      "requestBody:currentSheetName 缺少字段业务说明",
+      "requestBody:dataList 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:dataList 缺少字段业务说明",
+      "requestBody:delFlag 缺少字段业务说明",
+      "requestBody:dictInfo 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:dictInfo 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:isMultiSheet 缺少字段业务说明",
+      "requestBody:isRefresh 缺少字段业务说明",
+      "requestBody:jsStr 缺少字段业务说明",
+      "requestBody:jsonStr 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:note 缺少字段业务说明",
+      "requestBody:pyStr 缺少字段业务说明",
+      "requestBody:shareViewUrl 缺少字段业务说明",
+      "requestBody:sheets 缺少字段业务说明",
+      "requestBody:sheets[] 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:status 缺少字段业务说明",
+      "requestBody:submitForm 缺少字段业务说明",
+      "requestBody:template 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:thumb 缺少字段业务说明",
+      "requestBody:type 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateCount 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/checkParam/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/clearRecycleBin": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/dataCodeExist": [
+      "query:code 缺少字段业务说明",
+      "query:reportId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/delDataSource": [
+      "requestBody:code 缺少字段业务说明",
+      "requestBody:connectTimes 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dbChName 缺少字段业务说明",
+      "requestBody:dbDriver 缺少字段业务说明",
+      "requestBody:dbPassword 缺少字段业务说明",
+      "requestBody:dbType 缺少字段业务说明",
+      "requestBody:dbUrl 缺少字段业务说明",
+      "requestBody:dbUsername 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:keyword 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:remark 缺少字段业务说明",
+      "requestBody:reportId 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:type 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "requestBody:withoutDbType 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/delDbData/{dbId}": [
+      "path:dbId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/delete": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/deleteBatch": [
+      "query:ids 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/deleteFieldByIds": [
+      "String @RequestBody 接收原始请求体文本；须核实该接口的 JSON/XML/文本协议，不能自动包装成 JSON 字符串",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/deleteParamByIds": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/deleteReportById": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/demo": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/demo": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "HEAD /jmreport/demo": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "OPTIONS /jmreport/demo": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PATCH /jmreport/demo": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/demo": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PUT /jmreport/demo": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/dict/add": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:delFlag 缺少字段业务说明",
+      "requestBody:description 缺少字段业务说明",
+      "requestBody:dictCode 缺少字段业务说明",
+      "requestBody:dictName 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:type 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/dict/back": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:delFlag 缺少字段业务说明",
+      "requestBody:description 缺少字段业务说明",
+      "requestBody:dictCode 缺少字段业务说明",
+      "requestBody:dictName 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:type 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/dict/batchRealDelete": [
+      "query:ids 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/dict/batchRevert": [
+      "query:ids 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/dict/delete": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/dict/deleteBatch": [
+      "query:ids 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/dict/deleteList": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/dict/edit": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:delFlag 缺少字段业务说明",
+      "requestBody:description 缺少字段业务说明",
+      "requestBody:dictCode 缺少字段业务说明",
+      "requestBody:dictName 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:type 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/dict/list": [
+      "query:createBy 缺少字段业务说明",
+      "query:createTime 缺少字段业务说明",
+      "query:delFlag 缺少字段业务说明",
+      "query:description 缺少字段业务说明",
+      "query:dictCode 缺少字段业务说明",
+      "query:dictName 缺少字段业务说明",
+      "query:id 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:tenantId 缺少字段业务说明",
+      "query:type 缺少字段业务说明",
+      "query:updateBy 缺少字段业务说明",
+      "query:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/dict/refleshCache": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/dict/thoroughDelete": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/dictCodeSearch": [
+      "query:key 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:paramSearch 缺少字段业务说明",
+      "query:params 缺少字段业务说明",
+      "query:reportId 缺少字段业务说明",
+      "query:text 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/dictItem/add": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:description 缺少字段业务说明",
+      "requestBody:dictId 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:itemText 缺少字段业务说明",
+      "requestBody:itemValue 缺少字段业务说明",
+      "requestBody:sortOrder 缺少字段业务说明",
+      "requestBody:status 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/dictItem/delete": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/dictItem/deleteBatch": [
+      "query:ids 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/dictItem/edit": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:description 缺少字段业务说明",
+      "requestBody:dictId 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:itemText 缺少字段业务说明",
+      "requestBody:itemValue 缺少字段业务说明",
+      "requestBody:sortOrder 缺少字段业务说明",
+      "requestBody:status 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/dictItem/list": [
+      "query:createBy 缺少字段业务说明",
+      "query:createTime 缺少字段业务说明",
+      "query:description 缺少字段业务说明",
+      "query:dictId 缺少字段业务说明",
+      "query:id 缺少字段业务说明",
+      "query:itemText 缺少字段业务说明",
+      "query:itemValue 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:sortOrder 缺少字段业务说明",
+      "query:status 缺少字段业务说明",
+      "query:updateBy 缺少字段业务说明",
+      "query:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/download/image": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/editEnhance": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/excelCreate": [
+      "requestBody:apiCode 缺少字段业务说明",
+      "requestBody:apiMethod 缺少字段业务说明",
+      "requestBody:apiUrl 缺少字段业务说明",
+      "requestBody:code 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:cssStr 缺少字段业务说明",
+      "requestBody:currentSheetId 缺少字段业务说明",
+      "requestBody:currentSheetName 缺少字段业务说明",
+      "requestBody:dataList 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:dataList 缺少字段业务说明",
+      "requestBody:delFlag 缺少字段业务说明",
+      "requestBody:dictInfo 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:dictInfo 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:isMultiSheet 缺少字段业务说明",
+      "requestBody:isRefresh 缺少字段业务说明",
+      "requestBody:jsStr 缺少字段业务说明",
+      "requestBody:jsonStr 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:note 缺少字段业务说明",
+      "requestBody:pyStr 缺少字段业务说明",
+      "requestBody:shareViewUrl 缺少字段业务说明",
+      "requestBody:sheets 缺少字段业务说明",
+      "requestBody:sheets[] 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:status 缺少字段业务说明",
+      "requestBody:submitForm 缺少字段业务说明",
+      "requestBody:template 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:thumb 缺少字段业务说明",
+      "requestBody:type 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateCount 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/excelQuery": [
+      "query:name 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:reportType 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/excelQueryByTemplate": [
+      "query:name 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:reportType 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/excelQueryName": [
+      "requestBody:apiCode 缺少字段业务说明",
+      "requestBody:apiMethod 缺少字段业务说明",
+      "requestBody:apiUrl 缺少字段业务说明",
+      "requestBody:code 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:cssStr 缺少字段业务说明",
+      "requestBody:currentSheetId 缺少字段业务说明",
+      "requestBody:currentSheetName 缺少字段业务说明",
+      "requestBody:dataList 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:dataList 缺少字段业务说明",
+      "requestBody:delFlag 缺少字段业务说明",
+      "requestBody:dictInfo 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:dictInfo 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:isMultiSheet 缺少字段业务说明",
+      "requestBody:isRefresh 缺少字段业务说明",
+      "requestBody:jsStr 缺少字段业务说明",
+      "requestBody:jsonStr 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:note 缺少字段业务说明",
+      "requestBody:pyStr 缺少字段业务说明",
+      "requestBody:shareViewUrl 缺少字段业务说明",
+      "requestBody:sheets 缺少字段业务说明",
+      "requestBody:sheets[] 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:status 缺少字段业务说明",
+      "requestBody:submitForm 缺少字段业务说明",
+      "requestBody:template 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:thumb 缺少字段业务说明",
+      "requestBody:type 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateCount 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/executeSelectApi": [
+      "query:api 缺少字段业务说明",
+      "query:method 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/export/word": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/exportAllExcel": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/exportAllExcelStream": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/exportPdfStream": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/exportReport": [
+      "query:exportParams 缺少字段业务说明",
+      "query:zipName 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/exportReportConfig": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/field/tree/{reportId}": [
+      "path:reportId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/form/getDepartmentList": [
+      "query:apiUrl 缺少字段业务说明",
+      "query:departName 缺少字段业务说明",
+      "query:ids 缺少字段业务说明",
+      "query:parentId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/form/getDictList": [
+      "query:dictCode 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:queryAll 缺少字段业务说明",
+      "query:searchText 缺少字段业务说明",
+      "query:searchValue 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/form/getPopupList": [
+      "query:apiUrl 缺少字段业务说明",
+      "query:ids 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:queryAll 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/form/getRoleList": [
+      "query:apiUrl 缺少字段业务说明",
+      "query:ids 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:queryAll 缺少字段业务说明",
+      "query:roleName 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/form/getTableDictList": [
+      "query:dictCode 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:queryAll 缺少字段业务说明",
+      "query:searchSql 缺少字段业务说明",
+      "query:searchText 缺少字段业务说明",
+      "query:searchValue 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/form/getUserList": [
+      "query:apiUrl 缺少字段业务说明",
+      "query:ids 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:queryAll 缺少字段业务说明",
+      "query:realname 缺少字段业务说明",
+      "query:username 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/form/repeat/check/{reportId}/{field}/{value}": [
+      "path:field 缺少字段业务说明",
+      "path:reportId 缺少字段业务说明",
+      "path:value 缺少字段业务说明",
+      "query:dataId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/form/submit": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/form/validate/java": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/generateTemplateByDesign": [
+      "query:desformCode 缺少字段业务说明",
+      "query:desformId 缺少字段业务说明",
+      "query:regeneration 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/generateTestData": [
+      "String @RequestBody 接收原始请求体文本；须核实该接口的 JSON/XML/文本协议，不能自动包装成 JSON 字符串",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/get/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/getCharData": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/getCount": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/getDataSourceById": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/getDataSourceByPage": [
+      "query:name 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/getDataSourceType": [
+      "query:dbKey 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/getLinkageChartInfo": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/getListReportDb": [
+      "query:reportId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/getMaintainDataSourceByPage": [
+      "query:keyword 缺少字段业务说明",
+      "query:name 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:type 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/getQueryInfo": [
+      "query:param 缺少字段业务说明",
+      "query:reportId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/getQueryInfo": [
+      "requestBody:$ 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/getReportByUser": [
+      "query:reportId 缺少字段业务说明",
+      "query:template 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/getReportChars": [
+      "query:charId 缺少字段业务说明",
+      "query:reportId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/group/delete": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/group/get": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/group/query": [
+      "query:name 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/group/save": [
+      "requestBody:bizType 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dataValue 缺少字段业务说明",
+      "requestBody:descr 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:metadata 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:reportIds 缺少字段业务说明",
+      "requestBody:reportNames 缺少字段业务说明",
+      "requestBody:status 缺少字段业务说明",
+      "requestBody:tags 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/group/view": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/group/view": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "HEAD /jmreport/group/view": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "OPTIONS /jmreport/group/view": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PATCH /jmreport/group/view": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/group/view": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PUT /jmreport/group/view": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/img/**": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途",
+      "路径含 Spring 通配符；需提供真实剩余路径规则，不能直接作为 OpenAPI URL 模板"
+    ],
+    "POST /jmreport/importExcel": [
+      "requestBody:file 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/importReportConfig": [
+      "requestBody:file 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/index/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/index/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "HEAD /jmreport/index/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "OPTIONS /jmreport/index/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PATCH /jmreport/index/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/index/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PUT /jmreport/index/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/initDataSource": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/link/delete": [
+      "requestBody:apiMethod 缺少字段业务说明",
+      "requestBody:apiUrl 缺少字段业务说明",
+      "requestBody:ejectType 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:linkChartId 缺少字段业务说明",
+      "requestBody:linkName 缺少字段业务说明",
+      "requestBody:linkType 缺少字段业务说明",
+      "requestBody:parameter 未声明可确定的输入类型",
+      "requestBody:parameter 缺少字段业务说明",
+      "requestBody:reportId 缺少字段业务说明",
+      "requestBody:requirement 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/link/getLinkData": [
+      "query:linkType 缺少字段业务说明",
+      "query:reportId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/link/queryByIds": [
+      "query:ids 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/link/saveAndEdit": [
+      "requestBody:apiMethod 缺少字段业务说明",
+      "requestBody:apiUrl 缺少字段业务说明",
+      "requestBody:ejectType 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:linkChartId 缺少字段业务说明",
+      "requestBody:linkName 缺少字段业务说明",
+      "requestBody:linkType 缺少字段业务说明",
+      "requestBody:parameter 未声明可确定的输入类型",
+      "requestBody:parameter 缺少字段业务说明",
+      "requestBody:reportId 缺少字段业务说明",
+      "requestBody:requirement 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/list": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/list": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "HEAD /jmreport/list": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "OPTIONS /jmreport/list": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PATCH /jmreport/list": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/list": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PUT /jmreport/list": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/loadDbData/{dbId}": [
+      "path:dbId 缺少字段业务说明",
+      "query:reportId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/loadTable": [
+      "query:dbSource 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/loadTableData": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/map/addMapData": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:data 缺少字段业务说明",
+      "requestBody:delFlag 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:label 缺少字段业务说明",
+      "requestBody:mapType 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:reportId 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/map/delMapSource": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:data 缺少字段业务说明",
+      "requestBody:delFlag 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:label 缺少字段业务说明",
+      "requestBody:mapType 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:reportId 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/map/mapList": [
+      "query:current 缺少字段业务说明",
+      "query:label 缺少字段业务说明",
+      "query:name 缺少字段业务说明",
+      "query:size 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/map/queryMapByCode": [
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:data 缺少字段业务说明",
+      "requestBody:delFlag 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:label 缺少字段业务说明",
+      "requestBody:mapType 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:reportId 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/mockChartData": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/mockPieData": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/open/list": [
+      "query:name 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/print": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/print": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "HEAD /jmreport/print": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "OPTIONS /jmreport/print": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PATCH /jmreport/print": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/print": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PUT /jmreport/print": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/putFile": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/query/multiple/initValue": [
+      "query:intValue 缺少字段业务说明",
+      "query:key 缺少字段业务说明",
+      "query:paramSearch 缺少字段业务说明",
+      "query:reportId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/query/report/folder": [
+      "query:name 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:reportType 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/query/report/folder/template": [
+      "query:name 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:reportType 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/queryFieldByBean": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/queryFieldBySql": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/queryIsPage/{reportId}": [
+      "path:reportId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/querySourceCode": [
+      "requestBody:code 缺少字段业务说明",
+      "requestBody:connectTimes 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dbChName 缺少字段业务说明",
+      "requestBody:dbDriver 缺少字段业务说明",
+      "requestBody:dbPassword 缺少字段业务说明",
+      "requestBody:dbType 缺少字段业务说明",
+      "requestBody:dbUrl 缺少字段业务说明",
+      "requestBody:dbUsername 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:keyword 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:remark 缺少字段业务说明",
+      "requestBody:reportId 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:type 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "requestBody:withoutDbType 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/queryTableFields": [
+      "query:dbSource 缺少字段业务说明",
+      "query:tableName 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/queryTableName": [
+      "query:dbSource 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:tableName 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/qurestApi": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/qurestSql": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/reportCopy": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/revertReportById": [
+      "requestBody:apiConvert 缺少字段业务说明",
+      "requestBody:apiMethod 缺少字段业务说明",
+      "requestBody:apiUrl 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dbChName 缺少字段业务说明",
+      "requestBody:dbCode 缺少字段业务说明",
+      "requestBody:dbDynSql 缺少字段业务说明",
+      "requestBody:dbKey 缺少字段业务说明",
+      "requestBody:dbSource 缺少字段业务说明",
+      "requestBody:dbSourceType 缺少字段业务说明",
+      "requestBody:dbTableName 缺少字段业务说明",
+      "requestBody:dbType 缺少字段业务说明",
+      "requestBody:fieldList 缺少字段业务说明",
+      "requestBody:fieldList[].createBy 缺少字段业务说明",
+      "requestBody:fieldList[].createTime 缺少字段业务说明",
+      "requestBody:fieldList[].dictCode 缺少字段业务说明",
+      "requestBody:fieldList[].extJson 缺少字段业务说明",
+      "requestBody:fieldList[].fieldName 缺少字段业务说明",
+      "requestBody:fieldList[].fieldNamePhysics 缺少字段业务说明",
+      "requestBody:fieldList[].fieldText 缺少字段业务说明",
+      "requestBody:fieldList[].id 缺少字段业务说明",
+      "requestBody:fieldList[].jimuReportDbId 缺少字段业务说明",
+      "requestBody:fieldList[].orderNum 缺少字段业务说明",
+      "requestBody:fieldList[].searchFlag 缺少字段业务说明",
+      "requestBody:fieldList[].searchFormat 缺少字段业务说明",
+      "requestBody:fieldList[].searchMode 缺少字段业务说明",
+      "requestBody:fieldList[].searchValue 缺少字段业务说明",
+      "requestBody:fieldList[].updateBy 缺少字段业务说明",
+      "requestBody:fieldList[].updateTime 缺少字段业务说明",
+      "requestBody:fieldList[].widgetType 缺少字段业务说明",
+      "requestBody:fieldList[].widgetWidth 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:isList 缺少字段业务说明",
+      "requestBody:isPage 缺少字段业务说明",
+      "requestBody:izSharedSource 缺少字段业务说明",
+      "requestBody:javaType 缺少字段业务说明",
+      "requestBody:javaValue 缺少字段业务说明",
+      "requestBody:jimuReportId 缺少字段业务说明",
+      "requestBody:jimuSharedSourceId 缺少字段业务说明",
+      "requestBody:jsonData 缺少字段业务说明",
+      "requestBody:paramList 缺少字段业务说明",
+      "requestBody:paramList[].createBy 缺少字段业务说明",
+      "requestBody:paramList[].createTime 缺少字段业务说明",
+      "requestBody:paramList[].dictCode 缺少字段业务说明",
+      "requestBody:paramList[].extJson 缺少字段业务说明",
+      "requestBody:paramList[].id 缺少字段业务说明",
+      "requestBody:paramList[].jimuReportHeadId 缺少字段业务说明",
+      "requestBody:paramList[].orderNum 缺少字段业务说明",
+      "requestBody:paramList[].paramName 缺少字段业务说明",
+      "requestBody:paramList[].paramTxt 缺少字段业务说明",
+      "requestBody:paramList[].paramValue 缺少字段业务说明",
+      "requestBody:paramList[].searchFlag 缺少字段业务说明",
+      "requestBody:paramList[].searchFormat 缺少字段业务说明",
+      "requestBody:paramList[].searchMode 缺少字段业务说明",
+      "requestBody:paramList[].updateBy 缺少字段业务说明",
+      "requestBody:paramList[].updateTime 缺少字段业务说明",
+      "requestBody:paramList[].widgetType 缺少字段业务说明",
+      "requestBody:tbDbKey 缺少字段业务说明",
+      "requestBody:tbDbTableName 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/save": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/saveDb": [
+      "requestBody:apiConvert 缺少字段业务说明",
+      "requestBody:apiMethod 缺少字段业务说明",
+      "requestBody:apiUrl 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dbChName 缺少字段业务说明",
+      "requestBody:dbCode 缺少字段业务说明",
+      "requestBody:dbDynSql 缺少字段业务说明",
+      "requestBody:dbKey 缺少字段业务说明",
+      "requestBody:dbSource 缺少字段业务说明",
+      "requestBody:dbSourceType 缺少字段业务说明",
+      "requestBody:dbTableName 缺少字段业务说明",
+      "requestBody:dbType 缺少字段业务说明",
+      "requestBody:fieldList 缺少字段业务说明",
+      "requestBody:fieldList[].createBy 缺少字段业务说明",
+      "requestBody:fieldList[].createTime 缺少字段业务说明",
+      "requestBody:fieldList[].dictCode 缺少字段业务说明",
+      "requestBody:fieldList[].extJson 缺少字段业务说明",
+      "requestBody:fieldList[].fieldName 缺少字段业务说明",
+      "requestBody:fieldList[].fieldNamePhysics 缺少字段业务说明",
+      "requestBody:fieldList[].fieldText 缺少字段业务说明",
+      "requestBody:fieldList[].id 缺少字段业务说明",
+      "requestBody:fieldList[].jimuReportDbId 缺少字段业务说明",
+      "requestBody:fieldList[].orderNum 缺少字段业务说明",
+      "requestBody:fieldList[].searchFlag 缺少字段业务说明",
+      "requestBody:fieldList[].searchFormat 缺少字段业务说明",
+      "requestBody:fieldList[].searchMode 缺少字段业务说明",
+      "requestBody:fieldList[].searchValue 缺少字段业务说明",
+      "requestBody:fieldList[].updateBy 缺少字段业务说明",
+      "requestBody:fieldList[].updateTime 缺少字段业务说明",
+      "requestBody:fieldList[].widgetType 缺少字段业务说明",
+      "requestBody:fieldList[].widgetWidth 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:isList 缺少字段业务说明",
+      "requestBody:isPage 缺少字段业务说明",
+      "requestBody:izSharedSource 缺少字段业务说明",
+      "requestBody:javaType 缺少字段业务说明",
+      "requestBody:javaValue 缺少字段业务说明",
+      "requestBody:jimuReportId 缺少字段业务说明",
+      "requestBody:jimuSharedSourceId 缺少字段业务说明",
+      "requestBody:jsonData 缺少字段业务说明",
+      "requestBody:paramList 缺少字段业务说明",
+      "requestBody:paramList[].createBy 缺少字段业务说明",
+      "requestBody:paramList[].createTime 缺少字段业务说明",
+      "requestBody:paramList[].dictCode 缺少字段业务说明",
+      "requestBody:paramList[].extJson 缺少字段业务说明",
+      "requestBody:paramList[].id 缺少字段业务说明",
+      "requestBody:paramList[].jimuReportHeadId 缺少字段业务说明",
+      "requestBody:paramList[].orderNum 缺少字段业务说明",
+      "requestBody:paramList[].paramName 缺少字段业务说明",
+      "requestBody:paramList[].paramTxt 缺少字段业务说明",
+      "requestBody:paramList[].paramValue 缺少字段业务说明",
+      "requestBody:paramList[].searchFlag 缺少字段业务说明",
+      "requestBody:paramList[].searchFormat 缺少字段业务说明",
+      "requestBody:paramList[].searchMode 缺少字段业务说明",
+      "requestBody:paramList[].updateBy 缺少字段业务说明",
+      "requestBody:paramList[].updateTime 缺少字段业务说明",
+      "requestBody:paramList[].widgetType 缺少字段业务说明",
+      "requestBody:tbDbKey 缺少字段业务说明",
+      "requestBody:tbDbTableName 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/setTemplate": [
+      "query:id 缺少字段业务说明",
+      "query:template 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/share/addAndEdit": [
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:lastUpdateTime 缺少字段业务说明",
+      "requestBody:previewLock 缺少字段业务说明",
+      "requestBody:previewLockStatus 缺少字段业务说明",
+      "requestBody:previewUrl 缺少字段业务说明",
+      "requestBody:reportId 缺少字段业务说明",
+      "requestBody:shareToken 缺少字段业务说明",
+      "requestBody:status 缺少字段业务说明",
+      "requestBody:termOfValidity 缺少字段业务说明",
+      "requestBody:verifyShareToken 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/share/batchCancelShareByIds": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/share/getSharePageList": [
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:reportName 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/share/queryJurisdiction": [
+      "query:reportId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/share/verification": [
+      "query:lock 缺少字段业务说明",
+      "query:reportId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/shareView/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/shareView/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "HEAD /jmreport/shareView/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "OPTIONS /jmreport/shareView/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PATCH /jmreport/shareView/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/shareView/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PUT /jmreport/shareView/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/shareView/{id}/{type}/{jmRecordId}": [
+      "path:id 缺少字段业务说明",
+      "path:jmRecordId 缺少字段业务说明",
+      "path:type 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/shareView/{id}/{type}/{jmRecordId}": [
+      "path:id 缺少字段业务说明",
+      "path:jmRecordId 缺少字段业务说明",
+      "path:type 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "HEAD /jmreport/shareView/{id}/{type}/{jmRecordId}": [
+      "path:id 缺少字段业务说明",
+      "path:jmRecordId 缺少字段业务说明",
+      "path:type 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "OPTIONS /jmreport/shareView/{id}/{type}/{jmRecordId}": [
+      "path:id 缺少字段业务说明",
+      "path:jmRecordId 缺少字段业务说明",
+      "path:type 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PATCH /jmreport/shareView/{id}/{type}/{jmRecordId}": [
+      "path:id 缺少字段业务说明",
+      "path:jmRecordId 缺少字段业务说明",
+      "path:type 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/shareView/{id}/{type}/{jmRecordId}": [
+      "path:id 缺少字段业务说明",
+      "path:jmRecordId 缺少字段业务说明",
+      "path:type 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PUT /jmreport/shareView/{id}/{type}/{jmRecordId}": [
+      "path:id 缺少字段业务说明",
+      "path:jmRecordId 缺少字段业务说明",
+      "path:type 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/sheet/addSheet": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/sheet/deleteSheet": [
+      "query:reportId 缺少字段业务说明",
+      "query:sheetId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/sheet/getSheetData": [
+      "query:reportId 缺少字段业务说明",
+      "query:sheetId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/sheet/getSheetList/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/sheet/renameSheet": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/sheet/reorderSheets": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/show": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/show": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/source/dataset/files/single/get": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/source/dataset/files/single/save": [
+      "requestBody:empty 缺少字段业务说明",
+      "requestBody:innerMap 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:innerMap 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/source/datasource/files/add": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/source/datasource/files/del": [
+      "query:reportId 缺少字段业务说明",
+      "query:tableName 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/source/datasource/files/del/file": [
+      "query:fileName 缺少字段业务说明",
+      "query:reportId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/source/datasource/files/get": [
+      "query:reportId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/source/datasource/files/preview": [
+      "query:reportId 缺少字段业务说明",
+      "query:tableName 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/source/delShareDbByDbId": [
+      "requestBody:apiConvert 缺少字段业务说明",
+      "requestBody:apiMethod 缺少字段业务说明",
+      "requestBody:apiUrl 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dbChName 缺少字段业务说明",
+      "requestBody:dbCode 缺少字段业务说明",
+      "requestBody:dbDynSql 缺少字段业务说明",
+      "requestBody:dbKey 缺少字段业务说明",
+      "requestBody:dbSource 缺少字段业务说明",
+      "requestBody:dbSourceType 缺少字段业务说明",
+      "requestBody:dbTableName 缺少字段业务说明",
+      "requestBody:dbType 缺少字段业务说明",
+      "requestBody:fieldList 缺少字段业务说明",
+      "requestBody:fieldList[].createBy 缺少字段业务说明",
+      "requestBody:fieldList[].createTime 缺少字段业务说明",
+      "requestBody:fieldList[].dictCode 缺少字段业务说明",
+      "requestBody:fieldList[].extJson 缺少字段业务说明",
+      "requestBody:fieldList[].fieldName 缺少字段业务说明",
+      "requestBody:fieldList[].fieldNamePhysics 缺少字段业务说明",
+      "requestBody:fieldList[].fieldText 缺少字段业务说明",
+      "requestBody:fieldList[].id 缺少字段业务说明",
+      "requestBody:fieldList[].jimuReportDbId 缺少字段业务说明",
+      "requestBody:fieldList[].orderNum 缺少字段业务说明",
+      "requestBody:fieldList[].searchFlag 缺少字段业务说明",
+      "requestBody:fieldList[].searchFormat 缺少字段业务说明",
+      "requestBody:fieldList[].searchMode 缺少字段业务说明",
+      "requestBody:fieldList[].searchValue 缺少字段业务说明",
+      "requestBody:fieldList[].updateBy 缺少字段业务说明",
+      "requestBody:fieldList[].updateTime 缺少字段业务说明",
+      "requestBody:fieldList[].widgetType 缺少字段业务说明",
+      "requestBody:fieldList[].widgetWidth 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:isList 缺少字段业务说明",
+      "requestBody:isPage 缺少字段业务说明",
+      "requestBody:izSharedSource 缺少字段业务说明",
+      "requestBody:javaType 缺少字段业务说明",
+      "requestBody:javaValue 缺少字段业务说明",
+      "requestBody:jimuReportId 缺少字段业务说明",
+      "requestBody:jimuSharedSourceId 缺少字段业务说明",
+      "requestBody:jsonData 缺少字段业务说明",
+      "requestBody:paramList 缺少字段业务说明",
+      "requestBody:paramList[].createBy 缺少字段业务说明",
+      "requestBody:paramList[].createTime 缺少字段业务说明",
+      "requestBody:paramList[].dictCode 缺少字段业务说明",
+      "requestBody:paramList[].extJson 缺少字段业务说明",
+      "requestBody:paramList[].id 缺少字段业务说明",
+      "requestBody:paramList[].jimuReportHeadId 缺少字段业务说明",
+      "requestBody:paramList[].orderNum 缺少字段业务说明",
+      "requestBody:paramList[].paramName 缺少字段业务说明",
+      "requestBody:paramList[].paramTxt 缺少字段业务说明",
+      "requestBody:paramList[].paramValue 缺少字段业务说明",
+      "requestBody:paramList[].searchFlag 缺少字段业务说明",
+      "requestBody:paramList[].searchFormat 缺少字段业务说明",
+      "requestBody:paramList[].searchMode 缺少字段业务说明",
+      "requestBody:paramList[].updateBy 缺少字段业务说明",
+      "requestBody:paramList[].updateTime 缺少字段业务说明",
+      "requestBody:paramList[].widgetType 缺少字段业务说明",
+      "requestBody:tbDbKey 缺少字段业务说明",
+      "requestBody:tbDbTableName 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/source/getJmReportSharedDbPageList": [
+      "query:name 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/source/linkJmReportShareDb": [
+      "requestBody:apiConvert 缺少字段业务说明",
+      "requestBody:apiMethod 缺少字段业务说明",
+      "requestBody:apiUrl 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dbChName 缺少字段业务说明",
+      "requestBody:dbCode 缺少字段业务说明",
+      "requestBody:dbDynSql 缺少字段业务说明",
+      "requestBody:dbKey 缺少字段业务说明",
+      "requestBody:dbSource 缺少字段业务说明",
+      "requestBody:dbSourceType 缺少字段业务说明",
+      "requestBody:dbTableName 缺少字段业务说明",
+      "requestBody:dbType 缺少字段业务说明",
+      "requestBody:fieldList 缺少字段业务说明",
+      "requestBody:fieldList[].createBy 缺少字段业务说明",
+      "requestBody:fieldList[].createTime 缺少字段业务说明",
+      "requestBody:fieldList[].dictCode 缺少字段业务说明",
+      "requestBody:fieldList[].extJson 缺少字段业务说明",
+      "requestBody:fieldList[].fieldName 缺少字段业务说明",
+      "requestBody:fieldList[].fieldNamePhysics 缺少字段业务说明",
+      "requestBody:fieldList[].fieldText 缺少字段业务说明",
+      "requestBody:fieldList[].id 缺少字段业务说明",
+      "requestBody:fieldList[].jimuReportDbId 缺少字段业务说明",
+      "requestBody:fieldList[].orderNum 缺少字段业务说明",
+      "requestBody:fieldList[].searchFlag 缺少字段业务说明",
+      "requestBody:fieldList[].searchFormat 缺少字段业务说明",
+      "requestBody:fieldList[].searchMode 缺少字段业务说明",
+      "requestBody:fieldList[].searchValue 缺少字段业务说明",
+      "requestBody:fieldList[].updateBy 缺少字段业务说明",
+      "requestBody:fieldList[].updateTime 缺少字段业务说明",
+      "requestBody:fieldList[].widgetType 缺少字段业务说明",
+      "requestBody:fieldList[].widgetWidth 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:isList 缺少字段业务说明",
+      "requestBody:isPage 缺少字段业务说明",
+      "requestBody:izSharedSource 缺少字段业务说明",
+      "requestBody:javaType 缺少字段业务说明",
+      "requestBody:javaValue 缺少字段业务说明",
+      "requestBody:jimuReportId 缺少字段业务说明",
+      "requestBody:jimuSharedSourceId 缺少字段业务说明",
+      "requestBody:jsonData 缺少字段业务说明",
+      "requestBody:paramList 缺少字段业务说明",
+      "requestBody:paramList[].createBy 缺少字段业务说明",
+      "requestBody:paramList[].createTime 缺少字段业务说明",
+      "requestBody:paramList[].dictCode 缺少字段业务说明",
+      "requestBody:paramList[].extJson 缺少字段业务说明",
+      "requestBody:paramList[].id 缺少字段业务说明",
+      "requestBody:paramList[].jimuReportHeadId 缺少字段业务说明",
+      "requestBody:paramList[].orderNum 缺少字段业务说明",
+      "requestBody:paramList[].paramName 缺少字段业务说明",
+      "requestBody:paramList[].paramTxt 缺少字段业务说明",
+      "requestBody:paramList[].paramValue 缺少字段业务说明",
+      "requestBody:paramList[].searchFlag 缺少字段业务说明",
+      "requestBody:paramList[].searchFormat 缺少字段业务说明",
+      "requestBody:paramList[].searchMode 缺少字段业务说明",
+      "requestBody:paramList[].updateBy 缺少字段业务说明",
+      "requestBody:paramList[].updateTime 缺少字段业务说明",
+      "requestBody:paramList[].widgetType 缺少字段业务说明",
+      "requestBody:tbDbKey 缺少字段业务说明",
+      "requestBody:tbDbTableName 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/source/unlinkDbByReportIdAndDbId": [
+      "requestBody:apiConvert 缺少字段业务说明",
+      "requestBody:apiMethod 缺少字段业务说明",
+      "requestBody:apiUrl 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:dbChName 缺少字段业务说明",
+      "requestBody:dbCode 缺少字段业务说明",
+      "requestBody:dbDynSql 缺少字段业务说明",
+      "requestBody:dbKey 缺少字段业务说明",
+      "requestBody:dbSource 缺少字段业务说明",
+      "requestBody:dbSourceType 缺少字段业务说明",
+      "requestBody:dbTableName 缺少字段业务说明",
+      "requestBody:dbType 缺少字段业务说明",
+      "requestBody:fieldList 缺少字段业务说明",
+      "requestBody:fieldList[].createBy 缺少字段业务说明",
+      "requestBody:fieldList[].createTime 缺少字段业务说明",
+      "requestBody:fieldList[].dictCode 缺少字段业务说明",
+      "requestBody:fieldList[].extJson 缺少字段业务说明",
+      "requestBody:fieldList[].fieldName 缺少字段业务说明",
+      "requestBody:fieldList[].fieldNamePhysics 缺少字段业务说明",
+      "requestBody:fieldList[].fieldText 缺少字段业务说明",
+      "requestBody:fieldList[].id 缺少字段业务说明",
+      "requestBody:fieldList[].jimuReportDbId 缺少字段业务说明",
+      "requestBody:fieldList[].orderNum 缺少字段业务说明",
+      "requestBody:fieldList[].searchFlag 缺少字段业务说明",
+      "requestBody:fieldList[].searchFormat 缺少字段业务说明",
+      "requestBody:fieldList[].searchMode 缺少字段业务说明",
+      "requestBody:fieldList[].searchValue 缺少字段业务说明",
+      "requestBody:fieldList[].updateBy 缺少字段业务说明",
+      "requestBody:fieldList[].updateTime 缺少字段业务说明",
+      "requestBody:fieldList[].widgetType 缺少字段业务说明",
+      "requestBody:fieldList[].widgetWidth 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:isList 缺少字段业务说明",
+      "requestBody:isPage 缺少字段业务说明",
+      "requestBody:izSharedSource 缺少字段业务说明",
+      "requestBody:javaType 缺少字段业务说明",
+      "requestBody:javaValue 缺少字段业务说明",
+      "requestBody:jimuReportId 缺少字段业务说明",
+      "requestBody:jimuSharedSourceId 缺少字段业务说明",
+      "requestBody:jsonData 缺少字段业务说明",
+      "requestBody:paramList 缺少字段业务说明",
+      "requestBody:paramList[].createBy 缺少字段业务说明",
+      "requestBody:paramList[].createTime 缺少字段业务说明",
+      "requestBody:paramList[].dictCode 缺少字段业务说明",
+      "requestBody:paramList[].extJson 缺少字段业务说明",
+      "requestBody:paramList[].id 缺少字段业务说明",
+      "requestBody:paramList[].jimuReportHeadId 缺少字段业务说明",
+      "requestBody:paramList[].orderNum 缺少字段业务说明",
+      "requestBody:paramList[].paramName 缺少字段业务说明",
+      "requestBody:paramList[].paramTxt 缺少字段业务说明",
+      "requestBody:paramList[].paramValue 缺少字段业务说明",
+      "requestBody:paramList[].searchFlag 缺少字段业务说明",
+      "requestBody:paramList[].searchFormat 缺少字段业务说明",
+      "requestBody:paramList[].searchMode 缺少字段业务说明",
+      "requestBody:paramList[].updateBy 缺少字段业务说明",
+      "requestBody:paramList[].updateTime 缺少字段业务说明",
+      "requestBody:paramList[].widgetType 缺少字段业务说明",
+      "requestBody:tbDbKey 缺少字段业务说明",
+      "requestBody:tbDbTableName 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/test/getDepartmentList": [
+      "query:departName 缺少字段业务说明",
+      "query:ids 缺少字段业务说明",
+      "query:parentId 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/test/getDictSex": [
+      "query:dictCode 缺少字段业务说明",
+      "query:initValue 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:queryAll 缺少字段业务说明",
+      "query:searchText 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/test/getOrder": [
+      "query:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/test/getPopupList": [
+      "query:ids 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/test/getRoleList": [
+      "query:ids 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:queryAll 缺少字段业务说明",
+      "query:roleName 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/test/getUserList": [
+      "query:ids 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:queryAll 缺少字段业务说明",
+      "query:realname 缺少字段业务说明",
+      "query:username 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/test/getUserMsg": [
+      "query:cname 缺少字段业务说明",
+      "query:did 缺少字段业务说明",
+      "query:riqi 缺少字段业务说明",
+      "query:riqi_begin 缺少字段业务说明",
+      "query:riqi_end 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/test/submit/dict/political": [
+      "query:dictCode 缺少字段业务说明",
+      "query:pageNo 缺少字段业务说明",
+      "query:pageSize 缺少字段业务说明",
+      "query:queryAll 缺少字段业务说明",
+      "query:searchText 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/test/submit/handle": [
+      "query:dataIds 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/test/submit/handle": [
+      "requestBody:$ 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/test/submit/handle/repeat/check": [
+      "query:dataId 缺少字段业务说明",
+      "query:field 缺少字段业务说明",
+      "query:value 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/test/test/i18n": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/testConnection": [
+      "requestBody:code 缺少字段业务说明",
+      "requestBody:connectTimes 缺少字段业务说明",
+      "requestBody:dbDriver 缺少字段业务说明",
+      "requestBody:dbName 缺少字段业务说明",
+      "requestBody:dbPassword 缺少字段业务说明",
+      "requestBody:dbType 缺少字段业务说明",
+      "requestBody:dbUrl 缺少字段业务说明",
+      "requestBody:dbUsername 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/updateNameById": [
+      "requestBody:apiCode 缺少字段业务说明",
+      "requestBody:apiMethod 缺少字段业务说明",
+      "requestBody:apiUrl 缺少字段业务说明",
+      "requestBody:code 缺少字段业务说明",
+      "requestBody:createBy 缺少字段业务说明",
+      "requestBody:createTime 缺少字段业务说明",
+      "requestBody:cssStr 缺少字段业务说明",
+      "requestBody:currentSheetId 缺少字段业务说明",
+      "requestBody:currentSheetName 缺少字段业务说明",
+      "requestBody:dataList 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:dataList 缺少字段业务说明",
+      "requestBody:delFlag 缺少字段业务说明",
+      "requestBody:dictInfo 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:dictInfo 缺少字段业务说明",
+      "requestBody:id 缺少字段业务说明",
+      "requestBody:isMultiSheet 缺少字段业务说明",
+      "requestBody:isRefresh 缺少字段业务说明",
+      "requestBody:jsStr 缺少字段业务说明",
+      "requestBody:jsonStr 缺少字段业务说明",
+      "requestBody:name 缺少字段业务说明",
+      "requestBody:note 缺少字段业务说明",
+      "requestBody:pyStr 缺少字段业务说明",
+      "requestBody:shareViewUrl 缺少字段业务说明",
+      "requestBody:sheets 缺少字段业务说明",
+      "requestBody:sheets[] 为动态键值结构，具体业务字段不能从 OpenAPI 确定",
+      "requestBody:status 缺少字段业务说明",
+      "requestBody:submitForm 缺少字段业务说明",
+      "requestBody:template 缺少字段业务说明",
+      "requestBody:tenantId 缺少字段业务说明",
+      "requestBody:thumb 缺少字段业务说明",
+      "requestBody:type 缺少字段业务说明",
+      "requestBody:updateBy 缺少字段业务说明",
+      "requestBody:updateCount 缺少字段业务说明",
+      "requestBody:updateTime 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/upload": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/userinfo": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/verificationToken": [
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/view/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/view/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "HEAD /jmreport/view/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "OPTIONS /jmreport/view/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PATCH /jmreport/view/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/view/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PUT /jmreport/view/{id}": [
+      "path:id 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "DELETE /jmreport/view/{id}/{type}/{jmRecordId}": [
+      "path:id 缺少字段业务说明",
+      "path:jmRecordId 缺少字段业务说明",
+      "path:type 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "GET /jmreport/view/{id}/{type}/{jmRecordId}": [
+      "path:id 缺少字段业务说明",
+      "path:jmRecordId 缺少字段业务说明",
+      "path:type 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "HEAD /jmreport/view/{id}/{type}/{jmRecordId}": [
+      "path:id 缺少字段业务说明",
+      "path:jmRecordId 缺少字段业务说明",
+      "path:type 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "OPTIONS /jmreport/view/{id}/{type}/{jmRecordId}": [
+      "path:id 缺少字段业务说明",
+      "path:jmRecordId 缺少字段业务说明",
+      "path:type 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PATCH /jmreport/view/{id}/{type}/{jmRecordId}": [
+      "path:id 缺少字段业务说明",
+      "path:jmRecordId 缺少字段业务说明",
+      "path:type 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /jmreport/view/{id}/{type}/{jmRecordId}": [
+      "path:id 缺少字段业务说明",
+      "path:jmRecordId 缺少字段业务说明",
+      "path:type 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "PUT /jmreport/view/{id}/{type}/{jmRecordId}": [
+      "path:id 缺少字段业务说明",
+      "path:jmRecordId 缺少字段业务说明",
+      "path:type 缺少字段业务说明",
+      "没有经过实现确认的业务成功条件；不得从 HTTP 200、data 非空或 true 推断",
+      "缺少接口业务摘要，需结合对应模块实现核实用途"
+    ],
+    "POST /rpc-api/iot/device/auth": [],
+    "POST /rpc-api/iot/device/get": [],
+    "POST /rpc-api/iot/device/register": [],
+    "POST /rpc-api/iot/device/register-sub": [],
+    "POST /rpc-api/iot/modbus/config-list": []
+  },
+  "runtimeOnlyNotInIsolatedExport": [
+    "/easyTrans/proxy/{targetClass}/findById/{id}",
+    "/easyTrans/proxy/{targetClass}/findByIds"
+  ]
+}

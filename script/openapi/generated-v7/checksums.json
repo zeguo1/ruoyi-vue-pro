@@ -1,0 +1,23 @@
+{
+  "affected-operations.json": "021420de9a39db333e146f382a3e1ff9f177dd953c31db137e1da6d436c0c16b",
+  "deployment-status.json": "177169f84187faf2acb42df5ba62535d1261234c2738b21d44787ec20234dbb7",
+  "handler-inventory.json.gz": "40d775fa872a37a74d81f13ae1b42db27dfcd52ad80c57b7ff4a303f5c7aeb52",
+  "integration-checklist-all.json.gz": "e66b93acb3722f857a7f27f76ec241b65490dd2b66727c638e8d3471b3abcff8",
+  "integration-checklist-raw.json.gz": "8b38dc3c579b55374c88247e9d9058edd5525efa23a3ee3a8232b4a90c7cbccc",
+  "integration-summary-all.json": "0888e5db2c8088744c50f829d72f2b9cc8ff653935903877733f4e5e046b07bd",
+  "integration-summary-raw.json": "9eed5137f1676692d9bf5921788a4a2aa64caf1d697f62f3fdfeabfc55a466ca",
+  "invalid-order-response.json": "5662e9f2b313c2fcb6beef4f2bc2fb1341d77f588463c44bd570a767354509e4",
+  "knowdo-parser-evidence.json": "95cdbff882704ccc5b4b132e7d68dde99b4980afd31433f08a35cbaf8e80cf30",
+  "live-v6-knowdo-parser-evidence.json": "347bc8a7aac50477e703443f50e53f45518bc3f4ba6a7e647fd90fc480d57e5b",
+  "manual-review.json": "9918b41b0d436044dc11993135384d8a752d6128595eda7ab19a8845507b079d",
+  "model-inventory.json.gz": "c3584ead956a97bbe6541b36c34fc8fac5d93577e410fb08890bd3ae172443c6",
+  "openapi-all.json.gz": "00a053aa45a7aad6080e65c4412813d66af1d42b17714900de79a6bb03b07510",
+  "openapi-raw.json.gz": "96b4b4541bd2734b653a6eadd44ef10dcf88b1fd5b07fed1d0c712ca3430cb22",
+  "response-examples.json": "aab7df954829f7c0579bc23c43730f2fcb9e7e4e7dc2d988b6951f91b0af94d2",
+  "review-verification.json": "5896be189cca7f28089b98f074f1e5b6f2714c2aa3c2dbfea57426ac6bef6df1",
+  "schema-audit-all.json": "24e605031d9743c9e3392e61a94dc4542deb6b1e959112687ea2acdcf3fb651c",
+  "schema-audit-raw.json": "8d4fed34b16469d7417c4076c73c4cd071a516db47667a7ec56eb60ddcc87dd7",
+  "test-results.json": "56152935a7841eb57171df2873ce87ae141e50938555d5e3ebad481daaf5fe64",
+  "wire-verification-all.json": "43972dc11a0a21d7343fcc3453943e8a38ba1baf415ccb0844fe4b192c84dcc5",
+  "wire-verification-raw.json": "dedecb23b70730fb8cbaf32a6c46d2f927b42eb121988c43afdf1531b17ca964"
+}

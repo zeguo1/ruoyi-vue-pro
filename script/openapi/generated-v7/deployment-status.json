@@ -1,0 +1,11 @@
+{
+  "candidateVersion": "1.0.0-full-contract-v7",
+  "sourceCommit": "52328f668e66b7360c77771c53d089f5df3bb852",
+  "deployed": false,
+  "runningDocumentVersion": "1.0.0-full-contract-v6",
+  "runningDocumentVerifiedReadOnly": true,
+  "runningCandidateDocumentVerified": false,
+  "knowdoApplied": false,
+  "businessDocumentUrl": "http://192.168.1.199:8088/v3/api-docs/all",
+  "rawDocumentUrl": "http://192.168.1.199:8088/v3/api-docs"
+}

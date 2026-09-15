@@ -1,0 +1,1880 @@
+{
+  "baseline": "running full-contract-v6, read-only export",
+  "operations": [
+    {
+      "operation": "PUT /admin-api/system/notify-message/update-all-read",
+      "operationId": "updateAllNotifyMessageRead",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "PUT /admin-api/mes/pro/workrecord/clock-out",
+      "operationId": "clockOutWorkRecord",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "PUT /admin-api/hrm/salary/option/sync",
+      "operationId": "syncSalaryOption",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "POST /app-api/member/sign-in/record/create",
+      "operationId": "createSignInRecord",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "POST /admin-api/system/oauth2/check-token",
+      "operationId": "checkToken",
+      "reasons": [
+        "参数说明、条件或校验修正"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "POST /admin-api/iot/product/sync-property-table",
+      "operationId": "syncProductPropertyTable",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "POST /admin-api/infra/job/sync",
+      "operationId": "syncJob",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "POST /admin-api/hrm/salary/month-record/create-next",
+      "operationId": "createNextMonthRecord",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "POST /admin-api/hrm/insurance/month-record/create-next",
+      "operationId": "createNextMonthRecord_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "POST /admin-api/crm/trial-tool/submit",
+      "operationId": "submit_trial_application",
+      "reasons": [
+        "引用了补充说明的试用业务模型"
+      ],
+      "schemas": [
+        "cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO.StepProgress"
+      ]
+    },
+    {
+      "operation": "POST /admin-api/crm/trial-tool/status",
+      "operationId": "get_trial_status",
+      "reasons": [
+        "引用了补充说明的试用业务模型"
+      ],
+      "schemas": [
+        "cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO.StepProgress"
+      ]
+    },
+    {
+      "operation": "POST /admin-api/crm/trial-tool/create-accounts",
+      "operationId": "create_trial_accounts",
+      "reasons": [
+        "引用了补充说明的试用业务模型"
+      ],
+      "schemas": [
+        "cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO.StepProgress"
+      ]
+    },
+    {
+      "operation": "POST /admin-api/crm/trial-event/accept",
+      "operationId": "accept_1",
+      "reasons": [
+        "引用了补充说明的试用业务模型"
+      ],
+      "schemas": [
+        "cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialEventReqVO"
+      ]
+    },
+    {
+      "operation": "GET /app-api/trade/order/get-count",
+      "operationId": "getOrderCount",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/trade/delivery/express/list",
+      "operationId": "getDeliveryExpressList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/trade/config/get",
+      "operationId": "getTradeConfig",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/trade/cart/list",
+      "operationId": "getCartList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/trade/cart/get-count",
+      "operationId": "getCartCount",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/trade/brokerage-user/get",
+      "operationId": "getBrokerageUser",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/trade/brokerage-user/get-summary",
+      "operationId": "getBrokerageUserSummary",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/system/area/tree",
+      "operationId": "getAreaTree",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/promotion/seckill-config/list",
+      "operationId": "getSeckillConfigList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/promotion/seckill-activity/get-now",
+      "operationId": "getNowSeckillActivity",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/promotion/diy-template/used",
+      "operationId": "getUsedDiyTemplate",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/promotion/coupon/get-unused-count",
+      "operationId": "getUnusedCouponCount",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/promotion/combination-record/get-summary",
+      "operationId": "getCombinationRecordSummary",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/promotion/bargain-record/get-summary",
+      "operationId": "getBargainRecordSummary",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/product/favorite/get-count",
+      "operationId": "getFavoriteCount",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/product/category/list",
+      "operationId": "getProductCategoryList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/pay/wallet/get",
+      "operationId": "getPayWallet",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/pay/wallet-recharge-package/list",
+      "operationId": "getWalletRechargePackageList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/member/user/get",
+      "operationId": "getUserInfo",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/member/social-user/get-subscribe-template-list",
+      "operationId": "getSubscribeTemplateList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/member/sign-in/record/get-summary",
+      "operationId": "getSignInRecordSummary",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/member/sign-in/config/list",
+      "operationId": "getSignInConfigList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/member/level/list",
+      "operationId": "getLevelList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/member/address/list",
+      "operationId": "getAddressList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/member/address/get-default",
+      "operationId": "getDefaultUserAddress",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/wms/warehouse/simple-list",
+      "operationId": "getWarehouseSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/wms/item-category/simple-list",
+      "operationId": "getItemCategorySimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/wms/item-brand/simple-list",
+      "operationId": "getItemBrandSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/trade/delivery/pick-up-store/simple-list",
+      "operationId": "getSimpleDeliveryPickUpStoreList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/trade/delivery/express/list-all-simple",
+      "operationId": "getSimpleDeliveryExpressList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/trade/delivery/express-template/list-all-simple",
+      "operationId": "getSimpleTemplateList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/trade/config/get",
+      "operationId": "getConfig",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/user/profile/get",
+      "operationId": "getUserProfile",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/tenant/simple-list",
+      "operationId": "getTenantSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/tenant-package/get-simple-list",
+      "operationId": "getTenantPackageList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/tenant-package/simple-list",
+      "operationId": "getTenantPackageList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/social-user/get-bind-list",
+      "operationId": "getBindSocialUserList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/sms-template/list-all-simple",
+      "operationId": "getSimpleSmsTemplateList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/sms-template/simple-list",
+      "operationId": "getSimpleSmsTemplateList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/sms-channel/simple-list",
+      "operationId": "getSimpleSmsChannelList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/sms-channel/list-all-simple",
+      "operationId": "getSimpleSmsChannelList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/role/list-all-simple",
+      "operationId": "getSimpleRoleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/role/simple-list",
+      "operationId": "getSimpleRoleList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/post/list-all-simple",
+      "operationId": "getSimplePostList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/post/simple-list",
+      "operationId": "getSimplePostList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/oauth2/user/get",
+      "operationId": "getUserInfo_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/notify-template/simple-list",
+      "operationId": "getSimpleNotifyTemplateList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/notify-template/list-all-simple",
+      "operationId": "getSimpleNotifyTemplateList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/notify-message/get-unread-count",
+      "operationId": "getUnreadNotifyMessageCount",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/menu/list-all-simple",
+      "operationId": "getSimpleMenuList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/menu/simple-list",
+      "operationId": "getSimpleMenuList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/mail-template/list-all-simple",
+      "operationId": "getSimpleMailTemplateList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/mail-template/simple-list",
+      "operationId": "getSimpleMailTemplateList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/mail-account/list-all-simple",
+      "operationId": "getSimpleMailAccountList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/mail-account/simple-list",
+      "operationId": "getSimpleMailAccountList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/dict-type/list-all-simple",
+      "operationId": "getSimpleDictTypeList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/dict-type/simple-list",
+      "operationId": "getSimpleDictTypeList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/dict-data/list-all-simple",
+      "operationId": "getSimpleDictDataList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/dict-data/simple-list",
+      "operationId": "getSimpleDictDataList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/dept/list-all-simple",
+      "operationId": "getSimpleDeptList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/dept/simple-list",
+      "operationId": "getSimpleDeptList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/auth/get-permission-info",
+      "operationId": "getPermissionInfo",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/system/area/tree",
+      "operationId": "getAreaTree_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/statistics/trade/summary",
+      "operationId": "getTradeSummaryComparison",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/statistics/trade/order-count",
+      "operationId": "getOrderCount_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/statistics/trade/order-comparison",
+      "operationId": "getOrderComparison",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/statistics/pay/summary",
+      "operationId": "getWalletRechargePrice",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/statistics/member/user-count-comparison",
+      "operationId": "getUserCountComparison",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/statistics/member/terminal-statistics-list",
+      "operationId": "getMemberTerminalStatisticsList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/statistics/member/summary",
+      "operationId": "getMemberSummary",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/statistics/member/sex-statistics-list",
+      "operationId": "getMemberSexStatisticsList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/statistics/member/area-statistics-list",
+      "operationId": "getMemberAreaStatisticsList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/promotion/seckill-config/simple-list",
+      "operationId": "getSeckillConfigSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/promotion/seckill-config/list",
+      "operationId": "getSeckillConfigList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/promotion/kefu-conversation/list",
+      "operationId": "getConversationList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/promotion/combination-record/get-summary",
+      "operationId": "getCombinationRecordSummary_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/promotion/article-category/list-all-simple",
+      "operationId": "getSimpleDeptList_2",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/product/spu/list-all-simple",
+      "operationId": "getSpuSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/product/property/simple-list",
+      "operationId": "getPropertySimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/product/brand/list-all-simple",
+      "operationId": "getSimpleBrandList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/pms/pm/project/favorite-list",
+      "operationId": "getFavoriteProjectList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/pms/pm/project-group/list",
+      "operationId": "getProjectGroupList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/pms/kb/recycle/library-list",
+      "operationId": "getLibraryRecycleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/pms/kb/library-template/simple-list",
+      "operationId": "getSimpleLibraryTemplateList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/pms/kb/group/list",
+      "operationId": "getGroupList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/pms/kb/document-label/list",
+      "operationId": "getDocumentLabelList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/pay/app/list",
+      "operationId": "getAppList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mp/tag/list-all-simple",
+      "operationId": "getSimpleTags",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mp/account/list-all-simple",
+      "operationId": "getSimpleAccounts",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mes/wm/warehouse/simple-list",
+      "operationId": "getWarehouseSimpleList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mes/tm/tool/simple-list",
+      "operationId": "getToolSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mes/tm/tool-type/simple-list",
+      "operationId": "getToolTypeSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mes/qc/defect/simple-list",
+      "operationId": "getDefectSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mes/pro/workrecord/get-my",
+      "operationId": "getMyWorkRecord",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mes/pro/route/simple-list",
+      "operationId": "getRouteSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mes/pro/process/simple-list",
+      "operationId": "getProcessSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mes/pro/andon-config/list",
+      "operationId": "getAndonConfigList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mes/md/unit-measure/simple-list",
+      "operationId": "getUnitMeasureSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mes/md/item-type/simple-list",
+      "operationId": "getItemTypeSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mes/md/auto-code-rule/simple-list",
+      "operationId": "getAutoCodeRuleSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mes/md-workshop/simple-list",
+      "operationId": "getWorkshopSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mes/home-statistics/work-order-status",
+      "operationId": "getWorkOrderStatusDistribution",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mes/home-statistics/summary",
+      "operationId": "getHomeSummary",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mes/dv/subject/simple-list",
+      "operationId": "getSubjectSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mes/dv/machinery/simple-list",
+      "operationId": "getMachinerySimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mes/dv/machinery-type/simple-list",
+      "operationId": "getMachineryTypeSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/mes/cal/team/list",
+      "operationId": "getTeamList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/member/tag/list-all-simple",
+      "operationId": "getSimpleTagList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/member/sign-in/config/list",
+      "operationId": "getSignInConfigList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/member/level/list-all-simple",
+      "operationId": "getSimpleLevelList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/member/group/list-all-simple",
+      "operationId": "getSimpleGroupList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/member/config/get",
+      "operationId": "getConfig_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/iot/statistics/get-summary",
+      "operationId": "getStatisticsSummary",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/iot/scene-rule/simple-list",
+      "operationId": "getSceneRuleSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/iot/product-category/simple-list",
+      "operationId": "getSimpleProductCategoryList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/iot/device/location-list",
+      "operationId": "getDeviceLocationList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/iot/device-group/simple-list",
+      "operationId": "getSimpleDeviceGroupList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/iot/data-sink/simple-list",
+      "operationId": "getDataSinkSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/iot/alert-config/simple-list",
+      "operationId": "getAlertConfigSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/infra/redis/get-monitor-info",
+      "operationId": "getRedisMonitorInfo",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/infra/data-source-config/list",
+      "operationId": "getDataSourceConfigList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/im/manager/statistics/top-senders",
+      "operationId": "getTopSenders",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/im/manager/statistics/overview",
+      "operationId": "getOverview",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/im/manager/statistics/message-type-distribution",
+      "operationId": "getMessageTypeDistribution",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/im/manager/statistics/group-size-distribution",
+      "operationId": "getGroupSizeDistribution",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/im/manager/channel/simple-list",
+      "operationId": "getSimpleChannelList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/im/group/list",
+      "operationId": "getMyGroupList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/im/group-request/unhandled-list",
+      "operationId": "getUnhandledRequestList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/im/friend/list",
+      "operationId": "getMyFriendList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/im/face-user-item/list",
+      "operationId": "getFaceUserItemList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/im/face-pack/list",
+      "operationId": "getFacePackList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/salary/tax-rule/list",
+      "operationId": "getSalaryTaxRuleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/salary/slip-template/list",
+      "operationId": "getSalarySlipTemplateList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/salary/option/list",
+      "operationId": "getSalaryOptionList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/salary/month-record/last",
+      "operationId": "getLastMonthRecord",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/salary/group/simple-list",
+      "operationId": "getSalaryGroupSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/salary/employee-info/get-adjustment-min-effect-date",
+      "operationId": "getSalaryAdjustmentMinEffectDate",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/salary/config/get",
+      "operationId": "getSalaryConfig",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/salary/change-template/list",
+      "operationId": "getSalaryChangeTemplateList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/recruit/post/simple-list",
+      "operationId": "getRecruitPostSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/recruit/config/eliminate-reason/list",
+      "operationId": "getRecruitEliminateReasonList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/recruit/channel/simple-list",
+      "operationId": "getRecruitChannelSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/salary/slip/unread-summary",
+      "operationId": "getUnreadSalarySlipSummary",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/employee/work-experience/list",
+      "operationId": "getWorkExperienceList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/employee/training-experience/list",
+      "operationId": "getTrainingExperienceList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/employee/quit-info/get",
+      "operationId": "getQuitInfo",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/employee/get",
+      "operationId": "getEmployee",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/employee/get-bind-status",
+      "operationId": "getEmployeeBindStatus",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/employee/field-config/list",
+      "operationId": "getEmployeeFieldConfigList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/employee/education-experience/list",
+      "operationId": "getEducationExperienceList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/employee/contact/list",
+      "operationId": "getContactList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/employee/certificate/list",
+      "operationId": "getCertificateList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/attendance/leave/list",
+      "operationId": "getAttendanceLeaveList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/portal/attendance/clock/get-detail",
+      "operationId": "getAttendanceClockDetail",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/performance/assessment/archive-plan-simple-list",
+      "operationId": "getPerformanceArchivePlanSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/performance/assessment-template/simple-list",
+      "operationId": "getPerformanceAssessmentTemplateSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/insurance/scheme/simple-list",
+      "operationId": "getSchemeSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/insurance/scheme/list",
+      "operationId": "getSchemeList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/insurance/month-record/last",
+      "operationId": "getLastMonthRecord_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/home/team-statistics-summary",
+      "operationId": "getTeamHomeStatisticsSummary",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/home/hr-statistics-summary",
+      "operationId": "getHrHomeStatisticsSummary",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/employee/dept-statistics",
+      "operationId": "getEmployeeDeptStatistics",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/employee/config/archive-field/list",
+      "operationId": "getEmployeeArchiveFieldConfigList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/employee/bound-user-id-list",
+      "operationId": "getBoundUserIdList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/hrm/attendance/group/simple-list",
+      "operationId": "getAttendanceGroupSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/fms/config/account-set/list",
+      "operationId": "getAccountSetList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/erp/warehouse/simple-list",
+      "operationId": "getWarehouseSimpleList_2",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/erp/supplier/simple-list",
+      "operationId": "getSupplierSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/erp/stock/get",
+      "operationId": "getStock",
+      "reasons": [
+        "参数说明、条件或校验修正"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/erp/sale-statistics/time-summary",
+      "operationId": "getSaleTimeSummary",
+      "reasons": [
+        "参数说明、条件或校验修正"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/erp/sale-statistics/summary",
+      "operationId": "getSaleSummary",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/erp/purchase-statistics/time-summary",
+      "operationId": "getPurchaseTimeSummary",
+      "reasons": [
+        "参数说明、条件或校验修正"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/erp/purchase-statistics/summary",
+      "operationId": "getPurchaseSummary",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/erp/product/simple-list",
+      "operationId": "getProductSimpleList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/erp/product-unit/simple-list",
+      "operationId": "getProductUnitSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/erp/product-category/simple-list",
+      "operationId": "getProductCategorySimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/erp/customer/simple-list",
+      "operationId": "getCustomerSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/erp/account/simple-list",
+      "operationId": "getWarehouseSimpleList_3",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/crm/trial-operations/page",
+      "operationId": "page",
+      "reasons": [
+        "参数说明、条件或校验修正",
+        "引用了补充说明的试用业务模型"
+      ],
+      "schemas": [
+        "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialOperationsController.Summary"
+      ]
+    },
+    {
+      "operation": "GET /admin-api/crm/trial-operations/get",
+      "operationId": "get_3",
+      "reasons": [
+        "参数说明、条件或校验修正",
+        "引用了补充说明的试用业务模型"
+      ],
+      "schemas": [
+        "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialOperationsController.Detail",
+        "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialOperationsController.Summary",
+        "cn.iocoder.yudao.module.crm.service.trial.TrialStore.Step"
+      ]
+    },
+    {
+      "operation": "GET /admin-api/crm/trial-business/follow-ups",
+      "operationId": "followUps",
+      "reasons": [
+        "确认无业务参数，显式允许空映射",
+        "引用了补充说明的试用业务模型"
+      ],
+      "schemas": [
+        "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.FollowUpView"
+      ]
+    },
+    {
+      "operation": "GET /admin-api/crm/trial-business/follow-up-types",
+      "operationId": "types",
+      "reasons": [
+        "确认无业务参数，显式允许空映射",
+        "引用了补充说明的试用业务模型"
+      ],
+      "schemas": [
+        "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.FollowUpType"
+      ]
+    },
+    {
+      "operation": "GET /admin-api/crm/trial-business/customer",
+      "operationId": "customer",
+      "reasons": [
+        "确认无业务参数，显式允许空映射",
+        "引用了补充说明的试用业务模型"
+      ],
+      "schemas": [
+        "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.CustomerView"
+      ]
+    },
+    {
+      "operation": "GET /admin-api/crm/receivable/audit-count",
+      "operationId": "getAuditReceivableCount",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/crm/receivable-plan/remind-count",
+      "operationId": "getReceivablePlanRemindCount",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/crm/product/simple-list",
+      "operationId": "getProductSimpleList_2",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/crm/customer/today-contact-count",
+      "operationId": "getTodayContactCustomerCount",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/crm/customer/simple-list",
+      "operationId": "getCustomerSimpleList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/crm/customer/put-pool-remind-count",
+      "operationId": "getPutPoolRemindCustomerCount",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/crm/customer/follow-count",
+      "operationId": "getFollowCustomerCount",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/crm/customer-pool-config/get",
+      "operationId": "getCustomerPoolConfig",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/crm/contract/remind-count",
+      "operationId": "getRemindContractCount",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/crm/contract/audit-count",
+      "operationId": "getAuditContractCount",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/crm/contract-config/get",
+      "operationId": "getCustomerPoolConfig_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/crm/contact/simple-all-list",
+      "operationId": "getSimpleContactList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/crm/clue/follow-count",
+      "operationId": "getFollowClueCount",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/crm/business/simple-all-list",
+      "operationId": "getSimpleContactList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/crm/business-status/type-simple-list",
+      "operationId": "getBusinessStatusTypeSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/bpm/user-group/simple-list",
+      "operationId": "getUserGroupSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/bpm/process-definition/simple-list",
+      "operationId": "getSimpleProcessDefinitionList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/bpm/form/list-all-simple",
+      "operationId": "getFormSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/bpm/form/simple-list",
+      "operationId": "getFormSimpleList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/bpm/category/simple-list",
+      "operationId": "getCategorySimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/ai/tool/simple-list",
+      "operationId": "getToolSimpleList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/ai/knowledge/simple-list",
+      "operationId": "getKnowledgeSimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/ai/chat/conversation/my-list",
+      "operationId": "getChatConversationMyList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/ai/chat-role/category-list",
+      "operationId": "getChatRoleCategoryList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /admin-api/ai/api-key/simple-list",
+      "operationId": "getApiKeySimpleList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "DELETE /app-api/product/browse-history/clean",
+      "operationId": "deleteBrowseHistory_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "DELETE /admin-api/ai/chat/conversation/delete-by-unpinned",
+      "operationId": "deleteChatConversationMyByUnpinned",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "GET /app-api/promotion/article-category/list",
+      "operationId": "getArticleCategoryList",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "PUT /app-api/promotion/article-category/list",
+      "operationId": "getArticleCategoryList_2",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "POST /app-api/promotion/article-category/list",
+      "operationId": "getArticleCategoryList_1",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "DELETE /app-api/promotion/article-category/list",
+      "operationId": "getArticleCategoryList_3",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "OPTIONS /app-api/promotion/article-category/list",
+      "operationId": "getArticleCategoryList_6",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "HEAD /app-api/promotion/article-category/list",
+      "operationId": "getArticleCategoryList_5",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    },
+    {
+      "operation": "PATCH /app-api/promotion/article-category/list",
+      "operationId": "getArticleCategoryList_4",
+      "reasons": [
+        "确认无业务参数，显式允许空映射"
+      ],
+      "schemas": []
+    }
+  ],
+  "changedTrialSchemas": [
+    "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.CustomerView",
+    "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.FollowUpType",
+    "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.FollowUpView",
+    "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialOperationsController.Detail",
+    "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialOperationsController.Summary",
+    "cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialEventReqVO",
+    "cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO.StepProgress",
+    "cn.iocoder.yudao.module.crm.service.trial.TrialStore.Step"
+  ]
+}
