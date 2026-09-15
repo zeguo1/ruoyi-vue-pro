@@ -1,5 +1,7 @@
 # v7.1：盘点单、参数配置、短信渠道和仓库默认状态
 
+已于 2026-09-15 部署至 192.168.1.199，运行代码提交 `0baef2a2cf`；版本 `1.0.0-full-contract-v7.1`。健康检查及线上实际文档核验通过，知办配置尚未同步。部署证据见 `generated-v7.1/deployment-verified.json`。
+
 本次核实截图中的四类问题，保留工作区已有的参数配置名称和仓库 defaultStatus 修正，补齐库存盘点单及短信渠道文案。此前“描述非空”检查不能证明业务语义正确，本轮增加实际导出内容断言。
 
 | 接口 | 修正及核验依据 |
@@ -14,11 +16,13 @@
 
 回归使用 `script/openapi/run_integration_checks.sh`：真实隔离 Springdoc 导出验证上述接口的最终 Schema、创建/更新 id 必填性，以及仓库查询参数集合、布尔类型和必填性；继续执行全业务模块引用、签名绑定与既有订单校验回归。结果和候选文档见 `generated-v7.1`。
 
-版本为 `1.0.0-full-contract-v7.1`。本次未部署、未操作知办、未创建真实业务数据。只读核验线上仍为 `1.0.0-full-contract-v6`，也仍包含上述错误，不只是知办草稿未同步。先部署本修复并核对运行文档版本，再同步知办的 parameters、requestBody、components/schemas、description，处理已有草稿合并冲突；尤其移除旧工具中虚构的 status 字段和必填项。不得把仍保留错误的生产 URL 当成已修复来源。
+开发完成时线上仍为 v6；收到部署指令后，已备份旧 JAR 和运行配置，构建并上线 v7.1，仅重建后端容器，保留现有配置。通过 8088 实际获取的原始文档含 3,451 个操作，业务 all 分组含 3,052 个操作；2,349 项业务参数绑定、451 处源模型引用及本轮修正断言均通过。未执行数据库迁移、真实业务写入或知办配置修改。现在知办可同步 parameters、requestBody、components/schemas、description，并处理已有草稿合并冲突；尤其移除旧工具中虚构的 status 字段和必填项。
 
-部署后文档地址沿用：
+已核验的运行文档地址：
 
 - 业务文档：`http://192.168.1.199:8088/v3/api-docs/all`
 - 原始文档：`http://192.168.1.199:8088/v3/api-docs`
 
 本轮没有验证截图所述的 AI 重试记录；“检查失败为 0”仍需在知办任务中核实。第三方协议与特殊响应的人工核验边界沿用 `BACKEND_HANDOFF_V7.md`。
+
+`deployed-openapi-*.json.gz` 是本次直接获取的运行文档快照，`deployed-*-verification.json` 和 `deployed-schema-audit.json` 是线上核验结果。原测试文件中的 deployed=false 记录开发时状态，最新部署状态以 deployment-verified.json 为准。回滚包及脚本位于 `/opt/mgs/backups/openapi-v7.1-deploy-20260915`。

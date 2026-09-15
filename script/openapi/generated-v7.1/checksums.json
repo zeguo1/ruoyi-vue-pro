@@ -1,5 +1,12 @@
 {
   "affected-operations.json": "86d5c21c673b6fd92c6603f2b98cf66645feaadb6bf7d9a8a4a4ba72f0a2af93",
+  "deployed-knowdo-parser-evidence.json": "a53180efcebd14d39a6da08c971f32af51ae13db1466b747d89967207e54e4a3",
+  "deployed-openapi-all.json.gz": "1437f3b1ba4055ea26b6c8e9f9d3765cf17dfd3d236baae850ad17ff8ed942bd",
+  "deployed-openapi-raw.json.gz": "b0c7b969ae8cf98d83c8fba7d6a1c4d328729ce962ecf1f3945cfe8770c26278",
+  "deployed-review-verification.json": "4ef1cbd22dd60f4365bade6d3f928e90d4bb3b82ebc623c0ad18cf15a8933b08",
+  "deployed-schema-audit.json": "83223323fd8b77f626069341302334035ae68bfacd2d57e214ba81fbb84c991c",
+  "deployed-wire-verification.json": "bd303987769507c95ea15b9842e5aa01d8062db1ef9799f8881c0a62ccacd2e1",
+  "deployment-verified.json": "da2387fd4caa60b8c19238af4e6b44cc9b944156a5f8086451e1329da8e9bf9a",
   "integration-checklist-all.json.gz": "b752dc24b5afae38250b3ba6b1821c60537cade08a6364e9481adc55bcdd7d5f",
   "integration-checklist-raw.json.gz": "70889cd11d4ebacd33b2f8f8a23de891916b271da07da3f96a3aa2a1d4a14522",
   "openapi-all.json.gz": "8c756646fd7ddac9fe65b71db1e5180bb8d63ec219223acca8551d1caf299171",

@@ -1,0 +1,1194 @@
+{
+  "apiVersion": "1.0.0-full-contract-v7.1",
+  "readOnlySourceProbe": true,
+  "importedTools": 3417,
+  "commonResultProcessingSuccessChecked": 2871,
+  "evidenceAccepted": 2871,
+  "failures": [],
+  "authorizationCompletionIsSeparate": true,
+  "connectorConfigurationInspected": false,
+  "knowdoApplied": false,
+  "unsupportedBodies": [
+    {
+      "endpoint": "POST /jmreport/importReportConfig",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string",
+                "format": "binary"
+              }
+            },
+            "required": [
+              "file"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /jmreport/importExcel",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string",
+                "format": "binary"
+              }
+            },
+            "required": [
+              "file"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /drag/page/importDragConfig",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string",
+                "format": "binary"
+              }
+            },
+            "required": [
+              "file"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /app-api/infra/file/upload",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "directory",
+          "to": "directory",
+          "location": "query",
+          "transform": "identity"
+        },
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "directory": {
+            "type": "string",
+            "description": "文件目录",
+            "example": "XXX/YYY"
+          },
+          "body": {
+            "type": "object",
+            "description": "用户 App - 上传文件 Request VO",
+            "properties": {
+              "file": {
+                "type": "string",
+                "format": "binary",
+                "description": "文件附件"
+              },
+              "directory": {
+                "type": "string",
+                "description": "文件目录",
+                "example": "XXX/YYY"
+              }
+            },
+            "required": [
+              "file"
+            ],
+            "additionalProperties": {}
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/system/user/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string",
+                "format": "binary",
+                "description": "Excel 文件"
+              },
+              "updateSupport": {
+                "type": "boolean",
+                "default": false,
+                "description": "是否支持更新，默认为 false"
+              }
+            },
+            "required": [
+              "file"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/system/oauth2/token",
+      "media": [
+        "application/x-www-form-urlencoded"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "grant_type": {
+                "type": "string",
+                "description": "授权类型",
+                "enum": [
+                  "authorization_code",
+                  "password",
+                  "refresh_token",
+                  "client_credentials"
+                ]
+              },
+              "code": {
+                "type": "string",
+                "description": "authorization_code 模式必填：从授权跳转获取的一次性授权码，不是 scope"
+              },
+              "redirect_uri": {
+                "type": "string",
+                "description": "重定向 URI"
+              },
+              "state": {
+                "type": "string",
+                "description": "状态"
+              },
+              "scope": {
+                "type": "string",
+                "description": "授权范围，多个范围以空格分隔，必须来自客户端配置"
+              }
+            },
+            "required": [
+              "grant_type"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/system/oauth2/check-token",
+      "media": [
+        "application/x-www-form-urlencoded"
+      ],
+      "mappings": [],
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/pms/pm/work-item/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "projectId": {
+                "type": "integer",
+                "format": "int64",
+                "description": "项目编号"
+              },
+              "type": {
+                "type": "integer",
+                "format": "int32",
+                "description": "工作项类型（需求、任务、缺陷）"
+              },
+              "file": {
+                "type": "string",
+                "format": "binary",
+                "description": "Excel 文件"
+              }
+            },
+            "required": [
+              "file",
+              "projectId",
+              "type"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/mes/md/item/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string",
+                "format": "binary",
+                "description": "Excel 文件"
+              },
+              "updateSupport": {
+                "type": "boolean",
+                "default": false,
+                "description": "是否支持更新，默认为 false"
+              }
+            },
+            "required": [
+              "file"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/mes/md-vendor/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string",
+                "format": "binary",
+                "description": "Excel 文件"
+              },
+              "updateSupport": {
+                "type": "boolean",
+                "default": false,
+                "description": "是否支持更新，默认为 false"
+              }
+            },
+            "required": [
+              "file"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/mes/md-client/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string",
+                "format": "binary",
+                "description": "Excel 文件"
+              },
+              "updateSupport": {
+                "type": "boolean",
+                "default": false,
+                "description": "是否支持更新，默认为 false"
+              }
+            },
+            "required": [
+              "file"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/mes/dv/machinery/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string",
+                "format": "binary",
+                "description": "Excel 文件"
+              },
+              "updateSupport": {
+                "type": "boolean",
+                "default": false,
+                "description": "是否支持更新，默认为 false"
+              }
+            },
+            "required": [
+              "file"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/iot/device/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string",
+                "format": "binary"
+              },
+              "updateSupport": {
+                "type": "boolean",
+                "default": false,
+                "description": "是否更新已存在的数据，默认 false"
+              }
+            },
+            "required": [
+              "file"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/infra/file/upload",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "directory",
+          "to": "directory",
+          "location": "query",
+          "transform": "identity"
+        },
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "directory": {
+            "type": "string",
+            "description": "文件目录",
+            "example": "XXX/YYY"
+          },
+          "body": {
+            "type": "object",
+            "description": "管理后台 - 上传文件 Request VO",
+            "properties": {
+              "file": {
+                "type": "string",
+                "format": "binary",
+                "description": "文件附件"
+              },
+              "directory": {
+                "type": "string",
+                "description": "文件目录",
+                "example": "XXX/YYY"
+              }
+            },
+            "required": [
+              "file"
+            ],
+            "additionalProperties": {}
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/hrm/salary/month-record/compute-import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int64",
+                "description": "工资表编号"
+              },
+              "syncInsuranceData": {
+                "type": "boolean",
+                "default": true,
+                "description": "是否同步社保数据"
+              },
+              "syncAttendanceData": {
+                "type": "boolean",
+                "default": false,
+                "description": "是否同步考勤数据"
+              },
+              "attendanceFile": {
+                "type": "string",
+                "format": "binary",
+                "description": "考勤数据文件"
+              },
+              "additionalDeductionFile": {
+                "type": "string",
+                "format": "binary",
+                "description": "专项附加扣除数据文件"
+              },
+              "cumulativeTaxFile": {
+                "type": "string",
+                "format": "binary",
+                "description": "上月个税累计数据文件"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/hrm/salary/employee-info/import-fix",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string",
+                "format": "binary",
+                "description": "Excel 文件"
+              }
+            },
+            "required": [
+              "file"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/hrm/salary/employee-info/import-change",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string",
+                "format": "binary",
+                "description": "Excel 文件"
+              }
+            },
+            "required": [
+              "file"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/hrm/employee/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string",
+                "format": "binary",
+                "description": "Excel 文件"
+              },
+              "duplicateStrategy": {
+                "type": "integer",
+                "format": "int32",
+                "default": 3,
+                "description": "重复员工处理策略：1 跳过，2 覆盖，3 判失败"
+              }
+            },
+            "required": [
+              "file"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/fms/voucher/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "accountSetId": {
+                "type": "integer",
+                "format": "int64",
+                "description": "账套编号"
+              },
+              "file": {
+                "type": "string",
+                "format": "binary",
+                "description": "Excel 文件"
+              }
+            },
+            "required": [
+              "accountSetId",
+              "file"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/fms/config/subject/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "accountSetId": {
+                "type": "integer",
+                "format": "int64",
+                "description": "账套编号"
+              },
+              "file": {
+                "type": "string",
+                "format": "binary",
+                "description": "Excel 文件"
+              }
+            },
+            "required": [
+              "accountSetId",
+              "file"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/fms/config/initial-balance/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "accountSetId": {
+                "type": "integer",
+                "format": "int64",
+                "description": "账套编号"
+              },
+              "file": {
+                "type": "string",
+                "format": "binary"
+              }
+            },
+            "required": [
+              "accountSetId",
+              "file"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/fms/config/auxiliary-item/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "accountSetId": {
+                "type": "integer",
+                "format": "int64",
+                "description": "账套编号"
+              },
+              "auxiliaryTypeId": {
+                "type": "integer",
+                "format": "int64",
+                "description": "辅助核算类别编号"
+              },
+              "file": {
+                "type": "string",
+                "format": "binary",
+                "description": "Excel 文件"
+              }
+            },
+            "required": [
+              "accountSetId",
+              "auxiliaryTypeId",
+              "file"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    },
+    {
+      "endpoint": "POST /admin-api/bpm/model/import",
+      "media": [
+        "multipart/form-data"
+      ],
+      "mappings": [
+        {
+          "from": "body",
+          "to": "$",
+          "location": "body",
+          "transform": "identity"
+        }
+      ],
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string",
+                "format": "binary",
+                "description": "流程模型 JSON 文件"
+              },
+              "key": {
+                "type": "string",
+                "description": "流程标识，替换导入文件中的标识"
+              },
+              "name": {
+                "type": "string",
+                "description": "流程名称，替换导入文件中的名称"
+              }
+            },
+            "required": [
+              "file"
+            ]
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "reason": "当前解析器只导入 application/json 请求体；须保留其他媒体类型及其字段"
+    }
+  ],
+  "paginationBeforeReview": {
+    "type": "object",
+    "properties": {
+      "readStatus": {
+        "type": "boolean",
+        "description": "是否已读",
+        "example": true
+      },
+      "createTime": {
+        "type": "array",
+        "description": "创建时间",
+        "items": {
+          "type": "string",
+          "description": "创建时间；查询/表单字符串，格式 yyyy-MM-dd HH:mm:ss",
+          "x-wire-java-type": "LocalDateTime",
+          "x-wire-direction": "query"
+        }
+      },
+      "pageNo": {
+        "type": "integer",
+        "format": "int32",
+        "default": 1,
+        "description": "页码，从 1 开始，省略为 1",
+        "example": 1,
+        "minimum": 1
+      },
+      "pageSize": {
+        "type": "integer",
+        "format": "int32",
+        "default": 10,
+        "description": "每页条数，省略为 10，范围 1 到 200；-1 仅供后端导出逻辑内部使用",
+        "example": 10,
+        "maximum": 200,
+        "minimum": 1
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "paginationSentToReview": {
+    "type": "object",
+    "required": [],
+    "properties": {
+      "readStatus": {
+        "type": "boolean",
+        "description": "是否已读"
+      },
+      "createTime": {
+        "type": "array",
+        "description": "创建时间",
+        "items": {
+          "type": "string",
+          "description": "创建时间；查询/表单字符串，格式 yyyy-MM-dd HH:mm:ss"
+        }
+      },
+      "pageNo": {
+        "type": "integer",
+        "format": "int32",
+        "description": "页码，从 1 开始，省略为 1",
+        "minimum": 1,
+        "default": 1
+      },
+      "pageSize": {
+        "type": "integer",
+        "format": "int32",
+        "description": "每页条数，省略为 10，范围 1 到 200；-1 仅供后端导出逻辑内部使用",
+        "minimum": 1,
+        "maximum": 200,
+        "default": 10
+      }
+    },
+    "additionalProperties": false
+  },
+  "warnings": [
+    "跳过不支持的 HTTP 方法 HEAD /jmreport/view/{id}/{type}/{jmRecordId}",
+    "跳过不支持的 HTTP 方法 OPTIONS /jmreport/view/{id}/{type}/{jmRecordId}",
+    "跳过不支持的 HTTP 方法 HEAD /jmreport/view/{id}",
+    "跳过不支持的 HTTP 方法 OPTIONS /jmreport/view/{id}",
+    "跳过不支持的 HTTP 方法 HEAD /jmreport/shareView/{id}/{type}/{jmRecordId}",
+    "跳过不支持的 HTTP 方法 OPTIONS /jmreport/shareView/{id}/{type}/{jmRecordId}",
+    "跳过不支持的 HTTP 方法 HEAD /jmreport/shareView/{id}",
+    "跳过不支持的 HTTP 方法 OPTIONS /jmreport/shareView/{id}",
+    "跳过不支持的 HTTP 方法 HEAD /jmreport/print",
+    "跳过不支持的 HTTP 方法 OPTIONS /jmreport/print",
+    "跳过不支持的 HTTP 方法 HEAD /jmreport/list",
+    "跳过不支持的 HTTP 方法 OPTIONS /jmreport/list",
+    "跳过不支持的 HTTP 方法 HEAD /jmreport/index/{id}",
+    "跳过不支持的 HTTP 方法 OPTIONS /jmreport/index/{id}",
+    "跳过不支持的 HTTP 方法 HEAD /jmreport/group/view",
+    "跳过不支持的 HTTP 方法 OPTIONS /jmreport/group/view",
+    "跳过不支持的 HTTP 方法 HEAD /jmreport/demo",
+    "跳过不支持的 HTTP 方法 OPTIONS /jmreport/demo",
+    "跳过不支持的 HTTP 方法 HEAD /jmreport/addChart",
+    "跳过不支持的 HTTP 方法 OPTIONS /jmreport/addChart",
+    "跳过不支持的 HTTP 方法 HEAD /drag/page/refreshCache",
+    "跳过不支持的 HTTP 方法 OPTIONS /drag/page/refreshCache",
+    "跳过不支持的 HTTP 方法 HEAD /app-api/promotion/article/page",
+    "跳过不支持的 HTTP 方法 OPTIONS /app-api/promotion/article/page",
+    "跳过不支持的 HTTP 方法 HEAD /app-api/promotion/article/list",
+    "跳过不支持的 HTTP 方法 OPTIONS /app-api/promotion/article/list",
+    "跳过不支持的 HTTP 方法 HEAD /app-api/promotion/article/get",
+    "跳过不支持的 HTTP 方法 OPTIONS /app-api/promotion/article/get",
+    "跳过不支持的 HTTP 方法 HEAD /app-api/promotion/article-category/list",
+    "跳过不支持的 HTTP 方法 OPTIONS /app-api/promotion/article-category/list",
+    "跳过不支持的 HTTP 方法 HEAD /admin-api/report/go-view/data/get-by-sql",
+    "跳过不支持的 HTTP 方法 OPTIONS /admin-api/report/go-view/data/get-by-sql",
+    "跳过不支持的 HTTP 方法 HEAD /admin-api/report/go-view/data/get-by-http",
+    "跳过不支持的 HTTP 方法 OPTIONS /admin-api/report/go-view/data/get-by-http",
+    "updateThingModel: 循环 schema 引用 #/components/schemas/cn.iocoder.yudao.module.iot.dal.dataobject.thingmodel.model.dataType.ThingModelArrayDataSpecs",
+    "updateModel: 循环 schema 引用 #/components/schemas/cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.simple.BpmSimpleModelNodeVO",
+    "e: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "a_7: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "e_5: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "d_7: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "b_30: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "a_52: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "c_14: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "refreshToken: 凭据字段 query.refreshToken 需要显式 credentialFields 配置；已从模型输入移除",
+    "logout: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "login: 凭据字段 $.password 需要显式 credentialFields 配置；已从模型输入移除",
+    "receiveTencentSmsStatus: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "receiveAliyunSmsStatus: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "postAccessToken: 凭据字段 $.username 需要显式 credentialFields 配置；已从模型输入移除",
+    "postAccessToken: 凭据字段 $.password 需要显式 credentialFields 配置；已从模型输入移除",
+    "postAccessToken: 凭据字段 $.refresh_token 需要显式 credentialFields 配置；已从模型输入移除",
+    "postAccessToken: 凭据字段 $.client_id 需要显式 credentialFields 配置；已从模型输入移除",
+    "postAccessToken: 凭据字段 $.client_secret 需要显式 credentialFields 配置；已从模型输入移除",
+    "revokeToken: 凭据字段 query.token 需要显式 credentialFields 配置；已从模型输入移除",
+    "revokeToken: 凭据字段 query.client_id 需要显式 credentialFields 配置；已从模型输入移除",
+    "revokeToken: 凭据字段 query.client_secret 需要显式 credentialFields 配置；已从模型输入移除",
+    "checkToken: 凭据字段 $.token 需要显式 credentialFields 配置；已从模型输入移除",
+    "checkToken: 凭据字段 $.client_id 需要显式 credentialFields 配置；已从模型输入移除",
+    "checkToken: 凭据字段 $.client_secret 需要显式 credentialFields 配置；已从模型输入移除",
+    "authorize: 凭据字段 query.clientId 需要显式 credentialFields 配置；已从模型输入移除",
+    "approveOrDeny: 凭据字段 query.client_id 需要显式 credentialFields 配置；已从模型输入移除",
+    "refreshToken_1: 凭据字段 query.refreshToken 需要显式 credentialFields 配置；已从模型输入移除",
+    "logout_1: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "login_1: 凭据字段 $.username 需要显式 credentialFields 配置；已从模型输入移除",
+    "login_1: 凭据字段 $.password 需要显式 credentialFields 配置；已从模型输入移除",
+    "saveMenu: 循环 schema 引用 #/components/schemas/cn.iocoder.yudao.module.mp.controller.admin.menu.vo.MpMenuSaveReqVO.Menu",
+    "createThingModel: 循环 schema 引用 #/components/schemas/cn.iocoder.yudao.module.iot.dal.dataobject.thingmodel.model.dataType.ThingModelArrayDataSpecs",
+    "updateSimpleModel: 循环 schema 引用 #/components/schemas/cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.simple.BpmSimpleModelNodeVO",
+    "createModel: 循环 schema 引用 #/components/schemas/cn.iocoder.yudao.module.bpm.controller.admin.definition.vo.model.simple.BpmSimpleModelNodeVO",
+    "c_17: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "a_70: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "b_39: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "f_3: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "d_11: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "g_2: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "a_110: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "b_44: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "a_121: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "b_48: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "b_53: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "a_130: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "settlementOrder: 参数 items 的嵌套结构需要编码适配",
+    "getBrokerageUserChildSummaryPage: getBrokerageUserChildSummaryPage: 无法映射字段 sortingField.field",
+    "getProductStatisticsRankPage: 参数 sortingFields 的嵌套结构需要编码适配",
+    "getBrowseHistoryPage_1: 参数 sortingFields 的嵌套结构需要编码适配",
+    "getEmployeeStatusCount: 参数 sortingFields 的嵌套结构需要编码适配",
+    "getEmployeeSimplePage: 参数 sortingFields 的嵌套结构需要编码适配",
+    "getEmployeePage: 参数 sortingFields 的嵌套结构需要编码适配",
+    "exportEmployee: 参数 sortingFields 的嵌套结构需要编码适配",
+    "getAttendanceLeavePage: 参数 sortingFields 的嵌套结构需要编码适配",
+    "exportAttendanceLeave: 参数 sortingFields 的嵌套结构需要编码适配",
+    "e_10: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "a_184: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "a_185: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "a_186: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "a_188: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "a_187: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "b_66: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "b_67: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "b_68: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "b_70: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "b_69: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "d_19: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "d_20: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "d_21: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "d_23: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "d_22: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "a_198: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "a_199: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "a_200: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "a_202: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "a_201: 请求输入未明确声明，需人工核对；不能据此认定无业务参数",
+    "getDataBySQL: GET 请求体需要传输适配",
+    "getDataByHttp: GET 请求体需要传输适配",
+    "导入工具默认标记为有副作用；发布前核对服务对象、参数映射、成功条件及读写语义。"
+  ]
+}
