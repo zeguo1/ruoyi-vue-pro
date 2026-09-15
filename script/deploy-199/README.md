@@ -63,3 +63,12 @@ TDengine 入口包装脚本仅去除供应商脚本的 `set -x`，防止初始�
 ### 共享主机的 TDengine 内存预留
 
 `taos.cfg` 显式设置 `minReservedMemorySize 1024`（MB），避免默认预留整机 20% 内存导致当前共享主机在后端重启时连表结构查询都报 `Query memory exhausted`。已有数据目录可能优先读取 `dnode/config/local.json`；升级后应查询 `SHOW DNODE 1 VARIABLES LIKE 'minReservedMemorySize'`，不能只依据文本配置判断生效。此次实例已备份原持久化配置并将该值设为 1024，重启后完成读回验证。操作背景、备份位置及验证见 [ERP 交接报告](../openapi/ERP_ORDER_HANDOFF.md#部署依赖恢复记录)。
+
+
+### 菜单可用性与中文迁移
+
+执行含中文的增量 SQL 时，必须使用 `mysql --default-character-set=utf8mb4`；脚本也应显式 `SET NAMES utf8mb4`。2026-09-15 新增试用菜单曾因客户端默认字符集错误出现乱码，修复脚本为 `script/trial/V20260915_06__repair_trial_menu_encoding.sql`，仅更新四个已确认的错误值，不覆盖后续自行修改的名称。
+
+发布前可用 `audit-menu-pages.py <菜单JSON快照> <前端dist目录> <输出目录>` 检查菜单与实际发布资源是否匹配。快照采用 `id,parentId,type,status,visible,component` 字段；脚本从 `index.html` 遍历可达 JS，忽略目录中的旧包，并兼容菜单 component 带或不带 `.vue`。生成审查清单、下架 SQL 与恢复 SQL，不自行连接或修改数据库。只下架确认缺失的页面及因此变空的父目录，不删除菜单或角色关联。
+
+本机当前已下架 CMS 43 个、OA 6 个缺失页面和两个尚未发布的试用页面；待对应前端发布并重新审查后再恢复。原菜单和角色关联保留在数据库，操作前快照及恢复 SQL 位于 `/opt/mgs/backups/menu-repair-20260915`。权限菜单在登录时加载，变更后需退出重新登录；旧标签页和收藏地址不能用来判断页面已发布。

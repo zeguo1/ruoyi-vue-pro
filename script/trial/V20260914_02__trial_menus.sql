@@ -1,4 +1,5 @@
 -- Add menus without granting them to existing users/roles. Apply after 01 with the normal MGS migration process.
+SET NAMES utf8mb4;
 START TRANSACTION;
 SELECT id FROM crm_trial_guard WHERE id=1 FOR UPDATE;
 INSERT INTO system_menu(name,permission,type,sort,parent_id,path,component,component_name,status,visible,keep_alive,always_show)

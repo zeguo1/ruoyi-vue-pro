@@ -20,7 +20,7 @@
 
 ## 增量迁移与开启存储
 
-在备份后按顺序审阅并应用 `V20260914_01__trial_onboarding.sql`、`V20260914_02__trial_menus.sql`、`V20260914_03__trial_operator_setup.sql`、`V20260914_04__trial_login_delivery.sql`、`V20260915_05__trial_sms_verification.sql`。它们新增状态、菜单、初始化登记和加密登录交付，不重新导入基础数据库。菜单迁移不替既有用户授予权限。设置独立的 AES-256 加密版本密钥，并保留仍有有效交付记录所需的旧版本密钥。
+在备份后按顺序审阅并应用 `V20260914_01__trial_onboarding.sql`、`V20260914_02__trial_menus.sql`、`V20260914_03__trial_operator_setup.sql`、`V20260914_04__trial_login_delivery.sql`、`V20260915_05__trial_sms_verification.sql`、`V20260915_06__repair_trial_menu_encoding.sql`。它们新增状态、菜单、初始化登记和加密登录交付，不重新导入基础数据库。菜单迁移不替既有用户授予权限。设置独立的 AES-256 加密版本密钥，并保留仍有有效交付记录所需的旧版本密钥。
 
 迁移和候选制品发布后才可设置 `mgs.trial.storage-enabled=true`。保持 `mgs.trial.enabled=false`，此时新增申请关闭，已有记录仍能查询、维护和撤销。已发布实例需验证实际 `/v3/api-docs/all`；当前 `generated/openapi.json` 是隔离 Springdoc 导出的候选文档，不是运行服务的导出。
 
@@ -66,3 +66,5 @@
 ## MGS 短信验证扩展
 
 新申请需完成 05 迁移并配置实际短信渠道、仅含 code 参数的模板及独立秘密密钥，sms-verification.enabled 默认关闭。知办需对接私有安全卡片 send/verify、v2 签名及凭据注入，见 SMS_VERIFICATION.md。现有申请可继续查询/维护，短信通过不代替用户确认。回滚时保留已验证联系表和申请映射，禁止恢复接受 Email 声明新开户的旧入口；先关闭新开户，再按原有撤权与回滚步骤操作。
+
+2026-09-15 菜单可用性排查后，两个未发布的试用页面入口已禁用，角色关联保留。前端发布并验证页面后再按部署备份恢复菜单，不把后端存储开启视为前端已发布。含中文迁移必须显式使用 UTF-8 客户端。
