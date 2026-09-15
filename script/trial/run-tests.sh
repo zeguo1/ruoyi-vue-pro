@@ -13,3 +13,8 @@ mvn -q -pl yudao-server -am test \
   -Dtest=TrialOpenApiExportTest -Dsurefire.failIfNoSpecifiedTests=false \
   -DargLine='-Xmx384m -XX:ActiveProcessorCount=2'
 python3 script/trial/build-tool-contract.py yudao-server/target/trial-openapi.json yudao-server/target/trial-tool-contract.json
+python3 script/trial/test-agent-catalogs.py
+python3 script/trial/build-agent-catalogs.py yudao-server/target/trial-openapi.json yudao-server/target/trial-agent-catalogs
+for catalog in onboarding personal-business; do
+  python3 script/trial/build-tool-contract.py "yudao-server/target/trial-agent-catalogs/${catalog}-openapi.json" "yudao-server/target/trial-agent-catalogs/${catalog}-tool-contract.json"
+done

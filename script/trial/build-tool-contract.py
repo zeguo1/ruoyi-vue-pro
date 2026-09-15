@@ -45,7 +45,9 @@ for path, methods in sorted(doc.get("paths", {}).items()):
         mapping = []
         for param in op.get("parameters", []):
             mapping.append({"source": "OpenAPI parameter", "in": param["in"], "path": param["name"],
-                            "required": param.get("required", False), "schema": param.get("schema", {})})
+                            "required": param.get("required", False), "schema": param.get("schema", {}),
+                            "valueSource": param.get("x-mgs-value-source"), "modelInput": param.get("x-mgs-model-input"),
+                            "omittedValueSource": param.get("x-mgs-omitted-value-source")})
         for media, content in op.get("requestBody", {}).get("content", {}).items():
             for field in fields(content.get("schema", {})):
                 mapping.append({"source": "OpenAPI requestBody", "in": "requestBody", "mediaType": media, **field})
@@ -59,6 +61,8 @@ for path, methods in sorted(doc.get("paths", {}).items()):
                 "accountReadyCondition": op.get("x-mgs-account-ready-condition"),
                 "readOnly": op.get("x-mgs-read-only", method == "get"),
                 "trustedServiceContract": op.get("x-mgs-service-contract"),
+                "security": op.get("security", doc.get("security", [])),
+                "personalAuthorization": op.get("x-mgs-personal-authorization"),
                 "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
                 "manualVerification": ["KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
                                        "No claim that KnowDo has imported/applied this file; real WeChat end-to-end validation remains pending."]}

@@ -1,7 +1,7 @@
 {
   "contractVersion": "mgs-trial-v1-candidate",
   "openapiVersion": "1.0.0-full-contract-v6",
-  "openapiSha256": "a1a8bd168a4d542dc09d0858be17a01dc32068523e8eb7b6833f8bb648e32d86",
+  "openapiSha256": "af3a9b74df6b74bc4a148e6f1ed6411b149f1c5f23861eec47b821d8930b1c68",
   "operations": [
     {
       "key": "GET /admin-api/crm/trial-business/customer",
@@ -14,20 +14,11 @@
           "required": false,
           "schema": {
             "type": "integer",
-            "format": "int32",
-            "default": 1,
-            "description": "租户编号"
-          }
-        },
-        {
-          "source": "OpenAPI parameter",
-          "in": "header",
-          "path": "Authorization",
-          "required": false,
-          "schema": {
-            "type": "string",
-            "description": "认证 Token"
-          }
+            "format": "int64"
+          },
+          "valueSource": "connector-configuration",
+          "modelInput": false,
+          "omittedValueSource": "authenticated-user"
         }
       ],
       "requestSuccess": {
@@ -38,6 +29,16 @@
       "accountReadyCondition": null,
       "readOnly": true,
       "trustedServiceContract": null,
+      "security": [
+        {
+          "MgsTrialPersonalBearer": []
+        }
+      ],
+      "personalAuthorization": {
+        "tenantSource": "connector-configuration",
+        "credentialOwner": "current-user",
+        "modelMaySupplyCredentials": false
+      },
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -55,20 +56,11 @@
           "required": false,
           "schema": {
             "type": "integer",
-            "format": "int32",
-            "default": 1,
-            "description": "租户编号"
-          }
-        },
-        {
-          "source": "OpenAPI parameter",
-          "in": "header",
-          "path": "Authorization",
-          "required": false,
-          "schema": {
-            "type": "string",
-            "description": "认证 Token"
-          }
+            "format": "int64"
+          },
+          "valueSource": "connector-configuration",
+          "modelInput": false,
+          "omittedValueSource": "authenticated-user"
         },
         {
           "source": "OpenAPI requestBody",
@@ -148,6 +140,16 @@
       "accountReadyCondition": null,
       "readOnly": false,
       "trustedServiceContract": null,
+      "security": [
+        {
+          "MgsTrialPersonalBearer": []
+        }
+      ],
+      "personalAuthorization": {
+        "tenantSource": "connector-configuration",
+        "credentialOwner": "current-user",
+        "modelMaySupplyCredentials": false
+      },
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -165,20 +167,11 @@
           "required": false,
           "schema": {
             "type": "integer",
-            "format": "int32",
-            "default": 1,
-            "description": "租户编号"
-          }
-        },
-        {
-          "source": "OpenAPI parameter",
-          "in": "header",
-          "path": "Authorization",
-          "required": false,
-          "schema": {
-            "type": "string",
-            "description": "认证 Token"
-          }
+            "format": "int64"
+          },
+          "valueSource": "connector-configuration",
+          "modelInput": false,
+          "omittedValueSource": "authenticated-user"
         }
       ],
       "requestSuccess": {
@@ -189,6 +182,16 @@
       "accountReadyCondition": null,
       "readOnly": true,
       "trustedServiceContract": null,
+      "security": [
+        {
+          "MgsTrialPersonalBearer": []
+        }
+      ],
+      "personalAuthorization": {
+        "tenantSource": "connector-configuration",
+        "credentialOwner": "current-user",
+        "modelMaySupplyCredentials": false
+      },
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -206,20 +209,11 @@
           "required": false,
           "schema": {
             "type": "integer",
-            "format": "int32",
-            "default": 1,
-            "description": "租户编号"
-          }
-        },
-        {
-          "source": "OpenAPI parameter",
-          "in": "header",
-          "path": "Authorization",
-          "required": false,
-          "schema": {
-            "type": "string",
-            "description": "认证 Token"
-          }
+            "format": "int64"
+          },
+          "valueSource": "connector-configuration",
+          "modelInput": false,
+          "omittedValueSource": "authenticated-user"
         }
       ],
       "requestSuccess": {
@@ -230,6 +224,16 @@
       "accountReadyCondition": null,
       "readOnly": true,
       "trustedServiceContract": null,
+      "security": [
+        {
+          "MgsTrialPersonalBearer": []
+        }
+      ],
+      "personalAuthorization": {
+        "tenantSource": "connector-configuration",
+        "credentialOwner": "current-user",
+        "modelMaySupplyCredentials": false
+      },
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -321,8 +325,6 @@
       "accountReadyCondition": null,
       "readOnly": false,
       "trustedServiceContract": {
-        "transport": "https",
-        "modelMaySupplyIdentity": false,
         "trustedHeaders": [
           "X-Mgs-Trial-Key",
           "X-Mgs-Trial-Timestamp",
@@ -334,10 +336,18 @@
           "X-Mgs-Trial-Idempotency",
           "X-Mgs-Trial-Signature"
         ],
-        "capability": "EVENTS",
+        "modelMaySupplyIdentity": false,
+        "transport": "https",
+        "version": "mgs-trial-v1",
         "secureRequestRequired": true,
-        "version": "mgs-trial-v1"
+        "capability": "EVENTS"
       },
+      "security": [
+        {
+          "MgsTrialSignature": []
+        }
+      ],
+      "personalAuthorization": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -355,7 +365,10 @@
           "required": true,
           "schema": {
             "type": "string"
-          }
+          },
+          "valueSource": null,
+          "modelInput": null,
+          "omittedValueSource": null
         },
         {
           "source": "OpenAPI parameter",
@@ -367,7 +380,10 @@
             "format": "int32",
             "default": 1,
             "description": "租户编号"
-          }
+          },
+          "valueSource": null,
+          "modelInput": null,
+          "omittedValueSource": null
         },
         {
           "source": "OpenAPI parameter",
@@ -377,7 +393,10 @@
           "schema": {
             "type": "string",
             "description": "认证 Token"
-          }
+          },
+          "valueSource": null,
+          "modelInput": null,
+          "omittedValueSource": null
         }
       ],
       "requestSuccess": {
@@ -388,6 +407,8 @@
       "accountReadyCondition": null,
       "readOnly": true,
       "trustedServiceContract": null,
+      "security": [],
+      "personalAuthorization": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -408,7 +429,10 @@
             "format": "int32",
             "default": 1,
             "minimum": 1
-          }
+          },
+          "valueSource": null,
+          "modelInput": null,
+          "omittedValueSource": null
         },
         {
           "source": "OpenAPI parameter",
@@ -421,7 +445,10 @@
             "default": 20,
             "maximum": 100,
             "minimum": 1
-          }
+          },
+          "valueSource": null,
+          "modelInput": null,
+          "omittedValueSource": null
         },
         {
           "source": "OpenAPI parameter",
@@ -433,7 +460,10 @@
             "format": "int32",
             "default": 1,
             "description": "租户编号"
-          }
+          },
+          "valueSource": null,
+          "modelInput": null,
+          "omittedValueSource": null
         },
         {
           "source": "OpenAPI parameter",
@@ -443,7 +473,10 @@
           "schema": {
             "type": "string",
             "description": "认证 Token"
-          }
+          },
+          "valueSource": null,
+          "modelInput": null,
+          "omittedValueSource": null
         }
       ],
       "requestSuccess": {
@@ -454,6 +487,8 @@
       "accountReadyCondition": null,
       "readOnly": true,
       "trustedServiceContract": null,
+      "security": [],
+      "personalAuthorization": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -474,7 +509,10 @@
             "format": "int32",
             "default": 1,
             "description": "租户编号"
-          }
+          },
+          "valueSource": null,
+          "modelInput": null,
+          "omittedValueSource": null
         },
         {
           "source": "OpenAPI parameter",
@@ -484,7 +522,10 @@
           "schema": {
             "type": "string",
             "description": "认证 Token"
-          }
+          },
+          "valueSource": null,
+          "modelInput": null,
+          "omittedValueSource": null
         },
         {
           "source": "OpenAPI requestBody",
@@ -511,6 +552,8 @@
       "accountReadyCondition": null,
       "readOnly": false,
       "trustedServiceContract": null,
+      "security": [],
+      "personalAuthorization": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -546,19 +589,17 @@
       "accountReadyCondition": {
         "all": [
           {
-            "path": "code",
-            "equals": 0
+            "equals": 0,
+            "path": "code"
           },
           {
-            "path": "data.accountReady",
-            "equals": true
+            "equals": true,
+            "path": "data.accountReady"
           }
         ]
       },
       "readOnly": false,
       "trustedServiceContract": {
-        "transport": "https",
-        "modelMaySupplyIdentity": false,
         "trustedHeaders": [
           "X-Mgs-Trial-Key",
           "X-Mgs-Trial-Timestamp",
@@ -570,10 +611,18 @@
           "X-Mgs-Trial-Idempotency",
           "X-Mgs-Trial-Signature"
         ],
-        "capability": "TOOLS",
+        "modelMaySupplyIdentity": false,
+        "transport": "https",
+        "version": "mgs-trial-v1",
         "secureRequestRequired": true,
-        "version": "mgs-trial-v1"
+        "capability": "TOOLS"
       },
+      "security": [
+        {
+          "MgsTrialSignature": []
+        }
+      ],
+      "personalAuthorization": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -609,19 +658,17 @@
       "accountReadyCondition": {
         "all": [
           {
-            "path": "code",
-            "equals": 0
+            "equals": 0,
+            "path": "code"
           },
           {
-            "path": "data.accountReady",
-            "equals": true
+            "equals": true,
+            "path": "data.accountReady"
           }
         ]
       },
       "readOnly": true,
       "trustedServiceContract": {
-        "transport": "https",
-        "modelMaySupplyIdentity": false,
         "trustedHeaders": [
           "X-Mgs-Trial-Key",
           "X-Mgs-Trial-Timestamp",
@@ -633,10 +680,18 @@
           "X-Mgs-Trial-Idempotency",
           "X-Mgs-Trial-Signature"
         ],
-        "capability": "TOOLS",
+        "modelMaySupplyIdentity": false,
+        "transport": "https",
+        "version": "mgs-trial-v1",
         "secureRequestRequired": true,
-        "version": "mgs-trial-v1"
+        "capability": "TOOLS"
       },
+      "security": [
+        {
+          "MgsTrialSignature": []
+        }
+      ],
+      "personalAuthorization": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -672,19 +727,17 @@
       "accountReadyCondition": {
         "all": [
           {
-            "path": "code",
-            "equals": 0
+            "equals": 0,
+            "path": "code"
           },
           {
-            "path": "data.accountReady",
-            "equals": true
+            "equals": true,
+            "path": "data.accountReady"
           }
         ]
       },
       "readOnly": true,
       "trustedServiceContract": {
-        "transport": "https",
-        "modelMaySupplyIdentity": false,
         "trustedHeaders": [
           "X-Mgs-Trial-Key",
           "X-Mgs-Trial-Timestamp",
@@ -696,10 +749,18 @@
           "X-Mgs-Trial-Idempotency",
           "X-Mgs-Trial-Signature"
         ],
-        "capability": "TOOLS",
+        "modelMaySupplyIdentity": false,
+        "transport": "https",
+        "version": "mgs-trial-v1",
         "secureRequestRequired": true,
-        "version": "mgs-trial-v1"
+        "capability": "TOOLS"
       },
+      "security": [
+        {
+          "MgsTrialSignature": []
+        }
+      ],
+      "personalAuthorization": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -770,19 +831,17 @@
       "accountReadyCondition": {
         "all": [
           {
-            "path": "code",
-            "equals": 0
+            "equals": 0,
+            "path": "code"
           },
           {
-            "path": "data.accountReady",
-            "equals": true
+            "equals": true,
+            "path": "data.accountReady"
           }
         ]
       },
       "readOnly": false,
       "trustedServiceContract": {
-        "transport": "https",
-        "modelMaySupplyIdentity": false,
         "trustedHeaders": [
           "X-Mgs-Trial-Key",
           "X-Mgs-Trial-Timestamp",
@@ -794,10 +853,18 @@
           "X-Mgs-Trial-Idempotency",
           "X-Mgs-Trial-Signature"
         ],
-        "capability": "TOOLS",
+        "modelMaySupplyIdentity": false,
+        "transport": "https",
+        "version": "mgs-trial-v1",
         "secureRequestRequired": true,
-        "version": "mgs-trial-v1"
+        "capability": "TOOLS"
       },
+      "security": [
+        {
+          "MgsTrialSignature": []
+        }
+      ],
+      "personalAuthorization": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",

@@ -1,0 +1,532 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MGS integration candidate (not deployed)",
+    "version": "1.0.0-full-contract-v6"
+  },
+  "servers": [
+    {
+      "url": "http://localhost",
+      "description": "Generated server url"
+    }
+  ],
+  "x-mgs-trial-contract-version": "mgs-trial-v1-candidate",
+  "paths": {
+    "/admin-api/crm/trial-business/customer": {
+      "get": {
+        "tags": [
+          "本人演示业务 - 个人 MGS 授权"
+        ],
+        "summary": "查询本人虚构演示客户",
+        "description": "必须使用本人的个人 MGS 授权。没有客户编号参数，不允许读取其他试用用户或既有演示数据。",
+        "operationId": "TrialBusiness_customer",
+        "parameters": [
+          {
+            "name": "tenant-id",
+            "in": "header",
+            "description": "可省略，租户过滤器将从已认证用户取得租户。若传入，由连接器服务端固定配置，必须与当前用户及本人试用申请一致；当前演示租户为 1，不能由模型选择。",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 1,
+            "x-mgs-value-source": "connector-configuration",
+            "x-mgs-model-input": false,
+            "x-mgs-omitted-value-source": "authenticated-user"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/cn.iocoder.yudao.framework.common.pojo.CommonResultCn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.CustomerView"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "MgsTrialPersonalBearer": []
+          }
+        ],
+        "x-java-handler": "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController#customer",
+        "x-java-handler-signature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController$CustomerView> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.customer()",
+        "x-java-return-type": "cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController$CustomerView>",
+        "x-business-success": {
+          "path": "code",
+          "meaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
+          "valueType": "integer",
+          "errorPath": "msg",
+          "equals": 0
+        },
+        "x-mgs-personal-authorization": {
+          "tenantSource": "connector-configuration",
+          "credentialOwner": "current-user",
+          "modelMaySupplyCredentials": false
+        }
+      }
+    },
+    "/admin-api/crm/trial-business/follow-up-types": {
+      "get": {
+        "tags": [
+          "本人演示业务 - 个人 MGS 授权"
+        ],
+        "summary": "查询真实可用的跟进类型",
+        "operationId": "TrialBusiness_types",
+        "parameters": [
+          {
+            "name": "tenant-id",
+            "in": "header",
+            "description": "可省略，租户过滤器将从已认证用户取得租户。若传入，由连接器服务端固定配置，必须与当前用户及本人试用申请一致；当前演示租户为 1，不能由模型选择。",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 1,
+            "x-mgs-value-source": "connector-configuration",
+            "x-mgs-model-input": false,
+            "x-mgs-omitted-value-source": "authenticated-user"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/cn.iocoder.yudao.framework.common.pojo.CommonResultJava.util.ListCn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.FollowUpType"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "MgsTrialPersonalBearer": []
+          }
+        ],
+        "x-java-handler": "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController#types",
+        "x-java-handler-signature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<java.util.List<cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController$FollowUpType>> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.types()",
+        "x-java-return-type": "cn.iocoder.yudao.framework.common.pojo.CommonResult<java.util.List<cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController$FollowUpType>>",
+        "x-business-success": {
+          "path": "code",
+          "meaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
+          "valueType": "integer",
+          "errorPath": "msg",
+          "equals": 0
+        },
+        "x-mgs-personal-authorization": {
+          "tenantSource": "connector-configuration",
+          "credentialOwner": "current-user",
+          "modelMaySupplyCredentials": false
+        }
+      }
+    },
+    "/admin-api/crm/trial-business/follow-up": {
+      "post": {
+        "tags": [
+          "本人演示业务 - 个人 MGS 授权"
+        ],
+        "summary": "Agent 为本人演示客户新增跟进",
+        "description": "需要用户提供并确认内容、类型和下次联系时间。成功 code=0 且 data 为持久化跟进记录编号。重复幂等键不会重复写入。",
+        "operationId": "TrialBusiness_followUp",
+        "parameters": [
+          {
+            "name": "tenant-id",
+            "in": "header",
+            "description": "可省略，租户过滤器将从已认证用户取得租户。若传入，由连接器服务端固定配置，必须与当前用户及本人试用申请一致；当前演示租户为 1，不能由模型选择。",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 1,
+            "x-mgs-value-source": "connector-configuration",
+            "x-mgs-model-input": false,
+            "x-mgs-omitted-value-source": "authenticated-user"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialFollowUpReqVO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/cn.iocoder.yudao.framework.common.pojo.CommonResultJava.lang.Long"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "MgsTrialPersonalBearer": []
+          }
+        ],
+        "x-java-handler": "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController#followUp",
+        "x-java-handler-signature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<java.lang.Long> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.followUp(cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialFollowUpReqVO)",
+        "x-java-return-type": "cn.iocoder.yudao.framework.common.pojo.CommonResult<java.lang.Long>",
+        "x-business-success": {
+          "path": "code",
+          "meaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
+          "valueType": "integer",
+          "errorPath": "msg",
+          "equals": 0
+        },
+        "x-mgs-personal-authorization": {
+          "tenantSource": "connector-configuration",
+          "credentialOwner": "current-user",
+          "modelMaySupplyCredentials": false
+        }
+      }
+    },
+    "/admin-api/crm/trial-business/follow-ups": {
+      "get": {
+        "tags": [
+          "本人演示业务 - 个人 MGS 授权"
+        ],
+        "summary": "查看本人演示客户的跟进结果",
+        "operationId": "TrialBusiness_followUps",
+        "parameters": [
+          {
+            "name": "tenant-id",
+            "in": "header",
+            "description": "可省略，租户过滤器将从已认证用户取得租户。若传入，由连接器服务端固定配置，必须与当前用户及本人试用申请一致；当前演示租户为 1，不能由模型选择。",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 1,
+            "x-mgs-value-source": "connector-configuration",
+            "x-mgs-model-input": false,
+            "x-mgs-omitted-value-source": "authenticated-user"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/cn.iocoder.yudao.framework.common.pojo.CommonResultJava.util.ListCn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.FollowUpView"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "MgsTrialPersonalBearer": []
+          }
+        ],
+        "x-java-handler": "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController#followUps",
+        "x-java-handler-signature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<java.util.List<cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController$FollowUpView>> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.followUps()",
+        "x-java-return-type": "cn.iocoder.yudao.framework.common.pojo.CommonResult<java.util.List<cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController$FollowUpView>>",
+        "x-business-success": {
+          "path": "code",
+          "meaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
+          "valueType": "integer",
+          "errorPath": "msg",
+          "equals": 0
+        },
+        "x-mgs-personal-authorization": {
+          "tenantSource": "connector-configuration",
+          "credentialOwner": "current-user",
+          "modelMaySupplyCredentials": false
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "MgsTrialPersonalBearer": {
+        "type": "http",
+        "description": "当前申请人本人的 MGS 访问令牌，由知办服务端个人凭据存储注入；不得使用共享管理员令牌或模型输入。",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "cn.iocoder.yudao.framework.common.pojo.CommonResultJava.util.ListCn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.FollowUpView": {
+        "type": "object",
+        "description": "通用返回",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32",
+            "description": "业务状态码，0 表示成功，非 0 表示失败；不能只依据 HTTP 状态判断成功",
+            "example": 0
+          },
+          "msg": {
+            "type": "string",
+            "description": "业务结果说明；失败时为可阅读的错误原因"
+          },
+          "data": {
+            "anyOf": [
+              {
+                "type": "array",
+                "description": "业务结果数据，结构由具体接口定义",
+                "items": {
+                  "$ref": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.FollowUpView"
+                }
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "业务结果数据，结构由具体接口定义"
+          }
+        },
+        "required": [
+          "code"
+        ]
+      },
+      "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.FollowUpView": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "；Long 在 (-9007199254740991,9007199254740991) 内输出 JSON 整数，边界及以外输出十进制字符串以免精度丢失",
+            "oneOf": [
+              {
+                "type": "integer",
+                "format": "int64"
+              },
+              {
+                "type": "string",
+                "description": "Long 十进制字符串，仍须在 int64 范围内",
+                "pattern": "^-?[0-9]+$"
+              }
+            ],
+            "x-wire-java-type": "Long"
+          },
+          "content": {
+            "type": "string"
+          },
+          "type": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nextTime": {
+            "type": "integer",
+            "format": "int64",
+            "description": "；JSON 入参支持整数毫秒时间戳或 ISO 8601 日期时间字符串；JSON 返回为整数毫秒时间戳；不合法的值会被拒绝",
+            "x-wire-java-type": "LocalDateTime",
+            "x-wire-direction": "output"
+          }
+        }
+      },
+      "cn.iocoder.yudao.framework.common.pojo.CommonResultJava.lang.Long": {
+        "type": "object",
+        "description": "通用返回",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32",
+            "description": "业务状态码，0 表示成功，非 0 表示失败；不能只依据 HTTP 状态判断成功",
+            "example": 0
+          },
+          "msg": {
+            "type": "string",
+            "description": "业务结果说明；失败时为可阅读的错误原因"
+          },
+          "data": {
+            "anyOf": [
+              {
+                "description": "业务结果数据，结构由具体接口定义；Long 在 (-9007199254740991,9007199254740991) 内输出 JSON 整数，边界及以外输出十进制字符串以免精度丢失",
+                "oneOf": [
+                  {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "业务结果数据，结构由具体接口定义"
+                  },
+                  {
+                    "type": "string",
+                    "description": "Long 十进制字符串，仍须在 int64 范围内",
+                    "pattern": "^-?[0-9]+$"
+                  }
+                ],
+                "x-wire-java-type": "Long"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "业务结果数据，结构由具体接口定义；Long 在 (-9007199254740991,9007199254740991) 内输出 JSON 整数，边界及以外输出十进制字符串以免精度丢失"
+          }
+        },
+        "required": [
+          "code"
+        ]
+      },
+      "cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialFollowUpReqVO": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "本人演示客户跟进。客户、负责人由已授权账号确定，不接受模型指定。禁止附件和跨业务关联。",
+        "properties": {
+          "idempotencyKey": {
+            "type": "string",
+            "description": "本次业务操作幂等键，重复提交必须保持内容一致",
+            "minLength": 1,
+            "pattern": "[a-zA-Z0-9_.:-]{16,128}"
+          },
+          "content": {
+            "type": "string",
+            "description": "用户确认的跟进内容，不得填写密码、验证码等凭据",
+            "maxLength": 1000,
+            "minLength": 0
+          },
+          "type": {
+            "type": "integer",
+            "format": "int32",
+            "description": "实际跟进类型，从 follow-up-types 查询选择，不要编造"
+          },
+          "nextTime": {
+            "description": "用户指定的下次联系时间；未提供时请询问用户；JSON 入参支持整数毫秒时间戳或 ISO 8601 日期时间字符串；JSON 返回为整数毫秒时间戳；不合法的值会被拒绝",
+            "oneOf": [
+              {
+                "type": "integer",
+                "format": "int64",
+                "description": "Unix 毫秒时间戳；按服务端时区转换成本地时间"
+              },
+              {
+                "type": "string",
+                "description": "ISO 8601 日期时间，可含时区偏移；无偏移时按服务端本地时间；兼容整数字符串时间戳"
+              }
+            ],
+            "x-wire-java-type": "LocalDateTime",
+            "x-wire-direction": "input"
+          }
+        },
+        "required": [
+          "content",
+          "idempotencyKey",
+          "nextTime",
+          "type"
+        ]
+      },
+      "cn.iocoder.yudao.framework.common.pojo.CommonResultJava.util.ListCn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.FollowUpType": {
+        "type": "object",
+        "description": "通用返回",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32",
+            "description": "业务状态码，0 表示成功，非 0 表示失败；不能只依据 HTTP 状态判断成功",
+            "example": 0
+          },
+          "msg": {
+            "type": "string",
+            "description": "业务结果说明；失败时为可阅读的错误原因"
+          },
+          "data": {
+            "anyOf": [
+              {
+                "type": "array",
+                "description": "业务结果数据，结构由具体接口定义",
+                "items": {
+                  "$ref": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.FollowUpType"
+                }
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "业务结果数据，结构由具体接口定义"
+          }
+        },
+        "required": [
+          "code"
+        ]
+      },
+      "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.FollowUpType": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          }
+        }
+      },
+      "cn.iocoder.yudao.framework.common.pojo.CommonResultCn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.CustomerView": {
+        "type": "object",
+        "description": "通用返回",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32",
+            "description": "业务状态码，0 表示成功，非 0 表示失败；不能只依据 HTTP 状态判断成功",
+            "example": 0
+          },
+          "msg": {
+            "type": "string",
+            "description": "业务结果说明；失败时为可阅读的错误原因"
+          },
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.CustomerView",
+                "description": "业务结果数据，结构由具体接口定义"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "业务结果数据，结构由具体接口定义"
+          }
+        },
+        "required": [
+          "code"
+        ]
+      },
+      "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.CustomerView": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "；Long 在 (-9007199254740991,9007199254740991) 内输出 JSON 整数，边界及以外输出十进制字符串以免精度丢失",
+            "oneOf": [
+              {
+                "type": "integer",
+                "format": "int64"
+              },
+              {
+                "type": "string",
+                "description": "Long 十进制字符串，仍须在 int64 范围内",
+                "pattern": "^-?[0-9]+$"
+              }
+            ],
+            "x-wire-java-type": "Long"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "x-mgs-agent-catalog": {
+    "name": "personal-business",
+    "deployedVerified": false,
+    "knowdoImportedVerified": false,
+    "serverConfigurationRequired": true
+  }
+}

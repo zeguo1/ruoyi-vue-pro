@@ -1,0 +1,29 @@
+{
+  "sourceSha256": "af3a9b74df6b74bc4a148e6f1ed6411b149f1c5f23861eec47b821d8930b1c68",
+  "sourceVersion": "1.0.0-full-contract-v6",
+  "contractVersion": "mgs-trial-v1-candidate",
+  "deployedVerified": false,
+  "knowdoImportedVerified": false,
+  "catalogs": [
+    {
+      "file": "onboarding-openapi.json",
+      "sha256": "4abc53b4b81b29afb36ce85db2e558ab6b577a43d94a45c8d3b94ab03f1cfdc4",
+      "operations": [
+        "POST /admin-api/crm/trial-tool/submit",
+        "POST /admin-api/crm/trial-tool/create-accounts",
+        "POST /admin-api/crm/trial-tool/status",
+        "POST /admin-api/crm/trial-tool/guide"
+      ]
+    },
+    {
+      "file": "personal-business-openapi.json",
+      "sha256": "ab9719e2e58da90bd77d6bfded6793b53d3f9bcb370b2d22faee1bb79b3cffed",
+      "operations": [
+        "GET /admin-api/crm/trial-business/customer",
+        "GET /admin-api/crm/trial-business/follow-up-types",
+        "POST /admin-api/crm/trial-business/follow-up",
+        "GET /admin-api/crm/trial-business/follow-ups"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "observedAt": "2026-09-15T00:18:43.195778+00:00",
+  "command": "python3 script/trial/test-agent-catalogs.py -v",
+  "tests": 5,
+  "failures": 0,
+  "errors": 0,
+  "log": "/tmp/mgs-trial-agent-catalog-tests.log",
+  "springdocCommand": "MAVEN_OPTS='-Xmx512m -XX:ActiveProcessorCount=2' mvn -q -pl yudao-server -am test -Dtest=TrialOpenApiExportTest -Dsurefire.failIfNoSpecifiedTests=false -DargLine='-Xmx384m -XX:ActiveProcessorCount=2'",
+  "springdocTests": 2,
+  "springdocLog": "/tmp/mgs-trial-agent-catalog-openapi.log",
+  "sourceHashes": {
+    "build-agent-catalogs.py": "15dfddc24ea5f6cc1b28513bd31bd7d39dd0bf8f23dc664d04a0cf49362c6d2a",
+    "test-agent-catalogs.py": "4995e5402002bc94e86c316eabd9d984367601108eda7257d383667bbfbecdc2",
+    "build-tool-contract.py": "c31eea01587f6f262649d923d535e8e840888f4c7b9e50f31cdc9cfe0c13b5d5",
+    "generated/openapi.json": "af3a9b74df6b74bc4a148e6f1ed6411b149f1c5f23861eec47b821d8930b1c68",
+    "generated/onboarding-openapi.json": "4abc53b4b81b29afb36ce85db2e558ab6b577a43d94a45c8d3b94ab03f1cfdc4",
+    "generated/personal-business-openapi.json": "ab9719e2e58da90bd77d6bfded6793b53d3f9bcb370b2d22faee1bb79b3cffed",
+    "generated/onboarding-tool-contract.json": "dd77285b14beca6a04478bc8a5c848f7cc86c53845e54cdf16194bcd6159abb3",
+    "generated/personal-business-tool-contract.json": "ee44db8a378f116bdf724577aa877a76301139686f828552568393b4c004a1c6"
+  },
+  "scope": [
+    "Actual isolated Springdoc: personal Bearer security, optional server-owned tenant header with authenticated-user fallback, business-only group customization",
+    "Four reviewed operations per catalog, unchanged selected definitions and numeric success conditions, reachable component pruning",
+    "Operator/event/private and unreviewed routes excluded",
+    "Missing routes/references and external references fail; recursive schema references terminate"
+  ],
+  "deployedVerified": false,
+  "knowdoImportedVerified": false,
+  "realEndToEndVerified": false,
+  "javaSourceHashes": {
+    "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/framework/trial/TrialOpenApiCustomizer.java": "c23da2236fe8bf4b6637f0131890f0abd24715f793b378597a5031133b0eb221",
+    "yudao-server/src/test/java/cn/iocoder/yudao/server/contract/TrialOpenApiExportTest.java": "fc34b889d30a61eb986ca4cb47c25018c29893df9b338a6f08f3cd8b3c1e34a9"
+  }
+}

@@ -100,7 +100,32 @@ class TrialOpenApiExportTest {
             var eventContract = doc.path("paths").path("/admin-api/crm/trial-event/accept").path("post").path("x-mgs-service-contract");
             assertEquals("https", eventContract.path("transport").asText());
             assertTrue(eventContract.path("secureRequestRequired").asBoolean());
+            for (String action : List.of("customer", "follow-ups", "follow-up-types", "follow-up")) {
+                var operation = doc.path("paths").path("/admin-api/crm/trial-business/" + action)
+                        .path(action.equals("follow-up") ? "post" : "get");
+                assertTrue(operation.path("security").get(0).has("MgsTrialPersonalBearer"));
+                assertFalse(operation.path("x-mgs-personal-authorization").path("modelMaySupplyCredentials").asBoolean(true));
+                assertEquals(1, operation.path("parameters").size());
+                var tenant = operation.path("parameters").get(0);
+                assertEquals("tenant-id", tenant.path("name").asText());
+                assertEquals("header", tenant.path("in").asText());
+                assertFalse(tenant.path("required").asBoolean(true));
+                assertEquals("authenticated-user", tenant.path("x-mgs-omitted-value-source").asText());
+                assertFalse(tenant.path("x-mgs-model-input").asBoolean(true));
+                assertEquals("connector-configuration", tenant.path("x-mgs-value-source").asText());
+            }
+            assertEquals("bearer", doc.path("components").path("securitySchemes")
+                    .path("MgsTrialPersonalBearer").path("scheme").asText());
         }
+    }
+
+    @Test void businessOnlyGroupStillDeclaresPersonalAuthorization() {
+        var document = new io.swagger.v3.oas.models.OpenAPI().paths(new io.swagger.v3.oas.models.Paths()
+                .addPathItem("/admin-api/crm/trial-business/customer", new io.swagger.v3.oas.models.PathItem()
+                        .get(new io.swagger.v3.oas.models.Operation())));
+        new TrialOpenApiCustomizer().customise(document);
+        assertTrue(document.getPaths().get("/admin-api/crm/trial-business/customer").getGet()
+                .getSecurity().get(0).containsKey("MgsTrialPersonalBearer"));
     }
 
     private JsonNode resolve(JsonNode document, JsonNode schema) {

@@ -66,12 +66,12 @@
     },
     {
       "class": "cn.iocoder.yudao.server.contract.TrialOpenApiExportTest",
-      "tests": 1,
+      "tests": 2,
       "failures": 0,
       "errors": 0,
       "skipped": 0,
       "evidence": "yudao-server/target/surefire-reports/TEST-cn.iocoder.yudao.server.contract.TrialOpenApiExportTest.xml",
-      "reportModifiedAt": "2026-09-14T19:03:40.132213+00:00"
+      "reportModifiedAt": "2026-09-15T00:17:06.127331+00:00"
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialBusinessIntegrationTest",
@@ -155,7 +155,7 @@
       "reportModifiedAt": "2026-09-14T19:02:12.656248+00:00"
     }
   ],
-  "total": 99,
+  "total": 100,
   "realEndToEndVerified": false,
   "limitations": [
     "Corporate bootstrap now covers actual Tenant/Package/Menu/AdminUser/Role/Permission services on H2; config, department/post, MQ and CRM/OAuth boundaries remain doubles. MySQL and deployed initialization are unverified.",
@@ -200,5 +200,6 @@
     ],
     "tlsBoundary": "MockMvc secure-request flag, not a TLS handshake or trusted reverse proxy deployment",
     "knowdoBoundary": "Explicit adapter fixture; no real KnowDo calls"
-  }
+  },
+  "agentCatalogEvidence": "agent-catalog-test-evidence.json: 5 separate Python tests; actual Springdoc assertions are included in TrialOpenApiExportTest (2 tests). Only the documentation tests rerun on 2026-09-15; other suites retain their recorded timestamps."
 }

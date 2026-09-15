@@ -1,0 +1,568 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MGS integration candidate (not deployed)",
+    "version": "1.0.0-full-contract-v6"
+  },
+  "servers": [
+    {
+      "url": "http://localhost",
+      "description": "Generated server url"
+    }
+  ],
+  "x-mgs-trial-contract-version": "mgs-trial-v1-candidate",
+  "paths": {
+    "/admin-api/crm/trial-tool/submit": {
+      "post": {
+        "tags": [
+          "知办可信服务 - 试用开户工具"
+        ],
+        "summary": "保存本人试用申请并关联运营线索",
+        "description": "仅限可信服务 HMAC 请求。联系方式来自已验证身份，不接受自报身份、租户、角色、套餐或期限。code=0 不等于开户完成。",
+        "operationId": "submit_trial_application",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialSubmitReqVO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/cn.iocoder.yudao.framework.common.pojo.CommonResultCn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "MgsTrialSignature": []
+          }
+        ],
+        "x-mgs-trial": {
+          "readOnly": false
+        },
+        "x-java-handler": "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialToolController#submit",
+        "x-java-handler-signature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialToolController.submit(cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialSubmitReqVO,jakarta.servlet.http.HttpServletRequest)",
+        "x-java-return-type": "cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO>",
+        "x-business-success": {
+          "path": "code",
+          "meaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
+          "valueType": "integer",
+          "errorPath": "msg",
+          "equals": 0
+        },
+        "x-mgs-service-contract": {
+          "trustedHeaders": [
+            "X-Mgs-Trial-Key",
+            "X-Mgs-Trial-Timestamp",
+            "X-Mgs-Trial-Nonce",
+            "X-Mgs-Trial-Subject",
+            "X-Mgs-Trial-Verified",
+            "X-Mgs-Trial-Email",
+            "X-Mgs-Trial-Confirmation",
+            "X-Mgs-Trial-Idempotency",
+            "X-Mgs-Trial-Signature"
+          ],
+          "modelMaySupplyIdentity": false,
+          "transport": "https",
+          "version": "mgs-trial-v1",
+          "secureRequestRequired": true,
+          "capability": "TOOLS"
+        },
+        "x-mgs-read-only": false,
+        "x-mgs-account-ready-condition": {
+          "all": [
+            {
+              "equals": 0,
+              "path": "code"
+            },
+            {
+              "equals": true,
+              "path": "data.accountReady"
+            }
+          ]
+        },
+        "x-mgs-success-meaning": "code=0 仅表示本次请求处理成功；账号就绪按 x-mgs-account-ready-condition，公众号绑定与业务完成独立跟踪"
+      }
+    },
+    "/admin-api/crm/trial-tool/create-accounts": {
+      "post": {
+        "tags": [
+          "知办可信服务 - 试用开户工具"
+        ],
+        "summary": "确认申请并受理双侧开户",
+        "description": "确认凭据由可信服务对当前申请出具并纳入签名。只持久化确认和任务，后台逐步执行。以 data.accountReady=true 判断全部就绪。",
+        "operationId": "create_trial_accounts",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/cn.iocoder.yudao.framework.common.pojo.CommonResultCn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "MgsTrialSignature": []
+          }
+        ],
+        "x-java-handler": "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialToolController#create",
+        "x-java-handler-signature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialToolController.create(cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO,jakarta.servlet.http.HttpServletRequest)",
+        "x-java-return-type": "cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO>",
+        "x-business-success": {
+          "path": "code",
+          "meaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
+          "valueType": "integer",
+          "errorPath": "msg",
+          "equals": 0
+        },
+        "x-mgs-service-contract": {
+          "trustedHeaders": [
+            "X-Mgs-Trial-Key",
+            "X-Mgs-Trial-Timestamp",
+            "X-Mgs-Trial-Nonce",
+            "X-Mgs-Trial-Subject",
+            "X-Mgs-Trial-Verified",
+            "X-Mgs-Trial-Email",
+            "X-Mgs-Trial-Confirmation",
+            "X-Mgs-Trial-Idempotency",
+            "X-Mgs-Trial-Signature"
+          ],
+          "modelMaySupplyIdentity": false,
+          "transport": "https",
+          "version": "mgs-trial-v1",
+          "secureRequestRequired": true,
+          "capability": "TOOLS"
+        },
+        "x-mgs-read-only": false,
+        "x-mgs-account-ready-condition": {
+          "all": [
+            {
+              "equals": 0,
+              "path": "code"
+            },
+            {
+              "equals": true,
+              "path": "data.accountReady"
+            }
+          ]
+        },
+        "x-mgs-success-meaning": "code=0 仅表示本次请求处理成功；账号就绪按 x-mgs-account-ready-condition，公众号绑定与业务完成独立跟踪"
+      }
+    },
+    "/admin-api/crm/trial-tool/status": {
+      "post": {
+        "tags": [
+          "知办可信服务 - 试用开户工具"
+        ],
+        "summary": "只读查询本人申请状态",
+        "description": "不会因为查询而重放开户。code=0 表示状态查询成功，data.accountReady=true 才是账号全部就绪。",
+        "operationId": "get_trial_status",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/cn.iocoder.yudao.framework.common.pojo.CommonResultCn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "MgsTrialSignature": []
+          }
+        ],
+        "x-mgs-trial": {
+          "readOnly": true
+        },
+        "x-java-handler": "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialToolController#status",
+        "x-java-handler-signature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialToolController.status(cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO,jakarta.servlet.http.HttpServletRequest)",
+        "x-java-return-type": "cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO>",
+        "x-business-success": {
+          "path": "code",
+          "meaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
+          "valueType": "integer",
+          "errorPath": "msg",
+          "equals": 0
+        },
+        "x-mgs-service-contract": {
+          "trustedHeaders": [
+            "X-Mgs-Trial-Key",
+            "X-Mgs-Trial-Timestamp",
+            "X-Mgs-Trial-Nonce",
+            "X-Mgs-Trial-Subject",
+            "X-Mgs-Trial-Verified",
+            "X-Mgs-Trial-Email",
+            "X-Mgs-Trial-Confirmation",
+            "X-Mgs-Trial-Idempotency",
+            "X-Mgs-Trial-Signature"
+          ],
+          "modelMaySupplyIdentity": false,
+          "transport": "https",
+          "version": "mgs-trial-v1",
+          "secureRequestRequired": true,
+          "capability": "TOOLS"
+        },
+        "x-mgs-read-only": true,
+        "x-mgs-account-ready-condition": {
+          "all": [
+            {
+              "equals": 0,
+              "path": "code"
+            },
+            {
+              "equals": true,
+              "path": "data.accountReady"
+            }
+          ]
+        },
+        "x-mgs-success-meaning": "code=0 仅表示本次请求处理成功；账号就绪按 x-mgs-account-ready-condition，公众号绑定与业务完成独立跟踪"
+      }
+    },
+    "/admin-api/crm/trial-tool/guide": {
+      "post": {
+        "tags": [
+          "知办可信服务 - 试用开户工具"
+        ],
+        "summary": "只读取得本人真实可用的演示指南",
+        "description": "仅账号就绪后返回样例客户引用。业务办理通过 Agent，MGS 页面用于查看结果。",
+        "operationId": "get_trial_guide",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/cn.iocoder.yudao.framework.common.pojo.CommonResultCn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialGuideRespVO"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "MgsTrialSignature": []
+          }
+        ],
+        "x-mgs-trial": {
+          "readOnly": true
+        },
+        "x-java-handler": "cn.iocoder.yudao.module.crm.controller.admin.trial.TrialToolController#guide",
+        "x-java-handler-signature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialGuideRespVO> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialToolController.guide(cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO,jakarta.servlet.http.HttpServletRequest)",
+        "x-java-return-type": "cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialGuideRespVO>",
+        "x-business-success": {
+          "path": "code",
+          "meaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
+          "valueType": "integer",
+          "errorPath": "msg",
+          "equals": 0
+        },
+        "x-mgs-service-contract": {
+          "trustedHeaders": [
+            "X-Mgs-Trial-Key",
+            "X-Mgs-Trial-Timestamp",
+            "X-Mgs-Trial-Nonce",
+            "X-Mgs-Trial-Subject",
+            "X-Mgs-Trial-Verified",
+            "X-Mgs-Trial-Email",
+            "X-Mgs-Trial-Confirmation",
+            "X-Mgs-Trial-Idempotency",
+            "X-Mgs-Trial-Signature"
+          ],
+          "modelMaySupplyIdentity": false,
+          "transport": "https",
+          "version": "mgs-trial-v1",
+          "secureRequestRequired": true,
+          "capability": "TOOLS"
+        },
+        "x-mgs-read-only": true,
+        "x-mgs-account-ready-condition": {
+          "all": [
+            {
+              "equals": 0,
+              "path": "code"
+            },
+            {
+              "equals": true,
+              "path": "data.accountReady"
+            }
+          ]
+        },
+        "x-mgs-success-meaning": "code=0 仅表示本次请求处理成功；账号就绪按 x-mgs-account-ready-condition，公众号绑定与业务完成独立跟踪"
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "MgsTrialSignature": {
+        "type": "apiKey",
+        "description": "仅限 HTTPS 安全请求的 HMAC-SHA256 服务签名，不是静态 API Key。可信会话身份与完整签名 header 由服务端注入；见 mgs-trial-v1 契约。",
+        "name": "X-Mgs-Trial-Signature",
+        "in": "header"
+      }
+    },
+    "schemas": {
+      "cn.iocoder.yudao.framework.common.pojo.CommonResultCn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialGuideRespVO": {
+        "type": "object",
+        "description": "通用返回",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32",
+            "description": "业务状态码，0 表示成功，非 0 表示失败；不能只依据 HTTP 状态判断成功",
+            "example": 0
+          },
+          "msg": {
+            "type": "string",
+            "description": "业务结果说明；失败时为可阅读的错误原因"
+          },
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialGuideRespVO",
+                "description": "业务结果数据，结构由具体接口定义"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "业务结果数据，结构由具体接口定义"
+          }
+        },
+        "required": [
+          "code"
+        ]
+      },
+      "cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialGuideRespVO": {
+        "type": "object",
+        "description": "本人业务体验说明，只返回已准备的真实资源引用，不包含凭据",
+        "properties": {
+          "accountReady": {
+            "type": "boolean",
+            "default": false,
+            "description": "两侧账号及演示资源是否就绪"
+          },
+          "applicationId": {
+            "type": "string",
+            "description": "本人的申请编号"
+          },
+          "instructions": {
+            "type": "string",
+            "description": "当前状态下的真实下一步说明"
+          },
+          "customerId": {
+            "type": "string",
+            "description": "实际生成的虚构演示客户编号，未就绪时为空字符串"
+          },
+          "mgsUrl": {
+            "type": "string",
+            "description": "MGS 办理结果查看地址，未就绪时为空字符串"
+          }
+        }
+      },
+      "cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "本人试用申请引用；仅知道编号不能查询或开户",
+        "properties": {
+          "applicationId": {
+            "type": "string",
+            "description": "submit_trial_application 返回的申请编号",
+            "example": "00000000-0000-0000-0000-000000000001",
+            "minLength": 1,
+            "pattern": "[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
+          }
+        },
+        "required": [
+          "applicationId"
+        ]
+      },
+      "cn.iocoder.yudao.framework.common.pojo.CommonResultCn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO": {
+        "type": "object",
+        "description": "通用返回",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32",
+            "description": "业务状态码，0 表示成功，非 0 表示失败；不能只依据 HTTP 状态判断成功",
+            "example": 0
+          },
+          "msg": {
+            "type": "string",
+            "description": "业务结果说明；失败时为可阅读的错误原因"
+          },
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO",
+                "description": "业务结果数据，结构由具体接口定义"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "业务结果数据，结构由具体接口定义"
+          }
+        },
+        "required": [
+          "code"
+        ]
+      },
+      "cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO": {
+        "type": "object",
+        "description": "试用进度。code=0 仅表示本次命令/查询成功；仅 accountReady=true 表示两侧账号、授权、样例和安全交付准备完成",
+        "properties": {
+          "applicationId": {
+            "type": "string",
+            "description": "申请编号，不是领取凭证"
+          },
+          "status": {
+            "type": "string",
+            "description": "申请状态",
+            "enum": [
+              "SUBMITTED",
+              "PROVISIONING",
+              "READY",
+              "REVOKING",
+              "EXPIRED"
+            ]
+          },
+          "accountReady": {
+            "type": "boolean",
+            "default": false,
+            "description": "整套账号就绪条件；过期时始终为 false"
+          },
+          "expiresAt": {
+            "type": "string",
+            "description": "实际截止时间，ISO-8601 UTC"
+          },
+          "steps": {
+            "type": "array",
+            "description": "各步骤非敏感进度",
+            "items": {
+              "$ref": "#/components/schemas/cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO.StepProgress"
+            }
+          },
+          "nextAction": {
+            "type": "string",
+            "description": "下一步说明"
+          },
+          "cardType": {
+            "type": "string",
+            "description": "安全卡片类型，不包含凭证"
+          },
+          "cardReference": {
+            "type": "string",
+            "description": "非秘密交付记录引用；知办必须经原申请人的可信会话再次鉴权才能领取"
+          }
+        }
+      },
+      "cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO.StepProgress": {
+        "type": "object",
+        "properties": {
+          "step": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "errorCode": {
+            "type": "string"
+          }
+        }
+      },
+      "cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialSubmitReqVO": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "知办可信服务提交试用申请；身份及经验证联系方式通过服务签名提供，不属于模型参数",
+        "properties": {
+          "team": {
+            "type": "string",
+            "description": "团队名称，仅用于留资，不用于合并身份",
+            "example": "示例体验团队",
+            "maxLength": 100,
+            "minLength": 0
+          },
+          "contactName": {
+            "type": "string",
+            "description": "联系人称呼",
+            "example": "王女士",
+            "maxLength": 30,
+            "minLength": 0
+          },
+          "scenario": {
+            "type": "string",
+            "description": "首期体验场景：查询虚构客户并新增跟进",
+            "enum": [
+              "CRM_FOLLOW_UP"
+            ],
+            "example": "CRM_FOLLOW_UP",
+            "minLength": 1,
+            "pattern": "CRM_FOLLOW_UP"
+          }
+        },
+        "required": [
+          "contactName",
+          "scenario",
+          "team"
+        ]
+      }
+    }
+  },
+  "x-mgs-agent-catalog": {
+    "name": "onboarding",
+    "deployedVerified": false,
+    "knowdoImportedVerified": false,
+    "serverConfigurationRequired": true
+  }
+}
