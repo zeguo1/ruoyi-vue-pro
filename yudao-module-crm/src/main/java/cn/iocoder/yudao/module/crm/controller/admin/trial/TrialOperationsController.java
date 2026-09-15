@@ -8,6 +8,8 @@ import cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReq
 import cn.iocoder.yudao.module.crm.service.trial.TrialException;
 import cn.iocoder.yudao.module.crm.service.trial.TrialStore;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Max;
@@ -29,14 +31,23 @@ import java.util.List;
 public class TrialOperationsController {
     private final TrialStore store;
     private final JdbcTemplate jdbc;
-    public record Summary(String applicationId, String team, String contactName, String status, String expiresAt,
-                          String crmClueId, String boundAt, String firstBusinessAt) { }
-    public record Detail(Summary application, List<TrialStore.Step> steps) { }
+    public record Summary(
+            @Schema(description = "申请提交时生成的试用申请编号") String applicationId,
+            @Schema(description = "申请登记的团队或企业名称") String team,
+            @Schema(description = "申请登记的联系人姓名") String contactName,
+            @Schema(description = "申请当前状态；不等于每一步均已完成") String status,
+            @Schema(description = "试用截止时间，ISO-8601 UTC 字符串") String expiresAt,
+            @Schema(description = "CRM 步骤生成的线索编号，未完成时可为空") String crmClueId,
+            @Schema(description = "已核验的绑定事件时间，按数据库 Timestamp 字符串返回；尚未绑定时为空") String boundAt,
+            @Schema(description = "已核验的首次业务完成时间，按数据库 Timestamp 字符串返回；尚未完成时为空") String firstBusinessAt) { }
+    public record Detail(
+            @Schema(description = "申请摘要，仅限当前运营租户") Summary application,
+            @Schema(description = "逐步执行状态与结果；整体受理不等于步骤完成") List<TrialStore.Step> steps) { }
 
     @GetMapping("/page") @PreAuthorize("@ss.hasPermission('crm:trial:query')")
     @Operation(summary = "分页查询本运营租户的试用申请", description = "不返回可信身份、联系方式或任何凭据。联系方式请按现有 CRM 权限查看关联线索。")
-    public CommonResult<PageResult<Summary>> page(@RequestParam(defaultValue = "1") @Min(1) int pageNo,
-                                                  @RequestParam(defaultValue = "20") @Min(1) @Max(100) int pageSize) {
+    public CommonResult<PageResult<Summary>> page(@Parameter(description = "页码，可省略，默认 1，最小为 1", example = "1") @RequestParam(defaultValue = "1") @Min(1) int pageNo,
+                                                  @Parameter(description = "每页条数，可省略，默认 20，范围 1～100", example = "20") @RequestParam(defaultValue = "20") @Min(1) @Max(100) int pageSize) {
         Long tenantId = TenantContextHolder.getRequiredTenantId();
         Long total = jdbc.queryForObject("SELECT COUNT(*) FROM crm_trial_application WHERE operator_tenant_id=?", Long.class, tenantId);
         List<String> ids = jdbc.queryForList("SELECT id FROM crm_trial_application WHERE operator_tenant_id=? ORDER BY created_at DESC LIMIT ? OFFSET ?",
@@ -45,7 +56,7 @@ public class TrialOperationsController {
     }
     @GetMapping("/get") @PreAuthorize("@ss.hasPermission('crm:trial:query')")
     @Operation(summary = "查看本人运营租户的申请与逐步执行结果")
-    public CommonResult<Detail> get(@RequestParam String applicationId) {
+    public CommonResult<Detail> get(@Parameter(description = "试用申请编号，使用申请提交或分页查询返回的 applicationId，不可自行编造", required = true) @RequestParam String applicationId) {
         requireOperator(applicationId);
         return CommonResult.success(new Detail(summary(applicationId), store.steps(applicationId)));
     }

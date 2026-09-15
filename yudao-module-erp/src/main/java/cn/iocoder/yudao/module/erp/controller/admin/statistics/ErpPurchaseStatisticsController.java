@@ -10,6 +10,8 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Max;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,11 +52,13 @@ public class ErpPurchaseStatisticsController {
     }
 
     @GetMapping("/time-summary")
-    @Operation(summary = "获得采购时间段统计")
-    @Parameter(name = "count", description = "时间段数量", example = "6")
+    @Operation(summary = "获得采购时间段统计", description = "按自然月统计，包含当前月，按月份从早到晚返回；count 省略为 6，允许 1～120 个月。最多查询 120 个月以限制逐月数据库聚合次数。")
+    @Parameter(name = "count", description = "统计月份数（包含当前月），可省略，默认 6；范围 1～120", example = "6")
     @PreAuthorize("@ss.hasPermission('erp:statistics:query')")
     public CommonResult<List<ErpPurchaseTimeSummaryRespVO>> getPurchaseTimeSummary(
-            @RequestParam(value = "count", defaultValue = "6") Integer count) {
+            @RequestParam(value = "count", defaultValue = "6")
+            @Min(value = 1, message = "count 至少为 1 个月")
+            @Max(value = 120, message = "count 最多为 120 个月") Integer count) {
         List<ErpPurchaseTimeSummaryRespVO> summaryList = new ArrayList<>();
         for (int i = count - 1; i >= 0; i--) {
             LocalDateTime startTime = LocalDateTimeUtils.beginOfMonth(LocalDateTime.now().minusMonths(i));

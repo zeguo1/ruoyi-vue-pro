@@ -76,6 +76,12 @@ class ChecklistTest(unittest.TestCase):
         self.assertEqual(cond, {'path':'repCode','equals':'0000'})
         self.assertFalse(m.matches_success({'repCode':0}, cond))
         self.assertFalse(m.matches_success({'repCode':'0016'}, cond))
+    def test_cross_parameter_constraints_are_preserved_without_requiring_every_branch(self):
+        doc = self.document()
+        rules = {'location': 'query', 'anyOf': [{'required': ['id']}, {'required': ['productId', 'warehouseId']}], 'precedence': 'id'}
+        self.operation(doc)['x-parameter-constraints'] = rules
+        self.assertEqual(self.entry(doc)['parameterConstraints'], rules)
+
     def test_recursive_and_conflicting_models_are_reported(self):
         doc=self.document(); base=doc['components']['schemas']['Base']
         base['properties']['child']={'$ref':'#/components/schemas/Base'}

@@ -53,16 +53,24 @@ public class ErpStockController {
     private ErpWarehouseService warehouseService;
 
     @GetMapping("/get")
-    @Operation(summary = "获得产品库存")
+    @Operation(summary = "获得产品库存", description = "定位方式二选一：提供库存记录 id，或同时提供 productId 和 warehouseId；提供 id 时优先按 id 查询并忽略另两个定位参数。实际使用的编号必须大于 0。未找到库存记录时 code=0、data=null，仍为查询成功。")
     @Parameters({
-            @Parameter(name = "id", description = "编号", example = "1"), // 方案一：传递 id
-            @Parameter(name = "productId", description = "产品编号", example = "10"), // 方案二：传递 productId + warehouseId
-            @Parameter(name = "warehouseId", description = "仓库编号", example = "2")
+            @Parameter(name = "id", description = "库存记录编号；与商品编号＋仓库编号二选一，提供时优先使用，须大于 0", example = "1"), // 方案一：传递 id
+            @Parameter(name = "productId", description = "产品编号；未提供 id 时必须与 warehouseId 同时提供，须大于 0", example = "10"), // 方案二：传递 productId + warehouseId
+            @Parameter(name = "warehouseId", description = "仓库编号；未提供 id 时必须与 productId 同时提供，须大于 0", example = "2")
     })
     @PreAuthorize("@ss.hasPermission('erp:stock:query')")
     public CommonResult<ErpStockRespVO> getStock(@RequestParam(value = "id", required = false) Long id,
                                                  @RequestParam(value = "productId", required = false) Long productId,
                                                  @RequestParam(value = "warehouseId", required = false) Long warehouseId) {
+        if (id == null && (productId == null || warehouseId == null)) {
+            throw cn.iocoder.yudao.framework.common.exception.util.ServiceExceptionUtil.exception0(400,
+                    "必须提供 id，或同时提供 productId 和 warehouseId");
+        }
+        if (id != null ? id <= 0 : productId <= 0 || warehouseId <= 0) {
+            throw cn.iocoder.yudao.framework.common.exception.util.ServiceExceptionUtil.exception0(400,
+                    "库存定位编号必须大于 0：id 或 productId、warehouseId");
+        }
         ErpStockDO stock = id != null ? stockService.getStock(id) : stockService.getStock(productId, warehouseId);
         return success(BeanUtils.toBean(stock, ErpStockRespVO.class));
     }

@@ -11,10 +11,13 @@ import lombok.Data;
 @Schema(additionalProperties = Schema.AdditionalPropertiesValue.FALSE, description = "知办可信服务事件。绑定成功与业务完成是不同事件；不接受按钮点击/发送消息作为成功证据")
 public class TrialEventReqVO {
     @NotBlank @Pattern(regexp = "[a-zA-Z0-9_.:-]{16,128}")
+    @Schema(description = "知办服务生成的事件幂等编号，16～128 位字母、数字或 _.:-；重试使用同一编号")
     private String eventId;
     @NotBlank @Pattern(regexp = "[a-f0-9-]{36}")
+    @Schema(description = "事件所属试用申请编号，使用申请提交接口返回值")
     private String applicationId;
     @NotBlank @Pattern(regexp = "BOUND|FIRST_BUSINESS_COMPLETED")
+    @Schema(description = "事件类型：BOUND 表示绑定完成；FIRST_BUSINESS_COMPLETED 表示首次业务持久化完成，仍需核验业务记录")
     private String type;
     @NotBlank @Size(max = 128)
     @Schema(description = "已完成知办成员步骤返回的成员编号，必须与申请一致")

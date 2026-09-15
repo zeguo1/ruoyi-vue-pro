@@ -171,6 +171,12 @@ final class WireContractSupport {
                 });
             }
         }
+        if (handler.getBeanType().getName().equals("cn.iocoder.yudao.module.erp.controller.admin.stock.ErpStockController")
+                && handler.getMethod().getName().equals("getStock")) {
+            op.addExtension("x-parameter-constraints", Map.of("location", "query", "anyOf", List.of(
+                    Map.of("required", List.of("id")), Map.of("required", List.of("productId", "warehouseId"))),
+                    "precedence", "id", "minimumUsedIdentifier", 1));
+        }
         if (handler.getBeanType().getSimpleName().equals("OAuth2OpenController")) {
             String method = handler.getMethod().getName();
             if (Set.of("postAccessToken", "checkToken", "revokeToken").contains(method)) {
@@ -190,13 +196,24 @@ final class WireContractSupport {
                         return true;
                     });
                     op.setRequestBody(new io.swagger.v3.oas.models.parameters.RequestBody().required(true)
-                            .description("推荐表单编码；服务端亦兼容 query 参数。按 grant_type 提供对应字段；客户端凭据可由 HTTP Basic 提供。")
+                            .description(method.equals("checkToken")
+                                    ? "提交 application/x-www-form-urlencoded 表单，token 必填；服务端亦兼容 query。客户端身份通过 HTTP Basic 提供，或同时提交 client_id 和 client_secret；不接受 JSON 请求体。"
+                                    : "推荐表单编码；服务端亦兼容 query 参数。按 grant_type 提供对应字段；客户端凭据可由 HTTP Basic 提供。")
                             .content(new Content().addMediaType("application/x-www-form-urlencoded", new MediaType().schema(form))));
                 }
             }
             if (method.equals("approveOrDeny")) {
                 op.addExtension("x-business-success-unresolved", "code=0 仅代表处理完成，data 可能为空或含 access_denied，不能认定同意授权");
             }
+        }
+        // Only zero-argument owned handlers: do not label dynamic servlet/SDK inputs as empty.
+        if (handler.getBeanType().getName().startsWith("cn.iocoder.")
+                && handler.getMethod().getParameterCount() == 0
+                && op.getParameters().isEmpty() && op.getRequestBody() == null) {
+            String note = "未声明业务请求参数，业务参数映射允许为空；认证信息按接口安全声明处理。";
+            op.setDescription(op.getDescription() == null || op.getDescription().isBlank()
+                    ? note : op.getDescription() + "\n" + note);
+            op.addExtension("x-business-input", Map.of("kind", "none", "basis", "zero-argument-handler"));
         }
     }
 

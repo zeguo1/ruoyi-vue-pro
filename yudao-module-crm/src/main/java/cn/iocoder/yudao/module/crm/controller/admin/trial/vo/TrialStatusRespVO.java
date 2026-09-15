@@ -13,5 +13,8 @@ public record TrialStatusRespVO(
         @Schema(description = "下一步说明") String nextAction,
         @Schema(description = "安全卡片类型，不包含凭证") String cardType,
         @Schema(description = "非秘密交付记录引用；知办必须经原申请人的可信会话再次鉴权才能领取") String cardReference) {
-    public record StepProgress(String step, String state, String errorCode) { }
+    public record StepProgress(
+            @Schema(description = "开户或撤销流程的步骤名称") String step,
+            @Schema(description = "该步骤的执行状态，与申请整体状态分开记录") String state,
+            @Schema(description = "步骤失败原因代码，无错误时可为空") String errorCode) { }
 }

@@ -26,7 +26,7 @@ class FullOpenApiExportTest {
     @Import(cn.iocoder.yudao.framework.jackson.config.YudaoJacksonAutoConfiguration.class)
     static class Documentation implements WebMvcConfigurer {
         @Bean org.springdoc.core.providers.JavadocProvider javadocProvider() { return new cn.iocoder.yudao.framework.swagger.config.ContractJavadocProvider(); }
-        @Bean io.swagger.v3.oas.models.OpenAPI apiInfo() { return new io.swagger.v3.oas.models.OpenAPI().info(new io.swagger.v3.oas.models.info.Info().title("MGS integration candidate (not deployed)").version("1.0.0-full-contract-v6")); }
+        @Bean io.swagger.v3.oas.models.OpenAPI apiInfo() { return new io.swagger.v3.oas.models.OpenAPI().info(new io.swagger.v3.oas.models.info.Info().title("MGS integration candidate (not deployed)").version("1.0.0-full-contract-v7")); }
         @Bean org.springdoc.core.models.GroupedOpenApi all() { return cn.iocoder.yudao.framework.swagger.config.YudaoSwaggerAutoConfiguration.buildGroupedOpenApi("all", ""); }
         @Bean ContractSchemaCustomizer contractSchemaCustomizer() { return new ContractSchemaCustomizer(); }
         @Override public void configurePathMatch(PathMatchConfigurer configurer) {
@@ -48,10 +48,12 @@ class FullOpenApiExportTest {
             context.setServletContext(new MockServletContext());
             TestPropertySourceUtils.addInlinedPropertiesToEnvironment(context,
                     "spring.autoconfigure.exclude=" + String.join(",", excluded),
+                    "mgs.trial.storage-enabled=true",
                     "spring.jackson.serialization.write-dates-as-timestamps=true", "spring.jackson.serialization.write-date-timestamps-as-nanoseconds=false", "springdoc.api-docs.version=OPENAPI_3_1", "springdoc.use-fqn=true", "springdoc.api-docs.enabled=true", "springdoc.default-flat-param-object=true");
             context.register(Documentation.class);
             // Register instances directly to bypass dependency injection and all business initialization.
             var scanner = new ClassPathScanningCandidateComponentProvider(false);
+            scanner.setEnvironment(context.getEnvironment());
             scanner.addIncludeFilter(new AnnotationTypeFilter(Controller.class));
             var objects = new ObjenesisStd();
             var controllers = new TreeMap<String, Object>();
@@ -109,7 +111,8 @@ class FullOpenApiExportTest {
                         String in = requestBody != null ? "requestBody" : pathVariable != null ? "path" : "query";
                         boolean required = requestBody != null ? requestBody.required() : pathVariable != null || requestParam.required()
                                 && org.springframework.web.bind.annotation.ValueConstants.DEFAULT_NONE.equals(requestParam.defaultValue());
-                        arguments.add(Map.of("name", name, "in", in, "javaType", argument.getParameterizedType().getTypeName(), "required", required));
+                        arguments.add(Map.of("name", name, "in", in, "javaType", argument.getParameterizedType().getTypeName(), "required", required,
+                                "mvcRequired", pathVariable != null ? pathVariable.required() : required));
                     }
                     handlerInventory.put(method.toGenericString(), arguments);
                 }

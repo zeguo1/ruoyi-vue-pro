@@ -1,6 +1,7 @@
 package cn.iocoder.yudao.module.crm.service.trial;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -32,7 +33,12 @@ public class TrialStore {
     public record Application(String id, String issuer, String subjectId, String identityHash, String requestHash,
                               String team, String contactName, String verifiedEmail, String scenario,
                               TrialProperties.Policy policy, String status, Instant confirmedAt, Instant expiresAt) { }
-    public record Step(String name, String state, Map<String, String> result, String errorCode, int attempts) { }
+    public record Step(
+            @Schema(description = "开户或撤销流程的步骤名称") String name,
+            @Schema(description = "该步骤已持久化的执行状态") String state,
+            @Schema(description = "步骤结果，键随步骤而异，不能假定为统一固定字段") Map<String, String> result,
+            @Schema(description = "步骤失败原因代码，无错误时可为空") String errorCode,
+            @Schema(description = "该步骤已记录的尝试次数") int attempts) { }
 
     public Application submit(TrialIdentity identity, String key, String team, String contactName, String scenario,
                               TrialProperties.Policy policy, int maxApplications) {

@@ -295,6 +295,8 @@ def build(document, sha):
             entry = {'operationId': op.get('operationId'), 'summary': op.get('summary'),
                      'openapiPointer': pointer, 'javaHandler': handler, 'javaHandlerSignature': op.get('x-java-handler-signature'),
                      'parameterMappings': rows, 'derivedFields': derived,
+                     'parameterConstraints': op.get('x-parameter-constraints'),
+                     'businessInput': op.get('x-business-input'),
                      'responseContracts': [
                          {'status': status, 'mediaType': media, 'types': evidence.types(content.get('schema', {})),
                           'schemaPointer': pointer + '/responses/' + status + '/content/' + pointer_escape(media) + '/schema'}

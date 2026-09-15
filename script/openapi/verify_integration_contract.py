@@ -8,6 +8,13 @@ from jsonschema import Draft202012Validator
 from build_integration_checklist import Evidence, METHODS, build, read_document, matches_success
 
 
+def applies_to_path(argument, path):
+    # A single MVC method can serve /view/{id} and /view/{id}/{type}.
+    # An optional @PathVariable absent from this variant must not become a query parameter.
+    return not (argument['in'] == 'path' and argument.get('mvcRequired') is False
+                and argument['name'] not in re.findall(r'\{([^}]+)\}', path))
+
+
 def verify(document, inventory, downloads, examples):
     evidence = Evidence(document)
     report = build(document, 'verification')
@@ -33,6 +40,8 @@ def verify(document, inventory, downloads, examples):
             by_handler.setdefault(op.get('x-java-handler'), []).append((key, op))
             check(op.get('x-java-handler-signature', op.get('x-java-handler')) in inventory, key + ' missing reflected handler evidence')
             for argument in inventory.get(op.get('x-java-handler-signature', op.get('x-java-handler')), []):
+                if not applies_to_path(argument, path):
+                    continue
                 if argument['in'] == 'requestBody':
                     check(bool(op.get('requestBody')), key + ' missing actual @RequestBody')
                     checked += 1
