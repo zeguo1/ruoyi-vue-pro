@@ -83,3 +83,14 @@ yudao:
     midjourney: {enable: false}
     suno: {enable: false}
     web-search: {enable: false}
+
+# Trial services are deployed for integration; new onboarding and SMS remain closed.
+mgs:
+  trial:
+    storage-enabled: true
+    enabled: false
+    demo-tenant-id: 1
+    operator-bootstrap:
+      enabled: false
+    sms-verification:
+      enabled: false

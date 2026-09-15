@@ -1,0 +1,378 @@
+{
+  "verifiedAt": "2026-09-15T01:42:00.084732+00:00",
+  "applicationUrl": "http://192.168.1.199:8088",
+  "artifact": {
+    "commit": "c67bfe25b966d56b226d2b3dd5400b3c34033d07",
+    "sha256": "08f025891629556436bea2dcdbab0b0edb0bdba4ddb95c0e3a501ac06e3ccc31",
+    "size": 550297705
+  },
+  "build": {
+    "result": "SUCCESS",
+    "command": "MAVEN_OPTS=\"-Xmx512m -XX:ActiveProcessorCount=2\" mvn -B -pl yudao-server -am -DskipTests package",
+    "isolatedWorktree": true,
+    "log": "/opt/mgs/releases/build-c67bfe25b9.log",
+    "tests": "No test rerun during package; prior isolated regression evidence retained in test-evidence.json, including 45 focused SMS/auth/HTTP/MySQL/OpenAPI cases."
+  },
+  "migrations": [
+    {
+      "file": "V20260914_01__trial_onboarding.sql",
+      "sha256": "0b6a280ca39abd12a95f7433c2a8dba35a70f8cdf5876208fb12326443d6bc9a",
+      "exitCode": 0
+    },
+    {
+      "file": "V20260914_02__trial_menus.sql",
+      "sha256": "49f0257807f158d78a38380a4aa83b44ecc8bf008e8480fb69075cd035017980",
+      "exitCode": 0
+    },
+    {
+      "file": "V20260914_03__trial_operator_setup.sql",
+      "sha256": "233e0ee1c0d50528742f3970e6baab0d67ce79950ff15e1548502eec39ecd4df",
+      "exitCode": 0
+    },
+    {
+      "file": "V20260914_04__trial_login_delivery.sql",
+      "sha256": "c895c05891e87c2f6795d9f09ec24b65860e196f74ff7f6448e0ed97999a7d88",
+      "exitCode": 0
+    },
+    {
+      "file": "V20260915_05__trial_sms_verification.sql",
+      "sha256": "5226b2e9c9ab22b5f2088726d1b543d2d9f6259a6ae4bca699ced58ccab28344",
+      "exitCode": 0
+    }
+  ],
+  "config": {
+    "storageEnabled": true,
+    "onboardingEnabled": false,
+    "smsEnabled": false,
+    "operatorBootstrapEnabled": false
+  },
+  "services": {
+    "server": {
+      "recreated": true,
+      "health": "healthy",
+      "running": true,
+      "restartCount": 0
+    },
+    "admin": {
+      "recreated": false,
+      "health": "healthy",
+      "running": true,
+      "restartCount": 0
+    },
+    "gateway": {
+      "recreated": false,
+      "health": null,
+      "running": true,
+      "restartCount": 0
+    },
+    "mysql": {
+      "recreated": false,
+      "health": "healthy",
+      "running": true,
+      "restartCount": 0
+    },
+    "redis": {
+      "recreated": false,
+      "health": "healthy",
+      "running": true,
+      "restartCount": 0
+    },
+    "tdengine": {
+      "recreated": false,
+      "health": "healthy",
+      "running": true,
+      "restartCount": 0
+    }
+  },
+  "openapi": {
+    "openapi-default.json": {
+      "pathCount": 3336,
+      "operationCount": 3451,
+      "checkedReferences": 6388,
+      "brokenReferences": [],
+      "duplicateOperationIds": [],
+      "trialPaths": {
+        "/admin-api/crm/trial-tool/submit": [
+          "post"
+        ],
+        "/admin-api/crm/trial-tool/status": [
+          "post"
+        ],
+        "/admin-api/crm/trial-tool/guide": [
+          "post"
+        ],
+        "/admin-api/crm/trial-tool/create-accounts": [
+          "post"
+        ],
+        "/admin-api/crm/trial-operations/recover": [
+          "post"
+        ],
+        "/admin-api/crm/trial-event/accept": [
+          "post"
+        ],
+        "/admin-api/crm/trial-business/follow-up": [
+          "post"
+        ],
+        "/admin-api/crm/trial-operations/page": [
+          "get"
+        ],
+        "/admin-api/crm/trial-operations/get": [
+          "get"
+        ],
+        "/admin-api/crm/trial-business/follow-ups": [
+          "get"
+        ],
+        "/admin-api/crm/trial-business/follow-up-types": [
+          "get"
+        ],
+        "/admin-api/crm/trial-business/customer": [
+          "get"
+        ]
+      },
+      "privateEndpointsAbsent": true,
+      "erp": {
+        "POST /admin-api/erp/sale-order/create": {
+          "itemFields": [
+            "id",
+            "productId",
+            "productUnitId",
+            "productPrice",
+            "count",
+            "taxPercent",
+            "remark"
+          ],
+          "required": [
+            "count",
+            "productId",
+            "productPrice"
+          ],
+          "productUnitId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "后端从产品资料取得单位编号；调用方无需提交，传入值忽略",
+            "readOnly": true
+          }
+        },
+        "PUT /admin-api/erp/sale-order/update": {
+          "itemFields": [
+            "id",
+            "productId",
+            "productUnitId",
+            "productPrice",
+            "count",
+            "taxPercent",
+            "remark"
+          ],
+          "required": [
+            "count",
+            "productId",
+            "productPrice"
+          ],
+          "productUnitId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "后端从产品资料取得单位编号；调用方无需提交，传入值忽略",
+            "readOnly": true
+          }
+        }
+      },
+      "url": "http://192.168.1.199:8088/v3/api-docs",
+      "sha256": "71c6fd553bfab9d4f3b6c900e3b13ea9e3b5a078ce8c201a0f7b29a49c409b62",
+      "version": "1.0.0-full-contract-v6",
+      "trialContractVersion": "mgs-trial-v2-candidate",
+      "trialSuccessConditionsVerified": true
+    },
+    "openapi-all.json": {
+      "pathCount": 3013,
+      "operationCount": 3052,
+      "checkedReferences": 5908,
+      "brokenReferences": [],
+      "duplicateOperationIds": [],
+      "trialPaths": {
+        "/admin-api/crm/trial-tool/submit": [
+          "post"
+        ],
+        "/admin-api/crm/trial-tool/status": [
+          "post"
+        ],
+        "/admin-api/crm/trial-tool/guide": [
+          "post"
+        ],
+        "/admin-api/crm/trial-tool/create-accounts": [
+          "post"
+        ],
+        "/admin-api/crm/trial-operations/recover": [
+          "post"
+        ],
+        "/admin-api/crm/trial-event/accept": [
+          "post"
+        ],
+        "/admin-api/crm/trial-business/follow-up": [
+          "post"
+        ],
+        "/admin-api/crm/trial-operations/page": [
+          "get"
+        ],
+        "/admin-api/crm/trial-operations/get": [
+          "get"
+        ],
+        "/admin-api/crm/trial-business/follow-ups": [
+          "get"
+        ],
+        "/admin-api/crm/trial-business/follow-up-types": [
+          "get"
+        ],
+        "/admin-api/crm/trial-business/customer": [
+          "get"
+        ]
+      },
+      "privateEndpointsAbsent": true,
+      "erp": {
+        "POST /admin-api/erp/sale-order/create": {
+          "itemFields": [
+            "id",
+            "productId",
+            "productUnitId",
+            "productPrice",
+            "count",
+            "taxPercent",
+            "remark"
+          ],
+          "required": [
+            "count",
+            "productId",
+            "productPrice"
+          ],
+          "productUnitId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "后端从产品资料取得单位编号；调用方无需提交，传入值忽略",
+            "readOnly": true
+          }
+        },
+        "PUT /admin-api/erp/sale-order/update": {
+          "itemFields": [
+            "id",
+            "productId",
+            "productUnitId",
+            "productPrice",
+            "count",
+            "taxPercent",
+            "remark"
+          ],
+          "required": [
+            "count",
+            "productId",
+            "productPrice"
+          ],
+          "productUnitId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "后端从产品资料取得单位编号；调用方无需提交，传入值忽略",
+            "readOnly": true
+          }
+        }
+      },
+      "url": "http://192.168.1.199:8088/v3/api-docs/all",
+      "sha256": "cf7d7ad8dabd5ff3f9623678e84503a0febf87cbfc3e95cfe424276d5b761399",
+      "version": "1.0.0-full-contract-v6",
+      "trialContractVersion": "mgs-trial-v2-candidate",
+      "trialSuccessConditionsVerified": true
+    }
+  },
+  "httpChecks": [
+    {
+      "path": "/",
+      "method": "GET",
+      "httpStatus": 200,
+      "body": null,
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "/admin-api/crm/trial-verification/send",
+      "method": "POST",
+      "httpStatus": 200,
+      "body": {
+        "code": 1020100001,
+        "msg": "试用服务身份或签名无效",
+        "data": null
+      },
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "/admin-api/crm/trial-verification/verify",
+      "method": "POST",
+      "httpStatus": 200,
+      "body": {
+        "code": 1020100001,
+        "msg": "试用服务身份或签名无效",
+        "data": null
+      },
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "/admin-api/crm/trial-internal/authorization",
+      "method": "POST",
+      "httpStatus": 200,
+      "body": {
+        "code": 1020100001,
+        "msg": "试用服务身份或签名无效",
+        "data": null
+      },
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "/admin-api/crm/trial-internal/login-delivery",
+      "method": "POST",
+      "httpStatus": 200,
+      "body": {
+        "code": 1020100001,
+        "msg": "试用服务身份或签名无效",
+        "data": null
+      },
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "/admin-api/crm/trial-tool/status",
+      "method": "POST",
+      "httpStatus": 200,
+      "body": {
+        "code": 1020100001,
+        "msg": "试用服务身份或签名无效",
+        "data": null
+      },
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "/admin-api/crm/trial-business/customer",
+      "method": "GET",
+      "httpStatus": 200,
+      "body": {
+        "code": 401,
+        "msg": "账号未登录",
+        "data": null
+      },
+      "cacheControl": "no-cache, no-store, max-age=0, must-revalidate"
+    }
+  ],
+  "trialRowCounts": {
+    "applications": 0,
+    "smsChallenges": 0,
+    "verifiedContacts": 0
+  },
+  "backupDirectory": "/opt/mgs/backups/trial-deploy-20260915",
+  "backupTableCount": 581,
+  "frontendDeployed": false,
+  "knowdoDeployed": false,
+  "knowdoImportVerified": false,
+  "realSmsSent": false,
+  "realAccountsCreated": false,
+  "remaining": [
+    "Real SMS provider/template and secrets not configured",
+    "Trusted HTTPS proxy path not validated; current HTTP refuses signed service requests",
+    "KnowDo card and inbound v2/outbound integration not validated",
+    "Corporate operator tenant and quotas/duration/OAuth configuration pending",
+    "Frontend full typecheck gate unresolved; staged UI changes not released",
+    "Host disk free space remains low (about 700 MiB at verification)"
+  ]
+}
