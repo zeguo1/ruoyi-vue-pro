@@ -90,6 +90,8 @@ mgs:
     storage-enabled: true
     enabled: false
     demo-tenant-id: 1
+    operator-tenant-id: 121
+    owner-user-id: 110
     operator-bootstrap:
       enabled: false
     sms-verification:
