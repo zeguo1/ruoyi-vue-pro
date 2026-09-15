@@ -110,6 +110,28 @@ class TrialMySqlIntegrationTest extends TrialOrchestratorTest {
         for (String suffix : List.of("01__trial_onboarding", "02__trial_menus", "03__trial_operator_setup", "04__trial_login_delivery")) {
             new ResourceDatabasePopulator(new FileSystemResource("../script/trial/V20260914_" + suffix + ".sql")).execute(database);
         }
+        new ResourceDatabasePopulator(new FileSystemResource("../script/trial/V20260915_05__trial_sms_verification.sql")).execute(database);
+    }
+
+    @Test void smsAttemptsAndProofBindingUseActualMySqlTransactions() {
+        new ResourceDatabasePopulator(new FileSystemResource("../script/trial/V20260915_05__trial_sms_verification.sql")).execute(database);
+        var sender = new TrialSmsVerificationTest.CapturingSender();
+        var verifier = new TrialSmsVerificationService(TrialSmsVerificationTest.properties(), jdbc,
+                new org.springframework.transaction.support.TransactionTemplate(new org.springframework.jdbc.datasource.DataSourceTransactionManager(database)), sender, store);
+        var first = TrialSmsVerificationTest.identity("sms-first", "sms-action-00000001", "");
+        String challenge = verifier.send(first, "13800000001").challengeId();
+        String wrong = sender.codes.get("13800000001").equals("000000") ? "000001" : "000000";
+        for (int i = 0; i < 5; i++) { assertThrows(cn.iocoder.yudao.framework.common.exception.ServiceException.class, () -> verifier.verify(first, challenge, wrong)); }
+        assertEquals(5, jdbc.queryForObject("SELECT attempts FROM crm_trial_sms_challenge WHERE id=?", Integer.class, challenge));
+        assertThrows(cn.iocoder.yudao.framework.common.exception.ServiceException.class, () -> verifier.verify(first, challenge, sender.codes.get("13800000001")));
+        var second = TrialSmsVerificationTest.identity("sms-second", "sms-action-00000002", "");
+        String next = verifier.send(second, "13800000002").challengeId();
+        String proof = verifier.verify(second, next, sender.codes.get("13800000002")).verificationToken();
+        var identity = TrialSmsVerificationTest.identity("sms-second", "sms-submit-00000002", proof);
+        var app = verifier.submit(identity, "测试团队", "测试联系人", "CRM_FOLLOW_UP");
+        assertEquals("SUBMITTED", app.status()); assertNull(app.confirmedAt());
+        assertEquals(app.id(), verifier.submit(identity, "测试团队", "测试联系人", "CRM_FOLLOW_UP").id());
+        assertEquals("13800000002", jdbc.queryForObject("SELECT mobile FROM crm_trial_verified_contact WHERE application_id=?", String.class, app.id()));
     }
 
     private static String docker(Map<String, String> environment, String... arguments) throws Exception {

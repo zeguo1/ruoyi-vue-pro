@@ -10,7 +10,7 @@
       "description": "Generated server url"
     }
   ],
-  "x-mgs-trial-contract-version": "mgs-trial-v1-candidate",
+  "x-mgs-trial-contract-version": "mgs-trial-v2-candidate",
   "paths": {
     "/admin-api/crm/trial-business/customer": {
       "get": {
@@ -57,11 +57,11 @@
         "x-java-handler-signature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController$CustomerView> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.customer()",
         "x-java-return-type": "cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController$CustomerView>",
         "x-business-success": {
+          "equals": 0,
           "path": "code",
           "meaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
           "valueType": "integer",
-          "errorPath": "msg",
-          "equals": 0
+          "errorPath": "msg"
         },
         "x-mgs-personal-authorization": {
           "tenantSource": "connector-configuration",
@@ -114,11 +114,11 @@
         "x-java-handler-signature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<java.util.List<cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController$FollowUpType>> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.types()",
         "x-java-return-type": "cn.iocoder.yudao.framework.common.pojo.CommonResult<java.util.List<cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController$FollowUpType>>",
         "x-business-success": {
+          "equals": 0,
           "path": "code",
           "meaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
           "valueType": "integer",
-          "errorPath": "msg",
-          "equals": 0
+          "errorPath": "msg"
         },
         "x-mgs-personal-authorization": {
           "tenantSource": "connector-configuration",
@@ -182,11 +182,11 @@
         "x-java-handler-signature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<java.lang.Long> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.followUp(cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialFollowUpReqVO)",
         "x-java-return-type": "cn.iocoder.yudao.framework.common.pojo.CommonResult<java.lang.Long>",
         "x-business-success": {
+          "equals": 0,
           "path": "code",
           "meaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
           "valueType": "integer",
-          "errorPath": "msg",
-          "equals": 0
+          "errorPath": "msg"
         },
         "x-mgs-personal-authorization": {
           "tenantSource": "connector-configuration",
@@ -239,11 +239,11 @@
         "x-java-handler-signature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<java.util.List<cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController$FollowUpView>> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController.followUps()",
         "x-java-return-type": "cn.iocoder.yudao.framework.common.pojo.CommonResult<java.util.List<cn.iocoder.yudao.module.crm.controller.admin.trial.TrialBusinessController$FollowUpView>>",
         "x-business-success": {
+          "equals": 0,
           "path": "code",
           "meaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
           "valueType": "integer",
-          "errorPath": "msg",
-          "equals": 0
+          "errorPath": "msg"
         },
         "x-mgs-personal-authorization": {
           "tenantSource": "connector-configuration",

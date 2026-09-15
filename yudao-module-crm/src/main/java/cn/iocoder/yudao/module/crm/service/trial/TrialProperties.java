@@ -28,6 +28,30 @@ public class TrialProperties {
     private String oauthClientId;
     private Map<String, ServiceKey> keys = Map.of();
     private LoginDelivery loginDelivery = new LoginDelivery();
+    private SmsVerification smsVerification = new SmsVerification();
+
+    @Data
+    public static class SmsVerification {
+        private boolean enabled;
+        private String templateCode;
+        @lombok.ToString.Exclude
+        private String secret;
+        private int codeTtlSeconds = 300;
+        private int proofTtlSeconds = 600;
+        private int resendSeconds = 60;
+        private int maxAttempts = 5;
+        private int maxPerMobilePerDay = 5;
+        private int maxPerIdentityPerDay = 5;
+        private int maxTotalPerDay = 500;
+
+        public boolean ready() {
+            return enabled && templateCode != null && !templateCode.isBlank() && secret != null && secret.length() >= 32
+                    && codeTtlSeconds >= 60 && codeTtlSeconds <= 600 && proofTtlSeconds >= 60 && proofTtlSeconds <= 1800
+                    && resendSeconds >= 60 && resendSeconds <= 3600 && maxAttempts >= 1 && maxAttempts <= 5
+                    && maxPerMobilePerDay >= 1 && maxPerMobilePerDay <= 20
+                    && maxPerIdentityPerDay >= 1 && maxPerIdentityPerDay <= 20 && maxTotalPerDay >= 1;
+        }
+    }
 
     @Data
     public static class LoginDelivery {

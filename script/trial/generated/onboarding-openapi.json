@@ -10,7 +10,7 @@
       "description": "Generated server url"
     }
   ],
-  "x-mgs-trial-contract-version": "mgs-trial-v1-candidate",
+  "x-mgs-trial-contract-version": "mgs-trial-v2-candidate",
   "paths": {
     "/admin-api/crm/trial-tool/submit": {
       "post": {
@@ -18,7 +18,7 @@
           "知办可信服务 - 试用开户工具"
         ],
         "summary": "保存本人试用申请并关联运营线索",
-        "description": "仅限可信服务 HMAC 请求。联系方式来自已验证身份，不接受自报身份、租户、角色、套餐或期限。code=0 不等于开户完成。",
+        "description": "仅限 mgs-trial-v2 可信服务 HMAC 请求，必须附带 MGS 签发的短信验证凭据。手机号由后端验证记录取得，不接受自报手机号或验证邮箱作为依据。短信验证不代表同意开户；code=0 不等于开户完成。",
         "operationId": "submit_trial_application",
         "parameters": [],
         "requestBody": {
@@ -55,40 +55,48 @@
         "x-java-handler-signature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialToolController.submit(cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialSubmitReqVO,jakarta.servlet.http.HttpServletRequest)",
         "x-java-return-type": "cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO>",
         "x-business-success": {
+          "equals": 0,
           "path": "code",
           "meaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
           "valueType": "integer",
-          "errorPath": "msg",
-          "equals": 0
+          "errorPath": "msg"
         },
         "x-mgs-service-contract": {
+          "secureRequestRequired": true,
+          "capability": "TOOLS",
           "trustedHeaders": [
+            "X-Mgs-Trial-Version",
             "X-Mgs-Trial-Key",
             "X-Mgs-Trial-Timestamp",
             "X-Mgs-Trial-Nonce",
             "X-Mgs-Trial-Subject",
             "X-Mgs-Trial-Verified",
-            "X-Mgs-Trial-Email",
+            "X-Mgs-Trial-Verification",
             "X-Mgs-Trial-Confirmation",
             "X-Mgs-Trial-Idempotency",
             "X-Mgs-Trial-Signature"
           ],
           "modelMaySupplyIdentity": false,
           "transport": "https",
-          "version": "mgs-trial-v1",
-          "secureRequestRequired": true,
-          "capability": "TOOLS"
+          "version": "mgs-trial-v2"
+        },
+        "x-mgs-contact-verification": {
+          "method": "sms",
+          "proofHeader": "X-Mgs-Trial-Verification",
+          "issuer": "MGS",
+          "verificationDoesNotConfirmOpening": true,
+          "modelMaySupplyProof": false
         },
         "x-mgs-read-only": false,
         "x-mgs-account-ready-condition": {
           "all": [
             {
-              "equals": 0,
-              "path": "code"
+              "path": "code",
+              "equals": 0
             },
             {
-              "equals": true,
-              "path": "data.accountReady"
+              "path": "data.accountReady",
+              "equals": true
             }
           ]
         },
@@ -135,40 +143,41 @@
         "x-java-handler-signature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialToolController.create(cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO,jakarta.servlet.http.HttpServletRequest)",
         "x-java-return-type": "cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO>",
         "x-business-success": {
+          "equals": 0,
           "path": "code",
           "meaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
           "valueType": "integer",
-          "errorPath": "msg",
-          "equals": 0
+          "errorPath": "msg"
         },
         "x-mgs-service-contract": {
+          "secureRequestRequired": true,
+          "capability": "TOOLS",
           "trustedHeaders": [
+            "X-Mgs-Trial-Version",
             "X-Mgs-Trial-Key",
             "X-Mgs-Trial-Timestamp",
             "X-Mgs-Trial-Nonce",
             "X-Mgs-Trial-Subject",
             "X-Mgs-Trial-Verified",
-            "X-Mgs-Trial-Email",
+            "X-Mgs-Trial-Verification",
             "X-Mgs-Trial-Confirmation",
             "X-Mgs-Trial-Idempotency",
             "X-Mgs-Trial-Signature"
           ],
           "modelMaySupplyIdentity": false,
           "transport": "https",
-          "version": "mgs-trial-v1",
-          "secureRequestRequired": true,
-          "capability": "TOOLS"
+          "version": "mgs-trial-v2"
         },
         "x-mgs-read-only": false,
         "x-mgs-account-ready-condition": {
           "all": [
             {
-              "equals": 0,
-              "path": "code"
+              "path": "code",
+              "equals": 0
             },
             {
-              "equals": true,
-              "path": "data.accountReady"
+              "path": "data.accountReady",
+              "equals": true
             }
           ]
         },
@@ -218,40 +227,41 @@
         "x-java-handler-signature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialToolController.status(cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO,jakarta.servlet.http.HttpServletRequest)",
         "x-java-return-type": "cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialStatusRespVO>",
         "x-business-success": {
+          "equals": 0,
           "path": "code",
           "meaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
           "valueType": "integer",
-          "errorPath": "msg",
-          "equals": 0
+          "errorPath": "msg"
         },
         "x-mgs-service-contract": {
+          "secureRequestRequired": true,
+          "capability": "TOOLS",
           "trustedHeaders": [
+            "X-Mgs-Trial-Version",
             "X-Mgs-Trial-Key",
             "X-Mgs-Trial-Timestamp",
             "X-Mgs-Trial-Nonce",
             "X-Mgs-Trial-Subject",
             "X-Mgs-Trial-Verified",
-            "X-Mgs-Trial-Email",
+            "X-Mgs-Trial-Verification",
             "X-Mgs-Trial-Confirmation",
             "X-Mgs-Trial-Idempotency",
             "X-Mgs-Trial-Signature"
           ],
           "modelMaySupplyIdentity": false,
           "transport": "https",
-          "version": "mgs-trial-v1",
-          "secureRequestRequired": true,
-          "capability": "TOOLS"
+          "version": "mgs-trial-v2"
         },
         "x-mgs-read-only": true,
         "x-mgs-account-ready-condition": {
           "all": [
             {
-              "equals": 0,
-              "path": "code"
+              "path": "code",
+              "equals": 0
             },
             {
-              "equals": true,
-              "path": "data.accountReady"
+              "path": "data.accountReady",
+              "equals": true
             }
           ]
         },
@@ -301,40 +311,41 @@
         "x-java-handler-signature": "public cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialGuideRespVO> cn.iocoder.yudao.module.crm.controller.admin.trial.TrialToolController.guide(cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialApplicationReqVO,jakarta.servlet.http.HttpServletRequest)",
         "x-java-return-type": "cn.iocoder.yudao.framework.common.pojo.CommonResult<cn.iocoder.yudao.module.crm.controller.admin.trial.vo.TrialGuideRespVO>",
         "x-business-success": {
+          "equals": 0,
           "path": "code",
           "meaning": "本次接口处理成功；不保证 data 非空，不表示异步业务最终完成",
           "valueType": "integer",
-          "errorPath": "msg",
-          "equals": 0
+          "errorPath": "msg"
         },
         "x-mgs-service-contract": {
+          "secureRequestRequired": true,
+          "capability": "TOOLS",
           "trustedHeaders": [
+            "X-Mgs-Trial-Version",
             "X-Mgs-Trial-Key",
             "X-Mgs-Trial-Timestamp",
             "X-Mgs-Trial-Nonce",
             "X-Mgs-Trial-Subject",
             "X-Mgs-Trial-Verified",
-            "X-Mgs-Trial-Email",
+            "X-Mgs-Trial-Verification",
             "X-Mgs-Trial-Confirmation",
             "X-Mgs-Trial-Idempotency",
             "X-Mgs-Trial-Signature"
           ],
           "modelMaySupplyIdentity": false,
           "transport": "https",
-          "version": "mgs-trial-v1",
-          "secureRequestRequired": true,
-          "capability": "TOOLS"
+          "version": "mgs-trial-v2"
         },
         "x-mgs-read-only": true,
         "x-mgs-account-ready-condition": {
           "all": [
             {
-              "equals": 0,
-              "path": "code"
+              "path": "code",
+              "equals": 0
             },
             {
-              "equals": true,
-              "path": "data.accountReady"
+              "path": "data.accountReady",
+              "equals": true
             }
           ]
         },
@@ -346,7 +357,7 @@
     "securitySchemes": {
       "MgsTrialSignature": {
         "type": "apiKey",
-        "description": "仅限 HTTPS 安全请求的 HMAC-SHA256 服务签名，不是静态 API Key。可信会话身份与完整签名 header 由服务端注入；见 mgs-trial-v1 契约。",
+        "description": "仅限 HTTPS 安全请求的 HMAC-SHA256 服务签名，不是静态 API Key。可信会话身份、MGS 短信验证凭据和签名头由服务端注入；新申请使用 mgs-trial-v2。",
         "name": "X-Mgs-Trial-Signature",
         "in": "header"
       }

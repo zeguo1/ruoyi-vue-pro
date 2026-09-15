@@ -1,7 +1,7 @@
 {
-  "contractVersion": "mgs-trial-v1-candidate",
+  "contractVersion": "mgs-trial-v2-candidate",
   "openapiVersion": "1.0.0-full-contract-v6",
-  "openapiSha256": "ab9719e2e58da90bd77d6bfded6793b53d3f9bcb370b2d22faee1bb79b3cffed",
+  "openapiSha256": "473f98ac7291819734ab72336d3aa7c53efaf50628954b1f9243c62375a73bed",
   "operations": [
     {
       "key": "GET /admin-api/crm/trial-business/customer",
@@ -39,6 +39,7 @@
         "credentialOwner": "current-user",
         "modelMaySupplyCredentials": false
       },
+      "contactVerification": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -150,6 +151,7 @@
         "credentialOwner": "current-user",
         "modelMaySupplyCredentials": false
       },
+      "contactVerification": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -192,6 +194,7 @@
         "credentialOwner": "current-user",
         "modelMaySupplyCredentials": false
       },
+      "contactVerification": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -234,6 +237,7 @@
         "credentialOwner": "current-user",
         "modelMaySupplyCredentials": false
       },
+      "contactVerification": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",

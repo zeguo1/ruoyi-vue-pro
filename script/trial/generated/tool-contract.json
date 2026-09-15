@@ -1,7 +1,7 @@
 {
-  "contractVersion": "mgs-trial-v1-candidate",
+  "contractVersion": "mgs-trial-v2-candidate",
   "openapiVersion": "1.0.0-full-contract-v6",
-  "openapiSha256": "af3a9b74df6b74bc4a148e6f1ed6411b149f1c5f23861eec47b821d8930b1c68",
+  "openapiSha256": "947d189a7051603c0dfc99a09822c8d5c9995383c181f1b9ab3b1e67c5157ae0",
   "operations": [
     {
       "key": "GET /admin-api/crm/trial-business/customer",
@@ -39,6 +39,7 @@
         "credentialOwner": "current-user",
         "modelMaySupplyCredentials": false
       },
+      "contactVerification": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -150,6 +151,7 @@
         "credentialOwner": "current-user",
         "modelMaySupplyCredentials": false
       },
+      "contactVerification": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -192,6 +194,7 @@
         "credentialOwner": "current-user",
         "modelMaySupplyCredentials": false
       },
+      "contactVerification": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -234,6 +237,7 @@
         "credentialOwner": "current-user",
         "modelMaySupplyCredentials": false
       },
+      "contactVerification": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -325,22 +329,23 @@
       "accountReadyCondition": null,
       "readOnly": false,
       "trustedServiceContract": {
+        "secureRequestRequired": true,
+        "capability": "EVENTS",
         "trustedHeaders": [
+          "X-Mgs-Trial-Version",
           "X-Mgs-Trial-Key",
           "X-Mgs-Trial-Timestamp",
           "X-Mgs-Trial-Nonce",
           "X-Mgs-Trial-Subject",
           "X-Mgs-Trial-Verified",
-          "X-Mgs-Trial-Email",
+          "X-Mgs-Trial-Verification",
           "X-Mgs-Trial-Confirmation",
           "X-Mgs-Trial-Idempotency",
           "X-Mgs-Trial-Signature"
         ],
         "modelMaySupplyIdentity": false,
         "transport": "https",
-        "version": "mgs-trial-v1",
-        "secureRequestRequired": true,
-        "capability": "EVENTS"
+        "version": "mgs-trial-v2"
       },
       "security": [
         {
@@ -348,6 +353,7 @@
         }
       ],
       "personalAuthorization": null,
+      "contactVerification": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -409,6 +415,7 @@
       "trustedServiceContract": null,
       "security": [],
       "personalAuthorization": null,
+      "contactVerification": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -489,6 +496,7 @@
       "trustedServiceContract": null,
       "security": [],
       "personalAuthorization": null,
+      "contactVerification": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -554,6 +562,7 @@
       "trustedServiceContract": null,
       "security": [],
       "personalAuthorization": null,
+      "contactVerification": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -589,33 +598,34 @@
       "accountReadyCondition": {
         "all": [
           {
-            "equals": 0,
-            "path": "code"
+            "path": "code",
+            "equals": 0
           },
           {
-            "equals": true,
-            "path": "data.accountReady"
+            "path": "data.accountReady",
+            "equals": true
           }
         ]
       },
       "readOnly": false,
       "trustedServiceContract": {
+        "secureRequestRequired": true,
+        "capability": "TOOLS",
         "trustedHeaders": [
+          "X-Mgs-Trial-Version",
           "X-Mgs-Trial-Key",
           "X-Mgs-Trial-Timestamp",
           "X-Mgs-Trial-Nonce",
           "X-Mgs-Trial-Subject",
           "X-Mgs-Trial-Verified",
-          "X-Mgs-Trial-Email",
+          "X-Mgs-Trial-Verification",
           "X-Mgs-Trial-Confirmation",
           "X-Mgs-Trial-Idempotency",
           "X-Mgs-Trial-Signature"
         ],
         "modelMaySupplyIdentity": false,
         "transport": "https",
-        "version": "mgs-trial-v1",
-        "secureRequestRequired": true,
-        "capability": "TOOLS"
+        "version": "mgs-trial-v2"
       },
       "security": [
         {
@@ -623,6 +633,7 @@
         }
       ],
       "personalAuthorization": null,
+      "contactVerification": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -658,33 +669,34 @@
       "accountReadyCondition": {
         "all": [
           {
-            "equals": 0,
-            "path": "code"
+            "path": "code",
+            "equals": 0
           },
           {
-            "equals": true,
-            "path": "data.accountReady"
+            "path": "data.accountReady",
+            "equals": true
           }
         ]
       },
       "readOnly": true,
       "trustedServiceContract": {
+        "secureRequestRequired": true,
+        "capability": "TOOLS",
         "trustedHeaders": [
+          "X-Mgs-Trial-Version",
           "X-Mgs-Trial-Key",
           "X-Mgs-Trial-Timestamp",
           "X-Mgs-Trial-Nonce",
           "X-Mgs-Trial-Subject",
           "X-Mgs-Trial-Verified",
-          "X-Mgs-Trial-Email",
+          "X-Mgs-Trial-Verification",
           "X-Mgs-Trial-Confirmation",
           "X-Mgs-Trial-Idempotency",
           "X-Mgs-Trial-Signature"
         ],
         "modelMaySupplyIdentity": false,
         "transport": "https",
-        "version": "mgs-trial-v1",
-        "secureRequestRequired": true,
-        "capability": "TOOLS"
+        "version": "mgs-trial-v2"
       },
       "security": [
         {
@@ -692,6 +704,7 @@
         }
       ],
       "personalAuthorization": null,
+      "contactVerification": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -727,33 +740,34 @@
       "accountReadyCondition": {
         "all": [
           {
-            "equals": 0,
-            "path": "code"
+            "path": "code",
+            "equals": 0
           },
           {
-            "equals": true,
-            "path": "data.accountReady"
+            "path": "data.accountReady",
+            "equals": true
           }
         ]
       },
       "readOnly": true,
       "trustedServiceContract": {
+        "secureRequestRequired": true,
+        "capability": "TOOLS",
         "trustedHeaders": [
+          "X-Mgs-Trial-Version",
           "X-Mgs-Trial-Key",
           "X-Mgs-Trial-Timestamp",
           "X-Mgs-Trial-Nonce",
           "X-Mgs-Trial-Subject",
           "X-Mgs-Trial-Verified",
-          "X-Mgs-Trial-Email",
+          "X-Mgs-Trial-Verification",
           "X-Mgs-Trial-Confirmation",
           "X-Mgs-Trial-Idempotency",
           "X-Mgs-Trial-Signature"
         ],
         "modelMaySupplyIdentity": false,
         "transport": "https",
-        "version": "mgs-trial-v1",
-        "secureRequestRequired": true,
-        "capability": "TOOLS"
+        "version": "mgs-trial-v2"
       },
       "security": [
         {
@@ -761,6 +775,7 @@
         }
       ],
       "personalAuthorization": null,
+      "contactVerification": null,
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
@@ -831,33 +846,34 @@
       "accountReadyCondition": {
         "all": [
           {
-            "equals": 0,
-            "path": "code"
+            "path": "code",
+            "equals": 0
           },
           {
-            "equals": true,
-            "path": "data.accountReady"
+            "path": "data.accountReady",
+            "equals": true
           }
         ]
       },
       "readOnly": false,
       "trustedServiceContract": {
+        "secureRequestRequired": true,
+        "capability": "TOOLS",
         "trustedHeaders": [
+          "X-Mgs-Trial-Version",
           "X-Mgs-Trial-Key",
           "X-Mgs-Trial-Timestamp",
           "X-Mgs-Trial-Nonce",
           "X-Mgs-Trial-Subject",
           "X-Mgs-Trial-Verified",
-          "X-Mgs-Trial-Email",
+          "X-Mgs-Trial-Verification",
           "X-Mgs-Trial-Confirmation",
           "X-Mgs-Trial-Idempotency",
           "X-Mgs-Trial-Signature"
         ],
         "modelMaySupplyIdentity": false,
         "transport": "https",
-        "version": "mgs-trial-v1",
-        "secureRequestRequired": true,
-        "capability": "TOOLS"
+        "version": "mgs-trial-v2"
       },
       "security": [
         {
@@ -865,6 +881,13 @@
         }
       ],
       "personalAuthorization": null,
+      "contactVerification": {
+        "method": "sms",
+        "proofHeader": "X-Mgs-Trial-Verification",
+        "issuer": "MGS",
+        "verificationDoesNotConfirmOpening": true,
+        "modelMaySupplyProof": false
+      },
       "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
       "manualVerification": [
         "KnowDo importer must map only actual tool fields and inject identity from a verified server session.",

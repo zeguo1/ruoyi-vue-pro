@@ -25,6 +25,7 @@ public class TrialRequestAdvice extends RequestBodyAdviceAdapter {
     public static final String IDENTITY_ATTRIBUTE = TrialRequestAdvice.class.getName() + ".identity";
     private final TrialServiceAuth auth;
     private final HttpServletRequest request;
+    private final jakarta.servlet.http.HttpServletResponse response;
     @Override
     public boolean supports(MethodParameter parameter, Type target, Class<? extends HttpMessageConverter<?>> converter) {
         return parameter.hasMethodAnnotation(TrialCapability.class);
@@ -33,6 +34,8 @@ public class TrialRequestAdvice extends RequestBodyAdviceAdapter {
     public HttpInputMessage beforeBodyRead(HttpInputMessage message, MethodParameter parameter, Type target,
                                            Class<? extends HttpMessageConverter<?>> converter) throws IOException {
         byte[] bytes = message.getBody().readNBytes(16_385);
+        response.setHeader("Cache-Control", "no-store");
+        response.setHeader("Pragma", "no-cache");
         if (bytes.length > 16_384) { throw TrialException.unauthorized(); }
         TrialCapability capability = parameter.getMethodAnnotation(TrialCapability.class);
         request.setAttribute(IDENTITY_ATTRIBUTE, auth.verify(request, bytes, capability.value()));

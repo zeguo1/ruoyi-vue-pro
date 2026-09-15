@@ -32,18 +32,15 @@ public class TrialToolController {
     private final TrialProperties properties;
     private final TrialStore store;
     private final TrialOrchestrator orchestrator;
+    private final TrialSmsVerificationService verification;
 
     @PostMapping("/submit") @PermitAll @TenantIgnore @ApiAccessLog(enable = false) @TrialCapability("TOOLS")
     @Operation(operationId = "submit_trial_application", summary = "保存本人试用申请并关联运营线索",
-            description = "仅限可信服务 HMAC 请求。联系方式来自已验证身份，不接受自报身份、租户、角色、套餐或期限。code=0 不等于开户完成。",
+            description = "仅限 mgs-trial-v2 可信服务 HMAC 请求，必须附带 MGS 签发的短信验证凭据。手机号由后端验证记录取得，不接受自报手机号或验证邮箱作为依据。短信验证不代表同意开户；code=0 不等于开户完成。",
             extensions = @Extension(name = "x-mgs-trial", properties = @ExtensionProperty(name = "readOnly", value = "false", parseValue = true)))
     public CommonResult<TrialStatusRespVO> submit(@Valid @RequestBody TrialSubmitReqVO body, HttpServletRequest request) {
         TrialIdentity identity = identity(request);
-        if (!identity.verifiedEmail().matches("[^\\s@]{1,64}@[^\\s@]+\\.[^\\s@]+")
-                || !identity.idempotencyKey().matches("[a-zA-Z0-9_.:-]{16,128}")) { throw TrialException.unauthorized(); }
-        TrialProperties.Policy policy = properties.newPolicy();
-        TrialStore.Application app = store.submit(identity, identity.idempotencyKey(), body.getTeam(), body.getContactName(),
-                body.getScenario(), policy, properties.getMaxApplications());
+        TrialStore.Application app = verification.submit(identity, body.getTeam(), body.getContactName(), body.getScenario());
         orchestrator.advance(app.id()); // Unconfirmed applications can only execute the local CRM step.
         return CommonResult.success(view(store.owned(app.id(), identity)));
     }

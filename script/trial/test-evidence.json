@@ -1,131 +1,131 @@
 {
-  "scope": "Local H2 unit and integration suites, actual corporate Tenant/Package/Menu/AdminUser/Role/Permission provisioning, actual AuthController HTTP login and OAuth services/Redis DAO, actual CRM/permissions/MVC joint journey, encrypted credential delivery, HMAC and state machine, isolated Springdoc, existing login/OAuth regression. KnowDo and peripheral services are explicit doubles; Redis protocol uses isolated jedis-mock; joint permission caches use ConcurrentMapCacheManager. No production or real KnowDo/WeChat calls. File-backed H2 cold-process restart tests force-terminate a child JVM at three boundaries and resume in a separate JVM, using real local MGS provisioning and a separately persisted KnowDo fixture. Opt-in Playwright browser login and Agent HTTP write/read-back through ephemeral loopback Tomcat, with production timestamp serializer and actual menu migration. Actual signed tool HTTP request-advice/JSON/validation/controller/local-service chain via MockMvc, including secure-request enforcement and unchanged maintenance when new enrollment is disabled. Additional opt-in MySQL 8.4.11 persistence suite reuses the orchestration fixtures on actual MySQL and replays all four original migrations; it does not replace actual business-service or KnowDo integration.",
+  "scope": "Local H2 unit and integration suites, actual corporate Tenant/Package/Menu/AdminUser/Role/Permission provisioning, actual AuthController HTTP login and OAuth services/Redis DAO, actual CRM/permissions/MVC joint journey, encrypted credential delivery, HMAC and state machine, isolated Springdoc, existing login/OAuth regression. KnowDo and peripheral services are explicit doubles; Redis protocol uses isolated jedis-mock; joint permission caches use ConcurrentMapCacheManager. No production or real KnowDo/WeChat calls. File-backed H2 cold-process restart tests force-terminate a child JVM at three boundaries and resume in a separate JVM, using real local MGS provisioning and a separately persisted KnowDo fixture. Opt-in Playwright browser login and Agent HTTP write/read-back through ephemeral loopback Tomcat, with production timestamp serializer and actual menu migration. Actual signed tool HTTP request-advice/JSON/validation/controller/local-service chain via MockMvc, including secure-request enforcement and unchanged maintenance when new enrollment is disabled. Additional opt-in MySQL 8.4.11 persistence suite reuses the orchestration fixtures on actual MySQL and replays all four original migrations; it does not replace actual business-service or KnowDo integration. MGS safe-card SMS verification, trusted phone binding and v2 signatures now cover actual HTTP/CRM flow and isolated MySQL; SMS clients are explicit test doubles and no real SMS was sent.",
   "tests": [
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialServiceAuthTest",
-      "tests": 6,
+      "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialServiceAuthTest.xml",
+      "reportModifiedAt": "2026-09-15T01:23:13.390200+00:00",
+      "tests": 7,
       "failures": 0,
       "errors": 0,
-      "skipped": 0,
-      "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialServiceAuthTest.xml",
-      "reportModifiedAt": "2026-09-14T19:02:40.465507+00:00"
+      "skipped": 0
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialAuthorizationTest",
+      "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialAuthorizationTest.xml",
+      "reportModifiedAt": "2026-09-15T01:16:34.881452+00:00",
       "tests": 4,
       "failures": 0,
       "errors": 0,
-      "skipped": 0,
-      "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialAuthorizationTest.xml",
-      "reportModifiedAt": "2026-09-14T19:02:11.660203+00:00"
+      "skipped": 0
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.MgsTrialOAuthGatewayTest",
+      "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.MgsTrialOAuthGatewayTest.xml",
+      "reportModifiedAt": "2026-09-15T01:17:04.411641+00:00",
       "tests": 4,
       "failures": 0,
       "errors": 0,
-      "skipped": 0,
-      "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.MgsTrialOAuthGatewayTest.xml",
-      "reportModifiedAt": "2026-09-14T19:02:41.073534+00:00"
+      "skipped": 0
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.KnowdoResponseBoundTest",
+      "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.KnowdoResponseBoundTest.xml",
+      "reportModifiedAt": "2026-09-15T01:16:35.369488+00:00",
       "tests": 2,
       "failures": 0,
       "errors": 0,
-      "skipped": 0,
-      "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.KnowdoResponseBoundTest.xml",
-      "reportModifiedAt": "2026-09-14T19:02:12.064221+00:00"
+      "skipped": 0
     },
     {
       "class": "cn.iocoder.yudao.module.system.service.auth.AdminAuthServiceImplTest",
+      "evidence": "yudao-module-system/target/surefire-reports/TEST-cn.iocoder.yudao.module.system.service.auth.AdminAuthServiceImplTest.xml",
+      "reportModifiedAt": "2026-09-14T18:16:46.010669+00:00",
       "tests": 17,
       "failures": 0,
       "errors": 0,
-      "skipped": 0,
-      "evidence": "yudao-module-system/target/surefire-reports/TEST-cn.iocoder.yudao.module.system.service.auth.AdminAuthServiceImplTest.xml",
-      "reportModifiedAt": "2026-09-14T18:16:46.010669+00:00"
+      "skipped": 0
     },
     {
       "class": "cn.iocoder.yudao.module.system.service.oauth2.OAuth2TokenServiceImplTest",
+      "evidence": "yudao-module-system/target/surefire-reports/TEST-cn.iocoder.yudao.module.system.service.oauth2.OAuth2TokenServiceImplTest.xml",
+      "reportModifiedAt": "2026-09-14T18:16:45.546630+00:00",
       "tests": 13,
       "failures": 0,
       "errors": 0,
-      "skipped": 0,
-      "evidence": "yudao-module-system/target/surefire-reports/TEST-cn.iocoder.yudao.module.system.service.oauth2.OAuth2TokenServiceImplTest.xml",
-      "reportModifiedAt": "2026-09-14T18:16:45.546630+00:00"
+      "skipped": 0
     },
     {
       "class": "cn.iocoder.yudao.server.contract.TrialOpenApiExportTest",
+      "evidence": "yudao-server/target/surefire-reports/TEST-cn.iocoder.yudao.server.contract.TrialOpenApiExportTest.xml",
+      "reportModifiedAt": "2026-09-15T01:17:19.092729+00:00",
       "tests": 2,
       "failures": 0,
       "errors": 0,
-      "skipped": 0,
-      "evidence": "yudao-server/target/surefire-reports/TEST-cn.iocoder.yudao.server.contract.TrialOpenApiExportTest.xml",
-      "reportModifiedAt": "2026-09-15T00:17:06.127331+00:00"
+      "skipped": 0
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialBusinessIntegrationTest",
       "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialBusinessIntegrationTest.xml",
+      "reportModifiedAt": "2026-09-15T01:16:32.765296+00:00",
       "tests": 8,
       "failures": 0,
       "errors": 0,
-      "skipped": 0,
-      "reportModifiedAt": "2026-09-14T19:02:09.584109+00:00"
+      "skipped": 0
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialOperatorBootstrapTest",
       "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialOperatorBootstrapTest.xml",
+      "reportModifiedAt": "2026-09-15T01:17:03.791595+00:00",
       "tests": 5,
       "failures": 0,
       "errors": 0,
-      "skipped": 0,
-      "reportModifiedAt": "2026-09-14T19:02:40.565511+00:00"
+      "skipped": 0
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialLoginDeliveryTest",
       "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialLoginDeliveryTest.xml",
+      "reportModifiedAt": "2026-09-15T01:16:30.469125+00:00",
       "tests": 7,
       "failures": 0,
       "errors": 0,
-      "skipped": 0,
-      "reportModifiedAt": "2026-09-14T19:02:07.488014+00:00"
+      "skipped": 0
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.MgsTrialAccountIntegrationTest",
       "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.MgsTrialAccountIntegrationTest.xml",
+      "reportModifiedAt": "2026-09-15T01:17:04.195625+00:00",
       "tests": 3,
       "failures": 0,
       "errors": 0,
-      "skipped": 0,
-      "reportModifiedAt": "2026-09-14T19:02:40.857525+00:00"
+      "skipped": 0
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialCorporateTenantIntegrationTest",
       "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialCorporateTenantIntegrationTest.xml",
+      "reportModifiedAt": "2026-09-15T01:16:35.329486+00:00",
       "tests": 4,
       "failures": 0,
       "errors": 0,
-      "skipped": 0,
-      "reportModifiedAt": "2026-09-14T19:02:12.032220+00:00"
+      "skipped": 0
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialLocalJourneyIntegrationTest",
       "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialLocalJourneyIntegrationTest.xml",
+      "reportModifiedAt": "2026-09-15T01:16:34.813447+00:00",
       "tests": 5,
       "failures": 0,
       "errors": 0,
-      "skipped": 0,
-      "reportModifiedAt": "2026-09-14T19:02:11.596200+00:00"
+      "skipped": 0
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialProcessRestartTest",
       "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialProcessRestartTest.xml",
+      "reportModifiedAt": "2026-09-15T01:17:03.687588+00:00",
       "tests": 3,
       "failures": 0,
       "errors": 0,
-      "skipped": 0,
-      "reportModifiedAt": "2026-09-14T19:02:40.457506+00:00"
+      "skipped": 0
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialBrowserJourneyTest",
@@ -139,16 +139,16 @@
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialToolHttpIntegrationTest",
       "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialToolHttpIntegrationTest.xml",
-      "tests": 5,
+      "reportModifiedAt": "2026-09-15T01:24:57.964688+00:00",
+      "tests": 8,
       "failures": 0,
       "errors": 0,
-      "skipped": 0,
-      "reportModifiedAt": "2026-09-14T19:02:12.656248+00:00"
+      "skipped": 0
     },
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialOrchestratorTest",
       "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialOrchestratorTest.xml",
-      "reportModifiedAt": "2026-09-15T00:24:20.021348+00:00",
+      "reportModifiedAt": "2026-09-15T01:17:04.051615+00:00",
       "tests": 11,
       "failures": 0,
       "errors": 0,
@@ -157,14 +157,32 @@
     {
       "class": "cn.iocoder.yudao.module.crm.service.trial.TrialMySqlIntegrationTest",
       "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialMySqlIntegrationTest.xml",
-      "reportModifiedAt": "2026-09-15T00:24:29.073805+00:00",
-      "tests": 12,
+      "reportModifiedAt": "2026-09-15T01:25:06.123644+00:00",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "cn.iocoder.yudao.module.crm.service.trial.TrialSmsVerificationTest",
+      "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialSmsVerificationTest.xml",
+      "reportModifiedAt": "2026-09-15T01:24:53.373293+00:00",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "cn.iocoder.yudao.module.crm.service.trial.MgsTrialSmsSenderTest",
+      "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.MgsTrialSmsSenderTest.xml",
+      "reportModifiedAt": "2026-09-15T01:28:47.163047+00:00",
+      "tests": 4,
       "failures": 0,
       "errors": 0,
       "skipped": 0
     }
   ],
-  "total": 112,
+  "total": 132,
   "realEndToEndVerified": false,
   "limitations": [
     "Corporate bootstrap now covers actual Tenant/Package/Menu/AdminUser/Role/Permission services on H2; config, department/post, MQ and CRM/OAuth boundaries remain doubles. MySQL and deployed initialization are unverified.",
@@ -210,6 +228,7 @@
     "tlsBoundary": "MockMvc secure-request flag, not a TLS handshake or trusted reverse proxy deployment",
     "knowdoBoundary": "Explicit adapter fixture; no real KnowDo calls"
   },
-  "agentCatalogEvidence": "agent-catalog-test-evidence.json: 5 separate Python tests; actual Springdoc assertions are included in TrialOpenApiExportTest (2 tests). Only the documentation tests rerun on 2026-09-15; other suites retain their recorded timestamps.",
-  "mysqlEvidence": "mysql-test-evidence.json: 12 opt-in actual MySQL persistence/migration tests; local business side effects and KnowDo are explicit fixtures. The H2 orchestrator 11 cases were rerun after extracting their shared datasource setup."
+  "agentCatalogEvidence": "agent-catalog-test-evidence.json: 5 separate Python cases; actual Springdoc 2 cases included above. Exports now declare mgs-trial-v2-candidate and exclude private SMS endpoints.",
+  "mysqlEvidence": "mysql-test-evidence.json: 12 opt-in actual MySQL persistence/migration tests; local business side effects and KnowDo are explicit fixtures. The H2 orchestrator 11 cases were rerun after extracting their shared datasource setup.",
+  "smsEvidence": "sms-test-evidence.json; new inbound contact verification requires MGS proof, not an external email attestation. Existing application maintenance remains compatible."
 }

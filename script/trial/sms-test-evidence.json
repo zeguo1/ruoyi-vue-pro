@@ -1,0 +1,97 @@
+{
+  "observedAt": "2026-09-15T01:26:33.252218+00:00",
+  "contractVersion": "mgs-trial-v2-candidate",
+  "tests": [
+    {
+      "class": "cn.iocoder.yudao.module.crm.service.trial.TrialServiceAuthTest",
+      "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialServiceAuthTest.xml",
+      "reportModifiedAt": "2026-09-15T01:23:13.390200+00:00",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "cn.iocoder.yudao.server.contract.TrialOpenApiExportTest",
+      "evidence": "yudao-server/target/surefire-reports/TEST-cn.iocoder.yudao.server.contract.TrialOpenApiExportTest.xml",
+      "reportModifiedAt": "2026-09-15T01:17:19.092729+00:00",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "cn.iocoder.yudao.module.crm.service.trial.TrialToolHttpIntegrationTest",
+      "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialToolHttpIntegrationTest.xml",
+      "reportModifiedAt": "2026-09-15T01:24:57.964688+00:00",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "cn.iocoder.yudao.module.crm.service.trial.TrialMySqlIntegrationTest",
+      "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialMySqlIntegrationTest.xml",
+      "reportModifiedAt": "2026-09-15T01:25:06.123644+00:00",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "cn.iocoder.yudao.module.crm.service.trial.TrialSmsVerificationTest",
+      "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialSmsVerificationTest.xml",
+      "reportModifiedAt": "2026-09-15T01:24:53.373293+00:00",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "cn.iocoder.yudao.module.crm.service.trial.MgsTrialSmsSenderTest",
+      "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.MgsTrialSmsSenderTest.xml",
+      "reportModifiedAt": "2026-09-15T01:28:47.163047+00:00",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "focusedJUnitTotal": 45,
+  "logs": [
+    "/tmp/mgs-trial-sms-regression.log",
+    "/tmp/mgs-trial-sms-binding-final.log",
+    "/tmp/mgs-trial-sms-auth-final.log",
+    "/tmp/mgs-trial-sms-log-redaction.log"
+  ],
+  "sourceHashes": {
+    "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/service/trial/TrialSmsSender.java": "892c71175507d9cf8ccdd085121369af818c352526103d4b2c8eb7957d631866",
+    "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/service/trial/TrialSmsVerificationService.java": "94f94ce24d26fd364d66169606e483e4ba5937ffebab1934ff04b3d91cb65b73",
+    "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/service/trial/MgsTrialSmsSender.java": "9dbfbcd4fbac2b63624c04511422ff1afd55a31927f30f757330ecae2ccb1134",
+    "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/trial/TrialSmsVerificationController.java": "9cca0e01555096e4ab1ec14c1168c4db128422409025f93a85335b89d1de3945",
+    "yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/service/trial/TrialServiceAuth.java": "7392a4e1361a9bcfaa1a2a5add15ecd94c62fdd60d15db55c85a977b3f0930cd",
+    "script/trial/V20260915_05__trial_sms_verification.sql": "5226b2e9c9ab22b5f2088726d1b543d2d9f6259a6ae4bca699ced58ccab28344",
+    "script/trial/generated/openapi.json": "947d189a7051603c0dfc99a09822c8d5c9995383c181f1b9ab3b1e67c5157ae0",
+    "yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/framework/sms/core/property/SmsChannelProperties.java": "fb3d0dde8529d3ce224f2ce1ad1bfff616ffd6353d95d0db015f8c7bd7dc9388"
+  },
+  "checks": [
+    "Actual secure signed private send/verify HTTP flow, v2 proof signed and owner-bound, original email-only submission rejected",
+    "No application on verification; no implicit confirmation or account creation; real CRM receives verified phone from MGS storage",
+    "Persisted attempt limits including recovery, expiry, concurrent send/verify/submit, exact retry and foreign identity rejection",
+    "Provider uncertainty not automatically retransmitted; cooldown and per-phone limits; new challenge supersedes unbound proof",
+    "Atomic contact/application/step rollback; same mobile does not merge separate subjects",
+    "Private validation response and logger do not expose submitted code; proof/code excluded from Agent schemas and results",
+    "Existing real SMS client abstraction reused with fake transport; disabled/debug channels and provider error body rejected",
+    "Original migration 05 and attempt/phone binding semantics tested on isolated MySQL 8.4.11",
+    "Actual existing SMS client refresh logger excludes apiKey, apiSecret and callback URL while retaining credential getter behavior"
+  ],
+  "realSmsSent": false,
+  "realKnowdoVerified": false,
+  "deployed": false,
+  "frontendChanged": false,
+  "limitations": [
+    "KnowDo safe card/session integration and production SMS provider have not been called.",
+    "Browser/legacy login suites retain their recorded earlier timestamps; no claim they reran with this change.",
+    "No deployment, production schema migration or real business write performed."
+  ]
+}

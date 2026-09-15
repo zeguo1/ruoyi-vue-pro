@@ -63,12 +63,13 @@ for path, methods in sorted(doc.get("paths", {}).items()):
                 "trustedServiceContract": op.get("x-mgs-service-contract"),
                 "security": op.get("security", doc.get("security", [])),
                 "personalAuthorization": op.get("x-mgs-personal-authorization"),
+                "contactVerification": op.get("x-mgs-contact-verification"),
                 "evidence": "Actual Springdoc output; focused MGS trial controllers return CommonResult. Request success does not imply account readiness, binding or completed business.",
                 "manualVerification": ["KnowDo importer must map only actual tool fields and inject identity from a verified server session.",
                                        "No claim that KnowDo has imported/applied this file; real WeChat end-to-end validation remains pending."]}
         operations.append(item)
 args.output.parent.mkdir(parents=True, exist_ok=True)
-args.output.write_text(json.dumps({"contractVersion": "mgs-trial-v1-candidate", "openapiVersion": doc.get("info", {}).get("version"),
+args.output.write_text(json.dumps({"contractVersion": doc.get("x-mgs-trial-contract-version"), "openapiVersion": doc.get("info", {}).get("version"),
                                   "openapiSha256": hashlib.sha256(raw).hexdigest(), "operations": operations,
                                   "credentialEndpointsExcluded": True, "realEndToEndVerified": False}, ensure_ascii=False, indent=2) + "\n")
 print(f"Derived {len(operations)} operations")

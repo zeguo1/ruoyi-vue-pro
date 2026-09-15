@@ -50,7 +50,7 @@ class TrialOpenApiExportTest {
             var objects = new ObjenesisStd();
             context.addBeanFactoryPostProcessor(factory -> {
                 for (Class<?> type : List.of(TrialToolController.class, TrialEventController.class, TrialBusinessController.class,
-                        TrialOperationsController.class, TrialAuthorizationController.class, TrialLoginDeliveryController.class)) {
+                        TrialOperationsController.class, TrialAuthorizationController.class, TrialLoginDeliveryController.class, TrialSmsVerificationController.class)) {
                     factory.registerSingleton(type.getName(), objects.newInstance(type));
                 }
             });
@@ -63,6 +63,10 @@ class TrialOpenApiExportTest {
             Files.writeString(Path.of("target/trial-openapi.json"), json);
             assertFalse(doc.path("paths").has("/admin-api/crm/trial-internal/authorization"));
             assertFalse(doc.path("paths").has("/admin-api/crm/trial-internal/login-delivery"));
+            assertFalse(doc.path("paths").has("/admin-api/crm/trial-verification/send"));
+            assertFalse(doc.path("paths").has("/admin-api/crm/trial-verification/verify"));
+            assertFalse(json.contains("verificationToken"), "Private SMS proof responses must not leak into Agent schemas");
+            assertEquals("mgs-trial-v2-candidate", doc.path("x-mgs-trial-contract-version").asText());
             assertFalse(json.contains("TrialLoginDeliveryService"), "Login credentials must not leak into the tool catalog");
             assertFalse(json.contains("TrialOAuthGateway"), "Credential schemas must not leak into the tool catalog");
             var tools = Map.of("submit", "submit_trial_application", "create-accounts", "create_trial_accounts", "status", "get_trial_status", "guide", "get_trial_guide");
@@ -87,6 +91,9 @@ class TrialOpenApiExportTest {
                 assertFalse(body.path("properties").has("subjectId"));
                 assertFalse(body.path("properties").has("tenantId"));
                 if (entry.getKey().equals("submit")) {
+                    assertEquals("sms", operation.path("x-mgs-contact-verification").path("method").asText());
+                    assertFalse(operation.path("x-mgs-contact-verification").path("modelMaySupplyProof").asBoolean(true));
+                    assertEquals("mgs-trial-v2", operation.path("x-mgs-service-contract").path("version").asText());
                     assertTrue(body.path("properties").has("team"));
                     assertTrue(body.path("required").toString().contains("contactName"));
                 } else {

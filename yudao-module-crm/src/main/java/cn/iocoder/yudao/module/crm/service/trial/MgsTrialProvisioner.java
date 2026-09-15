@@ -60,7 +60,9 @@ public class MgsTrialProvisioner implements TrialLocalProvisioner {
             CrmClueSaveReqVO req = new CrmClueSaveReqVO();
             req.setName(app.team());
             req.setOwnerUserId(app.policy().ownerUserId());
-            req.setEmail(app.verifiedEmail());
+            if (app.verifiedEmail().isBlank()) {
+                req.setMobile(jdbc.queryForObject("SELECT mobile FROM crm_trial_verified_contact WHERE application_id=?", String.class, app.id()));
+            } else { req.setEmail(app.verifiedEmail()); } // Previously persisted applications retain their original contact.
             req.setDescription("知办官网试用申请；联系人：" + app.contactName() + "；场景：客户跟进演示");
             req.setRemark("申请编号：" + app.id() + "；开通不代表成交");
             return Map.of("clueId", clues.createClue(req).toString());

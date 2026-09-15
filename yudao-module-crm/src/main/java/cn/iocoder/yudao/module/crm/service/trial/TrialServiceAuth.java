@@ -39,10 +39,18 @@ public class TrialServiceAuth {
         String confirmation = header(request, "Confirmation", 128);
         String idempotency = header(request, "Idempotency", 128);
         String signature = header(request, "Signature", 64);
+        String version = header(request, "Version", 32);
+        String verification = header(request, "Verification", 64);
+        boolean v2 = "mgs-trial-v2".equals(version);
+        boolean contactVerification = "SMS_VERIFICATION".equals(capability);
+        if ((!version.isEmpty() && !v2) || (!v2 && !verification.isEmpty())
+                || (v2 && !email.isEmpty()) || (contactVerification && (!v2 || !confirmation.isEmpty() || !verification.isEmpty()))) {
+            throw TrialException.unauthorized();
+        }
         TrialProperties.ServiceKey key = properties.getKeys().get(keyId);
         if (key == null || key.getSecret() == null || key.getSecret().length() < 32
                 || key.getIssuer() == null || !key.getIssuer().matches("[a-zA-Z0-9_-]{1,64}")
-                || !key.getCapabilities().contains(capability) || !"true".equals(verified)
+                || !key.getCapabilities().contains(capability) || !(contactVerification ? "false" : "true").equals(verified)
                 || !nonce.matches("[a-zA-Z0-9_-]{16,64}") || subject.isBlank()) {
             throw TrialException.unauthorized();
         }
@@ -50,8 +58,9 @@ public class TrialServiceAuth {
         try { seconds = Long.parseLong(timestamp); } catch (NumberFormatException e) { throw TrialException.unauthorized(); }
         long now = Instant.now().getEpochSecond();
         if (seconds < now - 120 || seconds > now + 120) { throw TrialException.unauthorized(); }
-        String canonical = String.join("\n", "mgs-trial-v1", keyId, timestamp, nonce, request.getMethod(),
+        String canonical = String.join("\n", v2 ? "mgs-trial-v2" : "mgs-trial-v1", keyId, timestamp, nonce, request.getMethod(),
                 request.getRequestURI(), sha256(body), subject, verified, email, confirmation, idempotency);
+        if (v2) { canonical += "\n" + verification; }
         if (!MessageDigest.isEqual(hmac(key.getSecret(), canonical).getBytes(StandardCharsets.US_ASCII),
                 signature.getBytes(StandardCharsets.US_ASCII))) {
             throw TrialException.unauthorized();
@@ -60,7 +69,7 @@ public class TrialServiceAuth {
             jdbc.update("INSERT INTO crm_trial_nonce(key_id,nonce,expires_at) VALUES(?,?,?)",
                     keyId, nonce, Timestamp.from(Instant.ofEpochSecond(now + 300)));
         } catch (DuplicateKeyException e) { throw TrialException.replay(); }
-        return new TrialIdentity(key.getIssuer(), subject, email, confirmation, idempotency);
+        return new TrialIdentity(key.getIssuer(), subject, email, confirmation, idempotency, verification);
     }
 
     private static String header(HttpServletRequest request, String name, int max) {

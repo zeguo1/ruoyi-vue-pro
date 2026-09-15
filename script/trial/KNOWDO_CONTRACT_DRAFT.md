@@ -7,18 +7,21 @@ Agent 目录的具体选择、两份独立 OpenAPI 和个人 Bearer/租户参数
 
 用户补充：租户 1 专用于演示，另建栖云租户用于企业真实业务和运营线索。体验不选择套餐。所有申请和演示业务办理通过 Agent，MGS 只提供本人办理结果查看页。首期业务闭环仍为演示客户查询和新增跟进；不得把完整 ERP/其他模块权限机械开放给试用用户。
 
-## 入站签名 v1
-只允许服务到服务 HTTPS。四个工具均 POST，基础路径 `/admin-api/crm/trial-tool`：
-- `/submit` — `submit_trial_application`，body `{team,contactName,scenario:"CRM_FOLLOW_UP"}`。
-- `/create-accounts` — `create_trial_accounts`，body `{applicationId}`；只确认和入队，不同步等待整套开户。
+## 入站签名 v2：MGS 短信验证
+
+新申请使用 `mgs-trial-v2`，手机号验证及凭据由 MGS 负责。知办展示安全卡片并调用私有发送/校验接口，验证码和验证凭据不进入模型。详细流程、错误、限制及私有样例见 [SMS_VERIFICATION.md](SMS_VERIFICATION.md)。
+
+四个 Agent 工具仍为 POST，基础路径 `/admin-api/crm/trial-tool`：
+- `/submit` — `submit_trial_application`，body `{team,contactName,scenario:"CRM_FOLLOW_UP"}`；必须附加 MGS 短信验证凭据，手机号从 MGS 记录取得。
+- `/create-accounts` — `create_trial_accounts`，body `{applicationId}`；另外校验用户对当前申请的确认，只确认和入队。
 - `/status` — `get_trial_status`，body `{applicationId}`；只读业务状态，绝不调用开户。
 - `/guide` — `get_trial_guide`，body `{applicationId}`；只读说明和实际样例引用。
 
-所有请求 header `X-Mgs-Trial-*`：Key、Timestamp（Unix 秒）、Nonce（16–64 位）、Subject（知办认证主体的稳定不透明 ID）、Verified（true）、Email（验证后的邮箱，仅 submit 必需）、Confirmation（当前申请的确认事实，由可信卡片会话提供，create 必需）、Idempotency（submit 必需）、Signature。
+请求头 `X-Mgs-Trial-*`：Version=`mgs-trial-v2`，Key、Timestamp（Unix 秒）、Nonce（16–64 位）、Subject（原知办安全会话主体的稳定不透明 ID）、Verified、Confirmation、Idempotency、Verification、Signature。`Email` 在 v2 中禁止非空。SMS_VERIFICATION 能力使用 `Verified: false`，表示此阶段不能宣称联系方式已经验证；TOOLS/其他能力使用 true，但该声明本身不能代替 MGS 验证凭据。
 
-HMAC-SHA256 使用 UTF-8 密钥，输出小写十六进制。签名原文是下列各行，LF 分隔，无末尾 LF；空 header 使用空字符串：
+HMAC-SHA256 使用 UTF-8 密钥，输出小写十六进制。签名原文按下列顺序，以 LF 分隔，不额外追加换行；第十行保留空 Email 行，未使用的其他 header 也使用空字符串。最后的 Verification 字段为空时，字段分隔符会使结果以 LF 结尾，这个分隔符必须保留，不能 trim。等价于对下面 13 个字段使用 String.join("\n", fields)：
 ```
-mgs-trial-v1
+mgs-trial-v2
 <Key>
 <Timestamp>
 <Nonce>
@@ -27,14 +30,17 @@ mgs-trial-v1
 <SHA256(原始请求体字节)，小写十六进制>
 <Subject>
 <Verified>
-<Email>
+<空 Email 行>
 <Confirmation>
 <Idempotency>
+<Verification>
 ```
 
-允许时钟误差 120 秒；已使用 nonce 在数据库拒绝重放，即使业务响应丢失也必须以新 nonce、原幂等键恢复。禁止 tenant-id、visit-tenant-id 和查询串。验证主体绝不能来自模型自报的邮箱、手机号或企业域。签名方必须核验对话会话、联系验证和当前申请确认的绑定；不能只替模型提供的 header 签名。
+`Verification` 是私有 verify 返回的 64 位凭据，只用于 submit，由知办服务端存储/注入并纳入签名。`Confirmation` 是当前申请的单独确认事实，create-accounts 必需。签名方必须核验会话、卡片及动作归属，不能仅为模型填写的身份或请求头签名。
 
-全部带 TrialCapability 的服务入口（工具、事件、私有授权与交付）在验签前统一要求容器将请求识别为安全请求（HttpServletRequest.isSecure）。明文 HTTP 即使签名正确也拒绝；调用方自己提供 X-Forwarded-Proto/Forwarded 不构成 HTTPS 依据。TLS 在代理终止时，部署方须限定可信代理并正确配置容器的安全请求识别，不得开放直接后端访问后再全量信任转发头。本地 MockMvc 仅验证此判断和请求链，真实 TLS/代理路径仍待部署环境联调。
+允许时钟误差 120 秒；已用 nonce 在数据库拒绝重放。网络重试更换 nonce，保持同一业务/卡片动作幂等键。工具及私有服务入口禁止 tenant-id、visit-tenant-id 和查询串；不凭相同手机号合并不同主体。所有 TrialCapability 入口要求实际 HTTPS，请求自己提供 X-Forwarded-Proto 不构成安全请求依据，受信代理配置仍需部署联调。
+
+v1 仅为已有申请的查询、确认、交付、事件和维护保留兼容：省略 Version，签名首行为 mgs-trial-v1，末尾没有 Verification 行，原 Email 行保持签名覆盖。v1 不允许附加未签名的 Verification 头，只有邮箱的 v1 请求不能再创建新申请。已保存旧申请的邮箱不会被改写；新短信申请不伪造邮箱。
 
 ## 结果语义
 `code=0`（数字）只代表本次命令/查询成功；非 0 为失败，msg 为安全错误说明。
@@ -82,7 +88,7 @@ POST
 新增 MGS_GRANT 步骤，位于 KNOWDO_MEMBER 完成之后、KNOWDO_AUTH 之前。此步骤在原有 MGS OAuth 存储创建普通用户授权，步骤记录只包含 `mgsAuthorizationRef`。不重新创建用户、不交付管理员、不把访问令牌保存到 CRM/申请/步骤表。
 
 知办 ensure KNOWDO_AUTH 时接收 `mgsAuthorizationRef`，用单独的 AUTHORIZATION 服务密钥调用：
-`POST /admin-api/crm/trial-internal/authorization`，body `{applicationId}`。沿用入站 v1 签名与原申请主体。该接口要求服务实际识别 HTTPS，不自行信任调用方传入的 X-Forwarded-Proto；部署时须由受信代理正确设置安全请求属性。
+`POST /admin-api/crm/trial-internal/authorization`，body `{applicationId}`。使用入站 v2 签名与原申请主体（原 v1 调用仍兼容）。该接口要求服务实际识别 HTTPS，不自行信任调用方传入的 X-Forwarded-Proto；部署时须由受信代理正确设置安全请求属性。
 
 响应 `CommonResult.data` 为 `{accessToken,expiresAt}`，仅允许进入知办个人连接器的服务端凭据存储。刷新令牌不出 MGS；访问令牌到期前知办通过同一接口更新，仅续用原授权。返回的 expiresAt 不晚于申请截止时间。原授权已撤销/失效时拒绝更新，不自动再授权。
 

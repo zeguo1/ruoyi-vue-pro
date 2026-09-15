@@ -38,15 +38,18 @@ public class SmsChannelProperties {
      * 短信 API 的账号
      */
     @NotEmpty(message = "短信 API 的账号不能为空")
+    @lombok.ToString.Exclude
     private String apiKey;
     /**
      * 短信 API 的密钥
      */
     @NotEmpty(message = "短信 API 的密钥不能为空")
+    @lombok.ToString.Exclude
     private String apiSecret;
     /**
      * 短信发送回调 URL
      */
+    @lombok.ToString.Exclude
     private String callbackUrl;
 
 }

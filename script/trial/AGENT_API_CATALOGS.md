@@ -22,7 +22,7 @@
 | POST /admin-api/crm/trial-tool/status | get_trial_status | 只读查询本人进度，不重放写操作 |
 | POST /admin-api/crm/trial-tool/guide | get_trial_guide | 只读获取本人可用的体验说明 |
 
-OpenAPI 的 `MgsTrialSignature` 以 apiKey/header 表达签名头位置，**不代表静态 API Key**。知办可信服务需实现 TOOLS 能力的 HMAC-SHA256 签名、已验证身份、当前申请确认、请求幂等及 nonce；密钥、身份和签名头不能成为模型输入。不能仅在连接器下拉框选 API Key、填入密钥就完成接入。此组禁止 tenant-id、visit-tenant-id 和查询串。签名细节见 [KNOWDO_CONTRACT_DRAFT.md](KNOWDO_CONTRACT_DRAFT.md)。
+OpenAPI 的 `MgsTrialSignature` 以 apiKey/header 表达签名头位置，**不代表静态 API Key**。知办可信服务需实现 mgs-trial-v2 的 TOOLS HMAC-SHA256 签名、MGS 短信验证凭据注入、当前申请确认、请求幂等及 nonce；密钥、身份和签名头不能成为模型输入。不能仅在连接器下拉框选 API Key、填入密钥就完成接入。此组禁止 tenant-id、visit-tenant-id 和查询串。签名细节见 [KNOWDO_CONTRACT_DRAFT.md](KNOWDO_CONTRACT_DRAFT.md)。
 
 `code = 0`（数字）只表示本次命令或查询处理成功。整套账号就绪必须同时满足 `code = 0` 和 `data.accountReady = true`（布尔）；公众号绑定与首次业务完成还要分别检查对应事实。四个工具的 `x-mgs-account-ready-condition` 保留这一条件，不能将请求已受理当成开户完成。
 
@@ -48,8 +48,10 @@ OpenAPI 正式声明 `MgsTrialPersonalBearer`，由知办个人凭据存储注�
 | POST /admin-api/crm/trial-internal/authorization | AUTHORIZATION | 安装或续用本人 MGS 授权 |
 | POST /admin-api/crm/trial-internal/login-delivery | DELIVERY | 原申请人的安全登录卡片交付 |
 | POST /admin-api/crm/trial-event/accept | EVENTS | 接收经核验的绑定或首次业务完成事件 |
+| POST /admin-api/crm/trial-verification/send | SMS_VERIFICATION | 安全卡片请求发送手机号验证码 |
+| POST /admin-api/crm/trial-verification/verify | SMS_VERIFICATION | 校验验证码并取得私有验证凭据 |
 
-三者均要求 HTTPS 和对应服务签名，不进入上述任何 Agent 目录。前两个本就从原始 OpenAPI 隐藏，含凭据的响应只能进入安全服务通道；完整请求、响应、错误和交付约定见内部契约。`/crm/trial-operations/*` 仅供受权限控制的 MGS 运营页，不给访客 Agent。无需给访客开放通用租户、用户、角色或菜单管理接口。
+上述五个接口均要求 HTTPS 和对应服务签名，不进入上述任何 Agent 目录。两个凭据接口及两个短信验证接口从原始 OpenAPI 隐藏，含凭据的响应只能进入安全服务通道；完整请求、响应、错误和交付约定见内部契约。`/crm/trial-operations/*` 仅供受权限控制的 MGS 运营页，不给访客 Agent。无需给访客开放通用租户、用户、角色或菜单管理接口。
 
 ## 重新生成与验证
 
@@ -63,3 +65,5 @@ python3 script/trial/build-agent-catalogs.py yudao-server/target/trial-openapi.j
 测试输入必须来自成功的实际 Springdoc 导出。导出回归验证正式 Bearer 声明、租户来源及可选性、签名能力、字段和账号就绪条件；目录回归验证精确选择、原定义保留、引用闭合、未知新接口排除、缺失或外部引用拒绝和递归引用处理。
 
 知办应分别重新同步两份目录的请求结构、security、租户参数来源、读写属性、CommonResult 成功条件以及开户就绪条件，核验最终 URL 和可信身份注入，再完成真实安全卡片及公众号链路联调。当前文件尚未导入或发布到知办，真实全链路仍待验证。
+
+短信验证扩展见 [SMS_VERIFICATION.md](SMS_VERIFICATION.md)。Agent 工具仍是 8 个，服务端对接接口增加为 5 个；新申请须重新同步 v2 签名和 x-mgs-contact-verification，不能继续依赖 Email 声明。

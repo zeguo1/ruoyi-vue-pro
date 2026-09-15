@@ -15,7 +15,18 @@ mgs:
     knowdo-base-url: null # Real HTTPS internal service endpoint, not an Agent/chat endpoint.
     outbound-key-id: null
     outbound-secret: ${MGS_TRIAL_KNOWDO_SECRET:}
-    keys: {} # key ID -> {issuer, secret, capabilities:[TOOLS | EVENTS | AUTHORIZATION | DELIVERY]}; use separate least-privilege keys.
+    keys: {} # key ID -> {issuer, secret, capabilities:[TOOLS | EVENTS | AUTHORIZATION | DELIVERY | SMS_VERIFICATION]}; use separate least-privilege keys.
+    sms-verification:
+      enabled: false # Safe-card SMS is private; also requires a separate SMS_VERIFICATION service capability.
+      template-code: null # An enabled real SMS channel/template in MGS; template parameters must be exactly [code].
+      secret: ${MGS_TRIAL_SMS_SECRET:} # Separate random secret, at least 32 chars; never reuse signing/encryption keys.
+      code-ttl-seconds: 300
+      proof-ttl-seconds: 600
+      resend-seconds: 60
+      max-attempts: 5
+      max-per-mobile-per-day: 5
+      max-per-identity-per-day: 5
+      max-total-per-day: 500 # Protective default while disabled; review actual SMS quota before enabling.
     login-delivery:
       active-key-id: null # Required before opening new enrollment.
       encryption-keys: {} # Versioned key ID -> base64 of 32 cryptographically random bytes. Secret store only; separate from HMAC keys.

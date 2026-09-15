@@ -81,4 +81,18 @@ class TrialServiceAuthTest {
         request.setSecure(true);
         assertEquals("trusted-user", auth.verify(request, "{}".getBytes(StandardCharsets.UTF_8), "TOOLS").subjectId());
     }
+    @Test void verificationProofMustBeCoveredByV2Signature() {
+        var legacy = signed("{}"); legacy.addHeader("X-Mgs-Trial-Verification", "f".repeat(64));
+        assertThrows(ServiceException.class, () -> auth.verify(legacy, "{}".getBytes(StandardCharsets.UTF_8), "TOOLS"));
+        var request = signed("{}"); request.removeHeader("X-Mgs-Trial-Email"); request.removeHeader("X-Mgs-Trial-Signature");
+        request.addHeader("X-Mgs-Trial-Version", "mgs-trial-v2"); request.addHeader("X-Mgs-Trial-Verification", "a".repeat(64));
+        String canonical = String.join("\n", "mgs-trial-v2", "test-key", request.getHeader("X-Mgs-Trial-Timestamp"),
+                request.getHeader("X-Mgs-Trial-Nonce"), "POST", request.getRequestURI(), TrialServiceAuth.sha256("{}"),
+                "trusted-user", "true", "", "receipt", "test-request-0001", "a".repeat(64));
+        request.addHeader("X-Mgs-Trial-Signature", TrialServiceAuth.hmac(SECRET, canonical));
+        request.removeHeader("X-Mgs-Trial-Verification"); request.addHeader("X-Mgs-Trial-Verification", "b".repeat(64));
+        assertThrows(ServiceException.class, () -> auth.verify(request, "{}".getBytes(StandardCharsets.UTF_8), "TOOLS"));
+        request.removeHeader("X-Mgs-Trial-Verification"); request.addHeader("X-Mgs-Trial-Verification", "a".repeat(64));
+        assertEquals("a".repeat(64), auth.verify(request, "{}".getBytes(StandardCharsets.UTF_8), "TOOLS").verificationToken());
+    }
 }

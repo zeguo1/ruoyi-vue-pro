@@ -10,6 +10,7 @@ import cn.iocoder.yudao.framework.web.config.WebProperties;
 import cn.iocoder.yudao.framework.web.core.handler.GlobalExceptionHandler;
 import cn.iocoder.yudao.module.crm.controller.admin.trial.TrialRequestAdvice;
 import cn.iocoder.yudao.module.crm.controller.admin.trial.TrialToolController;
+import cn.iocoder.yudao.module.crm.controller.admin.trial.TrialSmsVerificationController;
 import com.fasterxml.jackson.databind.JsonNode;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.BeforeEach;
@@ -46,6 +47,9 @@ class TrialToolHttpIntegrationTest {
     static final String SUBMIT = "{\"team\":\"隔离测试团队\",\"contactName\":\"体验人\",\"scenario\":\"CRM_FOLLOW_UP\"}";
     @Resource WebApplicationContext context;
     @Resource TrialProperties properties;
+    @Resource TrialSmsVerificationService verification;
+    @Resource TrialSmsVerificationTest.CapturingSender smsSender;
+    final Map<String, String> proofs = new java.util.HashMap<>();
     TrialLocalJourneyIntegrationTest fixture;
 
     @BeforeEach void setup() {
@@ -57,16 +61,32 @@ class TrialToolHttpIntegrationTest {
         var tools = new TrialProperties.ServiceKey(); tools.setIssuer("fixture-knowdo"); tools.setSecret(SECRET); tools.setCapabilities(Set.of("TOOLS"));
         var events = new TrialProperties.ServiceKey(); events.setIssuer("fixture-knowdo"); events.setSecret(SECRET); events.setCapabilities(Set.of("EVENTS"));
         properties.setKeys(Map.of("tools", tools, "events", events));
+        var sms = new TrialProperties.ServiceKey(); sms.setIssuer("fixture-knowdo"); sms.setSecret(SECRET); sms.setCapabilities(Set.of("SMS_VERIFICATION"));
+        properties.setKeys(Map.of("tools", tools, "events", events, "sms", sms));
+        properties.setSmsVerification(TrialSmsVerificationTest.properties().getSmsVerification());
+        new org.springframework.jdbc.datasource.init.ResourceDatabasePopulator(new org.springframework.core.io.FileSystemResource("../script/trial/V20260915_05__trial_sms_verification.sql")).execute(fixture.jdbc.getDataSource());
+        fixture.jdbc.update("DELETE FROM crm_trial_verified_contact"); fixture.jdbc.update("DELETE FROM crm_trial_sms_challenge");
+        smsSender.codes.clear(); smsSender.calls.set(0); smsSender.fail = false; proofs.clear();
     }
     @AfterEach void clear() { fixture.clear(); }
     MockHttpServletRequestBuilder signed(String path, String body, String subject, String key, String confirmation) {
+        String proof = "submit".equals(path) ? proofs.computeIfAbsent(subject, value -> {
+            var identity = TrialSmsVerificationTest.identity(value, "http-verify-action-" + value, "");
+            String mobile = "138" + String.format(java.util.Locale.ROOT, "%08d", Math.abs(value.hashCode() % 100_000_000));
+            String challenge = verification.send(identity, mobile).challengeId();
+            return verification.verify(identity, challenge, smsSender.codes.get(mobile)).verificationToken();
+        }) : "";
+        return signedAt(BASE + path, body, subject, key, "true", confirmation, proof);
+    }
+    MockHttpServletRequestBuilder signedAt(String fullPath, String body, String subject, String key, String verified, String confirmation, String proof) {
         var headers = new LinkedHashMap<String, String>(); headers.put("Key", key);
         headers.put("Timestamp", Long.toString(Instant.now().getEpochSecond())); headers.put("Nonce", UUID.randomUUID().toString());
-        headers.put("Subject", subject); headers.put("Verified", "true"); headers.put("Email", subject + "@example.invalid");
+        headers.put("Subject", subject); headers.put("Verified", verified);
+        headers.put("Version", "mgs-trial-v2"); headers.put("Verification", proof);
         headers.put("Confirmation", confirmation); headers.put("Idempotency", "http-application-" + subject);
-        String canonical = String.join("\n", "mgs-trial-v1", key, headers.get("Timestamp"), headers.get("Nonce"), "POST", BASE + path,
-                TrialServiceAuth.sha256(body), subject, "true", headers.get("Email"), confirmation, headers.get("Idempotency"));
-        var request = post(BASE + path).secure(true).contentType("application/json").content(body);
+        String canonical = String.join("\n", "mgs-trial-v2", key, headers.get("Timestamp"), headers.get("Nonce"), "POST", fullPath,
+                TrialServiceAuth.sha256(body), subject, verified, "", confirmation, headers.get("Idempotency"), proof);
+        var request = post(fullPath).secure(true).contentType("application/json").content(body);
         headers.forEach((name, value) -> request.header("X-Mgs-Trial-" + name, value));
         return request.header("X-Mgs-Trial-Signature", TrialServiceAuth.hmac(SECRET, canonical));
     }
@@ -150,6 +170,61 @@ class TrialToolHttpIntegrationTest {
         fixture.orchestrator.advance(id); assertEquals("EXPIRED", fixture.store.get(id).status());
     }
 
+    @Test void privateSmsCardFlowRequiresActualVerificationAndSeparateConfirmation() throws Exception {
+        String mobile = "13800000001"; String subject = "card-owner";
+        String sendBody = "{\"mobile\":\"" + mobile + "\"}";
+        String sendPath = "/admin-api/crm/trial-verification/send";
+        String verifyPath = "/admin-api/crm/trial-verification/verify";
+        assertNotEquals(0, call(signedAt(BASE + "submit", SUBMIT, subject, "tools", "true", "", "")).path("code").asInt());
+        assertNotEquals(0, call(signedAt(sendPath, sendBody, subject, "tools", "false", "", "")).path("code").asInt());
+        assertNotEquals(0, call(signedAt(sendPath, sendBody, subject, "sms", "false", "", "").secure(false)).path("code").asInt());
+        assertEquals(0, smsSender.calls.get());
+        var sent = call(signedAt(sendPath, sendBody, subject, "sms", "false", "", ""));
+        assertEquals(0, sent.path("code").asInt()); assertEquals("SENT", sent.path("data").path("state").asText());
+        String challenge = sent.path("data").path("challengeId").asText(); String code = smsSender.codes.get(mobile);
+        var request = signedAt(verifyPath, "{\"challengeId\":\"" + challenge + "\",\"code\":\"" + code + "\"}", subject, "sms", "false", "", "");
+        var verified = call(request); assertEquals(0, verified.path("code").asInt());
+        String proof = verified.path("data").path("verificationToken").asText(); assertEquals(64, proof.length());
+        noBusinessWrites();
+        assertNotEquals(0, call(request).path("code").asInt()); // Request nonce replay.
+        assertNotEquals(0, call(signedAt(BASE + "submit", SUBMIT, "other", "tools", "true", "", proof)).path("code").asInt());
+        var result = call(signedAt(BASE + "submit", SUBMIT, subject, "tools", "true", "", proof));
+        assertEquals(0, result.path("code").asInt()); String app = result.path("data").path("applicationId").asText();
+        assertEquals(mobile, fixture.jdbc.queryForObject("SELECT mobile FROM crm_clue", String.class));
+        assertFalse(result.toString().contains(proof)); assertFalse(result.toString().contains(mobile));
+        assertFalse(result.toString().contains(code)); assertNull(fixture.store.get(app).confirmedAt());
+        assertEquals(1, fixture.count("system_users"));
+        assertEquals(1_020_100_006, call(signedAt(BASE + "create-accounts", body(app), subject, "tools", "true", "", "")).path("code").asInt());
+        assertEquals(0, call(signedAt(BASE + "create-accounts", body(app), subject, "tools", "true", "confirmed-card-action", "")).path("code").asInt());
+        fixture.ready(app); assertEquals("READY", fixture.store.get(app).status());
+    }
+
+    @Test void privateVerificationValidationDoesNotEchoOrLogSubmittedCode() throws Exception {
+        var logger = (ch.qos.logback.classic.Logger) org.slf4j.LoggerFactory.getLogger(org.slf4j.Logger.ROOT_LOGGER_NAME);
+        var logs = new ch.qos.logback.core.read.ListAppender<ch.qos.logback.classic.spi.ILoggingEvent>(); logs.start(); logger.addAppender(logs);
+        try {
+            String sensitive = "fixture-secret-code-invalid";
+            String payload = "{\"challengeId\":\"" + UUID.randomUUID() + "\",\"code\":\"" + sensitive + "\"}";
+            var response = fixture.mvc.perform(signedAt("/admin-api/crm/trial-verification/verify", payload, "card-owner", "sms", "false", "", "")).andReturn().getResponse();
+            assertEquals("no-store", response.getHeader("Cache-Control"));
+            assertEquals(1_020_100_016, fixture.json.readTree(response.getContentAsString()).path("code").asInt());
+            assertFalse(response.getContentAsString().contains(sensitive));
+            assertFalse(logs.list.stream().anyMatch(event -> event.getFormattedMessage().contains(sensitive)
+                    || (event.getThrowableProxy() != null && event.getThrowableProxy().getMessage().contains(sensitive))));
+        } finally { logger.detachAppender(logs); logs.stop(); }
+    }
+
+    @Test void legacyEmailAttestationCannotCreateANewApplication() throws Exception {
+        String stamp = Long.toString(Instant.now().getEpochSecond()), nonce = UUID.randomUUID().toString();
+        String canonical = String.join("\n", "mgs-trial-v1", "tools", stamp, nonce, "POST", BASE + "submit",
+                TrialServiceAuth.sha256(SUBMIT), "legacy-person", "true", "legacy@example.invalid", "confirmed", "legacy-request-0001");
+        var request = post(BASE + "submit").secure(true).contentType("application/json").content(SUBMIT);
+        Map.of("Key", "tools", "Timestamp", stamp, "Nonce", nonce, "Subject", "legacy-person", "Verified", "true",
+                "Email", "legacy@example.invalid", "Confirmation", "confirmed", "Idempotency", "legacy-request-0001",
+                "Signature", TrialServiceAuth.hmac(SECRET, canonical)).forEach((key, value) -> request.header("X-Mgs-Trial-" + key, value));
+        assertEquals(1_020_100_016, call(request).path("code").asInt()); noBusinessWrites();
+    }
+
     @org.springframework.context.annotation.Configuration
     @org.springframework.cache.annotation.EnableCaching
     @org.springframework.web.servlet.config.annotation.EnableWebMvc
@@ -157,13 +232,15 @@ class TrialToolHttpIntegrationTest {
     @org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity
     @EnableAspectJAutoProxy(proxyTargetClass = true)
     @org.springframework.transaction.annotation.EnableTransactionManagement
-    @Import({TrialToolController.class, TrialRequestAdvice.class, TrialServiceAuth.class})
+    @Import({TrialToolController.class, TrialRequestAdvice.class, TrialServiceAuth.class, TrialSmsVerificationController.class, TrialSmsVerificationService.class})
     static class Configuration extends TrialBrowserJourneyTest.Configuration {
+        @Bean TrialSmsVerificationTest.CapturingSender trialSmsSender() { return new TrialSmsVerificationTest.CapturingSender(); }
         @Override public void configurePathMatch(PathMatchConfigurer configurer) {
             configurer.addPathPrefix("/admin-api", type -> type.getPackageName().contains(".controller.admin."));
         }
         @Bean @Override SecurityFilterChain security(HttpSecurity http, GlobalExceptionHandler errors, OAuth2TokenCommonApi tokens) throws Exception {
-            Set<String> publicPaths = Set.of(BASE + "submit", BASE + "create-accounts", BASE + "status", BASE + "guide");
+            Set<String> publicPaths = Set.of(BASE + "submit", BASE + "create-accounts", BASE + "status", BASE + "guide",
+                    "/admin-api/crm/trial-verification/send", "/admin-api/crm/trial-verification/verify");
             new cn.iocoder.yudao.framework.web.core.util.WebFrameworkUtils(new WebProperties());
             var token = new TokenAuthenticationFilter(new SecurityProperties(), errors, tokens);
             var tenant = new TenantSecurityWebFilter(new WebProperties(), new TenantProperties(), publicPaths, errors, mock(TenantFrameworkService.class));
