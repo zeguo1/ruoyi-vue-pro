@@ -48,6 +48,7 @@ public class TrialServiceAuth {
             throw TrialException.unauthorized();
         }
         TrialProperties.ServiceKey key = properties.getKeys().get(keyId);
+        if (key != null && key.getExpiresAt() != null && !key.getExpiresAt().isAfter(Instant.now())) throw TrialException.unauthorized();
         if (key == null || key.getSecret() == null || key.getSecret().length() < 32
                 || key.getIssuer() == null || !key.getIssuer().matches("[a-zA-Z0-9_-]{1,64}")
                 || !key.getCapabilities().contains(capability) || !(contactVerification ? "false" : "true").equals(verified)

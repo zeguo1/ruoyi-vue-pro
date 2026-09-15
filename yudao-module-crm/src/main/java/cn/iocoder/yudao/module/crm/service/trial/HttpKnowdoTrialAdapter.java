@@ -53,9 +53,10 @@ public class HttpKnowdoTrialAdapter implements KnowdoTrialAdapter {
 
     private Result call(TrialStore.Application app, String step, String action, Map<String, String> resources) {
         if (TransactionSynchronizationManager.isActualTransactionActive()) { throw new IllegalStateException("Network I/O inside trial transaction"); }
+        TrialProperties settings = properties.snapshot();
         String base = app.policy().knowdoBaseUrl();
-        if (base == null || !base.startsWith("https://") || properties.getOutboundKeyId() == null
-                || properties.getOutboundSecret() == null || properties.getOutboundSecret().length() < 32) {
+        if (base == null || !base.startsWith("https://") || settings.getOutboundKeyId() == null
+                || settings.getOutboundSecret() == null || settings.getOutboundSecret().length() < 32) {
             throw TrialException.unavailable();
         }
         try {
@@ -66,12 +67,12 @@ public class HttpKnowdoTrialAdapter implements KnowdoTrialAdapter {
             String body = json.writeValueAsString(Map.of("contractVersion", "mgs-trial-v1", "applicationId", app.id(),
                     "idempotencyKey", app.id() + ":" + step, "step", step, "issuer", app.issuer(),
                     "subjectId", app.subjectId(), "expiresAt", app.expiresAt().toString(), "resources", resources));
-            String canonical = String.join("\n", "mgs-trial-outbound-v1", properties.getOutboundKeyId(), timestamp, nonce,
+            String canonical = String.join("\n", "mgs-trial-outbound-v1", settings.getOutboundKeyId(), timestamp, nonce,
                     "POST", uri.getRawPath(), TrialServiceAuth.sha256(body));
             HttpRequest request = HttpRequest.newBuilder(uri).timeout(Duration.ofSeconds(8))
-                    .header("Content-Type", "application/json").header("X-Mgs-Trial-Key", properties.getOutboundKeyId())
+                    .header("Content-Type", "application/json").header("X-Mgs-Trial-Key", settings.getOutboundKeyId())
                     .header("X-Mgs-Trial-Timestamp", timestamp).header("X-Mgs-Trial-Nonce", nonce)
-                    .header("X-Mgs-Trial-Signature", TrialServiceAuth.hmac(properties.getOutboundSecret(), canonical))
+                    .header("X-Mgs-Trial-Signature", TrialServiceAuth.hmac(settings.getOutboundSecret(), canonical))
                     .POST(HttpRequest.BodyPublishers.ofString(body, StandardCharsets.UTF_8)).build();
             var pending = http.sendAsync(request, ignored -> new BoundedResponseBody());
             HttpResponse<byte[]> response;

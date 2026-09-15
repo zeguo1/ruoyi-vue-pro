@@ -27,7 +27,7 @@ class FullOpenApiExportTest {
             cn.iocoder.yudao.module.crm.framework.trial.TrialConnectorOpenApiConfiguration.class})
     static class Documentation implements WebMvcConfigurer {
         @Bean org.springdoc.core.providers.JavadocProvider javadocProvider() { return new cn.iocoder.yudao.framework.swagger.config.ContractJavadocProvider(); }
-        @Bean io.swagger.v3.oas.models.OpenAPI apiInfo() { return new io.swagger.v3.oas.models.OpenAPI().info(new io.swagger.v3.oas.models.info.Info().title("MGS integration candidate (not deployed)").version("1.0.0-full-contract-v7.2")); }
+        @Bean io.swagger.v3.oas.models.OpenAPI apiInfo() { return new io.swagger.v3.oas.models.OpenAPI().info(new io.swagger.v3.oas.models.info.Info().title("MGS integration candidate (not deployed)").version("1.0.0-full-contract-v7.3")); }
         @Bean org.springdoc.core.models.GroupedOpenApi all() { return cn.iocoder.yudao.framework.swagger.config.YudaoSwaggerAutoConfiguration.buildGroupedOpenApi("all", ""); }
         @Bean ContractSchemaCustomizer contractSchemaCustomizer() { return new ContractSchemaCustomizer(); }
         @Override public void configurePathMatch(PathMatchConfigurer configurer) {
@@ -74,6 +74,8 @@ class FullOpenApiExportTest {
             String connectorJson = mvc.perform(get("/v3/api-docs/trial-connector")).andReturn().getResponse().getContentAsString(java.nio.charset.StandardCharsets.UTF_8);
             var connectorTree = io.swagger.v3.core.util.Json.mapper().readTree(connectorJson);
             assertEquals(4, connectorTree.path("paths").size());
+            var allTree = io.swagger.v3.core.util.Json.mapper().readTree(allJson);
+            allTree.path("paths").fieldNames().forEachRemaining(path -> assertFalse(path.contains("/trial-settings"), "Control-plane credentials must not be Agent tools"));
             connectorTree.path("paths").fieldNames().forEachRemaining(path -> assertTrue(path.startsWith("/admin-api/crm/trial-connector/")));
             assertEquals("bearer", connectorTree.path("components").path("securitySchemes").path("MgsTrialConnectorBearer").path("scheme").asText());
             connectorTree.path("paths").forEach(item -> item.forEach(op -> {

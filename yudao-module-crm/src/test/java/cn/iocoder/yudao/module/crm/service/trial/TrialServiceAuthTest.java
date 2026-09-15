@@ -68,6 +68,12 @@ class TrialServiceAuthTest {
             assertThrows(Exception.class, () -> mapper.readValue("{\"team\":\"test\",\"contactName\":\"test\",\"scenario\":\"CRM_FOLLOW_UP\",\"" + field + "\":1}", TrialSubmitReqVO.class));
         }
     }
+    @Test void configuredServiceKeyExpiryIsEnforcedWithoutBreakingLegacyKeys() {
+        properties.getKeys().get("test-key").setExpiresAt(Instant.now().minusSeconds(1));
+        assertThrows(ServiceException.class, () -> auth.verify(signed("{}"), "{}".getBytes(StandardCharsets.UTF_8), "TOOLS"));
+        properties.getKeys().get("test-key").setExpiresAt(Instant.now().plusSeconds(60));
+        assertEquals("trusted-user", auth.verify(signed("{}"), "{}".getBytes(StandardCharsets.UTF_8), "TOOLS").subjectId());
+    }
     @Test void missingProductionSettingsFailClosed() {
         assertThrows(ServiceException.class, properties::newPolicy);
         properties.setEnabled(true);

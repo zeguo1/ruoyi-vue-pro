@@ -31,6 +31,28 @@ public class TrialProperties {
     private LoginDelivery loginDelivery = new LoginDelivery();
     private SmsVerification smsVerification = new SmsVerification();
 
+    // Atomic, fully constructed administrative snapshot. Bootstrap properties remain the fallback.
+    @com.fasterxml.jackson.annotation.JsonIgnore @lombok.ToString.Exclude
+    private volatile TrialProperties managed;
+    public void applyManaged(TrialProperties value) { managed = value; }
+    public TrialProperties snapshot() { TrialProperties value = managed; return value == null ? this : value; }
+    public boolean isEnabled() { TrialProperties p = managed; return p == null ? enabled : p.enabled; }
+    public String getEnvironment() { TrialProperties p = managed; return p == null ? environment : p.environment; }
+    public Long getDemoTenantId() { TrialProperties p = managed; return p == null ? demoTenantId : p.demoTenantId; }
+    public Long getOperatorTenantId() { TrialProperties p = managed; return p == null ? operatorTenantId : p.operatorTenantId; }
+    public Long getOwnerUserId() { TrialProperties p = managed; return p == null ? ownerUserId : p.ownerUserId; }
+    public Integer getDurationDays() { TrialProperties p = managed; return p == null ? durationDays : p.durationDays; }
+    public Integer getMaxApplications() { TrialProperties p = managed; return p == null ? maxApplications : p.maxApplications; }
+    public String getKnowdoBaseUrl() { TrialProperties p = managed; return p == null ? knowdoBaseUrl : p.knowdoBaseUrl; }
+    public String getOutboundKeyId() { TrialProperties p = managed; return p == null ? outboundKeyId : p.outboundKeyId; }
+    public String getOutboundSecret() { TrialProperties p = managed; return p == null ? outboundSecret : p.outboundSecret; }
+    public String getMgsLoginUrl() { TrialProperties p = managed; return p == null ? mgsLoginUrl : p.mgsLoginUrl; }
+    public String getOauthClientId() { TrialProperties p = managed; return p == null ? oauthClientId : p.oauthClientId; }
+    public Map<String, ServiceKey> getKeys() { TrialProperties p = managed; return p == null ? keys : p.keys; }
+    public Connector getConnector() { TrialProperties p = managed; return p == null ? connector : p.connector; }
+    public LoginDelivery getLoginDelivery() { TrialProperties p = managed; return p == null ? loginDelivery : p.loginDelivery; }
+    public SmsVerification getSmsVerification() { TrialProperties p = managed; return p == null ? smsVerification : p.smsVerification; }
+
     /** Disabled until TLS, private cards and counterpart callbacks have been verified. */
     @Data
     public static class Connector {
@@ -90,6 +112,7 @@ public class TrialProperties {
     @Data
     public static class ServiceKey {
         private String issuer;
+        private java.time.Instant expiresAt;
         @lombok.ToString.Exclude
         private String secret;
         private Set<String> capabilities = Set.of();
@@ -100,6 +123,8 @@ public class TrialProperties {
                          long demoTenantId, int durationDays, String mgsLoginUrl, String knowdoBaseUrl, String oauthClientId) { }
 
     public Policy newPolicy() {
+        TrialProperties current = managed;
+        if (current != null) return current.newPolicy();
         if (!enabled || loginDelivery == null || !loginDelivery.ready() || environment == null || environment.isBlank()
                 || operatorTenantId == null || ownerUserId == null || demoTenantId == null
                 || operatorTenantId <= 0 || ownerUserId <= 0 || demoTenantId <= 0
