@@ -11,6 +11,7 @@
 ## 发布前核对
 
 1. 在隔离环境运行 `bash script/trial/run-tests.sh`，登录/OAuth 原有回归另运行 `python3 script/trial/run-auth-regression.py`。新业务集成测试包含真实 Spring MVC、令牌/租户过滤器、方法权限、CRM 权限切面、客户/跟进/数据权限服务及 MyBatis；OAuth 校验、系统权限目录、字典、用户目录和其他业务服务仍有测试替身。H2 不是生产 MySQL。
+   可独立运行 [MYSQL_PERSISTENCE.md](MYSQL_PERSISTENCE.md) 中的 MySQL 专项：已验证原始迁移、实际 MySQL 编排持久化/并发/事务回滚，但业务步骤仍为 fixture，不能替代真实账号与 CRM 服务的 MySQL 联调。
 2. 核对配置示例中所有 `null`：实际 HTTPS 地址、试用期限/配额、专用 OAuth 客户端、服务密钥、企业初始化联系人/容量/有效期及菜单。不要从模型参数取得这些配置。
    全部试用服务签名入口要求容器识别为安全请求。TLS 在代理终止时，须配置有限的可信代理并隔离直接后端入口，验证 `isSecure` 正确；不能仅向明文请求添加 X-Forwarded-Proto 来绕过。该路径尚未在运行环境验收。
 3. 知办实现并共同验证 `KNOWDO_CONTRACT_DRAFT.md` 的内部接口、可信身份和安全卡片。尚未找到对方可联调实现；不得仅凭 adapter 测试开启申请。

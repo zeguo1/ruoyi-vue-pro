@@ -15,6 +15,7 @@
 | 到期、既有会话/令牌/刷新别名撤销 | TrialLocalJourneyIntegrationTest：两类真实 MGS grant、实际缓存 DAO、到期前置拒绝、撤权后 401/旧密码登录失败；另一用户不受影响 | 知办渠道撤销由 adapter 替身确认，真实知办侧尚未联调 |
 | 运营前端与本人结果页 | frontend-test-evidence.json：桌面/手机 5 个模拟接口场景；browser-live-test-evidence.json：两名普通用户通过真实隔离后端登录/查看、生产时间戳转可读日期 | 运营页仍为 API fixture；实际后端浏览器验证仅覆盖本人体验页。限定范围类型检查通过，全应用检查未通过验收 |
 | OpenAPI/工具契约 | generated/openapi.json、generated/tool-contract.json；实际隔离 Springdoc 12 个公开接口；从中选取开户和个人体验两个 4 接口 Agent 目录，见 AGENT_API_CATALOGS.md；正式个人 Bearer 与租户参数来源、引用闭合和管理接口排除有回归证据 | 候选版本 mgs-trial-v1-candidate；不是运行服务导出，也不宣称知办已同步 |
+| MySQL 持久化与原始迁移 | TrialMySqlIntegrationTest，实际隔离 MySQL 8.4.11；12 项通过，包含原始 4 个迁移重复执行、并发幂等、事务回滚与编排恢复 | 本地账号/CRM/OAuth 步骤和知办是 fixture；未覆盖真实业务服务的 MySQL 联合执行、进程冷启动或部署。见 MYSQL_PERSISTENCE.md |
 
 ## 尚需外部对接或部署配置
 
@@ -30,6 +31,8 @@
 2026-09-15 再次只读请求 `http://192.168.1.199:8088/v3/api-docs`：文档标识仍为 `1.0.0-full-contract-v5`，共 3324 个路径，没有 `/crm/trial-` 路径，响应 SHA-256 与前一天相同。详见 runtime-observation.json。此观察只说明文档中未暴露本次接口，不能推断运行 Git 提交；隔离测试的候选导出不等于运行服务文档。
 
 2026-09-15 文档增量回归：TrialOpenApiExportTest 2 项通过，目录 Python 回归 5 项通过；其他业务/浏览器测试未因纯文档变更重复运行，保留各自时间戳。test-evidence.json 中累计 JUnit 项数为 100，不代表同一时刻全套重跑；独立目录测试证据见 agent-catalog-test-evidence.json。
+
+同日进一步完成 MySQL 持久化补充：原 H2 编排 11 项和 MySQL 编排/迁移 12 项通过。累计 JUnit 证据更新为 112 项，只有这两个套件在本轮执行，其他套件仍以各自时间戳为准。临时 MySQL 容器及匿名卷已清理；现有服务数据库未连接。
 
 前端实际应用的完整检查另以 1792/2048 MiB 堆直接执行同一个 vue-tsc 和完整 tsconfig，均在独立 2560 MiB 总内存限制内因 JS 堆耗尽失败。没有删减检查范围、提高共享主机负载上限或跳过钩子。前端 10 个文件维持暂存；需要资源充足的检查环境，或此前已提出的候选提交检查范围例外得到明确确认。
 

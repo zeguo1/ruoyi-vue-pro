@@ -38,6 +38,10 @@ class TrialOrchestratorTest {
     void setup() {
         JdbcDataSource ds = new JdbcDataSource();
         ds.setURL("jdbc:h2:mem:" + UUID.randomUUID() + ";MODE=MySQL;DB_CLOSE_DELAY=-1;LOCK_TIMEOUT=10000");
+        configure(ds);
+    }
+
+    void configure(javax.sql.DataSource ds) {
         new ResourceDatabasePopulator(new FileSystemResource("../script/trial/V20260914_01__trial_onboarding.sql")).execute(ds);
         jdbc = new JdbcTemplate(ds);
         jdbc.execute("CREATE TABLE test_effect (application_id VARCHAR(36), step VARCHAR(32), PRIMARY KEY(application_id, step))");

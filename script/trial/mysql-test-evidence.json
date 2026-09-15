@@ -1,0 +1,50 @@
+{
+  "observedAt": "2026-09-15T00:26:56.730420+00:00",
+  "runtime": {
+    "containerId": "076e280a83a188873dd562fc59b61febc70ecca552e82a1c3312e83d3082b7e7",
+    "imageId": "sha256:b3b90af2a6552ae30c266fdb7d5dd55f3afb72404bb78d37fe8a23eb857fd3fb",
+    "version": "8.4.11",
+    "realBusinessProvisioningVerified": false,
+    "memoryLimitBytes": 536870912,
+    "temporaryDatabaseOnly": true,
+    "realKnowdoVerified": false
+  },
+  "containerRemovedVerified": true,
+  "command": "MGS_TRIAL_TEST_MYSQL=true MAVEN_OPTS='-Xmx512m -XX:ActiveProcessorCount=2' mvn -q -pl yudao-module-crm -am test -Dtest=TrialOrchestratorTest,TrialMySqlIntegrationTest -Dsurefire.failIfNoSpecifiedTests=false -DargLine='-Xmx384m -XX:ActiveProcessorCount=2'",
+  "log": "/tmp/mgs-trial-mysql-regression.log",
+  "tests": [
+    {
+      "class": "cn.iocoder.yudao.module.crm.service.trial.TrialOrchestratorTest",
+      "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialOrchestratorTest.xml",
+      "reportModifiedAt": "2026-09-15T00:24:20.021348+00:00",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "cn.iocoder.yudao.module.crm.service.trial.TrialMySqlIntegrationTest",
+      "evidence": "yudao-module-crm/target/surefire-reports/TEST-cn.iocoder.yudao.module.crm.service.trial.TrialMySqlIntegrationTest.xml",
+      "reportModifiedAt": "2026-09-15T00:24:29.073805+00:00",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "totalThisRun": 23,
+  "sourceHashes": {
+    "yudao-module-crm/src/test/java/cn/iocoder/yudao/module/crm/service/trial/TrialOrchestratorTest.java": "6323d90d532d025a63e0beb0f31e737b731425e1a995efec7fc54a852b9d3de4",
+    "yudao-module-crm/src/test/java/cn/iocoder/yudao/module/crm/service/trial/TrialMySqlIntegrationTest.java": "d976bcdd42970a166282ebf992949e37d1a52d0db56f0557073cc402591a01aa",
+    "script/trial/V20260914_01__trial_onboarding.sql": "0b6a280ca39abd12a95f7433c2a8dba35a70f8cdf5876208fb12326443d6bc9a",
+    "script/trial/V20260914_02__trial_menus.sql": "49f0257807f158d78a38380a4aa83b44ecc8bf008e8480fb69075cd035017980",
+    "script/trial/V20260914_03__trial_operator_setup.sql": "233e0ee1c0d50528742f3970e6baab0d67ce79950ff15e1548502eec39ecd4df",
+    "script/trial/V20260914_04__trial_login_delivery.sql": "c895c05891e87c2f6795d9f09ec24b65860e196f74ff7f6448e0ed97999a7d88"
+  },
+  "realMySqlPersistenceVerified": true,
+  "realBusinessProvisioningOnMySqlVerified": false,
+  "realMySqlColdProcessRestartVerified": false,
+  "realKnowdoVerified": false,
+  "realEndToEndVerified": false,
+  "scope": "Actual TrialStore/TrialOrchestrator with MySQL JDBC, four original migrations, source menu DDL only, unique constraints/row locking/transactions and repeated migration resource preservation. Local business step effects and KnowDo remain explicit fixtures; separate H2 integration suites cover actual MGS business services."
+}
